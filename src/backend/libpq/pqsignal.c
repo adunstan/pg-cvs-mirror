@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/libpq/pqsignal.c,v 1.33 2004/04/12 16:19:18 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/libpq/pqsignal.c,v 1.34 2004/05/29 22:48:19 tgl Exp $
  *
  * NOTES
  *		This shouldn't be in libpq, but the monitor and some other
@@ -159,6 +159,10 @@ pqsignal(int signo, pqsigfunc func)
 	act.sa_flags = 0;
 	if (signo != SIGALRM)
 		act.sa_flags |= SA_RESTART;
+#ifdef SA_NOCLDSTOP
+	if (signo == SIGCHLD)
+		act.sa_flags |= SA_NOCLDSTOP;
+#endif
 	if (sigaction(signo, &act, &oact) < 0)
 		return SIG_ERR;
 	return oact.sa_handler;
