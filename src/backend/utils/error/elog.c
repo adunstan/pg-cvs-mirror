@@ -42,7 +42,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/utils/error/elog.c,v 1.151 2004/09/22 03:55:26 neilc Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/error/elog.c,v 1.152 2004/10/07 15:21:54 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1391,7 +1391,12 @@ log_line_prefix(StringInfo buf)
 					char		strfbuf[128];
 
 					strftime(strfbuf, sizeof(strfbuf),
+					/* Win32 timezone names are too long so don't print them. */
+#ifndef WIN32
 							 "%Y-%m-%d %H:%M:%S %Z",
+#else
+							 "%Y-%m-%d %H:%M:%S",
+#endif
 							 localtime(&stamp_time));
 					appendStringInfoString(buf, strfbuf);
 				}
