@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/commands/view.c,v 1.79 2003/11/29 19:51:48 pgsql Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/commands/view.c,v 1.80 2004/01/10 23:28:44 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -297,8 +297,8 @@ UpdateRangeTableOfViewParse(Oid viewOid, Query *viewParse)
 											  makeAlias("*NEW*", NIL),
 											  false, false);
 	/* Must override addRangeTableEntry's default access-check flags */
-	rt_entry1->checkForRead = false;
-	rt_entry2->checkForRead = false;
+	rt_entry1->requiredPerms = 0;
+	rt_entry2->requiredPerms = 0;
 
 	new_rt = lcons(rt_entry1, lcons(rt_entry2, viewParse->rtable));
 

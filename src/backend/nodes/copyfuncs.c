@@ -15,7 +15,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/nodes/copyfuncs.c,v 1.275 2004/01/06 23:55:18 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/nodes/copyfuncs.c,v 1.276 2004/01/10 23:28:44 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1258,8 +1258,7 @@ _copyRangeTblEntry(RangeTblEntry *from)
 	COPY_NODE_FIELD(eref);
 	COPY_SCALAR_FIELD(inh);
 	COPY_SCALAR_FIELD(inFromCl);
-	COPY_SCALAR_FIELD(checkForRead);
-	COPY_SCALAR_FIELD(checkForWrite);
+	COPY_SCALAR_FIELD(requiredPerms);
 	COPY_SCALAR_FIELD(checkAsUser);
 
 	return newnode;

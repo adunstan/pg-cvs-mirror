@@ -18,7 +18,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/nodes/equalfuncs.c,v 1.213 2004/01/06 23:55:18 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/nodes/equalfuncs.c,v 1.214 2004/01/10 23:28:45 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1574,8 +1574,7 @@ _equalRangeTblEntry(RangeTblEntry *a, RangeTblEntry *b)
 	COMPARE_NODE_FIELD(eref);
 	COMPARE_SCALAR_FIELD(inh);
 	COMPARE_SCALAR_FIELD(inFromCl);
-	COMPARE_SCALAR_FIELD(checkForRead);
-	COMPARE_SCALAR_FIELD(checkForWrite);
+	COMPARE_SCALAR_FIELD(requiredPerms);
 	COMPARE_SCALAR_FIELD(checkAsUser);
 
 	return true;

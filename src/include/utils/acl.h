@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: acl.h,v 1.64 2003/11/21 22:32:49 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/include/utils/acl.h,v 1.65 2003/11/29 22:41:15 pgsql Exp $
  *
  * NOTES
  *	  An ACL array is simply an array of AclItems, representing the union
@@ -28,7 +28,12 @@
 #include "utils/array.h"
 
 
-/* typedef AclId is declared in c.h */
+/*
+ * typedef AclId is declared in c.h
+ *
+ * typedef AclMode is declared in parsenodes.h, also the individual privilege
+ * bit meanings are defined there
+ */
 
 #define ACL_ID_WORLD	0		/* placeholder for id in a WORLD acl item */
 
@@ -38,11 +43,6 @@
 #define ACL_IDTYPE_WORLD		0x00	/* PUBLIC */
 #define ACL_IDTYPE_UID			0x01	/* user id - from pg_shadow */
 #define ACL_IDTYPE_GID			0x02	/* group id - from pg_group */
-
-/*
- * AclMode		a bitmask of privilege bits
- */
-typedef uint32 AclMode;
 
 /*
  * AclItem

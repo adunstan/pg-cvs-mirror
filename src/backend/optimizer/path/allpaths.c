@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/optimizer/path/allpaths.c,v 1.110 2003/12/17 17:07:48 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/optimizer/path/allpaths.c,v 1.111 2004/01/05 05:07:35 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -227,8 +227,7 @@ set_inherited_rel_pathlist(Query *root, RelOptInfo *rel,
 	 * it examines the parent's inheritlist entry.  There's no need to
 	 * check twice, so turn off access check bits in the original RTE.
 	 */
-	rte->checkForRead = false;
-	rte->checkForWrite = false;
+	rte->requiredPerms = 0;
 
 	/*
 	 * Initialize to compute size estimates for whole inheritance tree

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/nodes/readfuncs.c,v 1.163 2003/11/29 19:51:49 pgsql Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/nodes/readfuncs.c,v 1.164 2004/01/07 18:56:26 neilc Exp $
  *
  * NOTES
  *	  Path and Plan nodes do not have any readfuncs support, because we
@@ -939,9 +939,8 @@ _readRangeTblEntry(void)
 
 	READ_BOOL_FIELD(inh);
 	READ_BOOL_FIELD(inFromCl);
-	READ_BOOL_FIELD(checkForRead);
-	READ_BOOL_FIELD(checkForWrite);
-	READ_OID_FIELD(checkAsUser);
+	READ_UINT_FIELD(requiredPerms);
+	READ_UINT_FIELD(checkAsUser);
 
 	READ_DONE();
 }
