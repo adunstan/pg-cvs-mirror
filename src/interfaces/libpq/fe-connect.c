@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-connect.c,v 1.299 2005/01/06 21:41:44 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-connect.c,v 1.300 2005/01/10 00:19:43 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -69,7 +69,7 @@
 #ifndef WIN32
 #define PGPASSFILE ".pgpass"
 #else
-#define PGPASSFILE "pgpass.txt"
+#define PGPASSFILE "pgpass.conf"
 #endif
 
 /* fall back options if they are not specified by arguments or defined

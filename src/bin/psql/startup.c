@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2005, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/psql/startup.c,v 1.108 2005/01/01 05:43:08 momjian Exp $
+ * $PostgreSQL: pgsql/src/bin/psql/startup.c,v 1.109 2005/01/06 18:29:09 tgl Exp $
  */
 #include "postgres_fe.h"
 
@@ -48,7 +48,7 @@ PsqlSettings pset;
 #define PSQLRC		".psqlrc"
 #else
 #define SYSPSQLRC	"psqlrc"
-#define PSQLRC		"psqlrc.txt"
+#define PSQLRC		"psqlrc.conf"
 #endif
 
 /*
