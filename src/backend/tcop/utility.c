@@ -10,7 +10,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/tcop/utility.c,v 1.215 2004/05/07 19:12:26 neilc Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/tcop/utility.c,v 1.216 2004/05/26 04:41:35 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -234,6 +234,7 @@ check_xact_readonly(Node *parsetree)
 	switch (nodeTag(parsetree))
 	{
 		case T_AlterDatabaseSetStmt:
+		case T_AlterDbOwnerStmt:
 		case T_AlterDomainStmt:
 		case T_AlterGroupStmt:
 		case T_AlterSeqStmt:
@@ -673,6 +674,13 @@ ProcessUtility(Node *parsetree,
 
 		case T_CreatedbStmt:
 			createdb((CreatedbStmt *) parsetree);
+			break;
+
+		case T_AlterDbOwnerStmt:
+			{
+				AlterDbOwnerStmt *stmt = (AlterDbOwnerStmt *) parsetree;
+				AlterDatabaseOwner(stmt->dbname, stmt->uname);
+			}
 			break;
 
 		case T_AlterDatabaseSetStmt:
@@ -1301,6 +1309,10 @@ CreateCommandTag(Node *parsetree)
 
 		case T_CreatedbStmt:
 			tag = "CREATE DATABASE";
+			break;
+
+		case T_AlterDbOwnerStmt:
+			tag = "ALTER DATABASE";
 			break;
 
 		case T_AlterDatabaseSetStmt:
