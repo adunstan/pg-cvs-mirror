@@ -37,7 +37,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/postmaster/postmaster.c,v 1.366 2004/02/11 22:25:02 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/postmaster/postmaster.c,v 1.367 2004/02/17 03:54:56 momjian Exp $
  *
  * NOTES
  *
@@ -840,6 +840,12 @@ PostmasterMain(int argc, char *argv[])
 	reset_shared(PostPortNumber);
 
 	/*
+	 * Estimate number of openable files.  This must happen after setting up
+	 * semaphores, because on some platforms semaphores count as open files.
+	 */
+	set_max_safe_fds();
+
+	/*
 	 * Initialize the list of active backends.
 	 */
 	BackendList = DLNewList();
@@ -848,13 +854,10 @@ PostmasterMain(int argc, char *argv[])
 	/*
 	 * Initialize the child pid/HANDLE arrays
 	 */
-	/* FIXME: [fork/exec] Ideally, we would resize these arrays with changes
-	 *  in MaxBackends, but this'll do as a first order solution.
-	 */
 	win32_childPIDArray = (pid_t*)malloc(NUM_BACKENDARRAY_ELEMS*sizeof(pid_t));
 	win32_childHNDArray = (HANDLE*)malloc(NUM_BACKENDARRAY_ELEMS*sizeof(HANDLE));
 	if (!win32_childPIDArray || !win32_childHNDArray)
-		ereport(LOG,
+		ereport(FATAL,
 				(errcode(ERRCODE_OUT_OF_MEMORY),
 				 errmsg("out of memory")));
 #endif

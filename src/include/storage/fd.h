@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/storage/fd.h,v 1.41 2003/12/20 17:31:21 momjian Exp $
+ * $PostgreSQL: pgsql-server/src/include/storage/fd.h,v 1.42 2004/01/26 22:35:32 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -71,6 +71,7 @@ extern int	FreeFile(FILE *);
 extern int	BasicOpenFile(FileName fileName, int fileFlags, int fileMode);
 
 /* Miscellaneous support routines */
+extern void set_max_safe_fds(void);
 extern void closeAllVfds(void);
 extern void AtEOXact_Files(void);
 extern void RemovePgTempFiles(void);

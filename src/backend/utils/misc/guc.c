@@ -10,7 +10,7 @@
  * Written by Peter Eisentraut <peter_e@gmx.net>.
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/utils/misc/guc.c,v 1.186 2004/02/06 19:36:18 wieck Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/misc/guc.c,v 1.187 2004/02/17 03:54:57 momjian Exp $
  *
  *--------------------------------------------------------------------
  */
@@ -1102,7 +1102,7 @@ static struct config_int ConfigureNamesInt[] =
 	},
 
 	{
-		{"max_files_per_process", PGC_BACKEND, RESOURCES_KERNEL,
+		{"max_files_per_process", PGC_POSTMASTER, RESOURCES_KERNEL,
 			gettext_noop("Sets the maximum number of simultaneously open files for each server process."),
 			NULL
 		},
