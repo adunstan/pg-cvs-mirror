@@ -5,7 +5,7 @@
 # Portions Copyright (c) 1996-2002, PostgreSQL Global Development Group
 # Portions Copyright (c) 1994, Regents of the University of California
 #
-# $PostgreSQL: pgsql-server/src/bin/psql/Makefile,v 1.39 2004/02/19 19:40:08 tgl Exp $
+# $PostgreSQL: pgsql-server/src/bin/psql/Makefile,v 1.40 2004/03/09 19:47:05 petere Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -15,7 +15,7 @@ include $(top_builddir)/src/Makefile.global
 
 REFDOCDIR= $(top_srcdir)/doc/src/sgml/ref
 
-override CPPFLAGS := -I$(libpq_srcdir) $(CPPFLAGS) -DFRONTEND
+override CPPFLAGS := -I$(libpq_srcdir) $(CPPFLAGS) -DFRONTEND -DSYSCONFDIR='"$(sysconfdir)"'
 
 OBJS=	command.o common.o help.o input.o stringutils.o mainloop.o copy.o \
 	startup.o prompt.o variables.o large_obj.o print.o describe.o \
@@ -50,6 +50,7 @@ distprep: $(srcdir)/sql_help.h $(srcdir)/psqlscan.c
 
 install: all installdirs
 	$(INSTALL_PROGRAM) psql$(X) $(DESTDIR)$(bindir)/psql$(X)
+	$(INSTALL_DATA) $(srcdir)/psql.rc.sample $(DESTDIR)$(datadir)/psql.rc.sample
 
 installdirs:
 	$(mkinstalldirs) $(DESTDIR)$(bindir)
