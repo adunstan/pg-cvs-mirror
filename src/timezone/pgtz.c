@@ -1,12 +1,12 @@
 /*-------------------------------------------------------------------------
  *
  * pgtz.c
- *    Timezone Library Integration Functions
+ *	  Timezone Library Integration Functions
  *
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/timezone/pgtz.c,v 1.2 2004/04/30 14:24:14 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/timezone/pgtz.c,v 1.3 2004/04/30 20:23:28 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -16,27 +16,33 @@
 
 
 static char tzdir[MAXPGPATH];
-static int done_tzdir = 0;
-char *pgwin32_TZDIR(void) {
-	char *p;
+static int	done_tzdir = 0;
+char *
+pg_TZDIR(void)
+{
+	char	   *p;
+
 	if (done_tzdir)
 		return tzdir;
 
 #ifndef WIN32
 	StrNCpy(tzdir, PGDATADIR, MAXPGPATH);
 #else
-	if (GetModuleFileName(NULL,tzdir,MAXPGPATH) == 0)
+	if (GetModuleFileName(NULL, tzdir, MAXPGPATH) == 0)
 		return NULL;
 #endif
-	
+
 	canonicalize_path(tzdir);
+#if 0
 	if ((p = last_path_separator(tzdir)) == NULL)
 		return NULL;
 	else
 		*p = '\0';
-	
-	strcat(tzdir,"/timezone");
+#endif
 
-	done_tzdir=1;
+	strcat(tzdir, "/timezone");
+	puts(tzdir);
+
+	done_tzdir = 1;
 	return tzdir;
 }
