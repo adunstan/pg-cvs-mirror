@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/interfaces/libpq/fe-exec.c,v 1.157 2004/03/05 01:53:59 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/interfaces/libpq/fe-exec.c,v 1.158 2004/03/14 22:00:54 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1904,8 +1904,7 @@ PQfnumber(const PGresult *res, const char *field_name)
 		}
 		else
 		{
-			if (isupper((unsigned char) c))
-				c = tolower((unsigned char) c);
+			c = pg_tolower((unsigned char) c);
 			*optr++ = c;
 		}
 	}

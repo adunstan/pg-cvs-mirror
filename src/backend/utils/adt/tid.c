@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/adt/tid.c,v 1.41 2003/09/25 06:58:04 petere Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/adt/tid.c,v 1.42 2003/11/29 19:51:59 pgsql Exp $
  *
  * NOTES
  *	  input routine largely stolen from boxin().
@@ -218,7 +218,7 @@ currtid_for_view(Relation viewrel, ItemPointer tid)
 
 	for (i = 0; i < natts; i++)
 	{
-		if (strcasecmp(NameStr(att->attrs[i]->attname), "ctid") == 0)
+		if (strcmp(NameStr(att->attrs[i]->attname), "ctid") == 0)
 		{
 			if (att->attrs[i]->atttypid != TIDOID)
 				elog(ERROR, "ctid isn't of type TID");

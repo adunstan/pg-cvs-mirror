@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/interfaces/libpq/fe-protocol3.c,v 1.11 2003/12/28 17:43:57 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/interfaces/libpq/fe-protocol3.c,v 1.12 2004/03/21 22:29:11 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1471,7 +1471,7 @@ build_startup_packet(const PGconn *conn, char *packet,
 
 		if ((val = getenv(next_eo->envName)) != NULL)
 		{
-			if (strcasecmp(val, "default") != 0)
+			if (pg_strcasecmp(val, "default") != 0)
 			{
 				if (packet)
 					strcpy(packet + packet_len, next_eo->pgName);

@@ -14,7 +14,7 @@
  * Copyright (c) 1998-2003, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/utils/adt/numeric.c,v 1.71 2004/02/04 01:11:47 neilc Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/adt/numeric.c,v 1.72 2004/03/15 03:29:22 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -315,7 +315,7 @@ numeric_in(PG_FUNCTION_ARGS)
 	/*
 	 * Check for NaN
 	 */
-	if (strcasecmp(str, "NaN") == 0)
+	if (pg_strcasecmp(str, "NaN") == 0)
 		PG_RETURN_NUMERIC(make_result(&const_nan));
 
 	/*

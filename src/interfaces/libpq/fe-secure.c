@@ -11,7 +11,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/interfaces/libpq/fe-secure.c,v 1.38 2004/03/24 03:44:59 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/interfaces/libpq/fe-secure.c,v 1.39 2004/03/27 03:08:42 tgl Exp $
  *
  * NOTES
  *	  The client *requires* a valid server certificate.  Since
@@ -544,7 +544,7 @@ verify_peer(PGconn *conn)
 	 */
 	for (s = h->h_aliases; *s != NULL; s++)
 	{
-		if (strcasecmp(conn->peer_cn, *s) == 0)
+		if (pg_strcasecmp(conn->peer_cn, *s) == 0)
 			return 0;
 	}
 

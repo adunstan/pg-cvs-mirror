@@ -26,7 +26,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $PostgreSQL: mhash.c,v 1.8 2003/07/24 17:52:33 tgl Exp $
+ * $PostgreSQL: pgsql-server/contrib/pgcrypto/mhash.c,v 1.9 2003/11/29 22:39:28 pgsql Exp $
  */
 
 #include <postgres.h>
@@ -217,9 +217,9 @@ find_hashid(const char *name)
 		mname = mhash_get_hash_name(i);
 		if (mname == NULL)
 			continue;
-		b = strcasecmp(name, mname);
+		b = pg_strcasecmp(name, mname);
 		free(mname);
-		if (!b)
+		if (b == 0)
 		{
 			res = i;
 			break;
@@ -312,7 +312,7 @@ px_find_cipher(const char *name, PX_Cipher ** res)
 
 	PX_Cipher  *c;
 
-	strcpy(nbuf, name);
+	StrNCpy(nbuf, name, sizeof(nbuf));
 
 	if ((p = strrchr(nbuf, '-')) != NULL)
 	{

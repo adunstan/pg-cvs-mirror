@@ -7,7 +7,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/adt/encode.c,v 1.9 2003/09/25 06:58:03 petere Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/adt/encode.c,v 1.10 2003/11/29 19:51:58 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -549,7 +549,7 @@ pg_find_encoding(const char *name)
 	int			i;
 
 	for (i = 0; enclist[i].name; i++)
-		if (strcasecmp(enclist[i].name, name) == 0)
+		if (pg_strcasecmp(enclist[i].name, name) == 0)
 			return &enclist[i].enc;
 
 	return NULL;

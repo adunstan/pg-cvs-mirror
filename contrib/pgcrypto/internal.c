@@ -26,7 +26,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $PostgreSQL: internal.c,v 1.11 2002/01/03 07:21:48 momjian Exp $
+ * $PostgreSQL: pgsql-server/contrib/pgcrypto/internal.c,v 1.12 2003/11/29 22:39:28 pgsql Exp $
  */
 
 
@@ -561,7 +561,7 @@ px_find_digest(const char *name, PX_MD ** res)
 	PX_MD	   *h;
 
 	for (p = int_digest_list; p->name; p++)
-		if (!strcasecmp(p->name, name))
+		if (pg_strcasecmp(p->name, name) == 0)
 		{
 			h = px_alloc(sizeof(*h));
 			p->init(h);

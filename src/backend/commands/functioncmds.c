@@ -10,7 +10,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/commands/functioncmds.c,v 1.43 2004/01/06 23:55:18 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/commands/functioncmds.c,v 1.44 2004/02/21 00:34:52 tgl Exp $
  *
  * DESCRIPTION
  *	  These routines take the parse tree and pick out the
@@ -328,9 +328,9 @@ compute_attributes_with_style(List *parameters, bool *isStrict_p, char *volatili
 	{
 		DefElem    *param = (DefElem *) lfirst(pl);
 
-		if (strcasecmp(param->defname, "isstrict") == 0)
+		if (pg_strcasecmp(param->defname, "isstrict") == 0)
 			*isStrict_p = true;
-		else if (strcasecmp(param->defname, "iscachable") == 0)
+		else if (pg_strcasecmp(param->defname, "iscachable") == 0)
 		{
 			/* obsolete spelling of isImmutable */
 			*volatility_p = PROVOLATILE_IMMUTABLE;

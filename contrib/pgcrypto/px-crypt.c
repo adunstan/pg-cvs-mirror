@@ -26,7 +26,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $PostgreSQL: px-crypt.c,v 1.6 2001/11/20 18:54:07 momjian Exp $
+ * $PostgreSQL: pgsql-server/contrib/pgcrypto/px-crypt.c,v 1.7 2003/11/29 22:39:28 pgsql Exp $
  */
 
 #include <postgres.h>
@@ -170,7 +170,7 @@ px_gen_salt(const char *salt_type, char *buf, int rounds)
 	for (i = 0; gen_list[i].name; i++)
 	{
 		g = &gen_list[i];
-		if (strcasecmp(g->name, salt_type) != 0)
+		if (pg_strcasecmp(g->name, salt_type) != 0)
 			continue;
 
 		if (g->def_rounds)
