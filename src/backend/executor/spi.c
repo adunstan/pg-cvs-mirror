@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/executor/spi.c,v 1.119 2004/07/01 00:50:26 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/executor/spi.c,v 1.120 2004/07/01 21:17:13 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1181,18 +1181,16 @@ _SPI_execute(const char *src, int tcount, _SPI_plan *plan)
 					res = SPI_ERROR_CURSOR;
 					goto fail;
 				}
+				else if (IsA(queryTree->utilityStmt, TransactionStmt))
+				{
+					res = SPI_ERROR_TRANSACTION;
+					goto fail;
+				}
 				res = SPI_OK_UTILITY;
 				if (plan == NULL)
 				{
 					ProcessUtility(queryTree->utilityStmt, dest, NULL);
-
-					if (IsA(queryTree->utilityStmt, TransactionStmt))
-					{
-						CommitTransactionCommand();
-						StartTransactionCommand();
-					}
-					else
-						CommandCounterIncrement();
+					CommandCounterIncrement();
 				}
 			}
 			else if (plan == NULL)
@@ -1308,14 +1306,7 @@ _SPI_execute_plan(_SPI_plan *plan, Datum *Values, const char *Nulls,
 			{
 				ProcessUtility(queryTree->utilityStmt, dest, NULL);
 				res = SPI_OK_UTILITY;
-
-				if (IsA(queryTree->utilityStmt, TransactionStmt))
-				{
-					CommitTransactionCommand();
-					StartTransactionCommand();
-				}
-				else
-					CommandCounterIncrement();
+				CommandCounterIncrement();
 			}
 			else
 			{
