@@ -3,7 +3,7 @@
  *			  procedural language
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/pl/plpgsql/src/pl_exec.c,v 1.122 2004/11/21 22:27:34 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/pl/plpgsql/src/pl_exec.c,v 1.123 2004/11/30 03:50:29 neilc Exp $
  *
  *	  This software is copyrighted by Jan Wieck - Hamburg.
  *
@@ -4023,6 +4023,9 @@ exec_simple_check_node(Node *node)
 
 		case T_RelabelType:
 			return exec_simple_check_node((Node *) ((RelabelType *) node)->arg);
+
+		case T_ConvertRowtypeExpr:
+			return exec_simple_check_node((Node *) ((ConvertRowtypeExpr *) node)->arg);
 
 		case T_CaseExpr:
 			{
