@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/storage/ipc/sinvaladt.c,v 1.52 2003/08/04 02:40:03 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/storage/ipc/sinvaladt.c,v 1.53 2003/11/29 19:51:56 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -50,10 +50,13 @@ SIBufferInit(int maxBackends)
 	int			segSize;
 	SISeg	   *segP;
 	int			i;
+	bool found;
 
 	/* Allocate space in shared memory */
 	segSize = SInvalShmemSize(maxBackends);
-	shmInvalBuffer = segP = (SISeg *) ShmemAlloc(segSize);
+	shmInvalBuffer = segP = (SISeg *) ShmemInitStruct("shmInvalBuffer",segSize,&found);
+	if (found)
+		return;
 
 	/* Clear message counters, save size of procState array */
 	segP->minMsgNum = 0;

@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/storage/lock.h,v 1.74 2003/11/29 22:41:13 pgsql Exp $
+ * $PostgreSQL: pgsql-server/src/include/storage/lock.h,v 1.75 2003/12/01 21:59:25 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -86,8 +86,6 @@ typedef uint16 LOCKMETHODID;
  */
 typedef struct LockMethodData
 {
-	HTAB		   *lockHash;
-	HTAB		   *proclockHash;
 	LOCKMETHODID	lockmethodid;
 	int				numLockModes;
 	LOCKMASK		conflictTab[MAX_LOCKMODES];

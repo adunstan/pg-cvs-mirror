@@ -13,7 +13,7 @@
  *
  *	Copyright (c) 2001-2003, PostgreSQL Global Development Group
  *
- *	$PostgreSQL: /cvsroot/pgsql-server/src/backend/postmaster/pgstat.c,v 1.47 2003/11/15 17:24:07 tgl Exp $
+ *	$PostgreSQL: pgsql-server/src/backend/postmaster/pgstat.c,v 1.48 2003/11/29 19:51:55 pgsql Exp $
  * ----------
  */
 #include "postgres.h"
@@ -71,7 +71,7 @@ bool		pgstat_is_running = false;
  * Local data
  * ----------
  */
-static int	pgStatSock = -1;
+NON_EXEC_STATIC int	pgStatSock = -1;
 static int	pgStatPipe[2];
 static struct sockaddr_storage pgStatAddr;
 static int	pgStatPmPipe[2] = {-1, -1};
