@@ -18,7 +18,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/postmaster/syslogger.c,v 1.3 2004/08/06 16:06:59 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/postmaster/syslogger.c,v 1.4 2004/08/06 19:17:31 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -29,6 +29,7 @@
 #include <time.h>
 #include <unistd.h>
 #include <sys/stat.h>
+#include <sys/time.h>
 
 #include "libpq/pqsignal.h"
 #include "miscadmin.h"
