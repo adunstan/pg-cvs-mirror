@@ -37,7 +37,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/postmaster/postmaster.c,v 1.370 2004/03/05 01:11:04 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/postmaster/postmaster.c,v 1.371 2004/03/09 04:43:06 momjian Exp $
  *
  * NOTES
  *
@@ -2720,6 +2720,9 @@ SubPostmasterMain(int argc, char* argv[])
 	/* Read in file-based context */
 	read_nondefault_variables();
 	read_backend_variables(backendID,&port);
+
+	/* Remaining initialization */
+	pgstat_init_forkexec_backend();
 
 	/* FIXME: [fork/exec] Ugh */
 	load_hba();
