@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/access/transam/transam.c,v 1.57 2004/07/01 00:49:42 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/access/transam/transam.c,v 1.58 2004/08/22 02:41:57 tgl Exp $
  *
  * NOTES
  *	  This file contains the high level access-method interface to the
@@ -258,6 +258,7 @@ TransactionIdDidAbort(TransactionId transactionId)
 		if (TransactionIdPrecedes(transactionId, RecentXmin))
 			return true;
 		parentXid = SubTransGetParent(transactionId);
+		Assert(TransactionIdIsValid(parentXid));
 		return TransactionIdDidAbort(parentXid);
 	}
 
