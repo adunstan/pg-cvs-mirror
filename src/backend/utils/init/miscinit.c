@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/init/miscinit.c,v 1.116 2003/09/26 15:27:37 petere Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/init/miscinit.c,v 1.117 2003/11/29 19:52:01 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -508,7 +508,7 @@ CreateLockFile(const char *filename, bool amPostmaster,
 					 errmsg("could not open lock file \"%s\": %m",
 							filename)));
 		}
-		if ((len = read(fd, buffer, sizeof(buffer) - 1)) <= 0)
+		if ((len = read(fd, buffer, sizeof(buffer) - 1)) < 0)
 			ereport(FATAL,
 					(errcode_for_file_access(),
 					 errmsg("could not read lock file \"%s\": %m",
@@ -728,7 +728,7 @@ RecordSharedMemoryInLockFile(unsigned long id1, unsigned long id2)
 		return;
 	}
 	len = read(fd, buffer, sizeof(buffer) - 100);
-	if (len <= 0)
+	if (len < 0)
 	{
 		ereport(LOG,
 				(errcode_for_file_access(),
