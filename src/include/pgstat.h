@@ -5,7 +5,7 @@
  *
  *	Copyright (c) 2001-2003, PostgreSQL Global Development Group
  *
- *	$PostgreSQL: pgsql-server/src/include/pgstat.h,v 1.21 2004/03/09 05:11:53 momjian Exp $
+ *	$PostgreSQL: pgsql-server/src/include/pgstat.h,v 1.22 2004/05/28 05:13:25 tgl Exp $
  * ----------
  */
 #ifndef PGSTAT_H
@@ -349,7 +349,6 @@ extern bool pgstat_is_running;
 extern void pgstat_init(void);
 extern void pgstat_start(void);
 extern bool pgstat_ispgstat(int pid);
-extern void pgstat_close_sockets(void);
 extern void pgstat_beterm(int pid);
 
 #ifdef EXEC_BACKEND

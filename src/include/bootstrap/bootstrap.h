@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/bootstrap/bootstrap.h,v 1.33 2003/11/29 22:40:56 pgsql Exp $
+ * $PostgreSQL: pgsql-server/src/include/bootstrap/bootstrap.h,v 1.34 2004/05/28 05:13:21 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -58,8 +58,6 @@ extern void Int_yyerror(const char *str);
 #define BS_XLOG_NOP			0
 #define BS_XLOG_BOOTSTRAP	1
 #define BS_XLOG_STARTUP		2
-#define BS_XLOG_CHECKPOINT	3
-#define BS_XLOG_BGWRITER	4
-#define BS_XLOG_SHUTDOWN	5
+#define BS_XLOG_BGWRITER	3
 
 #endif   /* BOOTSTRAP_H */

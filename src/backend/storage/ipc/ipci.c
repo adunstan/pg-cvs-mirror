@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/storage/ipc/ipci.c,v 1.66 2004/04/19 23:27:17 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/storage/ipc/ipci.c,v 1.67 2004/05/28 05:13:03 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -18,6 +18,7 @@
 #include "miscadmin.h"
 #include "access/clog.h"
 #include "access/xlog.h"
+#include "postmaster/bgwriter.h"
 #include "storage/bufmgr.h"
 #include "storage/freespace.h"
 #include "storage/ipc.h"
@@ -72,6 +73,7 @@ CreateSharedMemoryAndSemaphores(bool makePrivate,
 		size += LWLockShmemSize();
 		size += SInvalShmemSize(maxBackends);
 		size += FreeSpaceShmemSize();
+		size += BgWriterShmemSize();
 #ifdef EXEC_BACKEND
 		size += ShmemBackendArraySize();
 #endif
@@ -155,9 +157,10 @@ CreateSharedMemoryAndSemaphores(bool makePrivate,
 	InitFreeSpaceMap();
 
 	/*
-	 * Set up child-to-postmaster signaling mechanism
+	 * Set up interprocess signaling mechanisms
 	 */
 	PMSignalInit();
+	BgWriterShmemInit();
 
 #ifdef EXEC_BACKEND
 	/*

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/utils/init/globals.c,v 1.87 2004/05/18 03:36:36 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/init/globals.c,v 1.88 2004/05/28 05:13:15 tgl Exp $
  *
  * NOTES
  *	  Globals used all over the place should be declared here and not
@@ -85,7 +85,10 @@ bool		enableFsync = true;
 bool		allowSystemTableMods = false;
 int			work_mem = 1024;
 int			maintenance_work_mem = 16384;
+
+/* Primary determinants of sizes of shared-memory structures: */
 int			NBuffers = 1000;
+int			MaxBackends = 100;
 
 int			VacuumCostPageHit = 1;			/* GUC parameters for vacuum */
 int			VacuumCostPageMiss = 10;

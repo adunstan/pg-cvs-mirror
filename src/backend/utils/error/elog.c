@@ -37,7 +37,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/utils/error/elog.c,v 1.137 2004/05/21 05:08:02 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/error/elog.c,v 1.138 2004/05/28 03:11:15 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -57,6 +57,7 @@
 #include "mb/pg_wchar.h"
 #include "miscadmin.h"
 #include "pgtime.h"
+#include "postmaster/postmaster.h"
 #include "storage/ipc.h"
 #include "tcop/tcopprot.h"
 #include "utils/memutils.h"
