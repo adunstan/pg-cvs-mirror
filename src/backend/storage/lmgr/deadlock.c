@@ -12,7 +12,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/storage/lmgr/deadlock.c,v 1.25 2003/09/25 06:58:02 petere Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/storage/lmgr/deadlock.c,v 1.26 2003/11/29 19:51:56 pgsql Exp $
  *
  *	Interface:
  *
@@ -428,7 +428,7 @@ FindLockCycleRecurse(PGPROC *checkProc,
 	LOCK	   *lock;
 	PROCLOCK   *proclock;
 	SHM_QUEUE  *lockHolders;
-	LOCKMETHODTABLE *lockMethodTable;
+	LockMethod	lockMethodTable;
 	PROC_QUEUE *waitQueue;
 	int			queue_size;
 	int			conflictMask;
