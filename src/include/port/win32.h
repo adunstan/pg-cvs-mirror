@@ -1,4 +1,4 @@
-/* $PostgreSQL: pgsql/src/include/port/win32.h,v 1.39 2004/10/06 17:47:53 momjian Exp $ */
+/* $PostgreSQL: pgsql/src/include/port/win32.h,v 1.40 2004/11/17 00:14:14 tgl Exp $ */
 
 /* undefine and redefine after #include */
 #undef mkdir
@@ -209,6 +209,10 @@ typedef int gid_t;
 #define gid_t int
 #endif
 typedef long key_t;
+
+#ifdef WIN32_CLIENT_ONLY
+typedef int pid_t;
+#endif
 
 /*
  * Supplement to <sys/stat.h>.
