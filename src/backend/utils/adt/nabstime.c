@@ -10,7 +10,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/utils/adt/nabstime.c,v 1.120 2004/05/05 17:28:46 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/adt/nabstime.c,v 1.121 2004/05/21 05:08:02 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -19,6 +19,7 @@
 #include <ctype.h>
 #include <float.h>
 #include <limits.h>
+#include <sys/time.h>
 
 #include "access/xact.h"
 #include "libpq/pqformat.h"

@@ -13,12 +13,13 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/commands/vacuum.c,v 1.274 2004/02/12 05:39:55 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/commands/vacuum.c,v 1.275 2004/05/08 19:09:24 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
 #include "postgres.h"
 
+#include <sys/time.h>
 #include <unistd.h>
 
 #include "access/clog.h"
