@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/timezone/pgtz.c,v 1.10 2004/05/21 05:08:06 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/timezone/pgtz.c,v 1.11 2004/05/21 12:30:25 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -303,7 +303,7 @@ void
 pg_timezone_initialize(void)
 {
 	/* Do we need to try to figure the timezone? */
-	if (strcmp(GetConfigOption("timezone"), "UNKNOWN") == 0)
+	if (pg_strcasecmp(GetConfigOption("timezone"), "UNKNOWN") == 0)
 	{
 		const char *def_tz;
 
