@@ -4,13 +4,15 @@
 #
 # Copyright (c) 1998-2002, PostgreSQL Global Development Group
 #
-# $PostgreSQL: pgsql-server/src/bin/pg_controldata/Makefile,v 1.5 2004/02/10 23:24:13 tgl Exp $
+# $PostgreSQL: pgsql-server/src/bin/pg_controldata/Makefile,v 1.6 2004/04/26 17:40:48 momjian Exp $
 #
 #-------------------------------------------------------------------------
 
 subdir = src/bin/pg_controldata
 top_builddir = ../../..
 include $(top_builddir)/src/Makefile.global
+
+override CPPFLAGS += -DFRONTEND
 
 OBJS= pg_controldata.o pg_crc.o
 
