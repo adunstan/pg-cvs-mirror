@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/libpq/pqsignal.c,v 1.37 2004/08/29 05:06:43 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/libpq/pqsignal.c,v 1.38 2004/12/31 21:59:50 pgsql Exp $
  *
  * NOTES
  *		This shouldn't be in libpq, but the monitor and some other
@@ -75,7 +75,10 @@ void
 pqinitmask(void)
 {
 #ifdef HAVE_SIGPROCMASK
+
 	sigemptyset(&UnBlockSig);
+
+	/* First set all signals, then clear some. */
 	sigfillset(&BlockSig);
 	sigfillset(&AuthBlockSig);
 
@@ -126,6 +129,7 @@ pqinitmask(void)
 	sigdelset(&AuthBlockSig, SIGALRM);
 #endif
 #else
+	/* Set the signals we want. */
 	UnBlockSig = 0;
 	BlockSig = sigmask(SIGHUP) | sigmask(SIGQUIT) |
 		sigmask(SIGTERM) | sigmask(SIGALRM) |
