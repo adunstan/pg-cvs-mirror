@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/port/path.c,v 1.20 2004/06/11 17:09:13 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/port/path.c,v 1.21 2004/07/10 22:58:42 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -389,7 +389,26 @@ static void
 trim_trailing_separator(char *path)
 {
 	char *p = path + strlen(path);
-	
+
+#ifdef WIN32
+    /* Skip over network and drive specifiers for win32 */
+    if (strlen(path) >= 2)
+    {
+        if (IS_DIR_SEP(path[0]) && IS_DIR_SEP(path[1]))
+        {
+        	path += 2;
+			while (*path && !IS_DIR_SEP(*path))
+				path++;
+		}
+        else if (isalpha(path[0]) && path[1] == ':')
+        {
+            path++;
+	        if (IS_DIR_SEP(path[1]))
+    	    	path++;
+    	}
+    }
+#endif
+
 	/* trim off trailing slashes */
 	if (p > path)
 		for (p--; p > path && IS_DIR_SEP(*p); p--)
