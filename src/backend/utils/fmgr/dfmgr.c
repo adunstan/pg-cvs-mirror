@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/utils/fmgr/dfmgr.c,v 1.71 2004/03/09 05:06:45 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/fmgr/dfmgr.c,v 1.72 2004/05/17 14:35:31 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -350,7 +350,7 @@ substitute_libpath_macro(const char *name)
 		strncmp(name, "$libdir", strlen("$libdir")) != 0)
 		ereport(ERROR,
 				(errcode(ERRCODE_INVALID_NAME),
-				 errmsg("invalid macro name in dynamic library path")));
+				 errmsg("invalid macro name in dynamic library path: %s", name)));
 
 	ret = palloc(strlen(pkglib_path) + strlen(sep_ptr) + 1);
 

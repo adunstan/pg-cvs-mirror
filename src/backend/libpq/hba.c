@@ -10,7 +10,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/libpq/hba.c,v 1.122 2004/05/25 19:11:14 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/libpq/hba.c,v 1.123 2004/05/26 04:41:18 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1345,8 +1345,11 @@ ident_inet(const SockAddr remote_addr,
 	hints.ai_addr = NULL;
 	hints.ai_next = NULL;
 	rc = getaddrinfo_all(remote_addr_s, ident_port, &hints, &ident_serv);
-	if (rc || !ident_serv)
+	if (rc || !ident_serv) {
+		if (ident_serv)
+			freeaddrinfo_all(hints.ai_family, ident_serv);
 		return false;			/* we don't expect this to happen */
+	}
 
 	hints.ai_flags = AI_NUMERICHOST;
 	hints.ai_family = local_addr.addr.ss_family;
@@ -1357,8 +1360,11 @@ ident_inet(const SockAddr remote_addr,
 	hints.ai_addr = NULL;
 	hints.ai_next = NULL;
 	rc = getaddrinfo_all(local_addr_s, NULL, &hints, &la);
-	if (rc || !la)
+	if (rc || !la) {
+		if (la)
+			freeaddrinfo_all(hints.ai_family, la);
 		return false;			/* we don't expect this to happen */
+	}
 
 	sock_fd = socket(ident_serv->ai_family, ident_serv->ai_socktype,
 					 ident_serv->ai_protocol);
