@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/optimizer/prep/prepqual.c,v 1.45 2004/08/29 04:12:34 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/optimizer/prep/prepqual.c,v 1.46 2004/08/29 05:06:44 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -288,7 +288,7 @@ push_nots(Expr *qual)
 										 * possible? */
 
 	/*
-	 * Negate an operator clause if possible: (NOT (< A B)) => (> A B)
+	 * Negate an operator clause if possible: (NOT (< A B)) => (>= A B)
 	 * Otherwise, retain the clause as it is (the NOT can't be pushed down
 	 * any farther).
 	 */
