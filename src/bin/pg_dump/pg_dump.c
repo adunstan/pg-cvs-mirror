@@ -12,7 +12,7 @@
  *	by PostgreSQL
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/bin/pg_dump/pg_dump.c,v 1.376 2004/06/21 13:36:41 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/bin/pg_dump/pg_dump.c,v 1.377 2004/06/25 17:20:26 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -7297,15 +7297,6 @@ dumpSequence(Archive *fout, TableInfo *tbinfo)
 		appendPQExpBuffer(query,
 						  "    CACHE %s%s",
 						  cache, (cycled ? "\n    CYCLE" : ""));
-
-		/* Output tablespace clause if necessary */
-		if (strlen(tbinfo->reltablespace) != 0 &&
-			strcmp(tbinfo->reltablespace,
-				   tbinfo->dobj.namespace->nsptablespace) != 0)
-		{
-			appendPQExpBuffer(query, " TABLESPACE %s",
-							  fmtId(tbinfo->reltablespace));
-		}
 
 		appendPQExpBuffer(query, ";\n");
 

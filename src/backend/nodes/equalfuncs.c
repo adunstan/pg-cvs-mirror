@@ -18,7 +18,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/nodes/equalfuncs.c,v 1.225 2004/06/18 06:13:28 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/nodes/equalfuncs.c,v 1.226 2004/06/25 21:55:54 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1170,7 +1170,6 @@ _equalCreateSeqStmt(CreateSeqStmt *a, CreateSeqStmt *b)
 {
 	COMPARE_NODE_FIELD(sequence);
 	COMPARE_NODE_FIELD(options);
-	COMPARE_STRING_FIELD(tablespacename);
 
 	return true;
 }
