@@ -37,7 +37,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/postmaster/postmaster.c,v 1.367 2004/02/17 03:54:56 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/postmaster/postmaster.c,v 1.368 2004/02/23 20:45:59 tgl Exp $
  *
  * NOTES
  *
@@ -2727,7 +2727,7 @@ SubPostmasterMain(int argc, char* argv[])
 	load_group();
 
 	/* Attach process to shared segments */
-	AttachSharedMemoryAndSemaphores();
+	CreateSharedMemoryAndSemaphores(false, MaxBackends, 0);
 
 	/* Run backend */
 	proc_exit(BackendRun(&port));

@@ -10,7 +10,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/port/sysv_shmem.c,v 1.30 2004/02/02 00:11:31 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/port/sysv_shmem.c,v 1.31 2004/02/08 22:28:56 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -254,7 +254,7 @@ PGSharedMemoryCreate(uint32 size, bool makePrivate, int port)
 	{
 		void* origUsedShmemSegAddr = UsedShmemSegAddr;
 
-#ifdef CYGWIN
+#ifdef __CYGWIN__
 		/* cygipc (currently) appears to not detach on exec. */
 		PGSharedMemoryDetach();
 		UsedShmemSegAddr = origUsedShmemSegAddr;
@@ -373,7 +373,7 @@ PGSharedMemoryDetach(void)
 	if (UsedShmemSegAddr != NULL)
 	{
 		if ((shmdt(UsedShmemSegAddr) < 0)
-#if (defined(EXEC_BACKEND) && defined(CYGWIN))
+#if (defined(EXEC_BACKEND) && defined(__CYGWIN__))
 			/* Work-around for cygipc exec bug */
 			&& shmdt(NULL) < 0
 #endif

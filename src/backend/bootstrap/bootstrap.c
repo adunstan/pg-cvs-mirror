@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/bootstrap/bootstrap.c,v 1.175 2004/01/07 18:56:25 neilc Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/bootstrap/bootstrap.c,v 1.176 2004/02/10 01:55:24 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -428,7 +428,7 @@ BootstrapMain(int argc, char *argv[])
 
 #ifdef EXEC_BACKEND
 	if (IsUnderPostmaster)
-		AttachSharedMemoryAndSemaphores();
+		CreateSharedMemoryAndSemaphores(false, MaxBackends, 0);
 #endif
 	XLOGPathInit();
 
