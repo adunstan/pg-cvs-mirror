@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: /cvsroot/pgsql-server/src/port/sprompt.c,v 1.3 2003/11/11 23:52:45 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/port/sprompt.c,v 1.4 2003/11/29 19:52:13 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -54,8 +54,8 @@ simple_prompt(const char *prompt, int maxlen, bool echo)
 
 #else
 #ifdef WIN32
-	HANDLE		t;
-	LPDWORD		t_orig;
+	HANDLE		t = NULL;
+	LPDWORD		t_orig	= NULL;
 #endif
 #endif
 

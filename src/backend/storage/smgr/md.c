@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/storage/smgr/md.c,v 1.102 2004/02/10 01:55:26 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/storage/smgr/md.c,v 1.103 2004/02/11 22:55:25 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -607,7 +607,7 @@ mdsync(void)
 {
 	sync();
 	if (IsUnderPostmaster)
-		sleep(2);
+		pg_usleep(2000000L);
 	sync();
 	return true;
 }

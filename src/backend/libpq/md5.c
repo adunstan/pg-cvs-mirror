@@ -14,7 +14,7 @@
  *	Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/libpq/md5.c,v 1.22 2003/11/29 19:51:49 pgsql Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/libpq/md5.c,v 1.23 2004/03/24 03:44:58 momjian Exp $
  */
 
 
@@ -33,9 +33,7 @@
 
 #ifdef FRONTEND
 #include "postgres_fe.h"
-#ifndef WIN32
 #include "libpq/crypt.h"
-#endif   /* WIN32 */
 #endif   /* FRONTEND */
 
 #ifdef MD5_ODBC

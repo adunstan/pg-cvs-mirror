@@ -6,7 +6,7 @@
  *
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  *
- * $PostgreSQL$
+ * $PostgreSQL: pgsql-server/src/port/open.c,v 1.1 2004/03/24 03:54:16 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -18,7 +18,8 @@
 #include <errno.h>
 #include <assert.h>
 
-int openFlagsToCreateFileFlags(int openFlags)
+static int
+openFlagsToCreateFileFlags(int openFlags)
 {
 	switch (openFlags & (O_CREAT|O_TRUNC|O_EXCL))
 	{

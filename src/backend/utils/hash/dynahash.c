@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/utils/hash/dynahash.c,v 1.49 2003/11/29 19:52:01 pgsql Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/hash/dynahash.c,v 1.50 2003/12/29 23:54:22 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -85,6 +85,7 @@ DynaHashAlloc(Size size)
 }
 
 #define MEM_ALLOC		DynaHashAlloc
+#undef 	MEM_FREE	/* already in windows header files */
 #define MEM_FREE		pfree
 
 

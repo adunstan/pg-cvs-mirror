@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2003, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql-server/src/bin/psql/startup.c,v 1.86 2004/03/21 22:29:11 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/bin/psql/startup.c,v 1.87 2004/03/24 03:10:29 momjian Exp $
  */
 #include "postgres_fe.h"
 
@@ -573,8 +573,8 @@ process_psqlrc(void)
 	char	   *psqlrc;
 	char	   *home;
 
-#ifdef WIN32
-#define R_OK 0
+#if defined(WIN32) && (!defined(__MINGW32__))
+#define R_OK 4
 #endif
 
 	/* Look for one in the home dir */
