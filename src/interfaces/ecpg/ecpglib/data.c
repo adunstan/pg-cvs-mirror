@@ -1,4 +1,4 @@
-/* $PostgreSQL: /cvsroot/pgsql-server/src/interfaces/ecpg/ecpglib/data.c,v 1.21 2003/11/08 19:46:27 meskes Exp $ */
+/* $PostgreSQL: pgsql-server/src/interfaces/ecpg/ecpglib/data.c,v 1.22 2003/11/29 19:52:08 pgsql Exp $ */
 
 #define POSTGRES_ECPG_INTERNAL
 #include "postgres_fe.h"
@@ -44,7 +44,7 @@ ECPGget_data(const PGresult *results, int act_tuple, int act_field, int lineno,
 	char	   *pval = (char *) PQgetvalue(results, act_tuple, act_field);
 	int			value_for_indicator = 0;
 
-	ECPGlog("ECPGget_data line %d: RESULT: %s offset: %ld array: %d\n", lineno, pval ? pval : "", offset, isarray);
+	ECPGlog("ECPGget_data line %d: RESULT: %s offset: %ld array: %s\n", lineno, pval ? pval : "", offset, isarray?"Yes":"No");
 
 	/* pval is a pointer to the value */
 	/* let's check if it really is an array if it should be one */
