@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2003, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql-server/src/bin/psql/startup.c,v 1.83 2004/01/25 03:07:22 neilc Exp $
+ * $PostgreSQL: pgsql-server/src/bin/psql/startup.c,v 1.84 2004/02/12 19:58:16 momjian Exp $
  */
 #include "postgres_fe.h"
 
@@ -238,11 +238,20 @@ main(int argc, char *argv[])
 	 */
 	else if (options.action == ACT_SINGLE_SLASH)
 	{
+		PsqlScanState scan_state;
+
 		if (VariableEquals(pset.vars, "ECHO", "all"))
 			puts(options.action_string);
 
-		successResult = HandleSlashCmds(options.action_string, NULL, NULL, NULL) != CMD_ERROR
+		scan_state = psql_scan_create();
+		psql_scan_setup(scan_state,
+						options.action_string,
+						strlen(options.action_string));
+
+		successResult = HandleSlashCmds(scan_state, NULL) != CMD_ERROR
 			? EXIT_SUCCESS : EXIT_FAILURE;
+
+		psql_scan_destroy(scan_state);
 	}
 
 	/*
