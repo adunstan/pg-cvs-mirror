@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/utils/adt/datetime.c,v 1.127 2004/05/07 00:24:58 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/adt/datetime.c,v 1.128 2004/05/21 05:08:01 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1209,7 +1209,7 @@ DecodeDateTime(char **field, int *ftype, int nf,
 
 								tmask |= DTK_TIME_M;
 #ifdef HAVE_INT64_TIMESTAMP
-								dt2time((time * 86400000000),
+								dt2time((time * INT64CONST(86400000000)),
 										&tm->tm_hour, &tm->tm_min, &tm->tm_sec, fsec);
 #else
 								dt2time((time * 86400),
@@ -1960,7 +1960,7 @@ DecodeTimeOnly(char **field, int *ftype, int nf,
 
 								tmask |= DTK_TIME_M;
 #ifdef HAVE_INT64_TIMESTAMP
-								dt2time((time * 86400000000),
+								dt2time((time * INT64CONST(86400000000)),
 										&tm->tm_hour, &tm->tm_min, &tm->tm_sec, fsec);
 #else
 								dt2time((time * 86400),
