@@ -10,7 +10,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/access/transam/xact.c,v 1.179 2004/08/25 18:43:42 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/access/transam/xact.c,v 1.180 2004/08/28 20:31:43 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -920,12 +920,12 @@ RecordTransactionAbort(void)
 		 * necessary but we may as well do it while we are here.
 		 *
 		 * The ordering here isn't critical but it seems best to mark the
-		 * parent last.  That reduces the chance that concurrent
-		 * TransactionIdDidAbort calls will decide they need to do redundant
-		 * work.
+		 * parent first.  This assures an atomic transition of all the
+		 * subtransactions to aborted state from the point of view of
+		 * concurrent TransactionIdDidAbort calls.
 		 */
-		TransactionIdAbortTree(nchildren, children);
 		TransactionIdAbort(xid);
+		TransactionIdAbortTree(nchildren, children);
 
 		END_CRIT_SECTION();
 	}
@@ -1062,8 +1062,8 @@ RecordSubTransactionAbort(void)
 		 * Mark the transaction aborted in clog.  This is not absolutely
 		 * necessary but we may as well do it while we are here.
 		 */
-		TransactionIdAbortTree(nchildren, children);
 		TransactionIdAbort(xid);
+		TransactionIdAbortTree(nchildren, children);
 
 		END_CRIT_SECTION();
 	}
