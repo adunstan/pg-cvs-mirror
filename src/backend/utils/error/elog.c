@@ -37,7 +37,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/utils/error/elog.c,v 1.133 2004/04/11 00:54:45 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/error/elog.c,v 1.134 2004/04/16 12:59:05 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1661,6 +1661,11 @@ useful_strerror(int errnum)
 	static char errorstr_buf[48];
 	const char *str;
 
+#ifdef WIN32
+	/* Winsock error code range, per WinError.h */
+	if (errnum >= 10000 && errnum <= 11999)
+		return pgwin32_socket_strerror(errnum);
+#endif
 	str = strerror(errnum);
 
 	/*
