@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/init/postinit.c,v 1.138 2004/11/14 19:35:32 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/init/postinit.c,v 1.139 2004/12/31 22:01:40 pgsql Exp $
  *
  *
  *-------------------------------------------------------------------------
@@ -327,11 +327,6 @@ InitPostgres(const char *dbname, const char *username)
 
 	if (MyBackendId > MaxBackends || MyBackendId <= 0)
 		elog(FATAL, "bad backend id: %d", MyBackendId);
-
-	/*
-	 * Initialize the transaction system override state.
-	 */
-	AmiTransactionOverride(bootstrap);
 
 	/*
 	 * Initialize local process's access to XLOG.  In bootstrap case we
