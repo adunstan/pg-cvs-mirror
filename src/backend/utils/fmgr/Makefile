@@ -4,7 +4,7 @@
 #    Makefile for utils/fmgr
 #
 # IDENTIFICATION
-#    $PostgreSQL: pgsql-server/src/backend/utils/fmgr/Makefile,v 1.14 2003/11/29 19:52:01 pgsql Exp $
+#    $PostgreSQL: pgsql-server/src/backend/utils/fmgr/Makefile,v 1.15 2003/12/23 21:56:20 tgl Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -14,7 +14,7 @@ include $(top_builddir)/src/Makefile.global
 
 OBJS = dfmgr.o fmgr.o funcapi.o
 
-override CPPFLAGS += -DPKGLIBDIR=\"$(pkglibdir)\" -DDLSUFFIX=\"$(DLSUFFIX)\"
+override CPPFLAGS += -DDLSUFFIX=\"$(DLSUFFIX)\"
 
 
 all: SUBSYS.o

@@ -5,7 +5,7 @@
 # Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
 # Portions Copyright (c) 1994, Regents of the University of California
 #
-# $PostgreSQL: pgsql-server/src/bin/initdb/Makefile,v 1.36 2004/04/26 17:40:48 momjian Exp $
+# $PostgreSQL: pgsql-server/src/bin/initdb/Makefile,v 1.37 2004/05/11 21:57:14 momjian Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -13,7 +13,7 @@ subdir = src/bin/initdb
 top_builddir = ../../..
 include $(top_builddir)/src/Makefile.global
 
-override CPPFLAGS := -DPGDATADIR=\"$(datadir)\" -DFRONTEND -I$(libpq_srcdir) $(CPPFLAGS)
+override CPPFLAGS := -DFRONTEND -I$(libpq_srcdir) $(CPPFLAGS)
 
 OBJS=	initdb.o \
 	$(filter exec.o, $(LIBOBJS))

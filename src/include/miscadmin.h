@@ -13,7 +13,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/miscadmin.h,v 1.157 2004/05/11 21:57:15 momjian Exp $
+ * $PostgreSQL: pgsql-server/src/include/miscadmin.h,v 1.158 2004/05/13 22:45:04 momjian Exp $
  *
  * NOTES
  *	  some of the information in this file should be moved to
@@ -143,6 +143,7 @@ extern long MyCancelKey;
 
 extern char OutputFileName[];
 extern char my_exec_path[];
+extern char pkglib_path[];
 
 /*
  * done in storage/backendid.h for now.

@@ -4,15 +4,13 @@
 #    Makefile for the timezone library
 
 # IDENTIFICATION
-#    $PostgreSQL: pgsql-server/src/timezone/Makefile,v 1.6 2004/04/30 20:01:39 momjian Exp $
+#    $PostgreSQL: pgsql-server/src/timezone/Makefile,v 1.7 2004/04/30 20:23:28 momjian Exp $
 #
 #-------------------------------------------------------------------------
 
 subdir = src/timezone
 top_builddir = ../..
 include $(top_builddir)/src/Makefile.global
-
-override CPPFLAGS += -DPGDATADIR=\"$(datadir)\"
 
 OBJS= asctime.o difftime.o localtime.o pgtz.o
 ZICOBJS= zic.o ialloc.o scheck.o localtime.o asctime.o pgtz.o
