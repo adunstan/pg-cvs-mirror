@@ -4,7 +4,7 @@
 #
 # Copyright (c) 1998-2002, PostgreSQL Global Development Group
 #
-# $PostgreSQL: pgsql-server/src/bin/pg_controldata/Makefile,v 1.9 2004/05/26 17:24:01 tgl Exp $
+# $PostgreSQL: pgsql-server/src/bin/pg_config/Makefile,v 1.9 2004/10/04 13:43:55 momjian Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -14,7 +14,7 @@ include $(top_builddir)/src/Makefile.global
 
 OBJS=   pg_config.o
 
-override CPPFLAGS := -I$(libpq_srcdir) -DVAL_CONFIGURE="\"$(configure_args)\"" $(CPPFLAGS)
+override CPPFLAGS := -DFRONTEND -I$(libpq_srcdir) -DVAL_CONFIGURE="\"$(configure_args)\"" $(CPPFLAGS)
 
 all: submake-libpgport pg_config
 

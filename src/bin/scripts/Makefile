@@ -5,7 +5,7 @@
 # Portions Copyright (c) 1996-2002, PostgreSQL Global Development Group
 # Portions Copyright (c) 1994, Regents of the University of California
 #
-# $PostgreSQL: pgsql-server/src/bin/scripts/Makefile,v 1.28 2004/05/26 17:24:05 tgl Exp $
+# $PostgreSQL: pgsql-server/src/bin/scripts/Makefile,v 1.29 2004/10/04 13:43:57 momjian Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -15,7 +15,7 @@ include $(top_builddir)/src/Makefile.global
 
 PROGRAMS = createdb createlang createuser dropdb droplang dropuser clusterdb vacuumdb
 
-override CPPFLAGS := -I$(top_srcdir)/src/bin/pg_dump -I$(top_srcdir)/src/bin/psql -I$(libpq_srcdir) $(CPPFLAGS)
+override CPPFLAGS := -DFRONTEND -I$(top_srcdir)/src/bin/pg_dump -I$(top_srcdir)/src/bin/psql -I$(libpq_srcdir) $(CPPFLAGS)
 
 all: submake-libpq submake-backend $(PROGRAMS)
 
