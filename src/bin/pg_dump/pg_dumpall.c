@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
- * $PostgreSQL: /cvsroot/pgsql-server/src/bin/pg_dump/pg_dumpall.c,v 1.28 2003/09/23 22:48:53 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/bin/pg_dump/pg_dumpall.c,v 1.29 2003/11/29 19:52:05 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -430,6 +430,10 @@ dumpCreateDB(PGconn *conn)
 	else
 	{
 		/*
+		 * In 7.0, datpath is either the same as datname, or the user-given
+		 * location with "/" and the datname appended.  We must strip this
+		 * junk off to produce a correct LOCATION value.
+		 *
 		 * Note: 7.0 fails to cope with sub-select in COALESCE, so just
 		 * deal with getting a NULL by not printing any OWNER clause.
 		 */
@@ -437,7 +441,11 @@ dumpCreateDB(PGconn *conn)
 						   "SELECT datname, "
 				"(select usename from pg_shadow where usesysid=datdba), "
 						   "pg_encoding_to_char(d.encoding), "
-						   "'f' as datistemplate, datpath, '' as datacl "
+						   "'f' as datistemplate, "
+						   "CASE WHEN length(datpath) > length(datname) THEN "
+						   "substr(datpath,1,length(datpath)-length(datname)-1) "
+						   "ELSE '' END as datpath, "
+						   "'' as datacl "
 						   "FROM pg_database d "
 						   "ORDER BY 1");
 	}
