@@ -1,5 +1,5 @@
 <!--
-$PostgreSQL: pgsql-server/doc/src/sgml/ref/create_schema.sgml,v 1.13 2004/06/25 21:55:50 tgl Exp $
+$PostgreSQL: pgsql-server/doc/src/sgml/ref/create_schema.sgml,v 1.14 2004/07/12 01:22:53 momjian Exp $
 PostgreSQL documentation
 -->
 
@@ -162,7 +162,7 @@ CREATE VIEW hollywood.winners AS
   </para>
 
   <para>
-   Create a schema <literal>sales</> whose tables, indexes and sequences
+   Create a schema <literal>sales</> whose tables and indexes
    will be stored in the tablespace <literal>mirrorspace</> by default:
 
 <programlisting>
