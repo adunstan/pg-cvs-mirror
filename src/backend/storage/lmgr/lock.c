@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/storage/lmgr/lock.c,v 1.134 2004/07/01 00:50:59 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/storage/lmgr/lock.c,v 1.135 2004/07/17 03:28:51 tgl Exp $
  *
  * NOTES
  *	  Outside modules can create a lock table and acquire/release
@@ -337,6 +337,9 @@ LockMethodTableRename(LOCKMETHODID lockmethodid)
 	NumLockMethods++;
 
 	LockMethods[newLockMethodId] = LockMethods[lockmethodid];
+	LockMethodLockHash[newLockMethodId] = LockMethodLockHash[lockmethodid];
+	LockMethodProcLockHash[newLockMethodId] = LockMethodProcLockHash[lockmethodid];
+
 	return newLockMethodId;
 }
 
