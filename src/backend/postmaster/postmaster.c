@@ -37,7 +37,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/postmaster/postmaster.c,v 1.433 2004/10/14 20:23:45 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/postmaster/postmaster.c,v 1.434 2004/10/15 04:54:31 momjian Exp $
  *
  * NOTES
  *
@@ -3702,7 +3702,7 @@ win32_waitpid(int *exitstatus)
 
 	for (offset = 0; offset < win32_numChildren; offset += MAXIMUM_WAIT_OBJECTS)
 	{
-		unsigned long num = min(MAXIMUM_WAIT_OBJECTS, win32_numChildren - offset);
+		unsigned long num = Min(MAXIMUM_WAIT_OBJECTS, win32_numChildren - offset);
 
 		ret = WaitForMultipleObjects(num, &win32_childHNDArray[offset], FALSE, 0);
 		switch (ret)
