@@ -1,7 +1,7 @@
 #
 # PostgreSQL top level makefile
 #
-# $PostgreSQL: pgsql-server/GNUmakefile.in,v 1.39 2004/06/13 21:51:36 petere Exp $
+# $PostgreSQL: pgsql-server/GNUmakefile.in,v 1.40 2004/07/30 12:26:39 petere Exp $
 #
 
 subdir =
@@ -15,18 +15,15 @@ all:
 	@echo "All of PostgreSQL successfully made. Ready to install."
 
 install:
-	$(MAKE) -C doc install
-	$(MAKE) -C src install
-	$(MAKE) -C config install
+	$(MAKE) -C doc $@
+	$(MAKE) -C src $@
+	$(MAKE) -C config $@
 	@echo "PostgreSQL installation complete."
 
 installdirs uninstall distprep:
 	$(MAKE) -C doc $@
 	$(MAKE) -C src $@
 	$(MAKE) -C config $@
-
-install-all-headers:
-	$(MAKE) -C src $@
 
 # clean, distclean, etc should apply to contrib too, even though
 # it's not built by default
