@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/executor/executor.h,v 1.112 2004/08/29 05:06:56 momjian Exp $
+ * $PostgreSQL: pgsql-server/src/include/executor/executor.h,v 1.113 2004/09/13 20:07:52 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -85,8 +85,11 @@ extern TupleHashEntry LookupTupleHashEntry(TupleHashTable hashtable,
 /*
  * prototypes from functions in execJunk.c
  */
-extern JunkFilter *ExecInitJunkFilter(List *targetList, TupleDesc tupType,
+extern JunkFilter *ExecInitJunkFilter(List *targetList, bool hasoid,
 				   TupleTableSlot *slot);
+extern JunkFilter *ExecInitJunkFilterConversion(List *targetList,
+												TupleDesc cleanTupType,
+												TupleTableSlot *slot);
 extern bool ExecGetJunkAttribute(JunkFilter *junkfilter, TupleTableSlot *slot,
 					 char *attrName, Datum *value, bool *isNull);
 extern HeapTuple ExecRemoveJunk(JunkFilter *junkfilter, TupleTableSlot *slot);
