@@ -11,7 +11,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: /cvsroot/pgsql-server/src/interfaces/libpq/fe-secure.c,v 1.32 2003/09/29 16:38:04 petere Exp $
+ *	  $PostgreSQL: pgsql-server/src/interfaces/libpq/fe-secure.c,v 1.33 2003/11/29 19:52:12 pgsql Exp $
  *
  * NOTES
  *	  The client *requires* a valid server certificate.  Since
@@ -1003,6 +1003,12 @@ close_SSL(PGconn *conn)
 		SSL_shutdown(conn->ssl);
 		SSL_free(conn->ssl);
 		conn->ssl = NULL;
+	}
+
+	if (conn->peer)
+	{
+		X509_free(conn->peer);
+		conn->peer = NULL;
 	}
 }
 
