@@ -7,7 +7,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/port/exec.c,v 1.21 2004/08/09 20:20:46 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/port/exec.c,v 1.22 2004/08/16 01:26:31 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -402,7 +402,7 @@ static char *pipe_read_line(char *cmd, char *line, int maxsize)
 			 *	We emulate fgets() behaviour. So if there is no newline
 			 *	at the end, we add one...
 			 */
-			if (line[len-1] != '\n')
+			if (len == 0 || line[len-1] != '\n')
 				strcat(line,"\n");
 		}
 
