@@ -13,7 +13,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/catalog/namespace.c,v 1.70 2004/08/29 05:06:41 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/catalog/namespace.c,v 1.71 2004/09/16 16:58:27 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1675,7 +1675,7 @@ InitTempTableNamespace(void)
 		 * that access the temp namespace for my own backend skip
 		 * permissions checks on it.
 		 */
-		namespaceId = NamespaceCreate(namespaceName, BOOTSTRAP_USESYSID, 0);
+		namespaceId = NamespaceCreate(namespaceName, BOOTSTRAP_USESYSID);
 		/* Advance command counter to make namespace visible */
 		CommandCounterIncrement();
 	}
