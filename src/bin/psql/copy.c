@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2003, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql-server/src/bin/psql/copy.c,v 1.34 2003/11/29 19:52:06 pgsql Exp $
+ * $PostgreSQL: pgsql-server/src/bin/psql/copy.c,v 1.35 2003/12/01 22:14:40 momjian Exp $
  */
 #include "postgres_fe.h"
 #include "copy.h"
@@ -221,6 +221,7 @@ parse_slash_copy(const char *args)
 		result->file = NULL;
 	else
 		result->file = xstrdup(token);
+	expand_tilde(&result->file);
 
 	token = strtokx(NULL, whitespace, NULL, NULL,
 					0, false, pset.encoding);

@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2003, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql-server/src/bin/psql/common.h,v 1.30 2003/11/29 19:52:06 pgsql Exp $
+ * $PostgreSQL: pgsql-server/src/bin/psql/common.h,v 1.31 2003/12/01 22:14:40 momjian Exp $
  */
 #ifndef COMMON_H
 #define COMMON_H
@@ -57,5 +57,7 @@ extern char parse_char(char **buf);
 #define popen(x,y) _popen(x,y)
 #define pclose(x) _pclose(x)
 #endif
+
+extern char *expand_tilde(char **filename);
 
 #endif   /* COMMON_H */
