@@ -10,7 +10,7 @@
  * Written by Peter Eisentraut <peter_e@gmx.net>.
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/utils/misc/guc.c,v 1.187 2004/02/17 03:54:57 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/misc/guc.c,v 1.188 2004/02/23 20:45:59 tgl Exp $
  *
  *--------------------------------------------------------------------
  */
@@ -1494,6 +1494,16 @@ static struct config_string ConfigureNamesString[] =
 		&log_min_error_statement_str,
 		"panic", assign_min_error_statement, NULL
 	},
+
+	{
+		{"log_line_prefix", PGC_SIGHUP, LOGGING_WHAT,
+		 gettext_noop("Controls information prefixed to each log line"),
+		 gettext_noop("if blank no prefix is used")
+		},
+		&Log_line_prefix,
+		"", NULL, NULL
+	},
+
 
 	{
 		{"DateStyle", PGC_USERSET, CLIENT_CONN_LOCALE,

@@ -37,7 +37,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/postmaster/postmaster.c,v 1.369 2004/02/25 19:41:22 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/postmaster/postmaster.c,v 1.370 2004/03/05 01:11:04 momjian Exp $
  *
  * NOTES
  *
@@ -2437,6 +2437,7 @@ BackendInit(Port *port)
 	/* set these to empty in case they are needed before we set them up */
 	port->remote_host = "";
 	port->remote_port = "";
+	port->commandTag = "";
 
 	/* Save port etc. for ps status */
 	MyProcPort = port;
@@ -2489,7 +2490,7 @@ BackendInit(Port *port)
 		/* modify remote_host for use in ps status */
 		char		tmphost[NI_MAXHOST];
 
-		snprintf(tmphost, sizeof(tmphost), "%s:%s", remote_host, remote_port);
+		snprintf(tmphost, sizeof(tmphost), "%s(%s)", remote_host, remote_port);
 		StrNCpy(remote_host, tmphost, sizeof(remote_host));
 	}
 

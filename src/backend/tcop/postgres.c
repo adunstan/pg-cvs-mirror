@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/tcop/postgres.c,v 1.392 2004/02/17 04:09:26 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/tcop/postgres.c,v 1.393 2004/02/21 06:29:58 tgl Exp $
  *
  * NOTES
  *	  this is the "main" module of the postgres backend and
@@ -3198,7 +3198,7 @@ ShowUsage(const char *title)
 static void 
 log_disconnections(int code, Datum arg)
 {
-	Port * port = MyProcPort;
+	Port *port = MyProcPort;
 	struct timeval end;
 	int  hours, minutes, seconds;
 
