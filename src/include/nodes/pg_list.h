@@ -30,7 +30,7 @@
  * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/nodes/pg_list.h,v 1.48 2004/08/29 04:13:07 momjian Exp $
+ * $PostgreSQL: pgsql-server/src/include/nodes/pg_list.h,v 1.49 2004/08/29 05:06:57 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -167,8 +167,8 @@ extern int	list_length(List *l);
  *	  a convenience macro which loops through a list starting from a
  *	  specified cell
  */
-#define for_each_cell(cell, l)	\
-	for ((cell) = (l); (cell) != NULL; (cell) = lnext(cell))
+#define for_each_cell(cell, initcell)	\
+	for ((cell) = (initcell); (cell) != NULL; (cell) = lnext(cell))
 
 /*
  * forboth -
