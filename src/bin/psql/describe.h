@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2003, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql-server/src/bin/psql/describe.h,v 1.22 2003/11/29 19:52:06 pgsql Exp $
+ * $PostgreSQL: pgsql-server/src/bin/psql/describe.h,v 1.23 2003/12/01 22:21:54 momjian Exp $
  */
 #ifndef DESCRIBE_H
 #define DESCRIBE_H
@@ -12,6 +12,9 @@
 
 /* \da */
 bool		describeAggregates(const char *pattern, bool verbose);
+
+/* \db */
+bool		describeTablespaces(const char *pattern);
 
 /* \df */
 bool		describeFunctions(const char *pattern, bool verbose);

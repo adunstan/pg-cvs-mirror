@@ -39,7 +39,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  * Portions taken from FreeBSD.
  *
- * $PostgreSQL: pgsql-server/src/bin/initdb/initdb.c,v 1.36 2004/06/10 16:35:16 momjian Exp $
+ * $PostgreSQL: pgsql-server/src/bin/initdb/initdb.c,v 1.37 2004/06/10 22:26:20 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1785,7 +1785,7 @@ main(int argc, char *argv[])
 	char	   *pgdenv;			/* PGDATA value got from sent to
 								 * environment */
 	char	   *subdirs[] =
-	{"global", "pg_xlog", "pg_clog", "base", "base/1"};
+	{"global", "pg_xlog", "pg_clog", "base", "base/1", "pg_tablespaces"};
 
 	progname = get_progname(argv[0]);
 	set_pglocale_pgservice(argv[0], "initdb");
@@ -2141,7 +2141,7 @@ main(int argc, char *argv[])
 	/* Bootstrap template1 */
 	bootstrap_template1(short_version);
 
-	/* Make the per-database PGVERSION for template1 only after init'ing it */
+	/* Make the per-database PG_VERSION for template1 only after init'ing it */
 	set_short_version(short_version, "base/1");
 
 	/* Create the stuff we don't need to use bootstrap mode for */

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/utils/init/miscinit.c,v 1.125 2004/05/26 04:41:43 neilc Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/init/miscinit.c,v 1.126 2004/05/30 23:40:38 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -157,7 +157,6 @@ void
 SetDataDir(const char *dir)
 {
 	char	   *new;
-	int			newlen;
 
 	AssertArg(dir);
 
@@ -212,13 +211,7 @@ SetDataDir(const char *dir)
 	 * Strip any trailing slash.  Not strictly necessary, but avoids
 	 * generating funny-looking paths to individual files.
 	 */
-	newlen = strlen(new);
-	if (newlen > 1 && (new[newlen - 1] == '/'
-#ifdef WIN32
-		|| new[newlen - 1] == '\\'
-#endif
-		))
-		new[newlen - 1] = '\0';
+	canonicalize_path(new);
 
 	if (DataDir)
 		free(DataDir);

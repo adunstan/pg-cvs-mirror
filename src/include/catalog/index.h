@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/catalog/index.h,v 1.55 2004/05/05 04:48:47 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/include/catalog/index.h,v 1.56 2004/05/08 00:34:49 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -34,6 +34,7 @@ extern Oid index_create(Oid heapRelationId,
 			 const char *indexRelationName,
 			 IndexInfo *indexInfo,
 			 Oid accessMethodObjectId,
+			 Oid tableSpaceId,
 			 Oid *classObjectId,
 			 bool primary,
 			 bool isconstraint,

@@ -11,7 +11,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/commands/cluster.c,v 1.124 2004/05/26 04:41:10 neilc Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/commands/cluster.c,v 1.125 2004/05/31 19:24:05 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -568,6 +568,7 @@ make_new_heap(Oid OIDOldHeap, const char *NewName)
 
 	OIDNewHeap = heap_create_with_catalog(NewName,
 										  RelationGetNamespace(OldHeap),
+		                                  OldHeap->rd_rel->reltablespace,
 										  tupdesc,
 										  OldHeap->rd_rel->relkind,
 										  OldHeap->rd_rel->relisshared,

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/catalog/index.c,v 1.232 2004/05/26 04:41:07 neilc Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/catalog/index.c,v 1.233 2004/05/31 19:24:05 tgl Exp $
  *
  *
  * INTERFACE ROUTINES
@@ -467,6 +467,7 @@ index_create(Oid heapRelationId,
 			 const char *indexRelationName,
 			 IndexInfo *indexInfo,
 			 Oid accessMethodObjectId,
+			 Oid tableSpaceId,
 			 Oid *classObjectId,
 			 bool primary,
 			 bool isconstraint,
@@ -539,6 +540,7 @@ index_create(Oid heapRelationId,
 	 */
 	indexRelation = heap_create(indexRelationName,
 								namespaceId,
+								tableSpaceId,
 								indexTupDesc,
 								shared_relation,
 								true,
