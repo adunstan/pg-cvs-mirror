@@ -14,7 +14,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/utils/mmgr/mcxt.c,v 1.50 2004/08/29 05:06:51 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/mmgr/mcxt.c,v 1.51 2004/09/16 20:17:33 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -683,4 +683,4 @@ pgport_pfree(void *pointer)
 	pfree(pointer);
 }
 
-#endif /* WIN32 */
+#endif
