@@ -1,5 +1,5 @@
 <!--
-$PostgreSQL: /cvsroot/pgsql-server/doc/src/sgml/extend.sgml,v 1.26 2003/11/12 22:47:47 petere Exp $
+$PostgreSQL: pgsql-server/doc/src/sgml/extend.sgml,v 1.27 2003/11/29 19:51:37 pgsql Exp $
 -->
 
  <chapter id="extend">
@@ -151,7 +151,7 @@ $PostgreSQL: /cvsroot/pgsql-server/doc/src/sgml/extend.sgml,v 1.26 2003/11/12 22
     </para>
 
     <para>
-     Domains can be created using the <acronym>SQL</> commands
+     Domains can be created using the <acronym>SQL</> command
      <command>CREATE DOMAIN</command>.  Their creation and use is not
      discussed in this chapter.
     </para>
