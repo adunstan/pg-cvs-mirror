@@ -10,7 +10,7 @@
  *	Win32 (NT, Win2k, XP).	replace() doesn't work on Win95/98/Me.
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/port/dirmod.c,v 1.25 2004/09/10 09:53:08 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/port/dirmod.c,v 1.26 2004/09/10 09:58:21 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -402,7 +402,6 @@ rmtree(char *path, bool rmtopdir)
 #include <stdio.h>
 #include <stdlib.h>
 #include <errno.h>
-#include <windows.h>
 
 #define halt(str) \
 do { \

@@ -6,15 +6,15 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/bin/pgevent/pgevent.c,v 1.2 2004/08/29 05:06:54 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/bin/pgevent/pgevent.c,v 1.3 2004/08/30 02:54:40 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
 
 
-#include "windows.h"
-#include "olectl.h"
-#include "string.h"
+#include <windows.h>
+#include <olectl.h>
+#include <string.h>
 
 /* Global variables */
 HANDLE		g_module = NULL;	/* hModule of DLL */

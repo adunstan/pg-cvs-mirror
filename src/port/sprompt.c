@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/port/sprompt.c,v 1.7 2004/08/29 04:13:12 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/port/sprompt.c,v 1.8 2004/08/29 05:07:02 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -30,11 +30,6 @@
 
 #ifdef HAVE_TERMIOS_H
 #include <termios.h>
-#else
-#ifdef WIN32
-#include <windows.h>
-#undef ERROR
-#endif
 #endif
 
 bool		prompt_state = false;
