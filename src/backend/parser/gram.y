@@ -11,7 +11,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/parser/gram.y,v 2.457 2004/05/26 15:07:37 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/parser/gram.y,v 2.458 2004/05/30 23:40:34 neilc Exp $
  *
  * HISTORY
  *	  AUTHOR			DATE			MAJOR EVENT
@@ -108,7 +108,6 @@ static void doNegateFloat(Value *v);
 	OnCommitAction		oncommit;
 	ContainsOids		withoids;
 	List				*list;
-	FastList			fastlist;
 	Node				*node;
 	Value				*value;
 	ColumnRef			*columnref;
@@ -6820,15 +6819,11 @@ opt_indirection:
 
 expr_list:	a_expr
 				{
-					FastList *dst = (FastList *) &$$;
-					makeFastList1(dst, $1);
+					$$ = list_make1($1);
 				}
 			| expr_list ',' a_expr
 				{
-					FastList *dst = (FastList *) &$$;
-					FastList *src = (FastList *) &$1;
-					*dst = *src;
-					FastAppend(dst, $3);
+					$$ = lappend($1, $3);
 				}
 		;
 
