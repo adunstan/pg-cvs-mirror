@@ -14,7 +14,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/optimizer/prep/prepunion.c,v 1.112 2004/05/30 23:40:29 neilc Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/optimizer/prep/prepunion.c,v 1.113 2004/06/05 01:55:04 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -538,9 +538,9 @@ generate_append_tlist(List *colTypes, bool flag,
 	 * First extract typmods to use.
 	 *
 	 * If the inputs all agree on type and typmod of a particular column, use
-	 * that typmod; else use -1.  (+1 here in case of zero columns.)
+	 * that typmod; else use -1.
 	 */
-	colTypmods = (int32 *) palloc(list_length(colTypes) * sizeof(int32) + 1);
+	colTypmods = (int32 *) palloc(list_length(colTypes) * sizeof(int32));
 
 	foreach(planl, input_plans)
 	{

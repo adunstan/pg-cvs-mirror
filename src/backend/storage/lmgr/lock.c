@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/storage/lmgr/lock.c,v 1.131 2003/12/20 17:31:21 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/storage/lmgr/lock.c,v 1.132 2004/05/28 05:13:05 tgl Exp $
  *
  * NOTES
  *	  Outside modules can create a lock table and acquire/release
@@ -1360,9 +1360,6 @@ GetLockStatusData(void)
 	proclockTable = LockMethodProcLockHash[DEFAULT_LOCKMETHOD];
 
 	data->nelements = i = proclockTable->hctl->nentries;
-
-	if (i == 0)
-		i = 1;					/* avoid palloc(0) if empty table */
 
 	data->proclockaddrs = (SHMEM_OFFSET *) palloc(sizeof(SHMEM_OFFSET) * i);
 	data->proclocks = (PROCLOCK *) palloc(sizeof(PROCLOCK) * i);

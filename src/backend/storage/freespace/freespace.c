@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/storage/freespace/freespace.c,v 1.29 2004/01/11 03:49:31 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/storage/freespace/freespace.c,v 1.30 2004/01/26 22:35:32 tgl Exp $
  *
  *
  * NOTES:
@@ -893,7 +893,7 @@ LoadFreeSpaceMap(void)
 			len = nPages * sizeof(IndexFSMPageData);
 		else
 			len = nPages * sizeof(FSMPageData);
-		data = (char *) palloc(len + 1);		/* +1 to avoid palloc(0) */
+		data = (char *) palloc(len);
 		if (fread(data, 1, len, fp) != len)
 		{
 			elog(LOG, "premature EOF in \"%s\"", cachefilename);

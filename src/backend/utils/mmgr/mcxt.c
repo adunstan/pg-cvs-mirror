@@ -14,7 +14,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/mmgr/mcxt.c,v 1.43 2003/08/04 02:40:08 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/mmgr/mcxt.c,v 1.44 2003/11/29 19:52:04 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -565,7 +565,7 @@ pfree(void *pointer)
 
 /*
  * repalloc
- *
+ *		Adjust the size of a previously allocated chunk.
  */
 void *
 repalloc(void *pointer, Size size)
