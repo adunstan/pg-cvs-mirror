@@ -1,11 +1,6 @@
 #!/bin/sh
-# $PostgreSQL: pgsql-server/src/test/bench/runwisc.sh,v 1.6 2004/09/01 17:25:40 tgl Exp $
-# 
-# Note that in our published benchmark numbers, we executed the command in the
-# following fashion:
-#
-# time $POSTGRES -texecutor -tplanner -f hashjoin bench
-#
+# $PostgreSQL: pgsql-server/src/test/bench/runwisc.sh,v 1.7 2004/10/07 19:37:16 momjian Exp $
+
 if [ ! -d $1 ]; then
         echo " you must specify a valid data directory " >&2
         exit
