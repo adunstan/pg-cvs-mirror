@@ -12,7 +12,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/utils/mmgr/portalmem.c,v 1.71 2004/08/29 05:06:51 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/mmgr/portalmem.c,v 1.72 2004/09/16 16:58:36 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -678,10 +678,6 @@ AtSubCleanup_Portals(SubTransactionId mySubid)
 
 		if (portal->createSubid != mySubid)
 			continue;
-
-		/* AtSubAbort_Portals should have fixed these: */
-		Assert(portal->status != PORTAL_ACTIVE);
-		Assert(portal->resowner == NULL);
 
 		/* Zap it. */
 		PortalDrop(portal, false);
