@@ -5,6 +5,9 @@
  *
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  *
+ * IDENTIFICATION
+ *	  $PostgreSQL: pgsql-server/src/port/copydir.c,v 1.7 2003/11/29 19:52:13 pgsql Exp $
+ *
  *-------------------------------------------------------------------------
  */
 
