@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/storage/buffer/bufmgr.c,v 1.168 2004/05/31 19:24:05 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/storage/buffer/bufmgr.c,v 1.169 2004/05/31 20:31:33 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -611,7 +611,12 @@ UnpinBuffer(BufferDesc *buf)
 	Assert(PrivateRefCount[b] > 0);
 	PrivateRefCount[b]--;
 	if (PrivateRefCount[b] == 0)
+	{
 		buf->refcount--;
+		/* I'd better not still hold any locks on the buffer */
+		Assert(!LWLockHeldByMe(buf->cntx_lock));
+		Assert(!LWLockHeldByMe(buf->io_in_progress_lock));
+	}
 
 	if ((buf->flags & BM_PIN_COUNT_WAITER) != 0 &&
 		buf->refcount == 1)
