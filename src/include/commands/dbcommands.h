@@ -4,10 +4,10 @@
  *		Database management commands (create/drop database).
  *
  *
- * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/commands/dbcommands.h,v 1.34 2004/08/29 21:08:47 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/commands/dbcommands.h,v 1.35 2004/08/30 02:54:40 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

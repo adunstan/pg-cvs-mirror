@@ -4,12 +4,12 @@
  *		Functions for finding and validating executable files
  *
  *
- * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/port/exec.c,v 1.34 2004/12/20 17:40:59 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/port/exec.c,v 1.35 2004/12/24 16:55:43 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

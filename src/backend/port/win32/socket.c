@@ -3,10 +3,10 @@
  * socket.c
  *	  Microsoft Windows Win32 Socket Functions
  *
- * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/port/win32/socket.c,v 1.6 2004/09/07 14:31:42 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/port/win32/socket.c,v 1.7 2004/10/06 09:35:20 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

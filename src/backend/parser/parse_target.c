@@ -3,12 +3,12 @@
  * parse_target.c
  *	  handle target lists
  *
- * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/parser/parse_target.c,v 1.126 2004/09/30 00:24:21 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/parser/parse_target.c,v 1.127 2004/10/25 03:08:29 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

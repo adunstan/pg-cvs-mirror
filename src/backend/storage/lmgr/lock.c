@@ -3,12 +3,12 @@
  * lock.c
  *	  POSTGRES low-level lock mechanism
  *
- * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/storage/lmgr/lock.c,v 1.143 2004/10/25 00:46:41 neilc Exp $
+ *	  $PostgreSQL: pgsql/src/backend/storage/lmgr/lock.c,v 1.144 2004/11/20 20:16:54 tgl Exp $
  *
  * NOTES
  *	  Outside modules can create a lock table and acquire/release

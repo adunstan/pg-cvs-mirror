@@ -9,12 +9,12 @@
  * to the processing of UNION queries, but it's still here.
  *
  *
- * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/optimizer/prep/prepunion.c,v 1.117 2004/10/02 22:39:47 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/optimizer/prep/prepunion.c,v 1.118 2004/12/11 23:26:37 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -3,10 +3,10 @@
  * signal.c
  *	  Microsoft Windows Win32 Signal Emulation Functions
  *
- * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/port/win32/signal.c,v 1.9 2004/11/09 13:01:25 petere Exp $
+ *	  $PostgreSQL: pgsql/src/backend/port/win32/signal.c,v 1.10 2004/11/17 00:14:10 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
