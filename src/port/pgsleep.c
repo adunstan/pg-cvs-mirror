@@ -6,12 +6,13 @@
  *
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  *
- * $PostgreSQL$
+ * $PostgreSQL: pgsql-server/src/port/pgsleep.c,v 1.1 2004/02/10 03:42:45 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
 #include "postgres.h"
 
+#include <unistd.h>
 #include <sys/time.h>
 
 
