@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/storage/lmgr/proc.c,v 1.140 2003/12/12 18:45:09 petere Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/storage/lmgr/proc.c,v 1.141 2003/12/20 17:31:21 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -95,8 +95,8 @@ static bool CheckStatementTimeout(void);
 int
 ProcGlobalSemas(int maxBackends)
 {
-	/* We need a sema per backend, plus one for the dummy process. */
-	return maxBackends + 1;
+	/* We need a sema per backend, plus one for each dummy process. */
+	return maxBackends + NUM_DUMMY_PROCS;
 }
 
 /*
