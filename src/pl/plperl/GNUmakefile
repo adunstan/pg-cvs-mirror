@@ -1,5 +1,5 @@
 # Makefile for PL/Perl
-# $PostgreSQL: pgsql-server/src/pl/plperl/GNUmakefile,v 1.11 2003/11/29 19:52:12 pgsql Exp $
+# $PostgreSQL: pgsql-server/src/pl/plperl/GNUmakefile,v 1.12 2004/01/21 19:04:11 tgl Exp $
 
 subdir = src/pl/plperl
 top_builddir = ../../..
@@ -25,8 +25,13 @@ NAME = plperl
 SO_MAJOR_VERSION = 0
 SO_MINOR_VERSION = 0
 
-OBJS = plperl.o eloglvl.o SPI.o
+OBJS = plperl.o spi_internal.o SPI.o
+
+ifeq ($(enable_rpath), yes)
+SHLIB_LINK = $(perl_embed_ldflags) $(BE_DLLLIBS) -Wl,-rpath,$(perl_archlibexp)/CORE
+else
 SHLIB_LINK = $(perl_embed_ldflags) $(BE_DLLLIBS)
+endif
 
 include $(top_srcdir)/src/Makefile.shlib
 
