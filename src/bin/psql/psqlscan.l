@@ -27,11 +27,11 @@
  * subroutine is responsible for looking back to the original string and
  * replacing FF's with the corresponding original bytes.
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/bin/psql/psqlscan.l,v 1.5 2004/07/11 13:29:15 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/bin/psql/psqlscan.l,v 1.6 2004/08/04 21:34:17 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

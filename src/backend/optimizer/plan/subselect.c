@@ -3,11 +3,11 @@
  * subselect.c
  *	  Planning routines for subselects and parameters.
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/optimizer/plan/subselect.c,v 1.90 2004/05/26 04:41:24 neilc Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/optimizer/plan/subselect.c,v 1.91 2004/05/30 23:40:29 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */

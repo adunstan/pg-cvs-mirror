@@ -6,12 +6,12 @@
  * gram.y
  *	  POSTGRES SQL YACC rules/actions
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/parser/gram.y,v 2.473 2004/08/22 00:08:28 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/parser/gram.y,v 2.474 2004/08/24 20:41:40 tgl Exp $
  *
  * HISTORY
  *	  AUTHOR			DATE			MAJOR EVENT

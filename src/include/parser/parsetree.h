@@ -5,10 +5,10 @@
  *	  parse trees.
  *
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/parser/parsetree.h,v 1.25 2004/08/17 18:47:09 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/include/parser/parsetree.h,v 1.26 2004/08/19 20:57:41 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -4,10 +4,10 @@
  *
  *
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/commands/dbcommands.h,v 1.31 2004/05/26 13:56:59 momjian Exp $
+ * $PostgreSQL: pgsql-server/src/include/commands/dbcommands.h,v 1.32 2004/06/25 21:55:58 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

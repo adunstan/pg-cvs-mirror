@@ -2,11 +2,11 @@
  *
  *	  JOHAB <--> UTF-8
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/mb/conversion_procs/utf8_and_johab/utf8_and_johab.c,v 1.6 2003/08/04 02:40:08 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/mb/conversion_procs/utf8_and_johab/utf8_and_johab.c,v 1.7 2003/11/29 19:52:03 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */

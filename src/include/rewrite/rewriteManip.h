@@ -4,10 +4,10 @@
  *		Querytree manipulation subroutines for query rewriter.
  *
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/rewrite/rewriteManip.h,v 1.35 2004/05/10 22:44:49 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/include/rewrite/rewriteManip.h,v 1.36 2004/08/19 20:57:41 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -1,9 +1,9 @@
 /*
  * psql - the PostgreSQL interactive terminal
  *
- * Copyright (c) 2000-2003, PostgreSQL Global Development Group
+ * Copyright (c) 2000-2004, PostgreSQL Global Development Group
  *
- * $PostgreSQL: /cvsroot/pgsql-server/src/bin/psql/large_obj.h,v 1.12 2003/08/04 23:59:40 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/bin/psql/large_obj.h,v 1.13 2003/11/29 19:52:06 pgsql Exp $
  */
 #ifndef LARGE_OBJ_H
 #define LARGE_OBJ_H

@@ -3,12 +3,12 @@
  * hashscan.c
  *	  manage scans on hash tables
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/access/hash/hashscan.c,v 1.34 2004/07/01 00:49:29 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/access/hash/hashscan.c,v 1.35 2004/07/17 03:27:40 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

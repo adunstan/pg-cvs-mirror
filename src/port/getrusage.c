@@ -3,12 +3,12 @@
  * getusage.c
  *	  64-bit versions of fseeko/ftello()
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/port/getrusage.c,v 1.4 2003/11/29 19:52:13 pgsql Exp $
+ *	  $PostgreSQL: pgsql-server/src/port/getrusage.c,v 1.5 2004/06/24 18:53:48 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

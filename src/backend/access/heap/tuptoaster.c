@@ -4,11 +4,11 @@
  *	  Support routines for external and compressed storage of
  *	  variable size attributes.
  *
- * Copyright (c) 2000-2003, PostgreSQL Global Development Group
+ * Copyright (c) 2000-2004, PostgreSQL Global Development Group
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/access/heap/tuptoaster.c,v 1.42 2004/06/04 20:35:21 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/access/heap/tuptoaster.c,v 1.43 2004/06/05 01:55:04 tgl Exp $
  *
  *
  * INTERFACE ROUTINES

@@ -4,12 +4,12 @@
  *	  Routines to determine which indices are usable for scanning a
  *	  given relation, and create IndexPaths accordingly.
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/optimizer/path/indxpath.c,v 1.161 2004/06/01 04:47:45 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/optimizer/path/indxpath.c,v 1.162 2004/08/04 21:33:54 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

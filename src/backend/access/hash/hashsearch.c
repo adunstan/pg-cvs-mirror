@@ -3,12 +3,12 @@
  * hashsearch.c
  *	  search code for postgres hash tables
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/access/hash/hashsearch.c,v 1.34 2003/09/04 22:06:27 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/access/hash/hashsearch.c,v 1.35 2003/11/29 19:51:40 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -3,12 +3,12 @@
  * sequence.c
  *	  PostgreSQL sequences support code.
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/commands/sequence.c,v 1.113 2004/07/12 05:37:03 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/commands/sequence.c,v 1.114 2004/07/21 22:31:21 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

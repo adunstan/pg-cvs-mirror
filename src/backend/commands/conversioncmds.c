@@ -3,12 +3,12 @@
  * conversioncmds.c
  *	  conversion creation command support code
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/commands/conversioncmds.c,v 1.12 2003/11/29 19:51:47 pgsql Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/commands/conversioncmds.c,v 1.13 2004/06/25 21:55:53 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

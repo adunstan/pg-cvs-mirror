@@ -21,10 +21,10 @@
  * we don't need to mark CLOG pages with LSN information; we have enough
  * synchronization already.
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/backend/access/transam/clog.c,v 1.22 2004/07/03 02:55:56 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/backend/access/transam/clog.c,v 1.23 2004/08/23 23:22:44 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

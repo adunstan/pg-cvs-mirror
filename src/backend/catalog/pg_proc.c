@@ -3,12 +3,12 @@
  * pg_proc.c
  *	  routines to support manipulation of the pg_proc relation
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/catalog/pg_proc.c,v 1.116 2004/05/26 04:41:08 neilc Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/catalog/pg_proc.c,v 1.117 2004/07/17 03:28:43 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

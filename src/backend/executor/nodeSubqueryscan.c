@@ -7,12 +7,12 @@
  * we need two sets of code.  Ought to look at trying to unify the cases.
  *
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/executor/nodeSubqueryscan.c,v 1.22 2003/10/01 21:30:52 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/executor/nodeSubqueryscan.c,v 1.23 2003/11/29 19:51:48 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */

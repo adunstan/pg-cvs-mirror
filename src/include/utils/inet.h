@@ -4,10 +4,10 @@
  *	  Declarations for operations on INET datatypes.
  *
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/utils/inet.h,v 1.17 2003/11/29 22:41:15 pgsql Exp $
+ * $PostgreSQL: pgsql-server/src/include/utils/inet.h,v 1.18 2004/06/13 21:57:26 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

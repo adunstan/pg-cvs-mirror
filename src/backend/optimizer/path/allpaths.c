@@ -3,12 +3,12 @@
  * allpaths.c
  *	  Routines to find possible search paths for processing a query
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/optimizer/path/allpaths.c,v 1.118 2004/06/05 01:55:04 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/optimizer/path/allpaths.c,v 1.119 2004/08/19 20:57:40 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

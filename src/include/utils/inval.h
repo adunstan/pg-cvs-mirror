@@ -4,10 +4,10 @@
  *	  POSTGRES cache invalidation dispatcher definitions.
  *
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/utils/inval.h,v 1.32 2004/07/01 00:51:44 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/include/utils/inval.h,v 1.33 2004/07/28 14:23:31 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

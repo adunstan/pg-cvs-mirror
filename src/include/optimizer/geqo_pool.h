@@ -3,10 +3,10 @@
  * geqo_pool.h
  *	  pool representation in optimizer/geqo
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/optimizer/geqo_pool.h,v 1.18 2003/11/29 22:41:07 pgsql Exp $
+ * $PostgreSQL: pgsql-server/src/include/optimizer/geqo_pool.h,v 1.19 2004/01/23 23:54:21 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

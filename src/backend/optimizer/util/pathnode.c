@@ -3,12 +3,12 @@
  * pathnode.c
  *	  Routines to manipulate pathlists and create path nodes
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/optimizer/util/pathnode.c,v 1.107 2004/06/01 03:03:02 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/optimizer/util/pathnode.c,v 1.108 2004/08/04 21:33:55 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

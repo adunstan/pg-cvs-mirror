@@ -21,12 +21,12 @@
  *	ExecutorRun accepts direction and count arguments that specify whether
  *	the plan is to be executed forwards, backwards, and for how many tuples.
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/executor/execMain.c,v 1.233 2004/05/30 23:40:26 neilc Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/executor/execMain.c,v 1.234 2004/06/18 06:13:26 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -4,10 +4,10 @@
  *	  prototypes for costsize.c and clausesel.c.
  *
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/optimizer/cost.h,v 1.59 2004/01/04 03:51:52 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/include/optimizer/cost.h,v 1.60 2004/01/05 05:07:36 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

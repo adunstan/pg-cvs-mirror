@@ -4,12 +4,12 @@
  *	   routines for accessing the system catalogs
  *
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/optimizer/util/plancat.c,v 1.93 2004/05/30 23:40:31 neilc Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/optimizer/util/plancat.c,v 1.94 2004/06/01 04:47:45 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

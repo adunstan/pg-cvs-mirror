@@ -4,11 +4,11 @@
  *	  routines to manage scans on GiST index relations
  *
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/access/gist/gistscan.c,v 1.52 2004/07/01 00:49:27 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/access/gist/gistscan.c,v 1.53 2004/07/17 03:27:20 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

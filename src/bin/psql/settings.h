@@ -1,9 +1,9 @@
 /*
  * psql - the PostgreSQL interactive terminal
  *
- * Copyright (c) 2000-2003, PostgreSQL Global Development Group
+ * Copyright (c) 2000-2004, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql-server/src/bin/psql/settings.h,v 1.18 2004/05/12 13:38:45 momjian Exp $
+ * $PostgreSQL: pgsql-server/src/bin/psql/settings.h,v 1.19 2004/08/20 20:18:23 momjian Exp $
  */
 #ifndef SETTINGS_H
 #define SETTINGS_H

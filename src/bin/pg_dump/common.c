@@ -6,12 +6,12 @@
  * Since pg4_dump is long-dead code, there is no longer any useful distinction
  * between this file and pg_dump.c.
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/bin/pg_dump/common.c,v 1.81 2004/03/03 21:28:54 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/bin/pg_dump/common.c,v 1.82 2004/05/20 17:13:52 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

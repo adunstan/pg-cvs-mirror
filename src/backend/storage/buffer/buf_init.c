@@ -3,12 +3,12 @@
  * buf_init.c
  *	  buffer manager initialization routines
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/storage/buffer/buf_init.c,v 1.65 2004/04/22 07:21:55 neilc Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/storage/buffer/buf_init.c,v 1.66 2004/05/28 05:13:01 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

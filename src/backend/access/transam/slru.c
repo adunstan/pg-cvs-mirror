@@ -45,10 +45,10 @@
  * process must notice this and not mark the page CLEAN when it's done.
  *
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/backend/access/transam/slru.c,v 1.18 2004/07/21 22:31:20 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/backend/access/transam/slru.c,v 1.19 2004/08/23 23:22:44 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -6,10 +6,10 @@
  * The type cache exists to speed lookup of certain information about data
  * types that is not directly available from a type's pg_type row.
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/utils/typcache.h,v 1.3 2004/04/01 21:28:46 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/include/utils/typcache.h,v 1.4 2004/06/05 01:55:05 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

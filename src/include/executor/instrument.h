@@ -4,9 +4,9 @@
  *	  definitions for run-time statistics collection
  *
  *
- * Copyright (c) 2001-2003, PostgreSQL Global Development Group
+ * Copyright (c) 2001-2004, PostgreSQL Global Development Group
  *
- * $PostgreSQL: instrument.h,v 1.5 2003/08/04 23:59:41 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/include/executor/instrument.h,v 1.6 2003/11/29 22:41:01 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */

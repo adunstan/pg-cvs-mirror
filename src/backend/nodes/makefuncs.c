@@ -4,12 +4,12 @@
  *	  creator functions for primitive nodes. The functions here are for
  *	  the most frequently created nodes.
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/nodes/makefuncs.c,v 1.43 2004/05/10 22:44:44 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/nodes/makefuncs.c,v 1.44 2004/05/30 23:40:27 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */

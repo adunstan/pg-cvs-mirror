@@ -4,10 +4,10 @@
  *	  Routines to support inter-object dependencies.
  *
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/catalog/dependency.h,v 1.11 2003/11/29 22:40:58 pgsql Exp $
+ * $PostgreSQL: pgsql-server/src/include/catalog/dependency.h,v 1.12 2004/05/05 04:48:47 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

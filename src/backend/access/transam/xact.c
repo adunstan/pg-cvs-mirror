@@ -5,12 +5,12 @@
  *
  * See src/backend/access/transam/README for more information.
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/access/transam/xact.c,v 1.180 2004/08/28 20:31:43 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/access/transam/xact.c,v 1.181 2004/08/28 22:04:12 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -7,10 +7,10 @@
  *				utils/adt/arrayutils.c
  *
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/utils/array.h,v 1.47 2004/06/06 00:41:28 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/include/utils/array.h,v 1.48 2004/06/16 01:26:55 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

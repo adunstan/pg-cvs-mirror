@@ -10,10 +10,10 @@
  *	  Over time, this has also become the preferred place for widely known
  *	  resource-limitation stuff, such as work_mem and check_stack_depth().
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/miscadmin.h,v 1.164 2004/08/01 17:32:20 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/include/miscadmin.h,v 1.165 2004/08/06 04:15:09 momjian Exp $
  *
  * NOTES
  *	  some of the information in this file should be moved to other files.

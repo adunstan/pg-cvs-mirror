@@ -3,10 +3,10 @@
  * pgtz.c
  *	  Timezone Library Integration Functions
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/timezone/pgtz.c,v 1.20 2004/07/30 17:31:24 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/timezone/pgtz.c,v 1.21 2004/07/31 19:12:15 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -4,10 +4,10 @@
  *	  prototypes for tablecmds.c.
  *
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/commands/tablecmds.h,v 1.16 2004/05/05 04:48:47 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/include/commands/tablecmds.h,v 1.17 2004/07/01 00:51:40 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

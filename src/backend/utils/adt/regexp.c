@@ -3,12 +3,12 @@
  * regexp.c
  *	  Postgres' interface to the regular expression package.
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/utils/adt/regexp.c,v 1.52 2004/02/03 17:52:55 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/adt/regexp.c,v 1.53 2004/05/07 00:24:58 tgl Exp $
  *
  *		Alistair Crooks added the code for the regex caching
  *		agc - cached the regular expressions used - there's a good chance

@@ -3,12 +3,12 @@
  * datum.c
  *	  POSTGRES Datum (abstract data type) manipulation routines.
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/adt/datum.c,v 1.27 2003/08/04 02:40:04 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/adt/datum.c,v 1.28 2003/11/29 19:51:58 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -8,10 +8,10 @@
  * exit-time cleanup for either a postmaster or a backend.
  *
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/storage/ipc.h,v 1.65 2004/02/25 19:41:23 momjian Exp $
+ * $PostgreSQL: pgsql-server/src/include/storage/ipc.h,v 1.66 2004/04/19 17:42:59 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -4,11 +4,11 @@
  *	  routines to support running postgres in 'bootstrap' mode
  *	bootstrap mode is used to create the initial template database
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/bootstrap/bootstrap.c,v 1.190 2004/07/31 00:45:30 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/bootstrap/bootstrap.c,v 1.191 2004/07/31 17:57:11 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

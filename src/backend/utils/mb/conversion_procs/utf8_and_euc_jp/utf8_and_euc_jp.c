@@ -2,11 +2,11 @@
  *
  *	  EUC_JP <--> UTF-8
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/mb/conversion_procs/utf8_and_euc_jp/utf8_and_euc_jp.c,v 1.6 2003/08/04 02:40:07 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/mb/conversion_procs/utf8_and_euc_jp/utf8_and_euc_jp.c,v 1.7 2003/11/29 19:52:02 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */

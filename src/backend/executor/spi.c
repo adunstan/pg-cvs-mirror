@@ -3,12 +3,12 @@
  * spi.c
  *				Server Programming Interface
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/executor/spi.c,v 1.122 2004/07/31 20:55:41 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/executor/spi.c,v 1.123 2004/08/02 01:30:41 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -4,10 +4,10 @@
  *	  header file for postgres vacuum cleaner and statistics analyzer
  *
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/commands/vacuum.h,v 1.54 2004/06/03 02:08:05 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/include/commands/vacuum.h,v 1.55 2004/08/17 02:51:32 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

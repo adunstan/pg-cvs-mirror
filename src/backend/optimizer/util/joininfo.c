@@ -3,12 +3,12 @@
  * joininfo.c
  *	  JoinInfo node manipulation routines
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/optimizer/util/joininfo.c,v 1.38 2004/05/26 04:41:27 neilc Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/optimizer/util/joininfo.c,v 1.39 2004/05/30 23:40:31 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */

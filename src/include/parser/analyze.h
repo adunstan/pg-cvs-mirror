@@ -3,10 +3,10 @@
  * analyze.h
  *
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/parser/analyze.h,v 1.26 2004/05/05 04:48:47 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/include/parser/analyze.h,v 1.27 2004/06/10 17:56:00 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

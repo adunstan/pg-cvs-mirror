@@ -2,12 +2,12 @@
  *
  * exec.c
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/port/exec.c,v 1.22 2004/08/16 01:26:31 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/port/exec.c,v 1.23 2004/08/16 02:46:36 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

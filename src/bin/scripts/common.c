@@ -2,10 +2,10 @@
  *
  * Miscellaneous shared code
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/bin/scripts/common.c,v 1.8 2004/05/25 01:00:27 momjian Exp $
+ * $PostgreSQL: pgsql-server/src/bin/scripts/common.c,v 1.9 2004/06/01 02:54:09 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -3,12 +3,12 @@
  * nbtutils.c
  *	  Utility code for Postgres btree implementation.
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/access/nbtree/nbtutils.c,v 1.57 2003/11/29 19:51:40 pgsql Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/access/nbtree/nbtutils.c,v 1.58 2004/01/07 18:56:24 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -1,9 +1,9 @@
 /*
  * psql - the PostgreSQL interactive terminal
  *
- * Copyright (c) 2000-2003, PostgreSQL Global Development Group
+ * Copyright (c) 2000-2004, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql-server/src/bin/psql/variables.c,v 1.16 2004/01/24 19:38:49 neilc Exp $
+ * $PostgreSQL: pgsql-server/src/bin/psql/variables.c,v 1.17 2004/01/25 03:07:22 neilc Exp $
  */
 #include "postgres_fe.h"
 #include "common.h"

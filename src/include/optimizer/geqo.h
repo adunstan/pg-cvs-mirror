@@ -3,10 +3,10 @@
  * geqo.h
  *	  prototypes for various files in optimizer/geqo
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/optimizer/geqo.h,v 1.34 2004/01/21 23:33:34 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/include/optimizer/geqo.h,v 1.35 2004/01/23 23:54:21 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

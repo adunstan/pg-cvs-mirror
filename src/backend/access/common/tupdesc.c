@@ -3,12 +3,12 @@
  * tupdesc.c
  *	  POSTGRES tuple descriptor support code
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/access/common/tupdesc.c,v 1.103 2004/05/26 04:41:03 neilc Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/access/common/tupdesc.c,v 1.104 2004/05/30 23:40:25 neilc Exp $
  *
  * NOTES
  *	  some of the executor utility code such as "ExecTypeFromTL" should be

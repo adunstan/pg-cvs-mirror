@@ -3,12 +3,12 @@
  * nodeSeqscan.c
  *	  Support routines for sequential scans of relations.
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/executor/nodeSeqscan.c,v 1.47 2003/11/29 19:51:48 pgsql Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/executor/nodeSeqscan.c,v 1.48 2004/04/21 18:24:26 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

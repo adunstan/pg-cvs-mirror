@@ -11,11 +11,11 @@
  * routines, but that's not a big problem.
  *
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/access/rtree/rtproc.c,v 1.39 2003/11/29 19:51:40 pgsql Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/access/rtree/rtproc.c,v 1.40 2004/01/07 18:56:24 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -3,10 +3,10 @@
  * async.h
  *	  Asynchronous notification: NOTIFY, LISTEN, UNLISTEN
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/commands/async.h,v 1.24 2004/05/23 03:50:45 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/include/commands/async.h,v 1.25 2004/07/01 00:51:40 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

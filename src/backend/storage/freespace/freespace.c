@@ -4,11 +4,11 @@
  *	  POSTGRES free space map for quickly finding free space in relations
  *
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/storage/freespace/freespace.c,v 1.31 2004/06/05 19:48:08 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/storage/freespace/freespace.c,v 1.32 2004/06/18 06:13:34 tgl Exp $
  *
  *
  * NOTES:

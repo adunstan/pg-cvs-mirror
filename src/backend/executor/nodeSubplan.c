@@ -3,11 +3,11 @@
  * nodeSubplan.c
  *	  routines to support subselects
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/executor/nodeSubplan.c,v 1.62 2004/05/26 04:41:16 neilc Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/executor/nodeSubplan.c,v 1.63 2004/05/30 23:40:26 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */

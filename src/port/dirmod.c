@@ -3,14 +3,14 @@
  * dirmod.c
  *	  rename/unlink()
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *	These are replacement versions of unlink and rename that work on
  *	Win32 (NT, Win2k, XP).	replace() doesn't work on Win95/98/Me.
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/port/dirmod.c,v 1.19 2004/08/29 01:44:02 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/port/dirmod.c,v 1.20 2004/08/29 02:58:50 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

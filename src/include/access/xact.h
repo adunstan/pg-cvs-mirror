@@ -4,10 +4,10 @@
  *	  postgres transaction system definitions
  *
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/access/xact.h,v 1.68 2004/07/31 07:39:19 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/include/access/xact.h,v 1.69 2004/08/01 17:32:19 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

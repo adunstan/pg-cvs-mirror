@@ -3,14 +3,14 @@
  * fe-auth.c
  *	   The front-end (client) authorization routines
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * NOTE: the error message strings returned by this module must not
  * exceed INITIAL_EXPBUFFER_SIZE (currently 256 bytes).
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/interfaces/libpq/fe-auth.c,v 1.89 2004/01/07 18:56:29 neilc Exp $
+ *	  $PostgreSQL: pgsql-server/src/interfaces/libpq/fe-auth.c,v 1.90 2004/03/24 03:44:59 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

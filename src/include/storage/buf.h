@@ -4,10 +4,10 @@
  *	  Basic buffer manager data types.
  *
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/storage/buf.h,v 1.16 2003/11/29 22:41:13 pgsql Exp $
+ * $PostgreSQL: pgsql-server/src/include/storage/buf.h,v 1.17 2004/04/25 23:50:58 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */

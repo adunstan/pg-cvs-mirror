@@ -8,10 +8,10 @@
  *	  Structs that need to be client-visible are in pqcomm.h.
  *
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/libpq/libpq-be.h,v 1.45 2004/05/21 05:08:04 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/include/libpq/libpq-be.h,v 1.46 2004/06/24 18:55:20 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

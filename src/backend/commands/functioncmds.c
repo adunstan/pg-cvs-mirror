@@ -5,12 +5,12 @@
  *	  Routines for CREATE and DROP FUNCTION commands and CREATE and DROP
  *        CAST commands.
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/commands/functioncmds.c,v 1.49 2004/06/25 21:55:53 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/commands/functioncmds.c,v 1.50 2004/08/01 20:30:48 tgl Exp $
  *
  * DESCRIPTION
  *	  These routines take the parse tree and pick out the

@@ -3,12 +3,12 @@
  * indexvalid.c
  *	  index tuple qualification validity checking code
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/access/common/indexvalid.c,v 1.30 2003/11/09 21:30:35 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/access/common/indexvalid.c,v 1.31 2003/11/29 19:51:39 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -11,11 +11,11 @@
  * be handled easily in a simple depth-first traversal.
  *
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/nodes/copyfuncs.c,v 1.289 2004/08/02 04:26:05 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/nodes/copyfuncs.c,v 1.290 2004/08/22 00:08:28 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

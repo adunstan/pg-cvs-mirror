@@ -3,10 +3,10 @@
  * cluster.h
  *	  header file for postgres cluster command stuff
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994-5, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/commands/cluster.h,v 1.23 2004/05/08 00:34:49 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/include/commands/cluster.h,v 1.24 2004/07/11 23:13:56 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

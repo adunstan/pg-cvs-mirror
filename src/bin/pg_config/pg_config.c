@@ -15,9 +15,9 @@
  *
  * This code is released under the terms of the PostgreSQL License.
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql-server/src/bin/pg_config/pg_config.c,v 1.3 2004/08/02 12:34:14 momjian Exp $
+ * $PostgreSQL: pgsql-server/src/bin/pg_config/pg_config.c,v 1.4 2004/08/05 03:11:55 joe Exp $
  *
  *-------------------------------------------------------------------------
  */

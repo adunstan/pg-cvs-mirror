@@ -3,12 +3,12 @@
  * hashinsert.c
  *	  Item insertion in hash tables for Postgres.
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/access/hash/hashinsert.c,v 1.31 2003/09/25 06:57:56 petere Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/access/hash/hashinsert.c,v 1.32 2003/11/29 19:51:40 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */

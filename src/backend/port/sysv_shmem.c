@@ -6,11 +6,11 @@
  * These routines represent a fairly thin layer on top of SysV shared
  * memory functionality.
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/port/sysv_shmem.c,v 1.33 2004/04/19 17:42:58 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/port/sysv_shmem.c,v 1.34 2004/05/06 19:23:25 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

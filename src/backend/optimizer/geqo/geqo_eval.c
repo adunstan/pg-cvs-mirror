@@ -3,10 +3,10 @@
  * geqo_eval.c
  *	  Routines to evaluate query trees
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/backend/optimizer/geqo/geqo_eval.c,v 1.68 2004/05/26 04:41:20 neilc Exp $
+ * $PostgreSQL: pgsql-server/src/backend/optimizer/geqo/geqo_eval.c,v 1.69 2004/05/30 23:40:27 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -6,12 +6,12 @@
  *	  message integrity and endpoint authentication.
  *
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/interfaces/libpq/fe-secure.c,v 1.46 2004/08/17 04:24:23 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/interfaces/libpq/fe-secure.c,v 1.47 2004/08/17 16:54:47 momjian Exp $
  *
  * NOTES
  *	  The client *requires* a valid server certificate.  Since

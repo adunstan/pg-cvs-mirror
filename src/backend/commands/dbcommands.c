@@ -4,12 +4,12 @@
  *		Database management commands (create/drop database).
  *
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/commands/dbcommands.c,v 1.138 2004/08/01 06:19:22 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/commands/dbcommands.c,v 1.139 2004/08/01 20:30:48 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

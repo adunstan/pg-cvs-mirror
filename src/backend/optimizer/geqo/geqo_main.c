@@ -4,10 +4,10 @@
  *	  solution to the query optimization problem
  *	  by means of a Genetic Algorithm (GA)
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/backend/optimizer/geqo/geqo_main.c,v 1.44 2004/05/21 05:07:57 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/backend/optimizer/geqo/geqo_main.c,v 1.45 2004/06/03 02:08:02 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

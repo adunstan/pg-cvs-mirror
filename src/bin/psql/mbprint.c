@@ -1,9 +1,9 @@
 /*
  * psql - the PostgreSQL interactive terminal
  *
- * Copyright (c) 2000-2003, PostgreSQL Global Development Group
+ * Copyright (c) 2000-2004, PostgreSQL Global Development Group
  *
- * $PostgreSQL: /cvsroot/pgsql-server/src/bin/psql/mbprint.c,v 1.12 2003/09/12 02:40:09 momjian Exp $
+ * $PostgreSQL: pgsql-server/src/bin/psql/mbprint.c,v 1.13 2003/11/29 19:52:06 pgsql Exp $
  */
 
 #include "postgres_fe.h"

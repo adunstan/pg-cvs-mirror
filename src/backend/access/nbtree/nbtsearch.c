@@ -4,11 +4,11 @@
  *	  Search code for postgres btrees.
  *
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/access/nbtree/nbtsearch.c,v 1.86 2003/12/21 17:52:34 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/access/nbtree/nbtsearch.c,v 1.87 2004/04/21 18:24:26 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

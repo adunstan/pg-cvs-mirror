@@ -3,12 +3,12 @@
  * parse_expr.c
  *	  handle expressions in parser
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/parser/parse_expr.c,v 1.173 2004/06/09 19:08:17 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/parser/parse_expr.c,v 1.174 2004/06/16 01:26:44 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

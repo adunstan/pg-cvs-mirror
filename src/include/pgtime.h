@@ -3,10 +3,10 @@
  * pgtime.h
  *	  PostgreSQL internal timezone library
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/include/pgtime.h,v 1.1 2004/05/21 05:08:03 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/include/pgtime.h,v 1.2 2004/06/03 02:08:06 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

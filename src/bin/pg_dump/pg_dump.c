@@ -4,7 +4,7 @@
  *	  pg_dump is a utility for dumping out a postgres database
  *	  into a script file.
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *	pg_dump will read the system catalogs in a database and dump out a
@@ -12,7 +12,7 @@
  *	by PostgreSQL
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/bin/pg_dump/pg_dump.c,v 1.383 2004/08/04 21:34:11 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/bin/pg_dump/pg_dump.c,v 1.384 2004/08/06 18:18:42 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

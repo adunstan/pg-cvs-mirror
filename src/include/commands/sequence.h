@@ -3,10 +3,10 @@
  * sequence.h
  *	  prototypes for sequence.c.
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: sequence.h,v 1.27 2003/11/09 21:30:37 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/include/commands/sequence.h,v 1.28 2003/11/29 22:40:59 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -45,11 +45,11 @@
  * the non-cost fields of the passed XXXPath to be filled in.
  *
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/optimizer/path/costsize.c,v 1.131 2004/06/10 21:02:00 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/optimizer/path/costsize.c,v 1.132 2004/08/04 21:33:54 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -4,10 +4,10 @@
  *	  definitions for parse tree nodes
  *
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/nodes/parsenodes.h,v 1.266 2004/08/19 20:57:41 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/include/nodes/parsenodes.h,v 1.267 2004/08/20 04:29:33 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

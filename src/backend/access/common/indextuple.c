@@ -4,12 +4,12 @@
  *	   This file contains index tuple accessor and mutator routines,
  *	   as well as various tuple utilities.
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/access/common/indextuple.c,v 1.68 2003/09/25 06:57:56 petere Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/access/common/indextuple.c,v 1.69 2003/11/29 19:51:39 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -4,10 +4,10 @@
  *	  shared memory management structures
  *
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/storage/shmem.h,v 1.40 2003/11/29 22:41:13 pgsql Exp $
+ * $PostgreSQL: pgsql-server/src/include/storage/shmem.h,v 1.41 2003/12/20 17:31:21 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -6,11 +6,11 @@
  * See src/backend/utils/misc/README for more information.
  *
  *
- * Copyright (c) 2000-2003, PostgreSQL Global Development Group
+ * Copyright (c) 2000-2004, PostgreSQL Global Development Group
  * Written by Peter Eisentraut <peter_e@gmx.net>.
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/utils/misc/guc.c,v 1.231 2004/08/11 21:10:37 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/misc/guc.c,v 1.232 2004/08/16 02:12:29 tgl Exp $
  *
  *--------------------------------------------------------------------
  */

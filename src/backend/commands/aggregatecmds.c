@@ -4,12 +4,12 @@
  *
  *	  Routines for aggregate-manipulation commands
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/commands/aggregatecmds.c,v 1.18 2004/05/26 04:41:09 neilc Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/commands/aggregatecmds.c,v 1.19 2004/06/25 21:55:53 tgl Exp $
  *
  * DESCRIPTION
  *	  The "DefineFoo" routines take the parse tree and pick out the

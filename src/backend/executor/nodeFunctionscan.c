@@ -3,12 +3,12 @@
  * nodeFunctionscan.c
  *	  Support routines for scanning RangeFunctions (functions in rangetable).
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/executor/nodeFunctionscan.c,v 1.24 2004/04/01 21:28:44 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/executor/nodeFunctionscan.c,v 1.25 2004/05/26 04:41:15 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */

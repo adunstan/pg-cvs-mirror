@@ -4,10 +4,10 @@
  *	  include file for the bootstrapping code
  *
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/bootstrap/bootstrap.h,v 1.35 2004/05/29 22:48:22 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/include/bootstrap/bootstrap.h,v 1.37 2004/07/21 20:34:47 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

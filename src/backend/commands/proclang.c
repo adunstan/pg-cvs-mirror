@@ -3,11 +3,11 @@
  * proclang.c
  *	  PostgreSQL PROCEDURAL LANGUAGE support code.
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/commands/proclang.c,v 1.52 2003/11/29 19:51:47 pgsql Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/commands/proclang.c,v 1.53 2004/02/21 00:34:52 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

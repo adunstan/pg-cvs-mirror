@@ -4,10 +4,10 @@
  *	  routines for signaling the postmaster from its child processes
  *
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/storage/pmsignal.h,v 1.8 2004/05/29 22:48:23 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/include/storage/pmsignal.h,v 1.9 2004/07/19 02:47:15 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

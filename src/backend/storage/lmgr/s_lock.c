@@ -4,12 +4,12 @@
  *	   Hardware-dependent implementation of spinlocks.
  *
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/storage/lmgr/s_lock.c,v 1.27 2004/03/23 21:39:46 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/storage/lmgr/s_lock.c,v 1.28 2004/06/19 20:31:55 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -3,12 +3,12 @@
  * be-fsstubs.c
  *	  Builtin functions for open/close/read/write operations on large objects
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/libpq/be-fsstubs.c,v 1.71 2004/07/28 14:23:28 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/libpq/be-fsstubs.c,v 1.72 2004/08/04 21:33:49 tgl Exp $
  *
  * NOTES
  *	  This should be moved to a more appropriate place.  It is here

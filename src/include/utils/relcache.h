@@ -4,10 +4,10 @@
  *	  Relation descriptor cache definitions.
  *
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/utils/relcache.h,v 1.42 2004/07/17 03:31:47 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/include/utils/relcache.h,v 1.43 2004/08/28 20:31:44 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

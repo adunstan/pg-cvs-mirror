@@ -3,12 +3,12 @@
  * hashfunc.c
  *	  Comparison functions for hash access method.
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/access/hash/hashfunc.c,v 1.39 2003/11/29 19:51:40 pgsql Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/access/hash/hashfunc.c,v 1.40 2004/06/13 21:57:24 tgl Exp $
  *
  * NOTES
  *	  These functions are stored in pg_amproc.	For each operator class

@@ -6,12 +6,12 @@
  * There is hardly anything left of Paul Brown's original implementation...
  *
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994-5, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/commands/cluster.c,v 1.126 2004/06/18 06:13:22 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/commands/cluster.c,v 1.127 2004/07/11 23:13:53 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

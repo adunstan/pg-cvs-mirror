@@ -3,12 +3,12 @@
  * parse_type.c
  *		handle type operations for parser
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/parser/parse_type.c,v 1.68 2004/06/03 19:41:46 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/parser/parse_type.c,v 1.69 2004/06/06 00:41:26 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -3,12 +3,12 @@
  * clauses.c
  *	  routines to manipulate qualification clauses
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/optimizer/util/clauses.c,v 1.177 2004/08/02 01:30:43 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/optimizer/util/clauses.c,v 1.178 2004/08/17 18:47:08 tgl Exp $
  *
  * HISTORY
  *	  AUTHOR			DATE			MAJOR EVENT

@@ -3,10 +3,10 @@
  * timer.c
  *	  Microsoft Windows Win32 Timer Implementation
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/port/win32/timer.c,v 1.1 2004/02/18 16:25:12 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/port/win32/timer.c,v 1.2 2004/04/19 17:42:58 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

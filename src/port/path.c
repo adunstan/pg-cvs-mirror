@@ -3,12 +3,12 @@
  * path.c
  *	  portable path handling routines
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/port/path.c,v 1.30 2004/08/13 14:47:23 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/port/path.c,v 1.31 2004/08/18 02:59:12 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

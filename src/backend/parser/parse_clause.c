@@ -3,12 +3,12 @@
  * parse_clause.c
  *	  handle clauses in parser
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/parser/parse_clause.c,v 1.133 2004/06/16 01:26:44 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/parser/parse_clause.c,v 1.134 2004/08/19 20:57:40 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

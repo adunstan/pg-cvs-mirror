@@ -5,11 +5,11 @@
  *	  clients and standalone backends are supported here).
  *
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/access/common/printtup.c,v 1.82 2004/06/04 20:35:21 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/access/common/printtup.c,v 1.83 2004/06/06 00:41:25 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

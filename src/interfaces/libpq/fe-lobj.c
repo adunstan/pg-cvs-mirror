@@ -3,12 +3,12 @@
  * fe-lobj.c
  *	  Front-end large object interface
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/interfaces/libpq/fe-lobj.c,v 1.48 2004/03/05 01:53:59 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/interfaces/libpq/fe-lobj.c,v 1.49 2004/08/17 02:44:13 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

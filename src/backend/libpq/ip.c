@@ -3,12 +3,12 @@
  * ip.c
  *	  IPv6-aware network access.
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/libpq/ip.c,v 1.25 2004/04/24 20:10:34 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/libpq/ip.c,v 1.26 2004/05/26 18:35:33 momjian Exp $
  *
  * This file and the IPV6 implementation were initially provided by
  * Nigel Kukard <nkukard@lbsd.net>, Linux Based Systems Design

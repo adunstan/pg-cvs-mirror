@@ -4,10 +4,10 @@
  *
  *
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/executor/nodeSubplan.h,v 1.19 2003/11/29 22:41:01 pgsql Exp $
+ * $PostgreSQL: pgsql-server/src/include/executor/nodeSubplan.h,v 1.20 2004/03/17 01:02:24 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

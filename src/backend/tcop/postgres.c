@@ -3,12 +3,12 @@
  * postgres.c
  *	  POSTGRES C Backend Interface
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/tcop/postgres.c,v 1.427 2004/07/31 00:45:36 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/tcop/postgres.c,v 1.428 2004/08/02 01:30:44 tgl Exp $
  *
  * NOTES
  *	  this is the "main" module of the postgres backend and

@@ -3,12 +3,12 @@
  * analyze.c
  *	  the Postgres statistics generator
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/commands/analyze.c,v 1.73 2004/05/26 04:41:09 neilc Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/commands/analyze.c,v 1.74 2004/06/05 19:48:07 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

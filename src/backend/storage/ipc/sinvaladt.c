@@ -3,12 +3,12 @@
  * sinvaladt.c
  *	  POSTGRES shared cache invalidation segment definitions.
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/storage/ipc/sinvaladt.c,v 1.54 2003/12/20 17:31:21 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/storage/ipc/sinvaladt.c,v 1.55 2004/05/23 03:50:45 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

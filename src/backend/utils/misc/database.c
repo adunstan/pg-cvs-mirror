@@ -3,12 +3,12 @@
  * database.c
  *	  miscellaneous initialization support stuff
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/utils/misc/database.c,v 1.60 2004/01/22 20:57:39 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/misc/database.c,v 1.61 2004/06/18 06:13:56 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

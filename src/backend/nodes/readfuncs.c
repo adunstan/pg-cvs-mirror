@@ -3,12 +3,12 @@
  * readfuncs.c
  *	  Reader functions for Postgres tree nodes.
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/nodes/readfuncs.c,v 1.171 2004/05/30 23:40:27 neilc Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/nodes/readfuncs.c,v 1.172 2004/06/09 19:08:15 tgl Exp $
  *
  * NOTES
  *	  Path and Plan nodes do not have any readfuncs support, because we

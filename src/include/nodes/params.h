@@ -4,10 +4,10 @@
  *	  Declarations of stuff needed to handle parameterized plans.
  *
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/nodes/params.h,v 1.24 2003/11/29 22:41:06 pgsql Exp $
+ * $PostgreSQL: pgsql-server/src/include/nodes/params.h,v 1.25 2004/08/02 01:30:47 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

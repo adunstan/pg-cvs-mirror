@@ -10,12 +10,12 @@
  *	  This information is needed by routines manipulating tuples
  *	  (getattribute, formtuple, etc.).
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/executor/execTuples.c,v 1.79 2004/05/30 23:40:26 neilc Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/executor/execTuples.c,v 1.80 2004/06/06 00:41:26 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

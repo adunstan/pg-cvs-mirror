@@ -3,12 +3,12 @@
  * heap.c
  *	  code to create and destroy POSTGRES heap relations
  *
- * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/catalog/heap.c,v 1.272 2004/07/11 19:52:48 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/catalog/heap.c,v 1.273 2004/08/28 21:05:26 tgl Exp $
  *
  *
  * INTERFACE ROUTINES
