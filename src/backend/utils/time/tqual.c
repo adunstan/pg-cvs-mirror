@@ -16,7 +16,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/time/tqual.c,v 1.84 2005/02/20 15:00:16 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/time/tqual.c,v 1.85 2005/02/20 15:01:42 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -455,7 +455,7 @@ HeapTupleSatisfiesToast(HeapTupleHeader tuple, Buffer buffer)
  *	tuples of my own xact are tested against the passed CommandId not
  *	CurrentCommandId.
  */
-int
+HTSU_Result
 HeapTupleSatisfiesUpdate(HeapTupleHeader tuple, CommandId curcid,
 						 Buffer buffer)
 {
