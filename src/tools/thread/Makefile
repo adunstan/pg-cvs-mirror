@@ -4,11 +4,11 @@
 #
 # Copyright (C) 2003 by PostgreSQL Global Development Team
 #
-# $PostgreSQL: pgsql-server/src/tools/thread/Makefile,v 1.5 2004/04/23 20:35:50 momjian Exp $
+# $PostgreSQL: pgsql-server/src/tools/thread/Makefile,v 1.6 2004/04/25 20:47:56 momjian Exp $
 #
 #-------------------------------------------------------------------------
 
-subdir = tools/thread
+subdir = src/tools/thread
 top_builddir = ../../..
 include $(top_builddir)/src/Makefile.global
 
