@@ -1,5 +1,5 @@
 <!--
-$PostgreSQL: /cvsroot/pgsql-server/doc/src/sgml/ref/declare.sgml,v 1.29 2003/09/22 00:16:58 petere Exp $
+$PostgreSQL: pgsql-server/doc/src/sgml/ref/declare.sgml,v 1.30 2003/11/29 19:51:38 pgsql Exp $
 PostgreSQL documentation
 -->
 
@@ -16,6 +16,11 @@ PostgreSQL documentation
 
  <indexterm zone="sql-declare">
   <primary>DECLARE</primary>
+ </indexterm>
+
+ <indexterm zone="sql-declare">
+  <primary>cursor</primary>
+  <secondary>DECLARE</secondary>
  </indexterm>
 
  <refsynopsisdiv>
