@@ -1,5 +1,5 @@
 <!--
-$PostgreSQL: pgsql-server/doc/src/sgml/release.sgml,v 1.278 2004/08/06 23:33:48 tgl Exp $
+$PostgreSQL: pgsql-server/doc/src/sgml/release.sgml,v 1.279 2004/08/08 05:46:40 joe Exp $
 -->
 
 <appendix id="release">
@@ -317,8 +317,8 @@ $PostgreSQL: pgsql-server/doc/src/sgml/release.sgml,v 1.278 2004/08/06 23:33:48 
        Syntax checking of array input processing has been tighened up
        considerably. Junk that was previously allowed in odd places with
        odd results now causes an ERROR. Also changed behavior with respect
-       to whitespace; trailing whitespace is now ignored as well as leading
-       whitespace (which has always been ignored).
+       to whitespace surrounding array elements; trailing whitespace is now
+       ignored as well as leading whitespace (which has always been ignored).
       </para>
      </listitem>
     </itemizedlist>
