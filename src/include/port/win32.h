@@ -1,4 +1,4 @@
-/* $PostgreSQL: pgsql-server/src/include/port/win32.h,v 1.31 2004/08/31 11:29:56 momjian Exp $ */
+/* $PostgreSQL: pgsql-server/src/include/port/win32.h,v 1.32 2004/09/09 00:59:44 momjian Exp $ */
 
 /* undefine and redefine after #include */
 #undef mkdir
@@ -166,6 +166,7 @@ void		_dosmaperr(unsigned long);
 #define SIGPIPE				13
 #define SIGALRM				14
 #define SIGSTOP				17
+#define SIGTSTP				18
 #define SIGCONT				19
 #define SIGCHLD				20
 #define SIGTTIN				21
