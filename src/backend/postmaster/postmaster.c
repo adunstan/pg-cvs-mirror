@@ -37,7 +37,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/postmaster/postmaster.c,v 1.416 2004/07/27 01:46:03 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/postmaster/postmaster.c,v 1.417 2004/07/31 00:45:33 tgl Exp $
  *
  * NOTES
  *
@@ -544,7 +544,7 @@ PostmasterMain(int argc, char *argv[])
 		if (!guc_pgdata)	/* Got a pgdata from the config file? */
 		{
 			write_stderr("%s does not know where to find the database system data.\n"
-						 "This should be specified as 'pgdata' in %s%s.\n",
+						 "This should be specified as \"pgdata\" in %s%s.\n",
 						 progname, userPGDATA,
 						 user_pgconfig_is_dir ? "/postgresql.conf" : "");
 			ExitPostmaster(2);
