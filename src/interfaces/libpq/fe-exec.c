@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/interfaces/libpq/fe-exec.c,v 1.155 2003/11/30 20:55:09 joe Exp $
+ *	  $PostgreSQL: pgsql-server/src/interfaces/libpq/fe-exec.c,v 1.156 2003/12/28 17:29:41 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -609,12 +609,28 @@ pqSaveParameterStatus(PGconn *conn, const char *name, const char *value)
 
 	/*
 	 * Special hacks: remember client_encoding as a numeric value, and
-	 * remember at least the first few bytes of server version.
+	 * convert server version to a numeric form as well.
 	 */
 	if (strcmp(name, "client_encoding") == 0)
 		conn->client_encoding = pg_char_to_encoding(value);
-	if (strcmp(name, "server_version") == 0)
-		StrNCpy(conn->sversion, value, sizeof(conn->sversion));
+	else if (strcmp(name, "server_version") == 0)
+	{
+		int			cnt;
+		int			vmaj,
+					vmin,
+					vrev;
+
+		cnt = sscanf(value, "%d.%d.%d", &vmaj, &vmin, &vrev);
+
+		if (cnt < 2)
+			conn->sversion = 0;			/* unknown */
+		else
+		{
+			if (cnt == 2)
+				vrev = 0;
+			conn->sversion = (100 * vmaj + vmin) * 100 + vrev;
+		}
+	}
 }
 
 
