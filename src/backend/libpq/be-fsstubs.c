@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/libpq/be-fsstubs.c,v 1.68 2003/08/04 02:39:59 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/libpq/be-fsstubs.c,v 1.69 2003/11/29 19:51:49 pgsql Exp $
  *
  * NOTES
  *	  This should be moved to a more appropriate place.  It is here
@@ -41,6 +41,7 @@
 #include "libpq/be-fsstubs.h"
 #include "libpq/libpq-fs.h"
 #include "miscadmin.h"
+#include "storage/fd.h"
 #include "storage/large_object.h"
 #include "utils/memutils.h"
 

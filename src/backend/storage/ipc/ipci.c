@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/storage/ipc/ipci.c,v 1.62 2004/01/26 22:54:57 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/storage/ipc/ipci.c,v 1.63 2004/01/26 22:59:53 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -65,9 +65,6 @@ CreateSharedMemoryAndSemaphores(bool makePrivate,
 	size += FreeSpaceShmemSize();
 #ifdef EXEC_BACKEND
 	size += ShmemBackendArraySize();
-#endif
-#ifdef STABLE_MEMORY_STORAGE
-	size += MMShmemSize();
 #endif
 	size += 100000;
 	/* might as well round it off to a multiple of a typical page size */

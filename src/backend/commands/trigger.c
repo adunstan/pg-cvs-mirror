@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/commands/trigger.c,v 1.162 2003/11/12 21:15:51 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/commands/trigger.c,v 1.163 2003/11/29 19:51:47 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -691,7 +691,7 @@ renametrig(Oid relid,
 		 * relcache entries.  (Ideally this should happen
 		 * automatically...)
 		 */
-		CacheInvalidateRelcache(relid);
+		CacheInvalidateRelcache(targetrel);
 	}
 	else
 	{
