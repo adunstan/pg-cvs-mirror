@@ -4,7 +4,7 @@
 #    Makefile for utils/fmgr
 #
 # IDENTIFICATION
-#    $PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/fmgr/Makefile,v 1.13 2002/06/20 17:19:08 momjian Exp $
+#    $PostgreSQL: pgsql-server/src/backend/utils/fmgr/Makefile,v 1.14 2003/11/29 19:52:01 pgsql Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -24,3 +24,7 @@ SUBSYS.o: $(OBJS)
 
 clean: 
 	rm -f SUBSYS.o $(OBJS)
+
+
+# ensure that changes in PKGLIBDIR propagate to dfmgr.o
+dfmgr.o: dfmgr.c $(top_builddir)/src/Makefile.global

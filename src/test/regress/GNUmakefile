@@ -7,7 +7,7 @@
 #
 #
 # IDENTIFICATION
-#    $PostgreSQL: /cvsroot/pgsql-server/src/test/regress/GNUmakefile,v 1.43 2003/11/02 21:56:15 tgl Exp $
+#    $PostgreSQL: pgsql-server/src/test/regress/GNUmakefile,v 1.44 2003/11/29 19:52:14 pgsql Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -40,7 +40,7 @@ endif
 
 all: pg_regress
 
-pg_regress: pg_regress.sh GNUmakefile
+pg_regress: pg_regress.sh GNUmakefile $(top_builddir)/src/Makefile.global
 	sed -e 's,@bindir@,$(bindir),g' \
 	    -e 's,@libdir@,$(libdir),g' \
 	    -e 's,@pkglibdir@,$(pkglibdir),g' \
