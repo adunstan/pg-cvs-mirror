@@ -1,4 +1,4 @@
-# $PostgreSQL: pgsql-server/contrib/Makefile,v 1.47 2003/11/29 19:51:18 pgsql Exp $
+# $PostgreSQL: pgsql-server/contrib/Makefile,v 1.48 2004/03/05 05:15:16 momjian Exp $
 
 subdir = contrib
 top_builddir = ..
@@ -27,6 +27,7 @@ WANTED_DIRS = \
 		pg_autovacuum	\
 		pg_dumplo	\
 		pg_logger	\
+		pg_trgm		\
 		pgbench		\
 		pgcrypto	\
 		pgstattuple	\
@@ -43,8 +44,8 @@ WANTED_DIRS = \
 		vacuumlo
 
 # Missing:
-#		array		\ (removed all but the README)
 #		adddepend	\ (does not have a makefile)
+#		array		\ (removed all but the README)
 #		ipc_check	\ (does not have a makefile)
 #		mSQL-interface	\ (requires msql installed)
 #		mac		\ (does not have a makefile)
