@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/catalog/heap.c,v 1.264 2004/05/08 19:09:24 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/catalog/heap.c,v 1.265 2004/05/26 04:41:07 neilc Exp $
  *
  *
  * INTERFACE ROUTINES
@@ -1175,7 +1175,6 @@ void
 heap_drop_with_catalog(Oid rid)
 {
 	Relation	rel;
-	int			i;
 
 	/*
 	 * Open and lock the relation.
@@ -1186,9 +1185,7 @@ heap_drop_with_catalog(Oid rid)
 	 * Release all buffers that belong to this relation, after writing any
 	 * that are dirty
 	 */
-	i = FlushRelationBuffers(rel, (BlockNumber) 0);
-	if (i < 0)
-		elog(ERROR, "FlushRelationBuffers returned %d", i);
+	FlushRelationBuffers(rel, (BlockNumber) 0);
 
 	/*
 	 * remove inheritance information

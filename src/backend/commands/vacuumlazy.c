@@ -31,7 +31,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/commands/vacuumlazy.c,v 1.39 2004/04/25 23:50:54 neilc Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/commands/vacuumlazy.c,v 1.40 2004/05/08 19:09:25 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -731,9 +731,7 @@ lazy_truncate_heap(Relation onerel, LVRelStats *vacrelstats)
 	 * will also write out dirty buffers for blocks we aren't deleting,
 	 * but it's the closest thing in bufmgr's API.
 	 */
-	i = FlushRelationBuffers(onerel, new_rel_pages);
-	if (i < 0)
-		elog(ERROR, "FlushRelationBuffers returned %d", i);
+	FlushRelationBuffers(onerel, new_rel_pages);
 
 	/*
 	 * Do the physical truncation.
