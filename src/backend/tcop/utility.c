@@ -10,7 +10,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/tcop/utility.c,v 1.224 2004/08/12 19:12:21 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/tcop/utility.c,v 1.225 2004/08/12 21:00:34 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1269,6 +1269,9 @@ CreateCommandTag(Node *parsetree)
 				case OBJECT_GROUP:
 					tag = "ALTER GROUP";
 					break;
+				case OBJECT_INDEX:
+					tag = "ALTER INDEX";
+					break;
 				case OBJECT_LANGUAGE:
 					tag = "ALTER LANGUAGE";
 					break;
@@ -1331,9 +1334,21 @@ CreateCommandTag(Node *parsetree)
 			break;
 
 		case T_AlterTableStmt:
-			tag = "ALTER TABLE";
-			break;
+			{
+				AlterTableStmt *stmt = (AlterTableStmt *) parsetree;
 
+				/* 
+				 * We might be supporting ALTER INDEX here, so
+				 * set the completion table appropriately.
+				 * Catch all other possibilities with ALTER TABLE
+				 */
+
+				if(stmt->relkind == OBJECT_INDEX) 
+					tag = "ALTER INDEX";
+				else
+					tag = "ALTER TABLE";
+			}
+			break;
 		case T_AlterDomainStmt:
 			tag = "ALTER DOMAIN";
 			break;

@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/nodes/parsenodes.h,v 1.265 2004/08/04 21:34:24 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/include/nodes/parsenodes.h,v 1.266 2004/08/19 20:57:41 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -797,6 +797,7 @@ typedef struct AlterTableStmt
 	NodeTag		type;
 	RangeVar   *relation;		/* table to work on */
 	List	   *cmds;			/* list of subcommands */
+	ObjectType	relkind;		/* type of object */
 } AlterTableStmt;
 
 typedef enum AlterTableType
