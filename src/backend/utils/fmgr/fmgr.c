@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/fmgr/fmgr.c,v 1.89 2005/02/02 22:40:03 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/fmgr/fmgr.c,v 1.90 2005/03/22 20:13:07 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -344,7 +344,7 @@ fmgr_info_C_lang(Oid functionId, FmgrInfo *finfo, HeapTuple procedureTuple)
 			for (i = 0; i < procedureStruct->pronargs; i++)
 			{
 				fnextra->arg_toastable[i] =
-					TypeIsToastable(procedureStruct->proargtypes[i]);
+					TypeIsToastable(procedureStruct->proargtypes.values[i]);
 			}
 			break;
 		case 1:

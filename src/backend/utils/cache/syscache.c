@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/cache/syscache.c,v 1.95 2004/08/29 05:06:50 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/cache/syscache.c,v 1.96 2004/12/31 22:01:25 pgsql Exp $
  *
  * NOTES
  *	  These routines allow the parser/planner/executor to perform
@@ -334,15 +334,15 @@ static const struct cachedesc cacheinfo[] = {
 			0,
 			0
 	}},
-	{ProcedureRelationName,		/* PROCNAMENSP */
-		ProcedureNameNspIndex,
+	{ProcedureRelationName,		/* PROCNAMEARGSNSP */
+		ProcedureNameArgsNspIndex,
 		0,
-		4,
+		3,
 		{
 			Anum_pg_proc_proname,
-			Anum_pg_proc_pronargs,
 			Anum_pg_proc_proargtypes,
-			Anum_pg_proc_pronamespace
+			Anum_pg_proc_pronamespace,
+			0
 	}},
 	{ProcedureRelationName,		/* PROCOID */
 		ProcedureOidIndex,

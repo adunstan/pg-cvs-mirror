@@ -3,7 +3,7 @@
  *			  procedural language
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/pl/plpgsql/src/pl_comp.c,v 1.83 2004/11/30 03:50:29 neilc Exp $
+ *	  $PostgreSQL: pgsql/src/pl/plpgsql/src/pl_comp.c,v 1.84 2005/02/22 07:18:24 neilc Exp $
  *
  *	  This software is copyrighted by Jan Wieck - Hamburg.
  *
@@ -1843,7 +1843,7 @@ compute_function_hashkey(FunctionCallInfo fcinfo,
 	/* get the argument types */
 	for (i = 0; i < procStruct->pronargs; i++)
 	{
-		Oid			argtypeid = procStruct->proargtypes[i];
+		Oid			argtypeid = procStruct->proargtypes.values[i];
 
 		/*
 		 * Check for polymorphic arguments. If found, use the actual
