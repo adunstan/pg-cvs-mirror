@@ -1,4 +1,4 @@
-/* $PostgreSQL: pgsql/src/interfaces/ecpg/preproc/preproc.y,v 1.299 2004/11/01 13:17:12 davec Exp $ */
+/* $PostgreSQL: pgsql/src/interfaces/ecpg/preproc/preproc.y,v 1.300 2004/11/05 19:16:43 tgl Exp $ */
 
 /* Copyright comment */
 %{
@@ -5763,6 +5763,7 @@ ECPGKeywords_vanames:  SQL_BREAK		{ $$ = make_str("break"); }
 		| SQL_SQLPRINT			{ $$ = make_str("sqlprint"); }
 		| SQL_SQLWARNING		{ $$ = make_str("sqlwarning"); }
 		| SQL_STOP			{ $$ = make_str("stop"); }
+		| SQL_VALUE			{ $$ = make_str("value"); }
 		;
 		
 ECPGKeywords_rest:  SQL_CONNECT			{ $$ = make_str("connect"); }
