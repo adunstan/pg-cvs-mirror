@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/commands/dbcommands.c,v 1.127 2003/11/19 15:55:07 wieck Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/commands/dbcommands.c,v 1.128 2003/11/29 19:51:47 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -362,6 +362,7 @@ createdb(const CreatedbStmt *stmt)
 	 * rewrite to do it for ourselves.
 	 */
 #ifndef WIN32
+	/* We might need to use cp -R one day for portability */
 	snprintf(buf, sizeof(buf), "cp -r '%s' '%s'", src_loc, target_dir);
 	if (system(buf) != 0)
 	{
