@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/backend/access/transam/xlog.c,v 1.162 2004/08/12 19:03:23 momjian Exp $
+ * $PostgreSQL: pgsql-server/src/backend/access/transam/xlog.c,v 1.163 2004/08/23 23:22:44 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -4922,9 +4922,11 @@ CreateCheckPoint(bool shutdown, bool force)
 	 * Truncate pg_subtrans if possible.  We can throw away all data before
 	 * the oldest XMIN of any running transaction.  No future transaction will
 	 * attempt to reference any pg_subtrans entry older than that (see Asserts
-	 * in subtrans.c).
+	 * in subtrans.c).  During recovery, though, we mustn't do this because
+	 * StartupSUBTRANS hasn't been called yet.
 	 */
-	TruncateSUBTRANS(GetOldestXmin(true));
+	if (!InRecovery)
+		TruncateSUBTRANS(GetOldestXmin(true));
 
 	LWLockRelease(CheckpointLock);
 }
