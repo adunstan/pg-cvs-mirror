@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/backend/access/transam/xlog.c,v 1.142 2004/05/21 16:08:46 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/backend/access/transam/xlog.c,v 1.143 2004/05/27 17:12:42 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -397,7 +397,7 @@ static char ControlFilePath[MAXPGPATH];
  * Private, possibly out-of-date copy of shared LogwrtResult.
  * See discussion above.
  */
-NON_EXEC_STATIC XLogwrtResult LogwrtResult = {{0, 0}, {0, 0}};
+static XLogwrtResult LogwrtResult = {{0, 0}, {0, 0}};
 
 /*
  * openLogFile is -1 or a kernel FD for an open log file segment.
