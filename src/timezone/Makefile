@@ -4,7 +4,7 @@
 #    Makefile for the timezone library
 
 # IDENTIFICATION
-#    $PostgreSQL: pgsql-server/src/timezone/Makefile,v 1.9 2004/05/18 04:10:33 momjian Exp $
+#    $PostgreSQL: pgsql-server/src/timezone/Makefile,v 1.10 2004/05/21 05:08:06 tgl Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -21,7 +21,7 @@ ZICOBJS= zic.o ialloc.o scheck.o localtime.o
 # timezone data files
 TZDATA := africa antarctica asia australasia europe northamerica southamerica \
 	pacificnew etcetera factory backward systemv solar87 solar88 solar89
-TZDATAFILES := $(TZDATA:%=data/%)
+TZDATAFILES := $(TZDATA:%=$(srcdir)/data/%)
 
 all: SUBSYS.o submake-libpgport zic
 
