@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/commands/sequence.c,v 1.108 2004/01/10 23:28:44 neilc Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/commands/sequence.c,v 1.109 2004/04/06 16:39:30 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -821,10 +821,6 @@ read_info(SeqTable elm, Relation rel, Buffer *buf)
 	HeapTupleData tuple;
 	sequence_magic *sm;
 	Form_pg_sequence seq;
-
-	if (rel->rd_nblocks > 1)
-		elog(ERROR, "invalid number of blocks in sequence \"%s\"",
-			 RelationGetRelationName(rel));
 
 	*buf = ReadBuffer(rel, 0);
 	if (!BufferIsValid(*buf))

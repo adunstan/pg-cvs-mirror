@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: relscan.h,v 1.33 2003/11/09 21:30:37 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/include/access/relscan.h,v 1.34 2003/11/29 22:40:55 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -25,6 +25,7 @@ typedef struct HeapScanDescData
 	Snapshot	rs_snapshot;	/* snapshot to see */
 	int			rs_nkeys;		/* number of scan keys */
 	ScanKey		rs_key;			/* array of scan key descriptors */
+	BlockNumber rs_nblocks;		/* number of blocks to scan */
 
 	/* scan current state */
 	HeapTupleData rs_ctup;		/* current tuple in scan, if any */
