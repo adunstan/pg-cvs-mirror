@@ -49,7 +49,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/optimizer/path/costsize.c,v 1.130 2004/06/05 01:55:04 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/optimizer/path/costsize.c,v 1.131 2004/06/10 21:02:00 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -238,7 +238,7 @@ cost_nonsequential_access(double relpages)
  * tuples, but they won't reduce the number of tuples we have to fetch from
  * the table, so they don't reduce the scan cost.
  *
- * NOTE: as of 7.5, indexQuals is a list of RestrictInfo nodes, where formerly
+ * NOTE: as of 8.0, indexQuals is a list of RestrictInfo nodes, where formerly
  * it was a list of bare clause expressions.
  */
 void

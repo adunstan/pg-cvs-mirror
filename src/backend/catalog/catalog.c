@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/catalog/catalog.c,v 1.53 2004/06/21 01:04:41 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/catalog/catalog.c,v 1.54 2004/06/21 04:06:05 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -199,7 +199,7 @@ IsToastNamespace(Oid namespaceId)
  *		True iff name starts with the pg_ prefix.
  *
  *		For some classes of objects, the prefix pg_ is reserved for
- *		system objects only.  As of 7.5, this is only true for
+ *		system objects only.  As of 8.0, this is only true for
  *		schema and tablespace names.
  */
 bool

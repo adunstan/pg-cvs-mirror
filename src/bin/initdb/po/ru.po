@@ -1,14 +1,14 @@
 # ru.po
 # INITDB Translated Messages into the Russian Language (KOI8-R)
 #
-# $PostgreSQL: pgsql-server/src/bin/initdb/po/ru.po,v 1.3 2004/05/29 06:26:10 petere Exp $
+# $PostgreSQL: pgsql-server/src/bin/initdb/po/ru.po,v 1.4 2004/06/10 17:16:17 petere Exp $
 #
 # ChangeLog:
 #   - March 27 - May 29, 2004: Initial Translation, Serguei A. Mokhov <mokhov@cs.concordia.ca>
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PostgreSQL 7.5.x\n"
+"Project-Id-Version: PostgreSQL 8.0\n"
 "POT-Creation-Date: 2004-05-29 07:15-0300\n"
 "PO-Revision-Date: 2004-05-29 17:08-0500\n"
 "Last-Translator: Serguei A. Mokhov <mokhov@cs.concordia.ca>\n"

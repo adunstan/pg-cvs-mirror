@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/nodes/parsenodes.h,v 1.263 2004/07/27 05:11:30 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/include/nodes/parsenodes.h,v 1.264 2004/08/02 04:28:29 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -277,7 +277,7 @@ typedef struct A_Indices
  * would be represented with a single A_Indirection node having a 4-element
  * indirection list.
  *
- * Note: as of Postgres 7.5, we don't support arrays of composite values,
+ * Note: as of Postgres 8.0, we don't support arrays of composite values,
  * so cases in which a field select follows a subscript aren't actually
  * semantically legal.  However the parser is prepared to handle such.
  */

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/commands/indexcmds.c,v 1.121 2004/06/10 17:55:56 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/commands/indexcmds.c,v 1.122 2004/06/18 06:13:23 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -539,7 +539,7 @@ GetIndexOpClass(List *opclass, Oid attrType,
 	 * too for awhile.	I'm starting to think we need a better approach.
 	 * tgl 2000/10/01
 	 *
-	 * Release 7.5 removes bigbox_ops (which was dead code for a long while
+	 * Release 8.0 removes bigbox_ops (which was dead code for a long while
 	 * anyway).  tgl 2003/11/11
 	 */
 	if (list_length(opclass) == 1)

@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/optimizer/path/indxpath.c,v 1.160 2004/05/30 23:40:28 neilc Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/optimizer/path/indxpath.c,v 1.161 2004/06/01 04:47:45 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -980,7 +980,7 @@ static const StrategyNumber
  * operator class.  We use the above operator implication table to be able to
  * derive implications between nonidentical clauses.  (Note: "foo" is known
  * immutable, and constants are surely immutable, but we have to check that
- * the operators are too.  As of 7.5 it's possible for opclasses to contain
+ * the operators are too.  As of 8.0 it's possible for opclasses to contain
  * operators that are merely stable, and we dare not make deductions with
  * these.)
  *

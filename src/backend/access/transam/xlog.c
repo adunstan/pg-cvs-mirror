@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/backend/access/transam/xlog.c,v 1.154 2004/08/03 20:32:32 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/backend/access/transam/xlog.c,v 1.155 2004/08/04 16:25:02 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -4588,7 +4588,7 @@ ReadCheckpointRecord(XLogRecPtr RecPtr,
  * instead).  We need to initialize the local copies of ThisTimeLineID and
  * RedoRecPtr.
  *
- * Note: before Postgres 7.5, we went to some effort to keep the postmaster
+ * Note: before Postgres 8.0, we went to some effort to keep the postmaster
  * process's copies of ThisTimeLineID and RedoRecPtr valid too.  This was
  * unnecessary however, since the postmaster itself never touches XLOG anyway.
  */
