@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/utils/fmgr/dfmgr.c,v 1.73 2004/05/26 18:35:39 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/fmgr/dfmgr.c,v 1.74 2004/06/10 22:26:19 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -405,6 +405,7 @@ find_in_dynamic_libpath(const char *basename)
 		strncpy(piece, p, len);
 		piece[len] = '\0';
 
+		canonicalize_path(piece);
 		mangled = substitute_libpath_macro(piece);
 		pfree(piece);
 
