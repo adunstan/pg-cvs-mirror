@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/storage/lmgr/s_lock.c,v 1.16 2003/08/08 21:42:00 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/storage/lmgr/s_lock.c,v 1.17 2003/11/29 19:51:57 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -208,7 +208,7 @@ tas_dummy()						/* really means: extern int tas(slock_t
 
 
 
-#if defined(NEED_SPARC_TAS_ASM)
+#if defined(__sparc__) || defined(__sparc)
 /*
  * sparc machines not using gcc
  */
@@ -227,7 +227,7 @@ tas_dummy()						/* really means: extern int tas(slock_t
 	asm("retl");
 	asm("nop");
 }
-#endif   /* NEED_SPARC_TAS_ASM */
+#endif   /* __sparc || __sparc__ */
 
 
 
