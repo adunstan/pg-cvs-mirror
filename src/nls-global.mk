@@ -1,4 +1,4 @@
-# $PostgreSQL: /cvsroot/pgsql-server/src/nls-global.mk,v 1.8 2003/09/14 22:40:38 petere Exp $
+# $PostgreSQL: pgsql-server/src/nls-global.mk,v 1.9 2003/11/29 19:51:39 pgsql Exp $
 
 # Common rules for Native Language Support (NLS)
 #
@@ -6,11 +6,11 @@
 # needs to contain a file 'nls.mk' with the following make variable
 # assignments:
 #
-# CATALOG_NAME	        -- name of the message catalog (xxx.po); probably
-#                          name of the program
+# CATALOG_NAME		-- name of the message catalog (xxx.po); probably
+#			   name of the program
 # AVAIL_LANGUAGES	-- list of languages that are provided/supported
-# GETTEXT_FILES         -- list of source files that contain message strings
-# GETTEXT_TRIGGERS      -- (optional) list of functions that contain
+# GETTEXT_FILES		-- list of source files that contain message strings
+# GETTEXT_TRIGGERS	-- (optional) list of functions that contain
 #                          translatable strings
 #
 # That's all, the rest is done here, if --enable-nls was specified.
