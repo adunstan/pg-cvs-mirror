@@ -11,7 +11,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/storage/smgr/smgr.c,v 1.80 2004/08/29 05:06:49 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/storage/smgr/smgr.c,v 1.81 2004/08/30 02:54:39 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -784,7 +784,7 @@ smgrcommit(void)
 }
 
 /*
- *	smgrabort() -- Abort changes made during the current transaction.
+ *	smgrabort() -- Clean up after transaction abort.
  */
 void
 smgrabort(void)
