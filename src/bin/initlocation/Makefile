@@ -7,16 +7,12 @@
 #
 #
 # IDENTIFICATION
-#    $Header: /home/cvsmirror/pg/pgsql/src/bin/initlocation/Attic/Makefile,v 1.6 1998/08/22 05:19:25 momjian Exp $
+#    $Header: /home/cvsmirror/pg/pgsql/src/bin/initlocation/Attic/Makefile,v 1.7 1999/06/04 21:12:06 tgl Exp $
 #
 #-------------------------------------------------------------------------
 
 SRCDIR= ../..
 include ../../Makefile.global
-
-SEDSCRIPT= \
-    -e "s^PG_OPT_NAMEDATALEN_PARAM^$(NAMEDATALEN)^g" \
-    -e "s^PG_OPT_OIDNAMELEN_PARAM^$(OIDNAMELEN)^g" 
 
 all: initlocation
 
