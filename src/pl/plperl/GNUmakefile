@@ -1,5 +1,5 @@
 # Makefile for PL/Perl
-# $PostgreSQL: /cvsroot/pgsql-server/src/pl/plperl/GNUmakefile,v 1.10 2002/05/28 16:57:53 petere Exp $
+# $PostgreSQL: pgsql-server/src/pl/plperl/GNUmakefile,v 1.11 2003/11/29 19:52:12 pgsql Exp $
 
 subdir = src/pl/plperl
 top_builddir = ../../..
@@ -37,7 +37,13 @@ SPI.c: SPI.xs
 	$(PERL) $(perl_privlibexp)/ExtUtils/xsubpp -typemap $(perl_privlibexp)/ExtUtils/typemap $< >$@
 
 install: all installdirs
+ifeq ($(enable_shared), yes)
 	$(INSTALL_SHLIB) $(shlib) $(DESTDIR)$(pkglibdir)/plperl$(DLSUFFIX)
+else
+	@echo "*****"; \
+	 echo "* PL/Perl was not installed due to lack of shared library support."; \
+	 echo "*****"
+endif
 
 installdirs:
 	$(mkinstalldirs) $(DESTDIR)$(pkglibdir)

@@ -1,4 +1,4 @@
-# $PostgreSQL: /cvsroot/pgsql-server/src/pl/plpython/Makefile,v 1.11 2002/09/05 18:28:46 petere Exp $
+# $PostgreSQL: pgsql-server/src/pl/plpython/Makefile,v 1.12 2003/11/29 19:52:12 pgsql Exp $
 
 subdir = src/pl/plpython
 top_builddir = ../../..
@@ -32,7 +32,13 @@ include $(top_srcdir)/src/Makefile.shlib
 all: all-lib
 
 install: all installdirs
+ifeq ($(enable_shared), yes)
 	$(INSTALL_SHLIB) $(shlib) $(DESTDIR)$(pkglibdir)/plpython$(DLSUFFIX)
+else
+	@echo "*****"; \
+	 echo "* PL/Python was not installed due to lack of shared library support."; \
+	 echo "*****"
+endif
 
 installdirs:
 	$(mkinstalldirs) $(DESTDIR)$(pkglibdir)
