@@ -1,6 +1,11 @@
-/* $PostgreSQL: /cvsroot/pgsql-server/src/backend/port/dynloader/win32.c,v 1.2 2003/08/04 00:43:21 momjian Exp $ */
+/* $PostgreSQL: pgsql/src/backend/port/dynloader/win32.c,v 1.3 2003/11/29 19:51:54 pgsql Exp $ */
 
 #include <windows.h>
+
+char *dlerror(void);
+int dlclose(void *handle);
+void *dlsym(void *handle, const char *symbol);
+void *dlopen(const char *path, int mode);
 
 char *
 dlerror(void)

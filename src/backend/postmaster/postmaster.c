@@ -37,7 +37,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/postmaster/postmaster.c,v 1.438 2004/11/14 19:35:30 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/postmaster/postmaster.c,v 1.439 2004/11/17 00:14:12 tgl Exp $
  *
  * NOTES
  *
@@ -4037,7 +4037,7 @@ win32_waitpid(int *exitstatus)
 					 */
 					ereport(FATAL,
 							(errmsg_internal("failed to get exit code for child %lu",
-											 (DWORD)win32_childPIDArray[index])));
+											 (unsigned long) win32_childPIDArray[index])));
 				}
 				*exitstatus = (int) exitCode;
 				return win32_childPIDArray[index];
