@@ -1,4 +1,4 @@
-/* $PostgreSQL: pgsql-server/src/include/port/solaris.h,v 1.9 2003/11/29 19:52:08 pgsql Exp $ */
+/* $PostgreSQL: pgsql-server/src/include/port/solaris.h,v 1.10 2003/12/23 03:31:30 momjian Exp $ */
 
 /*
  * Sort this out for all operating systems some time.  The __xxx
@@ -35,24 +35,3 @@
 #define		 BYTE_ORDER		 LITTLE_ENDIAN
 #endif
 #endif
-
-
-#ifndef NAN
-
-#if defined(__GNUC__) && defined(__i386__)
-
-#ifndef __nan_bytes
-#define __nan_bytes				 { 0, 0, 0, 0, 0, 0, 0xf8, 0x7f }
-#endif
-
-#define NAN \
-	(__extension__ ((union { unsigned char __c[8]; double __d; }) \
-					{ __nan_bytes }).__d)
-
-#else
-/* not GNUC and i386 */
-
-#define NAN (0.0/0.0)
-#endif   /* GCC.  */
-
-#endif   /* not NAN */

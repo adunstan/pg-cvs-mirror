@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/utils/adt/timestamp.c,v 1.99 2004/02/14 20:16:17 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/adt/timestamp.c,v 1.100 2004/03/05 02:41:14 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -20,10 +20,6 @@
 #include <errno.h>
 #include <float.h>
 #include <limits.h>
-/* for finite() on Solaris */
-#ifdef HAVE_IEEEFP_H
-#include <ieeefp.h>
-#endif
 
 #include "access/hash.h"
 #include "access/xact.h"
