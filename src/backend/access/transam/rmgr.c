@@ -3,7 +3,7 @@
  *
  * Resource managers definition
  *
- * $PostgreSQL: pgsql-server/src/backend/access/transam/rmgr.c,v 1.12 2003/11/29 19:51:40 pgsql Exp $
+ * $PostgreSQL: pgsql-server/src/backend/access/transam/rmgr.c,v 1.13 2004/07/01 00:49:42 tgl Exp $
  */
 #include "postgres.h"
 
@@ -14,12 +14,12 @@
 #include "access/rtree.h"
 #include "access/slru.h"
 #include "access/xact.h"
-#include "access/xlog.h"
+#include "access/xlog_internal.h"
 #include "storage/smgr.h"
 #include "commands/sequence.h"
 
 
-RmgrData	RmgrTable[RM_MAX_ID + 1] = {
+const RmgrData RmgrTable[RM_MAX_ID + 1] = {
 	{"XLOG", xlog_redo, xlog_undo, xlog_desc, NULL, NULL},
 	{"Transaction", xact_redo, xact_undo, xact_desc, NULL, NULL},
 	{"Storage", smgr_redo, smgr_undo, smgr_desc, NULL, NULL},

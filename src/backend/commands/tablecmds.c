@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/commands/tablecmds.c,v 1.120 2004/07/17 17:28:29 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/commands/tablecmds.c,v 1.121 2004/07/19 02:47:06 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -5448,7 +5448,7 @@ copy_relation_data(Relation rel, SMgrRelation dst)
 			recptr = XLogInsert(RM_HEAP_ID, XLOG_HEAP_NEWPAGE, rdata);
 
 			PageSetLSN(page, recptr);
-			PageSetSUI(page, ThisStartUpID);
+			PageSetTLI(page, ThisTimeLineID);
 
 			END_CRIT_SECTION();
 		}

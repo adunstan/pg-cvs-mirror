@@ -31,7 +31,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/commands/vacuumlazy.c,v 1.41 2004/05/31 19:24:05 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/commands/vacuumlazy.c,v 1.42 2004/06/05 19:48:07 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -532,7 +532,7 @@ lazy_vacuum_page(Relation onerel, BlockNumber blkno, Buffer buffer,
 
 		recptr = log_heap_clean(onerel, buffer, unused, uncnt);
 		PageSetLSN(page, recptr);
-		PageSetSUI(page, ThisStartUpID);
+		PageSetTLI(page, ThisTimeLineID);
 	}
 	else
 	{
