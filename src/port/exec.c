@@ -7,7 +7,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/port/exec.c,v 1.19 2004/08/08 03:21:39 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/port/exec.c,v 1.20 2004/08/09 03:12:38 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -433,6 +433,9 @@ find_other_exec(const char *argv0, const char *target,
 
 	/* Trim off program name and keep just directory */	
 	*last_dir_separator(retpath) = '\0';
+	canonicalize_path(retpath);
+
+	/* Now append the other program's name */
 	snprintf(retpath + strlen(retpath), MAXPGPATH - strlen(retpath),
 			 "/%s%s", target, EXE);
 
