@@ -1,5 +1,5 @@
 # -*-makefile-*-
-# $PostgreSQL: pgsql-server/src/Makefile.global.in,v 1.172 2003/12/19 23:29:15 momjian Exp $
+# $PostgreSQL: pgsql-server/src/Makefile.global.in,v 1.173 2004/01/19 21:20:06 tgl Exp $
 
 #------------------------------------------------------------------------------
 # All PostgreSQL makefiles include this file and use the variables it sets,
@@ -344,6 +344,11 @@ LIBOBJS = @LIBOBJS@ path.o sprompt.o thread.o
 ifneq (,$(LIBOBJS))
 LIBS += -lpgport
 LDFLAGS := -L$(top_builddir)/src/port $(LDFLAGS)
+endif
+
+# to make ws2_32.lib the last library
+ifeq ($(PORTNAME),win32)
+LIBS += -lws2_32
 endif
 
 # Not really standard libc functions, used by the backend.

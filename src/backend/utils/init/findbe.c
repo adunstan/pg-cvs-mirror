@@ -7,7 +7,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/init/findbe.c,v 1.39 2003/11/12 00:04:10 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/init/findbe.c,v 1.40 2003/11/29 19:52:01 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -205,9 +205,9 @@ FindExec(char *full_path, const char *argv0, const char *binary_name)
 	{
 		elog(DEBUG2, "searching PATH for executable");
 		path = strdup(p);		/* make a modifiable copy */
-		for (startp = path, endp = strchr(path, ':');
+		for (startp = path, endp = strchr(path, PATHSEP);
 			 startp && *startp;
-			 startp = endp + 1, endp = strchr(startp, ':'))
+			 startp = endp + 1, endp = strchr(startp, PATHSEP))
 		{
 			if (startp == endp) /* it's a "::" */
 				continue;
