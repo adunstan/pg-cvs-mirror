@@ -39,7 +39,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  * Portions taken from FreeBSD.
  *
- * $PostgreSQL: pgsql-server/src/bin/initdb/initdb.c,v 1.27 2004/05/11 21:57:14 momjian Exp $
+ * $PostgreSQL: pgsql-server/src/bin/initdb/initdb.c,v 1.28 2004/05/12 13:38:42 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1932,8 +1932,8 @@ main(int argc, char *argv[])
 	sprintf(pgdenv, "PGDATA=%s", pg_data);
 	putenv(pgdenv);
 
-	if ((ret = find_other_exec(backendbin, argv[0], "postgres",
-						   PG_VERSIONSTR)) < 0)
+	if ((ret = find_other_exec(argv[0], "postgres", PG_VERSIONSTR,
+							   backendbin)) < 0)
 	{
 		if (ret == -1)
 			fprintf(stderr,
