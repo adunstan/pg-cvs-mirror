@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/nodes/outfuncs.c,v 1.231 2004/01/22 00:34:31 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/nodes/outfuncs.c,v 1.232 2004/01/31 05:09:40 neilc Exp $
  *
  * NOTES
  *	  Every node type that can appear in stored rules' parsetrees *must*
@@ -803,6 +803,15 @@ _outCaseWhen(StringInfo str, CaseWhen *node)
 
 	WRITE_NODE_FIELD(expr);
 	WRITE_NODE_FIELD(result);
+}
+
+static void
+_outCaseTestExpr(StringInfo str, CaseTestExpr *node)
+{
+	WRITE_NODE_TYPE("CASETESTEXPR");
+
+	WRITE_OID_FIELD(typeId);
+	WRITE_INT_FIELD(typeMod);
 }
 
 static void
@@ -1700,6 +1709,9 @@ _outNode(StringInfo str, void *obj)
 				break;
 			case T_CaseWhen:
 				_outCaseWhen(str, obj);
+				break;
+			case T_CaseTestExpr:
+				_outCaseTestExpr(str, obj);
 				break;
 			case T_ArrayExpr:
 				_outArrayExpr(str, obj);

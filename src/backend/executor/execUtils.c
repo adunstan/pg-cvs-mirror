@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/executor/execUtils.c,v 1.108 2003/12/18 20:21:37 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/executor/execUtils.c,v 1.109 2004/01/22 02:23:21 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -305,6 +305,9 @@ CreateExprContext(EState *estate)
 
 	econtext->ecxt_aggvalues = NULL;
 	econtext->ecxt_aggnulls = NULL;
+
+	econtext->caseValue_datum = (Datum) 0;
+	econtext->caseValue_isNull = true;
 
 	econtext->domainValue_datum = (Datum) 0;
 	econtext->domainValue_isNull = true;

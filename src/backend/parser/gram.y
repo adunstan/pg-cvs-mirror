@@ -11,7 +11,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/parser/gram.y,v 2.447 2004/03/09 05:05:41 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/parser/gram.y,v 2.448 2004/03/11 01:47:37 ishii Exp $
  *
  * HISTORY
  *	  AUTHOR			DATE			MAJOR EVENT
@@ -6965,6 +6965,7 @@ in_expr:	select_with_parens
 case_expr:	CASE case_arg when_clause_list case_default END_P
 				{
 					CaseExpr *c = makeNode(CaseExpr);
+					c->casetype = InvalidOid; /* not analyzed yet */
 					c->arg = (Expr *) $2;
 					c->args = $3;
 					c->defresult = (Expr *) $4;
