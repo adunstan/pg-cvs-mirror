@@ -1,5 +1,5 @@
 <!--
-$PostgreSQL: /cvsroot/pgsql-server/doc/src/sgml/ref/execute.sgml,v 1.6 2003/08/31 17:32:23 petere Exp $
+$PostgreSQL: pgsql-server/doc/src/sgml/ref/execute.sgml,v 1.7 2003/11/29 19:51:38 pgsql Exp $
 PostgreSQL documentation
 -->
 
@@ -76,6 +76,15 @@ EXECUTE <replaceable class="PARAMETER">plan_name</replaceable> [ (<replaceable c
     </listitem>
    </varlistentry>
   </variablelist>
+ </refsect1>
+
+ <refsect1>
+  <title>Examples</>
+   <para>
+    Examples are given in the <xref linkend="sql-prepare-examples"
+    endterm="sql-prepare-examples-title"> section of the <xref
+    linkend="sql-prepare" endterm="sql-prepare-title"> documentation.
+   </para>
  </refsect1>
 
  <refsect1>
