@@ -15,7 +15,7 @@
  *
  *
  * IDENTIFICATION
- *		$PostgreSQL: pgsql/src/bin/pg_dump/pg_backup_archiver.c,v 1.104 2005/01/26 19:44:43 tgl Exp $
+ *		$PostgreSQL: pgsql/src/bin/pg_dump/pg_backup_archiver.c,v 1.105 2005/02/22 04:39:34 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -400,6 +400,8 @@ RestoreArchive(Archive *AHX, RestoreOptions *ropt)
 		te = te->next;
 	}
 
+	ahprintf(AH, "--\n-- PostgreSQL database dump complete\n--\n\n");
+
 	/*
 	 * Clean up & we're done.
 	 */
@@ -419,8 +421,6 @@ RestoreArchive(Archive *AHX, RestoreOptions *ropt)
 			AH->blobConnection = NULL;
 		}
 	}
-
-	ahprintf(AH, "--\n-- PostgreSQL database dump complete\n--\n\n");
 }
 
 /*
