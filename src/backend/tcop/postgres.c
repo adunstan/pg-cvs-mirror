@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/tcop/postgres.c,v 1.429 2004/08/29 04:12:50 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/tcop/postgres.c,v 1.430 2004/08/29 05:06:49 momjian Exp $
  *
  * NOTES
  *	  this is the "main" module of the postgres backend and
@@ -1823,9 +1823,6 @@ finish_xact_command(void)
 {
 	if (xact_started)
 	{
-		/* Invoke IMMEDIATE constraint triggers */
-		DeferredTriggerEndQuery();
-
 		/* Cancel any active statement timeout before committing */
 		disable_sig_alarm(true);
 

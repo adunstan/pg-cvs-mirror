@@ -10,7 +10,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/tcop/utility.c,v 1.227 2004/08/29 04:12:50 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/tcop/utility.c,v 1.228 2004/08/29 05:06:49 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -912,7 +912,7 @@ ProcessUtility(Node *parsetree,
 			break;
 
 		case T_ConstraintsSetStmt:
-			DeferredTriggerSetState((ConstraintsSetStmt *) parsetree);
+			AfterTriggerSetState((ConstraintsSetStmt *) parsetree);
 			break;
 
 		case T_CreateGroupStmt:
