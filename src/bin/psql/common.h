@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2003, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql-server/src/bin/psql/common.h,v 1.36 2004/07/11 00:54:55 momjian Exp $
+ * $PostgreSQL: pgsql-server/src/bin/psql/common.h,v 1.37 2004/07/11 13:29:15 momjian Exp $
  */
 #ifndef COMMON_H
 #define COMMON_H
@@ -19,6 +19,9 @@
 #else
 #define psql_assert(p)
 #endif
+
+#define atooid(x)  ((Oid) strtoul((x), NULL, 10))
+
 
 /*
  * Safer versions of some standard C library functions. If an
