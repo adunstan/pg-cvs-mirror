@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/port/path.c,v 1.7 2004/05/12 13:38:49 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/port/path.c,v 1.8 2004/05/17 14:35:34 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -234,7 +234,7 @@ relative_path(const char *path1, const char *path2)
 		(!isalpha(*path2) || !path2[1] == ':'))
 		return false;
 	if ((!isalpha(*path1) || !path1[1] == ':') &&
-		(isalpha(*path2) && path2[1] == ':')
+		(isalpha(*path2) && path2[1] == ':'))
 		return false;
 	if (isalpha(*path1) && path1[1] == ':' &&
 		isalpha(*path2) && path2[1] == ':')

@@ -7,7 +7,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/port/exec.c,v 1.5 2004/05/14 17:04:48 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/port/exec.c,v 1.6 2004/05/17 14:35:34 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -345,7 +345,7 @@ win32_make_absolute(char *path)
 	if (_fullpath(abspath, path, MAXPGPATH) == NULL)
 	{
 		log_debug("Win32 path expansion failed:  %s", strerror(errno));
-		return path;
+		StrNCpy(abspath, path, MAXPGPATH);
 	}
 	canonicalize_path(abspath);
 
