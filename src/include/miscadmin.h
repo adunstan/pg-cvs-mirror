@@ -12,7 +12,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/miscadmin.h,v 1.152 2004/02/08 22:28:57 neilc Exp $
+ * $PostgreSQL: pgsql-server/src/include/miscadmin.h,v 1.153 2004/02/10 03:42:45 tgl Exp $
  *
  * NOTES
  *	  some of the information in this file should be moved to
@@ -212,7 +212,6 @@ extern bool	VacuumCostActive;
  *	A few postmaster startup options are exported here so the
  *	configuration file processor can access them.
  */
-extern bool NetServer;
 extern bool EnableSSL;
 extern bool SilentMode;
 extern int	MaxBackends;
@@ -222,7 +221,7 @@ extern int	PostPortNumber;
 extern int	Unix_socket_permissions;
 extern char *Unix_socket_group;
 extern char *UnixSocketDir;
-extern char *VirtualHost;
+extern char *ListenAddresses;
 
 
 /*****************************************************************************

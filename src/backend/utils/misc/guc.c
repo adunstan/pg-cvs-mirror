@@ -10,7 +10,7 @@
  * Written by Peter Eisentraut <peter_e@gmx.net>.
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/utils/misc/guc.c,v 1.190 2004/03/15 15:56:24 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/misc/guc.c,v 1.191 2004/03/22 03:15:29 momjian Exp $
  *
  *--------------------------------------------------------------------
  */
@@ -441,14 +441,6 @@ static struct config_bool ConfigureNamesBool[] =
 			GUC_REPORT | GUC_NO_SHOW_ALL | GUC_NO_RESET_ALL | GUC_NOT_IN_SAMPLE | GUC_DISALLOW_IN_FILE
 		},
 		&session_auth_is_superuser,
-		false, NULL, NULL
-	},
-	{
-		{"tcpip_socket", PGC_POSTMASTER, CONN_AUTH_SETTINGS,
-			gettext_noop("Makes the server accept TCP/IP connections."),
-			NULL
-		},
-		&NetServer,
 		false, NULL, NULL
 	},
 	{
@@ -1711,12 +1703,12 @@ static struct config_string ConfigureNamesString[] =
 	},
 
 	{
-		{"virtual_host", PGC_POSTMASTER, CONN_AUTH_SETTINGS,
-			gettext_noop("Sets the host name or IP address to listen to."),
+		{"listen_addresses", PGC_POSTMASTER, CONN_AUTH_SETTINGS,
+			gettext_noop("Sets the host name or IP addresses to listen to."),
 			NULL
 		},
-		&VirtualHost,
-		"", NULL, NULL
+		&ListenAddresses,
+		"localhost", NULL, NULL
 	},
 
 	{
