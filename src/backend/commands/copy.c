@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/commands/copy.c,v 1.220 2004/04/15 22:36:03 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/commands/copy.c,v 1.221 2004/04/19 17:22:30 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -2599,7 +2599,7 @@ CopyAttributeOutCSV(char *server_string, char *delim, char *quote,
 
 	for (; (c = *string) != '\0'; string += mblen)
 	{
-		if (c == quotec || c == escapec)
+		if (need_quote && (c == quotec || c == escapec))
 			CopySendChar(escapec);
 
 		CopySendChar(c);
