@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/access/nbtree/nbtpage.c,v 1.76 2004/06/02 17:28:17 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/access/nbtree/nbtpage.c,v 1.77 2004/07/21 22:31:20 tgl Exp $
  *
  *	NOTES
  *	   Postgres btree pages look like ordinary relation pages.	The opaque
@@ -483,7 +483,7 @@ _bt_getbuf(Relation rel, BlockNumber blkno, int access)
 		 * new page.  We can skip locking for new or temp relations,
 		 * however, since no one else could be accessing them.
 		 */
-		needLock = !(rel->rd_isnew || rel->rd_istemp);
+		needLock = !RELATION_IS_LOCAL(rel);
 
 		if (needLock)
 			LockPage(rel, 0, ExclusiveLock);
