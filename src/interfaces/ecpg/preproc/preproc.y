@@ -1,4 +1,4 @@
-/* $PostgreSQL: pgsql-server/src/interfaces/ecpg/preproc/preproc.y,v 1.270 2004/01/21 14:09:34 meskes Exp $ */
+/* $PostgreSQL: pgsql-server/src/interfaces/ecpg/preproc/preproc.y,v 1.263.2.6 2004/01/21 14:11:03 meskes Exp $ */
 
 /* Copyright comment */
 %{
@@ -4630,7 +4630,6 @@ type_declaration: S_TYPEDEF
 		char * dimension = $6.index1;
 		char * length = $6.index2;
 
-printf("MM: %s\n", $5);
 		if (($3.type_enum == ECPGt_struct ||
 		     $3.type_enum == ECPGt_union) &&
 		    initializer == 1)
