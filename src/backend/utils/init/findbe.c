@@ -7,7 +7,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/utils/init/findbe.c,v 1.40 2003/11/29 19:52:01 pgsql Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/init/findbe.c,v 1.41 2004/02/02 00:11:31 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -49,13 +49,13 @@ ValidateBinary(char *path)
 	uid_t		euid;
 	struct group *gp;
 	struct passwd *pwp;
+	int			i;
+	int			in_grp = 0;
 #else
 	char		path_exe[MAXPGPATH + 2 + strlen(".exe")];
 #endif
-	int			i;
 	int			is_r = 0;
 	int			is_x = 0;
-	int			in_grp = 0;
 
 #ifdef WIN32
 	/* Win32 requires a .exe suffix for stat() */

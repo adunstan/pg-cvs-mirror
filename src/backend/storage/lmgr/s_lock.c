@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/storage/lmgr/s_lock.c,v 1.24 2004/01/09 21:08:49 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/storage/lmgr/s_lock.c,v 1.25 2004/02/10 03:42:45 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -72,7 +72,7 @@ s_lock(volatile slock_t *lock, const char *file, int line)
 	 * (and thus the probability of unintended failure) than to fix the
 	 * total time spent.
 	 *
-	 * The select() delays are measured in centiseconds (0.01 sec) because 10
+	 * The pg_usleep() delays are measured in centiseconds (0.01 sec) because 10
 	 * msec is a common resolution limit at the OS level.
 	 */
 #define SPINS_PER_DELAY		100
