@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/access/transam/xact.c,v 1.158 2003/12/02 19:26:47 joe Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/access/transam/xact.c,v 1.159 2004/01/07 18:56:24 neilc Exp $
  *
  * NOTES
  *		Transaction aborts can now occur two ways:
@@ -561,13 +561,7 @@ RecordTransactionCommit(void)
 			 */
 			if (CommitDelay > 0 && enableFsync &&
 				CountActiveBackends() >= CommitSiblings)
-			{
-				struct timeval delay;
-
-				delay.tv_sec = 0;
-				delay.tv_usec = CommitDelay;
-				(void) select(0, NULL, NULL, NULL, &delay);
-			}
+				PG_USLEEP(CommitDelay);
 
 			XLogFlush(recptr);
 		}

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/storage/buffer/bufmgr.c,v 1.150 2003/12/20 22:18:02 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/storage/buffer/bufmgr.c,v 1.151 2004/01/07 18:56:27 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1031,9 +1031,7 @@ BufferBackgroundWriter(void)
 		 * there was nothing to do at all.
 		 */
 		if (n > 0)
-		{
-			PG_DELAY(BgWriterDelay);
-		}
+			PG_USLEEP(BgWriterDelay * 1000);
 		else
 			sleep(10);
 	}
