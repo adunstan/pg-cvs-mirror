@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/utils/init/miscinit.c,v 1.118 2004/01/07 23:03:06 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/init/miscinit.c,v 1.119 2004/01/08 06:01:21 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -622,7 +622,16 @@ CreateLockFile(const char *filename, bool amPostmaster,
 				(errcode_for_file_access(),
 			  errmsg("could not write lock file \"%s\": %m", filename)));
 	}
-	close(fd);
+	if (close(fd))
+	{
+		int			save_errno = errno;
+
+		unlink(filename);
+		errno = save_errno;
+		ereport(FATAL,
+				(errcode_for_file_access(),
+			  errmsg("could not write lock file \"%s\": %m", filename)));
+	}
 
 	/*
 	 * Arrange for automatic removal of lockfile at proc_exit.
@@ -776,7 +785,13 @@ RecordSharedMemoryInLockFile(unsigned long id1, unsigned long id2)
 		close(fd);
 		return;
 	}
-	close(fd);
+	if (close(fd))
+	{
+		ereport(LOG,
+				(errcode_for_file_access(),
+				 errmsg("could not write to file \"%s\": %m",
+						directoryLockFile)));
+	}
 }
 
 

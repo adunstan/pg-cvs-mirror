@@ -10,7 +10,7 @@
  * Written by Peter Eisentraut <peter_e@gmx.net>.
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/utils/misc/guc.c,v 1.179 2004/01/23 23:54:21 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/misc/guc.c,v 1.180 2004/01/24 20:00:45 wieck Exp $
  *
  *--------------------------------------------------------------------
  */
@@ -3971,7 +3971,16 @@ write_nondefault_variables(GucContext context)
 		}
 	}
 
-	FreeFile(fp);
+	if (FreeFile(fp))
+	{
+		free(new_filename);
+		free(filename);
+		ereport(elevel,
+				(errcode_for_file_access(),
+				 errmsg("could not write to file \"%s\": %m", CONFIG_EXEC_PARAMS)));
+		return;
+	}
+
 	/* Put new file in place, this could delay on Win32 */
 	rename(new_filename, filename);
 	free(new_filename);

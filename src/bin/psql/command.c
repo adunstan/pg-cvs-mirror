@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2003, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql-server/src/bin/psql/command.c,v 1.110 2004/01/24 19:38:49 neilc Exp $
+ * $PostgreSQL: pgsql-server/src/bin/psql/command.c,v 1.111 2004/01/25 03:07:22 neilc Exp $
  */
 #include "postgres_fe.h"
 #include "command.h"
@@ -1601,8 +1601,12 @@ do_edit(const char *filename_arg, PQExpBuffer query_buf)
 				remove(fname);
 				error = true;
 			}
-			else
-				fclose(stream);
+			else if (fclose(stream) != 0)
+			{
+				psql_error("%s: %s\n", fname, strerror(errno));
+				remove(fname);
+				error = true;
+			}
 		}
 	}
 

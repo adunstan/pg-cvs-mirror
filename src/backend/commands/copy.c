@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/commands/copy.c,v 1.214 2003/11/29 19:51:47 pgsql Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/commands/copy.c,v 1.215 2004/01/18 02:15:29 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -921,7 +921,14 @@ DoCopy(const CopyStmt *stmt)
 	}
 
 	if (!pipe)
-		FreeFile(copy_file);
+	{
+		/* we assume only the write case could fail here */
+		if (FreeFile(copy_file))
+			ereport(ERROR,
+					(errcode_for_file_access(),
+					 errmsg("could not write to file \"%s\": %m",
+							filename)));
+	}
 	else if (IsUnderPostmaster && !is_from)
 		SendCopyEnd(binary);
 	pfree(attribute_buf.data);
