@@ -7,7 +7,7 @@
  * Copyright (c) 2000-2003, PostgreSQL Global Development Group
  * Written by Peter Eisentraut <peter_e@gmx.net>.
  *
- * $PostgreSQL: pgsql-server/src/include/utils/guc.h,v 1.47 2004/05/28 05:13:32 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/include/utils/guc.h,v 1.48 2004/07/01 00:51:44 tgl Exp $
  *--------------------------------------------------------------------
  */
 #ifndef GUC_H
@@ -135,6 +135,13 @@ extern int	log_min_messages;
 extern int	client_min_messages;
 extern int	log_min_duration_statement;
 
+extern char *guc_pgdata;
+extern char *guc_hbafile;
+extern char *guc_identfile;
+extern char *external_pidfile;
+
+extern char *user_pgconfig;
+extern bool user_pgconfig_is_dir;
 
 extern void SetConfigOption(const char *name, const char *value,
 				GucContext context, GucSource source);
