@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/executor/spi.c,v 1.118 2004/06/11 01:08:43 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/executor/spi.c,v 1.119 2004/07/01 00:50:26 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -206,16 +206,27 @@ AtEOSubXact_SPI(bool isCommit, TransactionId childXid)
 	while (_SPI_connected >= 0)
 	{
 		_SPI_connection *connection = &(_SPI_stack[_SPI_connected]);
-		int		res;
 
 		if (connection->connectXid != childXid)
 			break;				/* couldn't be any underneath it either */
 
 		found = true;
 
-		_SPI_curid = _SPI_connected - 1; /* avoid begin_call error */
-		res = SPI_finish();
-		Assert(res == SPI_OK_FINISH);
+		/*
+		 * Pop the stack entry and reset global variables.  Unlike
+		 * SPI_finish(), we don't risk switching to memory contexts that
+		 * might be already gone, or deleting memory contexts that have been
+		 * or will be thrown away anyway.
+		 */
+		_SPI_connected--;
+		_SPI_curid = _SPI_connected;
+		if (_SPI_connected == -1)
+			_SPI_current = NULL;
+		else
+			_SPI_current = &(_SPI_stack[_SPI_connected]);
+		SPI_processed = 0;
+		SPI_lastoid = InvalidOid;
+		SPI_tuptable = NULL;
 	}
 
 	if (found && isCommit)
