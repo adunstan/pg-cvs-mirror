@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/interfaces/libpq/fe-connect.c,v 1.271 2004/05/26 18:35:51 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/interfaces/libpq/fe-connect.c,v 1.272 2004/06/03 00:07:38 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -2387,7 +2387,7 @@ parseServiceInfo(PQconninfoOption *options, PQExpBuffer errorMessage)
 	 *	location to find our config files.
 	 */	
 	snprintf(serviceFile, MAXPGPATH, "%s/pg_service.conf",
-			 getenv("PGETC") ? getenv("PGETC") : SYSCONFDIR);
+			 getenv("PGSYSCONFDIR") ? getenv("PGSYSCONFDIR") : SYSCONFDIR);
 
 	if (service != NULL)
 	{
