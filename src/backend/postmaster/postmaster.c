@@ -37,7 +37,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/postmaster/postmaster.c,v 1.412 2004/07/19 02:47:08 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/postmaster/postmaster.c,v 1.414 2004/07/21 20:34:46 momjian Exp $
  *
  * NOTES
  *
@@ -853,9 +853,9 @@ PostmasterMain(int argc, char *argv[])
 
 	/*
 	 * Reset whereToSendOutput from Debug (its starting state) to None.
-	 * This prevents ereport from sending log messages to stderr unless
-	 * the syslog/stderr switch permits.  We don't do this until the
-	 * postmaster is fully launched, since startup failures may as well be
+	 * This stops ereport from sending log messages to stderr unless
+	 * Log_destination permits.  We don't do this until the postmaster
+	 * is fully launched, since startup failures may as well be
 	 * reported to stderr.
 	 */
 	whereToSendOutput = None;
