@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/init/postinit.c,v 1.129 2003/11/12 21:15:56 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/init/postinit.c,v 1.130 2003/11/29 19:52:01 pgsql Exp $
  *
  *
  *-------------------------------------------------------------------------
@@ -43,7 +43,7 @@
 
 static void ReverifyMyDatabase(const char *name);
 static void InitCommunication(void);
-static void ShutdownPostgres(void);
+static void ShutdownPostgres(int code, Datum arg);
 static bool ThereIsAtLeastOneUser(void);
 
 
@@ -453,7 +453,7 @@ InitPostgres(const char *dbname, const char *username)
  * cleanup fails.
  */
 static void
-ShutdownPostgres(void)
+ShutdownPostgres(int code, Datum arg)
 {
 	/*
 	 * These operations are really just a minimal subset of

@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/commands/async.c,v 1.104 2003/11/12 21:15:49 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/commands/async.c,v 1.105 2003/11/29 19:51:47 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -120,7 +120,7 @@ bool		Trace_notify = false;
 
 
 static void Async_UnlistenAll(void);
-static void Async_UnlistenOnExit(void);
+static void Async_UnlistenOnExit(int code, Datum arg);
 static void ProcessIncomingNotify(void);
 static void NotifyMyFrontEnd(char *relname, int32 listenerPID);
 static bool AsyncExistsPendingNotify(const char *relname);
@@ -384,7 +384,7 @@ Async_UnlistenAll(void)
  *--------------------------------------------------------------
  */
 static void
-Async_UnlistenOnExit(void)
+Async_UnlistenOnExit(int code, Datum arg)
 {
 	/*
 	 * We need to start/commit a transaction for the unlisten, but if

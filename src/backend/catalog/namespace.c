@@ -13,7 +13,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/catalog/namespace.c,v 1.58 2003/09/25 06:57:57 petere Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/catalog/namespace.c,v 1.59 2003/11/29 19:51:45 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -130,7 +130,7 @@ char	   *namespace_search_path = NULL;
 static void recomputeNamespacePath(void);
 static void InitTempTableNamespace(void);
 static void RemoveTempRelations(Oid tempNamespaceId);
-static void RemoveTempRelationsCallback(void);
+static void RemoveTempRelationsCallback(int code, Datum arg);
 static void NamespaceCallback(Datum arg, Oid relid);
 
 /* These don't really need to appear in any header file */
@@ -1735,7 +1735,7 @@ RemoveTempRelations(Oid tempNamespaceId)
  * Callback to remove temp relations at backend exit.
  */
 static void
-RemoveTempRelationsCallback(void)
+RemoveTempRelationsCallback(int code, Datum arg)
 {
 	if (OidIsValid(myTempNamespace))	/* should always be true */
 	{

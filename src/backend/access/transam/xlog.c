@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: /cvsroot/pgsql-server/src/backend/access/transam/xlog.c,v 1.125 2003/09/27 18:16:35 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/backend/access/transam/xlog.c,v 1.126 2003/11/29 19:51:40 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -3086,7 +3086,7 @@ GetRedoRecPtr(void)
  * This must be called ONCE during postmaster or standalone-backend shutdown
  */
 void
-ShutdownXLOG(void)
+ShutdownXLOG(int code, Datum arg)
 {
 	ereport(LOG,
 			(errmsg("shutting down")));

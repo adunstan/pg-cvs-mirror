@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: xlog.h,v 1.44 2003/08/04 02:40:10 momjian Exp $
+ * $PostgreSQL: pgsql-server/src/include/access/xlog.h,v 1.45 2003/11/29 22:40:55 pgsql Exp $
  */
 #ifndef XLOG_H
 #define XLOG_H
@@ -207,7 +207,7 @@ extern void XLOGShmemInit(void);
 extern void XLOGPathInit(void);
 extern void BootStrapXLOG(void);
 extern void StartupXLOG(void);
-extern void ShutdownXLOG(void);
+extern void ShutdownXLOG(int code, Datum arg);
 extern void CreateCheckPoint(bool shutdown, bool force);
 extern void SetThisStartUpID(void);
 extern void XLogPutNextOid(Oid nextOid);
