@@ -11,7 +11,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/parser/gram.y,v 2.444 2004/01/10 02:21:08 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/parser/gram.y,v 2.445 2004/01/10 23:28:45 neilc Exp $
  *
  * HISTORY
  *	  AUTHOR			DATE			MAJOR EVENT
@@ -815,6 +815,9 @@ OptSchemaEltList:
  */
 schema_stmt:
 			CreateStmt
+			| IndexStmt
+			| CreateSeqStmt
+			| CreateTrigStmt
 			| GrantStmt
 			| ViewStmt
 		;

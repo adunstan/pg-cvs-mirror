@@ -1,4 +1,4 @@
-# $PostgreSQL: /cvsroot/pgsql-server/src/test/regress/serial_schedule,v 1.22 2003/09/13 16:44:48 momjian Exp $
+# $PostgreSQL: pgsql-server/src/test/regress/serial_schedule,v 1.23 2003/11/29 19:52:14 pgsql Exp $
 # This should probably be in an order similar to parallel_schedule.
 test: boolean
 test: char
@@ -73,6 +73,7 @@ test: arrays
 test: btree_index
 test: hash_index
 test: update
+test: namespace
 test: privileges
 test: misc
 test: select_views
