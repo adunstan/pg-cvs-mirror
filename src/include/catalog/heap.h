@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: heap.h,v 1.62 2003/09/19 21:04:20 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/include/catalog/heap.h,v 1.63 2003/11/29 22:40:58 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -69,6 +69,7 @@ extern void RemoveAttributeById(Oid relid, AttrNumber attnum);
 extern void RemoveAttrDefault(Oid relid, AttrNumber attnum,
 				  DropBehavior behavior, bool complain);
 extern void RemoveAttrDefaultById(Oid attrdefId);
+extern void RemoveStatistics(Relation rel, AttrNumber attnum);
 
 extern Form_pg_attribute SystemAttributeDefinition(AttrNumber attno,
 						  bool relhasoids);
