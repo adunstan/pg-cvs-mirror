@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/port/win32/shmem.c,v 1.4 2004/02/12 20:37:34 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/port/win32/shmem.c,v 1.5 2004/04/19 17:42:58 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -40,7 +40,7 @@ shmat(int memId, void *shmaddr, int flag)
 	if (lpmem == NULL)
 	{
 		lpmem = (void *) -1;
-		errno = GetLastError();
+		_dosmaperr(GetLastError());
 	}
 
 	return lpmem;
@@ -123,6 +123,7 @@ shmget(int memKey, int size, int flag)
 	else if (!hmap)
 	{
 		/* Unable to get shared memory */
+		_dosmaperr(GetLastError());
 		return -1;
 	}
 
