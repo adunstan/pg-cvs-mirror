@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/storage/lwlock.h,v 1.12 2004/06/11 16:43:24 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/include/storage/lwlock.h,v 1.13 2004/08/11 04:07:16 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -37,6 +37,8 @@ typedef enum LWLockId
 	ControlFileLock,
 	CheckpointLock,
 	CheckpointStartLock,
+	CLogControlLock,
+	SubtransControlLock,
 	RelCacheInitLock,
 	BgWriterCommLock,
 
