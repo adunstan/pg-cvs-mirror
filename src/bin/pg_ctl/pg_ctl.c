@@ -4,7 +4,7 @@
  *
  * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/pg_ctl/pg_ctl.c,v 1.52 2004/12/23 00:03:24 tgl Exp $
+ * $PostgreSQL: pgsql/src/bin/pg_ctl/pg_ctl.c,v 1.53 2004/12/31 22:03:05 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -35,7 +35,6 @@ int			optreset;
 /* PID can be negative for standalone backend */
 typedef long pgpid_t;
 
-#define _(x) gettext((x))
 
 #define WHITESPACE "\f\n\r\t\v" /* as defined by isspace() */
 

@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
- * $PostgreSQL: pgsql/src/bin/pg_dump/pg_dumpall.c,v 1.56 2004/12/03 18:48:19 tgl Exp $
+ * $PostgreSQL: pgsql/src/bin/pg_dump/pg_dumpall.c,v 1.57 2004/12/31 22:03:09 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -34,7 +34,6 @@ int			optreset;
 #include "pg_backup.h"
 #include "pqexpbuffer.h"
 
-#define _(x) gettext((x))
 
 /* version string we expect back from postgres */
 #define PG_VERSIONSTR "pg_dump (PostgreSQL) " PG_VERSION "\n"

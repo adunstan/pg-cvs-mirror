@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/port/sprompt.c,v 1.9 2004/09/27 19:16:02 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/port/sprompt.c,v 1.10 2004/12/31 22:03:53 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -103,7 +103,7 @@ simple_prompt(const char *prompt, int maxlen, bool echo)
 
 	if (prompt)
 	{
-		fputs(gettext(prompt), termout);
+		fputs(_(prompt), termout);
 		fflush(termout);
 	}
 

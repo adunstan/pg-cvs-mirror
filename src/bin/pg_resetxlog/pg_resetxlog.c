@@ -23,7 +23,7 @@
  * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/bin/pg_resetxlog/pg_resetxlog.c,v 1.27 2004/12/20 01:42:11 tgl Exp $
+ * $PostgreSQL: pgsql/src/bin/pg_resetxlog/pg_resetxlog.c,v 1.28 2004/12/31 22:03:11 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -47,8 +47,6 @@
 
 extern int	optind;
 extern char *optarg;
-
-#define _(x) gettext((x))
 
 
 char		XLogDir[MAXPGPATH]; /* not static, see xlog_internal.h */

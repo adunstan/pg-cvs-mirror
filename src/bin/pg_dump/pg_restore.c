@@ -34,7 +34,7 @@
  *
  *
  * IDENTIFICATION
- *		$PostgreSQL: pgsql/src/bin/pg_dump/pg_restore.c,v 1.67 2004/11/27 18:51:06 tgl Exp $
+ *		$PostgreSQL: pgsql/src/bin/pg_dump/pg_restore.c,v 1.68 2004/12/03 18:48:19 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -65,7 +65,6 @@ int			optreset;
 #include <locale.h>
 #endif
 
-#define _(x) gettext((x))
 
 /* Forward decls */
 static void usage(const char *progname);

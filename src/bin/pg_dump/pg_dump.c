@@ -12,7 +12,7 @@
  *	by PostgreSQL
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/bin/pg_dump/pg_dump.c,v 1.401 2005/01/23 00:30:26 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/bin/pg_dump/pg_dump.c,v 1.402 2005/01/26 21:24:12 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -60,8 +60,6 @@ int			optreset;
 #include "pg_backup.h"
 #include "pg_backup_archiver.h"
 #include "dumputils.h"
-
-#define _(x) gettext((x))
 
 extern char *optarg;
 extern int	optind,
