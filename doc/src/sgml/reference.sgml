@@ -1,5 +1,5 @@
 <!-- reference.sgml
-$PostgreSQL: pgsql-server/doc/src/sgml/reference.sgml,v 1.50 2004/06/25 21:55:51 tgl Exp $
+$PostgreSQL: pgsql-server/doc/src/sgml/reference.sgml,v 1.51 2004/08/01 17:32:11 tgl Exp $
 
 PostgreSQL Reference Manual
 -->
@@ -44,6 +44,7 @@ PostgreSQL Reference Manual
    &alterDomain;
    &alterFunction;
    &alterGroup;
+   &alterIndex;
    &alterLanguage;
    &alterOperator;
    &alterOperatorClass;
