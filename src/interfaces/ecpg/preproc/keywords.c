@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/interfaces/ecpg/preproc/keywords.c,v 1.65 2004/08/29 04:13:11 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/interfaces/ecpg/preproc/keywords.c,v 1.66 2004/08/30 02:54:41 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -249,6 +249,7 @@ static ScanKeyword ScanKeywords[] = {
 		{"references", REFERENCES},
 		{"reindex", REINDEX},
 		{"relative", RELATIVE_P},
+		{"release", RELEASE},
 		{"rename", RENAME},
 		{"repeatable", REPEATABLE},
 		{"replace", REPLACE},
@@ -262,6 +263,7 @@ static ScanKeyword ScanKeywords[] = {
 		{"row", ROW},
 		{"rows", ROWS},
 		{"rule", RULE},
+		{"savepoint", SAVEPOINT},
 		{"schema", SCHEMA},
 		{"scroll", SCROLL},
 		{"second", SECOND_P},
