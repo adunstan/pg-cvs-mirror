@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/access/xact.h,v 1.60 2004/01/26 22:51:56 momjian Exp $
+ * $PostgreSQL: pgsql-server/src/include/access/xact.h,v 1.61 2004/02/11 22:55:25 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -58,6 +58,7 @@ typedef enum TransState
 typedef enum TBlockState
 {
 	TBLOCK_DEFAULT,
+	TBLOCK_STARTED,
 	TBLOCK_BEGIN,
 	TBLOCK_INPROGRESS,
 	TBLOCK_END,
