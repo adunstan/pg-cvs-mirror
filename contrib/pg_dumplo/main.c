@@ -1,7 +1,7 @@
 /* -------------------------------------------------------------------------
  * pg_dumplo
  *
- * $PostgreSQL: pgsql/contrib/pg_dumplo/main.c,v 1.19 2003/11/29 19:51:35 pgsql Exp $
+ * $PostgreSQL: pgsql/contrib/pg_dumplo/main.c,v 1.20 2004/10/25 02:15:00 tgl Exp $
  *
  *					Karel Zak 1999-2000
  * -------------------------------------------------------------------------
@@ -23,7 +23,7 @@
 
 #include "getopt_long.h"
 
-#ifndef HAVE_OPTRESET
+#ifndef HAVE_INT_OPTRESET
 int			optreset;
 #endif
 
