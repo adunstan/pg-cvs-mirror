@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/adt/geo_ops.c,v 1.82 2003/09/29 00:05:25 petere Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/adt/geo_ops.c,v 1.83 2003/11/29 19:51:58 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1383,7 +1383,7 @@ path_recv(PG_FUNCTION_ARGS)
 
 	closed = pq_getmsgbyte(buf);
 	npts = pq_getmsgint(buf, sizeof(int32));
-	if (npts < 0 || npts >= (int32) (INT_MAX / sizeof(Point)))
+	if (npts < 0 || npts >= (int32) ((INT_MAX - offsetof(PATH, p[0])) / sizeof(Point)))
 		ereport(ERROR,
 				(errcode(ERRCODE_INVALID_BINARY_REPRESENTATION),
 				 errmsg("invalid number of points in external \"path\" value")));
