@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/tcop/pquery.c,v 1.77 2004/03/21 22:29:11 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/tcop/pquery.c,v 1.78 2004/05/26 04:41:35 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -801,8 +801,8 @@ PortalRunMulti(Portal portal,
 			   DestReceiver *dest, DestReceiver *altdest,
 			   char *completionTag)
 {
-	ListCell   *planlist_item = list_head(portal->planTrees);
 	ListCell   *querylist_item;
+	ListCell   *planlist_item;
 
 	/*
 	 * If the destination is RemoteExecute, change to None.  The reason is
@@ -823,12 +823,11 @@ PortalRunMulti(Portal portal,
 	 * Loop to handle the individual queries generated from a single
 	 * parsetree by analysis and rewrite.
 	 */
-	foreach(querylist_item, portal->parseTrees)
+	forboth(querylist_item, portal->parseTrees,
+			planlist_item, portal->planTrees)
 	{
 		Query	   *query = (Query *) lfirst(querylist_item);
 		Plan	   *plan = (Plan *) lfirst(planlist_item);
-
-		planlist_item = lnext(planlist_item);
 
 		/*
 		 * If we got a cancel signal in prior command, quit
