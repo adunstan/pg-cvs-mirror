@@ -1,4 +1,4 @@
-/* $PostgreSQL: pgsql-server/src/include/port/win32.h,v 1.17 2004/02/08 22:28:57 neilc Exp $ */
+/* $PostgreSQL: pgsql-server/src/include/port/win32.h,v 1.18 2004/02/18 16:25:12 momjian Exp $ */
 
 /* undefine and redefine after #include */
 #undef mkdir
@@ -13,7 +13,6 @@
 
 
 #define USES_WINSOCK
-#define NOFILE		  100
 
 /* defines for dynamic linking on Win32 platform */
 #if defined(__CYGWIN__) || defined(__MINGW32__)
