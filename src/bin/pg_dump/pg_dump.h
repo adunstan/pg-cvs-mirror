@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/bin/pg_dump/pg_dump.h,v 1.108 2004/03/03 21:28:55 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/bin/pg_dump/pg_dump.h,v 1.109 2004/06/18 06:14:00 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -238,6 +238,7 @@ typedef struct _indxInfo
 	DumpableObject dobj;
 	TableInfo  *indextable;		/* link to table the index is for */
 	char	   *indexdef;
+	char	   *tablespace;		/* tablespace in which index is stored */
 	int			indnkeys;
 	Oid		   *indkeys;
 	bool		indisclustered;

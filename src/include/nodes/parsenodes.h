@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/nodes/parsenodes.h,v 1.262 2004/07/12 05:38:11 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/include/nodes/parsenodes.h,v 1.263 2004/07/27 05:11:30 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -992,6 +992,8 @@ typedef struct Constraint
 	char	   *cooked_expr;	/* expr, as nodeToString representation */
 	List	   *keys;			/* String nodes naming referenced
 								 * column(s) */
+	char	   *indexspace;		/* index tablespace for PKEY/UNIQUE
+								 * constraints; NULL for default */
 } Constraint;
 
 /* ----------

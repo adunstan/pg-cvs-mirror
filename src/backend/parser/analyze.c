@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- *	$PostgreSQL: pgsql-server/src/backend/parser/analyze.c,v 1.306 2004/06/18 06:13:31 tgl Exp $
+ *	$PostgreSQL: pgsql-server/src/backend/parser/analyze.c,v 1.307 2004/07/12 05:37:44 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1199,7 +1199,7 @@ transformIndexConstraints(ParseState *pstate, CreateStmtContext *cxt)
 
 		index->relation = cxt->relation;
 		index->accessMethod = DEFAULT_INDEX_TYPE;
-		index->tableSpace = NULL;
+		index->tableSpace = constraint->indexspace;
 		index->indexParams = NIL;
 		index->whereClause = NULL;
 
