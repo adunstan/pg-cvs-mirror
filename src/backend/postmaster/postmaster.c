@@ -37,7 +37,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/postmaster/postmaster.c,v 1.404 2004/06/14 18:08:19 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/postmaster/postmaster.c,v 1.405 2004/06/24 21:02:55 tgl Exp $
  *
  * NOTES
  *
@@ -450,8 +450,9 @@ PostmasterMain(int argc, char *argv[])
 				/*
 				 * Other options to pass to the backend on the command line
 				 */
-				strcat(ExtraOptions, " ");
-				strcat(ExtraOptions, optarg);
+				snprintf(ExtraOptions + strlen(ExtraOptions),
+						 sizeof(ExtraOptions) - strlen(ExtraOptions),
+						 " %s", optarg);
 				break;
 			case 'p':
 				SetConfigOption("port", optarg, PGC_POSTMASTER, PGC_S_ARGV);
