@@ -9,13 +9,12 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/storage/lmgr/s_lock.c,v 1.23 2003/12/27 20:58:58 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/storage/lmgr/s_lock.c,v 1.24 2004/01/09 21:08:49 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
 #include "postgres.h"
 
-#include <sys/time.h>
 #include <unistd.h>
 
 #include "storage/s_lock.h"
@@ -96,7 +95,7 @@ s_lock(volatile slock_t *lock, const char *file, int line)
 			if (++delays > NUM_DELAYS)
 				s_lock_stuck(lock, file, line);
 
-			PG_USLEEP(cur_delay * 10000);
+			pg_usleep(cur_delay * 10000L);
 
 #if defined(S_LOCK_TEST)
 			fprintf(stdout, "*");
