@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/backend/commands/user.c,v 1.144 2004/08/29 05:06:41 momjian Exp $
+ * $PostgreSQL: pgsql-server/src/backend/commands/user.c,v 1.145 2004/09/16 16:58:28 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -282,8 +282,8 @@ write_group_file(Relation grel)
 				 errmsg("could not rename file \"%s\" to \"%s\": %m",
 						tempname, filename)));
 
-	pfree((void *) tempname);
-	pfree((void *) filename);
+	pfree(tempname);
+	pfree(filename);
 }
 
 
@@ -412,8 +412,8 @@ write_user_file(Relation urel)
 				 errmsg("could not rename file \"%s\" to \"%s\": %m",
 						tempname, filename)));
 
-	pfree((void *) tempname);
-	pfree((void *) filename);
+	pfree(tempname);
+	pfree(filename);
 }
 
 
