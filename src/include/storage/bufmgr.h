@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: bufmgr.h,v 1.71 2003/11/19 15:55:08 wieck Exp $
+ * $PostgreSQL: pgsql-server/src/include/storage/bufmgr.h,v 1.72 2003/11/29 22:41:13 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -57,19 +57,6 @@ extern long *LocalRefCount;
  */
 
 #define BAD_BUFFER_ID(bid) ((bid) < 1 || (bid) > NBuffers)
-#define INVALID_DESCRIPTOR (-3)
-
-#define UnlockAndReleaseBuffer(buffer)	\
-( \
-	LockBuffer(buffer, BUFFER_LOCK_UNLOCK), \
-	ReleaseBuffer(buffer) \
-)
-
-#define UnlockAndWriteBuffer(buffer)	\
-( \
-	LockBuffer(buffer, BUFFER_LOCK_UNLOCK), \
-	WriteBuffer(buffer) \
-)
 
 /*
  * BufferIsValid
