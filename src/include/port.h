@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/port.h,v 1.21 2004/03/09 04:49:02 momjian Exp $
+ * $PostgreSQL: pgsql-server/src/include/port.h,v 1.22 2004/03/10 21:12:46 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -50,6 +50,11 @@ extern int	pgunlink(const char *path);
 #endif
 
 #ifdef WIN32
+
+/* open() replacement to allow delete of held files */
+extern int	win32_open(const char*,int,...);
+#define 	open(a,b,...)	win32_open(a,b,##__VA_ARGS__)
+
 extern int	copydir(char *fromdir, char *todir);
 
 /* Missing rand functions */
