@@ -14,7 +14,7 @@
  * Copyright (c) 1998-2003, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/utils/adt/numeric.c,v 1.69 2003/12/01 21:52:37 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/adt/numeric.c,v 1.70 2003/12/02 00:26:59 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -2729,7 +2729,7 @@ set_var_from_var(NumericVar *value, NumericVar *dest)
 
 	digitbuf_free(dest->buf);
 
-	memcpy(dest, value, sizeof(NumericVar));
+	memmove(dest, value, sizeof(NumericVar));
 	dest->buf = newbuf;
 	dest->digits = newbuf + 1;
 }
