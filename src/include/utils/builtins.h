@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/utils/builtins.h,v 1.244 2004/06/25 17:20:29 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/include/utils/builtins.h,v 1.245 2004/07/02 18:59:25 joe Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -52,6 +52,12 @@ extern Datum has_schema_privilege_id_name(PG_FUNCTION_ARGS);
 extern Datum has_schema_privilege_id_id(PG_FUNCTION_ARGS);
 extern Datum has_schema_privilege_name(PG_FUNCTION_ARGS);
 extern Datum has_schema_privilege_id(PG_FUNCTION_ARGS);
+extern Datum has_tablespace_privilege_name_name(PG_FUNCTION_ARGS);
+extern Datum has_tablespace_privilege_name_id(PG_FUNCTION_ARGS);
+extern Datum has_tablespace_privilege_id_name(PG_FUNCTION_ARGS);
+extern Datum has_tablespace_privilege_id_id(PG_FUNCTION_ARGS);
+extern Datum has_tablespace_privilege_name(PG_FUNCTION_ARGS);
+extern Datum has_tablespace_privilege_id(PG_FUNCTION_ARGS);
 
 /* bool.c */
 extern Datum boolin(PG_FUNCTION_ARGS);
