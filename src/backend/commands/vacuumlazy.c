@@ -31,7 +31,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/commands/vacuumlazy.c,v 1.37 2004/02/10 03:42:44 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/commands/vacuumlazy.c,v 1.38 2004/02/12 05:39:55 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -813,7 +813,7 @@ count_nondeletable_pages(Relation onerel, LVRelStats *vacrelstats)
 
 		if (PageIsNew(page) || PageIsEmpty(page))
 		{
-			/* PageIsNew robably shouldn't happen... */
+			/* PageIsNew probably shouldn't happen... */
 			LockBuffer(buf, BUFFER_LOCK_UNLOCK);
 			ReleaseBuffer(buf);
 			continue;
