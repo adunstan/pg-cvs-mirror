@@ -9,7 +9,7 @@
  *
  * Copyright (c) 2003, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql-server/src/pl/plpgsql/src/plerrcodes.h,v 1.3 2004/08/02 17:03:48 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/pl/plpgsql/src/plerrcodes.h,v 1.4 2004/08/29 05:07:01 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -657,6 +657,10 @@
 
 {
 	"cant_change_runtime_param", ERRCODE_CANT_CHANGE_RUNTIME_PARAM
+},
+
+{
+	"lock_not_available", ERRCODE_LOCK_NOT_AVAILABLE
 },
 
 {

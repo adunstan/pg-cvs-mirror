@@ -11,7 +11,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/parser/gram.y,v 2.476 2004/09/29 23:39:20 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/parser/gram.y,v 2.477 2004/09/30 00:24:20 tgl Exp $
  *
  * HISTORY
  *	  AUTHOR			DATE			MAJOR EVENT
@@ -7727,6 +7727,7 @@ unreserved_keyword:
 			| NOCREATEUSER
 			| NOTHING
 			| NOTIFY
+			| NOWAIT
 			| OBJECT_P
 			| OF
 			| OIDS
@@ -7944,7 +7945,6 @@ reserved_keyword:
 			| LOCALTIMESTAMP
 			| NEW
 			| NOT
-			| NOWAIT
 			| NULL_P
 			| OFF
 			| OFFSET
