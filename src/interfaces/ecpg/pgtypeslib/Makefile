@@ -4,7 +4,7 @@
 #
 # Copyright (c) 1994, Regents of the University of California
 #
-# $PostgreSQL: pgsql-server/src/interfaces/ecpg/pgtypeslib/Makefile,v 1.22 2004/07/13 00:06:43 tgl Exp $
+# $PostgreSQL: pgsql/src/interfaces/ecpg/pgtypeslib/Makefile,v 1.23 2004/10/04 20:36:12 momjian Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -13,8 +13,8 @@ top_builddir = ../../../..
 include $(top_builddir)/src/Makefile.global
 
 NAME= pgtypes
-SO_MAJOR_VERSION= 1
-SO_MINOR_VERSION= 2
+SO_MAJOR_VERSION= 2
+SO_MINOR_VERSION= 0
 DLTYPE= library
 
 override CPPFLAGS := -I$(top_srcdir)/src/interfaces/ecpg/include \
