@@ -1,12 +1,16 @@
-# $PostgreSQL: /cvsroot/pgsql-server/contrib/pg_logger/Makefile,v 1.2 2001/09/06 10:49:30 petere Exp $
-
-subdir = contrib/pg_logger
-top_builddir = ../..
-include $(top_builddir)/src/Makefile.global
+# $PostgreSQL: pgsql-server/contrib/pg_logger/Makefile,v 1.3 2003/11/29 19:51:35 pgsql Exp $
 
 PROGRAM = pg_logger
 OBJS	= pg_logger.o
 
 DOCS = README.pg_logger
 
+ifdef USE_PGXS
+PGXS = $(shell pg_config --pgxs)
+include $(PGXS)
+else
+subdir = contrib/pg_logger
+top_builddir = ../..
+include $(top_builddir)/src/Makefile.global
 include $(top_srcdir)/contrib/contrib-global.mk
+endif

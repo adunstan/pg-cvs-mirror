@@ -7,7 +7,7 @@
 # with broken/missing library files.
 
 # IDENTIFICATION
-#    $PostgreSQL: pgsql-server/src/port/Makefile,v 1.15 2004/05/30 14:07:47 momjian Exp $
+#    $PostgreSQL: pgsql-server/src/port/Makefile,v 1.16 2004/08/01 06:56:39 momjian Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -19,6 +19,13 @@ override CPPFLAGS := -I$(top_builddir)/src/port $(CPPFLAGS)
 LIBS += $(PTHREAD_LIBS)
 
 all: libpgport.a
+
+# libpgport is needed by some contrib
+install-all-headers: 
+	$(INSTALL_STLIB) libpgport.a $(DESTDIR)$(pkglibdir)
+
+uninstall:
+	$(RM) $(DESTDIR)$(pkglibdir)/libpgport.a
 
 libpgport.a: $(LIBOBJS)
 	$(AR) $(AROPT) $@ $^

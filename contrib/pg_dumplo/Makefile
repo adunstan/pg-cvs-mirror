@@ -1,8 +1,4 @@
-# $PostgreSQL: /cvsroot/pgsql-server/contrib/pg_dumplo/Makefile,v 1.11 2001/09/06 10:49:30 petere Exp $
-
-subdir = contrib/pg_dumplo
-top_builddir = ../..
-include $(top_builddir)/src/Makefile.global
+# $PostgreSQL: pgsql-server/contrib/pg_dumplo/Makefile,v 1.12 2003/11/29 19:51:35 pgsql Exp $
 
 PROGRAM = pg_dumplo
 OBJS	= main.o lo_export.o lo_import.o utils.o
@@ -12,4 +8,12 @@ PG_LIBS = $(libpq)
 
 DOCS = README.pg_dumplo
 
+ifdef USE_PGXS
+PGXS = $(shell pg_config --pgxs)
+include $(PGXS)
+else
+subdir = contrib/pg_dumplo
+top_builddir = ../..
+include $(top_builddir)/src/Makefile.global
 include $(top_srcdir)/contrib/contrib-global.mk
+endif

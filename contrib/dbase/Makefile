@@ -1,8 +1,4 @@
-# $PostgreSQL: /cvsroot/pgsql-server/contrib/dbase/Makefile,v 1.4 2001/12/21 05:29:46 momjian Exp $
-
-subdir = contrib/dbase
-top_builddir = ../..
-include $(top_builddir)/src/Makefile.global
+# $PostgreSQL: pgsql-server/contrib/dbase/Makefile,v 1.5 2003/11/29 19:51:22 pgsql Exp $
 
 PROGRAM = dbf2pg
 OBJS	= dbf.o dbf2pg.o endian.o
@@ -18,4 +14,13 @@ PG_LIBS = $(libpq)
 DOCS = README.dbf2pg
 MAN = dbf2pg.1			# XXX not implemented
 
+
+ifdef USE_PGXS
+PGXS = $(shell pg_config --pgxs)
+include $(PGXS)
+else
+subdir = contrib/dbase
+top_builddir = ../..
+include $(top_builddir)/src/Makefile.global
 include $(top_srcdir)/contrib/contrib-global.mk
+endif

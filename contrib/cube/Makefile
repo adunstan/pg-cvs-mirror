@@ -1,8 +1,4 @@
-# $PostgreSQL: /cvsroot/pgsql-server/contrib/cube/Makefile,v 1.10 2003/09/14 01:52:25 tgl Exp $
-
-subdir = contrib/cube
-top_builddir = ../..
-include $(top_builddir)/src/Makefile.global
+# $PostgreSQL: pgsql-server/contrib/cube/Makefile,v 1.11 2003/11/29 19:51:21 pgsql Exp $
 
 MODULE_big = cube
 OBJS= cube.o cubeparse.o
@@ -10,6 +6,19 @@ OBJS= cube.o cubeparse.o
 DATA_built = cube.sql
 DOCS = README.cube
 REGRESS = cube
+
+EXTRA_CLEAN = cubeparse.c cubeparse.h cubescan.c y.tab.c y.tab.h
+
+
+ifdef USE_PGXS
+PGXS = $(shell pg_config --pgxs)
+include $(PGXS)
+else
+subdir = contrib/cube
+top_builddir = ../..
+include $(top_builddir)/src/Makefile.global
+include $(top_srcdir)/contrib/contrib-global.mk
+endif
 
 
 # cubescan is compiled as part of cubeparse
@@ -32,8 +41,3 @@ ifdef FLEX
 else
 	@$(missing) flex $< $@
 endif
-
-EXTRA_CLEAN = cubeparse.c cubeparse.h cubescan.c y.tab.c y.tab.h
-
-
-include $(top_srcdir)/contrib/contrib-global.mk
