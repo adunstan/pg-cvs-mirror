@@ -15,7 +15,7 @@
  *
  *
  * IDENTIFICATION
- *		$PostgreSQL: pgsql-server/src/bin/pg_dump/pg_backup_archiver.c,v 1.96 2004/08/30 19:44:14 tgl Exp $
+ *		$PostgreSQL: pgsql-server/src/bin/pg_dump/pg_backup_archiver.c,v 1.97 2004/09/10 20:05:18 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -699,9 +699,10 @@ PrintTOCSummary(Archive *AHX, RestoreOptions *ropt)
 	while (te != AH->toc)
 	{
 		if (_tocEntryRequired(te, ropt, false) != 0)
-			ahprintf(AH, "%d; %u %u %s %s %s\n", te->dumpId,
+			ahprintf(AH, "%d; %u %u %s %s %s %s\n", te->dumpId,
 					 te->catalogId.tableoid, te->catalogId.oid,
-					 te->desc, te->tag, te->owner);
+					 te->desc, te->namespace ? te->namespace : "-",
+					 te->tag, te->owner);
 		te = te->next;
 	}
 
