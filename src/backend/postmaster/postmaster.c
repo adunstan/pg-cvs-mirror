@@ -37,7 +37,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/postmaster/postmaster.c,v 1.355 2004/01/07 18:56:27 neilc Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/postmaster/postmaster.c,v 1.356 2004/01/09 23:11:39 momjian Exp $
  *
  * NOTES
  *
@@ -2447,11 +2447,7 @@ BackendInit(Port *port)
 	status = ProcessStartupPacket(port, false);
 
 	if (status != STATUS_OK)
-	{
-		ereport(LOG,
-				(errmsg("connection startup failed")));
 		proc_exit(0);
-	}
 
 	/*
 	 * Now that we have the user and database name, we can set the process
