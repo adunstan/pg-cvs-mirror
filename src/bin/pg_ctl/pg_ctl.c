@@ -4,7 +4,7 @@
  *
  * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql-server/src/bin/pg_ctl/pg_ctl.c,v 1.31 2004/09/02 20:07:50 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/bin/pg_ctl/pg_ctl.c,v 1.32 2004/10/07 15:21:55 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1190,7 +1190,7 @@ main(int argc, char **argv)
 		{"mode", required_argument, NULL, 'm'},
 		{"pgdata", required_argument, NULL, 'D'},
 		{"silent", no_argument, NULL, 's'},
-		{0, 0, 0, 0}
+		{NULL, 0, NULL, 0}
 	};
 
 	int			option_index;

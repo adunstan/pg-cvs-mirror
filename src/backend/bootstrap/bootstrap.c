@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/bootstrap/bootstrap.c,v 1.193 2004/08/29 05:06:41 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/bootstrap/bootstrap.c,v 1.194 2004/10/08 01:36:33 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1012,7 +1012,7 @@ EnterString(char *str)
 
 	len = strlen(str);
 
-	node = FindStr(str, len, 0);
+	node = FindStr(str, len, NULL);
 	if (node)
 		return node->strnum;
 	else

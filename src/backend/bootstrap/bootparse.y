@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/bootstrap/bootparse.y,v 1.72 2004/08/29 04:12:24 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/bootstrap/bootparse.y,v 1.73 2004/08/31 17:10:36 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -52,7 +52,7 @@
 
 
 static void
-do_start()
+do_start(void)
 {
 	StartTransactionCommand();
 	elog(DEBUG4, "start transaction");
@@ -60,7 +60,7 @@ do_start()
 
 
 static void
-do_end()
+do_end(void)
 {
 	CommitTransactionCommand();
 	elog(DEBUG4, "commit transaction");
