@@ -10,7 +10,7 @@
  * Written by Peter Eisentraut <peter_e@gmx.net>.
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/utils/misc/guc.c,v 1.225 2004/07/28 14:23:29 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/misc/guc.c,v 1.226 2004/08/05 23:32:12 tgl Exp $
  *
  *--------------------------------------------------------------------
  */
@@ -1041,11 +1041,11 @@ static struct config_int ConfigureNamesInt[] =
 	},
 
 	{
-		{"vacuum_cost_naptime", PGC_USERSET, RESOURCES,
-			gettext_noop("Vacuum cost naptime in milliseconds."),
+		{"vacuum_cost_delay", PGC_USERSET, RESOURCES,
+			gettext_noop("Vacuum cost delay in milliseconds."),
 			NULL
 		},
-		&VacuumCostNaptime,
+		&VacuumCostDelay,
 		0, 0, 1000, NULL, NULL
 	},
 
