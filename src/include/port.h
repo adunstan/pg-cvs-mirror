@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/port.h,v 1.20 2004/02/25 19:41:23 momjian Exp $
+ * $PostgreSQL: pgsql-server/src/include/port.h,v 1.21 2004/03/09 04:49:02 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -16,6 +16,9 @@
 #include <pwd.h>
 #include <netdb.h>
 #endif
+
+/* non-blocking */
+bool set_noblock(int sock);
 
 /* Portable path handling for Unix/Win32 */
 extern bool is_absolute_path(const char *filename);
