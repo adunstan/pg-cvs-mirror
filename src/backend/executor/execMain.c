@@ -26,7 +26,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/executor/execMain.c,v 1.235 2004/08/29 04:12:31 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/executor/execMain.c,v 1.236 2004/08/29 05:06:42 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -176,7 +176,7 @@ ExecutorStart(QueryDesc *queryDesc, bool useCurrentSnapshot, bool explainOnly)
 	{
 		/* normal query --- use query snapshot, no crosscheck */
 		estate->es_snapshot = CopyQuerySnapshot();
-		estate->es_crosscheck_snapshot = SnapshotAny;
+		estate->es_crosscheck_snapshot = InvalidSnapshot;
 	}
 
 	/*
