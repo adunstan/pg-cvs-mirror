@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/utils/elog.h,v 1.75 2004/08/29 05:06:58 momjian Exp $
+ * $PostgreSQL: pgsql-server/src/include/utils/elog.h,v 1.76 2004/09/05 03:42:13 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -204,7 +204,7 @@ extern DLLIMPORT ErrorContextCallback *error_context_stack;
 		sigjmp_buf *save_exception_stack = PG_exception_stack; \
 		ErrorContextCallback *save_context_stack = error_context_stack; \
 		sigjmp_buf local_sigjmp_buf; \
-		if (sigsetjmp(local_sigjmp_buf, 1) == 0) \
+		if (sigsetjmp(local_sigjmp_buf, 0) == 0) \
 		{ \
 			PG_exception_stack = &local_sigjmp_buf
 
