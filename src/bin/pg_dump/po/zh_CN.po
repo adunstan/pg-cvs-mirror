@@ -1,6 +1,6 @@
 # simplified Chinese translation file for pg_dump and friends
 # Weiping He <laser@zhengmai.com.cn>, 2001.
-# $Header: /home/cvsmirror/pg/pgsql/src/bin/pg_dump/Attic/zh_CN.po,v 1.5 2001/12/10 18:45:57 petere Exp $
+# $Header: /home/cvsmirror/pg/pgsql/src/bin/pg_dump/po/zh_CN.po,v 1.1 2002/08/21 20:42:26 petere Exp $
 #
 msgid ""
 msgstr ""
