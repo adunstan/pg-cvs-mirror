@@ -12,7 +12,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/miscadmin.h,v 1.138 2003/11/29 22:40:53 pgsql Exp $
+ * $PostgreSQL: pgsql-server/src/include/miscadmin.h,v 1.140 2003/12/21 04:34:35 momjian Exp $
  *
  * NOTES
  *	  some of the information in this file should be moved to
@@ -125,7 +125,6 @@ extern bool IsUnderPostmaster;
 
 extern bool ExitOnAnyError;
 
-extern bool Noversion;
 extern char *DataDir;
 
 extern DLLIMPORT int MyProcPid;
