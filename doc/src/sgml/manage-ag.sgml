@@ -1,5 +1,5 @@
 <!--
-$PostgreSQL: pgsql-server/doc/src/sgml/manage-ag.sgml,v 2.32 2004/08/07 19:02:43 tgl Exp $
+$PostgreSQL: pgsql-server/doc/src/sgml/manage-ag.sgml,v 2.33 2004/08/07 19:14:45 tgl Exp $
 -->
 
 <chapter id="managing-databases">
@@ -334,6 +334,10 @@ dropdb <replaceable class="parameter">dbname</replaceable>
 
  <sect1 id="manage-ag-tablespaces">
   <title>Tablespaces</title>
+
+  <indexterm zone="manage-ag-tablespaces">
+   <primary>tablespace</primary>
+  </indexterm>
 
    <para>
     Tablespaces in <productname>PostgreSQL</> allow database administrators to
