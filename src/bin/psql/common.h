@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2004, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql-server/src/bin/psql/common.h,v 1.38 2004/07/12 20:41:13 momjian Exp $
+ * $PostgreSQL: pgsql/src/bin/psql/common.h,v 1.39 2004/08/29 04:13:02 momjian Exp $
  */
 #ifndef COMMON_H
 #define COMMON_H
@@ -48,7 +48,9 @@ extern void ResetCancelConn(void);
 
 #ifndef WIN32
 extern void handle_sigint(SIGNAL_ARGS);
-#endif   /* not WIN32 */
+#else
+extern void setup_cancel_handler(void);
+#endif
 
 extern PGresult *PSQLexec(const char *query, bool start_xact);
 
