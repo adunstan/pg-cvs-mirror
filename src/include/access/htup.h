@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/access/htup.h,v 1.69 2004/08/29 04:13:03 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/access/htup.h,v 1.70 2004/08/29 05:06:55 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -132,7 +132,7 @@ typedef struct HeapTupleHeaderData
 
 	uint8		t_hoff;			/* sizeof header incl. bitmap, padding */
 
-	/* ^ - 23 bytes - ^ */
+	/* ^ - 27 bytes - ^ */
 
 	bits8		t_bits[1];		/* bitmap of NULLs -- VARIABLE LENGTH */
 
@@ -417,7 +417,7 @@ typedef HeapTupleData *HeapTuple;
 #define XLOG_HEAP_INIT_PAGE 0x80
 
 /*
- * All what we need to find changed tuple (14 bytes)
+ * All what we need to find changed tuple
  *
  * NB: on most machines, sizeof(xl_heaptid) will include some trailing pad
  * bytes for alignment.  We don't want to store the pad space in the XLOG,
