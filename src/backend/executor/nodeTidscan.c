@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/executor/nodeTidscan.c,v 1.37 2004/04/21 18:24:26 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/executor/nodeTidscan.c,v 1.38 2004/05/26 04:41:16 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -48,7 +48,7 @@ TidListCreate(TidScanState *tidstate)
 	ListCell   *l;
 
 	tidList = (ItemPointerData *)
-		palloc(length(tidstate->tss_tideval) * sizeof(ItemPointerData));
+		palloc(list_length(tidstate->tss_tideval) * sizeof(ItemPointerData));
 
 	foreach(l, evalList)
 	{

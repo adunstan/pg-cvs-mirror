@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/nodes/outfuncs.c,v 1.236 2004/05/10 22:44:44 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/nodes/outfuncs.c,v 1.237 2004/05/26 04:41:19 neilc Exp $
  *
  * NOTES
  *	  Every node type that can appear in stored rules' parsetrees *must*
@@ -19,8 +19,6 @@
  *
  *-------------------------------------------------------------------------
  */
-#define DISABLE_LIST_COMPAT
-
 #include "postgres.h"
 
 #include <ctype.h>

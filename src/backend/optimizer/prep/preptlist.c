@@ -15,7 +15,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/optimizer/prep/preptlist.c,v 1.66 2003/11/29 19:51:51 pgsql Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/optimizer/prep/preptlist.c,v 1.67 2004/05/26 04:41:26 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -79,7 +79,7 @@ preprocess_targetlist(List *tlist,
 		Resdom	   *resdom;
 		Var		   *var;
 
-		resdom = makeResdom(length(tlist) + 1,
+		resdom = makeResdom(list_length(tlist) + 1,
 							TIDOID,
 							-1,
 							pstrdup("ctid"),
@@ -94,7 +94,7 @@ preprocess_targetlist(List *tlist,
 		 * modify the original tlist (is this really necessary?).
 		 */
 		if (command_type == CMD_DELETE)
-			tlist = listCopy(tlist);
+			tlist = list_copy(tlist);
 
 		tlist = lappend(tlist, makeTargetEntry(resdom, (Expr *) var));
 	}

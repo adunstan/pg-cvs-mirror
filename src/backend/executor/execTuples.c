@@ -15,7 +15,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/executor/execTuples.c,v 1.77 2004/05/10 22:44:44 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/executor/execTuples.c,v 1.78 2004/05/26 04:41:15 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -610,7 +610,7 @@ ExecTypeFromExprList(List *exprList)
 	int			 cur_resno = 1;
 	char		fldname[NAMEDATALEN];
 
-	typeInfo = CreateTemplateTupleDesc(length(exprList), false);
+	typeInfo = CreateTemplateTupleDesc(list_length(exprList), false);
 
 	foreach(l, exprList)
 	{

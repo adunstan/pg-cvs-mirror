@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/optimizer/util/var.c,v 1.56 2004/05/10 22:44:45 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/optimizer/util/var.c,v 1.57 2004/05/26 04:41:27 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -543,7 +543,7 @@ flatten_join_alias_vars_mutator(Node *node,
 
 		/* Expand join alias reference */
 		Assert(var->varattno > 0);
-		newvar = (Node *) nth(var->varattno - 1, rte->joinaliasvars);
+		newvar = (Node *) list_nth(rte->joinaliasvars, var->varattno - 1);
 
 		/*
 		 * If we are expanding an alias carried down from an upper query,

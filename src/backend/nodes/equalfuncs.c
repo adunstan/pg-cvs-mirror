@@ -18,12 +18,10 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/nodes/equalfuncs.c,v 1.221 2004/05/26 04:41:19 neilc Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/nodes/equalfuncs.c,v 1.222 2004/05/26 13:56:47 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
-
-#define DISABLE_LIST_COMPAT
 
 #include "postgres.h"
 

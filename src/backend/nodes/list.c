@@ -9,12 +9,10 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/nodes/list.c,v 1.56 2004/01/07 18:43:36 neilc Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/nodes/list.c,v 1.57 2004/05/26 04:41:19 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */
-#define DISABLE_LIST_COMPAT
-
 #include "postgres.h"
 #include "nodes/pg_list.h"
 

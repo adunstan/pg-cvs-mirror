@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/executor/nodeHashjoin.c,v 1.60 2004/01/07 18:56:26 neilc Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/executor/nodeHashjoin.c,v 1.61 2004/05/26 04:41:15 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -429,7 +429,7 @@ ExecInitHashJoin(HashJoin *node, EState *estate)
 		Assert(IsA(hclause, OpExpr));
 		lclauses = lappend(lclauses, linitial(fstate->args));
 		rclauses = lappend(rclauses, lsecond(fstate->args));
-		hoperators = lappendo(hoperators, hclause->opno);
+		hoperators = lappend_oid(hoperators, hclause->opno);
 	}
 	hjstate->hj_OuterHashKeys = lclauses;
 	hjstate->hj_InnerHashKeys = rclauses;

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/utils/init/miscinit.c,v 1.124 2004/04/19 17:42:58 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/init/miscinit.c,v 1.125 2004/05/26 04:41:43 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -896,7 +896,7 @@ process_preload_libraries(char *preload_libraries_string)
 	{
 		/* syntax error in list */
 		pfree(rawstring);
-		freeList(elemlist);
+		list_free(elemlist);
 		ereport(LOG,
 				(errcode(ERRCODE_SYNTAX_ERROR),
 				 errmsg("invalid list syntax for parameter \"preload_libraries\"")));
@@ -957,5 +957,5 @@ process_preload_libraries(char *preload_libraries_string)
 	}
 
 	pfree(rawstring);
-	freeList(elemlist);
+	list_free(elemlist);
 }

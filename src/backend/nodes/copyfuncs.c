@@ -15,12 +15,10 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/nodes/copyfuncs.c,v 1.282 2004/05/26 04:41:18 neilc Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/nodes/copyfuncs.c,v 1.283 2004/05/26 13:56:47 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
-
-#define DISABLE_LIST_COMPAT
 
 #include "postgres.h"
 

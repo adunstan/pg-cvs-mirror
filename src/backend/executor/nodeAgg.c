@@ -45,7 +45,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/executor/nodeAgg.c,v 1.119 2004/03/13 00:54:10 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/executor/nodeAgg.c,v 1.120 2004/05/26 04:41:15 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1120,7 +1120,7 @@ ExecInitAgg(Agg *node, EState *estate)
 	 * get the count of aggregates in targetlist and quals
 	 */
 	numaggs = aggstate->numaggs;
-	Assert(numaggs == length(aggstate->aggs));
+	Assert(numaggs == list_length(aggstate->aggs));
 	if (numaggs <= 0)
 	{
 		/*

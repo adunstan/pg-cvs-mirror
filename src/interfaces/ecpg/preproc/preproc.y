@@ -1,4 +1,4 @@
-/* $PostgreSQL: pgsql-server/src/interfaces/ecpg/preproc/preproc.y,v 1.283 2004/05/21 13:50:12 meskes Exp $ */
+/* $PostgreSQL: pgsql-server/src/interfaces/ecpg/preproc/preproc.y,v 1.284 2004/05/26 13:57:04 momjian Exp $ */
 
 /* Copyright comment */
 %{
@@ -4093,7 +4093,7 @@ file_name:				StringConst		{ $$ = $1; };
 /* func_name will soon return a List ... but not yet */
 /*
 func_name: function_name
-			{ $$ = makeList1(makeString($1)); }
+			{ $$ = list_make1(makeString($1)); }
 		| dotted_name
 			{ $$ = $1; }
 		;

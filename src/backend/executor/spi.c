@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/executor/spi.c,v 1.113 2004/04/01 21:28:44 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/executor/spi.c,v 1.114 2004/05/26 04:41:16 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -740,7 +740,7 @@ SPI_cursor_open(const char *name, void *plan, Datum *Values, const char *Nulls)
 	int			k;
 
 	/* Ensure that the plan contains only one regular SELECT query */
-	if (length(ptlist) != 1 || length(qtlist) != 1)
+	if (list_length(ptlist) != 1 || list_length(qtlist) != 1)
 		ereport(ERROR,
 				(errcode(ERRCODE_INVALID_CURSOR_DEFINITION),
 				 errmsg("cannot open multi-query plan as cursor")));
@@ -821,8 +821,8 @@ SPI_cursor_open(const char *name, void *plan, Datum *Values, const char *Nulls)
 	PortalDefineQuery(portal,
 					  NULL,		/* unfortunately don't have sourceText */
 					  "SELECT", /* cursor's query is always a SELECT */
-					  makeList1(queryTree),
-					  makeList1(planTree),
+					  list_make1(queryTree),
+					  list_make1(planTree),
 					  PortalGetHeapMemory(portal));
 
 	MemoryContextSwitchTo(oldcontext);
@@ -951,7 +951,7 @@ SPI_is_cursor_plan(void *plan)
 	}
 
 	qtlist = spiplan->qtlist;
-	if (length(spiplan->ptlist) == 1 && length(qtlist) == 1)
+	if (list_length(spiplan->ptlist) == 1 && list_length(qtlist) == 1)
 	{
 		Query *queryTree = (Query *) linitial((List *) linitial(qtlist));
 
