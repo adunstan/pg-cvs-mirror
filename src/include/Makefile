@@ -4,7 +4,7 @@
 #
 # 'make install' installs whole contents of src/include.
 #
-# $PostgreSQL: pgsql/src/include/Makefile,v 1.14 2004/10/07 16:23:28 momjian Exp $
+# $PostgreSQL: pgsql/src/include/Makefile,v 1.15 2004/10/16 22:52:39 tgl Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -46,7 +46,7 @@ install: all installdirs remove-old-headers
 	done
 
 installdirs:
-	$(mkinstalldirs) $(DESTDIR)$(includedir)/libpq $(DESTDIR)$(includedir_internal)/libpq $(DESTDIR)$(includedir_internal)/lib
+	$(mkinstalldirs) $(DESTDIR)$(includedir)/libpq $(DESTDIR)$(includedir_internal)/libpq
 	$(mkinstalldirs) $(addprefix $(DESTDIR)$(includedir_server)/, $(SUBDIRS))
 
 
