@@ -9,17 +9,18 @@
  *
  *
  * IDENTIFICATION
- *	$PostgreSQL: pgsql-server/src/backend/utils/adt/oracle_compat.c,v 1.50 2004/02/27 03:59:23 neilc Exp $
+ *	$PostgreSQL: pgsql-server/src/backend/utils/adt/oracle_compat.c,v 1.51 2004/05/22 00:34:50 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
 #include "postgres.h"
 
+#include <ctype.h>
+#include <limits.h>
 /*
  * towlower() and friends should be in <wctype.h>, but some pre-C99 systems
  * declare them in <wchar.h>.
  */
-#include <ctype.h>
 #ifdef HAVE_WCHAR_H
 #include <wchar.h>
 #endif
