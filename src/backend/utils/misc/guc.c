@@ -10,7 +10,7 @@
  * Written by Peter Eisentraut <peter_e@gmx.net>.
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/utils/misc/guc.c,v 1.214 2004/07/11 00:18:44 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/misc/guc.c,v 1.215 2004/07/11 21:34:00 momjian Exp $
  *
  *--------------------------------------------------------------------
  */
@@ -5210,6 +5210,10 @@ assign_msglvl(int *var, const char *newval, bool doit, GucSource source)
 		if (doit)
 			(*var) = LOG;
 	}
+	/*
+	 *	Client_min_messages always prints 'info', but
+	 *	we allow it as a value anyway.
+	 */
 	else if (pg_strcasecmp(newval, "info") == 0)
 	{
 		if (doit)
