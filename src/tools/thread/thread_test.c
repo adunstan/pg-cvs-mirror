@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- *	$PostgreSQL: pgsql-server/src/tools/thread/thread_test.c,v 1.32 2004/08/29 04:13:13 momjian Exp $
+ *	$PostgreSQL: pgsql-server/src/tools/thread/thread_test.c,v 1.33 2004/08/29 05:07:03 momjian Exp $
  *
  *	This program tests to see if your standard libc functions use
  *	pthread_setspecific()/pthread_getspecific() to be thread-safe.
@@ -59,7 +59,7 @@ main(int argc, char *argv[])
 #else
 
 /* This must be down here because this is the code that uses threads. */
-#include "pthread.h"
+#include <pthread.h>
 
 void		func_call_1(void);
 void		func_call_2(void);
