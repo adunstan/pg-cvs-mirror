@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2004, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql-server/src/bin/psql/startup.c,v 1.98 2004/08/29 04:13:02 momjian Exp $
+ * $PostgreSQL: pgsql-server/src/bin/psql/startup.c,v 1.99 2004/08/29 05:06:54 momjian Exp $
  */
 #include "postgres_fe.h"
 
@@ -590,6 +590,7 @@ process_psqlrc(char *argv0)
 		psqlrc = pg_malloc(strlen(home) + 1 + strlen(PSQLRC) + 1);
 		sprintf(psqlrc, "%s/%s", home, PSQLRC);
 		process_psqlrc_file(psqlrc);
+		free(psqlrc);
 	}
 }
 
