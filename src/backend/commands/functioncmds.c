@@ -10,7 +10,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/commands/functioncmds.c,v 1.42 2003/11/29 19:51:47 pgsql Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/commands/functioncmds.c,v 1.43 2004/01/06 23:55:18 tgl Exp $
  *
  * DESCRIPTION
  *	  These routines take the parse tree and pick out the
@@ -401,7 +401,7 @@ CreateFunction(CreateFunctionStmt *stmt)
 	Oid			prorettype;
 	bool		returnsSet;
 	char	   *language;
-	char		languageName[NAMEDATALEN];
+	char	   *languageName;
 	Oid			languageOid;
 	Oid			languageValidator;
 	char	   *funcname;
@@ -437,7 +437,7 @@ CreateFunction(CreateFunctionStmt *stmt)
 			   &as_clause, &language, &volatility, &isStrict, &security);
 
 	/* Convert language name to canonical case */
-	case_translate_language_name(language, languageName);
+	languageName = case_translate_language_name(language);
 
 	/* Look up the language and validate permissions */
 	languageTuple = SearchSysCache(LANGNAME,

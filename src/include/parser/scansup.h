@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: scansup.h,v 1.13 2003/08/04 02:40:14 momjian Exp $
+ * $PostgreSQL: pgsql-server/src/include/parser/scansup.h,v 1.14 2003/11/29 22:41:09 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -15,6 +15,11 @@
 #ifndef SCANSUP_H
 #define SCANSUP_H
 
-extern char *scanstr(char *s);
+extern char *scanstr(const char *s);
+
+extern char *downcase_truncate_identifier(const char *ident, int len,
+										  bool warn);
+
+extern void truncate_identifier(char *ident, int len, bool warn);
 
 #endif   /* SCANSUP_H */
