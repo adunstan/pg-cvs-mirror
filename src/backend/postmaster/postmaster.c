@@ -37,7 +37,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/postmaster/postmaster.c,v 1.354 2004/01/06 23:15:22 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/postmaster/postmaster.c,v 1.355 2004/01/07 18:56:27 neilc Exp $
  *
  * NOTES
  *
@@ -2450,7 +2450,7 @@ BackendInit(Port *port)
 	{
 		ereport(LOG,
 				(errmsg("connection startup failed")));
-		proc_exit(status);
+		proc_exit(0);
 	}
 
 	/*
