@@ -12,7 +12,7 @@
  *	by PostgreSQL
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/bin/pg_dump/pg_dump.c,v 1.371 2004/05/25 01:00:24 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/bin/pg_dump/pg_dump.c,v 1.372 2004/05/26 18:24:22 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -242,7 +242,7 @@ main(int argc, char **argv)
 	};
 	int			optindex;
 
-	set_pglocale(argv[0], "pg_dump");
+	set_pglocale_pgservice(argv[0], "pg_dump");
 
 	g_verbose = false;
 

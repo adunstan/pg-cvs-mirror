@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2003, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql-server/src/bin/psql/startup.c,v 1.93 2004/05/17 14:35:33 momjian Exp $
+ * $PostgreSQL: pgsql-server/src/bin/psql/startup.c,v 1.94 2004/05/25 01:00:26 momjian Exp $
  */
 #include "postgres_fe.h"
 
@@ -102,7 +102,7 @@ main(int argc, char *argv[])
 	char	   *password = NULL;
 	bool		need_pass;
 
-	set_pglocale(argv[0], "psql");
+	set_pglocale_pgservice(argv[0], "psql");
 
 	pset.progname = get_progname(argv[0]);
 

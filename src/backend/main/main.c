@@ -13,7 +13,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/main/main.c,v 1.84 2004/05/28 05:12:50 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/main/main.c,v 1.85 2004/05/29 22:48:19 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -152,7 +152,7 @@ main(int argc, char *argv[])
 	 * allow startup error messages to be localized.
 	 */
 
-	set_pglocale(argv[0], "postgres");
+	set_pglocale_pgservice(argv[0], "postgres");
 
 #ifdef WIN32
 
