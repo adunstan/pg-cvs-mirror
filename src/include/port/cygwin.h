@@ -1,7 +1,4 @@
-/* $PostgreSQL: /cvsroot/pgsql-server/src/include/port/cygwin.h,v 1.4 2003/08/04 00:43:32 momjian Exp $ */
-
-#define HAS_TEST_AND_SET
-typedef unsigned char slock_t;
+/* $PostgreSQL: pgsql-server/src/include/port/cygwin.h,v 1.5 2003/11/29 19:52:08 pgsql Exp $ */
 
 #include <cygwin/version.h>
 

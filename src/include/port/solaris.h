@@ -1,7 +1,4 @@
-/* $PostgreSQL: /cvsroot/pgsql-server/src/include/port/solaris.h,v 1.8 2003/03/10 22:28:21 tgl Exp $ */
-
-#define HAS_TEST_AND_SET
-typedef unsigned char slock_t;
+/* $PostgreSQL: pgsql-server/src/include/port/solaris.h,v 1.9 2003/11/29 19:52:08 pgsql Exp $ */
 
 /*
  * Sort this out for all operating systems some time.  The __xxx

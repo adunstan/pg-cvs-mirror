@@ -16,7 +16,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/storage/lmgr/spin.c,v 1.11 2003/08/04 02:40:03 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/storage/lmgr/spin.c,v 1.12 2003/11/29 19:51:57 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -25,6 +25,7 @@
 #include "storage/lwlock.h"
 #include "storage/pg_sema.h"
 #include "storage/spin.h"
+#include "storage/s_lock.h"
 
 
 #ifdef HAS_TEST_AND_SET
