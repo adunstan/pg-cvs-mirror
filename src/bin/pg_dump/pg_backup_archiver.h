@@ -17,7 +17,7 @@
  *
  *
  * IDENTIFICATION
- *		$PostgreSQL: pgsql-server/src/bin/pg_dump/pg_backup_archiver.h,v 1.58 2004/04/22 02:39:10 momjian Exp $
+ *		$PostgreSQL: pgsql-server/src/bin/pg_dump/pg_backup_archiver.h,v 1.59 2004/08/20 16:07:15 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -152,6 +152,14 @@ typedef struct
 	PQExpBuffer	tagBuf;
 } sqlparseInfo;
 
+typedef enum 
+{
+    STAGE_NONE = 0,
+    STAGE_INITIALIZING,
+    STAGE_PROCESSING,
+    STAGE_FINALIZING
+} ArchiverStage;
+
 typedef struct _archiveHandle
 {
 	Archive		public;			/* Public part of archive */
@@ -254,6 +262,12 @@ typedef struct _archiveHandle
 	void	   *lo_buf;
 	size_t		lo_buf_used;
 	size_t		lo_buf_size;
+
+	int		noTocComments;
+	ArchiverStage		stage;
+	ArchiverStage		lastErrorStage;
+	struct _tocEntry	*currentTE;
+	struct _tocEntry	*lastErrorTE;
 } ArchiveHandle;
 
 typedef struct _tocEntry
