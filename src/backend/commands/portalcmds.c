@@ -14,7 +14,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/commands/portalcmds.c,v 1.34 2004/09/10 18:39:56 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/commands/portalcmds.c,v 1.35 2004/09/13 20:06:29 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -309,7 +309,7 @@ PersistHoldablePortal(Portal portal)
 	 * If we're preserving a holdable portal, we had better be inside the
 	 * transaction that originally created it.
 	 */
-	Assert(portal->createXact == GetCurrentTransactionId());
+	Assert(portal->createSubid != InvalidSubTransactionId);
 	Assert(queryDesc != NULL);
 
 	/*

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/utils/adt/xid.c,v 1.4 2003/11/29 19:52:00 pgsql Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/adt/xid.c,v 1.5 2004/08/29 04:12:52 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -93,7 +93,7 @@ Datum
 xid_age(PG_FUNCTION_ARGS)
 {
 	TransactionId xid = PG_GETARG_TRANSACTIONID(0);
-	TransactionId now = GetCurrentTransactionId();
+	TransactionId now = GetTopTransactionId();
 
 	/* Permanent XIDs are always infinitely old */
 	if (!TransactionIdIsNormal(xid))
