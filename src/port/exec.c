@@ -7,7 +7,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/port/exec.c,v 1.18 2004/08/08 02:22:55 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/port/exec.c,v 1.19 2004/08/08 03:21:39 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -392,8 +392,8 @@ static char *pipe_read_line(char *cmd, char *line, int maxsize)
 				line[strlen(line)-2] == '\r' &&
 				line[strlen(line)-1] == '\n')
 			{
-				line[strlen(line)-2] == '\n';
-				line[strlen(line)-1] == '\0';
+				line[strlen(line)-2] = '\n';
+				line[strlen(line)-1] = '\0';
 			}
 
 			/*
