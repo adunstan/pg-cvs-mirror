@@ -1,0 +1,43 @@
+--
+-- first, define the datatype.  Turn off echoing so that expected file
+-- does not depend on contents of seg.sql.
+--
+\set ECHO none
+psql:btree_gist.sql:10: NOTICE:  ProcedureCreate: type int4key is not yet defined
+psql:btree_gist.sql:15: NOTICE:  Argument type "int4key" is only a shell
+psql:btree_gist.sql:98: NOTICE:  ProcedureCreate: type tskey is not yet defined
+psql:btree_gist.sql:103: NOTICE:  Argument type "tskey" is only a shell
+CREATE TABLE inttmp (b int4);
+\copy inttmp from 'data/test_btree.data'
+CREATE TABLE tstmp ( t timestamp without time zone );
+\copy tstmp from 'data/test_btree_ts.data'
+-- without idx
+SELECT count(*) FROM inttmp WHERE b <=10;
+ count 
+-------
+    11
+(1 row)
+
+SELECT count(*) FROM tstmp WHERE t < '2001-05-29 08:33:09';
+ count 
+-------
+    66
+(1 row)
+
+-- create idx
+CREATE INDEX aaaidx ON inttmp USING gist ( b );
+CREATE INDEX tsidx ON tstmp USING gist ( t );
+--with idx
+SET enable_seqscan=off;
+SELECT count(*) FROM inttmp WHERE b <=10;
+ count 
+-------
+    11
+(1 row)
+
+SELECT count(*) FROM tstmp WHERE t < '2001-05-29 08:33:09';
+ count 
+-------
+    66
+(1 row)
+
