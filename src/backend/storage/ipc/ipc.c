@@ -13,7 +13,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/storage/ipc/ipc.c,v 1.87 2003/12/12 18:45:09 petere Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/storage/ipc/ipc.c,v 1.88 2004/08/29 04:12:48 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -146,7 +146,7 @@ shmem_exit(int code)
  * ----------------------------------------------------------------
  */
 void
-on_proc_exit(void (*function) (int code, Datum arg), Datum arg)
+			on_proc_exit(void (*function) (int code, Datum arg), Datum arg)
 {
 	if (on_proc_exit_index >= MAX_ON_EXITS)
 		ereport(FATAL,
@@ -167,7 +167,7 @@ on_proc_exit(void (*function) (int code, Datum arg), Datum arg)
  * ----------------------------------------------------------------
  */
 void
-on_shmem_exit(void (*function) (int code, Datum arg), Datum arg)
+			on_shmem_exit(void (*function) (int code, Datum arg), Datum arg)
 {
 	if (on_shmem_exit_index >= MAX_ON_EXITS)
 		ereport(FATAL,

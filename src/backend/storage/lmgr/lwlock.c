@@ -15,7 +15,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/storage/lmgr/lwlock.c,v 1.22 2004/08/23 23:22:45 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/storage/lmgr/lwlock.c,v 1.23 2004/08/29 04:12:49 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -533,7 +533,7 @@ LWLockReleaseAll(void)
 bool
 LWLockHeldByMe(LWLockId lockid)
 {
-	int	i;
+	int			i;
 
 	for (i = 0; i < num_held_lwlocks; i++)
 	{

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/parser/parse_agg.c,v 1.63 2004/05/30 23:40:34 neilc Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/parser/parse_agg.c,v 1.64 2004/08/29 04:12:41 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -307,7 +307,7 @@ check_ungrouped_columns_walker(Node *node,
 
 		/* Found an ungrouped local variable; generate error message */
 		Assert(var->varno > 0 &&
-			   (int) var->varno <= list_length(context->pstate->p_rtable));
+			 (int) var->varno <= list_length(context->pstate->p_rtable));
 		rte = rt_fetch(var->varno, context->pstate->p_rtable);
 		attname = get_rte_attribute_name(rte, var->varattno);
 		if (context->sublevels_up == 0)

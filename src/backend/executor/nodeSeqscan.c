@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/executor/nodeSeqscan.c,v 1.48 2004/04/21 18:24:26 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/executor/nodeSeqscan.c,v 1.49 2004/08/29 04:12:31 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -62,11 +62,11 @@ SeqNext(SeqScanState *node)
 	slot = node->ss_ScanTupleSlot;
 
 	/*
-	 * Clear any reference to the previously returned tuple.  The idea here
-	 * is to not have the tuple slot be the last holder of a pin on that
-	 * tuple's buffer; if it is, we'll need a separate visit to the bufmgr
-	 * to release the buffer.  By clearing here, we get to have the release
-	 * done by ReleaseAndReadBuffer inside heap_getnext.
+	 * Clear any reference to the previously returned tuple.  The idea
+	 * here is to not have the tuple slot be the last holder of a pin on
+	 * that tuple's buffer; if it is, we'll need a separate visit to the
+	 * bufmgr to release the buffer.  By clearing here, we get to have the
+	 * release done by ReleaseAndReadBuffer inside heap_getnext.
 	 */
 	ExecClearTuple(slot);
 

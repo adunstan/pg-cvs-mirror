@@ -6,7 +6,7 @@
  * Copyright (c) 2003, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/adt/array_userfuncs.c,v 1.11 2003/09/25 06:58:03 petere Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/adt/array_userfuncs.c,v 1.12 2003/11/29 19:51:57 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -96,7 +96,7 @@ array_push(PG_FUNCTION_ARGS)
 	else
 		ereport(ERROR,
 				(errcode(ERRCODE_DATA_EXCEPTION),
-				 errmsg("argument must be empty or one-dimensional array")));
+			 errmsg("argument must be empty or one-dimensional array")));
 
 	/*
 	 * We arrange to look up info about element type only once per series
@@ -245,8 +245,8 @@ array_cat(PG_FUNCTION_ARGS)
 				ereport(ERROR,
 						(errcode(ERRCODE_ARRAY_SUBSCRIPT_ERROR),
 						 errmsg("cannot concatenate incompatible arrays"),
-					errdetail("Arrays with differing element dimensions are "
-							  "not compatible for concatenation.")));
+				errdetail("Arrays with differing element dimensions are "
+						  "not compatible for concatenation.")));
 
 			dims[i] = dims1[i];
 			lbs[i] = lbs1[i];
@@ -351,7 +351,7 @@ create_singleton_array(FunctionCallInfo fcinfo,
 	if (element_type == 0)
 		ereport(ERROR,
 				(errcode(ERRCODE_INVALID_PARAMETER_VALUE),
-				 errmsg("invalid array element type OID: %u", element_type)));
+			errmsg("invalid array element type OID: %u", element_type)));
 	if (ndims < 1)
 		ereport(ERROR,
 				(errcode(ERRCODE_INVALID_PARAMETER_VALUE),

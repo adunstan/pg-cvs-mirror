@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/optimizer/planner.h,v 1.29 2004/06/11 01:09:12 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/include/optimizer/planner.h,v 1.30 2004/08/29 04:13:08 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -19,10 +19,10 @@
 #include "nodes/plannodes.h"
 
 
-extern ParamListInfo PlannerBoundParamList;	/* current boundParams */
+extern ParamListInfo PlannerBoundParamList;		/* current boundParams */
 
 extern Plan *planner(Query *parse, bool isCursor, int cursorOptions,
-					 ParamListInfo boundParams);
+		ParamListInfo boundParams);
 extern Plan *subquery_planner(Query *parse, double tuple_fraction);
 
 #endif   /* PLANNER_H */

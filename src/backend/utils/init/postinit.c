@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/utils/init/postinit.c,v 1.135 2004/07/01 00:51:20 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/init/postinit.c,v 1.136 2004/08/29 04:12:54 momjian Exp $
  *
  *
  *-------------------------------------------------------------------------
@@ -327,8 +327,8 @@ InitPostgres(const char *dbname, const char *username)
 	AmiTransactionOverride(bootstrap);
 
 	/*
-	 * Initialize local process's access to XLOG.  In bootstrap case
-	 * we may skip this since StartupXLOG() was run instead.
+	 * Initialize local process's access to XLOG.  In bootstrap case we
+	 * may skip this since StartupXLOG() was run instead.
 	 */
 	if (!bootstrap)
 		InitXLOGAccess();

@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/tcop/tcopprot.h,v 1.69 2004/07/31 00:45:41 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/include/tcop/tcopprot.h,v 1.70 2004/08/29 04:13:10 momjian Exp $
  *
  * OLD COMMENTS
  *	  This file was created so that other c files could get the two
@@ -52,10 +52,9 @@ extern List *pg_analyze_and_rewrite(Node *parsetree,
 extern List *pg_rewrite_queries(List *querytree_list);
 extern Plan *pg_plan_query(Query *querytree, ParamListInfo boundParams);
 extern List *pg_plan_queries(List *querytrees, ParamListInfo boundParams,
-							 bool needSnapshot);
+				bool needSnapshot);
 
 extern bool assign_max_stack_depth(int newval, bool doit, GucSource source);
-
 #endif   /* BOOTSTRAP_INCLUDE */
 
 extern void die(SIGNAL_ARGS);

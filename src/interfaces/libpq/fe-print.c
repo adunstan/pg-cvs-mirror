@@ -10,7 +10,7 @@
  * didn't really belong there.
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/interfaces/libpq/fe-print.c,v 1.52 2004/08/17 04:24:23 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/interfaces/libpq/fe-print.c,v 1.53 2004/08/29 04:13:12 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -91,6 +91,7 @@ PQprint(FILE *fout,
 		int			total_line_length = 0;
 		int			usePipe = 0;
 		char	   *pagerenv;
+
 #if !defined(ENABLE_THREAD_SAFETY) && !defined(WIN32)
 		pqsigfunc	oldsigpipehandler = NULL;
 #endif

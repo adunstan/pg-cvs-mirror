@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1994-5, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/commands/explain.c,v 1.122 2004/06/11 01:08:35 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/commands/explain.c,v 1.123 2004/08/29 04:12:30 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -317,7 +317,7 @@ explain_outNode(StringInfo str,
 				Plan *outer_plan,
 				int indent, ExplainState *es)
 {
-	ListCell	*l;
+	ListCell   *l;
 	char	   *pname;
 	int			i;
 

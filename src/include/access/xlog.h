@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/access/xlog.h,v 1.55 2004/08/22 02:41:58 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/include/access/xlog.h,v 1.56 2004/08/29 04:13:04 momjian Exp $
  */
 #ifndef XLOG_H
 #define XLOG_H
@@ -96,7 +96,7 @@ typedef struct XLogRecData
 	struct XLogRecData *next;
 } XLogRecData;
 
-extern TimeLineID ThisTimeLineID; /* current TLI */
+extern TimeLineID ThisTimeLineID;		/* current TLI */
 extern bool InRecovery;
 extern XLogRecPtr MyLastRecPtr;
 extern bool MyXactMadeXLogEntry;
@@ -113,7 +113,7 @@ extern const char XLOG_sync_method_default[];
 #define XLogArchivingActive()	(XLogArchiveCommand[0] != '\0')
 
 #ifdef WAL_DEBUG
-extern bool	XLOG_DEBUG;
+extern bool XLOG_DEBUG;
 #endif
 
 extern XLogRecPtr XLogInsert(RmgrId rmid, uint8 info, XLogRecData *rdata);

@@ -5,7 +5,7 @@
  *
  * Copyright (c) 2000, Christof Petig <christof.petig@wtal.de>
  *
- * $PostgreSQL: /cvsroot/pgsql-server/src/interfaces/ecpg/include/sql3types.h,v 1.8 2003/09/20 09:10:09 meskes Exp $
+ * $PostgreSQL: pgsql-server/src/interfaces/ecpg/include/sql3types.h,v 1.9 2003/11/29 19:52:08 pgsql Exp $
  */
 
 /* chapter 13.1 table 2: Codes used for SQL data types in Dynamic SQL */
@@ -45,4 +45,4 @@ enum
 								 * standard) */
 };
 
-#endif /* !_ECPG_SQL3TYPES_H */
+#endif   /* !_ECPG_SQL3TYPES_H */

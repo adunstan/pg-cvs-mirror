@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/storage/smgr/smgrtype.c,v 1.23 2004/02/10 01:55:26 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/storage/smgr/smgrtype.c,v 1.24 2004/08/29 04:12:50 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -19,7 +19,7 @@
 
 typedef struct smgrid
 {
-	const char	   *smgr_name;
+	const char *smgr_name;
 } smgrid;
 
 /*
@@ -29,7 +29,7 @@ static const smgrid StorageManager[] = {
 	{"magnetic disk"}
 };
 
-static const int	NStorageManagers = lengthof(StorageManager);
+static const int NStorageManagers = lengthof(StorageManager);
 
 
 Datum

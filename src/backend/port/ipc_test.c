@@ -21,7 +21,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/port/ipc_test.c,v 1.13 2004/05/28 05:12:55 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/port/ipc_test.c,v 1.14 2004/08/29 04:12:42 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -87,7 +87,7 @@ shmem_exit(int code)
 }
 
 void
-on_shmem_exit(void (*function) (int code, Datum arg), Datum arg)
+			on_shmem_exit(void (*function) (int code, Datum arg), Datum arg)
 {
 	if (on_shmem_exit_index >= MAX_ON_EXITS)
 		elog(FATAL, "out of on_shmem_exit slots");

@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/executor/nodeSubplan.c,v 1.63 2004/05/30 23:40:26 neilc Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/executor/nodeSubplan.c,v 1.64 2004/08/29 04:12:31 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -912,7 +912,7 @@ ExecSetParamPlan(SubPlanState *node, ExprContext *econtext)
 	SubLinkType subLinkType = subplan->subLinkType;
 	MemoryContext oldcontext;
 	TupleTableSlot *slot;
-	ListCell	*l;
+	ListCell   *l;
 	bool		found = false;
 	ArrayBuildState *astate = NULL;
 

@@ -4,7 +4,7 @@
  * (currently mule internal code (mic) is used)
  * Tatsuo Ishii
  *
- * $PostgreSQL: pgsql-server/src/backend/utils/mb/mbutils.c,v 1.45 2003/11/29 19:52:02 pgsql Exp $
+ * $PostgreSQL: pgsql-server/src/backend/utils/mb/mbutils.c,v 1.46 2004/03/15 10:41:25 ishii Exp $
  */
 #include "postgres.h"
 
@@ -249,9 +249,9 @@ pg_do_encoding_conversion(unsigned char *src, int len,
 	{
 		ereport(LOG,
 				(errcode(ERRCODE_UNDEFINED_FUNCTION),
-			errmsg("default conversion function for encoding \"%s\" to \"%s\" does not exist",
-				   pg_encoding_to_char(src_encoding),
-				   pg_encoding_to_char(dest_encoding))));
+				 errmsg("default conversion function for encoding \"%s\" to \"%s\" does not exist",
+						pg_encoding_to_char(src_encoding),
+						pg_encoding_to_char(dest_encoding))));
 		return src;
 	}
 

@@ -10,7 +10,7 @@
  * Copyright (c) 2002-2004, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/commands/prepare.c,v 1.29 2004/08/02 01:30:40 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/commands/prepare.c,v 1.30 2004/08/29 04:12:30 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -211,7 +211,8 @@ EvaluateParams(EState *estate, List *params, List *argtypes)
 	int			nargs = list_length(argtypes);
 	ParamListInfo paramLI;
 	List	   *exprstates;
-	ListCell   *le, *la;
+	ListCell   *le,
+			   *la;
 	int			i = 0;
 
 	/* Parser should have caught this error, but check for safety */
@@ -510,7 +511,7 @@ ExplainExecuteQuery(ExplainStmt *stmt, TupOutputState *tstate)
 	}
 
 	/* Explain each query */
-	forboth (q, query_list, p, plan_list)
+	forboth(q, query_list, p, plan_list)
 	{
 		Query	   *query = (Query *) lfirst(q);
 		Plan	   *plan = (Plan *) lfirst(p);

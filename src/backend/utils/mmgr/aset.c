@@ -11,7 +11,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/utils/mmgr/aset.c,v 1.55 2004/05/26 19:44:15 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/mmgr/aset.c,v 1.56 2004/08/29 04:13:00 momjian Exp $
  *
  * NOTE:
  *	This is a new (Feb. 05, 1999) implementation of the allocation set
@@ -652,12 +652,12 @@ AllocSetAlloc(MemoryContext context, Size size)
 		{
 			/*
 			 * Use first power of 2 that is larger than previous block,
-			 * but not more than the allowed limit.  (We don't simply double
-			 * the prior block size, because in some cases this could be a
-			 * funny size, eg if very first allocation was for an odd-sized
-			 * large chunk.)
+			 * but not more than the allowed limit.  (We don't simply
+			 * double the prior block size, because in some cases this
+			 * could be a funny size, eg if very first allocation was for
+			 * an odd-sized large chunk.)
 			 */
-			Size	pblksize = set->blocks->endptr - ((char *) set->blocks);
+			Size		pblksize = set->blocks->endptr - ((char *) set->blocks);
 
 			blksize = set->initBlockSize;
 			while (blksize <= pblksize)

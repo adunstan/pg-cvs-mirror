@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/parser/scansup.c,v 1.26 2004/02/21 00:34:53 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/parser/scansup.c,v 1.27 2004/08/29 04:12:42 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -133,18 +133,19 @@ downcase_truncate_identifier(const char *ident, int len, bool warn)
 	int			i;
 
 	result = palloc(len + 1);
+
 	/*
-	 * SQL99 specifies Unicode-aware case normalization, which we don't yet
-	 * have the infrastructure for.  Instead we use tolower() to provide a
-	 * locale-aware translation.  However, there are some locales where this
-	 * is not right either (eg, Turkish may do strange things with 'i' and
-	 * 'I').  Our current compromise is to use tolower() for characters with
-	 * the high bit set, and use an ASCII-only downcasing for 7-bit
-	 * characters.
+	 * SQL99 specifies Unicode-aware case normalization, which we don't
+	 * yet have the infrastructure for.  Instead we use tolower() to
+	 * provide a locale-aware translation.	However, there are some
+	 * locales where this is not right either (eg, Turkish may do strange
+	 * things with 'i' and 'I').  Our current compromise is to use
+	 * tolower() for characters with the high bit set, and use an
+	 * ASCII-only downcasing for 7-bit characters.
 	 */
 	for (i = 0; i < len; i++)
 	{
-		unsigned char	ch = (unsigned char) ident[i];
+		unsigned char ch = (unsigned char) ident[i];
 
 		if (ch >= 'A' && ch <= 'Z')
 			ch += 'a' - 'A';
@@ -174,12 +175,12 @@ truncate_identifier(char *ident, int len, bool warn)
 {
 	if (len >= NAMEDATALEN)
 	{
-		len = pg_mbcliplen(ident, len, NAMEDATALEN-1);
+		len = pg_mbcliplen(ident, len, NAMEDATALEN - 1);
 		if (warn)
 			ereport(NOTICE,
 					(errcode(ERRCODE_NAME_TOO_LONG),
-					 errmsg("identifier \"%s\" will be truncated to \"%.*s\"",
-							ident, len, ident)));
+				errmsg("identifier \"%s\" will be truncated to \"%.*s\"",
+					   ident, len, ident)));
 		ident[len] = '\0';
 	}
 }

@@ -12,7 +12,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/executor/execScan.c,v 1.31 2004/05/26 04:41:15 neilc Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/executor/execScan.c,v 1.32 2004/08/29 04:12:31 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -224,8 +224,8 @@ tlist_matches_tupdesc(PlanState *ps, List *tlist, Index varno, TupleDesc tupdesc
 		return false;			/* tlist too long */
 
 	/*
-	 * If the plan context requires a particular hasoid setting, then
-	 * that has to match, too.
+	 * If the plan context requires a particular hasoid setting, then that
+	 * has to match, too.
 	 */
 	if (ExecContextForcesOids(ps, &hasoid) &&
 		hasoid != tupdesc->tdhasoid)

@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/backend/optimizer/geqo/geqo_main.c,v 1.45 2004/06/03 02:08:02 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/backend/optimizer/geqo/geqo_main.c,v 1.46 2004/08/29 04:12:33 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -310,11 +310,11 @@ gimme_pool_size(int nr_rel)
 
 	size = pow(2.0, nr_rel + 1.0);
 
-	maxsize = 50 * Geqo_effort;			/* 50 to 500 individuals */
+	maxsize = 50 * Geqo_effort; /* 50 to 500 individuals */
 	if (size > maxsize)
 		return maxsize;
 
-	minsize = 10 * Geqo_effort;			/* 10 to 100 individuals */
+	minsize = 10 * Geqo_effort; /* 10 to 100 individuals */
 	if (size < minsize)
 		return minsize;
 

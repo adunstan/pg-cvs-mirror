@@ -9,7 +9,7 @@
  *	signals that the backend can recognize.
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/port/kill.c,v 1.3 2004/08/27 18:31:48 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/port/kill.c,v 1.4 2004/08/29 04:13:12 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -57,4 +57,5 @@ pgkill(int pid, int sig)
 
 	return 0;
 }
+
 #endif

@@ -7,7 +7,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/utils/adt/encode.c,v 1.11 2004/05/07 00:24:58 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/adt/encode.c,v 1.12 2004/08/29 04:12:51 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -175,7 +175,7 @@ hex_decode(const uint8 *src, unsigned len, uint8 *dst)
 		if (s >= srcend)
 			ereport(ERROR,
 					(errcode(ERRCODE_INVALID_PARAMETER_VALUE),
-					 errmsg("invalid hexadecimal data: odd number of digits")));
+			  errmsg("invalid hexadecimal data: odd number of digits")));
 
 		v2 = get_hex(*s++);
 		*p++ = v1 | v2;

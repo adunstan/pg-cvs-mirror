@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/utils/adt/not_in.c,v 1.39 2004/05/30 23:40:35 neilc Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/adt/not_in.c,v 1.40 2004/08/29 04:12:52 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -62,7 +62,7 @@ int4notin(PG_FUNCTION_ARGS)
 		ereport(ERROR,
 				(errcode(ERRCODE_INVALID_NAME),
 				 errmsg("invalid name syntax"),
-			   errhint("Must provide \"relationname.columnname\".")));
+				 errhint("Must provide \"relationname.columnname\".")));
 	attribute = strVal(llast(names));
 	names = list_truncate(names, nnames - 1);
 	relrv = makeRangeVarFromNameList(names);

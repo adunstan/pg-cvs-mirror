@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/access/nbtree/nbtxlog.c,v 1.16 2004/07/21 22:31:20 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/access/nbtree/nbtxlog.c,v 1.17 2004/08/29 04:12:21 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -770,7 +770,7 @@ static void
 out_target(char *buf, xl_btreetid *target)
 {
 	sprintf(buf + strlen(buf), "rel %u/%u/%u; tid %u/%u",
-			target->node.spcNode, target->node.dbNode, target->node.relNode,
+		 target->node.spcNode, target->node.dbNode, target->node.relNode,
 			ItemPointerGetBlockNumber(&(target->tid)),
 			ItemPointerGetOffsetNumber(&(target->tid)));
 }

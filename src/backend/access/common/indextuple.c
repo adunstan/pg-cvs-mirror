@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/access/common/indextuple.c,v 1.69 2003/11/29 19:51:39 pgsql Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/access/common/indextuple.c,v 1.70 2004/08/29 04:12:17 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -162,9 +162,9 @@ index_formtuple(TupleDesc tupleDescriptor,
 	if ((size & INDEX_SIZE_MASK) != size)
 		ereport(ERROR,
 				(errcode(ERRCODE_PROGRAM_LIMIT_EXCEEDED),
-			errmsg("index row requires %lu bytes, maximum size is %lu",
-				   (unsigned long) size,
-				   (unsigned long) INDEX_SIZE_MASK)));
+			  errmsg("index row requires %lu bytes, maximum size is %lu",
+					 (unsigned long) size,
+					 (unsigned long) INDEX_SIZE_MASK)));
 
 	infomask |= size;
 

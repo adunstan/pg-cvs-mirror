@@ -6,7 +6,7 @@
  * copyright (c) Oliver Elphick <olly@lfix.co.uk>, 2001;
  * licence: BSD
  *
- * $PostgreSQL: pgsql-server/src/bin/pg_controldata/pg_controldata.c,v 1.17 2004/06/03 00:07:36 momjian Exp $
+ * $PostgreSQL: pgsql-server/src/bin/pg_controldata/pg_controldata.c,v 1.18 2004/07/21 22:31:23 tgl Exp $
  */
 #include "postgres.h"
 
@@ -143,9 +143,10 @@ main(int argc, char *argv[])
 			 localtime(&(ControlFile.time)));
 	strftime(ckpttime_str, sizeof(ckpttime_str), strftime_fmt,
 			 localtime(&(ControlFile.checkPointCopy.time)));
+
 	/*
-	 * Format system_identifier separately to keep platform-dependent format
-	 * code out of the translatable message string.
+	 * Format system_identifier separately to keep platform-dependent
+	 * format code out of the translatable message string.
 	 */
 	snprintf(sysident_str, sizeof(sysident_str), UINT64_FORMAT,
 			 ControlFile.system_identifier);

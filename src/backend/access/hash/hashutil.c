@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/access/hash/hashutil.c,v 1.38 2003/11/29 19:51:40 pgsql Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/access/hash/hashutil.c,v 1.39 2004/08/29 04:12:18 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -113,6 +113,7 @@ void
 _hash_checkpage(Relation rel, Page page, int flags)
 {
 	Assert(page);
+
 	/*
 	 * When checking the metapage, always verify magic number and version.
 	 */

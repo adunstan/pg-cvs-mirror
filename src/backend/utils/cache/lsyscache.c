@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/utils/cache/lsyscache.c,v 1.114 2004/06/18 06:13:52 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/cache/lsyscache.c,v 1.115 2004/08/29 04:12:53 momjian Exp $
  *
  * NOTES
  *	  Eventually, the index information should go through here, too.
@@ -1409,7 +1409,7 @@ get_typdefault(Oid typid)
 			/* Convert C string to a value of the given type */
 			datum = OidFunctionCall3(type->typinput,
 									 CStringGetDatum(strDefaultVal),
-									 ObjectIdGetDatum(getTypeIOParam(typeTuple)),
+							 ObjectIdGetDatum(getTypeIOParam(typeTuple)),
 									 Int32GetDatum(-1));
 			/* Build a Const node containing the value */
 			expr = (Node *) makeConst(typid,

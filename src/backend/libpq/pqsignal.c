@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/libpq/pqsignal.c,v 1.35 2004/08/15 05:25:10 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/libpq/pqsignal.c,v 1.36 2004/08/29 04:12:32 momjian Exp $
  *
  * NOTES
  *		This shouldn't be in libpq, but the monitor and some other
@@ -50,6 +50,7 @@
 sigset_t	UnBlockSig,
 			BlockSig,
 			AuthBlockSig;
+
 #else
 int			UnBlockSig,
 			BlockSig,
@@ -169,4 +170,4 @@ pqsignal(int signo, pqsigfunc func)
 #endif   /* !HAVE_POSIX_SIGNALS */
 }
 
-#endif /* WIN32 */
+#endif   /* WIN32 */

@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2004, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql-server/src/bin/psql/prompt.c,v 1.35 2004/02/24 21:45:18 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/bin/psql/prompt.c,v 1.36 2004/08/29 04:13:02 momjian Exp $
  */
 #include "postgres_fe.h"
 #include "prompt.h"
@@ -289,18 +289,20 @@ get_prompt(promptStatus_t status)
 						break;
 					}
 
-			    case '[':
-			    case ']':
+				case '[':
+				case ']':
 #if defined(USE_READLINE) && defined(RL_PROMPT_START_IGNORE)
-				  /*
-				   * readline >=4.0 undocumented feature: non-printing
-				   * characters in prompt strings must be marked as such,
-				   * in order to properly display the line during editing.
-				   */
-				  buf[0] = '\001';
-				  buf[1] = (*p == '[') ? RL_PROMPT_START_IGNORE : RL_PROMPT_END_IGNORE;
-#endif /* USE_READLINE */
-				  break;
+
+					/*
+					 * readline >=4.0 undocumented feature: non-printing
+					 * characters in prompt strings must be marked as
+					 * such, in order to properly display the line during
+					 * editing.
+					 */
+					buf[0] = '\001';
+					buf[1] = (*p == '[') ? RL_PROMPT_START_IGNORE : RL_PROMPT_END_IGNORE;
+#endif   /* USE_READLINE */
+					break;
 
 				default:
 					buf[0] = *p;
