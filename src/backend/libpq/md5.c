@@ -14,7 +14,8 @@
  *	Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $Log$
+ *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/libpq/md5.c,v 1.14 2001/11/13 22:07:42 momjian Exp $
+ *	
  */
 
 
