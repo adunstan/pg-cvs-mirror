@@ -1,5 +1,5 @@
 <!--
-$PostgreSQL: pgsql/doc/src/sgml/ecpg.sgml,v 1.61 2005/01/07 05:43:28 momjian Exp $
+$PostgreSQL: pgsql/doc/src/sgml/ecpg.sgml,v 1.62 2005/01/08 22:13:25 tgl Exp $
 -->
 
 <chapter id="ecpg">
@@ -627,7 +627,7 @@ EXEC SQL EXECUTE mystmt USING 42, 'foobar';
    <literal>INTO</literal> clause:
 <programlisting>
 EXEC SQL BEGIN DECLARE SECTION;
-const char *stmt = "SELECT a, b, c FROM test1 WHERE a > ?";
+const char *stmt = "SELECT a, b, c FROM test1 WHERE a &gt; ?";
 int v1, v2;
 VARCHAR v3;
 EXEC SQL END DECLARE SECTION;
