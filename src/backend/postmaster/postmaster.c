@@ -37,7 +37,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/postmaster/postmaster.c,v 1.400 2004/05/29 22:48:19 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/postmaster/postmaster.c,v 1.401 2004/05/30 03:50:11 tgl Exp $
  *
  * NOTES
  *
@@ -62,6 +62,7 @@
 
 #include <unistd.h>
 #include <signal.h>
+#include <time.h>
 #include <sys/wait.h>
 #include <ctype.h>
 #include <sys/stat.h>
@@ -97,7 +98,6 @@
 #include "miscadmin.h"
 #include "nodes/nodes.h"
 #include "postmaster/postmaster.h"
-#include "pgtime.h"
 #include "storage/fd.h"
 #include "storage/ipc.h"
 #include "storage/pg_shmem.h"

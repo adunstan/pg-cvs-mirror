@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/utils/nabstime.h,v 1.41 2003/11/29 22:41:15 pgsql Exp $
+ * $PostgreSQL: pgsql-server/src/include/utils/nabstime.h,v 1.42 2004/05/21 05:08:05 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -17,7 +17,6 @@
 #include <limits.h>
 
 #include "fmgr.h"
-#include "pgtime.h"
 #include "utils/timestamp.h"
 #include "utils/datetime.h"
 
@@ -28,9 +27,10 @@
  *
  * ----------------------------------------------------------------
  */
+
 /*
  * Although time_t generally is a long int on 64 bit systems, these two
- * types must be 4 bytes, because that's what the system assumes. They
+ * types must be 4 bytes, because that's what pg_type.h assumes. They
  * should be yanked (long) before 2038 and be replaced by timestamp and
  * interval.
  */

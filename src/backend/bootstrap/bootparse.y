@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/bootstrap/bootparse.y,v 1.67 2004/05/21 05:07:56 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/bootstrap/bootparse.y,v 1.68 2004/05/26 04:41:05 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -38,7 +38,6 @@
 #include "nodes/parsenodes.h"
 #include "nodes/pg_list.h"
 #include "nodes/primnodes.h"
-#include "pgtime.h"
 #include "rewrite/prs2lock.h"
 #include "storage/block.h"
 #include "storage/fd.h"

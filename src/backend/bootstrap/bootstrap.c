@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/bootstrap/bootstrap.c,v 1.181 2004/05/28 05:12:45 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/bootstrap/bootstrap.c,v 1.182 2004/05/29 22:48:18 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -34,7 +34,6 @@
 #include "libpq/pqsignal.h"
 #include "miscadmin.h"
 #include "postmaster/bgwriter.h"
-#include "pgtime.h"
 #include "storage/freespace.h"
 #include "storage/ipc.h"
 #include "storage/pg_shmem.h"

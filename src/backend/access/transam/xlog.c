@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/backend/access/transam/xlog.c,v 1.144 2004/05/28 05:12:42 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/backend/access/transam/xlog.c,v 1.145 2004/05/29 22:48:18 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -16,6 +16,7 @@
 
 #include <fcntl.h>
 #include <signal.h>
+#include <time.h>
 #include <unistd.h>
 #include <sys/stat.h>
 #include <sys/time.h>
@@ -2761,9 +2762,9 @@ str_time(time_t tnow)
 {
 	static char buf[128];
 
-	pg_strftime(buf, sizeof(buf),
+	strftime(buf, sizeof(buf),
 			 "%Y-%m-%d %H:%M:%S %Z",
-			 pg_localtime(&tnow));
+			 localtime(&tnow));
 
 	return buf;
 }
