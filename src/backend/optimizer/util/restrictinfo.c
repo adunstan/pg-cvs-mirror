@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/optimizer/util/restrictinfo.c,v 1.30 2004/08/29 05:06:44 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/optimizer/util/restrictinfo.c,v 1.31 2004/12/31 22:00:23 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -63,7 +63,7 @@ make_restrictinfo(Expr *clause, bool is_pushed_down, bool valid_everywhere)
 	}
 	else
 	{
-		/* Shouldn't be an AND clause, else flatten_andors messed up */
+		/* Shouldn't be an AND clause, else AND/OR flattening messed up */
 		Assert(!and_clause((Node *) clause));
 
 		orclause = NULL;
