@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/storage/freespace/freespace.c,v 1.34 2004/08/29 05:06:47 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/storage/freespace/freespace.c,v 1.35 2004/09/28 20:46:27 tgl Exp $
  *
  *
  * NOTES:
@@ -330,7 +330,7 @@ FreeSpaceShmemSize(void)
 	size = MAXALIGN(sizeof(FSMHeader));
 
 	/* hash table, including the FSMRelation objects */
-	size += hash_estimate_size(MaxFSMRelations, sizeof(FSMRelation));
+	size += hash_estimate_size(MaxFSMRelations + 1, sizeof(FSMRelation));
 
 	/* page-storage arena */
 	nchunks = (MaxFSMPages - 1) / CHUNKPAGES + 1;

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/storage/ipc/ipci.c,v 1.70 2004/08/29 04:12:48 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/storage/ipc/ipci.c,v 1.71 2004/08/29 05:06:48 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -69,6 +69,7 @@ CreateSharedMemoryAndSemaphores(bool makePrivate,
 		size = hash_estimate_size(SHMEM_INDEX_SIZE, sizeof(ShmemIndexEnt));
 		size += BufferShmemSize();
 		size += LockShmemSize(maxBackends);
+		size += ProcGlobalShmemSize(maxBackends);
 		size += XLOGShmemSize();
 		size += CLOGShmemSize();
 		size += SUBTRANSShmemSize();
