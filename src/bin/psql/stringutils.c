@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2003, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql-server/src/bin/psql/stringutils.c,v 1.36 2003/12/01 22:14:40 momjian Exp $
+ * $PostgreSQL: pgsql-server/src/bin/psql/stringutils.c,v 1.37 2004/01/24 19:38:49 neilc Exp $
  */
 #include "postgres_fe.h"
 
@@ -77,7 +77,7 @@ strtokx(const char *s,
 		 * tokens.	2X the space is a gross overestimate, but it's
 		 * unlikely that this code will be used on huge strings anyway.
 		 */
-		storage = xmalloc(2 * strlen(s) + 1);
+		storage = pg_malloc(2 * strlen(s) + 1);
 		strcpy(storage, s);
 		string = storage;
 	}
