@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/storage/page/bufpage.c,v 1.57 2003/11/29 19:51:57 pgsql Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/storage/page/bufpage.c,v 1.58 2004/06/08 14:00:35 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -91,21 +91,19 @@ PageHeaderIsValid(PageHeader page)
 }
 
 
-/* ----------------
- *		PageAddItem
+/*
+ *	PageAddItem
  *
- *		Add an item to a page.	Return value is offset at which it was
- *		inserted, or InvalidOffsetNumber if there's not room to insert.
+ *	Add an item to a page.	Return value is offset at which it was
+ *	inserted, or InvalidOffsetNumber if there's not room to insert.
  *
- *		If offsetNumber is valid and <= current max offset in the page,
- *		insert item into the array at that position by shuffling ItemId's
- *		down to make room.
- *		If offsetNumber is not valid, then assign one by finding the first
- *		one that is both unused and deallocated.
+ *	If offsetNumber is valid and <= current max offset in the page,
+ *	insert item into the array at that position by shuffling ItemId's
+ *	down to make room.
+ *	If offsetNumber is not valid, then assign one by finding the first
+ *	one that is both unused and deallocated.
  *
- *	 !!! EREPORT(ERROR) IS DISALLOWED HERE !!!
- *
- * ----------------
+ *	!!! EREPORT(ERROR) IS DISALLOWED HERE !!!
  */
 OffsetNumber
 PageAddItem(Page page,
