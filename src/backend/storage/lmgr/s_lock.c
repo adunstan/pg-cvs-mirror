@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/storage/lmgr/s_lock.c,v 1.17 2003/11/29 19:51:57 pgsql Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/storage/lmgr/s_lock.c,v 1.18 2003/12/22 23:39:53 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -232,9 +232,6 @@ tas_dummy()						/* really means: extern int tas(slock_t
 
 
 
-#if defined(NEED_I386_TAS_ASM)
-/* non gcc i386 based things */
-#endif   /* NEED_I386_TAS_ASM */
 #endif   /* not __GNUC__ */
 
 
