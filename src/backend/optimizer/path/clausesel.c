@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/optimizer/path/clausesel.c,v 1.63 2004/01/04 03:51:52 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/optimizer/path/clausesel.c,v 1.64 2004/01/05 16:44:40 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -25,11 +25,6 @@
 #include "utils/fmgroids.h"
 #include "utils/lsyscache.h"
 #include "utils/selfuncs.h"
-
-
-/* note that pg_type.h hardwires size of bool as 1 ... duplicate it */
-#define MAKEBOOLCONST(val,isnull) \
-	((Node *) makeConst(BOOLOID, 1, (Datum) (val), (isnull), true))
 
 
 /*
@@ -486,7 +481,7 @@ clause_selectivity(Query *root,
 				s1 = restriction_selectivity(root,
 											 BooleanEqualOperator,
 											 makeList2(var,
-													   MAKEBOOLCONST(true,
+													   makeBoolConst(true,
 																 false)),
 											 varRelid);
 			}
