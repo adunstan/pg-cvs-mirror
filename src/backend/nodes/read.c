@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/nodes/read.c,v 1.35 2003/08/04 02:39:59 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/nodes/read.c,v 1.36 2003/11/29 19:51:49 pgsql Exp $
  *
  * HISTORY
  *	  AUTHOR			DATE			MAJOR EVENT
@@ -24,6 +24,7 @@
 
 #include "nodes/pg_list.h"
 #include "nodes/readfuncs.h"
+#include "nodes/value.h"
 
 
 /* Static state for pg_strtok */
