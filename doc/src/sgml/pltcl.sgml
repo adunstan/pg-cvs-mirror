@@ -1,5 +1,5 @@
 <!--
-$PostgreSQL: pgsql/doc/src/sgml/pltcl.sgml,v 2.34 2005/01/22 22:56:36 momjian Exp $
+$PostgreSQL: pgsql/doc/src/sgml/pltcl.sgml,v 2.35 2005/03/13 09:36:30 neilc Exp $
 -->
 
  <chapter id="pltcl">
@@ -16,8 +16,8 @@ $PostgreSQL: pgsql/doc/src/sgml/pltcl.sgml,v 2.34 2005/01/22 22:56:36 momjian Ex
   <para>
    PL/Tcl is a loadable procedural language for the
    <productname>PostgreSQL</productname> database system
-   that enables the <ulink url="http://www.tcl.tk/">Tcl</ulink>
-   language to be used to write functions and
+   that enables the Tcl language, <ulink url="http://www.tcl.tk/"></ulink>,
+   to be used to write functions and
    trigger procedures.
   </para>
 

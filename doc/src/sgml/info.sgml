@@ -1,5 +1,5 @@
 <!--
-$PostgreSQL: /cvsroot/pgsql-server/doc/src/sgml/info.sgml,v 1.20 2003/09/12 22:17:23 tgl Exp $
+$PostgreSQL: pgsql/doc/src/sgml/info.sgml,v 1.21 2003/11/29 19:51:37 pgsql Exp $
 -->
 
 <sect1 id="resources">
@@ -34,9 +34,9 @@ $PostgreSQL: /cvsroot/pgsql-server/doc/src/sgml/info.sgml,v 1.20 2003/09/12 22:1
     <term>Web Site</term>
     <listitem>
      <para>
-      The <ulink
-      url="http://www.postgresql.org"><productname>PostgreSQL</productname>
-      web site</ulink> carries details on the latest release and other
+      The <productname>PostgreSQL</productname> web site,
+      <ulink url="http://www.postgresql.org"></ulink>,
+      carries details on the latest release and other
       information to make your work or play with
       <productname>PostgreSQL</productname> more productive.
      </para>
