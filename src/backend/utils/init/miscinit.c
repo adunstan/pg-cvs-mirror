@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/utils/init/miscinit.c,v 1.120 2004/01/26 22:35:32 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/init/miscinit.c,v 1.121 2004/01/27 00:45:26 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -32,7 +32,6 @@
 #include "catalog/catname.h"
 #include "catalog/pg_shadow.h"
 #include "libpq/libpq-be.h"
-#include "libpq/pqsignal.h"
 #include "miscadmin.h"
 #include "storage/ipc.h"
 #include "storage/pg_shmem.h"
@@ -532,7 +531,7 @@ CreateLockFile(const char *filename, bool amPostmaster,
 		 */
 		if (other_pid != my_pid)
 		{
-			if (pqkill(other_pid, 0) == 0 ||
+			if (kill(other_pid, 0) == 0 ||
 				(errno != ESRCH
 #ifdef __BEOS__
 				 && errno != EINVAL

@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/port/sysv_sema.c,v 1.12 2003/12/01 22:15:37 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/port/sysv_sema.c,v 1.13 2004/01/27 00:45:26 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -31,7 +31,6 @@
 #include "miscadmin.h"
 #include "storage/ipc.h"
 #include "storage/pg_sema.h"
-#include "libpq/pqsignal.h"
 
 
 #ifndef HAVE_UNION_SEMUN
@@ -233,8 +232,7 @@ IpcSemaphoreCreate(int numSems)
 			continue;			/* oops, GETPID failed */
 		if (creatorPID != getpid())
 		{
-			if (pqkill(creatorPID, 0) == 0 ||
-				errno != ESRCH)
+			if (kill(creatorPID, 0) == 0 || errno != ESRCH)
 				continue;		/* sema belongs to a live process */
 		}
 
