@@ -15,7 +15,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/utils/adt/selfuncs.c,v 1.156 2004/02/02 03:07:08 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/adt/selfuncs.c,v 1.157 2004/02/17 00:52:53 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -4259,6 +4259,7 @@ genericcostestimate(Query *root, RelOptInfo *rel,
 	if (qual_arg_cost < 0)		/* just in case... */
 		qual_arg_cost = 0;
 	*indexStartupCost = qual_arg_cost;
+	*indexTotalCost += qual_arg_cost;
 	*indexTotalCost += numIndexTuples * (cpu_index_tuple_cost + qual_op_cost);
 
 	/*
