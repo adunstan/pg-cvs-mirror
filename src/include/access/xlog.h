@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/access/xlog.h,v 1.46 2003/12/12 18:45:10 petere Exp $
+ * $PostgreSQL: pgsql-server/src/include/access/xlog.h,v 1.47 2004/01/06 17:26:23 neilc Exp $
  */
 #ifndef XLOG_H
 #define XLOG_H
@@ -221,8 +221,5 @@ extern XLogRecPtr GetRedoRecPtr(void);
  * we'd have to include xlog.h into that ...
  */
 extern XLogRecPtr GetUndoRecPtr(void);
-
-extern const char *assign_xlog_sync_method(const char *method,
-						bool doit, bool interactive);
 
 #endif   /* XLOG_H */

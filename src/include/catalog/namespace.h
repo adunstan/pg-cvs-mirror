@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: namespace.h,v 1.28 2003/11/12 21:15:57 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/include/catalog/namespace.h,v 1.29 2003/11/29 22:40:58 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -94,9 +94,6 @@ extern void AtEOXact_Namespace(bool isCommit);
 
 /* stuff for search_path GUC variable */
 extern char *namespace_search_path;
-
-extern const char *assign_search_path(const char *newval,
-				   bool doit, bool interactive);
 
 extern List *fetch_search_path(bool includeImplicit);
 

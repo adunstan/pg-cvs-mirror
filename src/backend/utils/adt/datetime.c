@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/utils/adt/datetime.c,v 1.121 2003/12/17 21:45:44 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/adt/datetime.c,v 1.123 2003/12/21 04:34:35 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -3919,7 +3919,7 @@ EncodeInterval(struct tm * tm, fsec_t fsec, int style, char *str)
 
 /* GUC assign_hook for australian_timezones */
 bool
-ClearDateCache(bool newval, bool doit, bool interactive)
+ClearDateCache(bool newval, bool doit, GucSource source)
 {
 	int			i;
 
