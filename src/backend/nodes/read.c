@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/nodes/read.c,v 1.36 2003/11/29 19:51:49 pgsql Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/nodes/read.c,v 1.37 2004/01/07 21:12:56 tgl Exp $
  *
  * HISTORY
  *	  AUTHOR			DATE			MAJOR EVENT
@@ -22,6 +22,7 @@
 #include <ctype.h>
 #include <errno.h>
 
+#include "nodes/value.h"
 #include "nodes/pg_list.h"
 #include "nodes/readfuncs.h"
 #include "nodes/value.h"
