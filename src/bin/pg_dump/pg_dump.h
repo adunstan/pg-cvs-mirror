@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/bin/pg_dump/pg_dump.h,v 1.112 2004/08/29 05:06:53 momjian Exp $
+ * $PostgreSQL: pgsql/src/bin/pg_dump/pg_dump.h,v 1.113 2004/11/05 19:16:19 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -252,6 +252,8 @@ typedef struct _ruleInfo
 	TableInfo  *ruletable;		/* link to table the rule is for */
 	char		ev_type;
 	bool		is_instead;
+	bool		separate;		/* TRUE if must dump as separate item */
+	/* separate is always true for non-ON SELECT rules */
 } RuleInfo;
 
 typedef struct _triggerInfo
