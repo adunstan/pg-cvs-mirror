@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/backend/access/transam/slru.c,v 1.10 2004/01/28 21:02:39 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/backend/access/transam/slru.c,v 1.11 2004/02/10 01:55:24 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -917,6 +917,12 @@ SlruScanDirectory(SlruCtl ctl, int cutoffPage, bool doDeletions)
 		}
 		errno = 0;
 	}
+#ifdef WIN32
+	/* This fix is in mingw cvs (runtime/mingwex/dirent.c rev 1.4), but
+	   not in released version */
+	if (GetLastError() == ERROR_NO_MORE_FILES)
+		errno = 0;
+#endif
 	if (errno)
 		ereport(ERROR,
 				(errcode_for_file_access(),
