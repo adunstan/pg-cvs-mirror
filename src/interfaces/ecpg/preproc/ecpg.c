@@ -1,4 +1,4 @@
-/* $PostgreSQL: pgsql-server/src/interfaces/ecpg/preproc/ecpg.c,v 1.86 2004/05/12 13:38:48 momjian Exp $ */
+/* $PostgreSQL: pgsql-server/src/interfaces/ecpg/preproc/ecpg.c,v 1.87 2004/05/17 14:35:34 momjian Exp $ */
 
 /* New main for ecpg, the PostgreSQL embedded SQL precompiler. */
 /* (C) Michael Meskes <meskes@postgresql.org> Feb 5th, 1998 */
@@ -268,7 +268,7 @@ main(int argc, char *const argv[])
 				strcpy(input_filename, argv[fnr]);
 
 				/* take care of relative paths */
-				ptr2ext = last_path_separator(input_filename);
+				ptr2ext = last_dir_separator(input_filename);
 				ptr2ext = (ptr2ext ? strrchr(ptr2ext, '.') : strrchr(input_filename, '.'));
 
 				/* no extension? */

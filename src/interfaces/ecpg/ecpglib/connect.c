@@ -1,4 +1,4 @@
-/* $PostgreSQL: pgsql-server/src/interfaces/ecpg/ecpglib/connect.c,v 1.20 2004/03/14 12:16:29 meskes Exp $ */
+/* $PostgreSQL: pgsql-server/src/interfaces/ecpg/ecpglib/connect.c,v 1.21 2004/03/15 16:27:43 momjian Exp $ */
 
 #define POSTGRES_ECPG_INTERNAL
 #include "postgres_fe.h"
@@ -323,7 +323,7 @@ ECPGconnect(int lineno, int c, const char *name, const char *user, const char *p
 				*tmp = '\0';
 			}
 
-			tmp = last_path_separator(dbname + offset);
+			tmp = last_dir_separator(dbname + offset);
 			if (tmp != NULL)	/* database name given */
 			{
 				realname = strdup(tmp + 1);
