@@ -1,5 +1,5 @@
 <!--
-$PostgreSQL: pgsql-server/doc/src/sgml/plpgsql.sgml,v 1.32 2003/11/30 05:45:22 momjian Exp $
+$PostgreSQL: pgsql-server/doc/src/sgml/plpgsql.sgml,v 1.33 2004/01/22 19:50:21 neilc Exp $
 -->
 
 <chapter id="plpgsql"> 
@@ -685,6 +685,8 @@ BEGIN
     RETURN in_t.f1 || use_t.f3 || in_t.f5 || use_t.f7;
 END;
 ' LANGUAGE plpgsql;
+
+SELECT use_two_tables(t.*) FROM tablename t WHERE ... ;
 </programlisting>
    </para>
   </sect2>
