@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/nodes/nodes.h,v 1.151 2004/03/17 20:48:43 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/include/nodes/nodes.h,v 1.152 2004/04/01 21:28:46 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -200,6 +200,7 @@ typedef enum NodeTag
 	T_UpdateStmt,
 	T_SelectStmt,
 	T_AlterTableStmt,
+	T_AlterTableCmd,
 	T_AlterDomainStmt,
 	T_SetOperationStmt,
 	T_GrantStmt,
