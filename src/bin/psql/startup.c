@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2005, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/psql/startup.c,v 1.109 2005/01/06 18:29:09 tgl Exp $
+ * $PostgreSQL: pgsql/src/bin/psql/startup.c,v 1.110 2005/01/14 00:25:17 momjian Exp $
  */
 #include "postgres_fe.h"
 
@@ -670,9 +670,9 @@ checkWin32Codepage(void)
 	concp = GetConsoleCP();
 	if (wincp != concp)
 	{
-		printf("Warning: Console codepage (%u) differs from windows codepage (%u)\n"
-			   "         8-bit characters will not work correctly. See PostgreSQL\n"
-			   "         documentation \"Installation on Windows\" for details.\n\n",
+		printf(gettext("Warning: Console code page (%u) differs from Windows code page (%u)\n"
+					   "         8-bit characters may not work correctly. See psql reference\n"
+					   "         page \"Notes for Windows users\" for details.\n\n"),
 			   concp, wincp);
 	}
 }
