@@ -37,7 +37,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/postmaster/postmaster.c,v 1.431 2004/10/09 23:13:02 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/postmaster/postmaster.c,v 1.432 2004/10/12 21:54:40 petere Exp $
  *
  * NOTES
  *
@@ -2760,7 +2760,7 @@ BackendRun(Port *port)
 	 */
 	ereport(DEBUG3,
 			(errmsg_internal("%s child[%d]: starting with (",
-							 progname, getpid())));
+							 progname, (int)getpid())));
 	for (i = 0; i < ac; ++i)
 		ereport(DEBUG3,
 				(errmsg_internal("\t%s", av[i])));
