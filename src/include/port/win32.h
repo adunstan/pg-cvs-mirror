@@ -1,4 +1,4 @@
-/* $PostgreSQL: pgsql-server/src/include/port/win32.h,v 1.16 2004/01/26 22:59:54 momjian Exp $ */
+/* $PostgreSQL: pgsql-server/src/include/port/win32.h,v 1.17 2004/02/08 22:28:57 neilc Exp $ */
 
 /* undefine and redefine after #include */
 #undef mkdir
@@ -131,6 +131,15 @@ struct timezone
 	int			tz_minuteswest; /* Minutes west of GMT.  */
 	int			tz_dsttime;		/* Nonzero if DST is ever in effect.  */
 };
+
+/* for setitimer in backend/port/win32/timer.c */
+#define ITIMER_REAL 0
+struct itimerval {
+	struct timeval it_interval;
+	struct timeval it_value;
+};
+int setitimer(int which, const struct itimerval *value, struct itimerval *ovalue);
+
 
 /* FROM SRA */
 

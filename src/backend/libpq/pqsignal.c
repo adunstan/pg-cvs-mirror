@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/libpq/pqsignal.c,v 1.30 2004/01/27 00:46:58 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/libpq/pqsignal.c,v 1.31 2004/02/08 22:28:56 neilc Exp $
  *
  * NOTES
  *		This shouldn't be in libpq, but the monitor and some other
@@ -429,8 +429,6 @@ pg_signal_thread(LPVOID param)
 /* Console control handler will execute on a thread created 
    by the OS at the time of invocation */
 static BOOL WINAPI pg_console_handler(DWORD dwCtrlType) {
-	printf("Console handler being called!\n");
-	fflush(stdout);
 	if (dwCtrlType == CTRL_C_EVENT ||
 		dwCtrlType == CTRL_BREAK_EVENT ||
 		dwCtrlType == CTRL_CLOSE_EVENT ||
