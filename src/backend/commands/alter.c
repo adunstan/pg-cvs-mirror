@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/commands/alter.c,v 1.7 2004/05/26 04:41:09 neilc Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/commands/alter.c,v 1.8 2004/06/25 21:55:53 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -89,6 +89,7 @@ ExecRenameStmt(RenameStmt *stmt)
 			break;
 
 		case OBJECT_TABLE:
+		case OBJECT_INDEX:
 		case OBJECT_COLUMN:
 		case OBJECT_TRIGGER:
 			{
@@ -101,6 +102,7 @@ ExecRenameStmt(RenameStmt *stmt)
 				switch (stmt->renameType)
 				{
 					case OBJECT_TABLE:
+					case OBJECT_INDEX:
 						{
 							/*
 							 * RENAME TABLE requires that we (still) hold

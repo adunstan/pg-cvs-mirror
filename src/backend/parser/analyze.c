@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- *	$PostgreSQL: pgsql-server/src/backend/parser/analyze.c,v 1.307 2004/07/12 05:37:44 tgl Exp $
+ *	$PostgreSQL: pgsql-server/src/backend/parser/analyze.c,v 1.308 2004/08/02 04:26:29 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1421,6 +1421,7 @@ transformFKConstraints(ParseState *pstate, CreateStmtContext *cxt,
 
 		alterstmt->relation = cxt->relation;
 		alterstmt->cmds = NIL;
+		alterstmt->relkind = OBJECT_TABLE;
 
 		foreach(fkclist, cxt->fkconstraints)
 		{

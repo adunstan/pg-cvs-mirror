@@ -11,7 +11,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/parser/gram.y,v 2.471 2004/08/12 21:00:28 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/parser/gram.y,v 2.472 2004/08/20 04:29:32 momjian Exp $
  *
  * HISTORY
  *	  AUTHOR			DATE			MAJOR EVENT
@@ -1166,6 +1166,7 @@ alter_table_cmds:
 			| alter_table_cmds ',' alter_table_cmd	{ $$ = lappend($1, $3); }
 		;
 
+/* Subcommands that are for ALTER TABLE only */
 alter_table_cmd:
 			/* ALTER TABLE <relation> ADD [COLUMN] <coldef> */
 			ADD opt_column columnDef
@@ -1293,13 +1294,14 @@ alter_table_cmd:
 				}
 		;
 
-alter_rel_cmds: alter_rel_cmd                         { $$ = list_make1($1); }
-            | alter_rel_cmds ',' alter_rel_cmd  { $$ = lappend($1, $3); }
-        ;
+alter_rel_cmds:
+			alter_rel_cmd							{ $$ = list_make1($1); }
+			| alter_rel_cmds ',' alter_rel_cmd		{ $$ = lappend($1, $3); }
+		;
 
-
+/* Subcommands that are for ALTER TABLE or ALTER INDEX */
 alter_rel_cmd:
-			/* ALTER [ TABLE | INDEX ] <name> OWNER TO UserId */
+			/* ALTER [TABLE|INDEX] <name> OWNER TO UserId */
 			OWNER TO UserId
 				{
 					AlterTableCmd *n = makeNode(AlterTableCmd);
@@ -1307,7 +1309,7 @@ alter_rel_cmd:
 					n->name = $3;
 					$$ = (Node *)n;
 				}
-			/* ALTER [ TABLE | INDEX ] <name> SET TABLESPACE <tablespacename> */
+			/* ALTER [TABLE|INDEX] <name> SET TABLESPACE <tablespacename> */
 			| SET TABLESPACE name
 				{
 					AlterTableCmd *n = makeNode(AlterTableCmd);
