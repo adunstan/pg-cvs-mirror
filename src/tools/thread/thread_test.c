@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- *	$PostgreSQL: pgsql-server/src/tools/thread/thread_test.c,v 1.22 2004/04/23 22:21:49 momjian Exp $
+ *	$PostgreSQL: pgsql-server/src/tools/thread/thread_test.c,v 1.23 2004/04/23 23:58:12 momjian Exp $
  *
  *	This program tests to see if your standard libc functions use
  *	pthread_setspecific()/pthread_getspecific() to be thread-safe.
@@ -139,7 +139,7 @@ main(int argc, char *argv[])
 		printf("thread-safe.\n");
 	else
 	{
-		printf("not thread-safe.\n");
+		printf("not thread-safe. **\n");
 		platform_is_threadsafe = false;
 	}
 #endif
@@ -152,7 +152,7 @@ main(int argc, char *argv[])
 		printf("thread-safe.\n");
 	else
 	{
-		printf("not thread-safe.\n");
+		printf("not thread-safe. **\n");
 		platform_is_threadsafe = false;
 	}
 #endif
@@ -169,7 +169,7 @@ main(int argc, char *argv[])
 		printf("thread-safe.\n");
 	else
 	{
-		printf("not thread-safe.\n");
+		printf("not thread-safe. **\n");
 		platform_is_threadsafe = false;
 	}
 #endif
