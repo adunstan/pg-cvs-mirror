@@ -10,7 +10,7 @@
  * Written by Peter Eisentraut <peter_e@gmx.net>.
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/utils/misc/guc.c,v 1.204 2004/05/07 01:53:41 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/misc/guc.c,v 1.205 2004/05/08 02:11:46 momjian Exp $
  *
  *--------------------------------------------------------------------
  */
@@ -2093,10 +2093,6 @@ InitializeGUCOptions(void)
 	env = getenv("PGDATESTYLE");
 	if (env != NULL)
 		SetConfigOption("datestyle", env, PGC_POSTMASTER, PGC_S_ENV_VAR);
-
-	env = getenv("TZ");
-	if (env != NULL)
-		SetConfigOption("timezone", env, PGC_POSTMASTER, PGC_S_ENV_VAR);
 
 	env = getenv("PGCLIENTENCODING");
 	if (env != NULL)

@@ -8,14 +8,13 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/adt/misc.c,v 1.31 2003/08/04 02:40:05 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/adt/misc.c,v 1.32 2003/11/29 19:51:58 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
 #include "postgres.h"
 
 #include <sys/file.h>
-#include <time.h>
 
 #include "commands/dbcommands.h"
 #include "miscadmin.h"

@@ -8,14 +8,13 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/bootstrap/bootstrap.c,v 1.177 2004/02/25 19:41:22 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/bootstrap/bootstrap.c,v 1.178 2004/04/01 21:28:43 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
 #include "postgres.h"
 
 #include <unistd.h>
-#include <time.h>
 #include <signal.h>
 #include <setjmp.h>
 #ifdef HAVE_GETOPT_H
@@ -34,6 +33,7 @@
 #include "executor/executor.h"
 #include "libpq/pqsignal.h"
 #include "miscadmin.h"
+#include "pgtime.h"
 #include "storage/freespace.h"
 #include "storage/ipc.h"
 #include "storage/pg_shmem.h"
@@ -392,14 +392,17 @@ BootstrapMain(int argc, char *argv[])
 	if (IsUnderPostmaster)
 	{
 #ifdef EXEC_BACKEND
-		read_nondefault_variables();
 		read_backend_variables(backendID,NULL);
+		read_nondefault_variables();
 
 		SSDataBaseInit(xlogop);
 #endif
 	}
 	else
 		ProcessConfigFile(PGC_POSTMASTER);
+
+	/* If timezone is not set, determine what the OS uses */
+	pg_timezone_initialize();
 
 	if (IsUnderPostmaster)
 	{

@@ -9,14 +9,13 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/bootstrap/bootparse.y,v 1.65 2004/03/23 19:35:16 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/bootstrap/bootparse.y,v 1.66 2004/05/05 04:48:45 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
 
 #include "postgres.h"
 
-#include <time.h>
 #include <unistd.h>
 
 #include "access/attnum.h"
@@ -39,6 +38,7 @@
 #include "nodes/parsenodes.h"
 #include "nodes/pg_list.h"
 #include "nodes/primnodes.h"
+#include "pgtime.h"
 #include "rewrite/prs2lock.h"
 #include "storage/block.h"
 #include "storage/fd.h"
