@@ -5,7 +5,7 @@
 # Portions Copyright (c) 1996-2002, PostgreSQL Global Development Group
 # Portions Copyright (c) 1994, Regents of the University of California
 #
-# $PostgreSQL: pgsql-server/src/bin/psql/Makefile,v 1.41 2004/04/22 01:53:37 momjian Exp $
+# $PostgreSQL: pgsql-server/src/bin/psql/Makefile,v 1.42 2004/04/22 14:33:45 momjian Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -27,7 +27,7 @@ FLEXFLAGS = -Cfe
 all: submake-libpq submake-libpgport psql
 
 psql: $(OBJS) $(libpq_builddir)/libpq.a
-	$(CC) $(CFLAGS) $(OBJS) $(libpq) $(LDFLAGS) $(LIBS) -o $@
+	$(CC) $(CFLAGS) $(OBJS) $(libpq) $(LDFLAGS) $(LIBS) -o $@$(X)
 
 help.o: $(srcdir)/sql_help.h
 
