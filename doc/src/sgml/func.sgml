@@ -1,5 +1,5 @@
 <!--
-$PostgreSQL: pgsql-server/doc/src/sgml/func.sgml,v 1.198 2004/04/23 20:32:19 neilc Exp $
+$PostgreSQL: pgsql-server/doc/src/sgml/func.sgml,v 1.199 2004/05/05 09:33:38 neilc Exp $
 PostgreSQL documentation
 -->
 
@@ -1322,7 +1322,7 @@ PostgreSQL documentation
        <entry><type>text</type></entry>
 
        <entry>
-       Convert text to <acronym>ASCII</acronym> from other encoding
+       Convert <parameter>text</parameter> to <acronym>ASCII</acronym> from another encoding
        <footnote>
         <para>
          The <function>to_ascii</function> function supports conversion from
