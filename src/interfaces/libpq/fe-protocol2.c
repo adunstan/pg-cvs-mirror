@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/interfaces/libpq/fe-protocol2.c,v 1.13 2004/08/29 05:07:00 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-protocol2.c,v 1.14 2004/08/30 02:54:41 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -937,7 +937,12 @@ getNotify(PGconn *conn)
 		/* fake up an empty-string extra field */
 		newNotify->extra = newNotify->relname + nmlen;
 		newNotify->be_pid = be_pid;
-		DLAddTail(conn->notifyList, DLNewElem(newNotify));
+		newNotify->next = NULL;
+		if (conn->notifyTail)
+			conn->notifyTail->next = newNotify;
+		else
+			conn->notifyHead = newNotify;
+		conn->notifyTail = newNotify;
 	}
 
 	return 0;
