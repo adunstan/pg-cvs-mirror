@@ -10,7 +10,7 @@
  * Written by Peter Eisentraut <peter_e@gmx.net>.
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/utils/misc/guc.c,v 1.209 2004/05/29 22:48:21 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/misc/guc.c,v 1.210 2004/05/30 23:40:38 neilc Exp $
  *
  *--------------------------------------------------------------------
  */
@@ -4454,15 +4454,19 @@ read_nondefault_variables(void)
 
 	for (;;)
 	{
+		struct config_generic *record;
+
 		if ((varname = read_string_with_null(fp)) == NULL)
 			break;
 
+		if ((record = find_option(varname)) == NULL)
+			elog(FATAL, "failed to locate variable %s in exec config params file",varname);
 		if ((varvalue = read_string_with_null(fp)) == NULL)
 			elog(FATAL, "invalid format of exec config params file");
 		if (fread(&varsource, sizeof(varsource), 1, fp) == 0)
 			elog(FATAL, "invalid format of exec config params file");
 
-		(void) set_config_option(varname, varvalue, PGC_POSTMASTER,
+		(void) set_config_option(varname, varvalue, record->context,
 								 varsource, false, true);
 		free(varname);
 		free(varvalue);
