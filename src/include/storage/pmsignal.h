@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/storage/pmsignal.h,v 1.7 2004/05/23 03:50:45 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/include/storage/pmsignal.h,v 1.8 2004/05/29 22:48:23 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -24,6 +24,7 @@ typedef enum
 {
 	PMSIGNAL_PASSWORD_CHANGE,	/* pg_pwd file has changed */
 	PMSIGNAL_WAKEN_CHILDREN,	/* send a SIGUSR1 signal to all backends */
+	PMSIGNAL_WAKEN_ARCHIVER,	/* send a NOTIFY signal to xlog archiver */
 
 	NUM_PMSIGNALS				/* Must be last value of enum! */
 } PMSignalReason;
