@@ -1,10 +1,12 @@
-# $PostgreSQL: /cvsroot/pgsql-server/contrib/fuzzystrmatch/Makefile,v 1.2 2001/09/06 10:49:29 petere Exp $
+# $PostgreSQL: pgsql-server/contrib/fuzzystrmatch/Makefile,v 1.3 2003/11/29 19:51:35 pgsql Exp $
 
 subdir = contrib/fuzzystrmatch
 top_builddir = ../..
 include $(top_builddir)/src/Makefile.global
 
-MODULES = fuzzystrmatch
+MODULE_big = fuzzystrmatch
+SRCS += fuzzystrmatch.c dmetaphone.c
+OBJS = $(SRCS:.c=.o)
 DATA_built = fuzzystrmatch.sql
 DOCS = README.fuzzystrmatch README.soundex
 
