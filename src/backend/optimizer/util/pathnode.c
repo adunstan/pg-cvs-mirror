@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/optimizer/util/pathnode.c,v 1.105 2004/05/26 04:41:27 neilc Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/optimizer/util/pathnode.c,v 1.106 2004/05/30 23:40:31 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -691,7 +691,7 @@ create_unique_path(Query *root, RelOptInfo *rel, Path *subpath)
 	else
 	{
 		pathnode->rows = rel->rows;
-		numCols = list_length(FastListValue(&rel->reltargetlist));
+		numCols = list_length(rel->reltargetlist);
 	}
 
 	/*

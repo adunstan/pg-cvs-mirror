@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/optimizer/plan/initsplan.c,v 1.99 2004/05/26 04:41:24 neilc Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/optimizer/plan/initsplan.c,v 1.100 2004/05/30 23:40:29 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -151,7 +151,7 @@ add_vars_to_targetlist(Query *root, List *vars, Relids where_needed)
 		{
 			/* Variable not yet requested, so add to reltargetlist */
 			/* XXX is copyObject necessary here? */
-			FastAppend(&rel->reltargetlist, copyObject(var));
+			rel->reltargetlist = lappend(rel->reltargetlist, copyObject(var));
 		}
 		rel->attr_needed[attrno] = bms_add_members(rel->attr_needed[attrno],
 												   where_needed);
