@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/utils/adt/float.c,v 1.95 2003/11/12 21:15:54 tgl Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/adt/float.c,v 1.95 2003/11/12 21:15:54 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

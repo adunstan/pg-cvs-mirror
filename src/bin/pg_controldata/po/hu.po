@@ -1,7 +1,7 @@
 # Hungarian message translation file for PostgreSQL utility pg_controldata.
 # Krisztian Szekely <szekelyk@different.hu>, 2002.
 #
-# $Header: /home/cvsmirror/pg/pgsql/src/bin/pg_controldata/po/Attic/hu.po,v 1.2 2003/06/29 10:13:12 petere Exp $
+# $PostgreSQL: /cvsroot/pgsql-server/src/bin/pg_controldata/po/hu.po,v 1.2 2003/06/29 10:13:12 petere Exp $
 #
 msgid ""
 msgstr ""

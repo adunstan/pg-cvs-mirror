@@ -12,7 +12,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/executor/execProcnode.c,v 1.40 2003/08/08 21:41:39 momjian Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/executor/execProcnode.c,v 1.40 2003/08/08 21:41:39 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

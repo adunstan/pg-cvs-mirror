@@ -11,7 +11,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/storage/smgr/smgr.c,v 1.65 2003/09/25 06:58:02 petere Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/storage/smgr/smgr.c,v 1.65 2003/09/25 06:58:02 petere Exp $
  *
  *-------------------------------------------------------------------------
  */

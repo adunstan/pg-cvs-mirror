@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/utils/hash/pg_crc.c,v 1.9 2003/08/04 02:40:06 momjian Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/hash/pg_crc.c,v 1.9 2003/08/04 02:40:06 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

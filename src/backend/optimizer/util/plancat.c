@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/optimizer/util/plancat.c,v 1.89 2003/11/12 21:15:54 tgl Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/optimizer/util/plancat.c,v 1.89 2003/11/12 21:15:54 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

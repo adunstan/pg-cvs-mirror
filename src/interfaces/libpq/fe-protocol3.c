@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/interfaces/libpq/fe-protocol3.c,v 1.9 2003/08/27 00:33:34 petere Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/interfaces/libpq/fe-protocol3.c,v 1.9 2003/08/27 00:33:34 petere Exp $
  *
  *-------------------------------------------------------------------------
  */

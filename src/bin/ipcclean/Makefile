@@ -5,7 +5,7 @@
 # Portions Copyright (c) 1996-2002, PostgreSQL Global Development Group
 # Portions Copyright (c) 1994, Regents of the University of California
 #
-# $Header: /home/cvsmirror/pg/pgsql/src/bin/ipcclean/Attic/Makefile,v 1.16 2002/06/20 20:29:41 momjian Exp $
+# $PostgreSQL: /cvsroot/pgsql-server/src/bin/ipcclean/Makefile,v 1.16 2002/06/20 20:29:41 momjian Exp $
 #
 #-------------------------------------------------------------------------
 

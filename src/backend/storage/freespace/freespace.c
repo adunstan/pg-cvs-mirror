@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/storage/freespace/freespace.c,v 1.25 2003/11/26 20:50:11 tgl Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/storage/freespace/freespace.c,v 1.25 2003/11/26 20:50:11 tgl Exp $
  *
  *
  * NOTES:

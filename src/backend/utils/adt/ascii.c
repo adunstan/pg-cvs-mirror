@@ -5,7 +5,7 @@
  *	 Portions Copyright (c) 1999-2003, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/utils/adt/ascii.c,v 1.19 2003/09/26 15:27:36 petere Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/adt/ascii.c,v 1.19 2003/09/26 15:27:36 petere Exp $
  *
  *-----------------------------------------------------------------------
  */

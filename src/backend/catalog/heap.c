@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/catalog/heap.c,v 1.255 2003/11/12 21:15:48 tgl Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/catalog/heap.c,v 1.255 2003/11/12 21:15:48 tgl Exp $
  *
  *
  * INTERFACE ROUTINES

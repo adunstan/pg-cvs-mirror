@@ -2,7 +2,7 @@
 #
 # Makefile for the plpgsql shared object
 #
-# $Header: /home/cvsmirror/pg/pgsql/src/pl/plpgsql/src/Makefile,v 1.23 2002/11/01 22:52:34 tgl Exp $
+# $PostgreSQL: /cvsroot/pgsql-server/src/pl/plpgsql/src/Makefile,v 1.23 2002/11/01 22:52:34 tgl Exp $
 #
 #-------------------------------------------------------------------------
 

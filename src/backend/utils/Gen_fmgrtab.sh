@@ -9,7 +9,7 @@
 #
 #
 # IDENTIFICATION
-#    $Header: /home/cvsmirror/pg/pgsql/src/backend/utils/Attic/Gen_fmgrtab.sh,v 1.26 2003/08/04 23:59:38 tgl Exp $
+#    $PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/Gen_fmgrtab.sh,v 1.26 2003/08/04 23:59:38 tgl Exp $
 #
 #-------------------------------------------------------------------------
 

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/access/heap/tuptoaster.c,v 1.40 2003/11/12 21:15:46 tgl Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/access/heap/tuptoaster.c,v 1.40 2003/11/12 21:15:46 tgl Exp $
  *
  *
  * INTERFACE ROUTINES

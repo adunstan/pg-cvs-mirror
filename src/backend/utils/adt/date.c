@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/utils/adt/date.c,v 1.93 2003/09/26 15:27:36 petere Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/adt/date.c,v 1.93 2003/09/26 15:27:36 petere Exp $
  *
  *-------------------------------------------------------------------------
  */

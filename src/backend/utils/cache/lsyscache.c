@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/utils/cache/lsyscache.c,v 1.110 2003/11/12 21:15:55 tgl Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/cache/lsyscache.c,v 1.110 2003/11/12 21:15:55 tgl Exp $
  *
  * NOTES
  *	  Eventually, the index information should go through here, too.

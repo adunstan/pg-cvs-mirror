@@ -1,4 +1,4 @@
-# $Header: /home/cvsmirror/pg/pgsql/contrib/noupdate/Attic/Makefile,v 1.9 2001/09/06 10:49:29 petere Exp $
+# $PostgreSQL: /cvsroot/pgsql-server/contrib/noupdate/Makefile,v 1.9 2001/09/06 10:49:29 petere Exp $
 
 subdir = contrib/noupdate
 top_builddir = ../..

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/interfaces/libpq/fe-lobj.c,v 1.44 2003/08/04 02:40:16 momjian Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/interfaces/libpq/fe-lobj.c,v 1.44 2003/08/04 02:40:16 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

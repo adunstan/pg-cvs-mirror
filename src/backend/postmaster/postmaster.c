@@ -37,7 +37,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/postmaster/postmaster.c,v 1.349 2003/11/19 15:55:07 wieck Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/postmaster/postmaster.c,v 1.349 2003/11/19 15:55:07 wieck Exp $
  *
  * NOTES
  *

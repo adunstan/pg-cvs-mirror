@@ -15,7 +15,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/nodes/copyfuncs.c,v 1.268 2003/11/25 21:00:53 tgl Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/nodes/copyfuncs.c,v 1.268 2003/11/25 21:00:53 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

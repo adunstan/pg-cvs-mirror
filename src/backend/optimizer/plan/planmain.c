@@ -14,7 +14,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/optimizer/plan/planmain.c,v 1.78 2003/08/04 02:40:01 momjian Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/optimizer/plan/planmain.c,v 1.78 2003/08/04 02:40:01 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

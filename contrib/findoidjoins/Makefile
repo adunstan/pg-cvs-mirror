@@ -1,4 +1,4 @@
-# $Header: /home/cvsmirror/pg/pgsql/contrib/findoidjoins/Attic/Makefile,v 1.14 2002/09/05 19:57:32 tgl Exp $
+# $PostgreSQL: /cvsroot/pgsql-server/contrib/findoidjoins/Makefile,v 1.14 2002/09/05 19:57:32 tgl Exp $
 
 subdir = contrib/findoidjoins
 top_builddir = ../..

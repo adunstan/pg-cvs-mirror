@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/storage/ipc/sinval.c,v 1.61 2003/10/01 21:30:52 tgl Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/storage/ipc/sinval.c,v 1.61 2003/10/01 21:30:52 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

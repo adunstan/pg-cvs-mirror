@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/executor/execJunk.c,v 1.36 2003/08/11 20:46:46 tgl Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/executor/execJunk.c,v 1.36 2003/08/11 20:46:46 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

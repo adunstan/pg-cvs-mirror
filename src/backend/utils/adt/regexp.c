@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/utils/adt/regexp.c,v 1.49 2003/08/08 21:42:07 momjian Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/adt/regexp.c,v 1.49 2003/08/08 21:42:07 momjian Exp $
  *
  *		Alistair Crooks added the code for the regex caching
  *		agc - cached the regular expressions used - there's a good chance

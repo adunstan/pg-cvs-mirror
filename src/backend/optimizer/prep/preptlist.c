@@ -15,7 +15,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/optimizer/prep/preptlist.c,v 1.65 2003/08/11 23:04:49 tgl Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/optimizer/prep/preptlist.c,v 1.65 2003/08/11 23:04:49 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -6,7 +6,7 @@
  * Copyright (c) 2002-2003, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *		$Header: /home/cvsmirror/pg/pgsql/src/backend/utils/adt/lockfuncs.c,v 1.11 2003/08/04 23:59:38 tgl Exp $
+ *		$PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/adt/lockfuncs.c,v 1.11 2003/08/04 23:59:38 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

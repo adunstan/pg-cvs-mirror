@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/access/common/tupdesc.c,v 1.100 2003/09/25 06:57:56 petere Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/access/common/tupdesc.c,v 1.100 2003/09/25 06:57:56 petere Exp $
  *
  * NOTES
  *	  some of the executor utility code such as "ExecTypeFromTL" should be

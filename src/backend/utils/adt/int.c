@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/utils/adt/int.c,v 1.57 2003/08/04 02:40:05 momjian Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/adt/int.c,v 1.57 2003/08/04 02:40:05 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

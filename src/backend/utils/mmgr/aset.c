@@ -11,7 +11,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/utils/mmgr/aset.c,v 1.53 2003/09/13 22:25:38 tgl Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/mmgr/aset.c,v 1.53 2003/09/13 22:25:38 tgl Exp $
  *
  * NOTE:
  *	This is a new (Feb. 05, 1999) implementation of the allocation set

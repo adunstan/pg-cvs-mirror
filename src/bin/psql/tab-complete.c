@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2003, PostgreSQL Global Development Group
  *
- * $Header: /home/cvsmirror/pg/pgsql/src/bin/psql/tab-complete.c,v 1.93 2003/11/08 20:54:24 momjian Exp $
+ * $PostgreSQL: /cvsroot/pgsql-server/src/bin/psql/tab-complete.c,v 1.93 2003/11/08 20:54:24 momjian Exp $
  */
 
 /*----------------------------------------------------------------------

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/executor/execQual.c,v 1.150 2003/10/13 22:47:15 momjian Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/executor/execQual.c,v 1.150 2003/10/13 22:47:15 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

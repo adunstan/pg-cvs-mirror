@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/storage/lmgr/proc.c,v 1.137 2003/11/19 15:55:07 wieck Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/storage/lmgr/proc.c,v 1.137 2003/11/19 15:55:07 wieck Exp $
  *
  *-------------------------------------------------------------------------
  */

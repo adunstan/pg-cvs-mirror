@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/tcop/pquery.c,v 1.73 2003/09/25 18:58:35 tgl Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/tcop/pquery.c,v 1.73 2003/09/25 18:58:35 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

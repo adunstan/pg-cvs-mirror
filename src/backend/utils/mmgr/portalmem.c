@@ -12,7 +12,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/utils/mmgr/portalmem.c,v 1.62 2003/08/24 21:02:43 petere Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/mmgr/portalmem.c,v 1.62 2003/08/24 21:02:43 petere Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -10,7 +10,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/optimizer/plan/createplan.c,v 1.160 2003/11/25 21:00:53 tgl Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/optimizer/plan/createplan.c,v 1.160 2003/11/25 21:00:53 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

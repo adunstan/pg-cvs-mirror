@@ -7,7 +7,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/utils/adt/quote.c,v 1.11 2003/08/04 23:59:39 tgl Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/adt/quote.c,v 1.11 2003/08/04 23:59:39 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

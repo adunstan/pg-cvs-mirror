@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/executor/nodeSeqscan.c,v 1.46 2003/08/08 21:41:42 momjian Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/executor/nodeSeqscan.c,v 1.46 2003/08/08 21:41:42 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1994-5, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/commands/explain.c,v 1.117 2003/10/17 01:14:26 tgl Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/commands/explain.c,v 1.117 2003/10/17 01:14:26 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

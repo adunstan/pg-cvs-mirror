@@ -6,7 +6,7 @@
 # Copyright (c) 1998, Regents of the University of California
 #
 # IDENTIFICATION
-#    $Header: /home/cvsmirror/pg/pgsql/src/Makefile.shlib,v 1.72 2003/10/20 01:34:33 tgl Exp $
+#    $PostgreSQL: /cvsroot/pgsql-server/src/Makefile.shlib,v 1.72 2003/10/20 01:34:33 tgl Exp $
 #
 #-------------------------------------------------------------------------
 

@@ -1,7 +1,7 @@
 /*
  *	PostgreSQL type definitions for MAC addresses.
  *
- *	$Header: /home/cvsmirror/pg/pgsql/src/backend/utils/adt/mac.c,v 1.32 2003/09/29 00:05:25 petere Exp $
+ *	$PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/adt/mac.c,v 1.32 2003/09/29 00:05:25 petere Exp $
  */
 
 #include "postgres.h"

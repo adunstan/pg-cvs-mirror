@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2003, PostgreSQL Global Development Group
  *
- * $Header: /home/cvsmirror/pg/pgsql/src/bin/psql/settings.h,v 1.15 2003/08/04 23:59:40 tgl Exp $
+ * $PostgreSQL: /cvsroot/pgsql-server/src/bin/psql/settings.h,v 1.15 2003/08/04 23:59:40 tgl Exp $
  */
 #ifndef SETTINGS_H
 #define SETTINGS_H

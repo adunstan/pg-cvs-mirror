@@ -1,4 +1,4 @@
-# $Header: /home/cvsmirror/pg/pgsql/contrib/seg/Makefile,v 1.10 2003/09/14 02:18:49 tgl Exp $
+# $PostgreSQL: /cvsroot/pgsql-server/contrib/seg/Makefile,v 1.10 2003/09/14 02:18:49 tgl Exp $
 
 subdir = contrib/seg
 top_builddir = ../..

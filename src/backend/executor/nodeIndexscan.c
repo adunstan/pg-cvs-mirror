@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/executor/nodeIndexscan.c,v 1.86 2003/11/12 21:15:52 tgl Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/executor/nodeIndexscan.c,v 1.86 2003/11/12 21:15:52 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -14,7 +14,7 @@
  * ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS
  * SOFTWARE.
  *
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/utils/adt/inet_net_ntop.c,v 1.17 2003/11/10 19:40:46 momjian Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/adt/inet_net_ntop.c,v 1.17 2003/11/10 19:40:46 momjian Exp $
  */
 
 #include "postgres.h"

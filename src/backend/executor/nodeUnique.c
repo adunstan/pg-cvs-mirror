@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/executor/nodeUnique.c,v 1.40 2003/08/04 02:39:59 momjian Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/executor/nodeUnique.c,v 1.40 2003/08/04 02:39:59 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

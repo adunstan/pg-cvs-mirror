@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/libpq/be-fsstubs.c,v 1.68 2003/08/04 02:39:59 momjian Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/libpq/be-fsstubs.c,v 1.68 2003/08/04 02:39:59 momjian Exp $
  *
  * NOTES
  *	  This should be moved to a more appropriate place.  It is here

@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/parser/scan.l,v 1.111 2003/10/09 19:13:23 petere Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/parser/scan.l,v 1.111 2003/10/09 19:13:23 petere Exp $
  *
  *-------------------------------------------------------------------------
  */

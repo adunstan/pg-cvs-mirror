@@ -1,4 +1,4 @@
-# $Header: /home/cvsmirror/pg/pgsql/contrib/tsearch2/wordparser/Attic/Makefile,v 1.4 2003/08/23 04:25:29 petere Exp $
+# $PostgreSQL: /cvsroot/pgsql-server/contrib/tsearch2/wordparser/Makefile,v 1.4 2003/08/23 04:25:29 petere Exp $
 
 subdir = contrib/tsearch2/wordparser
 top_builddir = ../../..

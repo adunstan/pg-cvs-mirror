@@ -1,5 +1,5 @@
 <!--
-$Header: /home/cvsmirror/pg/pgsql/doc/src/sgml/start.sgml,v 1.32 2003/09/12 22:17:24 tgl Exp $
+$PostgreSQL: /cvsroot/pgsql-server/doc/src/sgml/start.sgml,v 1.32 2003/09/12 22:17:24 tgl Exp $
 -->
 
  <chapter id="tutorial-start">

@@ -24,7 +24,7 @@
 
 # Original author:  Ryan Kirkpatrick <pgsql@rkirkpat.net>
 
-# $Header: /home/cvsmirror/pg/pgsql/contrib/start-scripts/linux,v 1.5 2003/07/26 20:42:55 momjian Exp $
+# $PostgreSQL: /cvsroot/pgsql-server/contrib/start-scripts/linux,v 1.5 2003/07/26 20:42:55 momjian Exp $
 
 ## EDIT FROM HERE
 

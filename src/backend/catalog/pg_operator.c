@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/catalog/pg_operator.c,v 1.84 2003/09/25 06:57:58 petere Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/catalog/pg_operator.c,v 1.84 2003/09/25 06:57:58 petere Exp $
  *
  * NOTES
  *	  these routines moved here from commands/define.c and somewhat cleaned up.

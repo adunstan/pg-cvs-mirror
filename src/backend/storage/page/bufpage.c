@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/storage/page/bufpage.c,v 1.56 2003/09/29 00:05:25 petere Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/storage/page/bufpage.c,v 1.56 2003/09/29 00:05:25 petere Exp $
  *
  *-------------------------------------------------------------------------
  */

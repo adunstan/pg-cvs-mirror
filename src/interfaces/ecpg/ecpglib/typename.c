@@ -1,4 +1,4 @@
-/* $Header: /home/cvsmirror/pg/pgsql/src/interfaces/ecpg/ecpglib/typename.c,v 1.9 2003/09/09 10:46:37 meskes Exp $ */
+/* $PostgreSQL: /cvsroot/pgsql-server/src/interfaces/ecpg/ecpglib/typename.c,v 1.9 2003/09/09 10:46:37 meskes Exp $ */
 
 #define POSTGRES_ECPG_INTERNAL
 #include "postgres_fe.h"

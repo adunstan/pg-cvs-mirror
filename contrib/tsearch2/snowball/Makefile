@@ -1,4 +1,4 @@
-# $Header: /home/cvsmirror/pg/pgsql/contrib/tsearch2/snowball/Attic/Makefile,v 1.4 2003/08/23 04:25:29 petere Exp $
+# $PostgreSQL: /cvsroot/pgsql-server/contrib/tsearch2/snowball/Makefile,v 1.4 2003/08/23 04:25:29 petere Exp $
 
 subdir = contrib/tsearch2/snowball
 top_builddir = ../../..

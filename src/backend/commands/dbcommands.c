@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/commands/dbcommands.c,v 1.127 2003/11/19 15:55:07 wieck Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/commands/dbcommands.c,v 1.127 2003/11/19 15:55:07 wieck Exp $
  *
  *-------------------------------------------------------------------------
  */

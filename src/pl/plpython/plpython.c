@@ -29,7 +29,7 @@
  * MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
  *
  * IDENTIFICATION
- *	$Header: /home/cvsmirror/pg/pgsql/src/pl/plpython/plpython.c,v 1.41 2003/09/16 01:07:51 tgl Exp $
+ *	$PostgreSQL: /cvsroot/pgsql-server/src/pl/plpython/plpython.c,v 1.41 2003/09/16 01:07:51 tgl Exp $
  *
  *********************************************************************
  */

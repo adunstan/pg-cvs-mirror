@@ -4,7 +4,7 @@
 #    Makefile for port/sunos4
 #
 # IDENTIFICATION
-#    $Header: /home/cvsmirror/pg/pgsql/src/backend/port/sunos4/Attic/Makefile,v 1.7 2003/04/24 17:16:13 momjian Exp $
+#    $PostgreSQL: /cvsroot/pgsql-server/src/backend/port/sunos4/Makefile,v 1.7 2003/04/24 17:16:13 momjian Exp $
 #
 #-------------------------------------------------------------------------
 

@@ -31,7 +31,7 @@
  *	  ENHANCEMENTS, OR MODIFICATIONS.
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/pl/tcl/pltcl.c,v 1.79 2003/09/29 19:24:06 wieck Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/pl/tcl/pltcl.c,v 1.79 2003/09/29 19:24:06 wieck Exp $
  *
  **********************************************************************/
 

@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/lib/dllist.c,v 1.27 2003/08/04 02:39:59 momjian Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/lib/dllist.c,v 1.27 2003/08/04 02:39:59 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

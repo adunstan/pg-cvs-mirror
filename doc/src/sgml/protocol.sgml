@@ -1,4 +1,4 @@
-<!-- $Header: /home/cvsmirror/pg/pgsql/doc/src/sgml/protocol.sgml,v 1.47 2003/11/01 01:56:29 petere Exp $ -->
+<!-- $PostgreSQL: /cvsroot/pgsql-server/doc/src/sgml/protocol.sgml,v 1.47 2003/11/01 01:56:29 petere Exp $ -->
 
 <chapter id="protocol">
  <title>Frontend/Backend Protocol</title>

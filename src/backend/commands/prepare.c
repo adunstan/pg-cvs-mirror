@@ -10,7 +10,7 @@
  * Copyright (c) 2002-2003, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/commands/prepare.c,v 1.23 2003/08/08 21:41:32 momjian Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/commands/prepare.c,v 1.23 2003/08/08 21:41:32 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

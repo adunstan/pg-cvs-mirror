@@ -1,4 +1,4 @@
-# $Header: /home/cvsmirror/pg/pgsql/config/programs.m4,v 1.12 2003/05/06 23:33:52 momjian Exp $
+# $PostgreSQL: /cvsroot/pgsql-server/config/programs.m4,v 1.12 2003/05/06 23:33:52 momjian Exp $
 
 
 # PGAC_PATH_FLEX

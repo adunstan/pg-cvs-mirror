@@ -4,7 +4,7 @@
 #    Makefile for port/darwin
 #
 # IDENTIFICATION
-#    $Header: /home/cvsmirror/pg/pgsql/src/backend/port/darwin/Makefile,v 1.3 2002/05/05 01:03:26 tgl Exp $
+#    $PostgreSQL: /cvsroot/pgsql-server/src/backend/port/darwin/Makefile,v 1.3 2002/05/05 01:03:26 tgl Exp $
 #
 #-------------------------------------------------------------------------
 

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/storage/buffer/buf_table.c,v 1.32 2003/11/13 14:57:15 wieck Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/storage/buffer/buf_table.c,v 1.32 2003/11/13 14:57:15 wieck Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -14,7 +14,7 @@
  * Copyright (c) 1998-2003, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/utils/adt/numeric.c,v 1.67 2003/09/29 00:05:25 petere Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/adt/numeric.c,v 1.67 2003/09/29 00:05:25 petere Exp $
  *
  *-------------------------------------------------------------------------
  */

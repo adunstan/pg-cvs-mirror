@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/access/index/genam.c,v 1.41 2003/09/24 18:54:01 tgl Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/access/index/genam.c,v 1.41 2003/09/24 18:54:01 tgl Exp $
  *
  * NOTES
  *	  many of the old access method routines have been turned into

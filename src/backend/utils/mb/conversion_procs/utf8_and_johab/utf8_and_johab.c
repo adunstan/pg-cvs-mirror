@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/utils/mb/conversion_procs/utf8_and_johab/utf8_and_johab.c,v 1.6 2003/08/04 02:40:08 momjian Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/mb/conversion_procs/utf8_and_johab/utf8_and_johab.c,v 1.6 2003/08/04 02:40:08 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

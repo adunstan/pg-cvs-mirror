@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/access/transam/transam.c,v 1.55 2003/08/04 02:39:57 momjian Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/access/transam/transam.c,v 1.55 2003/08/04 02:39:57 momjian Exp $
  *
  * NOTES
  *	  This file contains the high level access-method interface to the

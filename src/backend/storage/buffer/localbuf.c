@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/storage/buffer/localbuf.c,v 1.49 2003/08/04 02:40:03 momjian Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/storage/buffer/localbuf.c,v 1.49 2003/08/04 02:40:03 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

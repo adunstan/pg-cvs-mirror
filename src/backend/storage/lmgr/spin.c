@@ -16,7 +16,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/storage/lmgr/spin.c,v 1.11 2003/08/04 02:40:03 momjian Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/storage/lmgr/spin.c,v 1.11 2003/08/04 02:40:03 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -7,7 +7,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/lib/Attic/lispsort.c,v 1.19 2003/08/04 02:39:59 momjian Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/lib/lispsort.c,v 1.19 2003/08/04 02:39:59 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

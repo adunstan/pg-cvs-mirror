@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/optimizer/path/tidpath.c,v 1.17 2003/08/08 21:41:47 momjian Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/optimizer/path/tidpath.c,v 1.17 2003/08/08 21:41:47 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

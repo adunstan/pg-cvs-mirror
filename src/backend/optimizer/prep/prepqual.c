@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/optimizer/prep/prepqual.c,v 1.38 2003/08/08 21:41:52 momjian Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/optimizer/prep/prepqual.c,v 1.38 2003/08/08 21:41:52 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

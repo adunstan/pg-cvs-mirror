@@ -4,7 +4,7 @@
 #    Makefile for utils/mmgr
 #
 # IDENTIFICATION
-#    $Header: /home/cvsmirror/pg/pgsql/src/backend/utils/mmgr/Makefile,v 1.10 2000/08/31 16:10:58 petere Exp $
+#    $PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/mmgr/Makefile,v 1.10 2000/08/31 16:10:58 petere Exp $
 #
 #-------------------------------------------------------------------------
 

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/utils/adt/bool.c,v 1.30 2003/09/25 06:58:03 petere Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/adt/bool.c,v 1.30 2003/09/25 06:58:03 petere Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -1,4 +1,4 @@
-$Header: /home/cvsmirror/pg/pgsql/contrib/pg_dumplo/Attic/README.pg_dumplo,v 1.2 2000/11/22 00:00:55 tgl Exp $
+$PostgreSQL: /cvsroot/pgsql-server/contrib/pg_dumplo/README.pg_dumplo,v 1.2 2000/11/22 00:00:55 tgl Exp $
 
 pg_dumplo - PostgreSQL large object dumper
 ==========================================        

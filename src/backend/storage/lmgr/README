@@ -1,4 +1,4 @@
-$Header: /home/cvsmirror/pg/pgsql/src/backend/storage/lmgr/README,v 1.13 2003/02/18 03:33:50 momjian Exp $
+$PostgreSQL: /cvsroot/pgsql-server/src/backend/storage/lmgr/README,v 1.13 2003/02/18 03:33:50 momjian Exp $
 
 
 LOCKING OVERVIEW

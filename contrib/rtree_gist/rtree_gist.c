@@ -7,7 +7,7 @@
  *
  *
  * IDENTIFICATION
- *	$Header: /home/cvsmirror/pg/pgsql/contrib/rtree_gist/Attic/rtree_gist.c,v 1.7 2003/07/27 17:10:06 tgl Exp $
+ *	$PostgreSQL: /cvsroot/pgsql-server/contrib/rtree_gist/rtree_gist.c,v 1.7 2003/07/27 17:10:06 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

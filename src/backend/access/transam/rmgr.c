@@ -3,7 +3,7 @@
  *
  * Resource managers definition
  *
- * $Header: /home/cvsmirror/pg/pgsql/src/backend/access/transam/rmgr.c,v 1.11 2003/08/04 00:43:15 momjian Exp $
+ * $PostgreSQL: /cvsroot/pgsql-server/src/backend/access/transam/rmgr.c,v 1.11 2003/08/04 00:43:15 momjian Exp $
  */
 #include "postgres.h"
 

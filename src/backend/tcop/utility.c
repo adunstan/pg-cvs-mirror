@@ -10,7 +10,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/tcop/utility.c,v 1.208 2003/10/02 06:34:04 petere Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/tcop/utility.c,v 1.208 2003/10/02 06:34:04 petere Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -7,7 +7,7 @@
 # with broken/missing library files.
 
 # IDENTIFICATION
-#    $Header: /home/cvsmirror/pg/pgsql/src/port/Makefile,v 1.8 2003/10/24 20:31:43 petere Exp $
+#    $PostgreSQL: /cvsroot/pgsql-server/src/port/Makefile,v 1.8 2003/10/24 20:31:43 petere Exp $
 #
 #-------------------------------------------------------------------------
 

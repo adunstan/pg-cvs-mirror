@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/executor/spi.c,v 1.107 2003/10/01 21:30:52 tgl Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/executor/spi.c,v 1.107 2003/10/01 21:30:52 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

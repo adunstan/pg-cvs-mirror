@@ -7,7 +7,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/utils/init/Attic/findbe.c,v 1.39 2003/11/12 00:04:10 momjian Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/init/findbe.c,v 1.39 2003/11/12 00:04:10 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -6,7 +6,7 @@
  * Copyright (c) 2000-2003, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/access/transam/varsup.c,v 1.52 2003/08/04 23:59:37 tgl Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/access/transam/varsup.c,v 1.52 2003/08/04 23:59:37 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

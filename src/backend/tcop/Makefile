@@ -4,7 +4,7 @@
 #    Makefile for tcop
 #
 # IDENTIFICATION
-#    $Header: /home/cvsmirror/pg/pgsql/src/backend/tcop/Makefile,v 1.24 2000/08/31 16:10:40 petere Exp $
+#    $PostgreSQL: /cvsroot/pgsql-server/src/backend/tcop/Makefile,v 1.24 2000/08/31 16:10:40 petere Exp $
 #
 #-------------------------------------------------------------------------
 

@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/nodes/list.c,v 1.54 2003/08/08 21:41:44 momjian Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/nodes/list.c,v 1.54 2003/08/08 21:41:44 momjian Exp $
  *
  * NOTES
  *	  XXX a few of the following functions are duplicated to handle

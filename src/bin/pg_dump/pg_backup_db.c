@@ -5,7 +5,7 @@
  *	Implements the basic DB functions used by the archiver.
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/bin/pg_dump/pg_backup_db.c,v 1.50 2003/10/03 20:10:59 tgl Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/bin/pg_dump/pg_backup_db.c,v 1.50 2003/10/03 20:10:59 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

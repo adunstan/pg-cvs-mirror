@@ -3,7 +3,7 @@
  *	Add do ... while() macro fix
  *	Remove __inline, _DIAGASSERTs, __P
  *
- *	$Header: /home/cvsmirror/pg/pgsql/src/port/qsort.c,v 1.3 2002/09/04 20:31:48 momjian Exp $
+ *	$PostgreSQL: /cvsroot/pgsql-server/src/port/qsort.c,v 1.3 2002/09/04 20:31:48 momjian Exp $
  */
 
 /*	$NetBSD: qsort.c,v 1.12 1999/09/20 04:39:40 lukem Exp $ */

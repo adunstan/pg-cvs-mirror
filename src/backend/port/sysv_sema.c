@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/port/sysv_sema.c,v 1.10 2003/09/26 15:27:35 petere Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/port/sysv_sema.c,v 1.10 2003/09/26 15:27:35 petere Exp $
  *
  *-------------------------------------------------------------------------
  */

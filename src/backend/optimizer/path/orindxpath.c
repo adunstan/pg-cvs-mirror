@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/optimizer/path/orindxpath.c,v 1.53 2003/08/04 02:40:00 momjian Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/optimizer/path/orindxpath.c,v 1.53 2003/08/04 02:40:00 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

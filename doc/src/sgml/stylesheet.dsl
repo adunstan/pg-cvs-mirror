@@ -1,4 +1,4 @@
-<!-- $Header: /home/cvsmirror/pg/pgsql/doc/src/sgml/stylesheet.dsl,v 1.24 2003/09/08 23:02:28 petere Exp $ -->
+<!-- $PostgreSQL: /cvsroot/pgsql-server/doc/src/sgml/stylesheet.dsl,v 1.24 2003/09/08 23:02:28 petere Exp $ -->
 <!DOCTYPE style-sheet PUBLIC "-//James Clark//DTD DSSSL Style Sheet//EN" [
 
 <!-- must turn on one of these with -i on the jade command line -->

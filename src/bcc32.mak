@@ -1,4 +1,4 @@
-# $Header: /home/cvsmirror/pg/pgsql/src/bcc32.mak,v 1.1 2002/12/30 21:07:21 momjian Exp $
+# $PostgreSQL: /cvsroot/pgsql-server/src/bcc32.mak,v 1.1 2002/12/30 21:07:21 momjian Exp $
 
 # Makefile for Borland C++ 5.5 (or compat)
 # Top-file makefile for Win32 parts of postgresql.

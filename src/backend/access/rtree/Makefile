@@ -4,7 +4,7 @@
 #    Makefile for access/rtree
 #
 # IDENTIFICATION
-#    $Header: /home/cvsmirror/pg/pgsql/src/backend/access/rtree/Attic/Makefile,v 1.10 2000/08/31 16:09:43 petere Exp $
+#    $PostgreSQL: /cvsroot/pgsql-server/src/backend/access/rtree/Makefile,v 1.10 2000/08/31 16:09:43 petere Exp $
 #
 #-------------------------------------------------------------------------
 

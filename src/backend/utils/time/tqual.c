@@ -16,7 +16,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/utils/time/tqual.c,v 1.71 2003/11/06 22:08:15 petere Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/time/tqual.c,v 1.71 2003/11/06 22:08:15 petere Exp $
  *
  *-------------------------------------------------------------------------
  */

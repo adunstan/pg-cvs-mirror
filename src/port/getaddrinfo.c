@@ -12,7 +12,7 @@
  * Copyright (c) 2003, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/port/getaddrinfo.c,v 1.11 2003/08/04 00:43:33 momjian Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/port/getaddrinfo.c,v 1.11 2003/08/04 00:43:33 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -7,7 +7,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/bin/pg_encoding/Attic/pg_encoding.c,v 1.13 2003/08/04 23:59:39 tgl Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/bin/pg_encoding/pg_encoding.c,v 1.13 2003/08/04 23:59:39 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/access/rtree/Attic/rtscan.c,v 1.49 2003/11/12 21:15:48 tgl Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/access/rtree/rtscan.c,v 1.49 2003/11/12 21:15:48 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

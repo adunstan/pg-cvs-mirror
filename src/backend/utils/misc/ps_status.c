@@ -5,7 +5,7 @@
  * to contain some useful information. Mechanism differs wildly across
  * platforms.
  *
- * $Header: /home/cvsmirror/pg/pgsql/src/backend/utils/misc/ps_status.c,v 1.15 2003/11/08 19:07:24 tgl Exp $
+ * $PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/misc/ps_status.c,v 1.15 2003/11/08 19:07:24 tgl Exp $
  *
  * Copyright (c) 2000-2003, PostgreSQL Global Development Group
  * various details abducted from various places

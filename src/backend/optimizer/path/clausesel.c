@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/optimizer/path/clausesel.c,v 1.60 2003/08/04 02:40:00 momjian Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/optimizer/path/clausesel.c,v 1.60 2003/08/04 02:40:00 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

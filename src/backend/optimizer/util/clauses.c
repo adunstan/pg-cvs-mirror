@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/optimizer/util/clauses.c,v 1.154 2003/10/29 18:10:15 tgl Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/optimizer/util/clauses.c,v 1.154 2003/10/29 18:10:15 tgl Exp $
  *
  * HISTORY
  *	  AUTHOR			DATE			MAJOR EVENT

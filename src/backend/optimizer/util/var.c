@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/optimizer/util/var.c,v 1.54 2003/08/08 21:41:55 momjian Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/optimizer/util/var.c,v 1.54 2003/08/08 21:41:55 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

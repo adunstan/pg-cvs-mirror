@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/optimizer/path/indxpath.c,v 1.148 2003/11/12 21:15:52 tgl Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/optimizer/path/indxpath.c,v 1.148 2003/11/12 21:15:52 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

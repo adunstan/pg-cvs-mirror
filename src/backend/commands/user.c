@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $Header: /home/cvsmirror/pg/pgsql/src/backend/commands/user.c,v 1.130 2003/11/12 21:15:51 tgl Exp $
+ * $PostgreSQL: /cvsroot/pgsql-server/src/backend/commands/user.c,v 1.130 2003/11/12 21:15:51 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

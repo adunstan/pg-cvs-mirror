@@ -1,5 +1,5 @@
 # Macros to detect C compiler features
-# $Header: /home/cvsmirror/pg/pgsql/config/c-compiler.m4,v 1.10 2003/11/01 20:48:51 petere Exp $
+# $PostgreSQL: /cvsroot/pgsql-server/config/c-compiler.m4,v 1.10 2003/11/01 20:48:51 petere Exp $
 
 
 # PGAC_C_SIGNED

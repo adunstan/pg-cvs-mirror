@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/storage/ipc/shmem.c,v 1.73 2003/10/16 20:59:35 tgl Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/storage/ipc/shmem.c,v 1.73 2003/10/16 20:59:35 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

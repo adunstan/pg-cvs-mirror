@@ -1,5 +1,5 @@
 <!--
-$Header: /home/cvsmirror/pg/pgsql/doc/src/sgml/spi.sgml,v 1.28 2003/10/22 22:28:10 tgl Exp $
+$PostgreSQL: /cvsroot/pgsql-server/doc/src/sgml/spi.sgml,v 1.28 2003/10/22 22:28:10 tgl Exp $
 -->
 
 <chapter id="spi">

@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/commands/async.c,v 1.104 2003/11/12 21:15:49 tgl Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/commands/async.c,v 1.104 2003/11/12 21:15:49 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2003, PostgreSQL Global Development Group
  *
- * $Header: /home/cvsmirror/pg/pgsql/src/bin/psql/command.c,v 1.105 2003/10/11 18:04:26 momjian Exp $
+ * $PostgreSQL: /cvsroot/pgsql-server/src/bin/psql/command.c,v 1.105 2003/10/11 18:04:26 momjian Exp $
  */
 #include "postgres_fe.h"
 #include "command.h"

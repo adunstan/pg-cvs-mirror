@@ -74,7 +74,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/utils/cache/inval.c,v 1.58 2003/08/04 02:40:06 momjian Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/cache/inval.c,v 1.58 2003/08/04 02:40:06 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

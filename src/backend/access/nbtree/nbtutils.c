@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/access/nbtree/nbtutils.c,v 1.56 2003/11/12 21:15:47 tgl Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/access/nbtree/nbtutils.c,v 1.56 2003/11/12 21:15:47 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

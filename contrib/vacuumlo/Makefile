@@ -1,4 +1,4 @@
-# $Header: /home/cvsmirror/pg/pgsql/contrib/vacuumlo/Makefile,v 1.11 2001/09/06 10:49:30 petere Exp $
+# $PostgreSQL: /cvsroot/pgsql-server/contrib/vacuumlo/Makefile,v 1.11 2001/09/06 10:49:30 petere Exp $
 
 subdir = contrib/vacuumlo
 top_builddir = ../..

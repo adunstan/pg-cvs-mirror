@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/commands/tablecmds.c,v 1.93 2003/11/12 21:15:51 tgl Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/commands/tablecmds.c,v 1.93 2003/11/12 21:15:51 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

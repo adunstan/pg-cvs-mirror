@@ -4,7 +4,7 @@
 #    Makefile for access/hash
 #
 # IDENTIFICATION
-#    $Header: /home/cvsmirror/pg/pgsql/src/backend/access/hash/Makefile,v 1.11 2003/11/09 21:30:35 tgl Exp $
+#    $PostgreSQL: /cvsroot/pgsql-server/src/backend/access/hash/Makefile,v 1.11 2003/11/09 21:30:35 tgl Exp $
 #
 #-------------------------------------------------------------------------
 

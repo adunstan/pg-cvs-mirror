@@ -4,7 +4,7 @@
 #    Makefile for libpq subsystem (backend half of libpq interface)
 #
 # IDENTIFICATION
-#    $Header: /home/cvsmirror/pg/pgsql/src/backend/libpq/Makefile,v 1.36 2003/01/06 03:18:26 momjian Exp $
+#    $PostgreSQL: /cvsroot/pgsql-server/src/backend/libpq/Makefile,v 1.36 2003/01/06 03:18:26 momjian Exp $
 #
 #-------------------------------------------------------------------------
 

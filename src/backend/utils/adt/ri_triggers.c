@@ -17,7 +17,7 @@
  *
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  *
- * $Header: /home/cvsmirror/pg/pgsql/src/backend/utils/adt/ri_triggers.c,v 1.64 2003/11/06 22:08:15 petere Exp $
+ * $PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/adt/ri_triggers.c,v 1.64 2003/11/06 22:08:15 petere Exp $
  *
  * ----------
  */

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/executor/nodeHash.c,v 1.80 2003/11/25 21:00:52 tgl Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/executor/nodeHash.c,v 1.80 2003/11/25 21:00:52 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

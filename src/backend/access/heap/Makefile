@@ -4,7 +4,7 @@
 #    Makefile for access/heap
 #
 # IDENTIFICATION
-#    $Header: /home/cvsmirror/pg/pgsql/src/backend/access/heap/Makefile,v 1.12 2001/11/02 16:30:29 tgl Exp $
+#    $PostgreSQL: /cvsroot/pgsql-server/src/backend/access/heap/Makefile,v 1.12 2001/11/02 16:30:29 tgl Exp $
 #
 #-------------------------------------------------------------------------
 

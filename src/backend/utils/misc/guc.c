@@ -10,7 +10,7 @@
  * Written by Peter Eisentraut <peter_e@gmx.net>.
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/utils/misc/guc.c,v 1.171 2003/11/19 15:55:08 wieck Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/misc/guc.c,v 1.171 2003/11/19 15:55:08 wieck Exp $
  *
  *--------------------------------------------------------------------
  */

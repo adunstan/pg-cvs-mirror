@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/libpq/auth.c,v 1.112 2003/09/26 15:27:31 petere Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/libpq/auth.c,v 1.112 2003/09/26 15:27:31 petere Exp $
  *
  *-------------------------------------------------------------------------
  */

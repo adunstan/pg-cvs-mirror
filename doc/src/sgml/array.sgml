@@ -1,4 +1,4 @@
-<!-- $Header: /home/cvsmirror/pg/pgsql/doc/src/sgml/array.sgml,v 1.33 2003/11/04 09:55:38 petere Exp $ -->
+<!-- $PostgreSQL: /cvsroot/pgsql-server/doc/src/sgml/array.sgml,v 1.33 2003/11/04 09:55:38 petere Exp $ -->
 
 <sect1 id="arrays">
  <title>Arrays</title>

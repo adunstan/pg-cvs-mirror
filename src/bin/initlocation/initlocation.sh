@@ -9,7 +9,7 @@
 #
 #
 # IDENTIFICATION
-#    $Header: /home/cvsmirror/pg/pgsql/src/bin/initlocation/Attic/initlocation.sh,v 1.16 2003/07/23 08:46:57 petere Exp $
+#    $PostgreSQL: /cvsroot/pgsql-server/src/bin/initlocation/initlocation.sh,v 1.16 2003/07/23 08:46:57 petere Exp $
 #
 #-------------------------------------------------------------------------
 

@@ -13,7 +13,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/commands/vacuum.c,v 1.268 2003/11/13 14:57:15 wieck Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/commands/vacuum.c,v 1.268 2003/11/13 14:57:15 wieck Exp $
  *
  *-------------------------------------------------------------------------
  */

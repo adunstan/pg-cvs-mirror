@@ -2,7 +2,7 @@
 # Makefile for integer aggregator
 # Copyright (C) 2001 Digital Music Network.
 # by Mark L. Woodward
-# $Header: /home/cvsmirror/pg/pgsql/contrib/intagg/Makefile,v 1.3 2002/02/25 04:16:58 tgl Exp $
+# $PostgreSQL: /cvsroot/pgsql-server/contrib/intagg/Makefile,v 1.3 2002/02/25 04:16:58 tgl Exp $
 
 subdir = contrib/intagg
 top_builddir = ../..

@@ -1,4 +1,4 @@
-# $Header: /home/cvsmirror/pg/pgsql/contrib/pgbench/Makefile,v 1.10 2001/09/06 10:49:30 petere Exp $
+# $PostgreSQL: /cvsroot/pgsql-server/contrib/pgbench/Makefile,v 1.10 2001/09/06 10:49:30 petere Exp $
 
 subdir = contrib/pgbench
 top_builddir = ../..

@@ -49,7 +49,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/optimizer/path/costsize.c,v 1.115 2003/10/05 22:44:25 tgl Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/optimizer/path/costsize.c,v 1.115 2003/10/05 22:44:25 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

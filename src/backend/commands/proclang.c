@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/commands/proclang.c,v 1.51 2003/10/02 06:34:03 petere Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/commands/proclang.c,v 1.51 2003/10/02 06:34:03 petere Exp $
  *
  *-------------------------------------------------------------------------
  */

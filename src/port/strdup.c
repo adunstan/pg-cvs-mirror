@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/port/strdup.c,v 1.3 2003/11/11 23:52:45 momjian Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/port/strdup.c,v 1.3 2003/11/11 23:52:45 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

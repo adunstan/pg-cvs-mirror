@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/executor/nodeMergejoin.c,v 1.62 2003/09/25 06:57:59 petere Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/executor/nodeMergejoin.c,v 1.62 2003/09/25 06:57:59 petere Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/storage/buffer/bufmgr.c,v 1.146 2003/11/21 17:41:31 tgl Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/storage/buffer/bufmgr.c,v 1.146 2003/11/21 17:41:31 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

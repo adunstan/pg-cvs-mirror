@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2003, PostgreSQL Global Development Group
  *
- * $Header: /home/cvsmirror/pg/pgsql/src/bin/psql/common.h,v 1.29 2003/09/03 22:05:09 petere Exp $
+ * $PostgreSQL: /cvsroot/pgsql-server/src/bin/psql/common.h,v 1.29 2003/09/03 22:05:09 petere Exp $
  */
 #ifndef COMMON_H
 #define COMMON_H

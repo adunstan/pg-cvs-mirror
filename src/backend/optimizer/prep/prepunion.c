@@ -14,7 +14,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/optimizer/prep/prepunion.c,v 1.104 2003/08/11 23:04:49 tgl Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/optimizer/prep/prepunion.c,v 1.104 2003/08/11 23:04:49 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

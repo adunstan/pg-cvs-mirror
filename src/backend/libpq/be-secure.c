@@ -11,7 +11,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/libpq/be-secure.c,v 1.43 2003/09/26 15:27:31 petere Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/libpq/be-secure.c,v 1.43 2003/09/26 15:27:31 petere Exp $
  *
  *	  Since the server static private key ($DataDir/server.key)
  *	  will normally be stored unencrypted so that the database

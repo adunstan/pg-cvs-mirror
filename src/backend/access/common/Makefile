@@ -4,7 +4,7 @@
 #    Makefile for access/common
 #
 # IDENTIFICATION
-#    $Header: /home/cvsmirror/pg/pgsql/src/backend/access/common/Makefile,v 1.19 2000/08/31 16:09:30 petere Exp $
+#    $PostgreSQL: /cvsroot/pgsql-server/src/backend/access/common/Makefile,v 1.19 2000/08/31 16:09:30 petere Exp $
 #
 #-------------------------------------------------------------------------
 

@@ -1,4 +1,4 @@
-# $Header: /home/cvsmirror/pg/pgsql/src/win32.mak,v 1.8 2002/09/03 21:45:41 petere Exp $
+# $PostgreSQL: /cvsroot/pgsql-server/src/win32.mak,v 1.8 2002/09/03 21:45:41 petere Exp $
 
 # Makefile for Microsoft Visual C++ 5.0 (or compat)
 # Top-file makefile for Win32 parts of postgresql.

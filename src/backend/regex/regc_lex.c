@@ -28,7 +28,7 @@
  * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
- * $Header: /home/cvsmirror/pg/pgsql/src/backend/regex/regc_lex.c,v 1.3 2003/08/08 21:41:56 momjian Exp $
+ * $PostgreSQL: /cvsroot/pgsql-server/src/backend/regex/regc_lex.c,v 1.3 2003/08/08 21:41:56 momjian Exp $
  *
  */
 

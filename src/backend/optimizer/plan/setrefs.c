@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/optimizer/plan/setrefs.c,v 1.98 2003/11/25 21:00:54 tgl Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/optimizer/plan/setrefs.c,v 1.98 2003/11/25 21:00:54 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

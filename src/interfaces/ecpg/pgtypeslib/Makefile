@@ -4,7 +4,7 @@
 #
 # Copyright (c) 1994, Regents of the University of California
 #
-# $Header: /home/cvsmirror/pg/pgsql/src/interfaces/ecpg/pgtypeslib/Makefile,v 1.13 2003/10/03 17:04:48 tgl Exp $
+# $PostgreSQL: /cvsroot/pgsql-server/src/interfaces/ecpg/pgtypeslib/Makefile,v 1.13 2003/10/03 17:04:48 tgl Exp $
 #
 #-------------------------------------------------------------------------
 

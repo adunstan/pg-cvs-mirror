@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/storage/lmgr/s_lock.c,v 1.16 2003/08/08 21:42:00 momjian Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/storage/lmgr/s_lock.c,v 1.16 2003/08/08 21:42:00 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

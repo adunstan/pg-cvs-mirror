@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/commands/alter.c,v 1.5 2003/08/04 00:43:16 momjian Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/commands/alter.c,v 1.5 2003/08/04 00:43:16 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

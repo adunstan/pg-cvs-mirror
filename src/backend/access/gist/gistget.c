@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/access/gist/gistget.c,v 1.38 2003/11/12 21:15:46 tgl Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/access/gist/gistget.c,v 1.38 2003/11/12 21:15:46 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

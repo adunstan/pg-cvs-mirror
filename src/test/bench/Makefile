@@ -7,7 +7,7 @@
 #
 #
 # IDENTIFICATION
-#    $Header: /home/cvsmirror/pg/pgsql/src/test/bench/Attic/Makefile,v 1.9 2001/02/20 19:20:29 petere Exp $
+#    $PostgreSQL: /cvsroot/pgsql-server/src/test/bench/Makefile,v 1.9 2001/02/20 19:20:29 petere Exp $
 #
 #-------------------------------------------------------------------------
 

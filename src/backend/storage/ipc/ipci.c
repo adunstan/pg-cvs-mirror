@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/storage/ipc/ipci.c,v 1.57 2003/09/12 02:13:23 momjian Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/storage/ipc/ipci.c,v 1.57 2003/09/12 02:13:23 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/interfaces/libpq/fe-exec.c,v 1.153 2003/10/31 17:43:10 tgl Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/interfaces/libpq/fe-exec.c,v 1.153 2003/10/31 17:43:10 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/utils/cache/catcache.c,v 1.110 2003/11/12 21:15:55 tgl Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/cache/catcache.c,v 1.110 2003/11/12 21:15:55 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -4,7 +4,7 @@
 #    Makefile for utils/time
 #
 # IDENTIFICATION
-#    $Header: /home/cvsmirror/pg/pgsql/src/backend/utils/time/Makefile,v 1.9 2000/08/31 16:11:01 petere Exp $
+#    $PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/time/Makefile,v 1.9 2000/08/31 16:11:01 petere Exp $
 #
 #-------------------------------------------------------------------------
 

@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/libpq/pqsignal.c,v 1.27 2003/08/04 02:39:59 momjian Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/libpq/pqsignal.c,v 1.27 2003/08/04 02:39:59 momjian Exp $
  *
  * NOTES
  *		This shouldn't be in libpq, but the monitor and some other

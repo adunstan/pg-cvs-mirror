@@ -1,5 +1,5 @@
 <!--
-$Header: /home/cvsmirror/pg/pgsql/doc/src/sgml/typeconv.sgml,v 1.38 2003/11/12 22:47:47 petere Exp $
+$PostgreSQL: /cvsroot/pgsql-server/doc/src/sgml/typeconv.sgml,v 1.38 2003/11/12 22:47:47 petere Exp $
 -->
 
 <chapter Id="typeconv">

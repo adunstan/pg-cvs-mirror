@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/port/dynloader/Attic/beos.c,v 1.12 2003/08/04 02:40:02 momjian Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/port/dynloader/beos.c,v 1.12 2003/08/04 02:40:02 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

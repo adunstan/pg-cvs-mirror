@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/commands/aggregatecmds.c,v 1.15 2003/09/25 06:57:58 petere Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/commands/aggregatecmds.c,v 1.15 2003/09/25 06:57:58 petere Exp $
  *
  * DESCRIPTION
  *	  The "DefineFoo" routines take the parse tree and pick out the

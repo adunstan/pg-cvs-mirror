@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/access/hash/hashfunc.c,v 1.38 2003/08/04 02:39:57 momjian Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/access/hash/hashfunc.c,v 1.38 2003/08/04 02:39:57 momjian Exp $
  *
  * NOTES
  *	  These functions are stored in pg_amproc.	For each operator class

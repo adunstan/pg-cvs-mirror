@@ -33,7 +33,7 @@
  *	  ENHANCEMENTS, OR MODIFICATIONS.
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/pl/plperl/plperl.c,v 1.40 2003/09/04 15:16:39 tgl Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/pl/plperl/plperl.c,v 1.40 2003/09/04 15:16:39 tgl Exp $
  *
  **********************************************************************/
 

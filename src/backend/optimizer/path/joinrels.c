@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/optimizer/path/joinrels.c,v 1.63 2003/08/04 02:40:00 momjian Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/optimizer/path/joinrels.c,v 1.63 2003/08/04 02:40:00 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

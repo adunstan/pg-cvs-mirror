@@ -5,7 +5,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $Header: /home/cvsmirror/pg/pgsql/src/bin/scripts/common.c,v 1.5 2003/09/07 03:43:55 momjian Exp $
+ * $PostgreSQL: /cvsroot/pgsql-server/src/bin/scripts/common.c,v 1.5 2003/09/07 03:43:55 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

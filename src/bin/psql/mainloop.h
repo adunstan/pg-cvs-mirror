@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2003, PostgreSQL Global Development Group
  *
- * $Header: /home/cvsmirror/pg/pgsql/src/bin/psql/mainloop.h,v 1.14 2003/08/04 23:59:40 tgl Exp $
+ * $PostgreSQL: /cvsroot/pgsql-server/src/bin/psql/mainloop.h,v 1.14 2003/08/04 23:59:40 tgl Exp $
  */
 #ifndef MAINLOOP_H
 #define MAINLOOP_H

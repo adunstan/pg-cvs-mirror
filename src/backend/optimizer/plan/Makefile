@@ -4,7 +4,7 @@
 #    Makefile for optimizer/plan
 #
 # IDENTIFICATION
-#    $Header: /home/cvsmirror/pg/pgsql/src/backend/optimizer/plan/Makefile,v 1.11 2000/08/31 16:10:11 petere Exp $
+#    $PostgreSQL: /cvsroot/pgsql-server/src/backend/optimizer/plan/Makefile,v 1.11 2000/08/31 16:10:11 petere Exp $
 #
 #-------------------------------------------------------------------------
 

@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/commands/operatorcmds.c,v 1.12 2003/08/04 02:39:58 momjian Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/commands/operatorcmds.c,v 1.12 2003/08/04 02:39:58 momjian Exp $
  *
  * DESCRIPTION
  *	  The "DefineFoo" routines take the parse tree and pick out the

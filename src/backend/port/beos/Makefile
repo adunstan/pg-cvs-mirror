@@ -4,7 +4,7 @@
 #    Makefile for port/beos
 #
 # IDENTIFICATION
-#    $Header: /home/cvsmirror/pg/pgsql/src/backend/port/beos/Attic/Makefile,v 1.3 2003/04/24 17:16:13 momjian Exp $
+#    $PostgreSQL: /cvsroot/pgsql-server/src/backend/port/beos/Makefile,v 1.3 2003/04/24 17:16:13 momjian Exp $
 #
 #-------------------------------------------------------------------------
 

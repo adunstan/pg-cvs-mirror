@@ -4,7 +4,7 @@
 #    Makefile for access/transam
 #
 # IDENTIFICATION
-#    $Header: /home/cvsmirror/pg/pgsql/src/backend/access/transam/Makefile,v 1.17 2003/06/11 22:37:45 momjian Exp $
+#    $PostgreSQL: /cvsroot/pgsql-server/src/backend/access/transam/Makefile,v 1.17 2003/06/11 22:37:45 momjian Exp $
 #
 #-------------------------------------------------------------------------
 

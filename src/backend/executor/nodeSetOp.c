@@ -21,7 +21,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/executor/nodeSetOp.c,v 1.12 2003/08/04 02:39:59 momjian Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/executor/nodeSetOp.c,v 1.12 2003/08/04 02:39:59 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $Header: /home/cvsmirror/pg/pgsql/src/backend/access/transam/xlog.c,v 1.125 2003/09/27 18:16:35 tgl Exp $
+ * $PostgreSQL: /cvsroot/pgsql-server/src/backend/access/transam/xlog.c,v 1.125 2003/09/27 18:16:35 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

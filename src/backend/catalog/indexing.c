@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/catalog/indexing.c,v 1.104 2003/08/04 02:39:58 momjian Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/catalog/indexing.c,v 1.104 2003/08/04 02:39:58 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/catalog/pg_largeobject.c,v 1.19 2003/11/12 21:15:48 tgl Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/catalog/pg_largeobject.c,v 1.19 2003/11/12 21:15:48 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/utils/fmgr/dfmgr.c,v 1.66 2003/09/25 06:58:05 petere Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/fmgr/dfmgr.c,v 1.66 2003/09/25 06:58:05 petere Exp $
  *
  *-------------------------------------------------------------------------
  */

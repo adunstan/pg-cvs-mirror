@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/test/examples/testlo.c,v 1.20 2003/08/04 02:40:20 momjian Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/test/examples/testlo.c,v 1.20 2003/08/04 02:40:20 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -1,7 +1,7 @@
 #
 # Makefile for utils
 #
-# $Header: /home/cvsmirror/pg/pgsql/src/backend/utils/Makefile,v 1.20 2002/09/03 21:45:42 petere Exp $
+# $PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/Makefile,v 1.20 2002/09/03 21:45:42 petere Exp $
 #
 
 subdir = src/backend/utils/

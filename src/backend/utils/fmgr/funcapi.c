@@ -7,7 +7,7 @@
  * Copyright (c) 2002-2003, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/utils/fmgr/funcapi.c,v 1.11 2003/09/15 20:03:37 petere Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/fmgr/funcapi.c,v 1.11 2003/09/15 20:03:37 petere Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -7,7 +7,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/rewrite/rewriteManip.c,v 1.80 2003/10/20 20:01:59 tgl Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/rewrite/rewriteManip.c,v 1.80 2003/10/20 20:01:59 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

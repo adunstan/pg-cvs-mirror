@@ -1,4 +1,4 @@
-# $Header: /home/cvsmirror/pg/pgsql/contrib/earthdistance/Makefile,v 1.12 2002/09/20 03:47:22 momjian Exp $
+# $PostgreSQL: /cvsroot/contrib/earthdistance/Makefile,v 1.12 2002/09/20 03:47:22 momjian Exp $
 
 subdir = contrib/earthdistance
 top_builddir = ../..

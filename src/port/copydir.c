@@ -11,7 +11,7 @@
  *	as a service.
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/port/copydir.c,v 1.6 2003/11/11 23:52:45 momjian Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/port/copydir.c,v 1.6 2003/11/11 23:52:45 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

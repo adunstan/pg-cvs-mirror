@@ -1,4 +1,4 @@
-<!-- $Header: /home/cvsmirror/pg/pgsql/doc/src/sgml/ddl.sgml,v 1.24 2003/11/24 19:08:01 petere Exp $ -->
+<!-- $PostgreSQL: /cvsroot/pgsql-server/doc/src/sgml/ddl.sgml,v 1.24 2003/11/24 19:08:01 petere Exp $ -->
 
 <chapter id="ddl">
  <title>Data Definition</title>

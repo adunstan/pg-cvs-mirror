@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/optimizer/util/pathnode.c,v 1.95 2003/08/04 02:40:01 momjian Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/optimizer/util/pathnode.c,v 1.95 2003/08/04 02:40:01 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/catalog/aclchk.c,v 1.94 2003/11/21 22:32:48 tgl Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/catalog/aclchk.c,v 1.94 2003/11/21 22:32:48 tgl Exp $
  *
  * NOTES
  *	  See acl.h.

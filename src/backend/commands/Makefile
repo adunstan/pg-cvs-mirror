@@ -4,7 +4,7 @@
 #    Makefile for backend/commands
 #
 # IDENTIFICATION
-#    $Header: /home/cvsmirror/pg/pgsql/src/backend/commands/Makefile,v 1.32 2003/06/27 14:45:27 petere Exp $
+#    $PostgreSQL: /cvsroot/pgsql-server/src/backend/commands/Makefile,v 1.32 2003/06/27 14:45:27 petere Exp $
 #
 #-------------------------------------------------------------------------
 

@@ -4,7 +4,7 @@
 #    Makefile for storage/lmgr
 #
 # IDENTIFICATION
-#    $Header: /home/cvsmirror/pg/pgsql/src/backend/storage/lmgr/Makefile,v 1.17 2001/09/29 04:02:24 tgl Exp $
+#    $PostgreSQL: /cvsroot/pgsql-server/src/backend/storage/lmgr/Makefile,v 1.17 2001/09/29 04:02:24 tgl Exp $
 #
 #-------------------------------------------------------------------------
 

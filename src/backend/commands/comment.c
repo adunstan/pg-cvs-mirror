@@ -7,7 +7,7 @@
  * Copyright (c) 1996-2003, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/commands/comment.c,v 1.74 2003/11/21 22:32:48 tgl Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/commands/comment.c,v 1.74 2003/11/21 22:32:48 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/executor/execGrouping.c,v 1.8 2003/08/19 01:13:40 tgl Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/executor/execGrouping.c,v 1.8 2003/08/19 01:13:40 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

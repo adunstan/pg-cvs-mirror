@@ -1,5 +1,5 @@
 #
-# $Header: /home/cvsmirror/pg/pgsql/contrib/mSQL-interface/Attic/Makefile,v 1.7 2001/02/20 19:20:27 petere Exp $
+# $PostgreSQL: /cvsroot/pgsql-server/contrib/mSQL-interface/Makefile,v 1.7 2001/02/20 19:20:27 petere Exp $
 #
 
 subdir = contrib/mSQL-interface

@@ -10,7 +10,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/utils/adt/Attic/sets.c,v 1.60 2003/09/15 20:03:37 petere Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/adt/sets.c,v 1.60 2003/09/15 20:03:37 petere Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -1,7 +1,7 @@
 /* ----------
  * pg_lzcompress.c -
  *
- * $Header: /home/cvsmirror/pg/pgsql/src/backend/utils/adt/pg_lzcompress.c,v 1.17 2003/03/10 22:28:18 tgl Exp $
+ * $PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/adt/pg_lzcompress.c,v 1.17 2003/03/10 22:28:18 tgl Exp $
  *
  *		This is an implementation of LZ compression for PostgreSQL.
  *		It uses a simple history table and generates 2-3 byte tags

@@ -1,4 +1,4 @@
-$Header: /home/cvsmirror/pg/pgsql/contrib/chkpass/Attic/README.chkpass,v 1.1 2001/05/03 12:32:13 darcy Exp $
+$PostgreSQL: /cvsroot/pgsql-server/contrib/chkpass/README.chkpass,v 1.1 2001/05/03 12:32:13 darcy Exp $
 
 Chkpass is a password type that is automatically checked and converted upon
 entry.  It is stored encrypted.  To compare, simply compare agains a clear

@@ -7,7 +7,7 @@
 # Author:  Peter Eisentraut <peter_e@gmx.net> 
 # Public domain
 
-# $Header: /home/cvsmirror/pg/pgsql/src/bin/pg_config/Attic/pg_config.sh,v 1.8 2003/07/23 08:47:25 petere Exp $
+# $PostgreSQL: /cvsroot/pgsql-server/src/bin/pg_config/pg_config.sh,v 1.8 2003/07/23 08:47:25 petere Exp $
 
 me=`basename $0`
 

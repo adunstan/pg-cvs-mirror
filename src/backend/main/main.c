@@ -13,7 +13,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/main/main.c,v 1.65 2003/10/18 22:59:08 petere Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/main/main.c,v 1.65 2003/10/18 22:59:08 petere Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -2,7 +2,7 @@
 #
 # Makefile for the pltcl shared object
 #
-# $Header: /home/cvsmirror/pg/pgsql/src/pl/tcl/Makefile,v 1.40 2003/09/27 19:35:32 tgl Exp $
+# $PostgreSQL: /cvsroot/pgsql-server/src/pl/tcl/Makefile,v 1.40 2003/09/27 19:35:32 tgl Exp $
 #
 #-------------------------------------------------------------------------
 

@@ -5,7 +5,7 @@
 #
 # Copyright (c) 1994, Regents of the University of California
 #
-# $Header: /home/cvsmirror/pg/pgsql/src/backend/optimizer/geqo/Makefile,v 1.17 2002/07/20 04:59:10 momjian Exp $
+# $PostgreSQL: /cvsroot/pgsql-server/src/backend/optimizer/geqo/Makefile,v 1.17 2002/07/20 04:59:10 momjian Exp $
 #
 #-------------------------------------------------------------------------
 

@@ -1,7 +1,7 @@
 /*
  *	PostgreSQL type definitions for managed LargeObjects.
  *
- *	$Header: /home/cvsmirror/pg/pgsql/contrib/lo/lo.c,v 1.13 2003/07/24 17:52:30 tgl Exp $
+ *	$PostgreSQL: /cvsroot/pgsql-server/contrib/lo/lo.c,v 1.13 2003/07/24 17:52:30 tgl Exp $
  *
  */
 

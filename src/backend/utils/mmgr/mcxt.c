@@ -14,7 +14,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/utils/mmgr/mcxt.c,v 1.43 2003/08/04 02:40:08 momjian Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/mmgr/mcxt.c,v 1.43 2003/08/04 02:40:08 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

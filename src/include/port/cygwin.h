@@ -1,4 +1,4 @@
-/* $Header: /home/cvsmirror/pg/pgsql/src/include/port/cygwin.h,v 1.4 2003/08/04 00:43:32 momjian Exp $ */
+/* $PostgreSQL: /cvsroot/pgsql-server/src/include/port/cygwin.h,v 1.4 2003/08/04 00:43:32 momjian Exp $ */
 
 #define HAS_TEST_AND_SET
 typedef unsigned char slock_t;

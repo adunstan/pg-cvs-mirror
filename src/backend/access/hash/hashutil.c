@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/access/hash/hashutil.c,v 1.37 2003/09/25 06:57:56 petere Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/access/hash/hashutil.c,v 1.37 2003/09/25 06:57:56 petere Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -4,7 +4,7 @@
 #
 # Copyright (c) 1994, Regents of the University of California
 #
-# $Header: /home/cvsmirror/pg/pgsql/src/pl/plpgsql/Makefile,v 1.7 2001/05/24 22:33:18 momjian Exp $
+# $PostgreSQL: /cvsroot/pgsql-server/src/pl/plpgsql/Makefile,v 1.7 2001/05/24 22:33:18 momjian Exp $
 #
 #-------------------------------------------------------------------------
 

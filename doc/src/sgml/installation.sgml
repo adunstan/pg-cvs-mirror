@@ -1,4 +1,4 @@
-<!-- $Header: /home/cvsmirror/pg/pgsql/doc/src/sgml/installation.sgml,v 1.186 2003/11/27 19:44:56 petere Exp $ -->
+<!-- $PostgreSQL: /cvsroot/pgsql-server/doc/src/sgml/installation.sgml,v 1.186 2003/11/27 19:44:56 petere Exp $ -->
 
 <chapter id="installation">
  <title><![%standalone-include[<productname>PostgreSQL</>]]>

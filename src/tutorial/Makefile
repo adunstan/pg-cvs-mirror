@@ -4,7 +4,7 @@
 #    Makefile for tutorial
 #
 # IDENTIFICATION
-#    $Header: /home/cvsmirror/pg/pgsql/src/tutorial/Makefile,v 1.16 2002/09/05 18:28:46 petere Exp $
+#    $PostgreSQL: /cvsroot/pgsql-server/src/tutorial/Makefile,v 1.16 2002/09/05 18:28:46 petere Exp $
 #
 #-------------------------------------------------------------------------
 

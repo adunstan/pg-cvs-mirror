@@ -47,7 +47,7 @@
  * permission to use and distribute the software in accordance with the
  * terms specified in this license.
  *
- * $Header: /home/cvsmirror/pg/pgsql/src/backend/regex/regc_locale.c,v 1.4 2003/09/29 00:21:58 tgl Exp $
+ * $PostgreSQL: /cvsroot/pgsql-server/src/backend/regex/regc_locale.c,v 1.4 2003/09/29 00:21:58 tgl Exp $
  */
 
 /* ASCII character-name table */

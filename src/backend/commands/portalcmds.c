@@ -14,7 +14,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/commands/portalcmds.c,v 1.24 2003/08/24 21:02:43 petere Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/commands/portalcmds.c,v 1.24 2003/08/24 21:02:43 petere Exp $
  *
  *-------------------------------------------------------------------------
  */

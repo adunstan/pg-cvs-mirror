@@ -11,7 +11,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/commands/cluster.c,v 1.118 2003/11/12 21:15:49 tgl Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/commands/cluster.c,v 1.118 2003/11/12 21:15:49 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -13,7 +13,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/storage/ipc/ipc.c,v 1.85 2003/08/04 02:40:03 momjian Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/storage/ipc/ipc.c,v 1.85 2003/08/04 02:40:03 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

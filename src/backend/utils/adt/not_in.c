@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/utils/adt/Attic/not_in.c,v 1.37 2003/09/25 06:58:04 petere Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/adt/not_in.c,v 1.37 2003/09/25 06:58:04 petere Exp $
  *
  *-------------------------------------------------------------------------
  */

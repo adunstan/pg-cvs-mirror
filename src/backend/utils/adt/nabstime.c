@@ -10,7 +10,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/utils/adt/nabstime.c,v 1.117 2003/09/29 00:05:25 petere Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/adt/nabstime.c,v 1.117 2003/09/29 00:05:25 petere Exp $
  *
  *-------------------------------------------------------------------------
  */

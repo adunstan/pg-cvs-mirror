@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/rewrite/rewriteHandler.c,v 1.130 2003/09/25 06:58:01 petere Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/rewrite/rewriteHandler.c,v 1.130 2003/09/25 06:58:01 petere Exp $
  *
  *-------------------------------------------------------------------------
  */

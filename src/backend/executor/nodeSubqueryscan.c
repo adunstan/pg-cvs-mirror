@@ -12,7 +12,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/executor/nodeSubqueryscan.c,v 1.22 2003/10/01 21:30:52 tgl Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/executor/nodeSubqueryscan.c,v 1.22 2003/10/01 21:30:52 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

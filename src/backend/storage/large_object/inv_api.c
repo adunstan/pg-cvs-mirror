@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/storage/large_object/inv_api.c,v 1.101 2003/11/21 22:32:49 tgl Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/storage/large_object/inv_api.c,v 1.101 2003/11/21 22:32:49 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

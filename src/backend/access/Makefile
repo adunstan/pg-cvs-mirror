@@ -1,7 +1,7 @@
 #
 # Makefile for the access methods module
 #
-# $Header: /home/cvsmirror/pg/pgsql/src/backend/access/Makefile,v 1.8 2002/08/10 17:59:28 petere Exp $
+# $PostgreSQL: /cvsroot/pgsql-server/src/backend/access/Makefile,v 1.8 2002/08/10 17:59:28 petere Exp $
 #
 
 subdir = src/backend/access

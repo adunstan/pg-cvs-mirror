@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/optimizer/plan/planner.c,v 1.161 2003/09/25 06:58:00 petere Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/optimizer/plan/planner.c,v 1.161 2003/09/25 06:58:00 petere Exp $
  *
  *-------------------------------------------------------------------------
  */

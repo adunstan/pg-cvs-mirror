@@ -10,7 +10,7 @@
  * didn't really belong there.
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/interfaces/libpq/fe-print.c,v 1.48 2003/08/04 02:40:20 momjian Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/interfaces/libpq/fe-print.c,v 1.48 2003/08/04 02:40:20 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

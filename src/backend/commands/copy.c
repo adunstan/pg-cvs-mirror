@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/commands/copy.c,v 1.213 2003/10/06 02:38:53 tgl Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/commands/copy.c,v 1.213 2003/10/06 02:38:53 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

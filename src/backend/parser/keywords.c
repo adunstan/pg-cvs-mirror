@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/parser/keywords.c,v 1.143 2003/11/21 22:32:49 tgl Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/parser/keywords.c,v 1.143 2003/11/21 22:32:49 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

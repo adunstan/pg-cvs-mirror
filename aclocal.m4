@@ -1,4 +1,4 @@
-dnl $Header: /home/cvsmirror/pg/pgsql/aclocal.m4,v 1.15 2002/09/04 22:54:17 petere Exp $
+dnl $PostgreSQL: /cvsroot/pgsql-server/aclocal.m4,v 1.15 2002/09/04 22:54:17 petere Exp $
 m4_include([config/ac_func_accept_argtypes.m4])
 m4_include([config/c-compiler.m4])
 m4_include([config/c-library.m4])

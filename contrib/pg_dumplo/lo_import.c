@@ -1,7 +1,7 @@
 /* -------------------------------------------------------------------------
  * pg_dumplo
  *
- * $Header: /home/cvsmirror/pg/pgsql/contrib/pg_dumplo/Attic/lo_import.c,v 1.9 2002/09/05 21:01:16 tgl Exp $
+ * $PostgreSQL: /cvsroot/pgsql-server/contrib/pg_dumplo/lo_import.c,v 1.9 2002/09/05 21:01:16 tgl Exp $
  *
  *					Karel Zak 1999-2000
  * -------------------------------------------------------------------------

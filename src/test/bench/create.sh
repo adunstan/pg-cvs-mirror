@@ -1,5 +1,5 @@
 #!/bin/sh
-# $Header: /home/cvsmirror/pg/pgsql/src/test/bench/Attic/create.sh,v 1.2 1997/04/17 13:48:49 scrappy Exp $
+# $PostgreSQL: /cvsroot/pgsql-server/src/test/bench/create.sh,v 1.2 1997/04/17 13:48:49 scrappy Exp $
 # 
 if [ ! -d $1 ]; then
 	echo " you must specify a valid data directory "

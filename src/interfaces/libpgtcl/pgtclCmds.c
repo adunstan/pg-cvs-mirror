@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/interfaces/libpgtcl/Attic/pgtclCmds.c,v 1.75 2003/11/08 20:34:36 tgl Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/interfaces/libpgtcl/pgtclCmds.c,v 1.75 2003/11/08 20:34:36 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -13,7 +13,7 @@
  *
  *	Copyright (c) 2001-2003, PostgreSQL Global Development Group
  *
- *	$Header: /home/cvsmirror/pg/pgsql/src/backend/postmaster/pgstat.c,v 1.47 2003/11/15 17:24:07 tgl Exp $
+ *	$PostgreSQL: /cvsroot/pgsql-server/src/backend/postmaster/pgstat.c,v 1.47 2003/11/15 17:24:07 tgl Exp $
  * ----------
  */
 #include "postgres.h"

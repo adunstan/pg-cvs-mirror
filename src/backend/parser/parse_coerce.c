@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/parser/parse_coerce.c,v 2.111 2003/09/29 00:05:25 petere Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/parser/parse_coerce.c,v 2.111 2003/09/29 00:05:25 petere Exp $
  *
  *-------------------------------------------------------------------------
  */

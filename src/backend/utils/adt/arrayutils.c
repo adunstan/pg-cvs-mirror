@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/utils/adt/arrayutils.c,v 1.14 2003/08/04 02:40:04 momjian Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/adt/arrayutils.c,v 1.14 2003/08/04 02:40:04 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

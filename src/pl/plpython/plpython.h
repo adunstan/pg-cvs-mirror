@@ -1,4 +1,4 @@
-/* $Header: /home/cvsmirror/pg/pgsql/src/pl/plpython/Attic/plpython.h,v 1.8 2003/07/25 23:37:30 tgl Exp $ */
+/* $PostgreSQL: /cvsroot/pgsql-server/src/pl/plpython/plpython.h,v 1.8 2003/07/25 23:37:30 tgl Exp $ */
 
 #ifndef PLPYTHON_H
 #define PLPYTHON_H

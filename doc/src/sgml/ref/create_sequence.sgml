@@ -1,5 +1,5 @@
 <!--
-$Header: /home/cvsmirror/pg/pgsql/doc/src/sgml/ref/create_sequence.sgml,v 1.38 2003/11/25 19:27:18 petere Exp $
+$PostgreSQL: /cvsroot/pgsql-server/doc/src/sgml/ref/create_sequence.sgml,v 1.38 2003/11/25 19:27:18 petere Exp $
 PostgreSQL documentation
 -->
 

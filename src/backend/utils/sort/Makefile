@@ -4,7 +4,7 @@
 #    Makefile for utils/sort
 #
 # IDENTIFICATION
-#    $Header: /home/cvsmirror/pg/pgsql/src/backend/utils/sort/Makefile,v 1.12 2000/08/31 16:10:59 petere Exp $
+#    $PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/sort/Makefile,v 1.12 2000/08/31 16:10:59 petere Exp $
 #
 #-------------------------------------------------------------------------
 

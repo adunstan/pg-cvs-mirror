@@ -1,4 +1,4 @@
-# $Header: /home/cvsmirror/pg/pgsql/src/makefiles/Makefile.cygwin,v 1.2 2003/05/22 17:20:44 petere Exp $
+# $PostgreSQL: /cvsroot/pgsql-server/src/makefiles/Makefile.cygwin,v 1.2 2003/05/22 17:20:44 petere Exp $
 DLLTOOL= dlltool
 DLLWRAP= dllwrap
 BE_DLLLIBS= -L$(top_builddir)/src/backend -lpostgres

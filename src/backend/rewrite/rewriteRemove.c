@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/rewrite/rewriteRemove.c,v 1.58 2003/11/12 21:15:54 tgl Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/rewrite/rewriteRemove.c,v 1.58 2003/11/12 21:15:54 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

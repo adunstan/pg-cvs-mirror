@@ -9,7 +9,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/access/common/printtup.c,v 1.78 2003/08/06 17:46:45 tgl Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/access/common/printtup.c,v 1.78 2003/08/06 17:46:45 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

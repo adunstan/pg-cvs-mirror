@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/bootstrap/bootparse.y,v 1.62 2003/11/14 18:19:45 tgl Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/bootstrap/bootparse.y,v 1.62 2003/11/14 18:19:45 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -14,7 +14,7 @@
  * Copyright (c) 2003, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/nodes/bitmapset.c,v 1.5 2003/08/08 21:41:43 momjian Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/nodes/bitmapset.c,v 1.5 2003/08/08 21:41:43 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

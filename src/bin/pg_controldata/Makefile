@@ -4,7 +4,7 @@
 #
 # Copyright (c) 1998-2002, PostgreSQL Global Development Group
 #
-# $Header: /home/cvsmirror/pg/pgsql/src/bin/pg_controldata/Makefile,v 1.3 2002/08/17 04:03:35 tgl Exp $
+# $PostgreSQL: /cvsroot/pgsql-server/src/bin/pg_controldata/Makefile,v 1.3 2002/08/17 04:03:35 tgl Exp $
 #
 #-------------------------------------------------------------------------
 

@@ -1,7 +1,7 @@
 /* -------------------------------------------------------------------------
  * pg_dumplo
  *
- * $Header: /home/cvsmirror/pg/pgsql/contrib/pg_dumplo/Attic/utils.c,v 1.7 2003/10/09 13:38:05 momjian Exp $
+ * $PostgreSQL: /cvsroot/pgsql-server/contrib/pg_dumplo/utils.c,v 1.7 2003/10/09 13:38:05 momjian Exp $
  *
  *					Karel Zak 1999-2000
  * -------------------------------------------------------------------------

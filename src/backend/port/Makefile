@@ -13,7 +13,7 @@
 # be converted to Method 2.  
 #
 # IDENTIFICATION
-#    $Header: /home/cvsmirror/pg/pgsql/src/backend/port/Makefile,v 1.19 2003/05/15 16:35:29 momjian Exp $
+#    $PostgreSQL: /cvsroot/pgsql-server/src/backend/port/Makefile,v 1.19 2003/05/15 16:35:29 momjian Exp $
 #
 #-------------------------------------------------------------------------
 

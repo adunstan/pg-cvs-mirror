@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/access/nbtree/nbtxlog.c,v 1.7 2003/09/29 23:40:26 tgl Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/access/nbtree/nbtxlog.c,v 1.7 2003/09/29 23:40:26 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

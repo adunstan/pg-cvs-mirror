@@ -4,7 +4,7 @@
  * (currently mule internal code (mic) is used)
  * Tatsuo Ishii
  *
- * $Header: /home/cvsmirror/pg/pgsql/src/backend/utils/mb/mbutils.c,v 1.44 2003/09/25 06:58:05 petere Exp $
+ * $PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/mb/mbutils.c,v 1.44 2003/09/25 06:58:05 petere Exp $
  */
 #include "postgres.h"
 

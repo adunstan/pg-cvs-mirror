@@ -1,4 +1,4 @@
-# $Header: /home/cvsmirror/pg/pgsql/src/makefiles/Makefile.win32,v 1.2 2003/05/19 17:31:59 momjian Exp $
+# $PostgreSQL: /cvsroot/pgsql-server/src/makefiles/Makefile.win32,v 1.2 2003/05/19 17:31:59 momjian Exp $
 
 # Use replacement include files for those missing on Win32
 override CPPFLAGS+="-I$(top_srcdir)/src/include/port/win32"

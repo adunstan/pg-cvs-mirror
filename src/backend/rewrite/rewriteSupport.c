@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/rewrite/rewriteSupport.c,v 1.56 2003/08/04 02:40:03 momjian Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/rewrite/rewriteSupport.c,v 1.56 2003/08/04 02:40:03 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

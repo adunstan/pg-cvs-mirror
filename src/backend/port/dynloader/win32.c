@@ -1,4 +1,4 @@
-/* $Header: /home/cvsmirror/pg/pgsql/src/backend/port/dynloader/win32.c,v 1.2 2003/08/04 00:43:21 momjian Exp $ */
+/* $PostgreSQL: /cvsroot/pgsql-server/src/backend/port/dynloader/win32.c,v 1.2 2003/08/04 00:43:21 momjian Exp $ */
 
 #include <windows.h>
 

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/commands/conversioncmds.c,v 1.11 2003/08/04 02:39:58 momjian Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/commands/conversioncmds.c,v 1.11 2003/08/04 02:39:58 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

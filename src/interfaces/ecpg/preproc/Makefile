@@ -1,4 +1,4 @@
-# $Header: /home/cvsmirror/pg/pgsql/src/interfaces/ecpg/preproc/Makefile,v 1.94 2003/09/27 15:32:48 momjian Exp $
+# $PostgreSQL: /cvsroot/pgsql-server/src/interfaces/ecpg/preproc/Makefile,v 1.94 2003/09/27 15:32:48 momjian Exp $
 
 subdir = src/interfaces/ecpg/preproc
 top_builddir = ../../../..

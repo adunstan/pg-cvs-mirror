@@ -7,7 +7,7 @@
 #
 #
 # IDENTIFICATION
-#    $Header: /home/cvsmirror/pg/pgsql/src/test/regress/GNUmakefile,v 1.43 2003/11/02 21:56:15 tgl Exp $
+#    $PostgreSQL: /cvsroot/pgsql-server/src/test/regress/GNUmakefile,v 1.43 2003/11/02 21:56:15 tgl Exp $
 #
 #-------------------------------------------------------------------------
 

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/access/hash/hash.c,v 1.68 2003/09/04 22:06:27 tgl Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/access/hash/hash.c,v 1.68 2003/09/04 22:06:27 tgl Exp $
  *
  * NOTES
  *	  This file contains only the public interface routines.

@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/access/nbtree/nbtpage.c,v 1.72 2003/09/29 23:40:26 tgl Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/access/nbtree/nbtpage.c,v 1.72 2003/09/29 23:40:26 tgl Exp $
  *
  *	NOTES
  *	   Postgres btree pages look like ordinary relation pages.	The opaque

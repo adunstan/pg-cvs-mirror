@@ -15,7 +15,7 @@
  *	  locate group boundaries.
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/executor/nodeGroup.c,v 1.56 2003/08/04 02:39:59 momjian Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/executor/nodeGroup.c,v 1.56 2003/08/04 02:39:59 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

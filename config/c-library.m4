@@ -1,5 +1,5 @@
 # Macros that test various C library quirks
-# $Header: /home/cvsmirror/pg/pgsql/config/c-library.m4,v 1.23 2003/07/23 23:30:39 tgl Exp $
+# $PostgreSQL: /cvsroot/pgsql-server/config/c-library.m4,v 1.23 2003/07/23 23:30:39 tgl Exp $
 
 
 # PGAC_VAR_INT_TIMEZONE

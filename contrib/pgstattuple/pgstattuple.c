@@ -1,5 +1,5 @@
 /*
- * $Header: /home/cvsmirror/pg/pgsql/contrib/pgstattuple/pgstattuple.c,v 1.12 2003/08/04 00:43:11 momjian Exp $
+ * $PostgreSQL: /cvsroot/pgsql-server/contrib/pgstattuple/pgstattuple.c,v 1.12 2003/08/04 00:43:11 momjian Exp $
  *
  * Copyright (c) 2001,2002	Tatsuo Ishii
  *

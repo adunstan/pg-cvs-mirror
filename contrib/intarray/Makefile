@@ -1,4 +1,4 @@
-# $Header: /home/cvsmirror/pg/pgsql/contrib/intarray/Makefile,v 1.9 2003/06/11 18:44:14 momjian Exp $
+# $PostgreSQL: /cvsroot/pgsql-server/contrib/intarray/Makefile,v 1.9 2003/06/11 18:44:14 momjian Exp $
 
 subdir = contrib/intarray
 top_builddir = ../..

@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	$Header: /home/cvsmirror/pg/pgsql/src/backend/utils/adt/oracle_compat.c,v 1.48 2003/08/08 21:42:06 momjian Exp $
+ *	$PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/adt/oracle_compat.c,v 1.48 2003/08/08 21:42:06 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

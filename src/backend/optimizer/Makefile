@@ -1,7 +1,7 @@
 #
 # Makefile for optimizer
 #
-# $Header: /home/cvsmirror/pg/pgsql/src/backend/optimizer/Makefile,v 1.10 2002/08/10 17:59:28 petere Exp $
+# $PostgreSQL: /cvsroot/pgsql-server/src/backend/optimizer/Makefile,v 1.10 2002/08/10 17:59:28 petere Exp $
 #
 
 subdir = src/backend/optimizer

@@ -4,7 +4,7 @@
  *
  * Portions Copyright (c) 2002-2003, PostgreSQL Global Development Group
  *
- * $Header: /home/cvsmirror/pg/pgsql/src/bin/scripts/clusterdb.c,v 1.3 2003/08/04 00:43:29 momjian Exp $
+ * $PostgreSQL: /cvsroot/pgsql-server/src/bin/scripts/clusterdb.c,v 1.3 2003/08/04 00:43:29 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -1,7 +1,7 @@
 #
 # Autoconf macros for configuring the build of Java JDBC Tools
 #
-# $Header: /home/cvsmirror/pg/pgsql/config/Attic/java.m4,v 1.4 2002/03/29 17:32:54 petere Exp $
+# $PostgreSQL: /cvsroot/pgsql-server/config/java.m4,v 1.4 2002/03/29 17:32:54 petere Exp $
 #
 
 

@@ -12,7 +12,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/interfaces/ecpg/preproc/pgc.l,v 1.122 2003/10/31 14:10:41 meskes Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/interfaces/ecpg/preproc/pgc.l,v 1.122 2003/10/31 14:10:41 meskes Exp $
  *
  *-------------------------------------------------------------------------
  */

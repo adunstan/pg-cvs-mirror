@@ -7,7 +7,7 @@
  * Copyright (c) 2003, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/interfaces/jdbc/org/postgresql/util/Attic/PGobject.java,v 1.4 2003/03/07 18:39:46 barry Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/interfaces/jdbc/org/postgresql/util/PGobject.java,v 1.4 2003/03/07 18:39:46 barry Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -1,4 +1,4 @@
-# $Header: /home/cvsmirror/pg/pgsql/src/bin/initdb/nls.mk,v 1.2 2003/11/25 19:19:20 petere Exp $
+# $PostgreSQL: /cvsroot/pgsql-server/src/bin/initdb/nls.mk,v 1.2 2003/11/25 19:19:20 petere Exp $
 CATALOG_NAME	:= initdb
 AVAIL_LANGUAGES	:= de pt_BR
 GETTEXT_FILES	:= initdb.c

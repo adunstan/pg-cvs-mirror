@@ -1,4 +1,4 @@
-# $Header: /home/cvsmirror/pg/pgsql/contrib/miscutil/Attic/Makefile,v 1.16 2001/09/06 10:49:29 petere Exp $
+# $PostgreSQL: /cvsroot/pgsql-server/contrib/miscutil/Makefile,v 1.16 2001/09/06 10:49:29 petere Exp $
 
 subdir = contrib/miscutil
 top_builddir = ../..

@@ -4,7 +4,7 @@
 #    Makefile for executor
 #
 # IDENTIFICATION
-#    $Header: /home/cvsmirror/pg/pgsql/src/backend/executor/Makefile,v 1.21 2003/03/27 16:51:27 momjian Exp $
+#    $PostgreSQL: /cvsroot/pgsql-server/src/backend/executor/Makefile,v 1.21 2003/03/27 16:51:27 momjian Exp $
 #
 #-------------------------------------------------------------------------
 

@@ -14,7 +14,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/utils/adt/name.c,v 1.49 2003/08/04 02:40:05 momjian Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/adt/name.c,v 1.49 2003/08/04 02:40:05 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

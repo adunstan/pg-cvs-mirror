@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/utils/adt/varchar.c,v 1.102 2003/08/04 04:03:10 tgl Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/adt/varchar.c,v 1.102 2003/08/04 04:03:10 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/utils/init/miscinit.c,v 1.116 2003/09/26 15:27:37 petere Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/init/miscinit.c,v 1.116 2003/09/26 15:27:37 petere Exp $
  *
  *-------------------------------------------------------------------------
  */

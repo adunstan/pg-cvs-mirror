@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2003, PostgreSQL Global Development Group
  *
- * $Header: /home/cvsmirror/pg/pgsql/src/bin/psql/describe.c,v 1.87 2003/10/26 02:53:45 momjian Exp $
+ * $PostgreSQL: /cvsroot/pgsql-server/src/bin/psql/describe.c,v 1.87 2003/10/26 02:53:45 momjian Exp $
  */
 #include "postgres_fe.h"
 #include "describe.h"

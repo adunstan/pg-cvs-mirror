@@ -1,5 +1,5 @@
 /*
- * $Header: /home/cvsmirror/pg/pgsql/contrib/pgbench/pgbench.c,v 1.28 2003/11/26 06:53:18 ishii Exp $
+ * $PostgreSQL: /cvsroot/pgsql-server/contrib/pgbench/pgbench.c,v 1.28 2003/11/26 06:53:18 ishii Exp $
  *
  * pgbench: a simple TPC-B like benchmark program for PostgreSQL
  * written by Tatsuo Ishii

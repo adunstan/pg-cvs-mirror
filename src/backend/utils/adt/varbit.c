@@ -9,7 +9,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/utils/adt/varbit.c,v 1.37 2003/09/25 06:58:05 petere Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/adt/varbit.c,v 1.37 2003/09/25 06:58:05 petere Exp $
  *
  *-------------------------------------------------------------------------
  */

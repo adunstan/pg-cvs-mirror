@@ -7,7 +7,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/port/qnx4/Attic/isnan.c,v 1.3 2001/08/24 14:07:49 petere Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/port/qnx4/isnan.c,v 1.3 2001/08/24 14:07:49 petere Exp $
  *
  *-------------------------------------------------------------------------
  */

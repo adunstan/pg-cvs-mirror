@@ -1,5 +1,5 @@
 /*
- * $Header: /home/cvsmirror/pg/pgsql/src/test/regress/regress.c,v 1.58 2003/08/04 00:43:34 momjian Exp $
+ * $PostgreSQL: /cvsroot/pgsql-server/src/test/regress/regress.c,v 1.58 2003/08/04 00:43:34 momjian Exp $
  */
 
 #include "postgres.h"

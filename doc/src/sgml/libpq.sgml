@@ -1,5 +1,5 @@
 <!--
-$Header: /home/cvsmirror/pg/pgsql/doc/src/sgml/libpq.sgml,v 1.142 2003/11/12 22:47:47 petere Exp $
+$PostgreSQL: /cvsroot/pgsql-server/doc/src/sgml/libpq.sgml,v 1.142 2003/11/12 22:47:47 petere Exp $
 -->
 
  <chapter id="libpq">

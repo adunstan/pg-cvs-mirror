@@ -1,4 +1,4 @@
-<!-- $Header: /home/cvsmirror/pg/pgsql/doc/src/sgml/ref/checkpoint.sgml,v 1.10 2003/08/31 17:32:21 petere Exp $ -->
+<!-- $PostgreSQL: /cvsroot/pgsql-server/doc/src/sgml/ref/checkpoint.sgml,v 1.10 2003/08/31 17:32:21 petere Exp $ -->
 
 <refentry id="sql-checkpoint">
  <refmeta>

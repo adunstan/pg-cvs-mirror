@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/access/rtree/Attic/rtree.c,v 1.80 2003/09/25 06:57:57 petere Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/access/rtree/rtree.c,v 1.80 2003/09/25 06:57:57 petere Exp $
  *
  *-------------------------------------------------------------------------
  */

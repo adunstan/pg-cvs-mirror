@@ -10,7 +10,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/libpq/hba.c,v 1.116 2003/10/25 03:48:46 momjian Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/libpq/hba.c,v 1.116 2003/10/25 03:48:46 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

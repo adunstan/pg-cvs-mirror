@@ -37,7 +37,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/utils/error/elog.c,v 1.125 2003/10/17 16:49:03 tgl Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/error/elog.c,v 1.125 2003/10/17 16:49:03 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

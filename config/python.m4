@@ -1,7 +1,7 @@
 #
 # Autoconf macros for configuring the build of Python extension modules
 #
-# $Header: /home/cvsmirror/pg/pgsql/config/python.m4,v 1.6 2003/09/01 23:01:48 petere Exp $
+# $PostgreSQL: /cvsroot/pgsql-server/config/python.m4,v 1.6 2003/09/01 23:01:48 petere Exp $
 #
 
 # PGAC_PATH_PYTHON

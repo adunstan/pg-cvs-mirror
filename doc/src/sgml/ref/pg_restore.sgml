@@ -1,4 +1,4 @@
-<!-- $Header: /home/cvsmirror/pg/pgsql/doc/src/sgml/ref/pg_restore.sgml,v 1.43 2003/09/23 22:48:53 tgl Exp $ -->
+<!-- $PostgreSQL: /cvsroot/pgsql-server/doc/src/sgml/ref/pg_restore.sgml,v 1.43 2003/09/23 22:48:53 tgl Exp $ -->
 
 <refentry id="APP-PGRESTORE">
  <refmeta>

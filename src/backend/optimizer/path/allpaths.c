@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/optimizer/path/allpaths.c,v 1.108 2003/09/25 06:57:59 petere Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/optimizer/path/allpaths.c,v 1.108 2003/09/25 06:57:59 petere Exp $
  *
  *-------------------------------------------------------------------------
  */

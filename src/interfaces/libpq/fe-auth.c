@@ -10,7 +10,7 @@
  * exceed INITIAL_EXPBUFFER_SIZE (currently 256 bytes).
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/interfaces/libpq/fe-auth.c,v 1.85 2003/11/26 15:55:01 petere Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/interfaces/libpq/fe-auth.c,v 1.85 2003/11/26 15:55:01 petere Exp $
  *
  *-------------------------------------------------------------------------
  */

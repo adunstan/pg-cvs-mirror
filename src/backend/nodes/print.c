@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/nodes/print.c,v 1.64 2003/08/11 23:04:49 tgl Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/nodes/print.c,v 1.64 2003/08/11 23:04:49 tgl Exp $
  *
  * HISTORY
  *	  AUTHOR			DATE			MAJOR EVENT

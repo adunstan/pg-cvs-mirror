@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/rewrite/rewriteDefine.c,v 1.90 2003/09/29 00:05:25 petere Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/rewrite/rewriteDefine.c,v 1.90 2003/09/29 00:05:25 petere Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/storage/buffer/freelist.c,v 1.37 2003/11/27 18:12:50 petere Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/storage/buffer/freelist.c,v 1.37 2003/11/27 18:12:50 petere Exp $
  *
  *-------------------------------------------------------------------------
  */

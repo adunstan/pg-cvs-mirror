@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/parser/parse_relation.c,v 1.90 2003/09/25 06:58:01 petere Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/parser/parse_relation.c,v 1.90 2003/09/25 06:58:01 petere Exp $
  *
  *-------------------------------------------------------------------------
  */

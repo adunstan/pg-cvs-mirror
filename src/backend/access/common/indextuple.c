@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/access/common/indextuple.c,v 1.68 2003/09/25 06:57:56 petere Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/access/common/indextuple.c,v 1.68 2003/09/25 06:57:56 petere Exp $
  *
  *-------------------------------------------------------------------------
  */

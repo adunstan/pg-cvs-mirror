@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/optimizer/plan/subselect.c,v 1.85 2003/11/25 23:59:12 tgl Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/optimizer/plan/subselect.c,v 1.85 2003/11/25 23:59:12 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

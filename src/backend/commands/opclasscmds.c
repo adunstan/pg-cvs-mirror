@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/commands/opclasscmds.c,v 1.23 2003/11/12 21:15:50 tgl Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/commands/opclasscmds.c,v 1.23 2003/11/12 21:15:50 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/executor/nodeTidscan.c,v 1.35 2003/09/26 01:17:01 tgl Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/executor/nodeTidscan.c,v 1.35 2003/09/26 01:17:01 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

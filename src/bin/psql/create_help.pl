@@ -5,7 +5,7 @@
 #
 # Copyright (c) 2000-2003, PostgreSQL Global Development Group
 #
-# $Header: /home/cvsmirror/pg/pgsql/src/bin/psql/create_help.pl,v 1.9 2003/09/14 22:37:12 petere Exp $
+# $PostgreSQL: /cvsroot/pgsql-server/src/bin/psql/create_help.pl,v 1.9 2003/09/14 22:37:12 petere Exp $
 #################################################################
 
 #

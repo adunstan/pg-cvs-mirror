@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/tcop/fastpath.c,v 1.69 2003/09/25 06:58:02 petere Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/tcop/fastpath.c,v 1.69 2003/09/25 06:58:02 petere Exp $
  *
  * NOTES
  *	  This cruft is the server side of PQfn.

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/storage/smgr/md.c,v 1.98 2003/08/04 02:40:04 momjian Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/storage/smgr/md.c,v 1.98 2003/08/04 02:40:04 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

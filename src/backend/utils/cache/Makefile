@@ -4,7 +4,7 @@
 #    Makefile for utils/cache
 #
 # IDENTIFICATION
-#    $Header: /home/cvsmirror/pg/pgsql/src/backend/utils/cache/Makefile,v 1.18 2003/08/17 19:58:06 tgl Exp $
+#    $PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/cache/Makefile,v 1.18 2003/08/17 19:58:06 tgl Exp $
 #
 #-------------------------------------------------------------------------
 

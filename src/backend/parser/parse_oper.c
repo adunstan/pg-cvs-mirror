@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/parser/parse_oper.c,v 1.76 2003/10/06 20:09:47 tgl Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/parser/parse_oper.c,v 1.76 2003/10/06 20:09:47 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

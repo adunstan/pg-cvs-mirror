@@ -10,7 +10,7 @@
  *	Win32 (NT, Win2k, XP).	replace() doesn't work on Win95/98/Me.
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/port/dirmod.c,v 1.7 2003/11/11 23:52:45 momjian Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/port/dirmod.c,v 1.7 2003/11/11 23:52:45 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

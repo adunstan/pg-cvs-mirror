@@ -16,7 +16,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/optimizer/prep/prepjointree.c,v 1.13 2003/10/13 23:48:16 tgl Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/optimizer/prep/prepjointree.c,v 1.13 2003/10/13 23:48:16 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

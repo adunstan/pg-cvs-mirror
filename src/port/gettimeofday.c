@@ -1,5 +1,5 @@
 /*
- * $Header: /home/cvsmirror/pg/pgsql/src/port/gettimeofday.c,v 1.2 2003/08/04 00:43:33 momjian Exp $
+ * $PostgreSQL: /cvsroot/pgsql-server/src/port/gettimeofday.c,v 1.2 2003/08/04 00:43:33 momjian Exp $
  *
  * Copyright (c) 2003 SRA, Inc.
  * Copyright (c) 2003 SKC, Inc.

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/utils/adt/varlena.c,v 1.106 2003/09/25 06:58:05 petere Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/adt/varlena.c,v 1.106 2003/09/25 06:58:05 petere Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -1,4 +1,4 @@
-$Header: /home/cvsmirror/pg/pgsql/src/backend/utils/misc/README,v 1.2 2003/07/29 00:03:18 tgl Exp $
+$PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/misc/README,v 1.2 2003/07/29 00:03:18 tgl Exp $
 
 
 GUC IMPLEMENTATION NOTES

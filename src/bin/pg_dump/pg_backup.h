@@ -15,7 +15,7 @@
  *
  *
  * IDENTIFICATION
- *		$Header: /home/cvsmirror/pg/pgsql/src/bin/pg_dump/pg_backup.h,v 1.26 2003/09/23 22:48:53 tgl Exp $
+ *		$PostgreSQL: /cvsroot/pgsql-server/src/bin/pg_dump/pg_backup.h,v 1.26 2003/09/23 22:48:53 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

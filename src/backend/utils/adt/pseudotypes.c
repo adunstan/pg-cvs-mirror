@@ -16,7 +16,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/utils/adt/pseudotypes.c,v 1.11 2003/08/04 02:40:05 momjian Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/adt/pseudotypes.c,v 1.11 2003/08/04 02:40:05 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

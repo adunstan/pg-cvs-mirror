@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2003, PostgreSQL Global Development Group
  *
- * $Header: /home/cvsmirror/pg/pgsql/src/bin/psql/input.h,v 1.20 2003/08/04 23:59:40 tgl Exp $
+ * $PostgreSQL: /cvsroot/pgsql-server/src/bin/psql/input.h,v 1.20 2003/08/04 23:59:40 tgl Exp $
  */
 #ifndef INPUT_H
 #define INPUT_H

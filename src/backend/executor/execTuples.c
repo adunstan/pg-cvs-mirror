@@ -15,7 +15,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/executor/execTuples.c,v 1.72 2003/09/29 18:22:48 momjian Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/executor/execTuples.c,v 1.72 2003/09/29 18:22:48 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -11,7 +11,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/storage/smgr/Attic/mm.c,v 1.34 2003/08/04 02:40:04 momjian Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/storage/smgr/mm.c,v 1.34 2003/08/04 02:40:04 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

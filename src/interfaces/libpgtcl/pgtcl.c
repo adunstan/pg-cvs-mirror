@@ -10,7 +10,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/interfaces/libpgtcl/Attic/pgtcl.c,v 1.28 2003/08/04 02:40:16 momjian Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/interfaces/libpgtcl/pgtcl.c,v 1.28 2003/08/04 02:40:16 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

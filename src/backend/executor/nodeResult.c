@@ -34,7 +34,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/executor/nodeResult.c,v 1.26 2003/08/04 02:39:59 momjian Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/executor/nodeResult.c,v 1.26 2003/08/04 02:39:59 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

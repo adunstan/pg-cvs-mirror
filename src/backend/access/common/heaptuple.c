@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/access/common/heaptuple.c,v 1.87 2003/09/25 06:57:56 petere Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/access/common/heaptuple.c,v 1.87 2003/09/25 06:57:56 petere Exp $
  *
  * NOTES
  *	  The old interface functions have been converted to macros

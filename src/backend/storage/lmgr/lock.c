@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/storage/lmgr/lock.c,v 1.128 2003/10/16 20:59:35 tgl Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/storage/lmgr/lock.c,v 1.128 2003/10/16 20:59:35 tgl Exp $
  *
  * NOTES
  *	  Outside modules can create a lock table and acquire/release

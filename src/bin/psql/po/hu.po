@@ -1,7 +1,7 @@
 # Hungarian message translation file for psql
 # Krisztian Szekely <szekelyk@different.hu>, 2003.
 #
-# $Header: /home/cvsmirror/pg/pgsql/src/bin/psql/po/Attic/hu.po,v 1.2 2003/06/29 10:13:13 petere Exp $
+# $PostgreSQL: /cvsroot/pgsql-server/src/bin/psql/po/hu.po,v 1.2 2003/06/29 10:13:13 petere Exp $
 #
 msgid ""
 msgstr ""

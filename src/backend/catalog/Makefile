@@ -2,7 +2,7 @@
 #
 # Makefile for backend/catalog
 #
-# $Header: /home/cvsmirror/pg/pgsql/src/backend/catalog/Makefile,v 1.48 2003/11/11 01:58:23 momjian Exp $
+# $PostgreSQL: /cvsroot/pgsql-server/src/backend/catalog/Makefile,v 1.48 2003/11/11 01:58:23 momjian Exp $
 #
 #-------------------------------------------------------------------------
 

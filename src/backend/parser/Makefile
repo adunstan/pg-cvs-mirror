@@ -2,7 +2,7 @@
 #
 # Makefile for parser
 #
-# $Header: /home/cvsmirror/pg/pgsql/src/backend/parser/Makefile,v 1.41 2003/05/29 20:40:36 tgl Exp $
+# $PostgreSQL: /cvsroot/pgsql-server/src/backend/parser/Makefile,v 1.41 2003/05/29 20:40:36 tgl Exp $
 #
 #-------------------------------------------------------------------------
 

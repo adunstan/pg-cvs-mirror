@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
- * $Header: /home/cvsmirror/pg/pgsql/src/bin/pg_dump/pg_dumpall.c,v 1.28 2003/09/23 22:48:53 tgl Exp $
+ * $PostgreSQL: /cvsroot/pgsql-server/src/bin/pg_dump/pg_dumpall.c,v 1.28 2003/09/23 22:48:53 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

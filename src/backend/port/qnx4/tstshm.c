@@ -7,7 +7,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/port/qnx4/Attic/tstshm.c,v 1.4 2002/11/08 20:23:56 momjian Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/port/qnx4/tstshm.c,v 1.4 2002/11/08 20:23:56 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -1,5 +1,5 @@
 #! /bin/sh
-# $Header: /home/cvsmirror/pg/pgsql/src/test/mb/mbregress.sh,v 1.6 2001/02/21 06:02:04 ishii Exp $
+# $PostgreSQL: /cvsroot/pgsql-server/src/test/mb/mbregress.sh,v 1.6 2001/02/21 06:02:04 ishii Exp $
 
 if echo '\c' | grep -s c >/dev/null 2>&1
 then

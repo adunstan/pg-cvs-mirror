@@ -1,7 +1,7 @@
 /* ----------
  * pg_lzcompress.h -
  *
- * $Header: /home/cvsmirror/pg/pgsql/src/include/utils/pg_lzcompress.h,v 1.9 2002/11/23 03:59:09 momjian Exp $
+ * $PostgreSQL: /cvsroot/pgsql-server/src/include/utils/pg_lzcompress.h,v 1.9 2002/11/23 03:59:09 momjian Exp $
  *
  *	Definitions for the builtin LZ compressor
  * ----------

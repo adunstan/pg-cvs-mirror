@@ -19,7 +19,7 @@
  *
  *
  * IDENTIFICATION
- *		$Header: /home/cvsmirror/pg/pgsql/src/bin/pg_dump/pg_backup_custom.c,v 1.26 2003/10/08 03:52:32 momjian Exp $
+ *		$PostgreSQL: /cvsroot/pgsql-server/src/bin/pg_dump/pg_backup_custom.c,v 1.26 2003/10/08 03:52:32 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -4,7 +4,7 @@
  *			  procedural language
  *
  * IDENTIFICATION
- *    $Header: /home/cvsmirror/pg/pgsql/src/pl/plpgsql/src/Attic/scan.l,v 1.29 2003/07/25 23:37:29 tgl Exp $
+ *    $PostgreSQL: /cvsroot/pgsql-server/src/pl/plpgsql/src/scan.l,v 1.29 2003/07/25 23:37:29 tgl Exp $
  *
  *    This software is copyrighted by Jan Wieck - Hamburg.
  *

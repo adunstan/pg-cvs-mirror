@@ -7,7 +7,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/port/rint.c,v 1.1 2003/05/09 16:26:29 momjian Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/port/rint.c,v 1.1 2003/05/09 16:26:29 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -15,7 +15,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/utils/adt/selfuncs.c,v 1.148 2003/11/12 21:15:55 tgl Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/adt/selfuncs.c,v 1.148 2003/11/12 21:15:55 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

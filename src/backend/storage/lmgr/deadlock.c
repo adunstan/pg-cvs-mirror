@@ -12,7 +12,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/storage/lmgr/deadlock.c,v 1.25 2003/09/25 06:58:02 petere Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/storage/lmgr/deadlock.c,v 1.25 2003/09/25 06:58:02 petere Exp $
  *
  *	Interface:
  *

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/parser/parse_node.c,v 1.81 2003/08/04 02:40:02 momjian Exp $
+ *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/parser/parse_node.c,v 1.81 2003/08/04 02:40:02 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
