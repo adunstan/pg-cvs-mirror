@@ -3,7 +3,7 @@
  *			  procedural language
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/pl/plpgsql/src/pl_comp.c,v 1.81 2004/08/30 02:54:42 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/pl/plpgsql/src/pl_comp.c,v 1.82 2004/09/13 20:09:20 tgl Exp $
  *
  *	  This software is copyrighted by Jan Wieck - Hamburg.
  *
@@ -363,7 +363,7 @@ do_compile(FunctionCallInfo fcinfo,
 			function->fn_retset = procStruct->proretset;
 
 			/*
-			 * Lookup the functions return type
+			 * Lookup the function's return type
 			 */
 			typeTup = SearchSysCache(TYPEOID,
 									 ObjectIdGetDatum(rettypeid),
@@ -595,7 +595,7 @@ do_compile(FunctionCallInfo fcinfo,
 	plpgsql_add_initdatums(NULL);
 
 	/*
-	 * Now parse the functions text
+	 * Now parse the function's text
 	 */
 	parse_rc = plpgsql_yyparse();
 	if (parse_rc != 0)
@@ -605,7 +605,7 @@ do_compile(FunctionCallInfo fcinfo,
 	pfree(proc_source);
 
 	/*
-	 * If that was successful, complete the functions info.
+	 * If that was successful, complete the function's info.
 	 */
 	function->fn_nargs = procStruct->pronargs;
 	for (i = 0; i < function->fn_nargs; i++)
