@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/commands/indexcmds.c,v 1.124 2004/08/29 04:12:30 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/commands/indexcmds.c,v 1.125 2004/08/29 05:06:41 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1060,8 +1060,8 @@ ReindexDatabase(const char *dbname, bool force /* currently unused */ ,
 		Oid			relid = lfirst_oid(l);
 
 		StartTransactionCommand();
-		SetQuerySnapshot();		/* might be needed for functions in
-								 * indexes */
+		/* functions in indexes may want a snapshot set */
+		ActiveSnapshot = CopySnapshot(GetTransactionSnapshot());
 		if (reindex_relation(relid, true))
 			ereport(NOTICE,
 					(errmsg("table \"%s\" was reindexed",

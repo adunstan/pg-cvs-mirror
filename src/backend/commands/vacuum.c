@@ -13,7 +13,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/commands/vacuum.c,v 1.289 2004/08/29 05:06:41 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/commands/vacuum.c,v 1.290 2004/08/30 02:54:38 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -402,8 +402,8 @@ vacuum(VacuumStmt *vacstmt)
 				if (use_own_xacts)
 				{
 					StartTransactionCommand();
-					SetQuerySnapshot(); /* might be needed for functions
-										 * in indexes */
+					/* functions in indexes may want a snapshot set */
+					ActiveSnapshot = CopySnapshot(GetTransactionSnapshot());
 				}
 				else
 					old_context = MemoryContextSwitchTo(anl_context);
@@ -865,8 +865,8 @@ vacuum_rel(Oid relid, VacuumStmt *vacstmt, char expected_relkind)
 
 	/* Begin a transaction for vacuuming this relation */
 	StartTransactionCommand();
-	SetQuerySnapshot();			/* might be needed for functions in
-								 * indexes */
+	/* functions in indexes may want a snapshot set */
+	ActiveSnapshot = CopySnapshot(GetTransactionSnapshot());
 
 	/*
 	 * Tell the cache replacement strategy that vacuum is causing all

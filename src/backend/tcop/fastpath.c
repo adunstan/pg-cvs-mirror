@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/tcop/fastpath.c,v 1.74 2004/08/29 04:12:50 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/tcop/fastpath.c,v 1.75 2004/08/29 05:06:49 momjian Exp $
  *
  * NOTES
  *	  This cruft is the server side of PQfn.
@@ -332,11 +332,6 @@ HandleFunctionRequest(StringInfo msgBuf)
 	if (aclresult != ACLCHECK_OK)
 		aclcheck_error(aclresult, ACL_KIND_PROC,
 					   get_func_name(fid));
-
-	/*
-	 * Set up a query snapshot in case function needs one.
-	 */
-	SetQuerySnapshot();
 
 	/*
 	 * Prepare function call info block and insert arguments.
