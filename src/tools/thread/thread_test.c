@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- *	$PostgreSQL: pgsql-server/src/tools/thread/thread_test.c,v 1.21 2004/04/23 20:35:50 momjian Exp $
+ *	$PostgreSQL: pgsql-server/src/tools/thread/thread_test.c,v 1.22 2004/04/23 22:21:49 momjian Exp $
  *
  *	This program tests to see if your standard libc functions use
  *	pthread_setspecific()/pthread_getspecific() to be thread-safe.
@@ -109,7 +109,7 @@ main(int argc, char *argv[])
 		sched_yield();			/* if this is a portability problem,
 								 * remove it */
 
-	fprintf(stderr, "Your errno is thread-safe.\n");
+	printf("Your errno is thread-safe.\n");
 
 #ifndef HAVE_STRERROR_R
 	if (strerror_p1 != strerror_p2)
