@@ -10,7 +10,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/libpq/hba.c,v 1.120 2004/02/02 16:58:30 neilc Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/libpq/hba.c,v 1.121 2004/05/19 22:06:16 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -144,14 +144,14 @@ next_token(FILE *fp, char *buf, int bufsz)
 
 		if (buf >= end_buf)
 		{
+			*buf = '\0';
 			ereport(LOG,
 					(errcode(ERRCODE_CONFIG_FILE_ERROR),
 					 errmsg("authentication file token too long, skipping: \"%s\"",
-							buf)));
+							start_buf)));
 			/* Discard remainder of line */
 			while ((c = getc(fp)) != EOF && c != '\n')
 				;
-			buf[0] = '\0';
 			break;
 		}
 
