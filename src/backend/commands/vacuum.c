@@ -13,7 +13,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/vacuum.c,v 1.294 2004/10/07 14:19:58 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/vacuum.c,v 1.295 2004/10/15 22:39:56 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -646,7 +646,7 @@ vac_update_relstats(Oid relid, BlockNumber num_pages, double num_tuples,
 	/* overwrite the existing statistics in the tuple */
 	pgcform = (Form_pg_class) GETSTRUCT(&rtup);
 	pgcform->relpages = (int32) num_pages;
-	pgcform->reltuples = num_tuples;
+	pgcform->reltuples = (float4) num_tuples;
 	pgcform->relhasindex = hasindex;
 
 	/*

@@ -12,7 +12,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/nbtree/nbtree.c,v 1.121 2004/11/11 00:32:50 neilc Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/nbtree/nbtree.c,v 1.122 2004/11/17 03:13:38 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -785,6 +785,10 @@ btvacuumcleanup(PG_FUNCTION_ARGS)
 			 * Do the physical truncation.
 			 */
 			RelationTruncate(rel, new_pages);
+
+			/* update statistics */
+			stats->pages_removed = num_pages - new_pages;
+
 			num_pages = new_pages;
 		}
 	}
