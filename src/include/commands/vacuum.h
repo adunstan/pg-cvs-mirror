@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/commands/vacuum.h,v 1.53 2004/05/21 16:22:38 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/include/commands/vacuum.h,v 1.54 2004/06/03 02:08:05 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -121,7 +121,7 @@ typedef struct VacRUsage
 } VacRUsage;
 
 /* Default statistics target (GUC parameter) */
-extern int	default_statistics_target;
+extern DLLIMPORT int	default_statistics_target;	/* DLLIMPORT for PostGIS */
 
 
 /* in commands/vacuum.c */
