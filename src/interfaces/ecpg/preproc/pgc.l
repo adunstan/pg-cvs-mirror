@@ -12,7 +12,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: /cvsroot/pgsql-server/src/interfaces/ecpg/preproc/pgc.l,v 1.122 2003/10/31 14:10:41 meskes Exp $
+ *	  $PostgreSQL: pgsql-server/src/interfaces/ecpg/preproc/pgc.l,v 1.123 2003/11/29 19:52:08 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -183,7 +183,7 @@ ident_cont		[A-Za-z\200-\377_0-9\$]
 
 identifier		{ident_start}{ident_cont}*
 
-array			({ident_cont}|[\+\-\*\%\/\(\)])*
+array			({ident_cont}|{whitespace}|[\+\-\*\%\/\(\)])*
 typecast		"::"
 
 /*
