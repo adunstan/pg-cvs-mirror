@@ -4,7 +4,7 @@
 #
 # Copyright (c) 1994, Regents of the University of California
 #
-# $PostgreSQL: pgsql-server/src/interfaces/ecpg/ecpglib/Makefile,v 1.22 2004/05/21 21:56:02 tgl Exp $
+# $PostgreSQL: pgsql-server/src/interfaces/ecpg/ecpglib/Makefile,v 1.23 2004/05/25 17:35:51 momjian Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -16,7 +16,7 @@ NAME= ecpg
 SO_MAJOR_VERSION= 4
 SO_MINOR_VERSION= 2
 
-override CPPFLAGS := -I$(top_srcdir)/src/interfaces/ecpg/include \
+override CPPFLAGS := -DFRONTEND -I$(top_srcdir)/src/interfaces/ecpg/include \
 	-I$(libpq_srcdir) -I$(top_builddir)/src/port $(CPPFLAGS)
 override CFLAGS += $(PTHREAD_CFLAGS)
 
