@@ -7,13 +7,15 @@
 # with broken/missing library files.
 
 # IDENTIFICATION
-#    $PostgreSQL: pgsql-server/src/port/Makefile,v 1.11 2004/05/17 14:35:34 momjian Exp $
+#    $PostgreSQL: pgsql-server/src/port/Makefile,v 1.12 2004/05/21 20:56:50 tgl Exp $
 #
 #-------------------------------------------------------------------------
 
 subdir = src/port
 top_builddir = ../..
 include $(top_builddir)/src/Makefile.global
+
+override CPPFLAGS := -I$(top_builddir)/src/port $(CPPFLAGS)
 
 ifdef LIBOBJS
 all: libpgport.a
