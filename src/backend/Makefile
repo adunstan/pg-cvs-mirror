@@ -4,7 +4,7 @@
 #
 # Copyright (c) 1994, Regents of the University of California
 #
-# $PostgreSQL: pgsql-server/src/backend/Makefile,v 1.97 2003/11/29 19:51:39 pgsql Exp $
+# $PostgreSQL: pgsql-server/src/backend/Makefile,v 1.98 2004/02/02 00:11:30 momjian Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -15,6 +15,10 @@ include $(top_builddir)/src/Makefile.global
 DIRS := access bootstrap catalog parser commands executor lib libpq \
 	main nodes optimizer port postmaster regex rewrite \
 	storage tcop utils
+
+ifeq ($(USE_PGTZ), yes)
+DIRS+= $(top_builddir)/src/timezone
+endif
 
 OBJS := $(DIRS:%=%/SUBSYS.o)
 
