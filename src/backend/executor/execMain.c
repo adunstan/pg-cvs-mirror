@@ -26,7 +26,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/execMain.c,v 1.239 2004/10/07 18:38:49 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/execMain.c,v 1.240 2004/12/31 21:59:45 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -542,7 +542,7 @@ InitPlan(QueryDesc *queryDesc, bool explainOnly)
 	}
 
 	/*
-	 * Detect whether we're doing SELECT INTO.  If so, set the force_oids
+	 * Detect whether we're doing SELECT INTO.  If so, set the es_into_oids
 	 * flag appropriately so that the plan tree will be initialized with
 	 * the correct tuple descriptors.
 	 */
