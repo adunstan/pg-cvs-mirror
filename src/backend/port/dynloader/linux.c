@@ -11,7 +11,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/port/dynloader/linux.c,v 1.26 2003/08/04 02:40:02 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/port/dynloader/linux.c,v 1.27 2003/11/29 19:51:54 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -43,7 +43,7 @@ pg_dlopen(char *filename)
 	 */
 	if (!dl_initialized)
 	{
-		if (dld_init(dld_find_executable(pg_pathname)))
+		if (dld_init(dld_find_executable(my_exec_path)))
 			return NULL;
 
 		/*

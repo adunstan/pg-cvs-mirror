@@ -11,14 +11,14 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/port/dynloader/bsdi.c,v 1.22 2003/08/04 02:40:02 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/port/dynloader/bsdi.c,v 1.23 2003/11/29 19:51:54 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
 #include "postgres.h"
 #ifndef HAVE_DLOPEN
 
-extern char pg_pathname[];
+extern char my_exec_path[];
 
 void *
 pg_dlopen(char *filename)
@@ -31,7 +31,7 @@ pg_dlopen(char *filename)
 	 */
 	if (!dl_initialized)
 	{
-		if (dld_init(dld_find_executable(pg_pathname)))
+		if (dld_init(dld_find_executable(my_exec_path)))
 			return NULL;
 
 		/*

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/port/dynloader/ultrix4.c,v 1.18 2003/08/04 02:40:02 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/port/dynloader/ultrix4.c,v 1.19 2003/11/29 19:51:54 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -17,7 +17,7 @@
 #include "dl.h"
 #include "utils/dynamic_loader.h"
 
-extern char pg_pathname[];
+extern char my_exec_path[];
 
 void *
 pg_dlopen(char *filename)
@@ -31,7 +31,7 @@ pg_dlopen(char *filename)
 	 */
 	if (!dl_initialized)
 	{
-		if (!dl_init(pg_pathname))
+		if (!dl_init(my_exec_path))
 			return NULL;
 
 		/*

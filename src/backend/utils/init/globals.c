@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/utils/init/globals.c,v 1.83 2004/02/06 19:36:18 wieck Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/init/globals.c,v 1.84 2004/02/10 03:42:45 tgl Exp $
  *
  * NOTES
  *	  Globals used all over the place should be declared here and not
@@ -45,8 +45,7 @@ char	   *DataDir = NULL;
 
 char		OutputFileName[MAXPGPATH];
 
-char		pg_pathname[MAXPGPATH];		/* full path to postgres
-										 * executable */
+char		my_exec_path[MAXPGPATH];	/* full path to postgres executable */
 
 BackendId	MyBackendId;
 
