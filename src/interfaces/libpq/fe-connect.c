@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/interfaces/libpq/fe-connect.c,v 1.268 2004/03/10 21:12:47 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/interfaces/libpq/fe-connect.c,v 1.269 2004/03/24 03:44:59 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -29,6 +29,7 @@
 #include "libpq-fe.h"
 #include "libpq-int.h"
 #include "fe-auth.h"
+#include "pg_config_paths.h"
 
 #ifdef WIN32
 #include "win32.h"
