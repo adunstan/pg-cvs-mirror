@@ -11,7 +11,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/libpq/be-secure.c,v 1.51 2004/09/26 22:51:49 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/libpq/be-secure.c,v 1.52 2004/10/06 09:35:20 momjian Exp $
  *
  *	  Since the server static private key ($DataDir/server.key)
  *	  will normally be stored unencrypted so that the database
@@ -742,7 +742,6 @@ static int pgwin32_SSL_accept(SSL *ssl)
 		int rc;
 		int waitfor;
 
-		printf("uhh\n");fflush(stdout);
 		r = SSL_accept(ssl);
 		if (r == 1)
 			return 1;
