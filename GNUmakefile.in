@@ -1,7 +1,7 @@
 #
 # PostgreSQL top level makefile
 #
-# $Header: /home/cvsmirror/pg/pgsql/GNUmakefile.in,v 1.35 2003/10/13 21:39:41 petere Exp $
+# $PostgreSQL$
 #
 
 subdir =
