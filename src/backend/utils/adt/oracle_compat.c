@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	$PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/adt/oracle_compat.c,v 1.48 2003/08/08 21:42:06 momjian Exp $
+ *	$PostgreSQL: pgsql-server/src/backend/utils/adt/oracle_compat.c,v 1.49 2003/11/29 19:51:59 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -106,9 +106,10 @@ upper(PG_FUNCTION_ARGS)
  *
  * Purpose:
  *
- *	 Returns string, with first letter of each word in uppercase,
- *	 all other letters in lowercase. A word is delimited by white
- *	 space.
+ *	 Returns string, with first letter of each word in uppercase, all
+ *	 other letters in lowercase. A word is defined as a sequence of
+ *	 alphanumeric characters, delimited by non-alphanumeric
+ *	 characters.
  *
  ********************************************************************/
 
@@ -872,7 +873,7 @@ ascii(PG_FUNCTION_ARGS)
  ********************************************************************/
 
 Datum
-chr			(PG_FUNCTION_ARGS)
+chr(PG_FUNCTION_ARGS)
 {
 	int32		cvalue = PG_GETARG_INT32(0);
 	text	   *result;
