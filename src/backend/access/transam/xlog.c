@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/backend/access/transam/xlog.c,v 1.136 2004/02/17 03:45:17 momjian Exp $
+ * $PostgreSQL: pgsql-server/src/backend/access/transam/xlog.c,v 1.137 2004/02/23 23:03:10 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -2762,7 +2762,7 @@ BootStrapXLOG(void)
 static char *
 str_time(time_t tnow)
 {
-	static char buf[32];
+	static char buf[128];
 
 	strftime(buf, sizeof(buf),
 			 "%Y-%m-%d %H:%M:%S %Z",
