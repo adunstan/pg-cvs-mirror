@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/commands/defrem.h,v 1.54 2004/02/21 00:34:53 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/include/commands/defrem.h,v 1.55 2004/05/05 04:48:47 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -69,6 +69,7 @@ extern char *case_translate_language_name(const char *input);
 
 extern char *defGetString(DefElem *def);
 extern double defGetNumeric(DefElem *def);
+extern bool defGetBoolean(DefElem *def);
 extern int64 defGetInt64(DefElem *def);
 extern List *defGetQualifiedName(DefElem *def);
 extern TypeName *defGetTypeName(DefElem *def);

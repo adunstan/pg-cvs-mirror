@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/commands/define.c,v 1.86 2004/02/21 00:34:52 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/commands/define.c,v 1.87 2004/05/07 00:24:57 tgl Exp $
  *
  * DESCRIPTION
  *	  The "DefineFoo" routines take the parse tree and pick out the
@@ -117,6 +117,25 @@ defGetNumeric(DefElem *def)
 							def->defname)));
 	}
 	return 0;					/* keep compiler quiet */
+}
+
+/*
+ * Extract a boolean value from a DefElem.
+ */
+bool
+defGetBoolean(DefElem *def)
+{
+	/*
+	 * Presently, boolean flags must simply be present or absent.
+	 * Later we could allow 'flag = t', 'flag = f', etc.
+	 */
+	if (def->arg == NULL)
+		return true;
+	ereport(ERROR,
+			(errcode(ERRCODE_SYNTAX_ERROR),
+			 errmsg("%s does not take a parameter",
+					def->defname)));
+	return false;				/* keep compiler quiet */
 }
 
 /*
