@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/commands/typecmds.c,v 1.56 2004/05/14 16:11:25 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/commands/typecmds.c,v 1.57 2004/05/26 04:41:12 neilc Exp $
  *
  * DESCRIPTION
  *	  The "DefineFoo" routines take the parse tree and pick out the
@@ -1329,12 +1329,8 @@ AlterDomainNotNull(List *names, bool notNull)
 				for (i = 0; i < rtc->natts; i++)
 				{
 					int			attnum = rtc->atts[i];
-					Datum		d;
-					bool		isNull;
 
-					d = heap_getattr(tuple, attnum, tupdesc, &isNull);
-
-					if (isNull)
+					if (heap_attisnull(tuple, attnum))
 						ereport(ERROR,
 								(errcode(ERRCODE_NOT_NULL_VIOLATION),
 								 errmsg("column \"%s\" of table \"%s\" contains null values",
