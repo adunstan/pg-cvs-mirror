@@ -37,7 +37,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/postmaster/postmaster.c,v 1.376 2004/03/23 01:23:48 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/postmaster/postmaster.c,v 1.377 2004/03/24 04:04:51 momjian Exp $
  *
  * NOTES
  *
@@ -817,7 +817,7 @@ PostmasterMain(int argc, char *argv[])
 	 */
 	if (ListenSocket[0] == -1)
 		ereport(FATAL,
-				(errmsg("no socket configured to listen on")));
+				(errmsg("no socket configured for listening")));
 
 	XLOGPathInit();
 
