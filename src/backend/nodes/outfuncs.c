@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/nodes/outfuncs.c,v 1.225 2004/01/04 03:51:52 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/nodes/outfuncs.c,v 1.226 2004/01/05 05:07:35 tgl Exp $
  *
  * NOTES
  *	  Every node type that can appear in stored rules' parsetrees *must*
@@ -1023,7 +1023,7 @@ _outUniquePath(StringInfo str, UniquePath *node)
 	_outPathInfo(str, (Path *) node);
 
 	WRITE_NODE_FIELD(subpath);
-	WRITE_BOOL_FIELD(use_hash);
+	WRITE_ENUM_FIELD(umethod, UniquePathMethod);
 	WRITE_FLOAT_FIELD(rows, "%.0f");
 }
 
