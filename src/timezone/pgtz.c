@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/timezone/pgtz.c,v 1.25 2004/09/01 16:21:50 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/timezone/pgtz.c,v 1.27 2004/09/02 01:15:06 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -96,11 +96,7 @@ get_timezone_offset(struct tm * tm)
 #if defined(HAVE_STRUCT_TM_TM_ZONE)
 	return tm->tm_gmtoff;
 #elif defined(HAVE_INT_TIMEZONE)
-#ifdef HAVE_UNDERSCORE_TIMEZONE
-	return -_timezone;
-#else
-	return -timezone;
-#endif
+	return -TIMEZONE_GLOBAL;
 #else
 #error No way to determine TZ? Can this happen?
 #endif
