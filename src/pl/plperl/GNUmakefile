@@ -1,5 +1,5 @@
 # Makefile for PL/Perl
-# $PostgreSQL: pgsql/src/pl/plperl/GNUmakefile,v 1.16 2004/10/07 19:01:09 momjian Exp $
+# $PostgreSQL: pgsql/src/pl/plperl/GNUmakefile,v 1.17 2004/11/17 21:23:36 tgl Exp $
 
 subdir = src/pl/plperl
 top_builddir = ../../..
@@ -24,6 +24,8 @@ override CPPFLAGS += -DPLPERL_HAVE_UID_GID
 endif
 
 override CPPFLAGS := -I$(srcdir) $(CPPFLAGS) -I$(perl_archlibexp)/CORE
+
+rpathdir = $(perl_archlibexp)/CORE
 
 
 NAME = plperl
