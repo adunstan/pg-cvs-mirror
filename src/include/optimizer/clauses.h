@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: clauses.h,v 1.68 2003/08/08 21:42:50 momjian Exp $
+ * $PostgreSQL: pgsql-server/src/include/optimizer/clauses.h,v 1.69 2003/11/29 22:41:07 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -54,6 +54,7 @@ extern bool contain_volatile_functions(Node *clause);
 extern bool contain_nonstrict_functions(Node *clause);
 
 extern bool is_pseudo_constant_clause(Node *clause);
+extern bool is_pseudo_constant_clause_relids(Node *clause, Relids relids);
 extern List *pull_constant_clauses(List *quals, List **constantQual);
 
 extern bool has_distinct_on_clause(Query *query);
