@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/tcop/postgres.c,v 1.397 2004/03/24 22:40:29 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/tcop/postgres.c,v 1.398 2004/04/07 05:05:49 momjian Exp $
  *
  * NOTES
  *	  this is the "main" module of the postgres backend and
@@ -2938,7 +2938,10 @@ PostgresMain(int argc, char *argv[], const char *username)
 		/*
 		 * (3) read a command (loop blocks here)
 		 */
-		firstchar = ReadCommand(&input_message);
+		 if (!in_fatal_exit)
+			firstchar = ReadCommand(&input_message);
+		else
+			firstchar = EOF;
 
 		/*
 		 * (4) disable async signal conditions again.
@@ -3170,7 +3173,8 @@ PostgresMain(int argc, char *argv[], const char *username)
 				 * Otherwise it will fail to be called during other
 				 * backend-shutdown scenarios.
 				 */
-				proc_exit(0);
+				proc_exit(!in_fatal_exit ? 0 : proc_exit_inprogress ||
+												!IsUnderPostmaster);
 
 			case 'd':			/* copy data */
 			case 'c':			/* copy done */
