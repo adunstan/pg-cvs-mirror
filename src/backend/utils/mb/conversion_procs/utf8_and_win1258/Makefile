@@ -1,12 +1,12 @@
 #-------------------------------------------------------------------------
 #
-# $PostgreSQL: Makefile,v 1.2 2002/08/21 21:33:55 momjian Exp $
+# $PostgreSQL: pgsql/src/backend/utils/mb/conversion_procs/utf8_and_tcvn/Makefile,v 1.3 2003/11/29 22:40:38 pgsql Exp $
 #
 #-------------------------------------------------------------------------
 subdir = src/backend/utils/mb/conversion_procs/utf8_and_tcvn
 top_builddir = ../../../../../..
 include $(top_builddir)/src/Makefile.global
 
-NAME		:= utf8_and_tcvn
+NAME		:= utf8_and_win1258
 
 include $(srcdir)/../proc.mk

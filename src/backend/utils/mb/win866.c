@@ -1,10 +1,10 @@
 /*
- * make KOI8->CP1251(win-1251) and CP1251(win-1251)->KOI8 translation table
- * from koi-win.tab.
+ * make KOI8->CP866(ALT) and CP866(ALT)->KOI8 translation table
+ * from koi-alt.tab.
  *
  * Tatsuo Ishii
  *
- * $PostgreSQL: win.c,v 1.3 2001/02/10 02:31:27 tgl Exp $
+ * $PostgreSQL: pgsql/src/backend/utils/mb/alt.c,v 1.4 2003/11/29 22:39:59 pgsql Exp $
  */
 
 #include <stdio.h>
@@ -14,30 +14,30 @@ main()
 {
 	int			i;
 	char		koitab[128],
-				wintab[128];
+				alttab[128];
 	char		buf[4096];
 	int			koi,
-				win;
+				alt;
 
 	for (i = 0; i < 128; i++)
-		koitab[i] = wintab[i] = 0;
+		koitab[i] = alttab[i] = 0;
 
 	while (fgets(buf, sizeof(buf), stdin) != NULL)
 	{
 		if (*buf == '#')
 			continue;
-		sscanf(buf, "%d %d", &koi, &win);
-		if (koi < 128 || koi > 255 || win < 128 || win > 255)
+		sscanf(buf, "%d %d", &koi, &alt);
+		if (koi < 128 || koi > 255 || alt < 128 || alt > 255)
 		{
 			fprintf(stderr, "invalid value %d\n", koi);
 			exit(1);
 		}
-		koitab[koi - 128] = win;
-		wintab[win - 128] = koi;
+		koitab[koi - 128] = alt;
+		alttab[alt - 128] = koi;
 	}
 
 	i = 0;
-	printf("static char koi2win[] = {\n");
+	printf("static char koi2alt[] = {\n");
 	while (i < 128)
 	{
 		int			j = 0;
@@ -55,14 +55,14 @@ main()
 	printf("};\n");
 
 	i = 0;
-	printf("static char win2koi[] = {\n");
+	printf("static char alt2koi[] = {\n");
 	while (i < 128)
 	{
 		int			j = 0;
 
 		while (j < 8)
 		{
-			printf("0x%02x", wintab[i++]);
+			printf("0x%02x", alttab[i++]);
 			j++;
 			if (i >= 128)
 				break;

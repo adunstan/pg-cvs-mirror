@@ -1,5 +1,5 @@
 #! /bin/sh
-# $PostgreSQL: /cvsroot/pgsql-server/src/test/mb/mbregress.sh,v 1.6 2001/02/21 06:02:04 ishii Exp $
+# $PostgreSQL: pgsql/src/test/mb/mbregress.sh,v 1.7 2003/11/29 19:52:14 pgsql Exp $
 
 if echo '\c' | grep -s c >/dev/null 2>&1
 then
@@ -15,10 +15,10 @@ if [ ! -d results ];then
 fi
 
 dropdb unitest
-createdb -E UNICODE unitest
+createdb -E UTF8 unitest
 
 PSQL="psql -n -e -q"
-tests="euc_jp sjis euc_kr euc_cn euc_tw big5 unicode mule_internal"
+tests="euc_jp sjis euc_kr euc_cn euc_tw big5 utf8 mule_internal"
 unset PGCLIENTENCODING
 for i in $tests
 do

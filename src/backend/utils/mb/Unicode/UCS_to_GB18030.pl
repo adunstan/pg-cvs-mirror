@@ -2,7 +2,7 @@
 #
 # Copyright 2002 by Bill Huang
 #
-# $PostgreSQL: UCS_to_GB18030.pl,v 1.3 2003/08/25 01:46:16 ishii Exp $
+# $PostgreSQL: pgsql/src/backend/utils/mb/Unicode/UCS_to_GB18030.pl,v 1.4 2003/11/29 22:40:01 pgsql Exp $
 #
 # Generate UTF-8 <--> GB18030 code conversion tables from
 # map files provided by Unicode organization.
@@ -35,7 +35,7 @@ while( <FILE> ){
 	if( $code >= 0x80 && $ucs >= 0x0080 ){
 		$utf = &ucs2utf($ucs);
 		if( $array{ $utf } ne "" ){
-			printf STDERR "Warning: duplicate unicode: %04x\n",$ucs;
+			printf STDERR "Warning: duplicate UTF8: %04x\n",$ucs;
 			next;
 		}
 		$count++;
