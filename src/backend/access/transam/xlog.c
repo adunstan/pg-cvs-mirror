@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/backend/access/transam/xlog.c,v 1.167 2004/08/29 16:34:47 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/backend/access/transam/xlog.c,v 1.168 2004/08/30 02:54:38 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -2154,14 +2154,14 @@ MoveOfflineLogs(uint32 log, uint32 seg, XLogRecPtr endptr)
 										   true, XLOGfileslop,
 										   true))
 				{
-					ereport(LOG,
+					ereport(DEBUG1,
 						  (errmsg("recycled transaction log file \"%s\"",
 								  xlde->d_name)));
 				}
 				else
 				{
 					/* No need for any more future segments... */
-					ereport(LOG,
+					ereport(DEBUG1,
 						  (errmsg("removing transaction log file \"%s\"",
 								  xlde->d_name)));
 					unlink(path);
