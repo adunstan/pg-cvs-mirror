@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/datetime.c,v 1.135 2004/11/01 21:34:38 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/datetime.c,v 1.136 2004/12/31 22:01:21 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -3932,7 +3932,7 @@ EncodeInterval(struct pg_tm * tm, fsec_t fsec, int style, char *str)
 		cp += strlen(cp);
 	}
 
-	if (is_before && (style == USE_POSTGRES_DATES))
+	if (is_before && (style != USE_ISO_DATES))
 	{
 		strcat(cp, " ago");
 		cp += strlen(cp);
