@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/parser/parse_coerce.c,v 2.119 2004/06/16 01:26:44 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/parser/parse_coerce.c,v 2.120 2004/08/17 18:47:08 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -662,29 +662,12 @@ coerce_record_to_complex(ParseState *pstate, Node *node,
 	else if (node && IsA(node, Var) &&
 			 ((Var *) node)->varattno == InvalidAttrNumber)
 	{
-		RangeTblEntry *rte;
-		AttrNumber nfields;
-		AttrNumber nf;
+		int		rtindex = ((Var *) node)->varno;
+		int		sublevels_up = ((Var *) node)->varlevelsup;
+		List *rtable;
 
-		rte = GetRTEByRangeTablePosn(pstate,
-									 ((Var *) node)->varno,
-									 ((Var *) node)->varlevelsup);
-		nfields = list_length(rte->eref->colnames);
-		for (nf = 1; nf <= nfields; nf++)
-		{
-			Oid		vartype;
-			int32	vartypmod;
-
-			if (get_rte_attribute_is_dropped(rte, nf))
-				continue;
-			get_rte_attribute_type(rte, nf, &vartype, &vartypmod);
-			args = lappend(args,
-						   makeVar(((Var *) node)->varno,
-								   nf,
-								   vartype,
-								   vartypmod,
-								   ((Var *) node)->varlevelsup));
-		}
+		rtable = GetLevelNRangeTable(pstate, sublevels_up);
+		expandRTE(rtable, rtindex, sublevels_up, false, NULL, &args);
 	}
 	else
 		ereport(ERROR,
