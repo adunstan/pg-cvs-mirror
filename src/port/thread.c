@@ -7,7 +7,7 @@
  *
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql-server/src/port/thread.c,v 1.17 2004/03/14 14:01:43 momjian Exp $
+ * $PostgreSQL: pgsql-server/src/port/thread.c,v 1.18 2004/03/20 15:39:27 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -106,7 +106,7 @@ pqGetpwuid(uid_t uid, struct passwd *resultbuf, char *buffer,
 	 * Early POSIX draft of getpwuid_r() returns 'struct passwd *'.
 	 *    getpwuid_r(uid, resultbuf, buffer, buflen)
 	 */
-	result = getpwuid_r(uid, resultbuf, buffer, buflen);
+	*result = getpwuid_r(uid, resultbuf, buffer, buflen);
 #endif
 
 #else
