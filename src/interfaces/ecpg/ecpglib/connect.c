@@ -1,4 +1,4 @@
-/* $PostgreSQL: pgsql-server/src/interfaces/ecpg/ecpglib/connect.c,v 1.19 2003/11/29 19:52:08 pgsql Exp $ */
+/* $PostgreSQL: pgsql-server/src/interfaces/ecpg/ecpglib/connect.c,v 1.20 2004/03/14 12:16:29 meskes Exp $ */
 
 #define POSTGRES_ECPG_INTERNAL
 #include "postgres_fe.h"
@@ -62,18 +62,28 @@ ECPGget_connection(const char *connection_name)
 {
 	struct connection *ret = NULL;
 
+	if ((connection_name == NULL) || (strcmp(connection_name, "CURRENT") == 0))
+	{
 #ifdef ENABLE_THREAD_SAFETY
-	pthread_mutex_lock(&connections_mutex);
+		ret = pthread_getspecific(actual_connection_key);
+#else
+		ret = actual_connection;
+#endif
+	}
+	else
+	{
+#ifdef ENABLE_THREAD_SAFETY
+		pthread_mutex_lock(&connections_mutex);
 #endif
 
-	ret = ecpg_get_connection_nr(connection_name);
+		ret = ecpg_get_connection_nr(connection_name);
 
 #ifdef ENABLE_THREAD_SAFETY
-	pthread_mutex_unlock(&connections_mutex);
+		pthread_mutex_unlock(&connections_mutex);
 #endif
+	}
 
 	return (ret);
-
 }
 
 static void
