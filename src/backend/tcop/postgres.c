@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/tcop/postgres.c,v 1.433 2004/09/26 00:26:25 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/tcop/postgres.c,v 1.434 2004/10/08 01:36:35 tgl Exp $
  *
  * NOTES
  *	  this is the "main" module of the postgres backend and
@@ -2127,7 +2127,7 @@ usage(const char *progname)
 	printf(gettext("  -o FILENAME     send stdout and stderr to given file\n"));
 	printf(gettext("  -P              disable system indexes\n"));
 	printf(gettext("  -s              show statistics after each query\n"));
-	printf(gettext("  -S WORK-MEM     set amount of memory for sorts (in kbytes)\n"));
+	printf(gettext("  -S WORK-MEM     set amount of memory for sorts (in kB)\n"));
 	printf(gettext("  --describe-config  describe configuration parameters, then exit\n"));
 	printf(gettext("  --help          show this help, then exit\n"));
 	printf(gettext("  --version       output version information, then exit\n"));

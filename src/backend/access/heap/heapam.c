@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/access/heap/heapam.c,v 1.176 2004/09/17 18:09:55 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/heap/heapam.c,v 1.177 2004/10/01 16:39:54 tgl Exp $
  *
  *
  * INTERFACE ROUTINES
@@ -492,7 +492,7 @@ conditional_relation_open(Oid relationId, LOCKMODE lockmode, bool nowait)
 			if (!ConditionalLockRelation(r, lockmode))
 				ereport(ERROR,
 						(errcode(ERRCODE_LOCK_NOT_AVAILABLE),
-						 errmsg("could not obtain lock on \"%s\"",
+						 errmsg("could not obtain lock on relation \"%s\"",
 								RelationGetRelationName(r))));
 		}
 		else

@@ -13,7 +13,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/main/main.c,v 1.89 2004/08/29 05:06:43 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/main/main.c,v 1.90 2004/09/24 06:29:07 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -243,9 +243,9 @@ main(int argc, char *argv[])
 #else							/* WIN32 */
 		if (pgwin32_is_admin())
 		{
-			write_stderr("execution of PostgreSQL by a user with administrative permissions is not permitted.\n"
+			write_stderr("Execution of PostgreSQL by a user with administrative permissions is not permitted.\n"
 						 "The server must be started under an unprivileged user ID to prevent\n"
-						 "possible system security compromise.  See the documentation for\n"
+						 "possible system security compromises.  See the documentation for\n"
 			  "more information on how to properly start the server.\n");
 			exit(1);
 		}

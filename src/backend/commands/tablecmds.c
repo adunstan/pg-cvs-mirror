@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/commands/tablecmds.c,v 1.132 2004/09/16 16:58:28 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/tablecmds.c,v 1.133 2004/09/23 23:20:24 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -5392,7 +5392,7 @@ ATPrepSetTableSpace(AlteredTableInfo *tab, Relation rel, char *tablespacename)
 	if (OidIsValid(tab->newTableSpace))
 		ereport(ERROR,
 				(errcode(ERRCODE_SYNTAX_ERROR),
-		   errmsg("multiple SET TABLESPACE subcommands are not valid")));
+		   errmsg("cannot have multiple SET TABLESPACE subcommands")));
 	tab->newTableSpace = tablespaceId;
 }
 
