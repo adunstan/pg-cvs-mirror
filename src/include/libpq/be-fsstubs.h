@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: be-fsstubs.h,v 1.17 2003/08/04 02:40:13 momjian Exp $
+ * $PostgreSQL: pgsql-server/src/include/libpq/be-fsstubs.h,v 1.18 2003/11/29 22:41:03 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -43,8 +43,10 @@ extern int	lo_read(int fd, char *buf, int len);
 extern int	lo_write(int fd, char *buf, int len);
 
 /*
- * Cleanup LOs at xact commit/abort [ Pascal André <andre@via.ecp.fr> ]
+ * Cleanup LOs at xact commit/abort
  */
-extern void lo_commit(bool isCommit);
+extern void AtEOXact_LargeObject(bool isCommit);
+extern void AtEOSubXact_LargeObject(bool isCommit, TransactionId myXid,
+									TransactionId parentXid);
 
 #endif   /* BE_FSSTUBS_H */

@@ -4,7 +4,7 @@
  *	  Commands for manipulating users and groups.
  *
  *
- * $PostgreSQL: user.h,v 1.21 2003/06/27 14:45:31 petere Exp $
+ * $PostgreSQL: pgsql-server/src/include/commands/user.h,v 1.22 2003/11/29 22:40:59 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -32,5 +32,7 @@ extern void RenameGroup(const char *oldname, const char *newname);
 extern Datum update_pg_pwd_and_pg_group(PG_FUNCTION_ARGS);
 
 extern void AtEOXact_UpdatePasswordFile(bool isCommit);
+extern void AtEOSubXact_UpdatePasswordFile(bool isCommit, TransactionId myXid,
+										   TransactionId parentXid);
 
 #endif   /* USER_H */
