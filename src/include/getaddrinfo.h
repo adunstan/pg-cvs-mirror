@@ -15,14 +15,14 @@
  *
  * Copyright (c) 2003, PostgreSQL Global Development Group
  *
- * $PostgreSQL: getaddrinfo.h,v 1.11 2003/08/14 18:32:55 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/include/getaddrinfo.h,v 1.12 2003/11/29 22:40:53 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
 #ifndef GETADDRINFO_H
 #define GETADDRINFO_H
 
-#if !defined(_MSC_VER) && !defined(__BORLANDC__)
+#ifndef WIN32_CLIENT_ONLY
 #include <sys/socket.h>
 #include <netdb.h>
 #endif

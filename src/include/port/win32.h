@@ -1,4 +1,4 @@
-/* $PostgreSQL: pgsql-server/src/include/port/win32.h,v 1.32 2004/09/09 00:59:44 momjian Exp $ */
+/* $PostgreSQL: pgsql-server/src/include/port/win32.h,v 1.33 2004/09/14 03:50:17 tgl Exp $ */
 
 /* undefine and redefine after #include */
 #undef mkdir
@@ -31,7 +31,7 @@
 #define DLLIMPORT __declspec (dllimport)
 #endif
 
-#elif defined(WIN32) && (defined(_MSC_VER) || defined(__BORLANDC__))	/* not CYGWIN or MingW */
+#elif defined(WIN32_CLIENT_ONLY)
 
 #if defined(_DLL)
 #define DLLIMPORT __declspec (dllexport)

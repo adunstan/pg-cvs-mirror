@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2004, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql-server/src/bin/psql/print.c,v 1.50 2004/08/29 04:13:02 momjian Exp $
+ * $PostgreSQL: pgsql-server/src/bin/psql/print.c,v 1.51 2004/08/29 05:06:54 momjian Exp $
  */
 #include "postgres_fe.h"
 #include "common.h"
@@ -12,7 +12,7 @@
 #include <math.h>
 #include <signal.h>
 
-#if !defined(_MSC_VER) && !defined(__BORLANDC__)
+#ifndef WIN32_CLIENT_ONLY
 #include <unistd.h>
 #endif
 
