@@ -7,7 +7,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/port/exec.c,v 1.26 2004/09/27 22:06:41 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/port/exec.c,v 1.27 2004/09/27 22:11:23 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -22,7 +22,7 @@
 #include <pwd.h>
 #include <sys/stat.h>
 #include <sys/wait.h>
-#if !defined(_MSC_VER) && !defined(__BORLANDC__)
+#ifndef WIN32_CLIENT_ONLY
 #include <unistd.h>
 #endif
 
@@ -178,7 +178,7 @@ find_my_exec(const char *argv0, char *retpath)
 				test_path[MAXPGPATH];
 	char	   *path;
 
-#if !defined(_MSC_VER) && !defined(__BORLANDC__)
+#ifndef WIN32_CLIENT_ONLY
 	if (!getcwd(cwd, MAXPGPATH))
 #else
 	if (!GetCurrentDirectory(MAXPGPATH, cwd))
