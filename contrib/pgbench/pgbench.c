@@ -1,5 +1,5 @@
 /*
- * $PostgreSQL: pgsql-server/contrib/pgbench/pgbench.c,v 1.32 2004/08/29 05:06:36 momjian Exp $
+ * $PostgreSQL: pgsql/contrib/pgbench/pgbench.c,v 1.33 2004/09/14 03:39:23 tgl Exp $
  *
  * pgbench: a simple TPC-B like benchmark program for PostgreSQL
  * written by Tatsuo Ishii
@@ -107,7 +107,7 @@ typedef struct
 }	CState;
 
 static void
-usage()
+usage(void)
 {
 	fprintf(stderr, "usage: pgbench [-h hostname][-p port][-c nclients][-t ntransactions][-s scaling_factor][-n][-C][-v][-S][-N][-l][-U login][-P password][-d][dbname]\n");
 	fprintf(stderr, "(initialize mode): pgbench -i [-h hostname][-p port][-s scaling_factor][-U login][-P password][-d][dbname]\n");
@@ -122,7 +122,7 @@ getrand(int min, int max)
 
 /* set up a connection to the backend */
 static PGconn *
-doConnect()
+doConnect(void)
 {
 	PGconn	   *con;
 	PGresult   *res;
