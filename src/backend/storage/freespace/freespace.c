@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/storage/freespace/freespace.c,v 1.27 2003/12/12 18:45:09 petere Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/storage/freespace/freespace.c,v 1.28 2003/12/20 17:31:21 momjian Exp $
  *
  *
  * NOTES:
@@ -274,7 +274,7 @@ InitFreeSpaceMap(void)
 				(errcode(ERRCODE_OUT_OF_MEMORY),
 			   errmsg("insufficient shared memory for free space map")));
 	if (!found)
-	MemSet(FreeSpaceMap, 0, sizeof(FSMHeader));
+		MemSet(FreeSpaceMap, 0, sizeof(FSMHeader));
 
 	/* Create hashtable for FSMRelations */
 	info.keysize = sizeof(RelFileNode);
