@@ -14,7 +14,7 @@
  *	Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $Log$
+ *	  $Header: /home/cvsmirror/pg/pgsql/src/interfaces/odbc/Attic/md5.c,v 1.6 2001/11/13 22:08:04 momjian Exp $
  */
 
 
