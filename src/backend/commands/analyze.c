@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/analyze.c,v 1.77 2004/09/30 23:21:19 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/analyze.c,v 1.78 2004/10/26 16:05:03 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -811,8 +811,6 @@ acquire_sample_rows(Relation onerel, HeapTuple *rows, int targrows,
 		 * tuples.
 		 */
 		targbuffer = ReadBuffer(onerel, targblock);
-		if (!BufferIsValid(targbuffer))
-			elog(ERROR, "ReadBuffer failed");
 		LockBuffer(targbuffer, BUFFER_LOCK_SHARE);
 		targpage = BufferGetPage(targbuffer);
 		maxoffset = PageGetMaxOffsetNumber(targpage);

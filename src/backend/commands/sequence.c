@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/commands/sequence.c,v 1.116 2004/08/29 05:06:41 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/sequence.c,v 1.117 2004/09/16 16:58:28 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -192,10 +192,6 @@ DefineSequence(CreateSeqStmt *seq)
 	/* Initialize first page of relation with special magic number */
 
 	buf = ReadBuffer(rel, P_NEW);
-
-	if (!BufferIsValid(buf))
-		elog(ERROR, "ReadBuffer failed");
-
 	Assert(BufferGetBlockNumber(buf) == 0);
 
 	page = (PageHeader) BufferGetPage(buf);
@@ -850,9 +846,6 @@ read_info(SeqTable elm, Relation rel, Buffer *buf)
 	Form_pg_sequence seq;
 
 	*buf = ReadBuffer(rel, 0);
-	if (!BufferIsValid(*buf))
-		elog(ERROR, "ReadBuffer failed");
-
 	LockBuffer(*buf, BUFFER_LOCK_EXCLUSIVE);
 
 	page = (PageHeader) BufferGetPage(*buf);
