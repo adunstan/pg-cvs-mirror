@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/contrib/vacuumlo/vacuumlo.c,v 1.26 2003/11/29 19:51:36 pgsql Exp $
+ *	  $PostgreSQL: pgsql/contrib/vacuumlo/vacuumlo.c,v 1.27 2004/08/29 04:12:17 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -309,7 +309,7 @@ main(int argc, char **argv)
 	param.pg_user = NULL;
 	param.pg_prompt = 0;
 	param.pg_host = NULL;
-	param.pg_port = 0;
+	param.pg_port = NULL;
 	param.verbose = 0;
 	param.dry_run = 0;
 
