@@ -1,4 +1,4 @@
-/* $Header: /home/cvsmirror/pg/pgsql/src/interfaces/ecpg/ecpglib/prepare.c,v 1.9 2003/08/04 00:43:32 momjian Exp $ */
+/* $PostgreSQL: pgsql-server/src/interfaces/ecpg/ecpglib/prepare.c,v 1.11 2004/01/28 09:52:14 meskes Exp $ */
 
 #define POSTGRES_ECPG_INTERNAL
 #include "postgres_fe.h"
@@ -169,7 +169,7 @@ ECPGdeallocate_all(int lineno)
 
 /* return the prepared statement */
 char *
-ECPGprepared_statement(char *name)
+ECPGprepared_statement(const char *name)
 {
 	struct prepared_statement *this;
 
