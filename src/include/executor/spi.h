@@ -2,7 +2,7 @@
  *
  * spi.h
  *
- * $PostgreSQL: pgsql-server/src/include/executor/spi.h,v 1.48 2004/09/13 20:07:53 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/executor/spi.h,v 1.49 2004/09/16 16:58:40 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -81,6 +81,7 @@ extern int	SPI_connect(void);
 extern int	SPI_finish(void);
 extern void SPI_push(void);
 extern void SPI_pop(void);
+extern void SPI_restore_connection(void);
 extern int	SPI_execute(const char *src, bool read_only, int tcount);
 extern int	SPI_execute_plan(void *plan, Datum *Values, const char *Nulls,
 							 bool read_only, int tcount);
