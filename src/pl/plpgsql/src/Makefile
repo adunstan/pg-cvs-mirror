@@ -2,17 +2,13 @@
 #
 # Makefile for the plpgsql shared object
 #
-# $PostgreSQL: pgsql-server/src/pl/plpgsql/src/Makefile,v 1.24 2003/11/29 19:52:12 pgsql Exp $
+# $PostgreSQL: pgsql-server/src/pl/plpgsql/src/Makefile,v 1.25 2004/02/10 07:26:25 tgl Exp $
 #
 #-------------------------------------------------------------------------
 
 subdir = src/pl/plpgsql/src
 top_builddir = ../../../..
 include $(top_builddir)/src/Makefile.global
-
-ifeq ($(GCC), yes)
-override CFLAGS+= -Wno-error
-endif
 
 # Shared library parameters
 NAME= plpgsql
