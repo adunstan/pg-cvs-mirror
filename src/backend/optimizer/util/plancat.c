@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/optimizer/util/plancat.c,v 1.100 2004/12/31 22:00:23 pgsql Exp $
+ *	  $PostgreSQL: pgsql/src/backend/optimizer/util/plancat.c,v 1.101 2005/03/24 19:14:49 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -124,6 +124,7 @@ get_relation_info(Oid relationObjectId, RelOptInfo *rel)
 			info = makeNode(IndexOptInfo);
 
 			info->indexoid = index->indexrelid;
+			info->rel = rel;
 			info->ncolumns = ncolumns = index->indnatts;
 
 			/*

@@ -11,7 +11,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/optimizer/path/pathkeys.c,v 1.63 2004/12/31 22:00:04 pgsql Exp $
+ *	  $PostgreSQL: pgsql/src/backend/optimizer/path/pathkeys.c,v 1.64 2005/01/23 02:21:26 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -648,7 +648,6 @@ get_cheapest_fractional_path_for_pathkeys(List *paths,
  */
 List *
 build_index_pathkeys(Query *root,
-					 RelOptInfo *rel,
 					 IndexOptInfo *index,
 					 ScanDirection scandir)
 {
@@ -675,7 +674,8 @@ build_index_pathkeys(Query *root,
 		if (*indexkeys != 0)
 		{
 			/* simple index column */
-			indexkey = (Node *) find_indexkey_var(root, rel, *indexkeys);
+			indexkey = (Node *) find_indexkey_var(root, index->rel,
+												  *indexkeys);
 		}
 		else
 		{
