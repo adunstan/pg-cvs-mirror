@@ -5,7 +5,7 @@
 # Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
 # Portions Copyright (c) 1994, Regents of the University of California
 #
-# $PostgreSQL: pgsql-server/src/bin/initdb/Makefile,v 1.39 2004/05/18 20:18:58 momjian Exp $
+# $PostgreSQL: pgsql-server/src/bin/initdb/Makefile,v 1.40 2004/05/19 17:15:20 momjian Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -15,8 +15,7 @@ include $(top_builddir)/src/Makefile.global
 
 override CPPFLAGS := -DFRONTEND -I$(libpq_srcdir) $(CPPFLAGS)
 
-OBJS=	initdb.o \
-	$(filter exec.o, $(LIBOBJS))
+OBJS=	initdb.o exec.o
 
 all: submake-libpq submake-libpgport initdb
 
