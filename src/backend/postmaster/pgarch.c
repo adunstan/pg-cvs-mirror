@@ -19,7 +19,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/postmaster/pgarch.c,v 1.4 2004/08/03 20:32:33 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/postmaster/pgarch.c,v 1.5 2004/08/05 23:32:10 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -436,7 +436,17 @@ pgarch_archiveXlog(char *xlog)
 					/* %p: full path of source file */
 					sp++;
 					StrNCpy(dp, pathname, endp-dp);
+#ifndef WIN32
 					dp += strlen(dp);
+#else
+					/* On Windows, change / to \ in the substituted path */
+					while (*dp)
+					{
+						if (*dp == '/')
+							*dp = '\\';
+						dp++;
+					}
+#endif
 					break;
 				case 'f':
 					/* %f: filename of source file */
