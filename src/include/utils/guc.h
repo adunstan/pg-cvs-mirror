@@ -7,7 +7,7 @@
  * Copyright (c) 2000-2003, PostgreSQL Global Development Group
  * Written by Peter Eisentraut <peter_e@gmx.net>.
  *
- * $PostgreSQL: pgsql-server/src/include/utils/guc.h,v 1.43 2003/12/01 22:08:02 momjian Exp $
+ * $PostgreSQL: pgsql-server/src/include/utils/guc.h,v 1.44 2004/01/19 19:04:40 tgl Exp $
  *--------------------------------------------------------------------
  */
 #ifndef GUC_H
@@ -103,7 +103,6 @@ typedef enum
 } GucSource;
 
 /* GUC vars that are actually declared in guc.c, rather than elsewhere */
-extern bool log_statement;
 extern bool log_duration;
 extern bool Debug_print_plan;
 extern bool Debug_print_parse;
