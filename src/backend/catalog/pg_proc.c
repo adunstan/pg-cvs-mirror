@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/catalog/pg_proc.c,v 1.115 2004/04/02 23:14:05 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/catalog/pg_proc.c,v 1.116 2004/05/26 04:41:08 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -847,7 +847,7 @@ function_parse_error_transpose(const char *prosrc)
 	}
 
 	/* We can get the original query text from the active portal (hack...) */
-	Assert(ActivePortal && ActivePortal->portalActive);
+	Assert(ActivePortal && ActivePortal->status == PORTAL_ACTIVE);
 	queryText = ActivePortal->sourceText;
 
 	/* Try to locate the prosrc in the original text */

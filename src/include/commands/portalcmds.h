@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: portalcmds.h,v 1.13 2003/08/08 21:42:40 momjian Exp $
+ * $PostgreSQL: pgsql-server/src/include/commands/portalcmds.h,v 1.14 2003/11/29 22:40:59 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -24,7 +24,7 @@ extern void PerformPortalFetch(FetchStmt *stmt, DestReceiver *dest,
 
 extern void PerformPortalClose(const char *name);
 
-extern void PortalCleanup(Portal portal, bool isError);
+extern void PortalCleanup(Portal portal);
 
 extern void PersistHoldablePortal(Portal portal);
 

@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/access/nbtree.h,v 1.78 2004/06/02 17:28:18 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/include/access/nbtree.h,v 1.79 2004/07/11 18:01:45 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -402,8 +402,6 @@ typedef BTScanOpaqueData *BTScanOpaque;
 /*
  * prototypes for functions in nbtree.c (external entry points for btree)
  */
-extern void AtEOXact_nbtree(void);
-
 extern Datum btbuild(PG_FUNCTION_ARGS);
 extern Datum btinsert(PG_FUNCTION_ARGS);
 extern Datum btgettuple(PG_FUNCTION_ARGS);

@@ -12,7 +12,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/access/nbtree/nbtree.c,v 1.117 2004/06/02 17:28:17 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/access/nbtree/nbtree.c,v 1.118 2004/06/05 19:48:07 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -56,16 +56,6 @@ static void btbuildCallback(Relation index,
 				char *nulls,
 				bool tupleIsAlive,
 				void *state);
-
-
-/*
- * AtEOXact_nbtree() --- clean up nbtree subsystem at xact abort or commit.
- */
-void
-AtEOXact_nbtree(void)
-{
-	/* nothing to do at the moment */
-}
 
 
 /*

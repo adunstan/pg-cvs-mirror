@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/tcop/postgres.c,v 1.422 2004/07/01 00:51:11 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/tcop/postgres.c,v 1.423 2004/07/11 00:18:44 momjian Exp $
  *
  * NOTES
  *	  this is the "main" module of the postgres backend and
@@ -2795,6 +2795,12 @@ PostgresMain(int argc, char *argv[], const char *username)
 		DisableNotifyInterrupt();
 		DisableCatchupInterrupt();
 		debug_query_string = NULL;
+
+		/*
+		 * If there's an active portal, mark it as failed
+		 */
+		if (ActivePortal)
+			ActivePortal->status = PORTAL_FAILED;
 
 		/*
 		 * Make sure we are in a valid memory context during recovery.
