@@ -4,7 +4,7 @@
 #
 # Copyright (C) 2003 by PostgreSQL Global Development Team
 #
-# $PostgreSQL: /cvsroot/pgsql-server/src/tools/thread/Makefile,v 1.2 2003/09/27 16:24:45 momjian Exp $
+# $PostgreSQL: pgsql-server/src/tools/thread/Makefile,v 1.3 2003/11/29 19:52:14 pgsql Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -19,9 +19,9 @@ ifeq ($(THREAD_SUPPORT), )
 $(error You have not configured your template/$$port file.  See the README)
 endif
 
-override CFLAGS += $(THREAD_CPPFLAGS)
+override CFLAGS += $(PTHREAD_CFLAGS)
 
-LDFLAGS += $(THREAD_LIBS)
+LDFLAGS += $(PTHREAD_LIBS)
 
 all: thread_test
 

@@ -1,5 +1,6 @@
-dnl $PostgreSQL: pgsql-server/aclocal.m4,v 1.16 2003/11/29 19:51:16 pgsql Exp $
+dnl $PostgreSQL: pgsql-server/aclocal.m4,v 1.17 2004/01/19 21:20:04 tgl Exp $
 m4_include([config/ac_func_accept_argtypes.m4])
+m4_include([config/acx_pthread.m4])
 m4_include([config/c-compiler.m4])
 m4_include([config/c-library.m4])
 m4_include([config/docbook.m4])
