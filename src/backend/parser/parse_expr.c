@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/parser/parse_expr.c,v 1.163 2003/09/26 15:27:35 petere Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/parser/parse_expr.c,v 1.164 2003/11/29 19:51:52 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1115,7 +1115,8 @@ transformColumnRef(ParseState *pstate, ColumnRef *cref)
 				if (strcmp(name1, get_database_name(MyDatabaseId)) != 0)
 					ereport(ERROR,
 							(errcode(ERRCODE_FEATURE_NOT_SUPPORTED),
-							 errmsg("cross-database references are not implemented")));
+							 errmsg("cross-database references are not implemented: %s",
+									NameListToString(cref->fields))));
 
 				/* Whole-row reference? */
 				if (strcmp(name4, "*") == 0)

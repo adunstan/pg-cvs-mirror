@@ -13,7 +13,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/catalog/namespace.c,v 1.61 2003/12/29 21:33:09 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/catalog/namespace.c,v 1.62 2004/01/19 19:04:40 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -165,7 +165,9 @@ RangeVarGetRelid(const RangeVar *relation, bool failOK)
 		if (strcmp(relation->catalogname, get_database_name(MyDatabaseId)) != 0)
 			ereport(ERROR,
 					(errcode(ERRCODE_FEATURE_NOT_SUPPORTED),
-			   errmsg("cross-database references are not implemented")));
+			   errmsg("cross-database references are not implemented: \"%s.%s.%s\"",
+					  relation->catalogname, relation->schemaname,
+					  relation->relname)));
 	}
 
 	if (relation->schemaname)
@@ -218,7 +220,9 @@ RangeVarGetCreationNamespace(const RangeVar *newRelation)
 		if (strcmp(newRelation->catalogname, get_database_name(MyDatabaseId)) != 0)
 			ereport(ERROR,
 					(errcode(ERRCODE_FEATURE_NOT_SUPPORTED),
-			   errmsg("cross-database references are not implemented")));
+			   errmsg("cross-database references are not implemented: \"%s.%s.%s\"",
+					  newRelation->catalogname, newRelation->schemaname,
+					  newRelation->relname)));
 	}
 
 	if (newRelation->istemp)
@@ -1182,7 +1186,8 @@ DeconstructQualifiedName(List *names,
 			if (strcmp(catalogname, get_database_name(MyDatabaseId)) != 0)
 				ereport(ERROR,
 						(errcode(ERRCODE_FEATURE_NOT_SUPPORTED),
-				errmsg("cross-database references are not implemented")));
+				errmsg("cross-database references are not implemented: %s",
+					   NameListToString(names))));
 			break;
 		default:
 			ereport(ERROR,
