@@ -1,5 +1,5 @@
 <!--
-$PostgreSQL: pgsql-server/doc/src/sgml/release.sgml,v 1.269 2004/07/25 04:18:05 momjian Exp $
+$PostgreSQL: pgsql-server/doc/src/sgml/release.sgml,v 1.270 2004/07/26 00:26:42 momjian Exp $
 -->
 
 <appendix id="release">
@@ -1271,7 +1271,7 @@ $PostgreSQL: pgsql-server/doc/src/sgml/release.sgml,v 1.269 2004/07/25 04:18:05 
 
     <listitem>
      <para>
-      New start/end of dump markers in pg_dump (Bruce)
+      New start/stop of dump markers in pg_dump (Bruce)
      </para>
     </listitem>
 
