@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/backend/access/transam/slru.c,v 1.8 2003/11/29 19:51:40 pgsql Exp $
+ * $PostgreSQL: pgsql-server/src/backend/access/transam/slru.c,v 1.9 2004/01/26 22:35:31 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -184,14 +184,12 @@ SimpleLruInit(SlruCtl ctl, const char *name, const char *subdir)
 	shared = (SlruShared) ptr;
 
 #ifdef EXEC_BACKEND
-
 	/*
 	 * Locks are in shared memory
 	 */
 	locks = (SlruLock) (ptr + MAXALIGN(sizeof(SlruSharedData)) +
 						BLCKSZ * NUM_CLOG_BUFFERS);
 #else
-
 	/*
 	 * Locks are in private memory
 	 */
@@ -200,10 +198,9 @@ SimpleLruInit(SlruCtl ctl, const char *name, const char *subdir)
 	Assert(locks);
 #endif
 
-
 	if (!IsUnderPostmaster)
-		/* Initialize locks and shared memory area */
 	{
+		/* Initialize locks and shared memory area */
 		char	   *bufptr;
 		int			slotno;
 
@@ -229,10 +226,8 @@ SimpleLruInit(SlruCtl ctl, const char *name, const char *subdir)
 	else
 		Assert(found);
 
-
 	ctl->locks = locks;
 	ctl->shared = shared;
-
 
 	/* Init directory path */
 	snprintf(ctl->Dir, MAXPGPATH, "%s/%s", DataDir, subdir);

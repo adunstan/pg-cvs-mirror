@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/tcop/postgres.c,v 1.385 2004/01/26 22:54:57 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/tcop/postgres.c,v 1.386 2004/01/26 22:59:53 momjian Exp $
  *
  * NOTES
  *	  this is the "main" module of the postgres backend and
@@ -392,7 +392,7 @@ ReadCommand(StringInfo inBuf)
 {
 	int			result;
 
-	if (IsUnderPostmaster)
+	if (whereToSendOutput == Remote)
 		result = SocketBackend(inBuf);
 	else
 		result = InteractiveBackend(inBuf);
@@ -2627,8 +2627,8 @@ PostgresMain(int argc, char *argv[], const char *username)
 		/* Need not flush since ReadyForQuery will do it. */
 	}
 
-	/* Welcome banner for non-frontend case */
-	if (!IsUnderPostmaster)
+	/* Welcome banner for standalone case */
+	if (whereToSendOutput == Debug)
 		printf("\nPostgreSQL stand-alone backend %s\n", PG_VERSION);
 
 	/*

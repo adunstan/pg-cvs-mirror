@@ -13,7 +13,7 @@
  *
  *	Copyright (c) 2001-2003, PostgreSQL Global Development Group
  *
- *	$PostgreSQL: pgsql-server/src/backend/postmaster/pgstat.c,v 1.55 2004/01/26 22:54:56 momjian Exp $
+ *	$PostgreSQL: pgsql-server/src/backend/postmaster/pgstat.c,v 1.56 2004/01/26 22:59:53 momjian Exp $
  * ----------
  */
 #include "postgres.h"
@@ -1338,6 +1338,12 @@ static void
 pgstat_mainInit(void)
 {
 	IsUnderPostmaster = true;	/* we are a postmaster subprocess now */
+
+#ifdef EXEC_BACKEND
+	/* In EXEC case we will not have inherited these settings */
+	IsPostmasterEnvironment = true;
+	whereToSendOutput = None;
+#endif
 
 	MyProcPid = getpid();		/* reset MyProcPid */
 
