@@ -4,7 +4,7 @@
 #    Makefile for backend/nodes
 #
 # IDENTIFICATION
-#    $PostgreSQL: /cvsroot/pgsql-server/src/backend/nodes/Makefile,v 1.14 2003/02/08 20:20:53 tgl Exp $
+#    $PostgreSQL: pgsql-server/src/backend/nodes/Makefile,v 1.15 2003/11/29 19:51:49 pgsql Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -14,7 +14,7 @@ include $(top_builddir)/src/Makefile.global
 
 OBJS = nodeFuncs.o nodes.o list.o bitmapset.o \
        copyfuncs.o equalfuncs.o makefuncs.o \
-       outfuncs.o readfuncs.o print.o read.o
+       outfuncs.o readfuncs.o print.o read.o value.o
 
 all: SUBSYS.o
 
