@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/test/examples/testlo.c,v 1.21 2003/11/29 19:52:14 pgsql Exp $
+ *	  $PostgreSQL: pgsql-server/src/test/examples/testlo.c,v 1.22 2004/08/29 04:13:12 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -99,6 +99,7 @@ pickout(PGconn *conn, Oid lobjId, int start, int len)
 		if (nbytes <= 0)
 			break;				/* no more data? */
 	}
+	free(buf);
 	fprintf(stderr, "\n");
 	lo_close(conn, lobj_fd);
 }
@@ -134,6 +135,7 @@ overwrite(PGconn *conn, Oid lobjId, int start, int len)
 			break;
 		}
 	}
+	free(buf);
 	fprintf(stderr, "\n");
 	lo_close(conn, lobj_fd);
 }
