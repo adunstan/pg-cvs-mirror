@@ -11,7 +11,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/parser/gram.y,v 2.468 2004/07/27 05:10:55 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/parser/gram.y,v 2.469 2004/08/02 04:26:35 tgl Exp $
  *
  * HISTORY
  *	  AUTHOR			DATE			MAJOR EVENT
@@ -3982,6 +3982,14 @@ TransactionStmt:
 														(Node *)makeString($2)));
 					$$ = (Node *)n;
 				}
+			| RELEASE SAVEPOINT ColId
+				{
+					TransactionStmt *n = makeNode(TransactionStmt);
+					n->kind = TRANS_STMT_RELEASE;
+					n->options = list_make1(makeDefElem("savepoint_name",
+														(Node *)makeString($3)));
+					$$ = (Node *)n;
+				}
 			| RELEASE ColId
 				{
 					TransactionStmt *n = makeNode(TransactionStmt);
@@ -3990,12 +3998,20 @@ TransactionStmt:
 														(Node *)makeString($2)));
 					$$ = (Node *)n;
 				}
-			| ROLLBACK TO ColId
+			| ROLLBACK opt_transaction TO SAVEPOINT ColId
 				{
 					TransactionStmt *n = makeNode(TransactionStmt);
 					n->kind = TRANS_STMT_ROLLBACK_TO;
 					n->options = list_make1(makeDefElem("savepoint_name",
-														(Node *)makeString($3)));
+														(Node *)makeString($5)));
+					$$ = (Node *)n;
+				}
+			| ROLLBACK opt_transaction TO ColId
+				{
+					TransactionStmt *n = makeNode(TransactionStmt);
+					n->kind = TRANS_STMT_ROLLBACK_TO;
+					n->options = list_make1(makeDefElem("savepoint_name",
+														(Node *)makeString($4)));
 					$$ = (Node *)n;
 				}
 		;
