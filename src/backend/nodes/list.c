@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/nodes/list.c,v 1.62 2004/08/29 05:06:43 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/nodes/list.c,v 1.63 2004/12/31 21:59:55 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -381,7 +381,7 @@ list_truncate(List *list, int new_size)
 
 /*
  * Locate the n'th cell (counting from 0) of the list.  It is an assertion
- * error if there isn't one.
+ * failure if there is no such cell.
  */
 static ListCell *
 list_nth_cell(List *list, int n)
