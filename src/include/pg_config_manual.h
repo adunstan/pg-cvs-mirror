@@ -6,7 +6,7 @@
  * for developers.	If you edit any of these, be sure to do a *full*
  * rebuild (and an initdb if noted).
  *
- * $PostgreSQL: pgsql-server/src/include/pg_config_manual.h,v 1.10 2004/02/11 22:55:26 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/include/pg_config_manual.h,v 1.11 2004/03/12 00:25:40 neilc Exp $
  *------------------------------------------------------------------------
  */
 
@@ -111,11 +111,6 @@
  * generous setting here.
  */
 #define MAXPGPATH		1024
-
-/*
- * DEFAULT_MAX_EXPR_DEPTH: default value of max_expr_depth SET variable.
- */
-#define DEFAULT_MAX_EXPR_DEPTH	10000
 
 /*
  * PG_SOMAXCONN: maximum accept-queue length limit passed to
