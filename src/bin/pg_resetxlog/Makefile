@@ -4,7 +4,7 @@
 #
 # Copyright (c) 1998-2002, PostgreSQL Global Development Group
 #
-# $PostgreSQL: pgsql-server/src/bin/pg_resetxlog/Makefile,v 1.4 2004/02/02 17:21:08 momjian Exp $
+# $PostgreSQL: pgsql-server/src/bin/pg_resetxlog/Makefile,v 1.5 2004/02/10 23:24:13 tgl Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -38,4 +38,4 @@ uninstall:
 	rm -f $(DESTDIR)$(bindir)/pg_resetxlog$(X)
 
 clean distclean maintainer-clean:
-	rm -f pg_resetxlog$(X) pg_resetxlog.o pg_crc.o pg_crc.c dirmod.c
+	rm -f pg_resetxlog$(X) pg_crc.c dirmod.c $(OBJS)
