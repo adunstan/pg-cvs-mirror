@@ -37,7 +37,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/postmaster/postmaster.c,v 1.426 2004/10/06 09:35:21 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/postmaster/postmaster.c,v 1.427 2004/10/07 00:03:15 tgl Exp $
  *
  * NOTES
  *
@@ -1194,7 +1194,7 @@ ServerLoop(void)
 
 				/*
 				 * We are not sure how much precision is in tv_usec, so we
-				 * swap the nibbles of 'later' and XOR them with
+				 * swap the high and low 16-bits of 'later' and XOR them with
 				 * 'earlier'. On the off chance that the result is 0, we
 				 * loop until it isn't.
 				 */
