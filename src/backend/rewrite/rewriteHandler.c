@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/rewrite/rewriteHandler.c,v 1.139 2004/06/09 19:08:17 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/rewrite/rewriteHandler.c,v 1.140 2004/06/16 01:26:46 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -208,7 +208,8 @@ rewriteRuleAction(Query *parsetree,
 	 * apply it to sub_action; we have to remember to update the sublink
 	 * inside rule_action, too.
 	 */
-	if (event == CMD_INSERT || event == CMD_UPDATE)
+	if ((event == CMD_INSERT || event == CMD_UPDATE) &&
+		sub_action->commandType != CMD_UTILITY)
 	{
 		sub_action = (Query *) ResolveNew((Node *) sub_action,
 										  new_varno,
