@@ -16,7 +16,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/utils/time/tqual.c,v 1.77 2004/08/29 05:06:52 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/time/tqual.c,v 1.78 2004/09/13 20:07:36 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -48,6 +48,7 @@ Snapshot	LatestSnapshot = NULL;
 Snapshot	ActiveSnapshot = NULL;
 
 /* These are updated by GetSnapshotData: */
+TransactionId TransactionXmin = InvalidTransactionId;
 TransactionId RecentXmin = InvalidTransactionId;
 TransactionId RecentGlobalXmin = InvalidTransactionId;
 

@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/utils/tqual.h,v 1.51 2004/09/11 18:28:34 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/include/utils/tqual.h,v 1.52 2004/09/13 20:08:35 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -59,6 +59,7 @@ extern DLLIMPORT Snapshot SerializableSnapshot;
 extern DLLIMPORT Snapshot LatestSnapshot;
 extern DLLIMPORT Snapshot ActiveSnapshot;
 
+extern TransactionId TransactionXmin;
 extern TransactionId RecentXmin;
 extern TransactionId RecentGlobalXmin;
 
