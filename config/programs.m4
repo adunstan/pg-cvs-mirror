@@ -1,4 +1,4 @@
-# $PostgreSQL: /cvsroot/pgsql-server/config/programs.m4,v 1.12 2003/05/06 23:33:52 momjian Exp $
+# $PostgreSQL: pgsql-server/config/programs.m4,v 1.13 2003/11/29 19:51:17 pgsql Exp $
 
 
 # PGAC_PATH_FLEX
@@ -87,9 +87,9 @@ for pgac_lib in "" " -ltermcap" " -lncurses" " -lcurses" ; do
     pgac_save_LIBS=$LIBS
     LIBS="${pgac_rllib}${pgac_lib} $LIBS"
     AC_TRY_LINK_FUNC([readline], [[
-      # NetBSD and OpenBSD have a broken linker that does not
+      # NetBSD, OpenBSD, and Irix have a broken linker that does not
       # recognize dependent libraries
-      case $host_os in netbsd* | openbsd* )
+      case $host_os in netbsd* | openbsd* | irix*)
         case $pgac_lib in
           *curses*) ;;
           *) pgac_lib=" -lcurses" ;;
