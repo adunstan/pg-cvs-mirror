@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-connect.c,v 1.301 2005/01/14 00:25:56 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-connect.c,v 1.301.4.1 2005/01/26 19:24:20 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1211,7 +1211,7 @@ keep_going:						/* We will come back to here until there
 							continue;
 						}
 					}
-					if (!set_noblock(conn->sock))
+					if (!pg_set_noblock(conn->sock))
 					{
 						printfPQExpBuffer(&conn->errorMessage,
 										  libpq_gettext("could not set socket to non-blocking mode: %s\n"),
