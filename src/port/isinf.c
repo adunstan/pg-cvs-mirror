@@ -7,13 +7,14 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/port/isinf.c,v 1.3 2003/11/29 19:52:13 pgsql Exp $
+ *	  $PostgreSQL: pgsql-server/src/port/isinf.c,v 1.4 2004/08/29 04:13:12 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
 
 #include "c.h"
 
+#include <float.h>
 #include <math.h>
 
 #if HAVE_FPCLASS				/* this is _not_ HAVE_FP_CLASS, and not
