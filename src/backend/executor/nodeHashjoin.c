@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/nodeHashjoin.c,v 1.68 2005/03/06 22:15:04 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/nodeHashjoin.c,v 1.69 2005/03/16 21:38:07 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -97,8 +97,7 @@ ExecHashJoin(HashJoinState *node)
 	 * outer tuple; so we can stop scanning the inner scan if we matched
 	 * on the previous try.
 	 */
-	if (node->js.jointype == JOIN_IN &&
-		node->hj_MatchedOuter)
+	if (node->js.jointype == JOIN_IN && node->hj_MatchedOuter)
 		node->hj_NeedNewOuter = true;
 
 	/*
