@@ -1,5 +1,5 @@
 <!--
-$PostgreSQL: pgsql-server/doc/src/sgml/ref/create_type.sgml,v 1.50 2004/05/16 23:22:07 neilc Exp $
+$PostgreSQL: pgsql-server/doc/src/sgml/ref/create_type.sgml,v 1.51 2004/06/06 00:41:25 tgl Exp $
 PostgreSQL documentation
 -->
 
@@ -546,6 +546,7 @@ CREATE TABLE big_objs (
   <simplelist type="inline">
    <member><xref linkend="sql-createfunction" endterm="sql-createfunction-title"></member>
    <member><xref linkend="sql-droptype" endterm="sql-droptype-title"></member>
+   <member><xref linkend="sql-altertype" endterm="sql-altertype-title"></member>
   </simplelist>
  </refsect1>
 
