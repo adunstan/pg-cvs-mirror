@@ -7,7 +7,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/port/exec.c,v 1.28 2004/09/27 23:58:09 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/port/exec.c,v 1.29 2004/10/07 15:21:57 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -25,8 +25,6 @@
 #ifndef WIN32_CLIENT_ONLY
 #include <unistd.h>
 #endif
-
-#include "miscadmin.h"
 
 #define _(x) gettext(x)
 
