@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/functions.c,v 1.91 2004/12/31 21:59:45 pgsql Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/functions.c,v 1.92 2005/03/16 21:38:07 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -399,8 +399,8 @@ postquel_end(execution_state *es, SQLFunctionCachePtr fcache)
 		{
 			ActiveSnapshot = es->qd->snapshot;
 
+			AfterTriggerEndQuery(es->qd->estate);
 			ExecutorEnd(es->qd);
-			AfterTriggerEndQuery();
 		}
 		PG_CATCH();
 		{

@@ -12,7 +12,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/execProcnode.c,v 1.45 2004/09/24 01:36:30 neilc Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/execProcnode.c,v 1.46 2004/12/31 21:59:45 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -252,7 +252,7 @@ ExecInitNode(Plan *node, EState *estate)
 
 	/* Set up instrumentation for this node if requested */
 	if (estate->es_instrument)
-		result->instrument = InstrAlloc();
+		result->instrument = InstrAlloc(1);
 
 	return result;
 }

@@ -7,7 +7,7 @@
  * Copyright (c) 2001-2005, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/instrument.c,v 1.9 2005/01/01 05:43:06 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/instrument.c,v 1.10 2005/03/20 22:27:51 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -18,13 +18,13 @@
 #include "executor/instrument.h"
 
 
-/* Allocate new instrumentation structure */
+/* Allocate new instrumentation structure(s) */
 Instrumentation *
-InstrAlloc(void)
+InstrAlloc(int n)
 {
-	Instrumentation *instr = palloc(sizeof(Instrumentation));
+	Instrumentation *instr = palloc0(n * sizeof(Instrumentation));
 
-	memset(instr, 0, sizeof(Instrumentation));
+	/* we don't need to do any initialization except zero 'em */
 
 	return instr;
 }
