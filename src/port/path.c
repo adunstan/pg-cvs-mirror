@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/port/path.c,v 1.26 2004/08/01 06:56:39 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/port/path.c,v 1.27 2004/08/09 20:20:46 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -84,6 +84,23 @@ last_dir_separator(const char *filename)
 		if (IS_DIR_SEP(*p))
 			ret = p;
 	return ret;
+}
+
+
+/*
+ *	make_native_path
+ *	On WIN32, change / to \ in the path.
+ */
+void
+make_native_path(char *filename)
+{
+#ifdef WIN32
+	char *p;
+	
+	for (p = filename; *p; p++)
+		if (*p == '/')
+			*p = '\\';
+#endif
 }
 
 
