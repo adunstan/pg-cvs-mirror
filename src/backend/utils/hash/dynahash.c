@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/hash/dynahash.c,v 1.48 2003/08/19 01:13:41 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/hash/dynahash.c,v 1.49 2003/11/29 19:52:01 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -148,7 +148,7 @@ hash_create(const char *tabname, long nelem, HASHCTL *info, int flags)
 	{
 		/*
 		 * ctl structure is preallocated for shared memory tables. Note
-		 * that HASH_DIRSIZE had better be set as well.
+		 * that HASH_DIRSIZE and HASH_ALLOC had better be set as well.
 		 */
 		hashp->hctl = info->hctl;
 		hashp->dir = info->dir;
@@ -220,7 +220,7 @@ hash_create(const char *tabname, long nelem, HASHCTL *info, int flags)
 	{
 		/* remaining hash table structures live in child of given context */
 		hashp->hcxt = AllocSetContextCreate(CurrentDynaHashCxt,
-											"DynaHashTable",
+											tabname,
 											ALLOCSET_DEFAULT_MINSIZE,
 											ALLOCSET_DEFAULT_INITSIZE,
 											ALLOCSET_DEFAULT_MAXSIZE);
