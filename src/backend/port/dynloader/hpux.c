@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/port/dynloader/hpux.c,v 1.22 2003/08/04 02:40:02 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/port/dynloader/hpux.c,v 1.23 2003/11/29 19:51:54 pgsql Exp $
  *
  *	NOTES
  *		all functions are defined here -- it's impossible to trace the
@@ -57,7 +57,7 @@ pg_dlclose(void *handle)
 }
 
 char *
-pg_dlerror()
+pg_dlerror(void)
 {
 	static char errmsg[] = "shl_load failed";
 
