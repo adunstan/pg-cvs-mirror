@@ -10,7 +10,7 @@
  *
  *	Sverre H. Huseby <sverrehu@online.no>
  *
- * $Header: /home/cvsmirror/pg/pgsql/src/backend/libpq/md5.c,v 1.10 2001/11/12 01:42:03 momjian Exp $
+ * $Header: /home/cvsmirror/pg/pgsql/src/backend/libpq/md5.c,v 1.11 2001/11/12 02:00:18 momjian Exp $
  */
 
 
