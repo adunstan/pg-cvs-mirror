@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/executor/execJunk.c,v 1.37 2003/11/29 19:51:48 pgsql Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/executor/execJunk.c,v 1.38 2004/01/07 18:56:26 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -262,12 +262,6 @@ ExecRemoveJunk(JunkFilter *junkfilter, TupleTableSlot *slot)
 	cleanTupType = junkfilter->jf_cleanTupType;
 	cleanLength = junkfilter->jf_cleanLength;
 	cleanMap = junkfilter->jf_cleanMap;
-
-	/*
-	 * Handle the trivial case first.
-	 */
-	if (cleanLength == 0)
-		return NULL;
 
 	/*
 	 * Create the arrays that will hold the attribute values and the null
