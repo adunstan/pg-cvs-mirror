@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/copy.c,v 1.232 2004/09/13 20:06:27 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/copy.c,v 1.233 2004/10/29 19:18:22 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1596,7 +1596,7 @@ CopyFrom(Relation rel, List *attnumlist, bool binary, bool oids,
 			node = coerce_to_domain((Node *) prm,
 									prm->paramtype,
 									attr[attnum - 1]->atttypid,
-									COERCE_IMPLICIT_CAST, false);
+									COERCE_IMPLICIT_CAST, false, false);
 
 			constraintexprs[attnum - 1] = ExecPrepareExpr((Expr *) node,
 														  estate);
