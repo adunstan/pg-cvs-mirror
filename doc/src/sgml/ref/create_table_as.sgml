@@ -1,5 +1,5 @@
 <!--
-$PostgreSQL: pgsql/doc/src/sgml/ref/create_table_as.sgml,v 1.26 2004/12/13 18:05:10 petere Exp $
+$PostgreSQL: pgsql/doc/src/sgml/ref/create_table_as.sgml,v 1.27 2005/01/04 00:39:53 tgl Exp $
 PostgreSQL documentation
 -->
 
@@ -20,8 +20,7 @@ PostgreSQL documentation
 
  <refsynopsisdiv>
 <synopsis>
-CREATE [ [ GLOBAL | LOCAL ] { TEMPORARY | TEMP } ] TABLE <replaceable>table_name</replaceable>
-    [ (<replaceable>column_name</replaceable> [, ...] ) ] [ [ WITH | WITHOUT ] OIDS ]
+CREATE [ [ GLOBAL | LOCAL ] { TEMPORARY | TEMP } ] TABLE <replaceable>table_name</replaceable> [ (<replaceable>column_name</replaceable> [, ...] ) ] [ [ WITH | WITHOUT ] OIDS ]
     AS <replaceable>query</replaceable>
 </synopsis>
  </refsynopsisdiv>
