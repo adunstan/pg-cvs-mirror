@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/executor/spi.c,v 1.109 2003/12/02 19:26:47 joe Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/executor/spi.c,v 1.110 2004/03/05 00:47:01 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -201,12 +201,14 @@ AtEOXact_SPI(bool isCommit)
 	SPI_tuptable = NULL;
 }
 
+/* Pushes SPI stack to allow recursive SPI calls */
 void
 SPI_push(void)
 {
 	_SPI_curid++;
 }
 
+/* Pops SPI stack to allow recursive SPI calls */
 void
 SPI_pop(void)
 {
