@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2003, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql-server/src/bin/psql/startup.c,v 1.90 2004/04/22 14:33:49 momjian Exp $
+ * $PostgreSQL: pgsql-server/src/bin/psql/startup.c,v 1.91 2004/04/22 14:34:38 momjian Exp $
  */
 #include "postgres_fe.h"
 
@@ -124,6 +124,9 @@ main(int argc, char *argv[])
 		}
 	}
 
+#ifdef WIN32
+	setvbuf(stderr,NULL,_IONBF,0);
+#endif
 	pset.cur_cmd_source = stdin;
 	pset.cur_cmd_interactive = false;
 	pset.encoding = PQenv2encoding();
