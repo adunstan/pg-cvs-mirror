@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/optimizer/path/clausesel.c,v 1.60 2003/08/04 02:40:00 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/optimizer/path/clausesel.c,v 1.61 2003/11/29 19:51:50 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -108,6 +108,10 @@ restrictlist_selectivity(Query *root,
  * If the calculation yields zero or negative, however, we chicken out and
  * use a default estimate; that probably means that one or both
  * selectivities is a default estimate rather than an actual range value.
+ *
+ * A free side-effect is that we can recognize redundant inequalities such
+ * as "x < 4 AND x < 5"; only the tighter constraint will be counted.
+ *
  * Of course this is all very dependent on the behavior of
  * scalarltsel/scalargtsel; perhaps some day we can generalize the approach.
  */
