@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: inet.h,v 1.16 2003/08/04 02:40:15 momjian Exp $
+ * $PostgreSQL: pgsql-server/src/include/utils/inet.h,v 1.17 2003/11/29 22:41:15 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -20,10 +20,10 @@
  */
 typedef struct
 {
-	unsigned char family;
-	unsigned char bits;
-	unsigned char type;
-	unsigned char ip_addr[16];	/* 128 bits of address */
+	unsigned char family;		/* PGSQL_AF_INET or PGSQL_AF_INET6 */
+	unsigned char bits;			/* number of bits in netmask */
+	unsigned char type;			/* 0 = inet, 1 = cidr */
+	unsigned char ipaddr[16];	/* up to 128 bits of address */
 } inet_struct;
 
 /*
