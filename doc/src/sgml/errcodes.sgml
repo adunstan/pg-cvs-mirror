@@ -1,4 +1,4 @@
-<!-- $PostgreSQL: /cvsroot/pgsql-server/doc/src/sgml/errcodes.sgml,v 1.1 2003/10/17 18:57:01 tgl Exp $ -->
+<!-- $PostgreSQL: pgsql-server/doc/src/sgml/errcodes.sgml,v 1.2 2003/11/29 19:51:37 pgsql Exp $ -->
 
 <appendix id="errcodes-appendix">
  <title><productname>PostgreSQL</productname> Error Codes</title>
@@ -95,6 +95,10 @@
 <entry>WARNING STRING DATA RIGHT TRUNCATION</entry>
 </row>
 
+<row>
+<entry><literal>01P01</literal></entry>
+<entry>WARNING DEPRECATED FEATURE</entry>
+</row>
 
 <row>
 <entry>Class 02</entry>
