@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/interfaces/ecpg/preproc/keywords.c,v 1.62 2004/04/29 14:08:10 meskes Exp $
+ *	  $PostgreSQL: pgsql-server/src/interfaces/ecpg/preproc/keywords.c,v 1.63 2004/06/20 10:45:47 meskes Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -233,8 +233,6 @@ static ScanKeyword ScanKeywords[] = {
 	{"owner", OWNER},
 	{"partial", PARTIAL},
 	{"password", PASSWORD},
-	{"path", PATH_P},
-	{"pendant", PENDANT},
 	{"position", POSITION},
 	{"precision", PRECISION},
 	{"prepare", PREPARE},
@@ -327,7 +325,6 @@ static ScanKeyword ScanKeywords[] = {
 	{"varchar", VARCHAR},
 	{"varying", VARYING},
 	{"verbose", VERBOSE},
-	{"version", VERSION},
 	{"view", VIEW},
 	{"volatile", VOLATILE},
 	{"when", WHEN},
