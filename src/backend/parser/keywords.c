@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/parser/keywords.c,v 1.146 2004/03/09 05:05:41 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/parser/keywords.c,v 1.147 2004/03/11 01:47:40 ishii Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -90,6 +90,7 @@ static const ScanKeyword ScanKeywords[] = {
 	{"createdb", CREATEDB},
 	{"createuser", CREATEUSER},
 	{"cross", CROSS},
+	{"csv", CSV},
 	{"current_date", CURRENT_DATE},
 	{"current_time", CURRENT_TIME},
 	{"current_timestamp", CURRENT_TIMESTAMP},
@@ -186,6 +187,7 @@ static const ScanKeyword ScanKeywords[] = {
 	{"like", LIKE},
 	{"limit", LIMIT},
 	{"listen", LISTEN},
+	{"literal", LITERAL},
 	{"load", LOAD},
 	{"local", LOCAL},
 	{"localtime", LOCALTIME},
@@ -248,6 +250,7 @@ static const ScanKeyword ScanKeywords[] = {
 	{"privileges", PRIVILEGES},
 	{"procedural", PROCEDURAL},
 	{"procedure", PROCEDURE},
+	{"quote", QUOTE},
 	{"read", READ},
 	{"real", REAL},
 	{"recheck", RECHECK},

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/tcop/fastpath.c,v 1.70 2003/11/29 19:51:57 pgsql Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/tcop/fastpath.c,v 1.71 2004/01/07 18:56:27 neilc Exp $
  *
  * NOTES
  *	  This cruft is the server side of PQfn.
@@ -154,8 +154,7 @@ SendFunctionResult(Datum retval, bool isnull, Oid rettype, int16 format)
 			bool		typisvarlena;
 			char	   *outputstr;
 
-			getTypeOutputInfo(rettype,
-							  &typoutput, &typelem, &typisvarlena);
+			getTypeOutputInfo(rettype, &typoutput, &typelem, &typisvarlena);
 			outputstr = DatumGetCString(OidFunctionCall3(typoutput,
 														 retval,
 											   ObjectIdGetDatum(typelem),
