@@ -42,7 +42,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/utils/error/elog.c,v 1.152 2004/10/07 15:21:54 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/error/elog.c,v 1.153 2004/10/09 01:24:47 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1364,13 +1364,13 @@ log_line_prefix(StringInfo buf)
 			case 'c':
 				if (MyProcPort)
 				{
-					appendStringInfo(buf, "%lx.%lx",
+					appendStringInfo(buf, "%lx.%x",
 							   (long) (MyProcPort->session_start.tv_sec),
-									 (long) MyProcPid);
+							   MyProcPid);
 				}
 				break;
 			case 'p':
-				appendStringInfo(buf, "%ld", (long) MyProcPid);
+				appendStringInfo(buf, "%d", MyProcPid);
 				break;
 			case 'l':
 				appendStringInfo(buf, "%ld", log_line_number);
