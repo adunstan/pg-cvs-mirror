@@ -1,4 +1,4 @@
-/* $PostgreSQL: pgsql-server/src/include/port/win32.h,v 1.37 2004/10/06 09:35:23 momjian Exp $ */
+/* $PostgreSQL: pgsql-server/src/include/port/win32.h,v 1.38 2004/10/06 16:36:02 momjian Exp $ */
 
 /* undefine and redefine after #include */
 #undef mkdir
@@ -202,8 +202,8 @@ typedef int uid_t;
 typedef int gid_t;
 #else
 /* These are redefined by perl. */
-#define int uid_t;
-#define int gid_t;
+#define uid_t int
+#define gid_t int
 #endif
 typedef long key_t;
 
