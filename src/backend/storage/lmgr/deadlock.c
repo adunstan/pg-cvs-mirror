@@ -12,7 +12,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/storage/lmgr/deadlock.c,v 1.28 2004/06/05 19:48:08 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/storage/lmgr/deadlock.c,v 1.29 2004/07/21 22:31:22 tgl Exp $
  *
  *	Interface:
  *
@@ -427,7 +427,7 @@ FindLockCycleRecurse(PGPROC *checkProc,
 	PGPROC	   *proc;
 	LOCK	   *lock;
 	PROCLOCK   *proclock;
-	SHM_QUEUE  *lockHolders;
+	SHM_QUEUE  *procLocks;
 	LockMethod	lockMethodTable;
 	PROC_QUEUE *waitQueue;
 	int			queue_size;
@@ -483,9 +483,9 @@ FindLockCycleRecurse(PGPROC *checkProc,
 	 * Scan for procs that already hold conflicting locks.	These are
 	 * "hard" edges in the waits-for graph.
 	 */
-	lockHolders = &(lock->lockHolders);
+	procLocks = &(lock->procLocks);
 
-	proclock = (PROCLOCK *) SHMQueueNext(lockHolders, lockHolders,
+	proclock = (PROCLOCK *) SHMQueueNext(procLocks, procLocks,
 										 offsetof(PROCLOCK, lockLink));
 
 	while (proclock)
@@ -497,8 +497,8 @@ FindLockCycleRecurse(PGPROC *checkProc,
 		{
 			for (lm = 1; lm <= numLockModes; lm++)
 			{
-				if (proclock->holding[lm] > 0 &&
-					((1 << lm) & conflictMask) != 0)
+				if ((proclock->holdMask & LOCKBIT_ON(lm)) &&
+					(conflictMask & LOCKBIT_ON(lm)))
 				{
 					/* This proc hard-blocks checkProc */
 					if (FindLockCycleRecurse(proc, depth + 1,
@@ -519,7 +519,7 @@ FindLockCycleRecurse(PGPROC *checkProc,
 			}
 		}
 
-		proclock = (PROCLOCK *) SHMQueueNext(lockHolders, &proclock->lockLink,
+		proclock = (PROCLOCK *) SHMQueueNext(procLocks, &proclock->lockLink,
 										   offsetof(PROCLOCK, lockLink));
 	}
 
