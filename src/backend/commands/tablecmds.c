@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/commands/tablecmds.c,v 1.129 2004/08/29 05:06:41 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/commands/tablecmds.c,v 1.130 2004/08/31 15:56:39 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -5760,6 +5760,8 @@ needs_toast_table(Relation rel)
 
 	for (i = 0; i < tupdesc->natts; i++)
 	{
+		if (att[i]->attisdropped)
+			continue;
 		data_length = att_align(data_length, att[i]->attalign);
 		if (att[i]->attlen > 0)
 		{
