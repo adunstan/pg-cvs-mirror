@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: htup.h,v 1.62 2003/08/04 02:40:10 momjian Exp $
+ * $PostgreSQL: pgsql-server/src/include/access/htup.h,v 1.63 2003/11/29 22:40:55 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -436,8 +436,14 @@ typedef HeapTupleData *HeapTuple;
  */
 #define HeapTupleIsValid(tuple) PointerIsValid(tuple)
 
+#define HeapTupleHasNulls(tuple) \
+		(((tuple)->t_data->t_infomask & HEAP_HASNULL) != 0)
+
 #define HeapTupleNoNulls(tuple) \
 		(!((tuple)->t_data->t_infomask & HEAP_HASNULL))
+
+#define HeapTupleHasVarWidth(tuple) \
+		(((tuple)->t_data->t_infomask & HEAP_HASVARWIDTH) != 0)
 
 #define HeapTupleAllFixed(tuple) \
 		(!((tuple)->t_data->t_infomask & HEAP_HASVARWIDTH))

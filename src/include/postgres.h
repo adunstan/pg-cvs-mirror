@@ -10,7 +10,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1995, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/postgres.h,v 1.66 2003/11/29 22:40:53 pgsql Exp $
+ * $PostgreSQL: pgsql-server/src/include/postgres.h,v 1.67 2004/01/04 05:57:21 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -59,8 +59,6 @@
  * TOASTed.
  * ----------------
  */
-#define TUPLE_TOASTER_ACTIVE
-
 typedef struct varattrib
 {
 	int32		va_header;		/* External/compressed storage */
