@@ -8,13 +8,12 @@
  *
  *
  * IDENTIFICATION
- *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/storage/ipc/ipci.c,v 1.48 2002/06/20 20:29:35 momjian Exp $
+ *	  $Header: /home/cvsmirror/pg/pgsql/src/backend/storage/ipc/ipci.c,v 1.49 2002/09/02 02:47:03 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
 #include "postgres.h"
 
-#include <sys/types.h>
 
 #include "miscadmin.h"
 #include "access/clog.h"
