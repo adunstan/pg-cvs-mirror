@@ -10,7 +10,7 @@
  * Written by Peter Eisentraut <peter_e@gmx.net>.
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/utils/misc/guc.c,v 1.181 2004/01/26 22:35:32 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/misc/guc.c,v 1.182 2004/01/31 05:09:41 neilc Exp $
  *
  *--------------------------------------------------------------------
  */
@@ -3981,7 +3981,10 @@ write_nondefault_variables(GucContext context)
 		return;
 	}
 
-	/* Put new file in place, this could delay on Win32 */
+	/*
+	 *	Put new file in place.  This could delay on Win32, but we don't hold
+	 *	any exclusive locks.
+	 */
 	rename(new_filename, filename);
 	free(new_filename);
 	free(filename);
