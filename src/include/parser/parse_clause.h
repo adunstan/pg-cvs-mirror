@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/parser/parse_clause.h,v 1.39 2004/01/14 23:01:55 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/include/parser/parse_clause.h,v 1.40 2004/01/23 02:13:12 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -27,11 +27,11 @@ extern Node *transformWhereClause(ParseState *pstate, Node *clause,
 extern Node *transformLimitClause(ParseState *pstate, Node *clause,
 					 const char *constructName);
 extern List *transformGroupClause(ParseState *pstate, List *grouplist,
-					 List *targetlist, List *sortClause);
+					 List **targetlist, List *sortClause);
 extern List *transformSortClause(ParseState *pstate, List *orderlist,
-					List *targetlist, bool resolveUnknown);
+					List **targetlist, bool resolveUnknown);
 extern List *transformDistinctClause(ParseState *pstate, List *distinctlist,
-						List *targetlist, List **sortClause);
+						List **targetlist, List **sortClause);
 
 extern List *addAllTargetsToSortList(ParseState *pstate,
 						List *sortlist, List *targetlist,
