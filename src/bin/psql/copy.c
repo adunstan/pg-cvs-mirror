@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2003, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql-server/src/bin/psql/copy.c,v 1.40 2004/01/26 22:35:32 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/bin/psql/copy.c,v 1.41 2004/01/28 22:14:04 tgl Exp $
  */
 #include "postgres_fe.h"
 #include "copy.h"
@@ -85,7 +85,7 @@ free_copy_options(struct copy_options * ptr)
 }
 
 
-/* catenate "more" onto "var", freeing the original value of *var */
+/* concatenate "more" onto "var", freeing the original value of *var */
 static void
 xstrcat(char **var, const char *more)
 {
