@@ -4,7 +4,7 @@
 #
 # Copyright (c) 1994, Regents of the University of California
 #
-# $PostgreSQL: pgsql-server/src/backend/Makefile,v 1.101 2004/07/19 17:03:56 tgl Exp $
+# $PostgreSQL: pgsql-server/src/backend/Makefile,v 1.103 2004/07/21 20:34:44 momjian Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -66,7 +66,7 @@ postgres: $(OBJS) $(DLLINIT) postgres.def libpostgres.a
 	rm -f $@.exp $@.base
 
 postgres.def: $(OBJS)
-	$(DLLTOOL) --export-all --output-def $@ $^
+	$(DLLTOOL) --export-all --output-def $@ $^ $(top_builddir)/src/port/libpgport.a
 
 libpostgres.a: postgres.def
 	$(DLLTOOL) --dllname postgres.exe --def postgres.def --output-lib $@
