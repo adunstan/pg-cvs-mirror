@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/storage/lmgr/s_lock.c,v 1.29 2004/08/29 04:12:49 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/storage/lmgr/s_lock.c,v 1.30 2004/08/29 05:06:48 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -237,7 +237,6 @@ tas_dummy()						/* really means: extern int tas(slock_t
 	asm("nop");
 }
 #endif   /* __sparc || __sparc__ */
-
 #endif   /* not __GNUC__ */
 #endif   /* HAVE_SPINLOCKS */
 
