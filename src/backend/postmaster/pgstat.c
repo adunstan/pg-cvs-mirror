@@ -13,7 +13,7 @@
  *
  *	Copyright (c) 2001-2003, PostgreSQL Global Development Group
  *
- *	$PostgreSQL: pgsql-server/src/backend/postmaster/pgstat.c,v 1.66 2004/04/12 16:19:18 momjian Exp $
+ *	$PostgreSQL: pgsql-server/src/backend/postmaster/pgstat.c,v 1.67 2004/04/19 17:42:58 momjian Exp $
  * ----------
  */
 #include "postgres.h"
@@ -485,11 +485,10 @@ pgstat_forkexec(STATS_PROCESS_TYPE procType)
 	snprintf(pgstatBuf[bufc++],MAXPGPATH,"%d",MaxBackends);
 
 	/* + the pstat file names, and postgres pathname */
-	/* FIXME: [fork/exec] whitespaces in directories? */
-	snprintf(pgstatBuf[bufc++],MAXPGPATH,"%s",pgStat_tmpfname);
-	snprintf(pgstatBuf[bufc++],MAXPGPATH,"%s",pgStat_fname);
-	snprintf(pgstatBuf[bufc++],MAXPGPATH,"%s",pg_pathname);
-	snprintf(pgstatBuf[bufc++],MAXPGPATH,"%s",DataDir);
+	snprintf(pgstatBuf[bufc++],MAXPGPATH,"\"%s\"",pgStat_tmpfname);
+	snprintf(pgstatBuf[bufc++],MAXPGPATH,"\"%s\"",pgStat_fname);
+	snprintf(pgstatBuf[bufc++],MAXPGPATH,"\"%s\"",pg_pathname);
+	snprintf(pgstatBuf[bufc++],MAXPGPATH,"\"%s\"",DataDir);
 
 	/* Add to the arg list */
 	Assert(bufc <= lengthof(pgstatBuf));
