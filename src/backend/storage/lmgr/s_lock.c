@@ -9,12 +9,13 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/storage/lmgr/s_lock.c,v 1.26 2004/03/15 16:18:43 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/storage/lmgr/s_lock.c,v 1.27 2004/03/23 21:39:46 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
 #include "postgres.h"
 
+#include <time.h>
 #include <unistd.h>
 
 #include "storage/s_lock.h"
