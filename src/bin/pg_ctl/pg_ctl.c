@@ -4,7 +4,7 @@
  *
  * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql-server/src/bin/pg_ctl/pg_ctl.c,v 1.30 2004/08/29 05:06:53 momjian Exp $
+ * $PostgreSQL: pgsql-server/src/bin/pg_ctl/pg_ctl.c,v 1.31 2004/09/02 20:07:50 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -172,7 +172,7 @@ write_stderr(const char *fmt,...)
 		write_eventlog(EVENTLOG_ERROR_TYPE, errbuf);
 	}
 	else
-/* Not running as service, write to stderr */
+		/* Not running as service, write to stderr */
 		vfprintf(stderr, fmt, ap);
 #endif
 	va_end(ap);
@@ -777,7 +777,7 @@ do_status(void)
 		fprintf(stdout, _("%s: a standalone backend \"postgres\" is running (PID: %ld)\n"), progname, pid);
 	}
 	else
-/* postmaster */
+	/* postmaster */
 	{
 		char	  **optlines;
 
@@ -1285,7 +1285,7 @@ main(int argc, char **argv)
 					if (strchr(optarg, '\\'))
 						register_username = xstrdup(optarg);
 					else
-/* Prepend .\ for local accounts */
+					/* Prepend .\ for local accounts */
 					{
 						register_username = malloc(strlen(optarg) + 3);
 						if (!register_username)

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/commands/typecmds.c,v 1.62 2004/08/29 04:12:30 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/commands/typecmds.c,v 1.63 2004/08/29 05:06:41 momjian Exp $
  *
  * DESCRIPTION
  *	  The "DefineFoo" routines take the parse tree and pick out the
@@ -1222,7 +1222,7 @@ AlterDomainDefault(List *names, Node *defaultRaw)
 		new_record_repl[Anum_pg_type_typdefault - 1] = 'r';
 	}
 	else
-/* Default is NULL, drop it */
+	/* Default is NULL, drop it */
 	{
 		new_record_nulls[Anum_pg_type_typdefaultbin - 1] = 'n';
 		new_record_repl[Anum_pg_type_typdefaultbin - 1] = 'r';

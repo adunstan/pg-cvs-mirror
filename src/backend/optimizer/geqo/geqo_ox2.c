@@ -6,7 +6,7 @@
 *	 OX2 operator according to Syswerda
 *	 (The Genetic Algorithms Handbook, ed L Davis)
 *
-* $PostgreSQL: geqo_ox2.c,v 1.8 1999/07/16 04:59:10 momjian Exp $
+* $PostgreSQL: pgsql-server/src/backend/optimizer/geqo/geqo_ox2.c,v 1.9 2003/11/29 22:39:49 pgsql Exp $
 *
 *-------------------------------------------------------------------------
 */
@@ -102,7 +102,7 @@ ox2(Gene *tour1, Gene *tour2, Gene *offspring, int num_gene, City *city_table)
 			select++;			/* next city in  the select list   */
 		}
 		else
-/* city isn't used yet, so inherit from tour2 */
+			/* city isn't used yet, so inherit from tour2 */
 			offspring[k] = tour2[k];
 	}
 

@@ -33,7 +33,7 @@
  *	  ENHANCEMENTS, OR MODIFICATIONS.
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/pl/plperl/plperl.c,v 1.51 2004/09/13 20:08:59 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/pl/plperl/plperl.c,v 1.52 2004/10/06 16:36:02 momjian Exp $
  *
  **********************************************************************/
 
@@ -1150,8 +1150,7 @@ plperl_func_handler(PG_FUNCTION_ARGS)
 
 		}
 		else
-/* perl string to Datum */
-
+			/* perl string to Datum */
 			retval = FunctionCall3(&prodesc->result_in_func,
 								   PointerGetDatum(SvPV(perlret, PL_na)),
 							ObjectIdGetDatum(prodesc->result_typioparam),

@@ -1,5 +1,5 @@
 /*
- * $PostgreSQL: pgsql-server/src/test/regress/regress.c,v 1.59 2003/11/29 19:52:14 pgsql Exp $
+ * $PostgreSQL: pgsql-server/src/test/regress/regress.c,v 1.60 2004/04/01 21:28:47 tgl Exp $
  */
 
 #include "postgres.h"
@@ -586,7 +586,7 @@ ttdummy(PG_FUNCTION_ARGS)
 		cnulls[attnum[1] - 1] = ' ';
 	}
 	else
-/* DELETE */
+		/* DELETE */
 	{
 		cvals[attnum[1] - 1] = newoff;	/* stop_date eq current date */
 		cnulls[attnum[1] - 1] = ' ';
@@ -641,7 +641,7 @@ ttdummy(PG_FUNCTION_ARGS)
 		SPI_freetuple(tmptuple);
 	}
 	else
-/* DELETE */
+		/* DELETE */
 		rettuple = trigtuple;
 
 	SPI_finish();				/* don't forget say Bye to SPI mgr */

@@ -14,7 +14,7 @@
  * ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS
  * SOFTWARE.
  *
- *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/adt/inet_net_pton.c,v 1.17 2003/11/10 19:40:46 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/adt/inet_net_pton.c,v 1.18 2003/11/29 19:51:58 pgsql Exp $
  */
 
 #include "postgres.h"
@@ -206,7 +206,7 @@ inet_cidr_pton_ipv4(const char *src, u_char *dst, size_t size)
 		else if (*odst >= 128)	/* Class B */
 			bits = 16;
 		else
-/* Class A */
+			/* Class A */
 			bits = 8;
 		/* If imputed mask is narrower than specified octets, widen. */
 		if (bits >= 8 && bits < ((dst - odst) * 8))

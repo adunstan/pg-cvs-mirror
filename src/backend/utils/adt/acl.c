@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/utils/adt/acl.c,v 1.110 2004/08/29 04:12:51 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/adt/acl.c,v 1.111 2004/08/29 05:06:49 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1205,7 +1205,7 @@ makeaclitem(PG_FUNCTION_ARGS)
 		ACLITEM_SET_IDTYPE(*aclitem, ACL_IDTYPE_UID);
 	}
 	else
-/* (g_grantee != 0) */
+	/* (g_grantee != 0) */
 	{
 		aclitem   ->ai_grantee = g_grantee;
 

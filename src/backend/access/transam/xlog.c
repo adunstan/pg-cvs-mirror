@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/backend/access/transam/xlog.c,v 1.169 2004/09/06 03:04:27 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/backend/access/transam/xlog.c,v 1.170 2004/09/16 16:58:26 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -4306,7 +4306,7 @@ StartupXLOG(void)
 			ereport(FATAL,
 					(errmsg("requested recovery stop point is before end time of backup dump")));
 		else
-/* ran off end of WAL */
+			/* ran off end of WAL */
 			ereport(FATAL,
 					(errmsg("WAL ends before end time of backup dump")));
 	}
