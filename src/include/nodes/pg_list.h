@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/nodes/pg_list.h,v 1.43 2004/01/07 18:43:36 neilc Exp $
+ * $PostgreSQL: pgsql-server/src/include/nodes/pg_list.h,v 1.44 2004/05/26 04:41:45 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -48,8 +48,6 @@
  * (At the moment, ints and Oids are the same size, but they may not
  * always be so; try to be careful to maintain the distinction.)
  */
-
-#define LIST_CELL_TYPE ListCell
 
 typedef struct ListCell ListCell;
 typedef struct List List;
