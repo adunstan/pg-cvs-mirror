@@ -37,7 +37,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/postmaster/postmaster.c,v 1.397 2004/05/27 17:12:52 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/postmaster/postmaster.c,v 1.398 2004/05/28 05:12:58 tgl Exp $
  *
  * NOTES
  *
@@ -3520,7 +3520,7 @@ ShmemBackendArrayRemove(pid_t pid)
 
 	ereport(WARNING,
 			(errmsg_internal("unable to find backend entry with pid %d",
-							 pid)));
+							 (int) pid)));
 }
 
 #endif /* EXEC_BACKEND */
@@ -3533,7 +3533,6 @@ win32_forkexec(const char *path, char *argv[])
 {
 	STARTUPINFO si;
 	PROCESS_INFORMATION pi;
-	char	   *p;
 	int			i;
 	int			j;
 	char		cmdLine[MAXPGPATH * 2];
@@ -3541,8 +3540,8 @@ win32_forkexec(const char *path, char *argv[])
 	HANDLE		waiterThread;
 
 	/* Format the cmd line */
-	cmdline[sizeof(cmdLine)-1] = '\0';
-	cmdline[sizeof(cmdLine)-2] = '\0';
+	cmdLine[sizeof(cmdLine)-1] = '\0';
+	cmdLine[sizeof(cmdLine)-2] = '\0';
 	snprintf(cmdLine, sizeof(cmdLine)-1, "\"%s\"", path);
 	i = 0;
 	while (argv[++i] != NULL)
@@ -3550,7 +3549,7 @@ win32_forkexec(const char *path, char *argv[])
 		j = strlen(cmdLine);
 		snprintf(cmdLine+j, sizeof(cmdLine)-1-j, " \"%s\"", argv[i]);
 	}
-	if (cmdline[sizeof(cmdLine)-2] != '\0')
+	if (cmdLine[sizeof(cmdLine)-2] != '\0')
 	{
 		elog(LOG, "subprocess command line too long");
 		return -1;
