@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/tcop/postgres.c,v 1.426 2004/07/28 22:05:46 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/tcop/postgres.c,v 1.427 2004/07/31 00:45:36 tgl Exp $
  *
  * NOTES
  *	  this is the "main" module of the postgres backend and
@@ -1488,6 +1488,7 @@ exec_bind_message(StringInfo input_message)
 
 			params[i].kind = PARAM_NUM;
 			params[i].id = i + 1;
+			params[i].ptype = ptype;
 			params[i].isnull = isNull;
 
 			i++;

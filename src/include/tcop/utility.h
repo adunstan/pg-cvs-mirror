@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: utility.h,v 1.20 2003/08/04 02:40:15 momjian Exp $
+ * $PostgreSQL: pgsql-server/src/include/tcop/utility.h,v 1.21 2003/11/29 22:41:14 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -16,8 +16,9 @@
 
 #include "executor/execdesc.h"
 
-extern void ProcessUtility(Node *parsetree, DestReceiver *dest,
-			   char *completionTag);
+
+extern void ProcessUtility(Node *parsetree, ParamListInfo params,
+						   DestReceiver *dest, char *completionTag);
 
 extern bool UtilityReturnsTuples(Node *parsetree);
 
