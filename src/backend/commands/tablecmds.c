@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/commands/tablecmds.c,v 1.122 2004/07/21 22:31:21 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/commands/tablecmds.c,v 1.123 2004/08/01 20:30:48 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -4888,8 +4888,8 @@ ATExecAlterColumnType(AlteredTableInfo *tab, Relation rel,
 		if (foundDep->deptype != DEPENDENCY_NORMAL)
 			elog(ERROR, "found unexpected dependency type '%c'",
 				 foundDep->deptype);
-		if (foundDep->classid != RelOid_pg_type ||
-			foundDep->objid != attTup->atttypid)
+		if (foundDep->refclassid != RelOid_pg_type ||
+			foundDep->refobjid != attTup->atttypid)
 			elog(ERROR, "found unexpected dependency for column");
 
 		simple_heap_delete(depRel, &depTup->t_self);
