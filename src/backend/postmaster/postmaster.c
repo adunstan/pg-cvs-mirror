@@ -37,7 +37,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/postmaster/postmaster.c,v 1.408 2004/07/11 21:33:59 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/postmaster/postmaster.c,v 1.409 2004/07/11 23:49:45 momjian Exp $
  *
  * NOTES
  *
@@ -526,10 +526,7 @@ PostmasterMain(int argc, char *argv[])
 	}
 
 	if (userPGDATA)
-	{
-		userPGDATA = strdup(userPGDATA);
-		canonicalize_path(userPGDATA);
-	}
+		canonicalize_path(userPGDATA = strdup(userPGDATA));
 
 	if (onlyConfigSpecified(userPGDATA))
 	{
