@@ -11,7 +11,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/optimizer/path/pathkeys.c,v 1.58 2004/05/30 23:40:28 neilc Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/optimizer/path/pathkeys.c,v 1.59 2004/06/01 03:02:52 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -725,7 +725,8 @@ find_indexkey_var(Query *root, RelOptInfo *rel, AttrNumber varattno)
 	{
 		Var		   *var = (Var *) lfirst(temp);
 
-		if (var->varattno == varattno)
+		if (IsA(var, Var) &&
+			var->varattno == varattno)
 			return var;
 	}
 

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/optimizer/util/tlist.c,v 1.63 2004/05/26 04:41:27 neilc Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/optimizer/util/tlist.c,v 1.64 2004/05/30 23:40:31 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -17,6 +17,7 @@
 #include "nodes/makefuncs.h"
 #include "optimizer/tlist.h"
 #include "optimizer/var.h"
+#include "parser/parse_expr.h"
 
 
 /*****************************************************************************
@@ -83,13 +84,28 @@ tlist_member(Node *node, List *targetlist)
  * create_tl_element
  *	  Creates a target list entry node and its associated (resdom var) pair
  *	  with its resdom number equal to 'resdomno'.
+ *
+ * Note: the argument is almost always a Var, but occasionally not.
  */
 TargetEntry *
 create_tl_element(Var *var, int resdomno)
 {
+	Oid		vartype;
+	int32	vartypmod;
+
+	if (IsA(var, Var))
+	{
+		vartype = var->vartype;
+		vartypmod = var->vartypmod;
+	}
+	else
+	{
+		vartype = exprType((Node *) var);
+		vartypmod = exprTypmod((Node *) var);
+	}
 	return makeTargetEntry(makeResdom(resdomno,
-									  var->vartype,
-									  var->vartypmod,
+									  vartype,
+									  vartypmod,
 									  NULL,
 									  false),
 						   (Expr *) var);
