@@ -10,7 +10,7 @@
  * Copyright (c) 2002-2003, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/commands/prepare.c,v 1.24 2003/11/29 19:51:47 pgsql Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/commands/prepare.c,v 1.25 2004/01/07 18:56:25 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -106,7 +106,7 @@ PrepareQuery(PrepareStmt *stmt)
  * Implements the 'EXECUTE' utility statement.
  */
 void
-ExecuteQuery(ExecuteStmt *stmt, DestReceiver *dest)
+ExecuteQuery(ExecuteStmt *stmt, DestReceiver *dest, char *completionTag)
 {
 	PreparedStatement *entry;
 	char	   *query_string;
@@ -188,7 +188,7 @@ ExecuteQuery(ExecuteStmt *stmt, DestReceiver *dest)
 	 */
 	PortalStart(portal, paramLI);
 
-	(void) PortalRun(portal, FETCH_ALL, dest, dest, NULL);
+	(void) PortalRun(portal, FETCH_ALL, dest, dest, completionTag);
 
 	PortalDrop(portal, false);
 
