@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/catalog/aclchk.c,v 1.103 2004/06/01 21:49:22 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/catalog/aclchk.c,v 1.104 2004/06/18 06:13:19 tgl Exp $
  *
  * NOTES
  *	  See acl.h.
@@ -760,7 +760,8 @@ ExecuteGrantStmt_Language(GrantStmt *stmt)
 		if (!pg_language_tuple->lanpltrusted)
 			ereport(ERROR,
 					(errcode(ERRCODE_WRONG_OBJECT_TYPE),
-					 errmsg("language \"%s\" is not trusted", langname)));
+					 errmsg("language \"%s\" is not trusted", langname),
+					 errhint("Only superusers may use untrusted languages.")));
 
 		/*
 		 * Note: for now, languages are treated as owned by the bootstrap
