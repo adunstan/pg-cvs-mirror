@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: heapam.h,v 1.85 2003/10/01 21:30:52 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/include/access/heapam.h,v 1.86 2003/11/29 22:40:55 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -129,6 +129,7 @@ extern Datum heap_getsysattr(HeapTuple tup, int attnum, bool *isnull);
 /* heapam.c */
 
 extern Relation relation_open(Oid relationId, LOCKMODE lockmode);
+extern Relation conditional_relation_open(Oid relationId, LOCKMODE lockmode, bool nowait);
 extern Relation relation_openrv(const RangeVar *relation, LOCKMODE lockmode);
 extern Relation relation_openr(const char *sysRelationName, LOCKMODE lockmode);
 extern void relation_close(Relation relation, LOCKMODE lockmode);

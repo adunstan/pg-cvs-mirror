@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/commands/lockcmds.c,v 1.7 2003/08/04 02:39:58 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/commands/lockcmds.c,v 1.8 2003/11/29 19:51:47 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -59,7 +59,7 @@ LockTableCommand(LockStmt *lockstmt)
 			aclcheck_error(aclresult, ACL_KIND_CLASS,
 						   get_rel_name(reloid));
 
-		rel = relation_open(reloid, lockstmt->mode);
+		rel = conditional_relation_open(reloid, lockstmt->mode, lockstmt->nowait);
 
 		/* Currently, we only allow plain tables to be locked */
 		if (rel->rd_rel->relkind != RELKIND_RELATION)

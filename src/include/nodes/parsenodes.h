@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/nodes/parsenodes.h,v 1.252 2004/01/10 23:28:45 neilc Exp $
+ * $PostgreSQL: pgsql-server/src/include/nodes/parsenodes.h,v 1.253 2004/01/14 23:01:55 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1619,6 +1619,7 @@ typedef struct LockStmt
 	NodeTag		type;
 	List	   *relations;		/* relations to lock */
 	int			mode;			/* lock mode */
+	bool		nowait;		/* no wait mode */
 } LockStmt;
 
 /* ----------------------
