@@ -1,4 +1,4 @@
-<!-- $PostgreSQL: pgsql-server/doc/src/sgml/docguide.sgml,v 1.49 2003/12/13 20:09:15 momjian Exp $ -->
+<!-- $PostgreSQL: pgsql/doc/src/sgml/docguide.sgml,v 1.50 2004/02/17 02:53:03 neilc Exp $ -->
 
 <appendix id="docguide">
  <title>Documentation</title>
@@ -88,7 +88,7 @@
        This is the definition of DocBook itself.  We currently use
        version 4.2; you cannot use later or earlier versions.  Note
        that there is also an <acronym>XML</acronym> version of DocBook
-       -- do not use that.
+       &mdash; do not use that.
       </para>
      </listitem>
     </varlistentry>
