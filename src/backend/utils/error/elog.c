@@ -42,7 +42,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/utils/error/elog.c,v 1.149 2004/09/05 02:01:41 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/error/elog.c,v 1.150 2004/09/05 03:42:11 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1421,11 +1421,20 @@ log_line_prefix(StringInfo buf)
 										 MyProcPort->remote_port);
 				}
 				break;
-			case 'x':
-				/* in postmaster and friends, stop if %x is seen */
+			case 'q':
+				/* in postmaster and friends, stop if %q is seen */
 				/* in a backend, just ignore */
 				if (MyProcPort == NULL)
 					i = format_len;
+				break;
+			case 'x':
+				if (MyProcPort)
+				{
+					if (IsTransactionState())
+						appendStringInfo(buf, "%u", GetTopTransactionId());
+					else
+						appendStringInfo(buf, "%u", InvalidTransactionId);
+				}
 				break;
 			case '%':
 				appendStringInfoChar(buf, '%');

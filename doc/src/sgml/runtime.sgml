@@ -1,5 +1,5 @@
 <!--
-$PostgreSQL: pgsql-server/doc/src/sgml/runtime.sgml,v 1.280 2004/08/31 04:53:43 tgl Exp $
+$PostgreSQL: pgsql-server/doc/src/sgml/runtime.sgml,v 1.281 2004/09/17 22:40:46 tgl Exp $
 -->
 
 <Chapter Id="runtime">
@@ -2394,6 +2394,11 @@ archive_command = 'copy "%p" /mnt/server/archivedir/"%f"'  # Win32
             </row>
             <row>
              <entry><literal>%x</literal></entry>
+             <entry>Transaction ID</entry>
+             <entry>Yes</entry>
+            </row>
+            <row>
+             <entry><literal>%q</literal></entry>
              <entry>Does not produce any output, but tells non-session
              processes to stop at this point in the string. Ignored by
              session processes.</entry>
