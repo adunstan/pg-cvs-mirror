@@ -10,7 +10,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1995, Regents of the University of California
  *
- * $PostgreSQL: postgres.h,v 1.65 2003/08/04 02:40:10 momjian Exp $
+ * $PostgreSQL: pgsql-server/src/include/postgres.h,v 1.66 2003/11/29 22:40:53 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -543,9 +543,6 @@ extern int ExceptionalCondition(char *conditionName, char *errorType,
 /* these need to expand into some harmless, repeatable declaration */
 #define DATA(x)   extern int no_such_variable
 #define DESCR(x)  extern int no_such_variable
-
-#define BKI_BEGIN
-#define BKI_END
 
 typedef int4 aclitem;			/* PHONY definition for catalog use only */
 

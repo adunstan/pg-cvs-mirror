@@ -2,7 +2,7 @@
 #
 # Makefile for backend/catalog
 #
-# $PostgreSQL: /cvsroot/pgsql-server/src/backend/catalog/Makefile,v 1.48 2003/11/11 01:58:23 momjian Exp $
+# $PostgreSQL: pgsql-server/src/backend/catalog/Makefile,v 1.49 2003/11/29 19:51:42 pgsql Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -42,7 +42,7 @@ postgres.description: postgres.bki ;
 
 postgres.bki: genbki.sh $(POSTGRES_BKI_SRCS) \
     $(top_srcdir)/src/include/postgres_ext.h $(top_builddir)/src/include/pg_config_manual.h
-	CPP='$(CPP)' AWK='$(AWK)' $(SHELL) $< $(BKIOPTS) -o postgres $(pg_includes) $(POSTGRES_BKI_SRCS) --set-version=$(VERSION)
+	AWK='$(AWK)' $(SHELL) $< $(pg_includes) --set-version=$(VERSION) -o postgres $(POSTGRES_BKI_SRCS)
 
 .PHONY: install-data
 install-data: $(BKIFILES) installdirs
