@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/tcop/postgres.c,v 1.382 2004/01/06 17:36:31 neilc Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/tcop/postgres.c,v 1.383 2004/01/06 23:15:22 momjian Exp $
  *
  * NOTES
  *	  this is the "main" module of the postgres backend and
@@ -2535,9 +2535,7 @@ PostgresMain(int argc, char *argv[], const char *username)
 					 errmsg("invalid command-line arguments for server process"),
 					 errhint("Try \"%s --help\" for more information.", argv[0])));
 		}
-#ifdef EXEC_BACKEND
-		AttachSharedMemoryAndSemaphores();
-#endif
+
 		XLOGPathInit();
 
 		BaseInit();
