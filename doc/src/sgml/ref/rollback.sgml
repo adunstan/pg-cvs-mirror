@@ -1,5 +1,5 @@
 <!--
-$PostgreSQL: /cvsroot/pgsql-server/doc/src/sgml/ref/rollback.sgml,v 1.16 2003/09/09 18:28:53 tgl Exp $
+$PostgreSQL: pgsql-server/doc/src/sgml/ref/rollback.sgml,v 1.17 2003/11/29 19:51:39 pgsql Exp $
 PostgreSQL documentation
 -->
 
@@ -90,6 +90,7 @@ ROLLBACK;
   <simplelist type="inline">
    <member><xref linkend="sql-begin" endterm="sql-begin-title"></member>
    <member><xref linkend="sql-commit" endterm="sql-commit-title"></member>
+   <member><xref linkend="sql-rollback-to" endterm="sql-rollback-to-title"></member>
   </simplelist>
  </refsect1>
 </refentry>

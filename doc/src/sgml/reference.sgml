@@ -1,5 +1,5 @@
 <!-- reference.sgml
-$PostgreSQL: pgsql-server/doc/src/sgml/reference.sgml,v 1.49 2004/06/18 21:24:04 tgl Exp $
+$PostgreSQL: pgsql-server/doc/src/sgml/reference.sgml,v 1.50 2004/06/25 21:55:51 tgl Exp $
 
 PostgreSQL Reference Manual
 -->
@@ -120,9 +120,12 @@ PostgreSQL Reference Manual
    &notify;
    &prepare;
    &reindex;
+   &releaseSavepoint;
    &reset;
    &revoke;
    &rollback;
+   &rollbackTo;
+   &savepoint;
    &select;
    &selectInto;
    &set;

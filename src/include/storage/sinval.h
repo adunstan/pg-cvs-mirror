@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/storage/sinval.h,v 1.34 2004/05/23 03:50:45 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/include/storage/sinval.h,v 1.35 2004/06/02 21:29:29 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -103,6 +103,9 @@ extern int	CountActiveBackends(void);
 extern int	CountEmptyBackendSlots(void);
 /* Use "struct PGPROC", not PGPROC, to avoid including proc.h here */
 extern struct PGPROC *BackendIdGetProc(BackendId procId);
+
+extern void XidCacheRemoveRunningXids(TransactionId xid,
+									  int nxids, TransactionId *xids);
 
 /* signal handler for catchup events (SIGUSR1) */
 extern void CatchupInterruptHandler(SIGNAL_ARGS);
