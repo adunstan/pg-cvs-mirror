@@ -39,7 +39,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  * Portions taken from FreeBSD.
  *
- * $PostgreSQL: pgsql-server/src/bin/initdb/initdb.c,v 1.49 2004/08/11 23:28:54 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/bin/initdb/initdb.c,v 1.50 2004/08/16 15:44:03 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -2017,7 +2017,7 @@ main(int argc, char *argv[])
 				ret;
 	int			option_index;
 	char	   *short_version;
-	char	   *pgdenv;			/* PGDATA value got from sent to
+	char	   *pgdenv;			/* PGDATA value gotten from and sent to
 								 * environment */
 	static const char *subdirs[] = {
 		"global",
