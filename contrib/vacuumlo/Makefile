@@ -1,10 +1,10 @@
-# $PostgreSQL: pgsql-server/contrib/vacuumlo/Makefile,v 1.12 2003/11/29 19:51:36 pgsql Exp $
+# $PostgreSQL: pgsql/contrib/vacuumlo/Makefile,v 1.13 2004/08/20 20:13:10 momjian Exp $
 
 PROGRAM = vacuumlo
 OBJS	= vacuumlo.o
 
 PG_CPPFLAGS = -I$(libpq_srcdir)
-PG_LIBS = $(libpq)
+PG_LIBS = $(libpq_pgport)
 
 DOCS = README.vacuumlo
 

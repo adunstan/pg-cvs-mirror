@@ -1,10 +1,10 @@
-# $PostgreSQL: pgsql-server/contrib/findoidjoins/Makefile,v 1.15 2003/11/29 19:51:35 pgsql Exp $
+# $PostgreSQL: pgsql/contrib/findoidjoins/Makefile,v 1.16 2004/08/20 20:13:03 momjian Exp $
 
 PROGRAM = findoidjoins
 OBJS	= findoidjoins.o
 
 PG_CPPFLAGS = -I$(libpq_srcdir)
-PG_LIBS = $(libpq)
+PG_LIBS = $(libpq_pgport)
 
 SCRIPTS = make_oidjoins_check
 DOCS = README.findoidjoins
