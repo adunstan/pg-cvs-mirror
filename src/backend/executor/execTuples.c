@@ -15,7 +15,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/executor/execTuples.c,v 1.76 2004/04/01 21:28:44 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/executor/execTuples.c,v 1.77 2004/05/10 22:44:44 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -569,7 +569,7 @@ static TupleDesc
 ExecTypeFromTLInternal(List *targetList, bool hasoid, bool skipjunk)
 {
 	TupleDesc	 typeInfo;
-	List		*l;
+	ListCell	*l;
 	int			 len;
 	int			 cur_resno = 1;
 
@@ -606,7 +606,7 @@ TupleDesc
 ExecTypeFromExprList(List *exprList)
 {
 	TupleDesc	 typeInfo;
-	List		*l;
+	ListCell	*l;
 	int			 cur_resno = 1;
 	char		fldname[NAMEDATALEN];
 

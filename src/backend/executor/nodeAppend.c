@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/executor/nodeAppend.c,v 1.55 2003/11/29 19:51:48 pgsql Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/executor/nodeAppend.c,v 1.56 2004/01/22 02:23:21 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -237,7 +237,7 @@ ExecInitAppend(Append *node, EState *estate)
 int
 ExecCountSlotsAppend(Append *node)
 {
-	List	   *plan;
+	ListCell   *plan;
 	int			nSlots = 0;
 
 	foreach(plan, node->appendplans)

@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/commands/dbcommands.c,v 1.131 2004/02/10 01:55:25 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/commands/dbcommands.c,v 1.132 2004/04/19 17:42:57 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -82,7 +82,7 @@ createdb(const CreatedbStmt *stmt)
 	char		new_record_nulls[Natts_pg_database];
 	Oid			dboid;
 	AclId		datdba;
-	List	   *option;
+	ListCell   *option;
 	DefElem    *downer = NULL;
 	DefElem    *dpath = NULL;
 	DefElem    *dtemplate = NULL;

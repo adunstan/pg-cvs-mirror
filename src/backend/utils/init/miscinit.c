@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/utils/init/miscinit.c,v 1.123 2004/02/10 01:55:26 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/init/miscinit.c,v 1.124 2004/04/19 17:42:58 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -883,7 +883,7 @@ process_preload_libraries(char *preload_libraries_string)
 {
 	char	   *rawstring;
 	List	   *elemlist;
-	List	   *l;
+	ListCell   *l;
 
 	if (preload_libraries_string == NULL)
 		return;

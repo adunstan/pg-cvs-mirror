@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/executor/execJunk.c,v 1.38 2004/01/07 18:56:26 neilc Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/executor/execJunk.c,v 1.39 2004/04/07 18:46:12 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -68,7 +68,7 @@ ExecInitJunkFilter(List *targetList, TupleDesc tupType,
 	int			len,
 				cleanLength;
 	TupleDesc	cleanTupType;
-	List	   *t;
+	ListCell   *t;
 	TargetEntry *tle;
 	Resdom	   *resdom,
 			   *cleanResdom;
@@ -184,7 +184,7 @@ ExecGetJunkAttribute(JunkFilter *junkfilter,
 					 bool *isNull)
 {
 	List	   *targetList;
-	List	   *t;
+	ListCell   *t;
 	AttrNumber	resno;
 	TupleDesc	tupType;
 	HeapTuple	tuple;

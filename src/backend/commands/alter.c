@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/commands/alter.c,v 1.5 2003/08/04 00:43:16 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/commands/alter.c,v 1.6 2003/11/29 19:51:47 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -41,7 +41,9 @@ ExecRenameStmt(RenameStmt *stmt)
 	switch (stmt->renameType)
 	{
 		case OBJECT_AGGREGATE:
-			RenameAggregate(stmt->object, (TypeName *) lfirst(stmt->objarg), stmt->newname);
+			RenameAggregate(stmt->object,
+							(TypeName *) linitial(stmt->objarg),
+							stmt->newname);
 			break;
 
 		case OBJECT_CONVERSION:

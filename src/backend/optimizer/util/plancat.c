@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/optimizer/util/plancat.c,v 1.90 2003/11/29 19:51:51 pgsql Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/optimizer/util/plancat.c,v 1.91 2004/01/04 00:07:32 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -75,14 +75,14 @@ get_relation_info(Oid relationObjectId, RelOptInfo *rel)
 
 	if (hasindex)
 	{
-		List	   *indexoidlist,
-				   *indexoidscan;
+		List	   *indexoidlist;
+		ListCell   *l;
 
 		indexoidlist = RelationGetIndexList(relation);
 
-		foreach(indexoidscan, indexoidlist)
+		foreach(l, indexoidlist)
 		{
-			Oid			indexoid = lfirsto(indexoidscan);
+			Oid			indexoid = lfirsto(l);
 			Relation	indexRelation;
 			Form_pg_index index;
 			IndexOptInfo *info;
@@ -384,7 +384,7 @@ has_subclass(Oid relationId)
 bool
 has_unique_index(RelOptInfo *rel, AttrNumber attno)
 {
-	List	   *ilist;
+	ListCell   *ilist;
 
 	foreach(ilist, rel->indexlist)
 	{

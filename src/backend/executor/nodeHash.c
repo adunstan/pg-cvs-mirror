@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/executor/nodeHash.c,v 1.82 2004/02/03 17:34:02 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/executor/nodeHash.c,v 1.83 2004/03/17 01:02:23 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -202,7 +202,7 @@ ExecHashTableCreate(Hash *node, List *hashOperators)
 	int			nbatch;
 	int			nkeys;
 	int			i;
-	List	   *ho;
+	ListCell   *ho;
 	MemoryContext oldcxt;
 
 	/*
@@ -518,7 +518,7 @@ ExecHashGetBucket(HashJoinTable hashtable,
 {
 	uint32		hashkey = 0;
 	int			bucketno;
-	List	   *hk;
+	ListCell   *hk;
 	int			i = 0;
 	MemoryContext oldContext;
 

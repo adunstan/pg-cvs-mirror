@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/parser/parse_node.c,v 1.81 2003/08/04 02:40:02 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/parser/parse_node.c,v 1.82 2003/11/29 19:51:52 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -106,7 +106,7 @@ transformArraySubscripts(ParseState *pstate,
 	bool		isSlice = forceSlice;
 	List	   *upperIndexpr = NIL;
 	List	   *lowerIndexpr = NIL;
-	List	   *idx;
+	ListCell   *idx;
 	ArrayRef   *aref;
 
 	/* Get the type tuple for the array */

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/executor/functions.c,v 1.79 2004/04/01 21:28:44 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/executor/functions.c,v 1.80 2004/04/02 23:14:08 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -92,7 +92,7 @@ init_execution_state(List *queryTree_list)
 {
 	execution_state *firstes = NULL;
 	execution_state *preves = NULL;
-	List	   *qtl_item;
+	ListCell	    *qtl_item;
 
 	foreach(qtl_item, queryTree_list)
 	{

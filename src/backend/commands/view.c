@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/commands/view.c,v 1.80 2004/01/10 23:28:44 neilc Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/commands/view.c,v 1.81 2004/01/14 23:01:54 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -47,8 +47,8 @@ DefineVirtualRelation(const RangeVar *relation, List *tlist, bool replace)
 	Oid			viewOid,
 				namespaceId;
 	CreateStmt *createStmt = makeNode(CreateStmt);
-	List	   *attrList,
-			   *t;
+	List	   *attrList;
+	ListCell   *t;
 
 	/*
 	 * create a list of ColumnDef nodes based on the names and types of
@@ -217,7 +217,7 @@ FormViewRetrieveRule(const RangeVar *view, Query *viewParse, bool replace)
 	rule->whereClause = NULL;
 	rule->event = CMD_SELECT;
 	rule->instead = true;
-	rule->actions = makeList1(viewParse);
+	rule->actions = list_make1(viewParse);
 	rule->replace = replace;
 
 	return rule;

@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/nodes/read.c,v 1.40 2004/05/06 14:01:33 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/nodes/read.c,v 1.41 2004/05/08 21:21:18 tgl Exp $
  *
  * HISTORY
  *	  AUTHOR			DATE			MAJOR EVENT
@@ -384,7 +384,6 @@ nodeRead(char *token, int tok_len)
 			}
 			break;
 		case T_Integer:
-
 			/*
 			 * we know that the token terminates on a char atol will stop
 			 * at

@@ -31,7 +31,7 @@
  *	  ENHANCEMENTS, OR MODIFICATIONS.
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/pl/tcl/pltcl.c,v 1.82 2004/01/24 23:06:29 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/pl/tcl/pltcl.c,v 1.83 2004/04/01 21:28:46 tgl Exp $
  *
  **********************************************************************/
 
@@ -1847,7 +1847,7 @@ pltcl_SPI_prepare(ClientData cdata, Tcl_Interp *interp,
 	{
 		char		   *argcopy;
 		List		   *names = NIL;
-		List		   *lp;
+		ListCell	   *l;
 		TypeName	   *typename;
 
 		/************************************************************
@@ -1858,8 +1858,8 @@ pltcl_SPI_prepare(ClientData cdata, Tcl_Interp *interp,
 		argcopy  = pstrdup(args[i]);
 		SplitIdentifierString(argcopy, '.', &names);
 		typename = makeNode(TypeName);
-		foreach (lp, names)
-			typename->names = lappend(typename->names, makeString(lfirst(lp)));
+		foreach (l, names)
+			typename->names = lappend(typename->names, makeString(lfirst(l)));
 
 		typeTup = typenameType(typename);
 		qdesc->argtypes[i] = HeapTupleGetOid(typeTup);

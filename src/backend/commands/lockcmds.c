@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/commands/lockcmds.c,v 1.8 2003/11/29 19:51:47 pgsql Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/commands/lockcmds.c,v 1.9 2004/03/11 01:47:35 ishii Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -28,7 +28,7 @@
 void
 LockTableCommand(LockStmt *lockstmt)
 {
-	List	   *p;
+	ListCell   *p;
 
 	/*
 	 * Iterate over the list and open, lock, and close the relations one

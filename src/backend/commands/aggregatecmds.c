@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/commands/aggregatecmds.c,v 1.16 2003/11/29 19:51:47 pgsql Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/commands/aggregatecmds.c,v 1.17 2004/05/07 00:24:57 tgl Exp $
  *
  * DESCRIPTION
  *	  The "DefineFoo" routines take the parse tree and pick out the
@@ -56,7 +56,7 @@ DefineAggregate(List *names, List *parameters)
 	char	   *initval = NULL;
 	Oid			baseTypeId;
 	Oid			transTypeId;
-	List	   *pl;
+	ListCell   *pl;
 
 	/* Convert list of names to a name and namespace */
 	aggNamespace = QualifiedNameGetCreationNamespace(names, &aggName);

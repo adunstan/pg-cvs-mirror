@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/commands/async.c,v 1.110 2004/05/22 21:58:24 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/commands/async.c,v 1.111 2004/05/23 03:50:45 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -932,7 +932,7 @@ NotifyMyFrontEnd(char *relname, int32 listenerPID)
 static bool
 AsyncExistsPendingNotify(const char *relname)
 {
-	List	   *p;
+	ListCell   *p;
 
 	foreach(p, pendingNotifies)
 	{

@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/commands/define.c,v 1.87 2004/05/07 00:24:57 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/commands/define.c,v 1.88 2004/05/14 16:11:25 tgl Exp $
  *
  * DESCRIPTION
  *	  The "DefineFoo" routines take the parse tree and pick out the
@@ -190,7 +190,7 @@ defGetQualifiedName(DefElem *def)
 			return (List *) def->arg;
 		case T_String:
 			/* Allow quoted name for backwards compatibility */
-			return makeList1(def->arg);
+			return list_make1(def->arg);
 		default:
 			ereport(ERROR,
 					(errcode(ERRCODE_SYNTAX_ERROR),
@@ -223,7 +223,7 @@ defGetTypeName(DefElem *def)
 				/* Allow quoted typename for backwards compatibility */
 				TypeName   *n = makeNode(TypeName);
 
-				n->names = makeList1(def->arg);
+				n->names = list_make1(def->arg);
 				n->typmod = -1;
 				return n;
 			}

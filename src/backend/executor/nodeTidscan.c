@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/executor/nodeTidscan.c,v 1.36 2003/11/29 19:51:48 pgsql Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/executor/nodeTidscan.c,v 1.37 2004/04/21 18:24:26 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -45,18 +45,18 @@ TidListCreate(TidScanState *tidstate)
 	ExprContext *econtext = tidstate->ss.ps.ps_ExprContext;
 	ItemPointerData *tidList;
 	int			numTids = 0;
-	List	   *lst;
+	ListCell   *l;
 
 	tidList = (ItemPointerData *)
 		palloc(length(tidstate->tss_tideval) * sizeof(ItemPointerData));
 
-	foreach(lst, evalList)
+	foreach(l, evalList)
 	{
 		ItemPointer itemptr;
 		bool		isNull;
 
 		itemptr = (ItemPointer)
-			DatumGetPointer(ExecEvalExprSwitchContext(lfirst(lst),
+			DatumGetPointer(ExecEvalExprSwitchContext(lfirst(l),
 													  econtext,
 													  &isNull,
 													  NULL));
