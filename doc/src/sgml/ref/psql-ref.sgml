@@ -1,5 +1,5 @@
 <!--
-$PostgreSQL: pgsql-server/doc/src/sgml/ref/psql-ref.sgml,v 1.120 2004/08/14 23:49:07 tgl Exp $
+$PostgreSQL: pgsql-server/doc/src/sgml/ref/psql-ref.sgml,v 1.121 2004/08/24 00:06:51 neilc Exp $
 PostgreSQL documentation
 -->
 
@@ -1875,7 +1875,8 @@ bar
         mode works by issuing an implicit <command>BEGIN</> for you, just
         before any command that is not already in a transaction block and
         is not itself a <command>BEGIN</> or other transaction-control
-        command.
+        command, nor a command that cannot be executed inside a transaction
+        block (such as <command>VACUUM</>).
         </para>
 
         <note>
