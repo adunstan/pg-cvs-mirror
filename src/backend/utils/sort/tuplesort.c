@@ -78,7 +78,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/sort/tuplesort.c,v 1.44 2004/08/29 05:06:52 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/sort/tuplesort.c,v 1.45 2004/12/31 22:02:53 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1804,13 +1804,12 @@ myFunctionCall2(FmgrInfo *flinfo, Datum arg1, Datum arg2)
 	FunctionCallInfoData fcinfo;
 	Datum		result;
 
-	/* MemSet(&fcinfo, 0, sizeof(fcinfo)); */
+	fcinfo.flinfo = flinfo;
 	fcinfo.context = NULL;
 	fcinfo.resultinfo = NULL;
 	fcinfo.isnull = false;
-
-	fcinfo.flinfo = flinfo;
 	fcinfo.nargs = 2;
+
 	fcinfo.arg[0] = arg1;
 	fcinfo.arg[1] = arg2;
 	fcinfo.argnull[0] = false;
