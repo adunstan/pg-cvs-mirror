@@ -37,7 +37,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/utils/error/elog.c,v 1.136 2004/05/07 00:24:58 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/error/elog.c,v 1.137 2004/05/21 05:08:02 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -69,7 +69,7 @@ ErrorContextCallback *error_context_stack = NULL;
 /* GUC parameters */
 PGErrorVerbosity Log_error_verbosity = PGERROR_VERBOSE;
 char       *Log_line_prefix = NULL; /* format for extra log line info */
-unsigned int Log_destination;
+unsigned int Log_destination = LOG_DESTINATION_STDERR;
 
 bool in_fatal_exit = false;
 
