@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/rewrite/rewriteHandler.c,v 1.135 2004/05/10 22:44:46 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/rewrite/rewriteHandler.c,v 1.136 2004/05/26 04:41:33 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -864,7 +864,6 @@ fireRIRrules(Query *parsetree, List *activeRIRs)
 		 */
 		if (locks != NIL)
 		{
-			List	   *newActiveRIRs;
 			ListCell   *l;
 
 			if (oidMember(RelationGetRelid(rel), activeRIRs))
@@ -872,7 +871,7 @@ fireRIRrules(Query *parsetree, List *activeRIRs)
 						(errcode(ERRCODE_INVALID_OBJECT_DEFINITION),
 						 errmsg("infinite recursion detected in rules for relation \"%s\"",
 								RelationGetRelationName(rel))));
-			newActiveRIRs = lconso(RelationGetRelid(rel), activeRIRs);
+			activeRIRs = lconso(RelationGetRelid(rel), activeRIRs);
 
 			foreach(l, locks)
 			{
@@ -884,8 +883,10 @@ fireRIRrules(Query *parsetree, List *activeRIRs)
 											  rule->attrno == -1,
 											  rel,
 											  relIsUsed,
-											  newActiveRIRs);
+											  activeRIRs);
 			}
+
+			activeRIRs = list_delete_first(activeRIRs);
 		}
 
 		heap_close(rel, NoLock);
