@@ -12,7 +12,7 @@
  *	by PostgreSQL
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/bin/pg_dump/pg_dump.c,v 1.374 2004/06/07 20:35:57 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/bin/pg_dump/pg_dump.c,v 1.375 2004/06/18 06:14:00 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1252,7 +1252,7 @@ dumpDatabase(Archive *AH)
 		appendPQExpBuffer(creaQry, " ENCODING = ");
 		appendStringLiteral(creaQry, encoding, true);
 	}
-	if (strlen(tablespace) > 0 && strcmp(tablespace, "default") != 0)
+	if (strlen(tablespace) > 0 && strcmp(tablespace, "pg_default") != 0)
 	{
 		appendPQExpBuffer(creaQry, " TABLESPACE = %s", fmtId(tablespace));
 	}
