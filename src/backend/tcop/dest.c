@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/tcop/dest.c,v 1.63 2004/08/29 04:12:50 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/tcop/dest.c,v 1.64 2004/12/31 22:01:16 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -41,7 +41,7 @@
  * ----------------
  */
 static void
-donothingReceive(HeapTuple tuple, TupleDesc typeinfo, DestReceiver *self)
+donothingReceive(TupleTableSlot *slot, DestReceiver *self)
 {
 }
 

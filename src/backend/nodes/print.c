@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/nodes/print.c,v 1.71 2004/08/29 05:06:43 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/nodes/print.c,v 1.72 2004/12/31 21:59:55 pgsql Exp $
  *
  * HISTORY
  *	  AUTHOR			DATE			MAJOR EVENT
@@ -468,18 +468,18 @@ print_tl(List *tlist, List *rtable)
 void
 print_slot(TupleTableSlot *slot)
 {
-	if (!slot->val)
+	if (TupIsNull(slot))
 	{
 		printf("tuple is null.\n");
 		return;
 	}
-	if (!slot->ttc_tupleDescriptor)
+	if (!slot->tts_tupleDescriptor)
 	{
 		printf("no tuple descriptor.\n");
 		return;
 	}
 
-	debugtup(slot->val, slot->ttc_tupleDescriptor, NULL);
+	debugtup(slot, NULL);
 }
 
 static char *

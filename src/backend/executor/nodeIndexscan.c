@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/nodeIndexscan.c,v 1.98 2004/10/25 00:46:40 neilc Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/nodeIndexscan.c,v 1.99 2004/12/31 21:59:45 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -165,7 +165,7 @@ IndexNext(IndexScanState *node)
 				break;
 		}
 		if (qual == NULL)		/* would not be returned by indices */
-			slot->val = NULL;
+			ExecClearTuple(slot);
 
 		/* Flag for the next call that no more tuples */
 		estate->es_evTupleNull[scanrelid - 1] = true;
