@@ -39,7 +39,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  * Portions taken from FreeBSD.
  *
- * $PostgreSQL: pgsql-server/src/bin/initdb/initdb.c,v 1.48 2004/08/11 11:06:23 petere Exp $
+ * $PostgreSQL: pgsql-server/src/bin/initdb/initdb.c,v 1.49 2004/08/11 23:28:54 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -2234,7 +2234,12 @@ main(int argc, char *argv[])
 		share_path = xmalloc(MAXPGPATH);
 		get_share_path(backend_exec, share_path);
 	}
-
+	else if (!is_absolute_path(share_path))
+	{
+		fprintf(stderr, _("%s: input file location must be an absolute path\n"), progname);
+		exit(1);
+	}
+	
 	canonicalize_path(share_path);
 
 	if ((short_version = get_short_version()) == NULL)
