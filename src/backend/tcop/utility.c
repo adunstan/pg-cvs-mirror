@@ -10,7 +10,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/tcop/utility.c,v 1.231 2004/12/31 22:01:16 pgsql Exp $
+ *	  $PostgreSQL: pgsql/src/backend/tcop/utility.c,v 1.232 2005/01/24 17:46:16 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -575,7 +575,7 @@ ProcessUtility(Node *parsetree,
 			{
 				TruncateStmt *stmt = (TruncateStmt *) parsetree;
 
-				TruncateRelation(stmt->relation);
+				ExecuteTruncate(stmt->relations);
 			}
 			break;
 
