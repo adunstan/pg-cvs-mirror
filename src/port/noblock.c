@@ -7,12 +7,12 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/port/copydir.c,v 1.8 2004/02/23 23:03:10 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/port/noblock.c,v 1.1 2004/03/10 21:12:49 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
 
-#include "postgres.h"
+#include "c.h"
 
 #include <sys/types.h>
 #include <fcntl.h>

@@ -10,12 +10,12 @@
  *	must be replaced with recv/send.
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/port/pipe.c,v 1.4 2004/05/18 20:18:59 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/port/pipe.c,v 1.5 2004/06/11 03:48:35 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
 
-#include "postgres.h"
+#include "c.h"
 
 #ifdef WIN32
 int

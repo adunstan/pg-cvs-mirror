@@ -1,5 +1,5 @@
 /*
- * $PostgreSQL: pgsql-server/src/port/gettimeofday.c,v 1.3 2003/11/29 19:52:13 pgsql Exp $
+ * $PostgreSQL: pgsql-server/src/port/gettimeofday.c,v 1.4 2004/05/21 05:08:05 tgl Exp $
  *
  * Copyright (c) 2003 SRA, Inc.
  * Copyright (c) 2003 SKC, Inc.
@@ -23,7 +23,7 @@
  * SUPPORT, UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
  */
 
-#include "postgres.h"
+#include "c.h"
 
 #include <sys/time.h>
 

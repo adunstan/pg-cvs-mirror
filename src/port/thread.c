@@ -7,12 +7,12 @@
  *
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql-server/src/port/thread.c,v 1.21 2004/06/07 22:39:45 momjian Exp $
+ * $PostgreSQL: pgsql-server/src/port/thread.c,v 1.22 2004/06/08 01:45:50 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
 
-#include "postgres.h"
+#include "c.h"
 
 #include <sys/types.h>
 #include <errno.h>

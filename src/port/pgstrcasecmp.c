@@ -16,11 +16,11 @@
  *
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  *
- * $PostgreSQL$
+ * $PostgreSQL: pgsql-server/src/port/pgstrcasecmp.c,v 1.1 2004/05/07 00:24:59 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
-#include "postgres.h"
+#include "c.h"
 
 #include <ctype.h>
 

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/port/sprompt.c,v 1.4 2003/11/29 19:52:13 pgsql Exp $
+ *	  $PostgreSQL: pgsql-server/src/port/sprompt.c,v 1.5 2004/04/19 17:42:59 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -26,7 +26,7 @@
  *
  * Returns a malloc()'ed string with the input (w/o trailing newline).
  */
-#include "postgres.h"
+#include "c.h"
 
 #ifdef HAVE_TERMIOS_H
 #include <termios.h>
