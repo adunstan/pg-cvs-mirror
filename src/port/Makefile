@@ -15,7 +15,7 @@
 #		for use only by the backend binaries
 #
 # IDENTIFICATION
-#    $PostgreSQL: pgsql/src/port/Makefile,v 1.20 2004/10/06 08:50:02 momjian Exp $
+#    $PostgreSQL: pgsql/src/port/Makefile,v 1.21 2004/10/27 11:51:40 neilc Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -31,6 +31,7 @@ LIBOBJS_SRV := $(LIBOBJS)
 LIBOBJS_SRV := $(patsubst dirmod.o,dirmod_srv.o, $(LIBOBJS_SRV))
 LIBOBJS_SRV := $(patsubst exec.o,exec_srv.o, $(LIBOBJS_SRV))
 LIBOBJS_SRV := $(patsubst getaddrinfo.o,getaddrinfo_srv.o, $(LIBOBJS_SRV))
+LIBOBJS_SRV := $(patsubst snprintf.o,snpritnf_srv.o, $(LIBOBJS_SRV))
 LIBOBJS_SRV := $(patsubst thread.o,thread_srv.o, $(LIBOBJS_SRV))
 
 all: libpgport.a libpgport_srv.a
