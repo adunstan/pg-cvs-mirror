@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2003, PostgreSQL Global Development Group
  *
- * $PostgreSQL: /cvsroot/pgsql-server/src/bin/psql/common.h,v 1.29 2003/09/03 22:05:09 petere Exp $
+ * $PostgreSQL: pgsql-server/src/bin/psql/common.h,v 1.30 2003/11/29 19:52:06 pgsql Exp $
  */
 #ifndef COMMON_H
 #define COMMON_H
@@ -12,6 +12,13 @@
 #include <signal.h>
 #include "pqsignal.h"
 #include "libpq-fe.h"
+
+#ifdef USE_ASSERT_CHECKING
+#include <assert.h>
+#define psql_assert(p) assert(p)
+#else
+#define psql_assert(p)
+#endif
 
 extern char *xstrdup(const char *string);
 
