@@ -1,11 +1,14 @@
 # Makefile for PL/Perl
-# $PostgreSQL: pgsql-server/src/pl/plperl/GNUmakefile,v 1.12 2004/01/21 19:04:11 tgl Exp $
+# $PostgreSQL: pgsql-server/src/pl/plperl/GNUmakefile,v 1.14 2004/07/05 23:24:12 tgl Exp $
 
 subdir = src/pl/plperl
 top_builddir = ../../..
 include $(top_builddir)/src/Makefile.global
 
 ifeq ($(perl_useshrplib),true)
+shared_libperl = yes
+endif
+ifeq ($(perl_useshrplib),yes)
 shared_libperl = yes
 endif
 
@@ -18,7 +21,13 @@ ifeq ($(GCC),yes)
 override CFLAGS := $(filter-out -Wall -Wmissing-declarations -Wmissing-prototypes, $(CFLAGS))
 endif
 
-override CPPFLAGS := -I$(srcdir) -I$(perl_archlibexp)/CORE $(CPPFLAGS)
+ifeq ($(PORTNAME), win32)
+perl_archlibexp := $(subst \,/,$(perl_archlibexp))
+perl_privlibexp := $(subst \,/,$(perl_privlibexp))
+perl_embed_ldflags := -L $(perl_archlibexp)/CORE -lperl58
+endif
+
+override CPPFLAGS := -I$(srcdir) $(CPPFLAGS) -I$(perl_archlibexp)/CORE
 
 
 NAME = plperl
