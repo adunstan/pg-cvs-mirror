@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: readfuncs.h,v 1.17 2003/08/04 02:40:13 momjian Exp $
+ * $PostgreSQL: pgsql-server/src/include/nodes/readfuncs.h,v 1.18 2003/11/29 22:41:06 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -21,7 +21,7 @@
  */
 extern char *pg_strtok(int *length);
 extern char *debackslash(char *token, int length);
-extern void *nodeRead(bool read_car_only);
+extern void *nodeRead(char *token, int tok_len);
 
 /*
  * prototypes for functions in readfuncs.c
