@@ -12,7 +12,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/miscadmin.h,v 1.140 2003/12/21 04:34:35 momjian Exp $
+ * $PostgreSQL: pgsql-server/src/include/miscadmin.h,v 1.141 2004/01/06 17:36:31 neilc Exp $
  *
  * NOTES
  *	  some of the information in this file should be moved to
@@ -115,6 +115,9 @@ extern bool ClientAuthInProgress;
 extern const bool ExecBackend;
 
 extern int	PostmasterMain(int argc, char *argv[]);
+#ifdef EXEC_BACKEND
+extern void SubPostmasterMain(int argc, char* argv[]);
+#endif
 extern void ClosePostmasterPorts(bool pgstat_too);
 
 /*
