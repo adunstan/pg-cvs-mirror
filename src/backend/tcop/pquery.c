@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/tcop/pquery.c,v 1.88 2004/10/04 21:52:15 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/tcop/pquery.c,v 1.89 2004/12/31 22:01:16 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1033,7 +1033,7 @@ PortalRunMulti(Portal portal,
 		 * Increment command counter between queries, but not after the
 		 * last one.
 		 */
-		if (planlist_item != NULL)
+		if (lnext(planlist_item) != NULL)
 			CommandCounterIncrement();
 
 		/*
