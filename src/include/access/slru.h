@@ -6,7 +6,7 @@
  * Portions Copyright (c) 2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $Id: slru.h,v 1.3 2003/08/08 21:42:32 momjian Exp $
+ * $PostgreSQL: slru.h,v 1.3 2003/08/08 21:42:32 momjian Exp $
  */
 #ifndef SLRU_H
 #define SLRU_H

@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $Id: dumputils.h,v 1.8 2003/08/08 04:52:21 momjian Exp $
+ * $PostgreSQL: dumputils.h,v 1.8 2003/08/08 04:52:21 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

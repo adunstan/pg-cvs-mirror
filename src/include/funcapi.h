@@ -9,7 +9,7 @@
  *
  * Copyright (c) 2002-2003, PostgreSQL Global Development Group
  *
- * $Id: funcapi.h,v 1.9 2003/08/04 23:59:41 tgl Exp $
+ * $PostgreSQL: funcapi.h,v 1.9 2003/08/04 23:59:41 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

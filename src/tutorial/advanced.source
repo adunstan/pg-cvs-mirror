@@ -6,7 +6,7 @@
 --
 -- Copyright (c) 1994, Regents of the University of California
 --
--- $Id: advanced.source,v 1.5 2002/04/11 21:18:50 tgl Exp $
+-- $PostgreSQL: advanced.source,v 1.5 2002/04/11 21:18:50 tgl Exp $
 --
 ---------------------------------------------------------------------------
 

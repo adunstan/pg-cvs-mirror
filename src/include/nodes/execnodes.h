@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $Id: execnodes.h,v 1.107 2003/10/01 21:30:52 tgl Exp $
+ * $PostgreSQL: execnodes.h,v 1.107 2003/10/01 21:30:52 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

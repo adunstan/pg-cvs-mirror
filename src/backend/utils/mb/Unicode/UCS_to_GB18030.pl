@@ -2,7 +2,7 @@
 #
 # Copyright 2002 by Bill Huang
 #
-# $Id: UCS_to_GB18030.pl,v 1.3 2003/08/25 01:46:16 ishii Exp $
+# $PostgreSQL: UCS_to_GB18030.pl,v 1.3 2003/08/25 01:46:16 ishii Exp $
 #
 # Generate UTF-8 <--> GB18030 code conversion tables from
 # map files provided by Unicode organization.

@@ -3,7 +3,7 @@
 * geqo_recombination.c
 *	 misc recombination procedures
 *
-* $Id: geqo_recombination.c,v 1.11 1999/07/16 04:59:13 momjian Exp $
+* $PostgreSQL: geqo_recombination.c,v 1.11 1999/07/16 04:59:13 momjian Exp $
 *
 *-------------------------------------------------------------------------
 */

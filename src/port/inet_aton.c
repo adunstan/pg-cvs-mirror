@@ -1,4 +1,4 @@
-/* $Id: inet_aton.c,v 1.5 2003/06/12 08:15:29 momjian Exp $
+/* $PostgreSQL: inet_aton.c,v 1.5 2003/06/12 08:15:29 momjian Exp $
  *
  *	This inet_aton() function was taken from the GNU C library and
  *	incorporated into Postgres for those systems which do not have this

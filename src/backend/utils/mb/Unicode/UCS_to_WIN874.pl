@@ -2,7 +2,7 @@
 #
 # Copyright (c) 2001-2003, PostgreSQL Global Development Group
 #
-# $Id: UCS_to_WIN874.pl,v 1.2 2003/08/04 23:59:39 tgl Exp $
+# $PostgreSQL: UCS_to_WIN874.pl,v 1.2 2003/08/04 23:59:39 tgl Exp $
 #
 # Generate UTF-8 <--> WIN874 code conversion tables from
 # map files provided by Unicode organization.

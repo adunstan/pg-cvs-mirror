@@ -6,7 +6,7 @@
 *	 OX1 operator according to Davis
 *	 (Proc Int'l Joint Conf on AI)
 *
-* $Id: geqo_ox1.c,v 1.8 1999/07/16 04:59:10 momjian Exp $
+* $PostgreSQL: geqo_ox1.c,v 1.8 1999/07/16 04:59:10 momjian Exp $
 *
 *-------------------------------------------------------------------------
 */

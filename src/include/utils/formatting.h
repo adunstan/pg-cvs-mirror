@@ -2,7 +2,7 @@
 /* -----------------------------------------------------------------------
  * formatting.h
  *
- * $Id: formatting.h,v 1.12 2003/08/04 23:59:41 tgl Exp $
+ * $PostgreSQL: formatting.h,v 1.12 2003/08/04 23:59:41 tgl Exp $
  *
  *
  *	 Portions Copyright (c) 1999-2003, PostgreSQL Global Development Group

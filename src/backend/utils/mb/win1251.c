@@ -4,7 +4,7 @@
  *
  * Tatsuo Ishii
  *
- * $Id: win1251.c,v 1.1 2001/09/07 03:32:11 ishii Exp $
+ * $PostgreSQL: win1251.c,v 1.1 2001/09/07 03:32:11 ishii Exp $
  */
 
 #include <stdio.h>

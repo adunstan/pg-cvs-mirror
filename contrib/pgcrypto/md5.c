@@ -1,4 +1,4 @@
-/*	$Id: md5.c,v 1.9 2001/11/29 19:40:37 momjian Exp $	*/
+/*	$PostgreSQL: md5.c,v 1.9 2001/11/29 19:40:37 momjian Exp $	*/
 /*	   $KAME: md5.c,v 1.3 2000/02/22 14:01:17 itojun Exp $	   */
 
 /*

@@ -6,7 +6,7 @@
 --
 -- Copyright (c) 1994-5, Regents of the University of California
 --
--- $Id: funcs.source,v 1.6 2003/10/26 04:51:51 momjian Exp $
+-- $PostgreSQL: funcs.source,v 1.6 2003/10/26 04:51:51 momjian Exp $
 --
 ---------------------------------------------------------------------------
 

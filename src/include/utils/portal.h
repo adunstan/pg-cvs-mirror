@@ -39,7 +39,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $Id: portal.h,v 1.47 2003/08/08 21:42:55 momjian Exp $
+ * $PostgreSQL: portal.h,v 1.47 2003/08/08 21:42:55 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

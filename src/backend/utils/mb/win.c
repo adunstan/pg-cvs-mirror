@@ -4,7 +4,7 @@
  *
  * Tatsuo Ishii
  *
- * $Id: win.c,v 1.3 2001/02/10 02:31:27 tgl Exp $
+ * $PostgreSQL: win.c,v 1.3 2001/02/10 02:31:27 tgl Exp $
  */
 
 #include <stdio.h>

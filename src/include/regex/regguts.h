@@ -27,7 +27,7 @@
  * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
- * $Id: regguts.h,v 1.2 2003/08/04 00:43:32 momjian Exp $
+ * $PostgreSQL: regguts.h,v 1.2 2003/08/04 00:43:32 momjian Exp $
  */
 
 

@@ -5,7 +5,7 @@
  *
  * Copyright (c) 2003, PostgreSQL Global Development Group
  *
- * $Id: ip.h,v 1.12 2003/09/05 23:07:21 tgl Exp $
+ * $PostgreSQL: ip.h,v 1.12 2003/09/05 23:07:21 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

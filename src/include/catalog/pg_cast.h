@@ -7,7 +7,7 @@
  *
  * Copyright (c) 2002-2003, PostgreSQL Global Development Group
  *
- * $Id: pg_cast.h,v 1.9 2003/08/04 23:59:40 tgl Exp $
+ * $PostgreSQL: pg_cast.h,v 1.9 2003/08/04 23:59:40 tgl Exp $
  *
  * NOTES
  *	  the genbki.sh script reads this file and generates .bki

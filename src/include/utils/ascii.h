@@ -3,7 +3,7 @@
  *
  *	 Portions Copyright (c) 1999-2002, PostgreSQL Global Development Group
  *
- * $Id: ascii.h,v 1.10 2003/07/14 16:58:24 tgl Exp $
+ * $PostgreSQL: ascii.h,v 1.10 2003/07/14 16:58:24 tgl Exp $
  *
  *-----------------------------------------------------------------------
  */

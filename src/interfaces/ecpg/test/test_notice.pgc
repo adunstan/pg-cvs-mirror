@@ -1,4 +1,4 @@
-// $Id: test_notice.pgc,v 1.3 2002/03/06 06:10:41 momjian Exp $
+// $PostgreSQL: test_notice.pgc,v 1.3 2002/03/06 06:10:41 momjian Exp $
 
 exec sql include sqlca;
 

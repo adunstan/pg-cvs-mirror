@@ -3,7 +3,7 @@
 * geqo_erx.c
 *	 edge recombination crossover [ER]
 *
-* $Id: geqo_erx.c,v 1.18 2003/07/25 00:01:06 tgl Exp $
+* $PostgreSQL: geqo_erx.c,v 1.18 2003/07/25 00:01:06 tgl Exp $
 *
 *-------------------------------------------------------------------------
 */

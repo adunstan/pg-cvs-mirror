@@ -1,6 +1,6 @@
 /****************************************************************************
  * pending.c
- * $Id: pending.c,v 1.14 2003/09/29 18:16:48 momjian Exp $
+ * $PostgreSQL: pending.c,v 1.14 2003/09/29 18:16:48 momjian Exp $
  *
  * This file contains a trigger for Postgresql-7.x to record changes to tables
  * to a pending table for mirroring.

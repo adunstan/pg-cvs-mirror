@@ -6,7 +6,7 @@
 *	 PMX operator according to Goldberg & Lingle
 *	 (Proc Int'l Conf on GA's)
 *
-* $Id: geqo_pmx.c,v 1.9 1999/07/16 04:59:11 momjian Exp $
+* $PostgreSQL: geqo_pmx.c,v 1.9 1999/07/16 04:59:11 momjian Exp $
 *
 *-------------------------------------------------------------------------
 */

@@ -1,7 +1,7 @@
 --
 --	PostgreSQL code for LargeObjects
 --
---	$Id: lo.sql.in,v 1.10 2003/05/14 03:25:56 tgl Exp $
+--	$PostgreSQL: lo.sql.in,v 1.10 2003/05/14 03:25:56 tgl Exp $
 --
 --
 --	Create the data type

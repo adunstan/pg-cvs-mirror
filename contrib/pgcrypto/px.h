@@ -26,7 +26,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $Id: px.h,v 1.8 2002/10/21 18:56:30 petere Exp $
+ * $PostgreSQL: px.h,v 1.8 2002/10/21 18:56:30 petere Exp $
  */
 
 #ifndef __PX_H

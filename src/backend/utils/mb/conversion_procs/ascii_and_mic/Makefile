@@ -1,6 +1,6 @@
 #-------------------------------------------------------------------------
 #
-# $Id: Makefile,v 1.3 2002/08/22 02:18:45 momjian Exp $
+# $PostgreSQL: Makefile,v 1.3 2002/08/22 02:18:45 momjian Exp $
 #
 #-------------------------------------------------------------------------
 subdir = src/backend/utils/mb/conversion_procs/ascii_and_mic

@@ -1,4 +1,4 @@
-/* $Id: strerror.c,v 1.2 2003/07/28 00:09:16 tgl Exp $ */
+/* $PostgreSQL: strerror.c,v 1.2 2003/07/28 00:09:16 tgl Exp $ */
 
 /*
  * strerror - map error number to descriptive string

@@ -6,7 +6,7 @@
  *
  * Copyright (c) 2001-2003, PostgreSQL Global Development Group
  *
- * $Id: instrument.h,v 1.5 2003/08/04 23:59:41 tgl Exp $
+ * $PostgreSQL: instrument.h,v 1.5 2003/08/04 23:59:41 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -1,5 +1,5 @@
 /*
- * $Id: aix.h,v 1.11 2002/02/12 23:39:46 tgl Exp $
+ * $PostgreSQL: aix.h,v 1.11 2002/02/12 23:39:46 tgl Exp $
  *
  * @(#)dlfcn.h	1.4 revision of 95/04/25  09:36:52
  * This is an unpublished work copyright (c) 1992 HELIOS Software GmbH

@@ -1,4 +1,4 @@
-/*	$Id: sha1.h,v 1.8 2001/11/05 17:46:23 momjian Exp $ */
+/*	$PostgreSQL: sha1.h,v 1.8 2001/11/05 17:46:23 momjian Exp $ */
 /*	   $KAME: sha1.h,v 1.4 2000/02/22 14:01:18 itojun Exp $    */
 
 /*

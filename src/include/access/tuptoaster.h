@@ -6,7 +6,7 @@
  *
  * Copyright (c) 2000-2003, PostgreSQL Global Development Group
  *
- * $Id: tuptoaster.h,v 1.16 2003/08/04 23:59:40 tgl Exp $
+ * $PostgreSQL: tuptoaster.h,v 1.16 2003/08/04 23:59:40 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

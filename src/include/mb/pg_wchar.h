@@ -1,4 +1,4 @@
-/* $Id: pg_wchar.h,v 1.48 2003/08/04 00:43:31 momjian Exp $ */
+/* $PostgreSQL: pg_wchar.h,v 1.48 2003/08/04 00:43:31 momjian Exp $ */
 
 #ifndef PG_WCHAR_H
 #define PG_WCHAR_H

@@ -4,7 +4,7 @@
 *
 *	 TSP mutation routines
 *
-* $Id: geqo_mutation.c,v 1.8 1999/07/16 04:59:10 momjian Exp $
+* $PostgreSQL: geqo_mutation.c,v 1.8 1999/07/16 04:59:10 momjian Exp $
 *
 *-------------------------------------------------------------------------
 */

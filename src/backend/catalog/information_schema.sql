@@ -4,7 +4,7 @@
  *
  * Copyright 2003, PostgreSQL Global Development Group
  *
- * $Id: information_schema.sql,v 1.16 2003/11/08 20:43:52 tgl Exp $
+ * $PostgreSQL: information_schema.sql,v 1.16 2003/11/08 20:43:52 tgl Exp $
  */
 
 /*
