@@ -7,7 +7,7 @@
 #
 #
 # IDENTIFICATION
-#    $PostgreSQL: pgsql-server/src/test/regress/GNUmakefile,v 1.44 2003/11/29 19:52:14 pgsql Exp $
+#    $PostgreSQL: pgsql-server/src/test/regress/GNUmakefile,v 1.45 2003/12/23 21:56:21 tgl Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -73,8 +73,14 @@ output_files := $(foreach file, $(file_list), expected/$(file).out)
 
 all: $(input_files) $(output_files)
 
+ifneq ($(PORTNAME),win32)
 abs_srcdir := $(shell cd $(srcdir) && pwd)
 abs_builddir := $(shell pwd)
+else
+abs_srcdir := $(shell cd $(srcdir) && pwd -W)
+abs_builddir := $(shell pwd -W)
+endif
+
 
 define sed-command
 sed -e 's,@abs_srcdir@,$(abs_srcdir),g' \
