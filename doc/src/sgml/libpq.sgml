@@ -1,5 +1,5 @@
 <!--
-$PostgreSQL: pgsql-server/doc/src/sgml/libpq.sgml,v 1.161 2004/08/19 00:00:34 momjian Exp $
+$PostgreSQL: pgsql-server/doc/src/sgml/libpq.sgml,v 1.162 2004/08/19 16:39:13 momjian Exp $
 -->
 
  <chapter id="libpq">
@@ -239,6 +239,15 @@ PGconn *PQconnectdb(const char *conninfo);
        an <acronym>SSL</>
        connection.<indexterm><primary>SSL</><secondary
        sortas="libpq">with libpq</></indexterm>
+      </para>
+
+      <para>
+       Please note that <acronym>SSL</> support in libpq covers
+       encryption only.  It will not verify the validity of the
+       certificate presented by the server that you are connecting to,
+       nor verify that the hostname matches that of the server's
+       certificate.  Additionally, there is no support for client
+       certificates.
       </para>
      </listitem>
     </varlistentry>
