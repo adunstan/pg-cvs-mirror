@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/interfaces/ecpg/preproc/keywords.c,v 1.61 2003/11/29 19:52:08 pgsql Exp $
+ *	  $PostgreSQL: pgsql-server/src/interfaces/ecpg/preproc/keywords.c,v 1.62 2004/04/29 14:08:10 meskes Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -292,6 +292,7 @@ static ScanKeyword ScanKeywords[] = {
 	{"substring", SUBSTRING},
 	{"sysid", SYSID},
 	{"table", TABLE},
+	{"tablespace", TABLESPACE},
 	{"temp", TEMP},
 	{"template", TEMPLATE},
 	{"temporary", TEMPORARY},
