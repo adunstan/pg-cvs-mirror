@@ -1,5 +1,5 @@
 #
-# $PostgreSQL: pgsql-server/contrib/pgcrypto/Makefile,v 1.10 2003/11/29 19:51:35 pgsql Exp $
+# $PostgreSQL: pgsql-server/contrib/pgcrypto/Makefile,v 1.11 2004/08/20 20:13:06 momjian Exp $
 #
 
 # either 'builtin', 'mhash', 'openssl'
@@ -80,6 +80,11 @@ subdir = contrib/pgcrypto
 top_builddir = ../..
 include $(top_builddir)/src/Makefile.global
 include $(top_srcdir)/contrib/contrib-global.mk
+endif
+
+# to make ws2_32.lib the last library (must occur after definition of PORTNAME)
+ifeq ($(PORTNAME),win32)
+SHLIB_LINK += -lwsock32 -lws2_32
 endif
 
 
