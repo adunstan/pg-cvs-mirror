@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/catalog/pg_aggregate.c,v 1.64 2003/09/25 06:57:58 petere Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/catalog/pg_aggregate.c,v 1.65 2003/11/29 19:51:45 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -190,7 +190,8 @@ AggregateCreate(const char *aggName,
 							  PROVOLATILE_IMMUTABLE,	/* volatility (not
 														 * needed for agg) */
 							  1,	/* parameterCount */
-							  fnArgs);	/* parameterTypes */
+							  fnArgs, /* parameterTypes */
+							  NULL); /* parameterNames */
 
 	/*
 	 * Okay to create the pg_aggregate entry.

@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pg_class.h,v 1.77 2003/08/04 02:40:11 momjian Exp $
+ * $PostgreSQL: pgsql-server/src/include/catalog/pg_class.h,v 1.78 2003/11/29 22:40:58 pgsql Exp $
  *
  * NOTES
  *	  the genbki.sh script reads this file and generates .bki
@@ -138,7 +138,7 @@ DATA(insert OID = 1247 (  pg_type		PGNSP 71 PGUID 0 1247 0 0 0 0 f f r 22 0 0 0 
 DESCR("");
 DATA(insert OID = 1249 (  pg_attribute	PGNSP 75 PGUID 0 1249 0 0 0 0 f f r 18 0 0 0 0 0 f f f f _null_ ));
 DESCR("");
-DATA(insert OID = 1255 (  pg_proc		PGNSP 81 PGUID 0 1255 0 0 0 0 f f r 15 0 0 0 0 0 t f f f _null_ ));
+DATA(insert OID = 1255 (  pg_proc		PGNSP 81 PGUID 0 1255 0 0 0 0 f f r 16 0 0 0 0 0 t f f f _null_ ));
 DESCR("");
 DATA(insert OID = 1259 (  pg_class		PGNSP 83 PGUID 0 1259 0 0 0 0 f f r 24 0 0 0 0 0 t f f f _null_ ));
 DESCR("");

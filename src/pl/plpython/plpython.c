@@ -29,7 +29,7 @@
  * MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
  *
  * IDENTIFICATION
- *	$PostgreSQL: pgsql-server/src/pl/plpython/plpython.c,v 1.42 2003/11/29 19:52:12 pgsql Exp $
+ *	$PostgreSQL: pgsql-server/src/pl/plpython/plpython.c,v 1.43 2004/01/04 00:14:17 momjian Exp $
  *
  *********************************************************************
  */
@@ -1032,7 +1032,8 @@ PLy_procedure_create(FunctionCallInfo fcinfo, Oid tgreloid,
 	Form_pg_proc procStruct;
 	PLyProcedure *volatile proc;
 	char	   *volatile procSource = NULL;
-	Datum		procDatum;
+	Datum		prosrcdatum;
+	bool		isnull;
 	int			i,
 				rv;
 
@@ -1153,9 +1154,12 @@ PLy_procedure_create(FunctionCallInfo fcinfo, Oid tgreloid,
 	/*
 	 * get the text of the function.
 	 */
-	procDatum = DirectFunctionCall1(textout,
-									PointerGetDatum(&procStruct->prosrc));
-	procSource = DatumGetCString(procDatum);
+	prosrcdatum = SysCacheGetAttr(PROCOID, procTup,
+								  Anum_pg_proc_prosrc, &isnull);
+	if (isnull)
+		elog(ERROR, "null prosrc");
+	procSource = DatumGetCString(DirectFunctionCall1(textout,
+													 prosrcdatum));
 
 	PLy_procedure_compile(proc, procSource);
 
