@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/storage/bufmgr.h,v 1.88 2004/10/16 18:57:26 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/storage/bufmgr.h,v 1.89 2004/12/31 22:03:42 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -153,5 +153,6 @@ extern void BufmgrCommit(void);
 extern int	BufferSync(int percent, int maxpages);
 
 extern void InitLocalBuffer(void);
+extern void AtProcExit_LocalBuffers(void);
 
 #endif
