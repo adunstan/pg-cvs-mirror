@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/storage/ipc/ipci.c,v 1.63 2004/01/26 22:59:53 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/storage/ipc/ipci.c,v 1.65 2004/02/25 19:41:22 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -60,7 +60,8 @@ CreateSharedMemoryAndSemaphores(bool makePrivate,
 		 * moderately-accurate estimates for the big hogs, plus 100K for the
 		 * stuff that's too small to bother with estimating.
 		 */
-		size = BufferShmemSize();
+		size = hash_estimate_size(SHMEM_INDEX_SIZE, sizeof(ShmemIndexEnt));
+		size += BufferShmemSize();
 		size += LockShmemSize(maxBackends);
 		size += XLOGShmemSize();
 		size += CLOGShmemSize();
