@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/port.h,v 1.16 2004/02/02 00:11:31 momjian Exp $
+ * $PostgreSQL: pgsql-server/src/include/port.h,v 1.17 2004/02/02 00:17:23 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -30,7 +30,7 @@ extern int	fseeko(FILE *stream, off_t offset, int whence);
 extern off_t ftello(FILE *stream);
 #endif
 
-#if !defined(FRONTEND) && (defined(WIN32) || defined(CYGWIN))
+#if defined(WIN32) || defined(CYGWIN)
 /*
  * Win32 doesn't have reliable rename/unlink during concurrent access
  */
