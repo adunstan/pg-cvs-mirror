@@ -4,7 +4,7 @@
 #
 # Copyright (c) 1994, Regents of the University of California
 #
-# $PostgreSQL: /cvsroot/pgsql-server/src/interfaces/libpgtcl/Makefile,v 1.33 2003/10/28 21:55:58 tgl Exp $
+# $PostgreSQL: pgsql-server/src/interfaces/libpgtcl/Makefile,v 1.34 2003/11/29 19:52:11 pgsql Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -14,7 +14,7 @@ include ../../Makefile.global
 
 NAME= pgtcl
 SO_MAJOR_VERSION= 2
-SO_MINOR_VERSION= 4
+SO_MINOR_VERSION= 5
 
 override CPPFLAGS := -I$(libpq_srcdir) $(CPPFLAGS) $(TCL_INCLUDE_SPEC)
 
