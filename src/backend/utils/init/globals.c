@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/utils/init/globals.c,v 1.81 2004/01/28 21:02:40 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/init/globals.c,v 1.82 2004/02/03 17:34:03 tgl Exp $
  *
  * NOTES
  *	  Globals used all over the place should be declared here and not
@@ -81,3 +81,11 @@ bool		allowSystemTableMods = false;
 int			work_mem = 1024;
 int			maintenance_work_mem = 16384;
 int			NBuffers = 1000;
+
+int			VacuumCostPageHit = 1;
+int			VacuumCostPageMiss = 10;
+int			VacuumCostPageDirty = 20;
+int			VacuumCostLimit = 200;
+int			VacuumCostBalance = 0;
+int			VacuumCostNaptime = 0;
+bool		VacuumCostActive = false;
