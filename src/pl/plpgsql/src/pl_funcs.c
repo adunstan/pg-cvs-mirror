@@ -3,7 +3,7 @@
  *			  procedural language
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/pl/plpgsql/src/pl_funcs.c,v 1.32 2004/02/21 00:34:53 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/pl/plpgsql/src/pl_funcs.c,v 1.33 2004/07/31 07:39:20 tgl Exp $
  *
  *	  This software is copyrighted by Jan Wieck - Hamburg.
  *
@@ -615,9 +615,17 @@ dump_block(PLpgSQL_stmt_block * block)
 		for (i = 0; i < block->exceptions->exceptions_used; i++)
 		{
 			PLpgSQL_exception *exc = block->exceptions->exceptions[i];
+			PLpgSQL_condition *cond;
 
 			dump_ind();
-			printf("    EXCEPTION WHEN %s THEN\n", exc->label);
+			printf("    EXCEPTION WHEN ");
+			for (cond = exc->conditions; cond; cond = cond->next)
+			{
+				if (cond != exc->conditions)
+					printf(" OR ");
+				printf("%s", cond->condname);
+			}
+			printf(" THEN\n");
 			dump_stmts(exc->action);
 		}
 	}
