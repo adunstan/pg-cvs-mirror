@@ -4,7 +4,7 @@
 #
 # Copyright (c) 1994, Regents of the University of California
 #
-# $PostgreSQL: pgsql-server/src/backend/Makefile,v 1.99 2004/04/30 16:08:01 momjian Exp $
+# $PostgreSQL: pgsql-server/src/backend/Makefile,v 1.100 2004/05/21 05:07:55 tgl Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -161,6 +161,7 @@ endif
 	$(INSTALL_DATA) $(srcdir)/libpq/pg_hba.conf.sample $(DESTDIR)$(datadir)/pg_hba.conf.sample
 	$(INSTALL_DATA) $(srcdir)/libpq/pg_ident.conf.sample $(DESTDIR)$(datadir)/pg_ident.conf.sample
 	$(INSTALL_DATA) $(srcdir)/utils/misc/postgresql.conf.sample $(DESTDIR)$(datadir)/postgresql.conf.sample
+	$(INSTALL_DATA) $(srcdir)/access/transam/recovery.conf.sample $(DESTDIR)$(datadir)/recovery.conf.sample
 
 install-bin: postgres $(POSTGRES_IMP) installdirs
 	$(INSTALL_PROGRAM) postgres$(X) $(DESTDIR)$(bindir)/postgres$(X)
