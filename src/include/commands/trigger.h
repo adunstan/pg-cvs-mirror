@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/commands/trigger.h,v 1.48 2004/08/29 05:06:56 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/commands/trigger.h,v 1.49 2004/09/10 18:40:06 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -34,6 +34,8 @@ typedef struct TriggerData
 	HeapTuple	tg_trigtuple;
 	HeapTuple	tg_newtuple;
 	Trigger    *tg_trigger;
+	Buffer		tg_trigtuplebuf;
+	Buffer		tg_newtuplebuf;
 } TriggerData;
 
 /* TriggerEvent bit flags */
