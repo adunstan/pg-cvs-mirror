@@ -17,7 +17,7 @@
  *
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql-server/src/bin/pg_config/pg_config.c,v 1.2 2004/08/01 14:01:36 momjian Exp $
+ * $PostgreSQL: pgsql-server/src/bin/pg_config/pg_config.c,v 1.3 2004/08/02 12:34:14 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -141,7 +141,7 @@ main (int argc, char ** argv)
 		else if (strcmp(argv[i],"--pgxs") == 0)
 		{
 			get_pkglib_path(mypath,otherpath);
-			strncat(otherpath, "/pgxs", MAXPGPATH-1);
+			strncat(otherpath, "/pgxs/src/makefiles/pgxs.mk", MAXPGPATH-1);
 		}
 
 		printf("%s\n",otherpath);
