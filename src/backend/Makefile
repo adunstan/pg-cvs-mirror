@@ -4,10 +4,11 @@
 #
 # Copyright (c) 1994, Regents of the University of California
 #
-# $PostgreSQL: pgsql-server/src/backend/Makefile,v 1.104 2004/08/01 18:07:42 tgl Exp $
+# $PostgreSQL: pgsql-server/src/backend/Makefile,v 1.105 2004/10/04 13:43:54 momjian Exp $
 #
 #-------------------------------------------------------------------------
 
+PGFILEDESC = "PostgreSQL Database Backend"
 subdir = src/backend
 top_builddir = ../..
 include $(top_builddir)/src/Makefile.global
@@ -60,11 +61,11 @@ endif # cygwin
 
 ifeq ($(PORTNAME), win32)
 
-postgres: $(OBJS) $(DLLINIT) postgres.def libpostgres.a
+postgres: $(OBJS) $(DLLINIT) postgres.def libpostgres.a $(WIN32RES)
 	$(DLLTOOL) --dllname $@$(X) --output-exp $@.exp --def postgres.def
-	$(CC) $(CFLAGS) $(LDFLAGS) -o $@$(X) -Wl,--base-file,$@.base $@.exp $(OBJS) $(LIBS)
+	$(CC) $(CFLAGS) $(LDFLAGS) -o $@$(X) -Wl,--base-file,$@.base $@.exp $(OBJS) $(WIN32RES) $(LIBS)
 	$(DLLTOOL) --dllname $@$(X) --base-file $@.base --output-exp $@.exp --def postgres.def
-	$(CC) $(CFLAGS) $(LDFLAGS) -o $@$(X) $@.exp $(OBJS) $(LIBS)
+	$(CC) $(CFLAGS) $(LDFLAGS) -o $@$(X) $@.exp $(OBJS) $(WIN32RES) $(LIBS)
 	rm -f $@.exp $@.base
 
 postgres.def: $(OBJS)

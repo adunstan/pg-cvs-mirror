@@ -5,17 +5,18 @@
 # Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
 # Portions Copyright (c) 1994, Regents of the University of California
 #
-# $PostgreSQL: pgsql-server/src/bin/initdb/Makefile,v 1.45 2004/10/04 13:43:55 momjian Exp $
+# $PostgreSQL: pgsql-server/src/bin/initdb/Makefile,v 1.46 2004/10/04 18:05:53 momjian Exp $
 #
 #-------------------------------------------------------------------------
 
+PGFILEDESC = "initdb - initialize a new database cluster"
 subdir = src/bin/initdb
 top_builddir = ../../..
 include $(top_builddir)/src/Makefile.global
 
 override CPPFLAGS := -DFRONTEND -I$(libpq_srcdir) $(CPPFLAGS)
 
-OBJS=	initdb.o
+OBJS=	initdb.o $(WIN32RES)
 
 all: submake-libpq submake-libpgport initdb
 
