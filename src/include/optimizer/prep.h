@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: prep.h,v 1.41 2003/08/04 02:40:14 momjian Exp $
+ * $PostgreSQL: pgsql-server/src/include/optimizer/prep.h,v 1.42 2003/11/29 22:41:07 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -36,8 +36,8 @@ extern Relids get_relids_for_join(Query *parse, int joinrelid);
 /*
  * prototypes for prepqual.c
  */
-extern List *canonicalize_qual(Expr *qual, bool removeAndFlag);
-extern List *cnfify(Expr *qual, bool removeAndFlag);
+extern Expr *canonicalize_qual(Expr *qual);
+extern Node *flatten_andors(Node *node);
 
 /*
  * prototypes for preptlist.c

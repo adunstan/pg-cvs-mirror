@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/optimizer/util/clauses.c,v 1.155 2003/11/29 19:51:51 pgsql Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/optimizer/util/clauses.c,v 1.156 2003/12/09 01:56:20 tgl Exp $
  *
  * HISTORY
  *	  AUTHOR			DATE			MAJOR EVENT
@@ -261,8 +261,8 @@ make_and_qual(Node *qual1, Node *qual2)
 }
 
 /*
- * Sometimes (such as in the result of canonicalize_qual or the input of
- * ExecQual), we use lists of expression nodes with implicit AND semantics.
+ * Sometimes (such as in the input of ExecQual), we use lists of expression
+ * nodes with implicit AND semantics.
  *
  * These functions convert between an AND-semantics expression list and the
  * ordinary representation of a boolean expression.

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/catalog/index.c,v 1.222 2003/11/19 15:55:07 wieck Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/catalog/index.c,v 1.223 2003/11/29 19:51:43 pgsql Exp $
  *
  *
  * INTERFACE ROUTINES
@@ -397,13 +397,14 @@ UpdateIndexRelation(Oid indexoid,
 		exprsDatum = (Datum) 0;
 
 	/*
-	 * Convert the index predicate (if any) to a text datum
+	 * Convert the index predicate (if any) to a text datum.  Note we
+	 * convert implicit-AND format to normal explicit-AND for storage.
 	 */
 	if (indexInfo->ii_Predicate != NIL)
 	{
 		char	   *predString;
 
-		predString = nodeToString(indexInfo->ii_Predicate);
+		predString = nodeToString(make_ands_explicit(indexInfo->ii_Predicate));
 		predDatum = DirectFunctionCall1(textin,
 										CStringGetDatum(predString));
 		pfree(predString);
