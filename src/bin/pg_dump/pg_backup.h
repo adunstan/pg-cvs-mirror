@@ -15,7 +15,7 @@
  *
  *
  * IDENTIFICATION
- *		$PostgreSQL: pgsql-server/src/bin/pg_dump/pg_backup.h,v 1.29 2004/03/24 03:06:08 momjian Exp $
+ *		$PostgreSQL: pgsql-server/src/bin/pg_dump/pg_backup.h,v 1.30 2004/04/22 02:39:09 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -73,6 +73,7 @@ typedef struct _restoreOptions
 	int			noOwner;		/* Don't try to match original object owner */
 	int			disable_triggers;		/* disable triggers during
 										 * data-only restore */
+	int			use_setsessauth;	/* Use SET SESSION AUTHORIZATION commands instead of OWNER TO */
 	char	   *superuser;		/* Username to use as superuser */
 	int			dataOnly;
 	int			dropSchema;
