@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/utils/error/assert.c,v 1.25 2003/11/29 19:52:01 pgsql Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/error/assert.c,v 1.26 2004/04/19 17:42:58 momjian Exp $
  *
  * NOTE
  *	  This should eventually work with elog()
@@ -31,10 +31,10 @@ ExceptionalCondition(char *conditionName,
 	if (!PointerIsValid(conditionName)
 		|| !PointerIsValid(fileName)
 		|| !PointerIsValid(errorType))
-		fprintf(stderr, "TRAP: ExceptionalCondition: bad arguments\n");
+		write_stderr("TRAP: ExceptionalCondition: bad arguments\n");
 	else
 	{
-		fprintf(stderr, "TRAP: %s(\"%s\", File: \"%s\", Line: %d)\n",
+		write_stderr("TRAP: %s(\"%s\", File: \"%s\", Line: %d)\n",
 				errorType, conditionName,
 				fileName, lineNumber);
 	}

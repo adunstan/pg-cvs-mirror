@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/tcop/postgres.c,v 1.419 2004/06/06 00:41:27 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/tcop/postgres.c,v 1.420 2004/06/11 01:09:00 tgl Exp $
  *
  * NOTES
  *	  this is the "main" module of the postgres backend and
@@ -2578,12 +2578,11 @@ PostgresMain(int argc, char *argv[], const char *username)
 	{
 		if (!potential_DataDir)
 		{
-			fprintf(stderr,
-					gettext("%s does not know where to find the database system data.\n"
-							"You must specify the directory that contains the database system\n"
-							"either by specifying the -D invocation option or by setting the\n"
-							"PGDATA environment variable.\n"),
-					argv[0]);
+			write_stderr("%s does not know where to find the database system data.\n"
+						 "You must specify the directory that contains the database system\n"
+						 "either by specifying the -D invocation option or by setting the\n"
+						 "PGDATA environment variable.\n",
+						 argv[0]);
 			proc_exit(1);
 		}
 		SetDataDir(potential_DataDir);
