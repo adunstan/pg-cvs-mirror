@@ -3,7 +3,7 @@
  *			  procedural language
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/pl/plpgsql/src/pl_exec.c,v 1.129 2005/02/22 04:43:07 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/pl/plpgsql/src/pl_exec.c,v 1.130 2005/02/22 07:18:24 neilc Exp $
  *
  *	  This software is copyrighted by Jan Wieck - Hamburg.
  *
@@ -702,7 +702,7 @@ plpgsql_exec_error_callback(void *arg)
 		 */
 		errcontext("PL/pgSQL function \"%s\" %s",
 				   estate->err_func->fn_name,
-				   _(estate->err_text));
+				   estate->err_text);
 	}
 	else
 		errcontext("PL/pgSQL function \"%s\"",
