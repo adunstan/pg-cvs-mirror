@@ -4,7 +4,7 @@
  *
  * Portions Copyright (c) 2002-2003, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql-server/src/bin/scripts/clusterdb.c,v 1.5 2004/01/01 19:27:15 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/bin/scripts/clusterdb.c,v 1.6 2004/05/12 13:38:46 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -58,7 +58,7 @@ main(int argc, char *argv[])
 	char	   *table = NULL;
 
 	progname = get_progname(argv[0]);
-	init_nls();
+	init_nls(argv[0]);
 	handle_help_version_opts(argc, argv, "clusterdb", help);
 
 	while ((c = getopt_long(argc, argv, "h:p:U:Weqd:at:", long_options, &optindex)) != -1)

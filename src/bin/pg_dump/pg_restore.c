@@ -34,7 +34,7 @@
  *
  *
  * IDENTIFICATION
- *		$PostgreSQL: pgsql-server/src/bin/pg_dump/pg_restore.c,v 1.55 2003/12/06 03:00:16 tgl Exp $
+ *		$PostgreSQL: pgsql-server/src/bin/pg_dump/pg_restore.c,v 1.56 2004/04/22 02:39:10 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -121,11 +121,7 @@ main(int argc, char **argv)
 		{NULL, 0, NULL, 0}
 	};
 
-#ifdef ENABLE_NLS
-	setlocale(LC_ALL, "");
-	bindtextdomain("pg_dump", LOCALEDIR);
-	textdomain("pg_dump");
-#endif
+	set_pglocale(argv[0], "pg_dump");
 
 	opts = NewRestoreOptions();
 

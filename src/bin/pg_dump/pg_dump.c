@@ -12,7 +12,7 @@
  *	by PostgreSQL
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/bin/pg_dump/pg_dump.c,v 1.369 2004/03/23 22:06:08 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/bin/pg_dump/pg_dump.c,v 1.370 2004/03/24 03:06:08 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -242,11 +242,7 @@ main(int argc, char **argv)
 	};
 	int			optindex;
 
-#ifdef ENABLE_NLS
-	setlocale(LC_ALL, "");
-	bindtextdomain("pg_dump", LOCALEDIR);
-	textdomain("pg_dump");
-#endif
+	set_pglocale(argv[0], "pg_dump");
 
 	g_verbose = false;
 

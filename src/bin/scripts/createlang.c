@@ -5,7 +5,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/bin/scripts/createlang.c,v 1.8 2004/03/19 18:58:07 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/bin/scripts/createlang.c,v 1.9 2004/05/12 13:38:47 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -61,7 +61,7 @@ main(int argc, char *argv[])
 	PGresult   *result;
 
 	progname = get_progname(argv[0]);
-	init_nls();
+	init_nls(argv[0]);
 	handle_help_version_opts(argc, argv, "createlang", help);
 
 	while ((c = getopt_long(argc, argv, "lh:p:U:Wd:L:e", long_options, &optindex)) != -1)
