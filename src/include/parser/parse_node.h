@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: parse_node.h,v 1.37 2003/08/04 02:40:14 momjian Exp $
+ * $PostgreSQL: pgsql-server/src/include/parser/parse_node.h,v 1.38 2003/11/29 22:41:09 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -67,12 +67,13 @@ typedef struct ParseState
 
 extern ParseState *make_parsestate(ParseState *parentParseState);
 extern Var *make_var(ParseState *pstate, RangeTblEntry *rte, int attrno);
+extern Oid transformArrayType(Oid arrayType);
 extern ArrayRef *transformArraySubscripts(ParseState *pstate,
 						 Node *arrayBase,
 						 Oid arrayType,
-						 int32 arrayTypMod,
+						 Oid elementType,
+						 int32 elementTypMod,
 						 List *indirection,
-						 bool forceSlice,
 						 Node *assignFrom);
 extern Const *make_const(Value *value);
 
