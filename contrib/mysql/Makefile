@@ -1,18 +1,15 @@
+# mysql conversion Perl scripts
 # $PostgreSQL$
 
-MODULE_big = pgxml_dom
-OBJS = pgxml_dom.o
-SHLIB_LINK = -lxml2
-DATA_built = pgxml_dom.sql
-DOCS = README.xml
-
-override CFLAGS += $(shell xml2-config --cflags)
+MODULES = 
+SCRIPTS = my2pg.pl  mysql2pgsql
+DOCS = README.mysql
 
 ifdef USE_PGXS
 PGXS = $(shell pg_config --pgxs)
 include $(PGXS)
 else
-subdir = contrib/xml
+subdir = contrib/mysql
 top_builddir = ../..
 include $(top_builddir)/src/Makefile.global
 include $(top_srcdir)/contrib/contrib-global.mk
