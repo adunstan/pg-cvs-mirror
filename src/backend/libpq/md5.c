@@ -14,19 +14,11 @@
  *	Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/libpq/md5.c,v 1.24 2004/04/19 17:42:57 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/libpq/md5.c,v 1.25 2004/08/29 04:12:32 momjian Exp $
  */
 
 
-/*
- *	NOTE:
- *
- *	There are two copies of this file, one in backend/libpq and another
- *	in interfaces/odbc.  They should be identical.	This is done so ODBC
- *	can be compiled stand-alone.
- */
-
-#if ! defined(MD5_ODBC) && ! defined(FRONTEND)
+#if ! defined(FRONTEND)
 #include "postgres.h"
 #include "libpq/crypt.h"
 #endif
@@ -34,18 +26,12 @@
 #ifdef FRONTEND
 #include "postgres_fe.h"
 #include "libpq/crypt.h"
-#endif   /* FRONTEND */
 
-#ifdef MD5_ODBC
-#include "md5.h"
-#endif
-
-#ifdef FRONTEND
 #undef palloc
 #define palloc malloc
 #undef pfree
 #define pfree free
-#endif
+#endif   /* FRONTEND */
 
 
 /*

@@ -12,7 +12,7 @@
  * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/c.h,v 1.173 2004/09/23 13:16:02 momjian Exp $
+ * $PostgreSQL: pgsql-server/src/include/c.h,v 1.174 2004/09/26 15:13:42 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -231,7 +231,6 @@ typedef signed int int32;		/* == 32 bits */
  *		used for numerical computations and the
  *		frontend/backend protocol.
  */
-/* Also defined in interfaces/odbc/md5.h */
 #ifndef HAVE_UINT8
 typedef unsigned char uint8;	/* == 8 bits */
 typedef unsigned short uint16;	/* == 16 bits */
