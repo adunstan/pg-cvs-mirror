@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2003, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql-server/src/bin/psql/tab-complete.c,v 1.104 2004/04/05 03:02:09 momjian Exp $
+ * $PostgreSQL: pgsql-server/src/bin/psql/tab-complete.c,v 1.105 2004/05/07 00:24:58 tgl Exp $
  */
 
 /*----------------------------------------------------------------------
@@ -428,7 +428,7 @@ static char *dequote_file_name(char *text, char quote_char);
 void
 initialize_readline(void)
 {
-	rl_readline_name = pset.progname;
+	rl_readline_name = (char *)pset.progname;
 	rl_attempted_completion_function = (void *) psql_completion;
 
 	rl_basic_word_break_characters = "\t\n@$><=;|&{( ";

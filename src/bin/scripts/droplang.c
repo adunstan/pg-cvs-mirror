@@ -5,7 +5,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/bin/scripts/droplang.c,v 1.6 2003/11/29 19:52:07 pgsql Exp $
+ * $PostgreSQL: pgsql-server/src/bin/scripts/droplang.c,v 1.7 2004/03/19 18:58:07 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -34,7 +34,7 @@ main(int argc, char *argv[])
 		{NULL, 0, NULL, 0}
 	};
 
-	char	   *progname;
+	const char *progname;
 	int			optindex;
 	int			c;
 

@@ -6,7 +6,7 @@
  * copyright (c) Oliver Elphick <olly@lfix.co.uk>, 2001;
  * licence: BSD
  *
- * $PostgreSQL: pgsql-server/src/bin/pg_controldata/pg_controldata.c,v 1.13 2004/02/11 22:55:25 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/bin/pg_controldata/pg_controldata.c,v 1.14 2004/03/22 15:34:22 tgl Exp $
  */
 #include "postgres.h"
 
@@ -75,7 +75,7 @@ main(int argc, char *argv[])
 	char		ckpttime_str[128];
 	char		sysident_str[32];
 	char	   *strftime_fmt = "%c";
-	char	   *progname;
+	const char *progname;
 
 	setlocale(LC_ALL, "");
 #ifdef ENABLE_NLS

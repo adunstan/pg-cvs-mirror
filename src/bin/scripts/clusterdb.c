@@ -4,7 +4,7 @@
  *
  * Portions Copyright (c) 2002-2003, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql-server/src/bin/scripts/clusterdb.c,v 1.4 2003/11/29 19:52:07 pgsql Exp $
+ * $PostgreSQL: pgsql-server/src/bin/scripts/clusterdb.c,v 1.5 2004/01/01 19:27:15 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -43,7 +43,7 @@ main(int argc, char *argv[])
 		{NULL, 0, NULL, 0}
 	};
 
-	char	   *progname;
+	const char *progname;
 	int			optindex;
 	int			c;
 
