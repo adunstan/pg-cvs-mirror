@@ -17,7 +17,7 @@
  *
  *
  * IDENTIFICATION
- *		$PostgreSQL: pgsql-server/src/bin/pg_dump/pg_backup_null.c,v 1.12 2003/11/29 19:52:05 pgsql Exp $
+ *		$PostgreSQL: pgsql-server/src/bin/pg_dump/pg_backup_null.c,v 1.13 2003/12/06 03:00:11 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -25,8 +25,6 @@
 #include "pg_backup.h"
 #include "pg_backup_archiver.h"
 
-#include <stdlib.h>
-#include <string.h>
 #include <unistd.h>				/* for dup */
 
 static size_t _WriteData(ArchiveHandle *AH, const void *data, size_t dLen);

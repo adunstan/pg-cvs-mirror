@@ -16,7 +16,7 @@
  *
  *
  * IDENTIFICATION
- *		$PostgreSQL: pgsql-server/src/bin/pg_dump/pg_backup_tar.c,v 1.39 2003/11/29 19:52:05 pgsql Exp $
+ *		$PostgreSQL: pgsql-server/src/bin/pg_dump/pg_backup_tar.c,v 1.40 2003/12/06 03:00:11 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -25,8 +25,6 @@
 #include "pg_backup_archiver.h"
 #include "pg_backup_tar.h"
 
-#include <stdlib.h>
-#include <string.h>
 #include <ctype.h>
 #include <limits.h>
 #include <unistd.h>
