@@ -1,4 +1,4 @@
-/* $PostgreSQL: pgsql-server/src/include/port/solaris.h,v 1.10 2003/12/23 03:31:30 momjian Exp $ */
+/* $PostgreSQL: pgsql-server/src/include/port/solaris.h,v 1.11 2004/03/15 03:29:22 tgl Exp $ */
 
 /*
  * Sort this out for all operating systems some time.  The __xxx
@@ -35,3 +35,10 @@
 #define		 BYTE_ORDER		 LITTLE_ENDIAN
 #endif
 #endif
+
+/*
+ * Many versions of Solaris have broken strtod() --- see bug #4751182.
+ * For the moment we just assume they all do; it's probably not worth
+ * the trouble to add a configure test for this.
+ */
+#define HAVE_BUGGY_SOLARIS_STRTOD
