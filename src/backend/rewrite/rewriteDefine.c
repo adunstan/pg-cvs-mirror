@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/rewrite/rewriteDefine.c,v 1.99 2004/12/31 22:00:45 pgsql Exp $
+ *	  $PostgreSQL: pgsql/src/backend/rewrite/rewriteDefine.c,v 1.100 2005/01/10 20:02:21 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -114,7 +114,7 @@ InsertRule(char *rulname,
 		replaces[Anum_pg_rewrite_ev_qual - 1] = 'r';
 		replaces[Anum_pg_rewrite_ev_action - 1] = 'r';
 
-		tup = heap_modifytuple(oldtup, pg_rewrite_desc,
+		tup = heap_modifytuple(oldtup, RelationGetDescr(pg_rewrite_desc),
 							   values, nulls, replaces);
 
 		simple_heap_update(pg_rewrite_desc, &tup->t_self, tup);

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/catalog/pg_operator.c,v 1.86 2004/08/29 04:12:29 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/catalog/pg_operator.c,v 1.87 2004/12/31 21:59:38 pgsql Exp $
  *
  * NOTES
  *	  these routines moved here from commands/define.c and somewhat cleaned up.
@@ -637,7 +637,7 @@ OperatorCreate(const char *operatorName,
 				 operatorObjectId);
 
 		tup = heap_modifytuple(tup,
-							   pg_operator_desc,
+							   RelationGetDescr(pg_operator_desc),
 							   values,
 							   nulls,
 							   replaces);
@@ -807,7 +807,7 @@ OperatorUpd(Oid baseId, Oid commId, Oid negId)
 				}
 
 				tup = heap_modifytuple(tup,
-									   pg_operator_desc,
+									   RelationGetDescr(pg_operator_desc),
 									   values,
 									   nulls,
 									   replaces);
@@ -832,7 +832,7 @@ OperatorUpd(Oid baseId, Oid commId, Oid negId)
 		replaces[Anum_pg_operator_oprcom - 1] = 'r';
 
 		tup = heap_modifytuple(tup,
-							   pg_operator_desc,
+							   RelationGetDescr(pg_operator_desc),
 							   values,
 							   nulls,
 							   replaces);
@@ -858,7 +858,7 @@ OperatorUpd(Oid baseId, Oid commId, Oid negId)
 		replaces[Anum_pg_operator_oprnegate - 1] = 'r';
 
 		tup = heap_modifytuple(tup,
-							   pg_operator_desc,
+							   RelationGetDescr(pg_operator_desc),
 							   values,
 							   nulls,
 							   replaces);

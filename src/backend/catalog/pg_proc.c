@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/catalog/pg_proc.c,v 1.121 2004/10/18 01:45:38 neilc Exp $
+ *	  $PostgreSQL: pgsql/src/backend/catalog/pg_proc.c,v 1.122 2004/12/31 21:59:38 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -180,7 +180,7 @@ ProcedureCreate(const char *procedureName,
 	/* proacl will be handled below */
 
 	rel = heap_openr(ProcedureRelationName, RowExclusiveLock);
-	tupDesc = rel->rd_att;
+	tupDesc = RelationGetDescr(rel);
 
 	/* Check for pre-existing definition */
 	oldtup = SearchSysCache(PROCNAMENSP,
@@ -234,7 +234,7 @@ ProcedureCreate(const char *procedureName,
 		replaces[Anum_pg_proc_proacl - 1] = ' ';
 
 		/* Okay, do it... */
-		tup = heap_modifytuple(oldtup, rel, values, nulls, replaces);
+		tup = heap_modifytuple(oldtup, tupDesc, values, nulls, replaces);
 		simple_heap_update(rel, &tup->t_self, tup);
 
 		ReleaseSysCache(oldtup);
