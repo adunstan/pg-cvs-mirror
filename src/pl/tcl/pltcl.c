@@ -31,7 +31,7 @@
  *	  ENHANCEMENTS, OR MODIFICATIONS.
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/pl/tcl/pltcl.c,v 1.91 2004/08/30 02:54:42 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/pl/tcl/pltcl.c,v 1.92 2004/09/13 20:09:39 tgl Exp $
  *
  **********************************************************************/
 
@@ -232,6 +232,11 @@ pltcl_init(void)
 	 ************************************************************/
 	if (pltcl_pm_init_done)
 		return;
+
+#ifdef WIN32
+	/* Required on win32 to prevent error loading init.tcl */
+	Tcl_FindExecutable("");
+#endif
 
 	/************************************************************
 	 * Create the dummy hold interpreter to prevent close of
