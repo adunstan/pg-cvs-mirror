@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/optimizer/util/pathnode.c,v 1.99 2004/01/05 23:39:54 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/optimizer/util/pathnode.c,v 1.100 2004/01/19 03:49:41 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -637,7 +637,7 @@ create_unique_path(Query *root, RelOptInfo *rel, Path *subpath)
 		 */
 		int			hashentrysize = rel->width + 64;
 
-		if (hashentrysize * pathnode->rows <= SortMem * 1024L)
+		if (hashentrysize * pathnode->rows <= work_mem * 1024L)
 		{
 			cost_agg(&agg_path, root,
 					 AGG_HASHED, 0,

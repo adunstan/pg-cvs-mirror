@@ -3,7 +3,7 @@
  *			  procedural language
  *
  * IDENTIFICATION
- *	  $PostgreSQL: /cvsroot/pgsql-server/src/pl/plpgsql/src/pl_exec.c,v 1.93 2003/10/01 21:47:42 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/pl/plpgsql/src/pl_exec.c,v 1.94 2003/11/29 19:52:12 pgsql Exp $
  *
  *	  This software is copyrighted by Jan Wieck - Hamburg.
  *
@@ -1770,7 +1770,7 @@ exec_init_tuple_store(PLpgSQL_execstate * estate)
 	estate->tuple_store_cxt = rsi->econtext->ecxt_per_query_memory;
 
 	oldcxt = MemoryContextSwitchTo(estate->tuple_store_cxt);
-	estate->tuple_store = tuplestore_begin_heap(true, false, SortMem);
+	estate->tuple_store = tuplestore_begin_heap(true, false, work_mem);
 	MemoryContextSwitchTo(oldcxt);
 
 	estate->rettupdesc = rsi->expectedDesc;

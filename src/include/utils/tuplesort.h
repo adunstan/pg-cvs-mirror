@@ -13,7 +13,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: tuplesort.h,v 1.13 2003/08/04 02:40:15 momjian Exp $
+ * $PostgreSQL: pgsql-server/src/include/utils/tuplesort.h,v 1.14 2003/11/29 22:41:16 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -39,13 +39,13 @@ typedef struct Tuplesortstate Tuplesortstate;
 extern Tuplesortstate *tuplesort_begin_heap(TupleDesc tupDesc,
 					 int nkeys,
 					 Oid *sortOperators, AttrNumber *attNums,
-					 bool randomAccess);
+					 int workMem, bool randomAccess);
 extern Tuplesortstate *tuplesort_begin_index(Relation indexRel,
 					  bool enforceUnique,
-					  bool randomAccess);
+					  int workMem, bool randomAccess);
 extern Tuplesortstate *tuplesort_begin_datum(Oid datumType,
 					  Oid sortOperator,
-					  bool randomAccess);
+					  int workMem, bool randomAccess);
 
 extern void tuplesort_puttuple(Tuplesortstate *state, void *tuple);
 
