@@ -1,5 +1,5 @@
 #! /bin/sh
-# $PostgreSQL: pgsql-server/src/test/regress/pg_regress.sh,v 1.40 2004/05/02 10:24:51 momjian Exp $
+# $PostgreSQL: pgsql-server/src/test/regress/pg_regress.sh,v 1.41 2004/05/02 21:30:08 momjian Exp $
 
 me=`basename $0`
 : ${TMPDIR=/tmp}
@@ -211,7 +211,7 @@ esac
 # Set up pwd to give a win32 happy pathname
 # ----------
 
-case $build_platform in
+case $host_platform in
     *-*-mingw32*)
         PWDFLAGS=-W;;
     *)
