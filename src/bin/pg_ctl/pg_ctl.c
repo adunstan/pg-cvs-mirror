@@ -4,7 +4,7 @@
  *
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql-server/src/bin/pg_ctl/pg_ctl.c,v 1.21 2004/07/12 19:18:18 momjian Exp $
+ * $PostgreSQL: pgsql-server/src/bin/pg_ctl/pg_ctl.c,v 1.22 2004/07/15 15:23:32 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -987,7 +987,8 @@ static void WINAPI pgwin32_ServiceMain(DWORD argc, LPTSTR *argv)
 			break;
 
 		default:
-			/* assert(false); */
+			/* shouldn't get here? */
+			break;
 	}
 
 	CloseHandle(shutdownEvent);
