@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/access/xlog.h,v 1.45 2003/11/29 22:40:55 pgsql Exp $
+ * $PostgreSQL: pgsql-server/src/include/access/xlog.h,v 1.46 2003/12/12 18:45:10 petere Exp $
  */
 #ifndef XLOG_H
 #define XLOG_H
@@ -189,10 +189,12 @@ extern XLogRecPtr ProcLastRecEnd;
 extern int	CheckPointSegments;
 extern int	CheckPointWarning;
 extern int	XLOGbuffers;
-extern int	XLOG_DEBUG;
 extern char *XLOG_sync_method;
 extern const char XLOG_sync_method_default[];
 
+#ifdef WAL_DEBUG
+extern bool	XLOG_DEBUG;
+#endif
 
 extern XLogRecPtr XLogInsert(RmgrId rmid, uint8 info, XLogRecData *rdata);
 extern void XLogFlush(XLogRecPtr RecPtr);
