@@ -7,12 +7,14 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/commands/vacuum.h,v 1.51 2004/02/15 21:01:39 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/include/commands/vacuum.h,v 1.52 2004/05/21 05:08:04 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
 #ifndef VACUUM_H
 #define VACUUM_H
+
+#include <sys/time.h>
 
 #ifdef HAVE_GETRUSAGE
 #include <sys/resource.h>
