@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: hash.h,v 1.53 2003/09/04 22:06:27 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/include/access/hash.h,v 1.54 2003/11/29 22:40:55 pgsql Exp $
  *
  * NOTES
  *		modeled after Margo Seltzer's hash implementation for unix.
@@ -293,6 +293,7 @@ extern void _hash_regscan(IndexScanDesc scan);
 extern void _hash_dropscan(IndexScanDesc scan);
 extern bool _hash_has_active_scan(Relation rel, Bucket bucket);
 extern void AtEOXact_hash(void);
+extern void AtEOSubXact_hash(TransactionId childXid);
 
 /* hashsearch.c */
 extern bool _hash_next(IndexScanDesc scan, ScanDirection dir);

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/utils/init/postinit.c,v 1.133 2004/05/29 22:48:21 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/init/postinit.c,v 1.134 2004/06/18 06:13:54 tgl Exp $
  *
  *
  *-------------------------------------------------------------------------
@@ -27,7 +27,6 @@
 #include "catalog/pg_database.h"
 #include "catalog/pg_shadow.h"
 #include "catalog/pg_tablespace.h"
-#include "commands/trigger.h"
 #include "mb/pg_wchar.h"
 #include "miscadmin.h"
 #include "postmaster/postmaster.h"
@@ -349,12 +348,6 @@ InitPostgres(const char *dbname, const char *username)
 
 	/* Initialize portal manager */
 	EnablePortalManager();
-
-	/*
-	 * Initialize the deferred trigger manager --- must happen before
-	 * first transaction start.
-	 */
-	DeferredTriggerInit();
 
 	/* start a new transaction here before access to db */
 	if (!bootstrap)

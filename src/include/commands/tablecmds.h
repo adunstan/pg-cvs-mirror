@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/commands/tablecmds.h,v 1.15 2004/03/23 19:35:17 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/include/commands/tablecmds.h,v 1.16 2004/05/05 04:48:47 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -42,6 +42,9 @@ extern void register_on_commit_action(Oid relid, OnCommitAction action);
 extern void remove_on_commit_action(Oid relid);
 
 extern void PreCommit_on_commit_actions(void);
-extern void AtEOXact_on_commit_actions(bool isCommit);
+extern void AtEOXact_on_commit_actions(bool isCommit, TransactionId xid);
+extern void AtEOSubXact_on_commit_actions(bool isCommit,
+										  TransactionId childXid,
+										  TransactionId parentXid);
 
 #endif   /* TABLECMDS_H */

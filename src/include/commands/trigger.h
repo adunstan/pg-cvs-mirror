@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: trigger.h,v 1.44 2003/10/06 16:38:28 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/include/commands/trigger.h,v 1.45 2003/11/29 22:40:59 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -151,44 +151,12 @@ extern void ExecARUpdateTriggers(EState *estate,
 					 ItemPointer tupleid,
 					 HeapTuple newtuple);
 
-
-/*
- * Deferred trigger stuff
- */
-typedef struct DeferredTriggerStatusData
-{
-	Oid			dts_tgoid;
-	bool		dts_tgisdeferred;
-} DeferredTriggerStatusData;
-
-typedef struct DeferredTriggerStatusData *DeferredTriggerStatus;
-
-typedef struct DeferredTriggerEventItem
-{
-	Oid			dti_tgoid;
-	int32		dti_state;
-} DeferredTriggerEventItem;
-
-typedef struct DeferredTriggerEventData *DeferredTriggerEvent;
-
-typedef struct DeferredTriggerEventData
-{
-	DeferredTriggerEvent dte_next;		/* list link */
-	int32		dte_event;
-	Oid			dte_relid;
-	ItemPointerData dte_oldctid;
-	ItemPointerData dte_newctid;
-	int32		dte_n_items;
-	/* dte_item is actually a variable-size array, of length dte_n_items */
-	DeferredTriggerEventItem dte_item[1];
-} DeferredTriggerEventData;
-
-
-extern void DeferredTriggerInit(void);
 extern void DeferredTriggerBeginXact(void);
 extern void DeferredTriggerEndQuery(void);
 extern void DeferredTriggerEndXact(void);
 extern void DeferredTriggerAbortXact(void);
+extern void DeferredTriggerBeginSubXact(void);
+extern void DeferredTriggerEndSubXact(bool isCommit);
 
 extern void DeferredTriggerSetState(ConstraintsSetStmt *stmt);
 

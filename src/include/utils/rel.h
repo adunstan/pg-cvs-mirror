@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/utils/rel.h,v 1.73 2004/02/10 01:55:27 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/include/utils/rel.h,v 1.74 2004/05/08 19:09:25 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -110,6 +110,9 @@ typedef struct RelationData
 	BlockNumber rd_targblock;	/* current insertion target block, or
 								 * InvalidBlockNumber */
 	int			rd_refcnt;		/* reference count */
+	int		   *rd_prevrefcnt;	/* reference count stack */
+	int			rd_numalloc;	/* stack allocated size */
+	int			rd_numpushed;	/* stack used size */
 	bool		rd_isnew;		/* rel was created in current xact */
 
 	/*

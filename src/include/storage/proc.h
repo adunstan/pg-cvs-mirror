@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/storage/proc.h,v 1.66 2003/11/29 22:41:13 pgsql Exp $
+ * $PostgreSQL: pgsql-server/src/include/storage/proc.h,v 1.67 2003/12/01 21:59:25 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -103,7 +103,8 @@ extern int	ProcGlobalSemas(int maxBackends);
 extern void InitProcGlobal(int maxBackends);
 extern void InitProcess(void);
 extern void InitDummyProcess(int proctype);
-extern void ProcReleaseLocks(bool isCommit);
+extern void ProcReleaseLocks(LockReleaseWhich which,
+							 int nxids, TransactionId *xids);
 
 extern void ProcQueueInit(PROC_QUEUE *queue);
 extern int ProcSleep(LockMethod lockMethodTable, LOCKMODE lockmode,

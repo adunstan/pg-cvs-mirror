@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: rtree.h,v 1.31 2003/11/09 21:30:37 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/include/access/rtree.h,v 1.32 2003/11/29 22:40:55 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -130,6 +130,7 @@ extern void rtree_desc(char *buf, uint8 xl_info, char *rec);
 extern void rtadjscans(Relation r, int op, BlockNumber blkno,
 		   OffsetNumber offnum);
 extern void AtEOXact_rtree(void);
+extern void AtEOSubXact_rtree(TransactionId childXid);
 
 /* rtstrat.c */
 extern StrategyNumber RTMapToInternalOperator(StrategyNumber strat);

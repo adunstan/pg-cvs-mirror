@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: gistscan.h,v 1.21 2003/08/04 02:40:10 momjian Exp $
+ * $PostgreSQL: pgsql-server/src/include/access/gistscan.h,v 1.22 2003/11/29 22:40:55 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -23,5 +23,6 @@ extern Datum gistrestrpos(PG_FUNCTION_ARGS);
 extern Datum gistendscan(PG_FUNCTION_ARGS);
 extern void gistadjscans(Relation r, int op, BlockNumber blkno, OffsetNumber offnum);
 extern void AtEOXact_gist(void);
+extern void AtEOSubXact_gist(TransactionId childXid);
 
 #endif   /* GISTSCAN_H */
