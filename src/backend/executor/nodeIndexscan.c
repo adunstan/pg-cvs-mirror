@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/executor/nodeIndexscan.c,v 1.96 2004/08/29 04:12:31 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/nodeIndexscan.c,v 1.97 2004/08/29 05:06:42 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1045,10 +1045,6 @@ create_duphash(IndexScanState *node)
 									nbuckets,
 									&hash_ctl,
 							   HASH_ELEM | HASH_FUNCTION | HASH_CONTEXT);
-	if (node->iss_DupHash == NULL)
-		ereport(ERROR,
-				(errcode(ERRCODE_OUT_OF_MEMORY),
-				 errmsg("out of memory")));
 }
 
 int

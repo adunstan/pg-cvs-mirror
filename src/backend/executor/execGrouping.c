@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/executor/execGrouping.c,v 1.10 2004/08/29 04:12:31 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/execGrouping.c,v 1.11 2004/08/29 05:06:42 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -322,10 +322,6 @@ BuildTupleHashTable(int numCols, AttrNumber *keyColIdx,
 	hashtable->hashtab = hash_create("TupleHashTable", (long) nbuckets,
 									 &hash_ctl,
 				HASH_ELEM | HASH_FUNCTION | HASH_COMPARE | HASH_CONTEXT);
-	if (hashtable->hashtab == NULL)
-		ereport(ERROR,
-				(errcode(ERRCODE_OUT_OF_MEMORY),
-				 errmsg("out of memory")));
 
 	return hashtable;
 }

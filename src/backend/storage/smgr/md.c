@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/storage/smgr/md.c,v 1.111 2004/08/30 02:54:39 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/storage/smgr/md.c,v 1.112 2004/08/30 03:52:43 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -132,10 +132,6 @@ mdinit(void)
 									  100L,
 									  &hash_ctl,
 							   HASH_ELEM | HASH_FUNCTION | HASH_CONTEXT);
-		if (pendingOpsTable == NULL)
-			ereport(FATAL,
-					(errcode(ERRCODE_OUT_OF_MEMORY),
-					 errmsg("out of memory")));
 	}
 
 	return true;

@@ -10,7 +10,7 @@
  * Copyright (c) 2002-2004, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/commands/prepare.c,v 1.31 2004/08/29 05:06:41 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/prepare.c,v 1.32 2004/09/13 20:06:29 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -264,9 +264,6 @@ InitQueryHashTable(void)
 								   32,
 								   &hash_ctl,
 								   HASH_ELEM);
-
-	if (!prepared_queries)
-		elog(ERROR, "could not create hash table");
 }
 
 /*

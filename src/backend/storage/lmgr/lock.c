@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/storage/lmgr/lock.c,v 1.141 2004/09/28 20:46:32 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/storage/lmgr/lock.c,v 1.142 2004/09/29 15:15:55 tgl Exp $
  *
  * NOTES
  *	  Outside modules can create a lock table and acquire/release
@@ -334,9 +334,6 @@ LockMethodTableInit(const char *tabName,
 													init_table_size,
 													&info,
 													hash_flags);
-
-	if (!LockMethodLocalHash[lockmethodid])
-		elog(FATAL, "could not initialize lock table \"%s\"", tabName);
 
 	pfree(shmemName);
 
