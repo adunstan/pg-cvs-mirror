@@ -1,0 +1,157 @@
+-- Adjust this setting to control where the objects get created.
+SET search_path = public;
+
+SET autocommit TO 'on';
+
+-- create type of int4 key
+CREATE FUNCTION int4key_in(cstring)
+RETURNS int4key
+AS 'MODULE_PATHNAME'
+LANGUAGE 'c' WITH (isstrict);
+
+CREATE FUNCTION int4key_out(int4key)
+RETURNS cstring
+AS 'MODULE_PATHNAME'
+LANGUAGE 'c' WITH (isstrict);
+
+CREATE TYPE int4key (
+INTERNALLENGTH = 8,
+INPUT = int4key_in,
+OUTPUT = int4key_out
+);
+
+
+--
+--
+--
+-- int4 ops
+--
+--
+--
+-- define the GiST support methods
+CREATE FUNCTION gint4_consistent(internal,int4,int2)
+RETURNS bool
+AS 'MODULE_PATHNAME'
+LANGUAGE 'C';
+
+CREATE FUNCTION gint4_compress(internal)
+RETURNS internal
+AS 'MODULE_PATHNAME'
+LANGUAGE 'C';
+
+CREATE FUNCTION btree_decompress(internal)
+RETURNS internal
+AS 'MODULE_PATHNAME'
+LANGUAGE 'C';
+
+CREATE FUNCTION gint4_penalty(internal,internal,internal)
+RETURNS internal
+AS 'MODULE_PATHNAME'
+LANGUAGE 'C' WITH (isstrict);
+
+CREATE FUNCTION gint4_picksplit(internal, internal)
+RETURNS internal
+AS 'MODULE_PATHNAME'
+LANGUAGE 'C';
+
+CREATE FUNCTION gint4_union(bytea, internal)
+RETURNS int4
+AS 'MODULE_PATHNAME'
+LANGUAGE 'C';
+
+CREATE FUNCTION gint4_same(internal, internal, internal)
+RETURNS internal
+AS 'MODULE_PATHNAME'
+LANGUAGE 'C';
+
+-- Create the operator class
+CREATE OPERATOR CLASS gist_int4_ops
+DEFAULT FOR TYPE int4 USING gist 
+AS
+	OPERATOR	1	< ,
+	OPERATOR	2	<= ,
+	OPERATOR	3	= ,
+	OPERATOR	4	>= ,
+	OPERATOR	5	> ,
+	FUNCTION	1	gint4_consistent (internal, int4, int2),
+	FUNCTION	2	gint4_union (bytea, internal),
+	FUNCTION	3	gint4_compress (internal),
+	FUNCTION	4	btree_decompress (internal),
+	FUNCTION	5	gint4_penalty (internal, internal, internal),
+	FUNCTION	6	gint4_picksplit (internal, internal),
+	FUNCTION	7	gint4_same (internal, internal, internal),
+	STORAGE		int4key;
+
+
+--
+--
+--
+-- timestamp ops
+-- 
+--
+--
+-- create type of timestamp key
+
+CREATE FUNCTION tskey_in(cstring)
+RETURNS tskey
+AS 'MODULE_PATHNAME'
+LANGUAGE 'c' WITH (isstrict);
+
+CREATE FUNCTION tskey_out(tskey)
+RETURNS cstring
+AS 'MODULE_PATHNAME'
+LANGUAGE 'c' WITH (isstrict);
+
+CREATE TYPE tskey (
+INTERNALLENGTH = 16,
+INPUT = tskey_in,
+OUTPUT = tskey_out
+);
+
+CREATE FUNCTION gts_consistent(internal,timestamp,int2)
+RETURNS bool
+AS 'MODULE_PATHNAME'
+LANGUAGE 'C';
+      
+CREATE FUNCTION gts_compress(internal)
+RETURNS internal
+AS 'MODULE_PATHNAME'
+LANGUAGE 'C';
+
+CREATE FUNCTION gts_penalty(internal,internal,internal)
+RETURNS internal
+AS 'MODULE_PATHNAME'
+LANGUAGE 'C' WITH (isstrict);
+   
+CREATE FUNCTION gts_picksplit(internal, internal)
+RETURNS internal
+AS 'MODULE_PATHNAME'
+LANGUAGE 'C';
+      
+CREATE FUNCTION gts_union(bytea, internal)
+RETURNS int4
+AS 'MODULE_PATHNAME'
+LANGUAGE 'C';
+
+CREATE FUNCTION gts_same(internal, internal, internal)
+RETURNS internal
+AS 'MODULE_PATHNAME'
+LANGUAGE 'C';
+
+-- Create the operator class
+CREATE OPERATOR CLASS gist_timestamp_ops
+DEFAULT FOR TYPE timestamp USING gist 
+AS
+	OPERATOR	1	< ,
+	OPERATOR	2	<= ,
+	OPERATOR	3	= ,
+	OPERATOR	4	>= ,
+	OPERATOR	5	> ,
+	FUNCTION	1	gts_consistent (internal, timestamp, int2),
+	FUNCTION	2	gts_union (bytea, internal),
+	FUNCTION	3	gts_compress (internal),
+	FUNCTION	4	btree_decompress (internal),
+	FUNCTION	5	gts_penalty (internal, internal, internal),
+	FUNCTION	6	gts_picksplit (internal, internal),
+	FUNCTION	7	gts_same (internal, internal, internal),
+	STORAGE		tskey;

@@ -1,0 +1,19 @@
+-- Adjust this setting to control where the objects get created.
+SET search_path = public;
+
+SET autocommit TO 'on';
+
+--------------- geo_distance
+
+CREATE OR REPLACE FUNCTION geo_distance (point, point)
+RETURNS float8
+LANGUAGE 'C' IMMUTABLE STRICT AS 'MODULE_PATHNAME';
+
+--------------- geo_distance as operator <@>
+
+CREATE OPERATOR <@> (
+  LEFTARG = point,
+  RIGHTARG = point,
+  PROCEDURE = geo_distance,
+  COMMUTATOR = <@>
+);
