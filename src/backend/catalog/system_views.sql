@@ -3,7 +3,7 @@
  *
  * Copyright 1996-2003, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql-server/src/backend/catalog/system_views.sql,v 1.3 2003/11/29 22:39:40 pgsql Exp $
+ * $PostgreSQL: pgsql-server/src/backend/catalog/system_views.sql,v 1.4 2003/12/03 18:52:00 joe Exp $
  */
 
 CREATE VIEW pg_user AS 
@@ -271,3 +271,5 @@ CREATE RULE pg_settings_u AS
 CREATE RULE pg_settings_n AS 
     ON UPDATE TO pg_settings 
     DO INSTEAD NOTHING;
+
+GRANT SELECT, UPDATE ON pg_settings TO PUBLIC;
