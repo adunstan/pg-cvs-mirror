@@ -16,7 +16,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/utils/adt/pseudotypes.c,v 1.11 2003/08/04 02:40:05 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/adt/pseudotypes.c,v 1.12 2003/11/29 19:51:59 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -25,59 +25,6 @@
 #include "libpq/pqformat.h"
 #include "utils/array.h"
 #include "utils/builtins.h"
-
-
-/*
- * record_in		- input routine for pseudo-type RECORD.
- */
-Datum
-record_in(PG_FUNCTION_ARGS)
-{
-	ereport(ERROR,
-			(errcode(ERRCODE_FEATURE_NOT_SUPPORTED),
-			 errmsg("cannot accept a value of type record")));
-
-	PG_RETURN_VOID();			/* keep compiler quiet */
-}
-
-/*
- * record_out		- output routine for pseudo-type RECORD.
- */
-Datum
-record_out(PG_FUNCTION_ARGS)
-{
-	ereport(ERROR,
-			(errcode(ERRCODE_FEATURE_NOT_SUPPORTED),
-			 errmsg("cannot display a value of type record")));
-
-	PG_RETURN_VOID();			/* keep compiler quiet */
-}
-
-/*
- * record_recv		- binary input routine for pseudo-type RECORD.
- */
-Datum
-record_recv(PG_FUNCTION_ARGS)
-{
-	ereport(ERROR,
-			(errcode(ERRCODE_FEATURE_NOT_SUPPORTED),
-			 errmsg("cannot accept a value of type record")));
-
-	PG_RETURN_VOID();			/* keep compiler quiet */
-}
-
-/*
- * record_send		- binary output routine for pseudo-type RECORD.
- */
-Datum
-record_send(PG_FUNCTION_ARGS)
-{
-	ereport(ERROR,
-			(errcode(ERRCODE_FEATURE_NOT_SUPPORTED),
-			 errmsg("cannot display a value of type record")));
-
-	PG_RETURN_VOID();			/* keep compiler quiet */
-}
 
 
 /*

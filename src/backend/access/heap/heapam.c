@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/access/heap/heapam.c,v 1.162 2004/01/16 20:51:30 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/access/heap/heapam.c,v 1.163 2004/03/11 01:47:35 ishii Exp $
  *
  *
  * INTERFACE ROUTINES
@@ -1116,6 +1116,7 @@ heap_insert(Relation relation, HeapTuple tup, CommandId cid)
 	tup->t_data->t_infomask |= HEAP_XMAX_INVALID;
 	HeapTupleHeaderSetXmin(tup->t_data, GetCurrentTransactionId());
 	HeapTupleHeaderSetCmin(tup->t_data, cid);
+	HeapTupleHeaderSetCmax(tup->t_data, 0);	/* zero out Datum fields */
 	tup->t_tableOid = relation->rd_id;
 
 	/*
@@ -1576,6 +1577,7 @@ l2:
 	newtup->t_data->t_infomask |= (HEAP_XMAX_INVALID | HEAP_UPDATED);
 	HeapTupleHeaderSetXmin(newtup->t_data, GetCurrentTransactionId());
 	HeapTupleHeaderSetCmin(newtup->t_data, cid);
+	HeapTupleHeaderSetCmax(newtup->t_data, 0);	/* zero out Datum fields */
 
 	/*
 	 * If the toaster needs to be activated, OR if the new tuple will not

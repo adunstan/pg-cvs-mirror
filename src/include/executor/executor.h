@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/executor/executor.h,v 1.107 2004/03/02 18:56:15 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/include/executor/executor.h,v 1.108 2004/03/17 01:02:24 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -120,9 +120,9 @@ extern void ExecEndNode(PlanState *node);
 /*
  * prototypes from functions in execQual.c
  */
-extern Datum GetAttributeByNum(TupleTableSlot *slot, AttrNumber attrno,
+extern Datum GetAttributeByNum(HeapTupleHeader tuple, AttrNumber attrno,
 				  bool *isNull);
-extern Datum GetAttributeByName(TupleTableSlot *slot, char *attname,
+extern Datum GetAttributeByName(HeapTupleHeader tuple, const char *attname,
 				   bool *isNull);
 extern void init_fcache(Oid foid, FuncExprState *fcache,
 			MemoryContext fcacheCxt);

@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1994-5, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/commands/explain.c,v 1.118 2003/11/29 19:51:47 pgsql Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/commands/explain.c,v 1.119 2004/01/31 05:09:40 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -125,7 +125,7 @@ ExplainResultDesc(ExplainStmt *stmt)
 	/* need a tuple descriptor representing a single TEXT column */
 	tupdesc = CreateTemplateTupleDesc(1, false);
 	TupleDescInitEntry(tupdesc, (AttrNumber) 1, "QUERY PLAN",
-					   TEXTOID, -1, 0, false);
+					   TEXTOID, -1, 0);
 	return tupdesc;
 }
 

@@ -1,5 +1,5 @@
 /*
- * $PostgreSQL: /cvsroot/pgsql-server/src/test/regress/regress.c,v 1.58 2003/08/04 00:43:34 momjian Exp $
+ * $PostgreSQL: pgsql-server/src/test/regress/regress.c,v 1.59 2003/11/29 19:52:14 pgsql Exp $
  */
 
 #include "postgres.h"
@@ -14,8 +14,6 @@
 #define LDELIM			'('
 #define RDELIM			')'
 #define DELIM			','
-
-typedef TupleTableSlot *TUPLE;
 
 extern Datum regress_dist_ptpath(PG_FUNCTION_ARGS);
 extern Datum regress_path_dist(PG_FUNCTION_ARGS);
@@ -196,7 +194,7 @@ PG_FUNCTION_INFO_V1(overpaid);
 Datum
 overpaid(PG_FUNCTION_ARGS)
 {
-	TUPLE		tuple = (TUPLE) PG_GETARG_POINTER(0);
+	HeapTupleHeader tuple = PG_GETARG_HEAPTUPLEHEADER(0);
 	bool		isnull;
 	int32		salary;
 

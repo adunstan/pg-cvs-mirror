@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/rewrite/rewriteHandler.c,v 1.132 2004/01/14 03:39:22 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/rewrite/rewriteHandler.c,v 1.133 2004/01/14 23:01:55 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -523,16 +523,7 @@ build_column_default(Relation rel, int attrno)
 		 * No per-column default, so look for a default for the type
 		 * itself.
 		 */
-		if (att_tup->attisset)
-		{
-			/*
-			 * Set attributes are represented as OIDs no matter what the
-			 * set element type is, and the element type's default is
-			 * irrelevant too.
-			 */
-		}
-		else
-			expr = get_typdefault(atttype);
+		expr = get_typdefault(atttype);
 	}
 
 	if (expr == NULL)
