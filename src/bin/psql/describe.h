@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2003, PostgreSQL Global Development Group
  *
- * $PostgreSQL: /cvsroot/pgsql-server/src/bin/psql/describe.h,v 1.21 2003/08/04 23:59:40 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/bin/psql/describe.h,v 1.22 2003/11/29 19:52:06 pgsql Exp $
  */
 #ifndef DESCRIBE_H
 #define DESCRIBE_H
@@ -24,6 +24,9 @@ bool		describeOperators(const char *pattern);
 
 /* \du */
 bool		describeUsers(const char *pattern);
+
+/* \dg */
+bool		describeGroups(const char *pattern);
 
 /* \z (or \dp) */
 bool		permissionsList(const char *pattern);

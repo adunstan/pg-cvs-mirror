@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2003, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql-server/src/bin/psql/command.c,v 1.106 2003/11/29 19:52:06 pgsql Exp $
+ * $PostgreSQL: pgsql-server/src/bin/psql/command.c,v 1.107 2003/12/01 22:14:40 momjian Exp $
  */
 #include "postgres_fe.h"
 #include "command.h"
@@ -358,6 +358,9 @@ exec_command(const char *cmd,
 				break;
 			case 'f':
 				success = describeFunctions(pattern, show_verbose);
+				break;
+			case 'g':
+				success = describeGroups(pattern);
 				break;
 			case 'l':
 				success = do_lo_list();
