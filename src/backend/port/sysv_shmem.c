@@ -10,7 +10,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/port/sysv_shmem.c,v 1.35 2004/08/29 04:12:42 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/port/sysv_shmem.c,v 1.36 2004/08/29 05:06:44 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -373,7 +373,7 @@ PGSharedMemoryDetach(void)
 	if (UsedShmemSegAddr != NULL)
 	{
 		if ((shmdt(UsedShmemSegAddr) < 0)
-#if (defined(EXEC_BACKEND) && defined(__CYGWIN__))
+#if defined(EXEC_BACKEND) && defined(__CYGWIN__)
 		/* Work-around for cygipc exec bug */
 			&& shmdt(NULL) < 0
 #endif
