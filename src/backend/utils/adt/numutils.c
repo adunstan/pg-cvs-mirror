@@ -10,7 +10,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/utils/adt/numutils.c,v 1.64 2004/08/29 04:12:52 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/adt/numutils.c,v 1.65 2004/08/29 05:06:49 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -114,7 +114,7 @@ pg_atoi(char *s, int size, int c)
 			if (errno == ERANGE || l < SHRT_MIN || l > SHRT_MAX)
 				ereport(ERROR,
 						(errcode(ERRCODE_NUMERIC_VALUE_OUT_OF_RANGE),
-						 errmsg("value \"%s\" is out of range for type shortint", s)));
+						 errmsg("value \"%s\" is out of range for type smallint", s)));
 			break;
 		case sizeof(int8):
 			if (errno == ERANGE || l < SCHAR_MIN || l > SCHAR_MAX)

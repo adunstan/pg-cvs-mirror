@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/utils/adt/float.c,v 1.109 2004/08/29 05:06:49 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/adt/float.c,v 1.110 2004/09/02 17:12:50 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1147,7 +1147,7 @@ dtoi2(PG_FUNCTION_ARGS)
 	if ((num < SHRT_MIN) || (num > SHRT_MAX))
 		ereport(ERROR,
 				(errcode(ERRCODE_NUMERIC_VALUE_OUT_OF_RANGE),
-				 errmsg("integer out of range")));
+				 errmsg("smallint out of range")));
 
 	result = (int16) rint(num);
 	PG_RETURN_INT16(result);
@@ -1213,7 +1213,7 @@ ftoi2(PG_FUNCTION_ARGS)
 	if ((num < SHRT_MIN) || (num > SHRT_MAX))
 		ereport(ERROR,
 				(errcode(ERRCODE_NUMERIC_VALUE_OUT_OF_RANGE),
-				 errmsg("integer out of range")));
+				 errmsg("smallint out of range")));
 
 	result = (int16) rint(num);
 	PG_RETURN_INT16(result);
