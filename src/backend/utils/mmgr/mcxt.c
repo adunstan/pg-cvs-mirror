@@ -14,7 +14,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/utils/mmgr/mcxt.c,v 1.46 2004/07/01 00:51:29 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/mmgr/mcxt.c,v 1.47 2004/08/08 06:44:32 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -631,7 +631,7 @@ MemoryContextStrdup(MemoryContext context, const char *string)
 }
 
 
-#ifdef WIN32
+#if defined(WIN32) || defined(__CYGWIN__)
 /*
  *	Memory support routines for libpgport on Win32
  *
@@ -648,6 +648,7 @@ pgport_palloc(Size sz)
 {
 	return palloc(sz);
 }
+
 
 char *
 pgport_pstrdup(const char *str)
