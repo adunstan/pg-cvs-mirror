@@ -4,7 +4,7 @@
 #
 # Copyright (c) 1994, Regents of the University of California
 #
-# $PostgreSQL: pgsql-server/src/interfaces/ecpg/compatlib/Makefile,v 1.11.2.1 2003/12/17 15:31:51 meskes Exp $
+# $PostgreSQL: pgsql-server/src/interfaces/ecpg/compatlib/Makefile,v 1.14 2004/02/10 07:26:25 tgl Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -14,7 +14,7 @@ include $(top_builddir)/src/Makefile.global
 
 NAME= ecpg_compat
 SO_MAJOR_VERSION= 1
-SO_MINOR_VERSION= 1
+SO_MINOR_VERSION= 2
 
 override CPPFLAGS := -I$(top_srcdir)/src/interfaces/ecpg/include -I$(libpq_srcdir) -I$(top_srcdir)/src/include/utils $(CPPFLAGS) $(THREAD_CPPFLAGS)
 SHLIB_LINK = -L../ecpglib -lecpg -L../pgtypeslib -lpgtypes $(libpq) \
