@@ -15,7 +15,7 @@
  *
  *
  * IDENTIFICATION
- *		$PostgreSQL: pgsql-server/src/bin/pg_dump/pg_backup.h,v 1.28 2003/12/06 03:00:11 tgl Exp $
+ *		$PostgreSQL: pgsql-server/src/bin/pg_dump/pg_backup.h,v 1.29 2004/03/24 03:06:08 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -57,6 +57,11 @@ typedef struct _Archive
 	int			remoteVersion;
 	int			minRemoteVersion;
 	int			maxRemoteVersion;
+
+	/* error handling */
+	bool		die_on_errors;	/* whether to die on sql errors... */
+	int			n_errors;		/* number of errors (if no die) */
+
 	/* The rest is private */
 } Archive;
 
