@@ -12,7 +12,7 @@
  *	by PostgreSQL
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/bin/pg_dump/pg_dump.c,v 1.386 2004/08/29 05:06:53 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/bin/pg_dump/pg_dump.c,v 1.387 2004/10/06 17:43:07 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1397,7 +1397,7 @@ dumpBlobs(Archive *AH, void *arg)
 	if (AH->remoteVersion >= 70100)
 		appendPQExpBuffer(oidQry, "DECLARE bloboid CURSOR FOR SELECT DISTINCT loid FROM pg_largeobject");
 	else
-		appendPQExpBuffer(oidQry, "DECLARE bloboid CURSOR FOR SELECT oid from pg_class where relkind = 'l'");
+		appendPQExpBuffer(oidQry, "DECLARE bloboid CURSOR FOR SELECT oid FROM pg_class WHERE relkind = 'l'");
 
 	res = PQexec(g_conn, oidQry->data);
 	check_sql_result(res, g_conn, oidQry->data, PGRES_COMMAND_OK);
