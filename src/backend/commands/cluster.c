@@ -11,7 +11,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/commands/cluster.c,v 1.118 2003/11/12 21:15:49 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/commands/cluster.c,v 1.119 2003/11/29 19:51:47 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -501,6 +501,8 @@ make_new_heap(Oid OIDOldHeap, const char *NewName)
 										  tupdesc,
 										  OldHeap->rd_rel->relkind,
 										  OldHeap->rd_rel->relisshared,
+										  true,
+										  0,
 										  ONCOMMIT_NOOP,
 										  allowSystemTableMods);
 

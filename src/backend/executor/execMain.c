@@ -26,7 +26,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/executor/execMain.c,v 1.228 2004/01/22 02:23:21 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/executor/execMain.c,v 1.229 2004/03/02 18:56:15 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -797,6 +797,8 @@ InitPlan(QueryDesc *queryDesc, bool explainOnly)
 												  tupdesc,
 												  RELKIND_RELATION,
 												  false,
+												  true,
+												  0,
 												  ONCOMMIT_NOOP,
 												  allowSystemTableMods);
 

@@ -10,7 +10,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/tcop/utility.c,v 1.209 2003/11/29 19:51:57 pgsql Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/tcop/utility.c,v 1.210 2004/02/10 01:55:26 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -608,10 +608,11 @@ ProcessUtility(Node *parsetree,
 					case 'L':	/* CLUSTER ON */
 						AlterTableClusterOn(relid, stmt->name);
 						break;
-					case 'o':	/* ADD OIDS */
+					case 'o':	/* SET WITHOUT OIDS */
 						AlterTableAlterOids(relid,
+											false,
 							  interpretInhOption(stmt->relation->inhOpt),
-											false);
+											DROP_RESTRICT);
 						break;
 					default:	/* oops */
 						elog(ERROR, "unrecognized alter table type: %d",
