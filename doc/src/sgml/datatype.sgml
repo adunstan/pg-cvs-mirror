@@ -1,5 +1,5 @@
 <!--
-$PostgreSQL: pgsql-server/doc/src/sgml/datatype.sgml,v 1.146 2004/06/16 01:26:35 tgl Exp $
+$PostgreSQL: pgsql-server/doc/src/sgml/datatype.sgml,v 1.147 2004/08/10 00:55:02 tgl Exp $
 -->
 
  <chapter id="datatype">
@@ -226,13 +226,13 @@ $PostgreSQL: pgsql-server/doc/src/sgml/datatype.sgml,v 1.146 2004/06/16 01:26:35
       </row>
 
       <row>
-       <entry><type>timestamp [ (<replaceable>p</replaceable>) ] without time zone</type></entry>
+       <entry><type>timestamp [ (<replaceable>p</replaceable>) ] [ without time zone ]</type></entry>
        <entry><type>timestamp</type></entry>
        <entry>date and time</entry>
       </row>
 
       <row>
-       <entry><type>timestamp [ (<replaceable>p</replaceable>) ] [ with time zone ]</type></entry>
+       <entry><type>timestamp [ (<replaceable>p</replaceable>) ] with time zone</type></entry>
        <entry><type>timestamptz</type></entry>
        <entry>date and time, including time zone</entry>
       </row>
