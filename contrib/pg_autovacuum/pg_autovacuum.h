@@ -2,7 +2,7 @@
  * Header file for pg_autovacuum.c
  * (c) 2003 Matthew T. O'Connor
  *
- * $PostgreSQL: pgsql/contrib/pg_autovacuum/pg_autovacuum.h,v 1.12 2004/10/16 21:50:02 tgl Exp $
+ * $PostgreSQL: pgsql/contrib/pg_autovacuum/pg_autovacuum.h,v 1.13 2004/11/17 16:54:15 tgl Exp $
  */
 
 #ifndef _PG_AUTOVACUUM_H
@@ -68,6 +68,7 @@ typedef struct cmdargs
 	char	   *user,
 			   *password,
 #ifdef WIN32
+			   *service_dependencies,
 			   *service_user,
 			   *service_password,
 #endif
