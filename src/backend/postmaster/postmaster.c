@@ -37,7 +37,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/postmaster/postmaster.c,v 1.406 2004/07/10 23:29:16 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/postmaster/postmaster.c,v 1.407 2004/07/11 00:18:43 momjian Exp $
  *
  * NOTES
  *
@@ -372,7 +372,8 @@ PostmasterMain(int argc, char *argv[])
 	InitializeGUCOptions();
 
 	userPGDATA = getenv("PGDATA");		/* default value */
-
+	canonicalize_path(userPGDATA);
+	
 	opterr = 1;
 
 	while ((opt = getopt(argc, argv, "A:a:B:b:c:D:d:Fh:ik:lm:MN:no:p:Ss-:")) != -1)
