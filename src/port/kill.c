@@ -9,7 +9,7 @@
  *	signals that the backend can recognize.
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/port/kill.c,v 1.1 2004/05/27 13:08:57 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/port/kill.c,v 1.2 2004/06/24 18:53:48 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -26,7 +26,8 @@ pgkill(int pid, int sig)
 	BYTE		sigRet = 0;
 	DWORD		bytes;
 
-	if (sig >= PG_SIGNAL_COUNT || sig <= 0)
+	/* we allow signal 0 here, but it will be ignored in pg_queue_signal */
+	if (sig >= PG_SIGNAL_COUNT || sig < 0)
 	{
 		errno = EINVAL;
 		return -1;

@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/port/win32/signal.c,v 1.3 2004/05/27 14:39:29 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/port/win32/signal.c,v 1.4 2004/06/24 21:02:42 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -162,7 +162,7 @@ pqsignal(int signum, pqsigfunc handler)
 void
 pg_queue_signal(int signum)
 {
-	if (signum >= PG_SIGNAL_COUNT || signum < 0)
+	if (signum >= PG_SIGNAL_COUNT || signum <= 0)
 		return;
 
 	EnterCriticalSection(&pg_signal_crit_sec);
