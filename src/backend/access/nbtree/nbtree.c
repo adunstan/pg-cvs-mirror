@@ -12,7 +12,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/access/nbtree/nbtree.c,v 1.119 2004/07/17 03:27:59 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/nbtree/nbtree.c,v 1.120 2004/08/29 04:12:21 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -60,11 +60,6 @@ static void btbuildCallback(Relation index,
 
 /*
  *	btbuild() -- build a new btree index.
- *
- *		We use a global variable to record the fact that we're creating
- *		a new index.  This is used to avoid high-concurrency locking,
- *		since the index won't be visible until this transaction commits
- *		and since building is guaranteed to be single-threaded.
  */
 Datum
 btbuild(PG_FUNCTION_ARGS)
