@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/execJunk.c,v 1.45 2004/10/11 02:02:41 neilc Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/execJunk.c,v 1.46 2004/12/31 21:59:45 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -209,20 +209,13 @@ ExecGetJunkAttribute(JunkFilter *junkfilter,
 					 Datum *value,
 					 bool *isNull)
 {
-	List	   *targetList;
 	ListCell   *t;
-	AttrNumber	resno;
-	TupleDesc	tupType;
-	HeapTuple	tuple;
 
 	/*
-	 * first look in the junkfilter's target list for an attribute with
+	 * Look in the junkfilter's target list for an attribute with
 	 * the given name
 	 */
-	resno = InvalidAttrNumber;
-	targetList = junkfilter->jf_targetList;
-
-	foreach(t, targetList)
+	foreach(t, junkfilter->jf_targetList)
 	{
 		TargetEntry *tle = lfirst(t);
 		Resdom	   *resdom = tle->resdom;
@@ -231,26 +224,13 @@ ExecGetJunkAttribute(JunkFilter *junkfilter,
 			(strcmp(resdom->resname, attrName) == 0))
 		{
 			/* We found it ! */
-			resno = resdom->resno;
-			break;
+			*value = slot_getattr(slot, resdom->resno, isNull);
+			return true;
 		}
 	}
 
-	if (resno == InvalidAttrNumber)
-	{
-		/* Ooops! We couldn't find this attribute... */
-		return false;
-	}
-
-	/*
-	 * Now extract the attribute value from the tuple.
-	 */
-	tuple = slot->val;
-	tupType = slot->ttc_tupleDescriptor;
-
-	*value = heap_getattr(tuple, resno, tupType, isNull);
-
-	return true;
+	/* Ooops! We couldn't find this attribute... */
+	return false;
 }
 
 /*
