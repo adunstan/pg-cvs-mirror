@@ -4,7 +4,7 @@
 #
 # Copyright (c) 1994, Regents of the University of California
 #
-# $PostgreSQL: pgsql-server/src/interfaces/libpq/Makefile,v 1.101 2004/04/19 17:42:59 momjian Exp $
+# $PostgreSQL: pgsql-server/src/interfaces/libpq/Makefile,v 1.102 2004/04/23 18:15:55 momjian Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -19,6 +19,7 @@ SO_MAJOR_VERSION= 3
 SO_MINOR_VERSION= 2
 
 override CPPFLAGS := -I$(srcdir) $(CPPFLAGS) $(PTHREAD_CFLAGS) -DFRONTEND -DSYSCONFDIR='"$(sysconfdir)"'
+override CFLAGS += $(PTHREAD_CFLAGS)
 
 OBJS= fe-auth.o fe-connect.o fe-exec.o fe-misc.o fe-print.o fe-lobj.o \
       fe-protocol2.o fe-protocol3.o pqexpbuffer.o pqsignal.o fe-secure.o \
