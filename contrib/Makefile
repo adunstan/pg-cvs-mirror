@@ -1,4 +1,4 @@
-# $PostgreSQL: /cvsroot/pgsql-server/contrib/Makefile,v 1.46 2003/09/11 17:15:27 momjian Exp $
+# $PostgreSQL: pgsql-server/contrib/Makefile,v 1.47 2003/11/29 19:51:18 pgsql Exp $
 
 subdir = contrib
 top_builddir = ..
@@ -55,6 +55,7 @@ WANTED_DIRS = \
 #		start-scripts	\ (does not have a makefile)
 #		tools		\ (does not have a makefile)
 #		xml		\ (non-standard makefile)
+#		xml2		\ (non-standard makefile)
 
 
 all install installdirs uninstall clean distclean maintainer-clean check installcheck:
