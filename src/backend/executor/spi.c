@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/executor/spi.c,v 1.116 2004/06/04 20:35:21 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/executor/spi.c,v 1.117 2004/06/06 00:41:26 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1125,7 +1125,7 @@ _SPI_execute(const char *src, int tcount, _SPI_plan *plan)
 			QueryDesc  *qdesc;
 			DestReceiver *dest;
 
-			planTree = pg_plan_query(queryTree);
+			planTree = pg_plan_query(queryTree, NULL);
 			plan_list = lappend(plan_list, planTree);
 
 			dest = CreateDestReceiver(queryTree->canSetTag ? SPI : None, NULL);

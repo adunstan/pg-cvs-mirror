@@ -10,7 +10,7 @@
  * Copyright (c) 2002-2003, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/commands/prepare.c,v 1.26 2004/04/22 02:58:20 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/commands/prepare.c,v 1.27 2004/05/26 04:41:11 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -91,7 +91,7 @@ PrepareQuery(PrepareStmt *stmt)
 	query_list = QueryRewrite(stmt->query);
 
 	/* Generate plans for queries.	Snapshot is already set. */
-	plan_list = pg_plan_queries(query_list, false);
+	plan_list = pg_plan_queries(query_list, NULL, false);
 
 	/* Save the results. */
 	StorePreparedStatement(stmt->name,
