@@ -4,7 +4,7 @@
 #
 # Copyright (c) 1994, Regents of the University of California
 #
-# $PostgreSQL: pgsql-server/src/interfaces/ecpg/ecpglib/Makefile,v 1.24 2004/05/25 21:20:44 momjian Exp $
+# $PostgreSQL: pgsql-server/src/interfaces/ecpg/ecpglib/Makefile,v 1.25 2004/07/13 00:06:41 tgl Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -20,6 +20,9 @@ DLTYPE= library
 override CPPFLAGS := -DFRONTEND -I$(top_srcdir)/src/interfaces/ecpg/include \
 	-I$(libpq_srcdir) -I$(top_builddir)/src/port $(CPPFLAGS)
 override CFLAGS += $(PTHREAD_CFLAGS)
+
+# Need to recomple any libpgport object files
+LIBS := $(patsubst -lpgport,, $(LIBS))
 
 OBJS= execute.o typename.o descriptor.o data.o error.o prepare.o memory.o \
 	connect.o misc.o path.o exec.o
