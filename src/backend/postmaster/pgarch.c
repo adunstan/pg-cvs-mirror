@@ -19,7 +19,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/postmaster/pgarch.c,v 1.3 2004/08/01 17:45:43 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/postmaster/pgarch.c,v 1.4 2004/08/03 20:32:33 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -172,7 +172,7 @@ pgarch_start(void)
 			beos_backend_startup();
 #endif
 			/* Close the postmaster's sockets */
-			ClosePostmasterPorts();
+			ClosePostmasterPorts(false);
 
 			/* Drop our connection to postmaster's shared memory, as well */
 			PGSharedMemoryDetach();

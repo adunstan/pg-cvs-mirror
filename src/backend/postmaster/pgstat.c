@@ -13,7 +13,7 @@
  *
  *	Copyright (c) 2001-2003, PostgreSQL Global Development Group
  *
- *	$PostgreSQL: pgsql-server/src/backend/postmaster/pgstat.c,v 1.76 2004/06/26 16:32:02 tgl Exp $
+ *	$PostgreSQL: pgsql-server/src/backend/postmaster/pgstat.c,v 1.77 2004/07/01 00:50:36 tgl Exp $
  * ----------
  */
 #include "postgres.h"
@@ -611,7 +611,7 @@ pgstat_start(void)
 			beos_backend_startup();
 #endif
 			/* Close the postmaster's sockets */
-			ClosePostmasterPorts();
+			ClosePostmasterPorts(false);
 
 			/* Drop our connection to postmaster's shared memory, as well */
 			PGSharedMemoryDetach();

@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/postmaster/postmaster.h,v 1.2 2004/05/30 03:50:15 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/include/postmaster/postmaster.h,v 1.4 2004/07/21 20:34:48 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -36,7 +36,7 @@ extern HANDLE PostmasterHandle;
 
 
 extern int	PostmasterMain(int argc, char *argv[]);
-extern void ClosePostmasterPorts(void);
+extern void ClosePostmasterPorts(bool am_syslogger);
 #ifdef EXEC_BACKEND
 extern pid_t postmaster_forkexec(int argc, char *argv[]);
 extern int	SubPostmasterMain(int argc, char *argv[]);
