@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/access/genam.h,v 1.46 2004/12/01 19:00:45 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/access/genam.h,v 1.47 2004/12/31 22:03:21 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -72,8 +72,8 @@ extern Relation index_open(Oid relationId);
 extern Relation index_openrv(const RangeVar *relation);
 extern Relation index_openr(const char *sysRelationName);
 extern void index_close(Relation relation);
-extern InsertIndexResult index_insert(Relation indexRelation,
-			 Datum *datums, char *nulls,
+extern bool index_insert(Relation indexRelation,
+			 Datum *values, bool *isnull,
 			 ItemPointer heap_t_ctid,
 			 Relation heapRelation,
 			 bool check_uniqueness);
