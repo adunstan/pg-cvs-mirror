@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- *	$PostgreSQL: pgsql-server/src/tools/thread/thread_test.c,v 1.26 2004/04/27 17:22:41 momjian Exp $
+ *	$PostgreSQL: pgsql-server/src/tools/thread/thread_test.c,v 1.27 2004/04/27 18:36:31 momjian Exp $
  *
  *	This program tests to see if your standard libc functions use
  *	pthread_setspecific()/pthread_getspecific() to be thread-safe.
@@ -100,6 +100,7 @@ main(int argc, char *argv[])
 	temp_filename_1 = malloc(strlen(TEMP_FILENAME_1) + 1);
 	strcpy(temp_filename_1, TEMP_FILENAME_1);
 	mktemp(temp_filename_1);
+
 	temp_filename_2 = malloc(strlen(TEMP_FILENAME_2) + 1);
 	strcpy(temp_filename_2, TEMP_FILENAME_2);
 	mktemp(temp_filename_2);
