@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/catalog/pg_type.c,v 1.90 2003/08/04 02:39:58 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/catalog/pg_type.c,v 1.91 2003/11/29 19:51:46 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -336,7 +336,7 @@ TypeCreate(const char *typeName,
 								 baseType,
 								 (defaultTypeBin ?
 								  stringToNode(defaultTypeBin) :
-								  (void *) NULL),
+								  NULL),
 								 rebuildDeps);
 
 	/*

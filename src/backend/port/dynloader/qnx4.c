@@ -7,7 +7,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/port/dynloader/qnx4.c,v 1.4 2002/11/08 20:23:56 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/port/dynloader/qnx4.c,v 1.5 2003/11/29 19:51:54 pgsql Exp $
  *
  *	NOTES
  *
@@ -28,7 +28,7 @@
 void *
 pg_dlopen(char *filename)
 {
-	return (void *) NULL;
+	return NULL;
 }
 
 PGFunction

@@ -13,7 +13,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: /cvsroot/pgsql-server/src/interfaces/libpgtcl/pgtclId.c,v 1.43 2003/08/04 02:40:16 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/interfaces/libpgtcl/pgtclId.c,v 1.44 2003/11/29 19:52:11 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -133,7 +133,7 @@ PgOutputProc(DRIVER_OUTPUT_PROTO)
 Tcl_File
 PgGetFileProc(ClientData cData, int direction)
 {
-	return (Tcl_File) NULL;
+	return NULL;
 }
 #endif
 
@@ -231,7 +231,7 @@ PgGetConnectionId(Tcl_Interp *interp, CONST84 char *id,
 		Tcl_AppendResult(interp, id, " is not a valid postgresql connection", 0);
 		if (connid_p)
 			*connid_p = NULL;
-		return (PGconn *) NULL;
+		return NULL;
 	}
 
 	connid = (Pg_ConnectionId *) Tcl_GetChannelInstanceData(conn_chan);

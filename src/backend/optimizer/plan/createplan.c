@@ -10,7 +10,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/optimizer/plan/createplan.c,v 1.164 2004/01/05 23:39:54 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/optimizer/plan/createplan.c,v 1.165 2004/01/06 04:31:01 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -2177,7 +2177,7 @@ make_agg(Query *root, List *tlist, List *qual,
 	plan->qual = qual;
 	plan->targetlist = tlist;
 	plan->lefttree = lefttree;
-	plan->righttree = (Plan *) NULL;
+	plan->righttree = NULL;
 
 	return node;
 }
@@ -2229,7 +2229,7 @@ make_group(Query *root,
 	plan->qual = NIL;
 	plan->targetlist = tlist;
 	plan->lefttree = lefttree;
-	plan->righttree = (Plan *) NULL;
+	plan->righttree = NULL;
 
 	return node;
 }

@@ -29,7 +29,7 @@
  * MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
  *
  * IDENTIFICATION
- *	$PostgreSQL: pgsql-server/src/pl/plpython/plpython.c,v 1.43 2004/01/04 00:14:17 momjian Exp $
+ *	$PostgreSQL: pgsql-server/src/pl/plpython/plpython.c,v 1.44 2004/01/06 23:55:19 tgl Exp $
  *
  *********************************************************************
  */
@@ -720,7 +720,7 @@ PLy_trigger_build_args(FunctionCallInfo fcinfo, PLyProcedure * proc, HeapTuple *
 
 		PyDict_SetItemString(pltdata, "old", Py_None);
 		PyDict_SetItemString(pltdata, "new", Py_None);
-		*rv = (HeapTuple) NULL;
+		*rv = NULL;
 
 		if (TRIGGER_FIRED_BY_INSERT(tdata->tg_event))
 			pltevent = PyString_FromString("INSERT");

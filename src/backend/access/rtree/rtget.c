@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/access/rtree/rtget.c,v 1.29 2003/08/04 02:39:57 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/access/rtree/rtget.c,v 1.30 2003/11/29 19:51:40 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -74,7 +74,7 @@ rtfirst(IndexScanDesc s, ScanDirection dir)
 		while (n < FirstOffsetNumber || n > maxoff)
 		{
 			ReleaseBuffer(b);
-			if (so->s_stack == (RTSTACK *) NULL)
+			if (so->s_stack == NULL)
 				return false;
 
 			stk = so->s_stack;
@@ -156,7 +156,7 @@ rtnext(IndexScanDesc s, ScanDirection dir)
 		while (n < FirstOffsetNumber || n > maxoff)
 		{
 			ReleaseBuffer(b);
-			if (so->s_stack == (RTSTACK *) NULL)
+			if (so->s_stack == NULL)
 				return false;
 
 			stk = so->s_stack;

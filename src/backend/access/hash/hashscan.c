@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/access/hash/hashscan.c,v 1.31 2003/09/04 22:06:27 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/access/hash/hashscan.c,v 1.32 2003/11/29 19:51:40 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -26,7 +26,7 @@ typedef struct HashScanListData
 
 typedef HashScanListData *HashScanList;
 
-static HashScanList HashScans = (HashScanList) NULL;
+static HashScanList HashScans = NULL;
 
 
 /*
@@ -73,16 +73,16 @@ _hash_dropscan(IndexScanDesc scan)
 	HashScanList chk,
 				last;
 
-	last = (HashScanList) NULL;
+	last = NULL;
 	for (chk = HashScans;
-		 chk != (HashScanList) NULL && chk->hashsl_scan != scan;
+		 chk != NULL && chk->hashsl_scan != scan;
 		 chk = chk->hashsl_next)
 		last = chk;
 
-	if (chk == (HashScanList) NULL)
+	if (chk == NULL)
 		elog(ERROR, "hash scan list trashed; can't find 0x%p", (void *) scan);
 
-	if (last == (HashScanList) NULL)
+	if (last == NULL)
 		HashScans = chk->hashsl_next;
 	else
 		last->hashsl_next = chk->hashsl_next;

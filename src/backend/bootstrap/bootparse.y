@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/bootstrap/bootparse.y,v 1.62 2003/11/14 18:19:45 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/bootstrap/bootparse.y,v 1.63 2003/11/29 19:51:41 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -220,7 +220,7 @@ Boot_InsertStmt:
 					if (num_columns_read != numattr)
 						elog(ERROR, "incorrect number of columns in row (expected %d, got %d)",
 							 numattr, num_columns_read);
-					if (boot_reldesc == (Relation) NULL)
+					if (boot_reldesc == NULL)
 					{
 						elog(ERROR, "relation not open");
 						err_out();

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/access/hash/hash.c,v 1.68 2003/09/04 22:06:27 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/access/hash/hash.c,v 1.69 2003/11/29 19:51:40 pgsql Exp $
  *
  * NOTES
  *	  This file contains only the public interface routines.
@@ -180,7 +180,7 @@ hashinsert(PG_FUNCTION_ARGS)
 	if (IndexTupleHasNulls(itup))
 	{
 		pfree(itup);
-		PG_RETURN_POINTER((InsertIndexResult) NULL);
+		PG_RETURN_POINTER(NULL);
 	}
 
 	hitem = _hash_formitem(itup);

@@ -15,7 +15,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/access/rtree/rtproc.c,v 1.38 2003/11/12 21:15:48 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/access/rtree/rtproc.c,v 1.39 2003/11/29 19:51:40 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -74,7 +74,7 @@ rt_box_size(PG_FUNCTION_ARGS)
 	/* NB: size is an output argument */
 	float	   *size = (float *) PG_GETARG_POINTER(1);
 
-	if (a == (BOX *) NULL || a->high.x <= a->low.x || a->high.y <= a->low.y)
+	if (a == NULL || a->high.x <= a->low.x || a->high.y <= a->low.y)
 		*size = 0.0;
 	else
 		*size = (float) ((a->high.x - a->low.x) * (a->high.y - a->low.y));

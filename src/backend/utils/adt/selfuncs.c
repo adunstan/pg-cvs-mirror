@@ -15,7 +15,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/utils/adt/selfuncs.c,v 1.152 2003/12/29 22:22:45 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/utils/adt/selfuncs.c,v 1.153 2004/01/05 23:39:54 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -3822,7 +3822,7 @@ make_greater_string(const Const *str_const)
 	if (workstr != NULL)
 		pfree(workstr);
 
-	return (Const *) NULL;
+	return NULL;
 }
 
 /*
