@@ -1,5 +1,5 @@
 <!--
-$PostgreSQL: pgsql/doc/src/sgml/ref/create_table.sgml,v 1.88 2004/12/13 18:05:10 petere Exp $
+$PostgreSQL: pgsql/doc/src/sgml/ref/create_table.sgml,v 1.89 2005/01/04 00:39:53 tgl Exp $
 PostgreSQL documentation
 -->
 
@@ -703,7 +703,7 @@ CREATE TABLE distributors (
    Create a table with a 2-dimensional array:
 
 <programlisting>
-CREATE TABLE array (
+CREATE TABLE array_int (
     vector  int[][]
 );
 </programlisting>
