@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/storage/ipc/pmsignal.c,v 1.13 2004/02/08 22:28:56 neilc Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/storage/ipc/pmsignal.c,v 1.14 2004/05/29 22:48:20 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -18,6 +18,7 @@
 #include <unistd.h>
 
 #include "miscadmin.h"
+#include "postmaster/postmaster.h"
 #include "storage/pmsignal.h"
 #include "storage/shmem.h"
 
@@ -115,9 +116,6 @@ PostmasterIsAlive(bool amDirectChild)
 		return (kill(PostmasterPid, 0) == 0);
 	}
 #else /* WIN32 */
-	/*
-	 * XXX needs to be implemented by somebody
-	 */
-	return true;
+	return (WaitForSingleObject(PostmasterHandle, 0) == WAIT_TIMEOUT);
 #endif /* WIN32 */
 }
