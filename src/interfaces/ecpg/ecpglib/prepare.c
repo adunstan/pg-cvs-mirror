@@ -1,4 +1,4 @@
-/* $PostgreSQL: pgsql-server/src/interfaces/ecpg/ecpglib/prepare.c,v 1.11 2004/01/28 09:52:14 meskes Exp $ */
+/* $PostgreSQL: pgsql-server/src/interfaces/ecpg/ecpglib/prepare.c,v 1.9.4.1 2004/01/28 09:55:53 meskes Exp $ */
 
 #define POSTGRES_ECPG_INTERNAL
 #include "postgres_fe.h"
@@ -46,9 +46,14 @@ replace_variables(char *text)
 
 		if (!string && *ptr == ':')
 		{
-			*ptr = '?';
-			for (++ptr; *ptr && isvarchar(*ptr); ptr++)
-				*ptr = ' ';
+			if (ptr[1]==':')
+				ptr+=2; /* skip  '::' */
+			else
+			{
+				*ptr = '?';
+				for (++ptr; *ptr && isvarchar(*ptr); ptr++)
+					*ptr = ' ';
+			}
 		}
 	}
 }
