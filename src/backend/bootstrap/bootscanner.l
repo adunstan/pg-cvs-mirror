@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/bootstrap/bootscanner.l,v 1.31 2003/11/09 21:30:35 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/bootstrap/bootscanner.l,v 1.32 2003/11/29 19:51:41 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -53,6 +53,7 @@ static int	yyline;  /* keep track of the line number for error reporting */
 
 %option 8bit
 %option never-interactive
+%option nodefault
 %option nounput
 %option noyywrap
 
