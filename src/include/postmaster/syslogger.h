@@ -3,9 +3,9 @@
  * syslogger.h
  *	  Exports from postmaster/syslogger.c.
  *
- * Copyright (c) 2004, PostgreSQL Global Development Group
+ * Copyright (c) 2004-2005, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql-server/src/include/postmaster/syslogger.h,v 1.2 2004/08/29 05:06:58 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/postmaster/syslogger.h,v 1.3 2004/08/31 04:53:44 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -4,11 +4,11 @@
  *	  implementation of Value nodes
  *
  *
- * Copyright (c) 2003, PostgreSQL Global Development Group
+ * Copyright (c) 2003-2005, PostgreSQL Global Development Group
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL$
+ *	  $PostgreSQL: pgsql/src/backend/nodes/value.c,v 1.1 2004/01/07 18:43:36 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */
