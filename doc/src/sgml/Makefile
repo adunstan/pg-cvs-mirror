@@ -2,7 +2,7 @@
 #
 # PostgreSQL documentation makefile
 #
-# $PostgreSQL: pgsql-server/doc/src/sgml/Makefile,v 1.63 2004/01/13 18:45:19 petere Exp $
+# $PostgreSQL: pgsql-server/doc/src/sgml/Makefile,v 1.64 2004/01/15 23:51:32 petere Exp $
 #
 #----------------------------------------------------------------------------
 
@@ -58,6 +58,8 @@ ifneq (,$(findstring devel, $(VERSION)))
 override JADEFLAGS += -V draft-mode
 endif
 
+# Enable some extra warnings
+override SPFLAGS += -wall -wno-unused-param -wno-empty
 
 ##
 ## Man pages
@@ -86,7 +88,7 @@ all: html
 
 html: postgres.sgml $(ALLSGML) stylesheet.dsl
 	@rm -f *.html
-	$(JADE) $(JADEFLAGS) $(SGMLINCLUDE) $(CATALOG) -d stylesheet.dsl -i output-html -t sgml $<
+	$(JADE) $(JADEFLAGS) $(SPFLAGS) $(SGMLINCLUDE) $(CATALOG) -d stylesheet.dsl -i output-html -t sgml $<
 ifeq ($(vpath_build), yes)
 	@cp $(srcdir)/stylesheet.css .
 endif
@@ -220,7 +222,7 @@ testxml: stylesheet.xsl postgres.xml
 
 # Quick syntax check without style processing
 check: postgres.sgml $(ALLSGML)
-	$(NSGMLS) $(SGMLINCLUDE) -s $<
+	$(NSGMLS) $(SPFLAGS) $(SGMLINCLUDE) -s $<
 
 
 ##
