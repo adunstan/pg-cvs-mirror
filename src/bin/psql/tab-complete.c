@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2004, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql-server/src/bin/psql/tab-complete.c,v 1.113 2004/08/29 04:13:02 momjian Exp $
+ * $PostgreSQL: pgsql-server/src/bin/psql/tab-complete.c,v 1.114 2004/08/29 05:06:54 momjian Exp $
  */
 
 /*----------------------------------------------------------------------
@@ -654,7 +654,7 @@ psql_completion(char *text, int start, int end)
 			 pg_strcasecmp(prev3_wd, "TABLE") != 0)
 	{
 		static const char *const list_ALTER[] =
-		{"AGGREGATE", "CONVERSATION", "DATABASE", "DOMAIN", "FUNCTION",
+		{"AGGREGATE", "CONVERSION", "DATABASE", "DOMAIN", "FUNCTION",
 			"GROUP", "INDEX", "LANGUAGE", "OPERATOR", "SCHEMA", "SEQUENCE", "TABLE",
 		"TABLESPACE", "TRIGGER", "TYPE", "USER", NULL};
 
