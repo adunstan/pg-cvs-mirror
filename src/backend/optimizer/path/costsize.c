@@ -49,7 +49,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/optimizer/path/costsize.c,v 1.116 2003/11/29 19:51:50 pgsql Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/optimizer/path/costsize.c,v 1.117 2003/12/03 17:45:07 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1969,7 +1969,7 @@ set_rel_width(Query *root, RelOptInfo *rel)
 static double
 relation_byte_size(double tuples, int width)
 {
-	return tuples * (MAXALIGN(width) + MAXALIGN(sizeof(HeapTupleData)));
+	return tuples * (MAXALIGN(width) + MAXALIGN(sizeof(HeapTupleHeaderData)));
 }
 
 /*
