@@ -16,7 +16,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/optimizer/prep/prepjointree.c,v 1.24 2004/12/11 23:26:37 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/optimizer/prep/prepjointree.c,v 1.25 2004/12/31 22:00:20 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -458,7 +458,7 @@ has_nullable_targetlist(Query *subquery)
 		TargetEntry *tle = (TargetEntry *) lfirst(l);
 
 		/* ignore resjunk columns */
-		if (tle->resdom->resjunk)
+		if (tle->resjunk)
 			continue;
 
 		/* Must contain a Var of current level */
