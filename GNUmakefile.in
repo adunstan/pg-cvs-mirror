@@ -1,7 +1,7 @@
 #
 # PostgreSQL top level makefile
 #
-# $PostgreSQL: pgsql-server/GNUmakefile.in,v 1.37 2004/01/19 21:20:04 tgl Exp $
+# $PostgreSQL: pgsql-server/GNUmakefile.in,v 1.38 2004/04/20 00:33:44 pgsql Exp $
 #
 
 subdir =
@@ -101,6 +101,7 @@ distdir:
 	done
 	$(MAKE) -C $(distdir) distprep
 	$(MAKE) -C $(distdir) distclean
+	rm -f $(distdir)/README.CVS
 
 distcheck: $(distdir).tar.gz
 	-rm -rf $(dummy)
