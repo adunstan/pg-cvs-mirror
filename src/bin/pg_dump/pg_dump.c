@@ -12,7 +12,7 @@
  *	by PostgreSQL
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/bin/pg_dump/pg_dump.c,v 1.359 2003/12/01 22:08:01 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/bin/pg_dump/pg_dump.c,v 1.360 2003/12/06 03:00:12 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -4633,10 +4633,11 @@ dumpProcLang(Archive *fout, ProcLangInfo *plang)
 				NULL, "",
 				plang->dobj.catId, 0, plang->dobj.dumpId);
 
-	dumpACL(fout, plang->dobj.catId, plang->dobj.dumpId, "LANGUAGE",
-			qlanname, plang->lanname,
-			funcInfo->pronamespace->nspname,
-			NULL, plang->lanacl);
+	if (plang->lanpltrusted)
+		dumpACL(fout, plang->dobj.catId, plang->dobj.dumpId, "LANGUAGE",
+				qlanname, plang->lanname,
+				funcInfo->pronamespace->nspname,
+				NULL, plang->lanacl);
 
 	free(qlanname);
 
