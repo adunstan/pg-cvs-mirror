@@ -1,5 +1,5 @@
 <!--
-$PostgreSQL: /cvsroot/pgsql-server/doc/src/sgml/spi.sgml,v 1.28 2003/10/22 22:28:10 tgl Exp $
+$PostgreSQL: pgsql-server/doc/src/sgml/spi.sgml,v 1.29 2003/11/29 19:51:37 pgsql Exp $
 -->
 
 <chapter id="spi">
@@ -320,7 +320,7 @@ typedef struct
      <listitem>
       <para>
        if a <command>SELECT</command> (but not <command>SELECT
-       ... INTO</>) was executed
+       INTO</>) was executed
       </para>
      </listitem>
     </varlistentry>
@@ -329,7 +329,7 @@ typedef struct
      <term><symbol>SPI_OK_SELINTO</symbol></term>
      <listitem>
       <para>
-       if a <command>SELECT ... INTO</command> was executed
+       if a <command>SELECT INTO</command> was executed
       </para>
      </listitem>
     </varlistentry>
