@@ -45,7 +45,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/commands/tablespace.c,v 1.3 2004/06/21 04:06:06 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/commands/tablespace.c,v 1.4 2004/06/25 21:55:53 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -315,7 +315,7 @@ CreateTableSpace(CreateTableSpaceStmt *stmt)
 	/*
 	 * All seems well, create the symlink
 	 */
-	linkloc = (char *) palloc(strlen(DataDir) + 16 + 10 + 1);
+	linkloc = (char *) palloc(strlen(DataDir) + 11 + 10 + 1);
 	sprintf(linkloc, "%s/pg_tblspc/%u", DataDir, tablespaceoid);
 
 	if (symlink(location, linkloc) < 0)
