@@ -1,4 +1,4 @@
-# $PostgreSQL: pgsql-server/contrib/tsearch2/Makefile,v 1.6 2003/11/29 19:51:36 pgsql Exp $
+# $PostgreSQL: pgsql/contrib/tsearch2/Makefile,v 1.7 2004/08/20 20:13:09 momjian Exp $
 
 MODULE_big = tsearch2
 OBJS = dict_ex.o dict.o snmap.o stopword.o common.o prs_dcfg.o \
@@ -39,8 +39,7 @@ $(SUBDIRS:%=%-recursive):
 	$(MAKE) -C $(subst -recursive,,$@) SUBSYS.o
 
 tsearch2.sql: tsearch.sql.in
-	sed -e 's,MODULE_PATHNAME,$$libdir/$(MODULE_big),g' \
-	    -e 's,DATA_PATH,$(datadir)/contrib,g' $< >$@
+	sed -e 's,MODULE_PATHNAME,$$libdir/$(MODULE_big),g' $< >$@
 
 untsearch2.sql: untsearch.sql.in
 	cp $< $@
