@@ -13,7 +13,7 @@
  * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/miscadmin.h,v 1.171 2004/10/18 19:08:57 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/miscadmin.h,v 1.172 2004/10/22 22:33:58 tgl Exp $
  *
  * NOTES
  *	  some of the information in this file should be moved to other files.
@@ -302,7 +302,7 @@ extern ProcessingMode Mode;
  *****************************************************************************/
 
 /* in utils/init/postinit.c */
-extern void InitPostgres(const char *dbname, const char *username);
+extern bool InitPostgres(const char *dbname, const char *username);
 extern void BaseInit(void);
 
 /* in utils/init/miscinit.c */

@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/bootstrap/bootstrap.c,v 1.194 2004/10/08 01:36:33 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/bootstrap/bootstrap.c,v 1.195 2004/10/10 23:37:16 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -424,7 +424,7 @@ BootstrapMain(int argc, char *argv[])
 	/*
 	 * backend initialization
 	 */
-	InitPostgres(dbname, NULL);
+	(void) InitPostgres(dbname, NULL);
 
 	/*
 	 * In NOP mode, all we really want to do is create shared memory and
