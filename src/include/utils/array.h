@@ -10,7 +10,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/utils/array.h,v 1.46 2003/11/29 22:41:15 pgsql Exp $
+ * $PostgreSQL: pgsql-server/src/include/utils/array.h,v 1.47 2004/06/06 00:41:28 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -116,7 +116,6 @@ extern Datum array_in(PG_FUNCTION_ARGS);
 extern Datum array_out(PG_FUNCTION_ARGS);
 extern Datum array_recv(PG_FUNCTION_ARGS);
 extern Datum array_send(PG_FUNCTION_ARGS);
-extern Datum array_length_coerce(PG_FUNCTION_ARGS);
 extern Datum array_eq(PG_FUNCTION_ARGS);
 extern Datum array_ne(PG_FUNCTION_ARGS);
 extern Datum array_lt(PG_FUNCTION_ARGS);
@@ -128,6 +127,8 @@ extern Datum array_dims(PG_FUNCTION_ARGS);
 extern Datum array_lower(PG_FUNCTION_ARGS);
 extern Datum array_upper(PG_FUNCTION_ARGS);
 extern Datum array_type_coerce(PG_FUNCTION_ARGS);
+extern Datum array_type_length_coerce(PG_FUNCTION_ARGS);
+extern Datum array_length_coerce(PG_FUNCTION_ARGS);
 
 extern Datum array_ref(ArrayType *array, int nSubscripts, int *indx,
 		  int arraylen, int elmlen, bool elmbyval, char elmalign,

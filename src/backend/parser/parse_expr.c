@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/parser/parse_expr.c,v 1.172 2004/05/30 23:40:35 neilc Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/parser/parse_expr.c,v 1.173 2004/06/09 19:08:17 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1578,6 +1578,9 @@ exprTypmod(Node *expr)
  *
  * If coercedTypmod is not NULL, the typmod is stored there if the expression
  * is a length-coercion function, else -1 is stored there.
+ *
+ * Note that a combined type-and-length coercion will be treated as a
+ * length coercion by this routine.
  */
 bool
 exprIsLengthCoercion(Node *expr, int32 *coercedTypmod)

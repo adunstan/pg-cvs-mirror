@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/rewrite/rewriteHandler.c,v 1.138 2004/05/30 23:40:35 neilc Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/rewrite/rewriteHandler.c,v 1.139 2004/06/09 19:08:17 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -367,7 +367,8 @@ rewriteTargetList(Query *parsetree, Relation target_relation)
 					new_expr = coerce_to_domain(new_expr,
 												InvalidOid,
 												att_tup->atttypid,
-												COERCE_IMPLICIT_CAST);
+												COERCE_IMPLICIT_CAST,
+												false);
 				}
 			}
 
