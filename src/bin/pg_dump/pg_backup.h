@@ -15,7 +15,7 @@
  *
  *
  * IDENTIFICATION
- *		$PostgreSQL: pgsql-server/src/bin/pg_dump/pg_backup.h,v 1.27 2003/11/29 19:52:05 pgsql Exp $
+ *		$PostgreSQL: pgsql-server/src/bin/pg_dump/pg_backup.h,v 1.28 2003/12/06 03:00:11 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -130,7 +130,7 @@ PGconn *ConnectDatabase(Archive *AH,
 extern void ArchiveEntry(Archive *AHX,
 			 CatalogId catalogId, DumpId dumpId,
 			 const char *tag,
-			 const char *namespace, const char *owner,
+			 const char *namespace, const char *owner, bool withOids,
 			 const char *desc, const char *defn,
 			 const char *dropStmt, const char *copyStmt,
 			 const DumpId *deps, int nDeps,
