@@ -6,7 +6,7 @@
  *
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql-server/src/port/pgsleep.c,v 1.1 2004/02/10 03:42:45 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/port/pgsleep.c,v 1.2 2004/02/10 04:23:03 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -14,7 +14,6 @@
 
 #include <unistd.h>
 #include <sys/time.h>
-
 
 /*
  * pg_usleep --- delay the specified number of microseconds.
@@ -25,6 +24,9 @@
  *
  * On machines where "long" is 32 bits, the maximum delay is ~2000 seconds.
  */
+#ifdef pg_usleep
+#undef pg_usleep
+#endif
 void
 pg_usleep(long microsec)
 {
@@ -37,7 +39,7 @@ pg_usleep(long microsec)
 		delay.tv_usec = microsec % 1000000L;
 		(void) select(0, NULL, NULL, NULL, &delay);
 #else
-		SleepEx((microsec < 500 ? 1 : (microsec + 500) / 1000), TRUE);
+		SleepEx((microsec < 500 ? 1 : (microsec + 500) / 1000), FALSE);
 #endif
 	}
 }

@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/port/copydir.c,v 1.7 2003/11/29 19:52:13 pgsql Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/port/win32/sema.c,v 1.5 2004/02/12 20:37:34 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -228,17 +228,24 @@ semop(int semId, struct sembuf * sops, int nsops)
 	if (sops[0].sem_op == -1)
 	{
 		DWORD		ret;
+		HANDLE      wh[2];
 
-		if (sops[0].sem_flg & IPC_NOWAIT)
-			ret = WaitForSingleObject(cur_handle, 0);
-		else
-			ret = WaitForSingleObject(cur_handle, INFINITE);
+		wh[0] = cur_handle;
+		wh[1] = pgwin32_signal_event;
+
+		ret = WaitForMultipleObjects(2, wh, FALSE, (sops[0].sem_flg & IPC_NOWAIT)?0:INFINITE);
 
 		if (ret == WAIT_OBJECT_0)
 		{
 			/* We got it! */
 			sem_counts[sops[0].sem_num]--;
 			return 0;
+		}
+		else if (ret == WAIT_OBJECT_0+1)
+		{
+			/* Signal event is set - we have a signal to deliver */
+			pgwin32_dispatch_queued_signals();
+			errno = EINTR;
 		}
 		else if (ret == WAIT_TIMEOUT)
 			/* Couldn't get it */
