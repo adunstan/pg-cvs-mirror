@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/commands/view.c,v 1.78 2003/09/25 06:57:59 petere Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/commands/view.c,v 1.79 2003/11/29 19:51:48 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -141,7 +141,7 @@ DefineVirtualRelation(const RangeVar *relation, List *tlist, bool replace)
 		createStmt->tableElts = attrList;
 		createStmt->inhRelations = NIL;
 		createStmt->constraints = NIL;
-		createStmt->hasoids = false;
+		createStmt->hasoids = MUST_NOT_HAVE_OIDS;
 		createStmt->oncommit = ONCOMMIT_NOOP;
 
 		/*

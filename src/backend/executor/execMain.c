@@ -26,7 +26,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/executor/execMain.c,v 1.224 2003/12/28 21:57:36 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/executor/execMain.c,v 1.225 2004/01/07 18:56:26 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -593,14 +593,7 @@ InitPlan(QueryDesc *queryDesc, bool explainOnly)
 	if (operation == CMD_SELECT && parseTree->into != NULL)
 	{
 		do_select_into = true;
-
-		/*
-		 * The presence of OIDs in the result set of SELECT INTO is
-		 * controlled by the default_with_oids GUC parameter. The
-		 * behavior in versions of PostgreSQL prior to 7.5 is to
-		 * always include OIDs.
-		 */
-		estate->es_force_oids = default_with_oids;
+		estate->es_force_oids = parseTree->intoHasOids;
 	}
 
 	/*

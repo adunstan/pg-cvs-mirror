@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/commands/sequence.c,v 1.106 2003/12/14 00:34:47 neilc Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/commands/sequence.c,v 1.107 2004/01/07 18:56:25 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -178,7 +178,7 @@ DefineSequence(CreateSeqStmt *seq)
 	stmt->relation = seq->sequence;
 	stmt->inhRelations = NIL;
 	stmt->constraints = NIL;
-	stmt->hasoids = false;
+	stmt->hasoids = MUST_NOT_HAVE_OIDS;
 	stmt->oncommit = ONCOMMIT_NOOP;
 
 	seqoid = DefineRelation(stmt, RELKIND_SEQUENCE);

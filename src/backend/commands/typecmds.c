@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: /cvsroot/pgsql-server/src/backend/commands/typecmds.c,v 1.50 2003/11/12 21:15:51 tgl Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/commands/typecmds.c,v 1.51 2003/11/29 19:51:47 pgsql Exp $
  *
  * DESCRIPTION
  *	  The "DefineFoo" routines take the parse tree and pick out the
@@ -1066,7 +1066,7 @@ DefineCompositeType(const RangeVar *typevar, List *coldeflist)
 	createStmt->tableElts = coldeflist;
 	createStmt->inhRelations = NIL;
 	createStmt->constraints = NIL;
-	createStmt->hasoids = false;
+	createStmt->hasoids = MUST_NOT_HAVE_OIDS;
 	createStmt->oncommit = ONCOMMIT_NOOP;
 
 	/*

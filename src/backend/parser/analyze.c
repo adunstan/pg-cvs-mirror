@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- *	$PostgreSQL: pgsql-server/src/backend/parser/analyze.c,v 1.292 2003/11/29 19:51:51 pgsql Exp $
+ *	$PostgreSQL: pgsql-server/src/backend/parser/analyze.c,v 1.293 2004/01/05 20:58:58 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -41,6 +41,7 @@
 #include "utils/acl.h"
 #include "utils/builtins.h"
 #include "utils/fmgroids.h"
+#include "utils/guc.h"
 #include "utils/lsyscache.h"
 #include "utils/relcache.h"
 #include "utils/syscache.h"
@@ -1973,6 +1974,21 @@ transformSelectStmt(ParseState *pstate, SelectStmt *stmt)
 	qry->into = stmt->into;
 	if (stmt->intoColNames)
 		applyColumnNames(qry->targetList, stmt->intoColNames);
+
+	switch (stmt->intoHasOids)
+	{
+		case MUST_HAVE_OIDS:
+			qry->intoHasOids = true;
+			break;
+
+		case MUST_NOT_HAVE_OIDS:
+			qry->intoHasOids = false;
+			break;
+
+		case DEFAULT_OIDS:
+			qry->intoHasOids = default_with_oids;
+			break;
+	}
 
 	/* mark column origins */
 	markTargetListOrigins(pstate, qry->targetList);
