@@ -7,7 +7,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/port/exec.c,v 1.25 2004/08/29 05:07:02 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/port/exec.c,v 1.26 2004/09/27 22:06:41 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -24,8 +24,6 @@
 #include <sys/wait.h>
 #if !defined(_MSC_VER) && !defined(__BORLANDC__)
 #include <unistd.h>
-#else
-#include "port/win32.h"
 #endif
 
 #include "miscadmin.h"

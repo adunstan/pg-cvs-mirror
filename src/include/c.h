@@ -12,7 +12,7 @@
  * Portions Copyright (c) 1996-2004, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/c.h,v 1.174 2004/09/26 15:13:42 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/include/c.h,v 1.175 2004/09/27 04:18:28 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -80,7 +80,7 @@
 /* We have to redefine some system functions after they are included above */
 #include "pg_config_os.h"
 #else
-#include <windows.h>	/* We don't have a port file for MSC/BCC */
+#include "port/win32.h"	/* We didn't run configure, but this is our port file */
 #endif
 #endif
 
