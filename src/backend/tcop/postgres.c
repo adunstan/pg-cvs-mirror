@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/backend/tcop/postgres.c,v 1.394 2004/03/09 04:43:07 momjian Exp $
+ *	  $PostgreSQL: pgsql-server/src/backend/tcop/postgres.c,v 1.395 2004/03/15 15:56:22 momjian Exp $
  *
  * NOTES
  *	  this is the "main" module of the postgres backend and
@@ -2710,6 +2710,7 @@ PostgresMain(int argc, char *argv[], const char *username)
 		 */
 		MemoryContextSwitchTo(TopMemoryContext);
 		MemoryContextResetAndDeleteChildren(ErrorContext);
+		ActivePortal = NULL;
 		PortalContext = NULL;
 		QueryContext = NULL;
 

@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2003, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql-server/src/bin/psql/command.c,v 1.112 2004/01/26 22:35:32 tgl Exp $
+ * $PostgreSQL: pgsql-server/src/bin/psql/command.c,v 1.113 2004/02/19 19:40:08 tgl Exp $
  */
 #include "postgres_fe.h"
 #include "command.h"
@@ -1042,18 +1042,20 @@ SyncVerbosityVariable(void)
 						   "default", "terse", "verbose", NULL))
 	{
 		case 1:			/* default */
-			PQsetErrorVerbosity(pset.db, PQERRORS_DEFAULT);
+			pset.verbosity = PQERRORS_DEFAULT;
 			break;
 		case 2:			/* terse */
-			PQsetErrorVerbosity(pset.db, PQERRORS_TERSE);
+			pset.verbosity = PQERRORS_TERSE;
 			break;
 		case 3:			/* verbose */
-			PQsetErrorVerbosity(pset.db, PQERRORS_VERBOSE);
+			pset.verbosity = PQERRORS_VERBOSE;
 			break;
 		default:				/* not set or unrecognized value */
-			PQsetErrorVerbosity(pset.db, PQERRORS_DEFAULT);
+			pset.verbosity = PQERRORS_DEFAULT;
 			break;
 	}
+
+	PQsetErrorVerbosity(pset.db, pset.verbosity);
 }
 
 

@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2003, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql-server/src/include/utils/elog.h,v 1.65 2004/03/09 04:43:07 momjian Exp $
+ * $PostgreSQL: pgsql-server/src/include/utils/elog.h,v 1.66 2004/03/15 15:56:28 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -131,6 +131,12 @@ __attribute__((format(printf, 1, 2)));
 
 extern int	errfunction(const char *funcname);
 extern int	errposition(int cursorpos);
+
+extern int	internalerrposition(int cursorpos);
+extern int	internalerrquery(const char *query);
+
+extern int	geterrposition(void);
+extern int	getinternalerrposition(void);
 
 
 /*----------
