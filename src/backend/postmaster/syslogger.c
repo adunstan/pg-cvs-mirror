@@ -18,7 +18,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/postmaster/syslogger.c,v 1.11 2004/11/09 13:01:27 petere Exp $
+ *	  $PostgreSQL: pgsql/src/backend/postmaster/syslogger.c,v 1.12 2005/01/01 20:44:16 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -697,10 +697,9 @@ write_syslogger_file_binary(const char *buffer, int count)
 	LeaveCriticalSection(&sysfileSection);
 #endif
 
+	/* can't use ereport here because of possible recursion */
 	if (rc != count)
-		ereport(LOG,
-				(errcode_for_file_access(),
-				 errmsg("could not write to log file: %m")));
+		write_stderr("could not write to log file: %s\n", strerror(errno));
 }
 
 #ifdef WIN32
