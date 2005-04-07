@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/nodes/parsenodes.h,v 1.275 2005/03/29 17:58:51 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/nodes/parsenodes.h,v 1.276 2005/04/06 16:34:07 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -613,6 +613,7 @@ typedef struct DeleteStmt
 	NodeTag		type;
 	RangeVar   *relation;		/* relation to delete from */
 	Node	   *whereClause;	/* qualifications */
+	List	   *usingClause;	/* optional using clause for more tables */
 } DeleteStmt;
 
 /* ----------------------

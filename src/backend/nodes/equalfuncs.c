@@ -18,7 +18,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/nodes/equalfuncs.c,v 1.238 2005/03/29 17:58:50 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/nodes/equalfuncs.c,v 1.239 2005/04/06 16:34:05 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -675,6 +675,7 @@ _equalDeleteStmt(DeleteStmt *a, DeleteStmt *b)
 {
 	COMPARE_NODE_FIELD(relation);
 	COMPARE_NODE_FIELD(whereClause);
+	COMPARE_NODE_FIELD(usingClause);
 
 	return true;
 }
