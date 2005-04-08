@@ -15,7 +15,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/storage/lmgr/lwlock.c,v 1.24 2004/08/29 05:06:48 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/storage/lmgr/lwlock.c,v 1.25 2004/12/31 22:01:05 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -328,7 +328,8 @@ LWLockAcquire(LWLockId lockid, LWLockMode mode)
 	SpinLockRelease_NoHoldoff(&lock->mutex);
 
 	/* Add lock to list of locks held by this backend */
-	Assert(num_held_lwlocks < MAX_SIMUL_LWLOCKS);
+	if (num_held_lwlocks >= MAX_SIMUL_LWLOCKS)
+		elog(ERROR, "too many LWLocks taken");
 	held_lwlocks[num_held_lwlocks++] = lockid;
 
 	/*
@@ -397,7 +398,8 @@ LWLockConditionalAcquire(LWLockId lockid, LWLockMode mode)
 	else
 	{
 		/* Add lock to list of locks held by this backend */
-		Assert(num_held_lwlocks < MAX_SIMUL_LWLOCKS);
+		if (num_held_lwlocks >= MAX_SIMUL_LWLOCKS)
+			elog(ERROR, "too many LWLocks taken");
 		held_lwlocks[num_held_lwlocks++] = lockid;
 	}
 
