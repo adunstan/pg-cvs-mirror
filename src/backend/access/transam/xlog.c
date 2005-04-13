@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/backend/access/transam/xlog.c,v 1.182 2005/03/24 04:36:17 momjian Exp $
+ * $PostgreSQL: pgsql/src/backend/access/transam/xlog.c,v 1.183 2005/03/29 03:01:30 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -3505,7 +3505,7 @@ BootStrapXLOG(void)
 	checkPoint.undo = checkPoint.redo;
 	checkPoint.ThisTimeLineID = ThisTimeLineID;
 	checkPoint.nextXid = FirstNormalTransactionId;
-	checkPoint.nextOid = BootstrapObjectIdData;
+	checkPoint.nextOid = FirstBootstrapObjectId;
 	checkPoint.time = time(NULL);
 
 	ShmemVariableCache->nextXid = checkPoint.nextXid;
