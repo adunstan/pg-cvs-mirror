@@ -8,14 +8,13 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/rewrite/rewriteSupport.c,v 1.59 2004/08/29 04:12:47 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/rewrite/rewriteSupport.c,v 1.60 2004/12/31 22:00:46 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
 #include "postgres.h"
 
 #include "access/heapam.h"
-#include "catalog/catname.h"
 #include "catalog/indexing.h"
 #include "rewrite/rewriteSupport.h"
 #include "utils/inval.h"
@@ -60,7 +59,7 @@ SetRelationRuleStatus(Oid relationId, bool relHasRules,
 	 * Find the tuple to update in pg_class, using syscache for the
 	 * lookup.
 	 */
-	relationRelation = heap_openr(RelationRelationName, RowExclusiveLock);
+	relationRelation = heap_open(RelationRelationId, RowExclusiveLock);
 	tuple = SearchSysCacheCopy(RELOID,
 							   ObjectIdGetDatum(relationId),
 							   0, 0, 0);

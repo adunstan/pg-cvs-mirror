@@ -13,14 +13,13 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/catalog/namespace.c,v 1.73 2004/12/31 21:59:38 pgsql Exp $
+ *	  $PostgreSQL: pgsql/src/backend/catalog/namespace.c,v 1.74 2005/03/29 00:16:56 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
 #include "postgres.h"
 
 #include "access/xact.h"
-#include "catalog/catname.h"
 #include "catalog/dependency.h"
 #include "catalog/namespace.h"
 #include "catalog/pg_conversion.h"
@@ -1783,7 +1782,7 @@ RemoveTempRelations(Oid tempNamespaceId)
 	 * be a waste of cycles).  We do this by finding everything that has a
 	 * dependency on the namespace.
 	 */
-	object.classId = get_system_catalog_relid(NamespaceRelationName);
+	object.classId = NamespaceRelationId;
 	object.objectId = tempNamespaceId;
 	object.objectSubId = 0;
 

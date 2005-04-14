@@ -15,7 +15,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/selfuncs.c,v 1.175 2005/03/27 23:53:03 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/selfuncs.c,v 1.176 2005/04/01 20:31:50 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -79,7 +79,6 @@
 #include "access/heapam.h"
 #include "access/nbtree.h"
 #include "access/tuptoaster.h"
-#include "catalog/catname.h"
 #include "catalog/pg_namespace.h"
 #include "catalog/pg_opclass.h"
 #include "catalog/pg_operator.h"
