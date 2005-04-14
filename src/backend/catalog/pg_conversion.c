@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/catalog/pg_conversion.c,v 1.19 2004/08/29 04:12:28 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/catalog/pg_conversion.c,v 1.20 2004/12/31 21:59:38 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -18,8 +18,8 @@
 #include "catalog/catname.h"
 #include "catalog/dependency.h"
 #include "catalog/indexing.h"
-#include "catalog/pg_class.h"
 #include "catalog/pg_conversion.h"
+#include "catalog/pg_proc.h"
 #include "catalog/namespace.h"
 #include "utils/builtins.h"
 #include "utils/lsyscache.h"
@@ -116,7 +116,7 @@ ConversionCreate(const char *conname, Oid connamespace,
 	myself.objectSubId = 0;
 
 	/* create dependency on conversion procedure */
-	referenced.classId = RelOid_pg_proc;
+	referenced.classId = ProcedureRelationId;
 	referenced.objectId = conproc;
 	referenced.objectSubId = 0;
 	recordDependencyOn(&myself, &referenced, DEPENDENCY_NORMAL);

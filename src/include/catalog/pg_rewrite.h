@@ -11,7 +11,7 @@
  * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/catalog/pg_rewrite.h,v 1.23 2004/08/29 04:13:05 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/catalog/pg_rewrite.h,v 1.24 2004/12/31 22:03:25 pgsql Exp $
  *
  * NOTES
  *	  the genbki.sh script reads this file and generates .bki
@@ -24,7 +24,7 @@
 
 /* ----------------
  *		postgres.h contains the system type definitions and the
- *		CATALOG(), BOOTSTRAP and DATA() sugar words so this file
+ *		CATALOG(), BKI_BOOTSTRAP and DATA() sugar words so this file
  *		can be read by both genbki.sh and the C compiler.
  * ----------------
  */
@@ -34,7 +34,9 @@
  *		typedef struct FormData_pg_rewrite
  * ----------------
  */
-CATALOG(pg_rewrite)
+#define RewriteRelationId  2618
+
+CATALOG(pg_rewrite,2618)
 {
 	NameData	rulename;
 	Oid			ev_class;

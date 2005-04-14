@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/view.c,v 1.88 2005/04/06 16:34:04 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/view.c,v 1.89 2005/04/13 16:50:54 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -448,7 +448,7 @@ RemoveView(const RangeVar *view, DropBehavior behavior)
 
 	viewOid = RangeVarGetRelid(view, false);
 
-	object.classId = RelOid_pg_class;
+	object.classId = RelationRelationId;
 	object.objectId = viewOid;
 	object.objectSubId = 0;
 

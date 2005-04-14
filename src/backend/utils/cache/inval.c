@@ -80,7 +80,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/cache/inval.c,v 1.69 2005/01/10 20:02:23 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/cache/inval.c,v 1.70 2005/01/10 21:57:17 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -541,7 +541,7 @@ PrepareForTupleInvalidation(Relation relation, HeapTuple tuple)
 	 */
 	tupleRelId = RelationGetRelid(relation);
 
-	if (tupleRelId == RelOid_pg_class)
+	if (tupleRelId == RelationRelationId)
 	{
 		Form_pg_class classtup = (Form_pg_class) GETSTRUCT(tuple);
 		RelFileNode rnode;
@@ -575,7 +575,7 @@ PrepareForTupleInvalidation(Relation relation, HeapTuple tuple)
 		rnode.relNode = classtup->relfilenode;
 		RegisterSmgrInvalidation(rnode);
 	}
-	else if (tupleRelId == RelOid_pg_attribute)
+	else if (tupleRelId == AttributeRelationId)
 	{
 		Form_pg_attribute atttup = (Form_pg_attribute) GETSTRUCT(tuple);
 
