@@ -2,7 +2,7 @@
  * Header file for pg_autovacuum.c
  * (c) 2003 Matthew T. O'Connor
  *
- * $PostgreSQL: pgsql/contrib/pg_autovacuum/pg_autovacuum.h,v 1.13 2004/11/17 16:54:15 tgl Exp $
+ * $PostgreSQL: pgsql/contrib/pg_autovacuum/pg_autovacuum.h,v 1.14 2004/12/02 22:48:10 momjian Exp $
  */
 
 #ifndef _PG_AUTOVACUUM_H
@@ -44,6 +44,7 @@ typedef struct cmdargs
 {
 	int			vacuum_base_threshold,
 				analyze_base_threshold,
+				update_interval,
 				sleep_base_value,
 				debug,
 				
