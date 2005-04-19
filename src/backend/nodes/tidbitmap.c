@@ -23,7 +23,7 @@
  * Copyright (c) 2003-2005, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *	  $PostgreSQL$
+ *	  $PostgreSQL: pgsql/src/backend/nodes/tidbitmap.c,v 1.1 2005/04/17 22:24:02 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -160,7 +160,7 @@ tbm_create(long maxbytes)
 	hash_ctl.hash = tag_hash;
 	hash_ctl.hcxt = CurrentMemoryContext;
 	tbm->pagetable = hash_create("TIDBitmap",
-								 nbuckets,
+								 128,	/* start small and extend */
 								 &hash_ctl,
 								 HASH_ELEM | HASH_FUNCTION | HASH_CONTEXT);
 
