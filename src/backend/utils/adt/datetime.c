@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/datetime.c,v 1.136 2004/12/31 22:01:21 pgsql Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/datetime.c,v 1.137 2005/01/11 18:33:45 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1634,7 +1634,8 @@ DetermineLocalTimeZone(struct pg_tm * tm)
 	res = pg_next_dst_boundary(&prevtime,
 							   &before_gmtoff, &before_isdst,
 							   &boundary,
-							   &after_gmtoff, &after_isdst);
+							   &after_gmtoff, &after_isdst,
+		                       global_timezone);
 	if (res < 0)
 		goto overflow;			/* failure? */
 
