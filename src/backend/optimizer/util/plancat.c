@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/optimizer/util/plancat.c,v 1.104 2005/04/06 16:34:06 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/optimizer/util/plancat.c,v 1.105 2005/04/14 20:03:24 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -193,10 +193,6 @@ get_relation_info(Oid relationObjectId, RelOptInfo *rel)
 				if (info->tuples > rel->tuples)
 					info->tuples = rel->tuples;
 			}
-
-			/* initialize cached join info to empty */
-			info->outer_relids = NULL;
-			info->inner_paths = NIL;
 
 			index_close(indexRelation);
 

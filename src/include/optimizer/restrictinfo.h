@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/optimizer/restrictinfo.h,v 1.25 2004/08/29 05:06:57 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/optimizer/restrictinfo.h,v 1.26 2004/12/31 22:03:36 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -27,10 +27,10 @@ extern void get_actual_join_clauses(List *restrictinfo_list,
 						List **joinquals, List **otherquals);
 extern List *remove_redundant_join_clauses(Query *root,
 							  List *restrictinfo_list,
-							  JoinType jointype);
+							  bool isouterjoin);
 extern List *select_nonredundant_join_clauses(Query *root,
 								 List *restrictinfo_list,
 								 List *reference_list,
-								 JoinType jointype);
+								 bool isouterjoin);
 
 #endif   /* RESTRICTINFO_H */
