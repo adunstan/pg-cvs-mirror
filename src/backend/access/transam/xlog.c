@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/backend/access/transam/xlog.c,v 1.186 2005/04/15 22:19:48 tgl Exp $
+ * $PostgreSQL: pgsql/src/backend/access/transam/xlog.c,v 1.187 2005/04/17 03:04:29 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -4925,7 +4925,10 @@ CreateCheckPoint(bool shutdown, bool force)
 	 *
 	 * This I/O could fail for various reasons.  If so, we will fail to
 	 * complete the checkpoint, but there is no reason to force a system
-	 * panic.  Accordingly, exit critical section while doing it.
+	 * panic.  Accordingly, exit critical section while doing it.  (If
+	 * we are doing a shutdown checkpoint, we probably *should* panic ---
+	 * but that will happen anyway because we'll still be inside the
+	 * critical section established by ShutdownXLOG.)
 	 */
 	END_CRIT_SECTION();
 
