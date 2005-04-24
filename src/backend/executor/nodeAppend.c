@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/nodeAppend.c,v 1.61 2004/10/07 18:38:49 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/nodeAppend.c,v 1.62 2004/12/31 21:59:45 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -43,7 +43,7 @@
  *		and student-emp inherits from student and employee, the
  *		query:
  *
- *				retrieve (e.name) from e in person*
+ *				select name from person
  *
  *		generates the plan:
  *
