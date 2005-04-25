@@ -15,7 +15,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/selfuncs.c,v 1.176 2005/04/01 20:31:50 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/selfuncs.c,v 1.177 2005/04/14 20:03:26 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -3682,7 +3682,7 @@ pattern_fixed_prefix(Const *patt, Pattern_Type ptype,
  * Estimate the selectivity of a fixed prefix for a pattern match.
  *
  * A fixed prefix "foo" is estimated as the selectivity of the expression
- * "variable >= 'foo' AND variable < 'fop'" (see also indxqual.c).
+ * "variable >= 'foo' AND variable < 'fop'" (see also indxpath.c).
  *
  * We use the >= and < operators from the specified btree opclass to do the
  * estimation.	The given variable and Const must be of the associated
