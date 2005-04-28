@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/parser/parse_type.c,v 1.72 2004/12/15 20:15:17 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/parser/parse_type.c,v 1.73 2004/12/31 22:00:27 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -432,7 +432,7 @@ parseTypeString(const char *str, Oid *type_id, int32 *typmod)
 		stmt->sortClause != NIL ||
 		stmt->limitOffset != NULL ||
 		stmt->limitCount != NULL ||
-		stmt->forUpdate != NIL ||
+		stmt->lockedRels != NIL ||
 		stmt->op != SETOP_NONE)
 		goto fail;
 	if (list_length(stmt->targetList) != 1)
