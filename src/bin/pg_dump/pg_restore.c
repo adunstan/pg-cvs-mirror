@@ -34,7 +34,7 @@
  *
  *
  * IDENTIFICATION
- *		$PostgreSQL: pgsql/src/bin/pg_dump/pg_restore.c,v 1.68 2004/12/03 18:48:19 tgl Exp $
+ *		$PostgreSQL: pgsql/src/bin/pg_dump/pg_restore.c,v 1.69 2005/02/22 04:39:38 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -313,7 +313,7 @@ main(int argc, char **argv)
 				break;
 
 			default:
-				write_msg("unrecognized archive format '%s'; please specify 't' or 'c'\n",
+				write_msg(NULL, "unrecognized archive format '%s'; please specify 't' or 'c'\n",
 						  opts->formatName);
 				exit(1);
 		}
