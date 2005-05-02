@@ -4,7 +4,7 @@
  *	  Routines for maintaining "flat file" images of the shared catalogs.
  *
  *
- * $PostgreSQL$
+ * $PostgreSQL: pgsql/src/include/utils/flatfiles.h,v 1.1 2005/02/20 02:22:07 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -29,5 +29,8 @@ extern void AtEOSubXact_UpdateFlatFiles(bool isCommit,
 										SubTransactionId parentSubid);
 
 extern Datum flatfile_update_trigger(PG_FUNCTION_ARGS);
+
+/* from checkfiles.c */
+extern void CheckStaleRelFiles(void);
 
 #endif   /* FLATFILES_H */
