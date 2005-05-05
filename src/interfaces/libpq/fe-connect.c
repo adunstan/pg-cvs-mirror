@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-connect.c,v 1.301.4.1 2005/01/26 19:24:20 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-connect.c,v 1.301.4.2 2005/03/25 00:35:19 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -2033,6 +2033,10 @@ freePGconn(PGconn *conn)
 {
 	PGnotify   *notify;
 	pgParameterStatus *pstatus;
+
+#ifdef WIN32
+	WSACleanup();
+#endif
 
 	if (!conn)
 		return;
