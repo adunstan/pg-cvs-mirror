@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/cache/catcache.c,v 1.119 2005/03/25 18:30:27 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/cache/catcache.c,v 1.120 2005/04/14 20:03:26 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -29,6 +29,7 @@
 #include "utils/builtins.h"
 #include "utils/fmgroids.h"
 #include "utils/catcache.h"
+#include "utils/memutils.h"
 #include "utils/relcache.h"
 #include "utils/resowner.h"
 #include "utils/syscache.h"

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/nodeUnique.c,v 1.45 2004/12/31 21:59:45 pgsql Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/nodeUnique.c,v 1.46 2005/03/16 21:38:08 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -28,6 +28,7 @@
 #include "access/heapam.h"
 #include "executor/executor.h"
 #include "executor/nodeUnique.h"
+#include "utils/memutils.h"
 
 
 /* ----------------------------------------------------------------

@@ -78,7 +78,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/sort/tuplesort.c,v 1.46 2005/02/02 22:40:04 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/sort/tuplesort.c,v 1.47 2005/03/22 20:13:08 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -94,6 +94,7 @@
 #include "utils/datum.h"
 #include "utils/logtape.h"
 #include "utils/lsyscache.h"
+#include "utils/memutils.h"
 #include "utils/syscache.h"
 #include "utils/tuplesort.h"
 

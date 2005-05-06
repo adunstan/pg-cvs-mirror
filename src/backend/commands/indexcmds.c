@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/indexcmds.c,v 1.129 2005/04/14 01:38:16 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/indexcmds.c,v 1.130 2005/04/14 20:03:23 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -40,6 +40,7 @@
 #include "utils/acl.h"
 #include "utils/builtins.h"
 #include "utils/lsyscache.h"
+#include "utils/memutils.h"
 #include "utils/relcache.h"
 #include "utils/syscache.h"
 

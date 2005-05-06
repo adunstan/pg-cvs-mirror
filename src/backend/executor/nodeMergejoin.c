@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/nodeMergejoin.c,v 1.69 2004/12/31 21:59:45 pgsql Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/nodeMergejoin.c,v 1.70 2005/03/16 21:38:07 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -73,6 +73,7 @@
 #include "executor/execdefs.h"
 #include "executor/nodeMergejoin.h"
 #include "utils/lsyscache.h"
+#include "utils/memutils.h"
 #include "utils/syscache.h"
 
 

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/nodeBitmapIndexscan.c,v 1.7 2005/04/25 01:30:12 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/nodeBitmapIndexscan.c,v 1.8 2005/05/05 03:37:23 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -27,6 +27,7 @@
 #include "executor/nodeBitmapIndexscan.h"
 #include "executor/nodeIndexscan.h"
 #include "miscadmin.h"
+#include "utils/memutils.h"
 
 
 /* ----------------------------------------------------------------

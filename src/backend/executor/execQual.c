@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/execQual.c,v 1.175 2005/03/29 00:16:59 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/execQual.c,v 1.176 2005/04/06 16:34:04 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -51,6 +51,7 @@
 #include "utils/array.h"
 #include "utils/builtins.h"
 #include "utils/lsyscache.h"
+#include "utils/memutils.h"
 #include "utils/typcache.h"
 
 

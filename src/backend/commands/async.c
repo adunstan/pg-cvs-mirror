@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/async.c,v 1.120 2005/03/20 23:40:24 neilc Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/async.c,v 1.121 2005/04/14 20:03:23 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -75,7 +75,6 @@
 
 #include <unistd.h>
 #include <signal.h>
-#include <errno.h>
 #include <netinet/in.h>
 
 #include "access/heapam.h"
@@ -88,6 +87,7 @@
 #include "storage/sinval.h"
 #include "tcop/tcopprot.h"
 #include "utils/fmgroids.h"
+#include "utils/memutils.h"
 #include "utils/ps_status.h"
 #include "utils/syscache.h"
 

@@ -26,7 +26,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/execMain.c,v 1.246 2005/04/14 01:38:17 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/execMain.c,v 1.247 2005/04/28 21:47:12 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -47,6 +47,7 @@
 #include "utils/acl.h"
 #include "utils/guc.h"
 #include "utils/lsyscache.h"
+#include "utils/memutils.h"
 
 
 typedef struct execRowMark

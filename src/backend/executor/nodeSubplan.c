@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/nodeSubplan.c,v 1.67 2005/03/16 21:38:08 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/nodeSubplan.c,v 1.68 2005/04/06 16:34:04 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -27,6 +27,7 @@
 #include "utils/array.h"
 #include "utils/datum.h"
 #include "utils/lsyscache.h"
+#include "utils/memutils.h"
 
 
 static Datum ExecHashSubPlan(SubPlanState *node,

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/analyze.c,v 1.84 2005/03/21 01:24:02 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/analyze.c,v 1.85 2005/04/14 20:03:23 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -34,6 +34,7 @@
 #include "utils/datum.h"
 #include "utils/fmgroids.h"
 #include "utils/lsyscache.h"
+#include "utils/memutils.h"
 #include "utils/syscache.h"
 #include "utils/tuplesort.h"
 

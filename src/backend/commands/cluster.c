@@ -11,7 +11,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/cluster.c,v 1.135 2005/04/14 01:38:16 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/cluster.c,v 1.136 2005/04/14 20:03:23 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -32,6 +32,7 @@
 #include "utils/fmgroids.h"
 #include "utils/inval.h"
 #include "utils/lsyscache.h"
+#include "utils/memutils.h"
 #include "utils/syscache.h"
 #include "utils/relcache.h"
 
