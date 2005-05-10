@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/tablecmds.c,v 1.155 2005/04/14 20:03:24 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/tablecmds.c,v 1.156 2005/05/06 17:24:53 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -5464,7 +5464,7 @@ ATExecClusterOn(Relation rel, const char *indexName)
 						indexName, RelationGetRelationName(rel))));
 
 	/* Check index is valid to cluster on */
-	check_index_is_clusterable(rel, indexOid);
+	check_index_is_clusterable(rel, indexOid, false);
 
 	/* And do the work */
 	mark_index_clustered(rel, indexOid);
