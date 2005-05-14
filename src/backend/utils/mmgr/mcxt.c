@@ -14,7 +14,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/mmgr/mcxt.c,v 1.53 2004/12/31 22:02:48 pgsql Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/mmgr/mcxt.c,v 1.54 2005/02/18 21:52:33 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -123,7 +123,10 @@ MemoryContextReset(MemoryContext context)
 {
 	AssertArg(MemoryContextIsValid(context));
 
-	MemoryContextResetChildren(context);
+	/* save a function call in common case where there are no children */
+	if (context->firstchild != NULL)
+		MemoryContextResetChildren(context);
+
 	(*context->methods->reset) (context);
 }
 
