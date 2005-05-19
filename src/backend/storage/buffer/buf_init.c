@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/storage/buffer/buf_init.c,v 1.71 2005/02/03 23:29:11 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/storage/buffer/buf_init.c,v 1.72 2005/03/04 20:21:06 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -115,7 +115,7 @@ InitBufferPool(void)
 			buf->flags = 0;
 			buf->usage_count = 0;
 			buf->refcount = 0;
-			buf->wait_backend_id = 0;
+			buf->wait_backend_pid = 0;
 
 			SpinLockInit(&buf->buf_hdr_lock);
 
