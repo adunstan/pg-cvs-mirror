@@ -33,7 +33,7 @@
  *	  ENHANCEMENTS, OR MODIFICATIONS.
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/pl/plperl/plperl.c,v 1.66 2005/01/11 06:08:45 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/pl/plperl/plperl.c,v 1.67 2005/01/14 16:25:42 tgl Exp $
  *
  **********************************************************************/
 
@@ -224,7 +224,7 @@ plperl_safe_init(void)
 	"$PLContainer->permit_only(':default');"
 	"$PLContainer->permit(qw[:base_math !:base_io sort time]);"
 	"$PLContainer->share(qw[&elog &spi_exec_query &DEBUG &LOG "
-    "&INFO &NOTICE &WARNING &ERROR %SHARED ]);"
+    "&INFO &NOTICE &WARNING &ERROR %_SHARED ]);"
 	"sub ::mksafefunc { return $PLContainer->reval(qq[sub { $_[0] $_[1]}]); }"
 			   ;
 
