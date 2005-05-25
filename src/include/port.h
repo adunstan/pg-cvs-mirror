@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/port.h,v 1.73 2005/03/16 21:27:23 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/port.h,v 1.74 2005/03/25 00:34:24 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -255,8 +255,8 @@ extern off_t ftello(FILE *stream);
 #endif
 
 #ifndef HAVE_FSEEKO
-#define fseeko(a, b, c) fseek((a), (b), (c))
-#define ftello(a) ftell((a))
+#define fseeko(a, b, c) fseek(a, b, c)
+#define ftello(a)		ftell(a)
 #endif
 
 #ifndef HAVE_GETOPT
