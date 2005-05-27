@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/acl.c,v 1.112 2004/10/07 15:21:53 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/acl.c,v 1.113 2004/12/31 22:01:21 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1425,8 +1425,7 @@ convert_table_name(text *tablename)
 {
 	RangeVar   *relrv;
 
-	relrv = makeRangeVarFromNameList(textToQualifiedNameList(tablename,
-												 "has_table_privilege"));
+	relrv = makeRangeVarFromNameList(textToQualifiedNameList(tablename));
 
 	return RangeVarGetRelid(relrv, false);
 }

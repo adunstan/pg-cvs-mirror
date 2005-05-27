@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/catalog/pg_conversion.c,v 1.21 2005/04/14 01:38:16 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/catalog/pg_conversion.c,v 1.22 2005/04/14 20:03:23 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -298,7 +298,7 @@ pg_convert_using(PG_FUNCTION_ARGS)
 	*(str + len) = '\0';
 
 	/* Look up the conversion name */
-	parsed_name = textToQualifiedNameList(conv_name, "convert_using");
+	parsed_name = textToQualifiedNameList(conv_name);
 	convoid = FindConversionByName(parsed_name);
 	if (!OidIsValid(convoid))
 		ereport(ERROR,

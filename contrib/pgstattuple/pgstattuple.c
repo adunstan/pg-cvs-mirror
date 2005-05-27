@@ -1,5 +1,5 @@
 /*
- * $PostgreSQL: pgsql/contrib/pgstattuple/pgstattuple.c,v 1.16 2004/08/29 05:06:37 momjian Exp $
+ * $PostgreSQL: pgsql/contrib/pgstattuple/pgstattuple.c,v 1.17 2004/10/15 22:39:38 tgl Exp $
  *
  * Copyright (c) 2001,2002	Tatsuo Ishii
  *
@@ -63,8 +63,7 @@ pgstattuple(PG_FUNCTION_ARGS)
 	Datum		result;
 
 	/* open relation */
-	relrv = makeRangeVarFromNameList(textToQualifiedNameList(relname,
-														 "pgstattuple"));
+	relrv = makeRangeVarFromNameList(textToQualifiedNameList(relname));
 	rel = heap_openrv(relrv, AccessShareLock);
 
 	result = pgstattuple_real(rel);
