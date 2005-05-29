@@ -1,5 +1,5 @@
 <!--
-$PostgreSQL: /cvsroot/pgsql-server/doc/src/sgml/ref/dropdb.sgml,v 1.25 2003/09/12 23:04:46 tgl Exp $
+$PostgreSQL: pgsql/doc/src/sgml/ref/dropdb.sgml,v 1.26 2003/11/29 19:51:38 pgsql Exp $
 PostgreSQL documentation
 -->
 
@@ -220,6 +220,7 @@ DROP DATABASE</computeroutput>
   <simplelist type="inline">
    <member><xref linkend="app-createdb"></member>
    <member><xref linkend="sql-dropdatabase" endterm="sql-dropdatabase-title"></member>
+   <member>Environment Variables (<xref linkend="libpq-envars">)</member>
   </simplelist>
  </refsect1>
 

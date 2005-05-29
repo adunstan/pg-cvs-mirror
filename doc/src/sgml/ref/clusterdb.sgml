@@ -1,5 +1,5 @@
 <!--
-$PostgreSQL: /cvsroot/pgsql-server/doc/src/sgml/ref/clusterdb.sgml,v 1.15 2003/09/12 23:04:45 tgl Exp $
+$PostgreSQL: pgsql/doc/src/sgml/ref/clusterdb.sgml,v 1.16 2003/11/29 19:51:38 pgsql Exp $
 PostgreSQL documentation
 -->
 
@@ -235,6 +235,7 @@ PostgreSQL documentation
 
   <simplelist type="inline">
    <member><xref linkend="sql-cluster" endterm="sql-cluster-title"></member>
+   <member>Environment Variables (<xref linkend="libpq-envars">)</member>
   </simplelist>
  </refsect1>
 

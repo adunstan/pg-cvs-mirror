@@ -1,5 +1,5 @@
 <!--
-$PostgreSQL: /cvsroot/pgsql-server/doc/src/sgml/ref/droplang.sgml,v 1.24 2003/08/31 17:32:23 petere Exp $
+$PostgreSQL: pgsql/doc/src/sgml/ref/droplang.sgml,v 1.25 2003/11/29 19:51:38 pgsql Exp $
 PostgreSQL documentation
 -->
 
@@ -220,6 +220,7 @@ PostgreSQL documentation
   <simplelist type="inline">
    <member><xref linkend="app-createlang"></member>
    <member><xref linkend="sql-droplanguage" endterm="sql-droplanguage-title"></member>
+   <member>Environment Variables (<xref linkend="libpq-envars">)</member>
   </simplelist>
  </refsect1>
 
