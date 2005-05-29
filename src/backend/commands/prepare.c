@@ -10,7 +10,7 @@
  * Copyright (c) 2002-2005, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/prepare.c,v 1.36 2005/01/01 05:43:06 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/prepare.c,v 1.37 2005/05/24 04:18:04 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -346,9 +346,9 @@ StorePreparedStatement(const char *stmt_name,
 											  HASH_ENTER,
 											  &found);
 
-	/* Shouldn't get a failure, nor a duplicate entry */
-	if (!entry || found)
-		elog(ERROR, "could not store prepared statement \"%s\"",
+	/* Shouldn't get a duplicate entry */
+	if (found)
+		elog(ERROR, "duplicate prepared statement \"%s\"",
 			 stmt_name);
 
 	/* Fill in the hash table entry with copied data */

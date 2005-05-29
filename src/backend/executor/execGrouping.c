@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/execGrouping.c,v 1.13 2004/12/31 21:59:45 pgsql Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/execGrouping.c,v 1.14 2005/03/16 21:38:06 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -379,13 +379,9 @@ LookupTupleHashEntry(TupleHashTable hashtable, TupleTableSlot *slot,
 		}
 		else
 		{
-			/* created new entry ... we hope */
-			if (entry == NULL)
-				ereport(ERROR,
-						(errcode(ERRCODE_OUT_OF_MEMORY),
-						 errmsg("out of memory")));
-
 			/*
+			 * created new entry
+			 *
 			 * Zero any caller-requested space in the entry.  (This zaps
 			 * the "key data" dynahash.c copied into the new entry, but we
 			 * don't care since we're about to overwrite it anyway.)

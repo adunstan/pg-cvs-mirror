@@ -11,7 +11,7 @@
  * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/backend/access/transam/xlogutils.c,v 1.35 2004/12/31 21:59:30 pgsql Exp $
+ * $PostgreSQL: pgsql/src/backend/access/transam/xlogutils.c,v 1.36 2005/01/10 20:02:19 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -222,9 +222,6 @@ XLogOpenRelation(bool redo, RmgrId rmid, RelFileNode rnode)
 
 		hentry = (XLogRelCacheEntry *)
 			hash_search(_xlrelcache, (void *) &rnode, HASH_ENTER, &found);
-
-		if (hentry == NULL)
-			elog(PANIC, "XLogOpenRelation: out of memory for cache");
 
 		if (found)
 			elog(PANIC, "XLogOpenRelation: file found on insert into cache");
