@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2005, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/psql/common.c,v 1.96 2005/02/22 04:40:52 momjian Exp $
+ * $PostgreSQL: pgsql/src/bin/psql/common.c,v 1.97 2005/04/28 13:09:59 momjian Exp $
  */
 #include "postgres_fe.h"
 #include "common.h"
@@ -1234,17 +1234,6 @@ command_no_begin(const char *query)
 	}
 
 	return false;
-}
-
-
-char
-parse_char(char **buf)
-{
-	long		l;
-
-	l = strtol(*buf, buf, 0);
-	--*buf;
-	return (char) l;
 }
 
 
