@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/parser/parse_target.c,v 1.132 2005/04/25 21:03:25 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/parser/parse_target.c,v 1.133 2005/04/25 22:02:30 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -44,8 +44,6 @@ static Node *transformAssignmentIndirection(ParseState *pstate,
 static List *ExpandColumnRefStar(ParseState *pstate, ColumnRef *cref);
 static List *ExpandAllTables(ParseState *pstate);
 static List *ExpandIndirectionStar(ParseState *pstate, A_Indirection *ind);
-static TupleDesc expandRecordVariable(ParseState *pstate, Var *var,
-									  int levelsup);
 static int	FigureColnameInternal(Node *node, char **name);
 
 
@@ -905,7 +903,7 @@ ExpandIndirectionStar(ParseState *pstate, A_Indirection *ind)
  *
  * levelsup is an extra offset to interpret the Var's varlevelsup correctly.
  */
-static TupleDesc
+TupleDesc
 expandRecordVariable(ParseState *pstate, Var *var, int levelsup)
 {
 	TupleDesc	tupleDesc;

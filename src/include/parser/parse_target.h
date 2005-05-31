@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/parser/parse_target.h,v 1.34 2004/09/30 00:24:27 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/parser/parse_target.h,v 1.35 2004/12/31 22:03:38 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -27,6 +27,8 @@ extern void updateTargetListEntry(ParseState *pstate, TargetEntry *tle,
 					  List *indirection);
 extern List *checkInsertTargets(ParseState *pstate, List *cols,
 				   List **attrnos);
+extern TupleDesc expandRecordVariable(ParseState *pstate, Var *var,
+									  int levelsup);
 extern char *FigureColname(Node *node);
 
 #endif   /* PARSE_TARGET_H */
