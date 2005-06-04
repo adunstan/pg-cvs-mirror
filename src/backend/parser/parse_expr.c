@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/parser/parse_expr.c,v 1.181 2005/04/06 16:34:06 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/parser/parse_expr.c,v 1.182 2005/05/24 15:45:34 ishii Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1556,6 +1556,7 @@ exprTypmod(Node *expr)
 						{
 							int32 len = VARSIZE(DatumGetPointer(con->constvalue)) - VARHDRSZ;
 
+							/* if multi-byte, take len and find # characters */
 							if (pg_database_encoding_max_length() > 1)
 								len = pg_mbstrlen_with_len(VARDATA(DatumGetPointer(con->constvalue)), len);
 							return len + VARHDRSZ;
