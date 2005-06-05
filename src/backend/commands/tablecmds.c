@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/tablecmds.c,v 1.158 2005/05/30 06:52:38 neilc Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/tablecmds.c,v 1.159 2005/05/30 07:20:58 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -4720,7 +4720,7 @@ ATPrepAlterColumnType(List **wqueue,
 											NULL,
 											false,
 											true);
-		addRTEtoQuery(pstate, rte, false, true);
+		addRTEtoQuery(pstate, rte, false, true, true);
 
 		transform = transformExpr(pstate, cmd->transform);
 
