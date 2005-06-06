@@ -37,7 +37,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/tablespace.c,v 1.17 2005/04/14 20:03:24 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/tablespace.c,v 1.19 2005/05/10 22:27:29 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1062,12 +1062,6 @@ tblspc_redo(XLogRecPtr lsn, XLogRecord *record)
 	}
 	else
 		elog(PANIC, "tblspc_redo: unknown op code %u", info);
-}
-
-void
-tblspc_undo(XLogRecPtr lsn, XLogRecord *record)
-{
-	elog(PANIC, "tblspc_undo: unimplemented");
 }
 
 void

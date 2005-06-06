@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/hash/hash.c,v 1.78 2005/03/27 23:52:57 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/hash/hash.c,v 1.79 2005/05/11 06:24:51 neilc Exp $
  *
  * NOTES
  *	  This file contains only the public interface routines.
@@ -669,12 +669,6 @@ void
 hash_redo(XLogRecPtr lsn, XLogRecord *record)
 {
 	elog(PANIC, "hash_redo: unimplemented");
-}
-
-void
-hash_undo(XLogRecPtr lsn, XLogRecord *record)
-{
-	elog(PANIC, "hash_undo: unimplemented");
 }
 
 void

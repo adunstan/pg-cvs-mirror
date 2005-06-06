@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL$
+ * $PostgreSQL: pgsql/src/include/access/gist_private.h,v 1.1 2005/05/17 03:34:18 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -99,8 +99,8 @@ extern void freeGISTstate(GISTSTATE *giststate);
 extern void gistdentryinit(GISTSTATE *giststate, int nkey, GISTENTRY *e,
 			   Datum k, Relation r, Page pg, OffsetNumber o,
 			   int b, bool l, bool isNull);
+
 extern void gist_redo(XLogRecPtr lsn, XLogRecord *record);
-extern void gist_undo(XLogRecPtr lsn, XLogRecord *record);
 extern void gist_desc(char *buf, uint8 xl_info, char *rec);
 
 /* gistget.c */

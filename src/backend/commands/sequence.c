@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/sequence.c,v 1.119 2004/12/31 21:59:41 pgsql Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/sequence.c,v 1.120 2005/05/27 00:57:49 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1077,7 +1077,7 @@ seq_redo(XLogRecPtr lsn, XLogRecord *record)
 	if (info != XLOG_SEQ_LOG)
 		elog(PANIC, "seq_redo: unknown op code %u", info);
 
-	reln = XLogOpenRelation(true, RM_SEQ_ID, xlrec->node);
+	reln = XLogOpenRelation(xlrec->node);
 	if (!RelationIsValid(reln))
 		return;
 
@@ -1105,11 +1105,6 @@ seq_redo(XLogRecPtr lsn, XLogRecord *record)
 	PageSetTLI(page, ThisTimeLineID);
 	LockBuffer(buffer, BUFFER_LOCK_UNLOCK);
 	WriteBuffer(buffer);
-}
-
-void
-seq_undo(XLogRecPtr lsn, XLogRecord *record)
-{
 }
 
 void
