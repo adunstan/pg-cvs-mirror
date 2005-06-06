@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/nodes/outfuncs.c,v 1.252 2005/05/09 15:09:19 ishii Exp $
+ *	  $PostgreSQL: pgsql/src/backend/nodes/outfuncs.c,v 1.253 2005/06/05 22:32:54 tgl Exp $
  *
  * NOTES
  *	  Every node type that can appear in stored rules' parsetrees *must*
@@ -1150,9 +1150,8 @@ _outPlannerInfo(StringInfo str, PlannerInfo *node)
 {
 	WRITE_NODE_TYPE("PLANNERINFO");
 
+	/* NB: this isn't a complete set of fields */
 	WRITE_NODE_FIELD(parse);
-	WRITE_NODE_FIELD(base_rel_list);
-	WRITE_NODE_FIELD(other_rel_list);
 	WRITE_NODE_FIELD(join_rel_list);
 	WRITE_NODE_FIELD(equi_key_list);
 	WRITE_NODE_FIELD(in_info_list);
