@@ -3,7 +3,7 @@
  *			  procedural language
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/pl/plpgsql/src/plpgsql.h,v 1.58 2005/04/05 06:22:16 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/pl/plpgsql/src/plpgsql.h,v 1.60 2005/05/26 04:08:31 momjian Exp $
  *
  *	  This software is copyrighted by Jan Wieck - Hamburg.
  *
@@ -524,6 +524,8 @@ typedef struct
 {								/* Dynamic SQL string to execute */
 	int			cmd_type;
 	int			lineno;
+	PLpgSQL_rec *rec;					/* INTO record or row variable */
+	PLpgSQL_row *row;
 	PLpgSQL_expr *query;
 } PLpgSQL_stmt_dynexecute;
 
