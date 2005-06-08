@@ -13,7 +13,7 @@
  *
  * Copyright (c) 2003-2005, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/include/nodes/bitmapset.h,v 1.5 2003/11/29 22:41:06 pgsql Exp $
+ * $PostgreSQL: pgsql/src/include/nodes/bitmapset.h,v 1.6 2005/01/01 20:44:28 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -79,5 +79,8 @@ extern Bitmapset *bms_join(Bitmapset *a, Bitmapset *b);
 
 /* support for iterating through the integer elements of a set: */
 extern int	bms_first_member(Bitmapset *a);
+
+/* support for hashtables using Bitmapsets as keys: */
+extern uint32 bms_hash_value(const Bitmapset *a);
 
 #endif   /* BITMAPSET_H */

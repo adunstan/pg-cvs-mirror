@@ -14,7 +14,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/optimizer/plan/planmain.c,v 1.82 2005/06/05 22:32:56 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/optimizer/plan/planmain.c,v 1.83 2005/06/06 04:13:35 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -116,6 +116,7 @@ query_planner(PlannerInfo *root, List *tlist, double tuple_fraction,
 	root->base_rel_array = (RelOptInfo **)
 		palloc0(root->base_rel_array_size * sizeof(RelOptInfo *));
 	root->join_rel_list = NIL;
+	root->join_rel_hash = NULL;
 	root->equi_key_list = NIL;
 
 	/*
