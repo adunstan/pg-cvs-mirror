@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/backend/access/transam/xlog.c,v 1.197 2005/06/06 20:22:57 tgl Exp $
+ * $PostgreSQL: pgsql/src/backend/access/transam/xlog.c,v 1.198 2005/06/08 15:50:26 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -3771,6 +3771,7 @@ BootStrapXLOG(void)
 	BootStrapCLOG();
 	BootStrapSUBTRANS();
 	BootStrapMultiXact();
+	free(buffer);
 }
 
 static char *
