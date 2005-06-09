@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2005, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/psql/print.h,v 1.21 2004/08/29 04:13:02 momjian Exp $
+ * $PostgreSQL: pgsql/src/bin/psql/print.h,v 1.22 2005/01/01 05:43:08 momjian Exp $
  */
 #ifndef PRINT_H
 #define PRINT_H
@@ -21,7 +21,8 @@ enum printFormat
 	PRINT_UNALIGNED,
 	PRINT_ALIGNED,
 	PRINT_HTML,
-	PRINT_LATEX
+	PRINT_LATEX,
+	PRINT_TROFF_MS
 	/* add your favourite output format here ... */
 };
 
