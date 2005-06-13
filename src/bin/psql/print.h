@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2005, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/psql/print.h,v 1.22 2005/01/01 05:43:08 momjian Exp $
+ * $PostgreSQL: pgsql/src/bin/psql/print.h,v 1.23 2005/06/09 15:27:27 momjian Exp $
  */
 #ifndef PRINT_H
 #define PRINT_H
@@ -42,6 +42,9 @@ typedef struct _printTableOpt
 								 * mode */
 	char	   *tableAttr;		/* attributes for HTML <table ...> */
 	int			encoding;		/* character encoding */
+	bool		normal_query;	/* are we presenting the results of a
+								 * "normal" query, or a slash
+								 * command? */
 } printTableOpt;
 
 
