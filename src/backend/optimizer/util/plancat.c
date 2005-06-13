@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/optimizer/util/plancat.c,v 1.110 2005/06/04 19:19:42 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/optimizer/util/plancat.c,v 1.111 2005/06/05 22:32:56 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -161,7 +161,8 @@ get_relation_info(Oid relationObjectId, RelOptInfo *rel)
 			}
 
 			info->relam = indexRelation->rd_rel->relam;
-			info->amcostestimate = index_cost_estimator(indexRelation);
+			info->amcostestimate = indexRelation->rd_am->amcostestimate;
+			info->amoptionalkey = indexRelation->rd_am->amoptionalkey;
 
 			/*
 			 * Fetch the ordering operators associated with the index, if
