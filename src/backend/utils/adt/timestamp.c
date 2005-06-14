@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/timestamp.c,v 1.123 2005/05/24 02:09:45 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/timestamp.c,v 1.124 2005/05/26 02:04:13 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -936,6 +936,12 @@ now(PG_FUNCTION_ARGS)
 	result = AbsoluteTimeUsecToTimestampTz(sec, usec);
 
 	PG_RETURN_TIMESTAMPTZ(result);
+}
+
+Datum
+pgsql_postmaster_start_time(PG_FUNCTION_ARGS)
+{
+	PG_RETURN_TIMESTAMPTZ(StartTime);
 }
 
 void
