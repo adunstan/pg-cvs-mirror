@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2005, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/psql/tab-complete.c,v 1.129 2005/05/18 05:01:10 neilc Exp $
+ * $PostgreSQL: pgsql/src/bin/psql/tab-complete.c,v 1.130 2005/05/25 22:12:05 momjian Exp $
  */
 
 /*----------------------------------------------------------------------
@@ -559,7 +559,6 @@ psql_completion(char *text, int start, int end)
 		"geqo_selection_bias",
 		"geqo_threshold",
 		"join_collapse_limit",
-		"krb_server_keyfile",
 		"lc_messages",
 		"lc_monetary",
 		"lc_numeric",
