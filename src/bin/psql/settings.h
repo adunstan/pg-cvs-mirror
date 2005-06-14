@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2005, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/psql/settings.h,v 1.23 2005/01/01 05:43:08 momjian Exp $
+ * $PostgreSQL: pgsql/src/bin/psql/settings.h,v 1.24 2005/06/09 23:28:10 momjian Exp $
  */
 #ifndef SETTINGS_H
 #define SETTINGS_H
@@ -56,6 +56,7 @@ typedef struct _psqlSettings
 	bool		timing;			/* enable timing of all queries */
 
 	PGVerbosity verbosity;		/* current error verbosity level */
+	FILE		*logfile;	/* session log file handle */
 } PsqlSettings;
 
 extern PsqlSettings pset;
