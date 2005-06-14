@@ -3,7 +3,7 @@
  *			  procedural language
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/pl/plpgsql/src/plpgsql.h,v 1.61 2005/06/07 02:47:18 neilc Exp $
+ *	  $PostgreSQL: pgsql/src/pl/plpgsql/src/plpgsql.h,v 1.62 2005/06/10 16:23:11 neilc Exp $
  *
  *	  This software is copyrighted by Jan Wieck - Hamburg.
  *
@@ -515,7 +515,7 @@ typedef struct
 	int			lineno;
 	int			elog_level;
 	char	   *message;
-	List	   *params;
+	List	   *params;			/* list of expressions */
 } PLpgSQL_stmt_raise;
 
 
