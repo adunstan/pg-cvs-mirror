@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/include/pgtime.h,v 1.6 2004/12/31 22:03:19 pgsql Exp $
+ *	  $PostgreSQL: pgsql/src/include/pgtime.h,v 1.7 2005/04/19 03:13:59 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -57,4 +57,8 @@ extern bool tz_acceptable(pg_tz *tz);
 extern const char *pg_get_timezone_name(pg_tz *tz);
 
 extern pg_tz *global_timezone;
+
+/* Maximum length of a timezone name */
+#define TZ_STRLEN_MAX 255
+
 #endif   /* _PGTIME_H */
