@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/parser/keywords.c,v 1.155 2005/05/07 02:22:47 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/parser/keywords.c,v 1.156 2005/06/14 23:47:39 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -243,6 +243,7 @@ static const ScanKeyword ScanKeywords[] = {
 	{"position", POSITION},
 	{"precision", PRECISION},
 	{"prepare", PREPARE},
+	{"prepared", PREPARED},
 	{"preserve", PRESERVE},
 	{"primary", PRIMARY},
 	{"prior", PRIOR},

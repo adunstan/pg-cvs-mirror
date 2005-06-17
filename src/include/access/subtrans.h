@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/access/subtrans.h,v 1.4 2004/08/29 04:13:03 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/access/subtrans.h,v 1.5 2004/12/31 22:03:21 pgsql Exp $
  */
 #ifndef SUBTRANS_H
 #define SUBTRANS_H
@@ -18,7 +18,7 @@ extern TransactionId SubTransGetTopmostTransaction(TransactionId xid);
 extern int	SUBTRANSShmemSize(void);
 extern void SUBTRANSShmemInit(void);
 extern void BootStrapSUBTRANS(void);
-extern void StartupSUBTRANS(void);
+extern void StartupSUBTRANS(TransactionId oldestActiveXID);
 extern void ShutdownSUBTRANS(void);
 extern void CheckPointSUBTRANS(void);
 extern void ExtendSUBTRANS(TransactionId newestXact);
