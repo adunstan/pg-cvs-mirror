@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/backend/access/transam/xlog.c,v 1.200 2005/06/15 01:36:08 momjian Exp $
+ * $PostgreSQL: pgsql/src/backend/access/transam/xlog.c,v 1.201 2005/06/17 22:32:43 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -5110,6 +5110,8 @@ CreateCheckPoint(bool shutdown, bool force)
 	CheckPointSUBTRANS();
 	CheckPointMultiXact();
 	FlushBufferPool();
+	/* We deliberately delay 2PC checkpointing as long as possible */
+	CheckPointTwoPhase(checkPoint.redo);
 
 	START_CRIT_SECTION();
 
