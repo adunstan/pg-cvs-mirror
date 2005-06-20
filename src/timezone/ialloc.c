@@ -3,7 +3,7 @@
  * 1996-06-05 by Arthur David Olson (arthur_david_olson@nih.gov).
  *
  * IDENTIFICATION
- *	  $PostgreSQL$
+ *	  $PostgreSQL: pgsql/src/timezone/ialloc.c,v 1.5 2004/05/21 20:59:10 tgl Exp $
  */
 
 #include "postgres.h"
@@ -38,9 +38,9 @@ irealloc(void *pointer, const int size)
 char *
 icatalloc(char *old, const char *new)
 {
-	register char *result;
-	register int oldsize,
-				newsize;
+	char *result;
+	int oldsize,
+		newsize;
 
 	newsize = (new == NULL) ? 0 : strlen(new);
 	if (old == NULL)
