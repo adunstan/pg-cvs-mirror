@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/storage/smgr/md.c,v 1.114 2004/12/31 22:01:13 pgsql Exp $
+ *	  $PostgreSQL: pgsql/src/backend/storage/smgr/md.c,v 1.115 2005/05/29 04:23:05 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -660,6 +660,9 @@ mdtruncate(SMgrRelation reln, BlockNumber nblocks, bool isTemp)
 
 /*
  *	mdimmedsync() -- Immediately sync a relation to stable storage.
+ *
+ * Note that only writes already issued are synced; this routine knows
+ * nothing of dirty buffers that may exist inside the buffer manager.
  */
 bool
 mdimmedsync(SMgrRelation reln)
