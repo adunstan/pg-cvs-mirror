@@ -15,7 +15,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/dbcommands.c,v 1.158 2005/06/06 17:01:23 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/dbcommands.c,v 1.159 2005/06/06 20:22:57 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -93,7 +93,7 @@ createdb(const CreatedbStmt *stmt)
 	DefElem    *dencoding = NULL;
 	char	   *dbname = stmt->dbname;
 	char	   *dbowner = NULL;
-	char	   *dbtemplate = NULL;
+	const char *dbtemplate = NULL;
 	int			encoding = -1;
 
 #ifndef WIN32

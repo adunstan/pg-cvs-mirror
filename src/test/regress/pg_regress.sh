@@ -1,5 +1,5 @@
 #! /bin/sh
-# $PostgreSQL: pgsql/src/test/regress/pg_regress.sh,v 1.55 2005/05/17 18:26:23 tgl Exp $
+# $PostgreSQL: pgsql/src/test/regress/pg_regress.sh,v 1.56 2005/06/20 02:26:50 tgl Exp $
 
 me=`basename $0`
 : ${TMPDIR=/tmp}
@@ -441,7 +441,7 @@ then
     # wait forever, however.
     i=0
     max=60
-    until "$bindir/psql" -X $psql_options template1 </dev/null 2>/dev/null
+    until "$bindir/psql" -X $psql_options postgres </dev/null 2>/dev/null
     do
         i=`expr $i + 1`
         if [ $i -ge $max ]
