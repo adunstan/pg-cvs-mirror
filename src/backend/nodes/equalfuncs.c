@@ -18,7 +18,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/nodes/equalfuncs.c,v 1.243 2005/06/09 04:18:58 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/nodes/equalfuncs.c,v 1.244 2005/06/17 22:32:44 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1372,8 +1372,8 @@ _equalReindexStmt(ReindexStmt *a, ReindexStmt *b)
 	COMPARE_SCALAR_FIELD(kind);
 	COMPARE_NODE_FIELD(relation);
 	COMPARE_STRING_FIELD(name);
-	COMPARE_SCALAR_FIELD(force);
-	COMPARE_SCALAR_FIELD(all);
+	COMPARE_SCALAR_FIELD(do_system);
+	COMPARE_SCALAR_FIELD(do_user);
 
 	return true;
 }
