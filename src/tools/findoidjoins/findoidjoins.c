@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2002-2005, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/contrib/findoidjoins/findoidjoins.c,v 1.24 2004/08/29 04:12:16 momjian Exp $
+ * $PostgreSQL: pgsql/contrib/findoidjoins/findoidjoins.c,v 1.25 2005/01/01 05:43:05 momjian Exp $
  */
 #include "postgres_fe.h"
 
