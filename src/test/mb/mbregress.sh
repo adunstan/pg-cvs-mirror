@@ -1,5 +1,5 @@
 #! /bin/sh
-# $PostgreSQL: pgsql/src/test/mb/mbregress.sh,v 1.7 2003/11/29 19:52:14 pgsql Exp $
+# $PostgreSQL: pgsql/src/test/mb/mbregress.sh,v 1.8 2005/03/07 04:30:55 momjian Exp $
 
 if echo '\c' | grep -s c >/dev/null 2>&1
 then
@@ -14,8 +14,8 @@ if [ ! -d results ];then
     mkdir results
 fi
 
-dropdb unitest
-createdb -E UTF8 unitest
+dropdb utf8
+createdb -E UTF8 utf8
 
 PSQL="psql -n -e -q"
 tests="euc_jp sjis euc_kr euc_cn euc_tw big5 utf8 mule_internal"
