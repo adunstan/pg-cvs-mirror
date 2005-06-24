@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/common/indexvalid.c,v 1.32 2004/08/29 04:12:17 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/common/indexvalid.c,v 1.33 2004/12/31 21:59:07 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -59,8 +59,16 @@ index_keytest(IndexTuple tuple,
 
 		test = FunctionCall2(&key->sk_func, datum, key->sk_argument);
 
-		if (!DatumGetBool(test))
-			return false;
+		if (key->sk_flags & SK_NEGATE)
+		{
+			if (DatumGetBool(test))
+				return false;
+		}
+		else
+		{
+			if (!DatumGetBool(test))
+				return false;
+		}
 
 		key++;
 		scanKeySize--;
