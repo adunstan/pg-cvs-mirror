@@ -12,7 +12,7 @@
  * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/interfaces/libpq/libpq-int.h,v 1.102 2005/06/12 00:00:21 neilc Exp $
+ * $PostgreSQL: pgsql/src/interfaces/libpq/libpq-int.h,v 1.103 2005/06/13 02:26:53 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -262,7 +262,7 @@ struct pg_conn
 	char	   *pguser;			/* Postgres username and password, if any */
 	char	   *pgpass;
 	char	   *sslmode;		/* SSL mode (require,prefer,allow,disable) */
-#if defined(KRB5) || defined(KRB4)
+#ifdef KRB5
 	char       *krbsrvname;     /* Kerberos service name */
 #endif
 

@@ -4,7 +4,7 @@
  *	  Interface to hba.c
  *
  *
- * $PostgreSQL: pgsql/src/include/libpq/hba.h,v 1.35 2004/02/02 16:58:30 neilc Exp $
+ * $PostgreSQL: pgsql/src/include/libpq/hba.h,v 1.36 2005/02/26 18:43:34 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -17,7 +17,6 @@
 typedef enum UserAuth
 {
 	uaReject,
-	uaKrb4,
 	uaKrb5,
 	uaTrust,
 	uaIdent,
