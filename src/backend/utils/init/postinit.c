@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/init/postinit.c,v 1.149 2005/06/24 01:06:26 neilc Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/init/postinit.c,v 1.150 2005/06/28 05:09:02 tgl Exp $
  *
  *
  *-------------------------------------------------------------------------
@@ -471,7 +471,7 @@ InitPostgres(const char *dbname, const char *username)
 	InitializeSearchPath();
 
 	/* set up ACL framework (currently just sets RolMemCache callback) */
-	InitializeAcl();
+	initialize_acl();
 
 	/* initialize client encoding */
 	InitializeClientEncoding();

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/acl.c,v 1.114 2005/05/27 00:57:49 neilc Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/acl.c,v 1.115 2005/06/28 05:09:00 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -2414,7 +2414,7 @@ convert_tablespace_priv_string(text *priv_type_text)
 }
 
 void
-InitializeAcl(void)
+initialize_acl(void)
 {
 	if (!IsBootstrapProcessingMode())
 	{
