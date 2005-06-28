@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/copy.c,v 1.244 2005/05/07 02:22:46 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/copy.c,v 1.245 2005/06/02 01:21:22 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -25,7 +25,6 @@
 #include "catalog/index.h"
 #include "catalog/namespace.h"
 #include "catalog/pg_index.h"
-#include "catalog/pg_shadow.h"
 #include "catalog/pg_type.h"
 #include "commands/copy.h"
 #include "commands/trigger.h"

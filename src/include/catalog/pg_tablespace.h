@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/catalog/pg_tablespace.h,v 1.5 2004/12/31 22:03:26 pgsql Exp $
+ * $PostgreSQL: pgsql/src/include/catalog/pg_tablespace.h,v 1.6 2005/04/14 01:38:21 tgl Exp $
  *
  * NOTES
  *	  the genbki.sh script reads this file and generates .bki
@@ -36,7 +36,7 @@
 CATALOG(pg_tablespace,1213) BKI_SHARED_RELATION
 {
 	NameData	spcname;		/* tablespace name */
-	int4		spcowner;		/* sysid of owner */
+	Oid			spcowner;		/* owner of tablespace */
 	text		spclocation;	/* physical location (VAR LENGTH) */
 	aclitem		spcacl[1];		/* access permissions (VAR LENGTH) */
 } FormData_pg_tablespace;
