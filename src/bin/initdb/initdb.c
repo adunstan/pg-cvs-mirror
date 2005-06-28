@@ -42,7 +42,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  * Portions taken from FreeBSD.
  *
- * $PostgreSQL: pgsql/src/bin/initdb/initdb.c,v 1.86 2005/06/26 03:03:45 momjian Exp $
+ * $PostgreSQL: pgsql/src/bin/initdb/initdb.c,v 1.87 2005/06/28 05:09:03 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1440,7 +1440,7 @@ get_set_pwd(void)
 
 	check_ok();
 
-	snprintf(pwdpath, sizeof(pwdpath), "%s/global/pg_pwd", pg_data);
+	snprintf(pwdpath, sizeof(pwdpath), "%s/global/pg_auth", pg_data);
 	if (stat(pwdpath, &statbuf) != 0 || !S_ISREG(statbuf.st_mode))
 	{
 		fprintf(stderr,
