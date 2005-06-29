@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/bootstrap/bootscanner.l,v 1.38 2004/12/31 21:59:34 pgsql Exp $
+ *	  $PostgreSQL: pgsql/src/backend/bootstrap/bootscanner.l,v 1.39 2005/03/11 19:13:42 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -34,7 +34,6 @@
 #include "storage/fd.h"
 #include "storage/itemptr.h"
 #include "storage/off.h"
-#include "utils/nabstime.h"
 #include "utils/rel.h"
 
 /* Not needed now that this file is compiled as part of bootparse. */
