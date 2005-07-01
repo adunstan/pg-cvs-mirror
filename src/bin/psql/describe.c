@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2005, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/psql/describe.c,v 1.117 2005/06/14 23:59:31 momjian Exp $
+ * $PostgreSQL: pgsql/src/bin/psql/describe.c,v 1.118 2005/06/26 03:03:56 momjian Exp $
  */
 #include "postgres_fe.h"
 #include "describe.h"
@@ -1899,7 +1899,7 @@ processNamePattern(PQExpBuffer buf, const char *pattern,
 
 			/* Ensure chars special to string literals are passed properly */
 			if (*cp == '\'' || *cp == '\\')
-				appendPQExpBufferChar(&namebuf, *cp);
+				appendPQExpBufferChar(&namebuf, *cp);	/* double these */
 
 			i = PQmblen(cp, pset.encoding);
 			while (i--)
