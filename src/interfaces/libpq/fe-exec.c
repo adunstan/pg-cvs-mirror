@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-exec.c,v 1.168 2005/06/09 20:01:16 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-exec.c,v 1.169 2005/06/12 00:00:21 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -2368,23 +2368,9 @@ PQescapeString(char *to, const char *from, size_t length)
 
 	while (remaining > 0 && *source != '\0')
 	{
-		switch (*source)
-		{
-			case '\\':
-				*target++ = '\\';
-				*target++ = '\\';
-				break;
-
-			case '\'':
-				*target++ = '\'';
-				*target++ = '\'';
-				break;
-
-			default:
-				*target++ = *source;
-				break;
-		}
-		source++;
+		if (SQL_STR_DOUBLE(*source))
+			*target++ = *source;
+		*target++ = *source++;
 		remaining--;
 	}
 
@@ -2449,7 +2435,7 @@ PQescapeBytea(const unsigned char *bintext, size_t binlen, size_t *bytealen)
 		}
 		else if (*vp == '\'')
 		{
-			rp[0] = '\\';
+			rp[0] = '\'';
 			rp[1] = '\'';
 			rp += 2;
 		}

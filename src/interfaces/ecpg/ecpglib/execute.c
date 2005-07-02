@@ -1,4 +1,4 @@
-/* $PostgreSQL: pgsql/src/interfaces/ecpg/ecpglib/execute.c,v 1.39 2005/03/18 10:00:43 meskes Exp $ */
+/* $PostgreSQL: pgsql/src/interfaces/ecpg/ecpglib/execute.c,v 1.40 2005/06/02 12:35:11 meskes Exp $ */
 
 /*
  * The aim is to get a simpler inteface to the database routines.
@@ -45,21 +45,14 @@ quote_postgres(char *arg, int lineno)
 	if (!res)
 		return (res);
 
+	if (strchr(arg, '\\') != NULL)
+		res[ri++] = ESCAPE_STRING_SYNTAX;
 	res[ri++] = '\'';
 
 	for (i = 0; arg[i]; i++, ri++)
 	{
-		switch (arg[i])
-		{
-			case '\'':
-				res[ri++] = '\'';
-				break;
-			case '\\':
-				res[ri++] = '\\';
-				break;
-			default:
-				;
-		}
+		if (SQL_STR_DOUBLE(arg[i]))
+			res[ri++] = arg[i];
 		res[ri] = arg[i];
 	}
 
