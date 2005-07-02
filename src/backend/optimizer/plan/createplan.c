@@ -10,7 +10,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/optimizer/plan/createplan.c,v 1.191 2005/06/05 22:32:55 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/optimizer/plan/createplan.c,v 1.192 2005/06/10 22:25:36 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1176,8 +1176,7 @@ create_nestloop_plan(PlannerInfo *root,
 			List	   *bitmapclauses;
 
 			bitmapclauses =
-				make_restrictinfo_from_bitmapqual(innerpath->bitmapqual,
-												  true, true);
+				make_restrictinfo_from_bitmapqual(innerpath->bitmapqual, true);
 			joinrestrictclauses =
 				select_nonredundant_join_clauses(root,
 												 joinrestrictclauses,
