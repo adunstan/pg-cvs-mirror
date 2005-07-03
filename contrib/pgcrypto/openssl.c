@@ -26,7 +26,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $PostgreSQL: pgsql/contrib/pgcrypto/openssl.c,v 1.16 2005/03/21 05:19:55 neilc Exp $
+ * $PostgreSQL: pgsql/contrib/pgcrypto/openssl.c,v 1.17 2005/03/21 05:21:04 neilc Exp $
  */
 
 #include <postgres.h>
@@ -34,6 +34,9 @@
 #include "px.h"
 
 #include <openssl/evp.h>
+#include <openssl/blowfish.h>
+#include <openssl/cast.h>
+#include <openssl/des.h>
 
 /*
  * Is OpenSSL compiled with AES? 
