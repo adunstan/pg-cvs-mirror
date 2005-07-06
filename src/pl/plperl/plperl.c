@@ -33,7 +33,7 @@
  *	  ENHANCEMENTS, OR MODIFICATIONS.
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/pl/plperl/plperl.c,v 1.78 2005/06/22 16:45:51 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/pl/plperl/plperl.c,v 1.79 2005/07/03 21:56:16 tgl Exp $
  *
  **********************************************************************/
 
@@ -190,6 +190,8 @@ plperl_init_interp(void)
 		"", "-e",
 		/* all one string follows (no commas please) */
 		"SPI::bootstrap(); use vars qw(%_SHARED);"
+		"sub ::plperl_warn { my $msg = shift; &elog(&NOTICE, $msg); } "
+		"$SIG{__WARN__} = \\&::plperl_warn; "
 		"sub ::mkunsafefunc {return eval(qq[ sub { $_[0] $_[1] } ]); }"
 	};
 
@@ -197,6 +199,8 @@ plperl_init_interp(void)
 		"", "-e",
 		/* all one string follows (no commas please) */
 		"SPI::bootstrap(); use vars qw(%_SHARED);"
+		"sub ::plperl_warn { my $msg = shift; &elog(&NOTICE, $msg); } "
+		"$SIG{__WARN__} = \\&::plperl_warn; "
 		"sub ::mkunsafefunc {return eval("
 		"qq[ sub { use strict; $_[0] $_[1] } ]); }"
 	};

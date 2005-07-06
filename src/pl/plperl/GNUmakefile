@@ -1,5 +1,5 @@
 # Makefile for PL/Perl
-# $PostgreSQL: pgsql/src/pl/plperl/GNUmakefile,v 1.21 2005/05/24 08:05:36 neilc Exp $
+# $PostgreSQL: pgsql/src/pl/plperl/GNUmakefile,v 1.22 2005/05/24 17:07:41 tgl Exp $
 
 subdir = src/pl/plperl
 top_builddir = ../../..
@@ -37,7 +37,7 @@ OBJS = plperl.o spi_internal.o SPI.o
 SHLIB_LINK = $(perl_embed_ldflags) $(BE_DLLLIBS)
 
 REGRESS_OPTS = --dbname=$(PL_TESTDB) --load-language=plperl
-REGRESS = plperl plperl_trigger plperl_shared
+REGRESS = plperl plperl_trigger plperl_shared plperl_elog
 
 include $(top_srcdir)/src/Makefile.shlib
 
