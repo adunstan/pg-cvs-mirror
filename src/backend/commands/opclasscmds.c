@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/opclasscmds.c,v 1.32 2005/04/14 20:03:23 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/opclasscmds.c,v 1.33 2005/06/28 05:08:53 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -391,6 +391,9 @@ DefineOpClass(CreateOpClassStmt *stmt)
 		referenced.objectSubId = 0;
 		recordDependencyOn(&myself, &referenced, DEPENDENCY_NORMAL);
 	}
+
+	/* dependency on owner */
+	recordDependencyOnOwner(OperatorClassRelationId, opclassoid, GetUserId());
 
 	heap_close(rel, RowExclusiveLock);
 }
@@ -962,6 +965,9 @@ AlterOpClassOwner(List *name, const char *access_method, Oid newOwnerId)
 		simple_heap_update(rel, &tup->t_self, tup);
 
 		CatalogUpdateIndexes(rel, tup);
+
+		/* Update owner dependency reference */
+		changeDependencyOnOwner(OperatorClassRelationId, amOid, newOwnerId);
 	}
 
 	heap_close(rel, NoLock);
