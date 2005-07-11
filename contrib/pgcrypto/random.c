@@ -26,11 +26,10 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $PostgreSQL: pgsql/contrib/pgcrypto/random.c,v 1.10 2005/03/21 05:22:14 neilc Exp $
+ * $PostgreSQL: pgsql/contrib/pgcrypto/random.c,v 1.11 2005/07/10 03:55:28 momjian Exp $
  */
 
-
-#include <postgres.h>
+#include "postgres.h"
 
 #include "px.h"
 
@@ -49,7 +48,6 @@
 
 #define TRY_DEV_RANDOM
 
-#include <errno.h>
 #include <fcntl.h>
 #include <unistd.h>
 

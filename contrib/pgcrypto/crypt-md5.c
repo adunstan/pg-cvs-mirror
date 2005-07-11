@@ -8,10 +8,11 @@
  *
  * $FreeBSD: src/lib/libcrypt/crypt-md5.c,v 1.5 1999/12/17 20:21:45 peter Exp $
  *
+ * $PostgreSQL$
  */
-/* $PostgreSQL: crypt-md5.c,v 1.2 2001/10/25 05:49:19 momjian Exp $ */
 
-#include <postgres.h>
+#include "postgres.h"
+
 #include "px.h"
 #include "px-crypt.h"
 

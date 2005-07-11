@@ -26,10 +26,11 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $PostgreSQL$
+ * $PostgreSQL: pgsql/contrib/pgcrypto/pgp-encrypt.c,v 1.1 2005/07/10 13:46:28 momjian Exp $
  */
 
-#include <postgres.h>
+#include "postgres.h"
+
 #include <time.h>
 
 #include "mbuf.h"
