@@ -7,7 +7,7 @@
  *
  * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  *
- *	  $PostgreSQL: pgsql/src/include/utils/guc_tables.h,v 1.18 2004/10/22 19:48:19 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/include/utils/guc_tables.h,v 1.19 2004/12/31 22:03:46 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -62,6 +62,7 @@ enum config_group
 	STATS,
 	STATS_MONITORING,
 	STATS_COLLECTOR,
+	AUTOVACUUM,
 	CLIENT_CONN,
 	CLIENT_CONN_STATEMENT,
 	CLIENT_CONN_LOCALE,
