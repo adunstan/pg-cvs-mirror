@@ -10,7 +10,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/nabstime.c,v 1.140 2005/07/22 03:46:33 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/nabstime.c,v 1.141 2005/07/22 19:55:50 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -474,7 +474,7 @@ timestamp_abstime(PG_FUNCTION_ARGS)
 		result = NOEND_ABSTIME;
 	else if (timestamp2tm(timestamp, NULL, tm, &fsec, NULL, NULL) == 0)
 	{
-		tz = DetermineLocalTimeZone(tm);
+		tz = DetermineTimeZoneOffset(tm, global_timezone);
 		result = tm2abstime(tm, tz);
 	}
 	else
