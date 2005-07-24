@@ -1,4 +1,4 @@
-# $PostgreSQL: pgsql/contrib/tsearch2/Makefile,v 1.7 2004/08/20 20:13:09 momjian Exp $
+# $PostgreSQL: pgsql/contrib/tsearch2/Makefile,v 1.8 2004/10/17 23:09:31 tgl Exp $
 
 MODULE_big = tsearch2
 OBJS = dict_ex.o dict.o snmap.o stopword.o common.o prs_dcfg.o \
@@ -19,7 +19,7 @@ DATA_built = tsearch2.sql untsearch2.sql
 DOCS = README.tsearch2
 REGRESS = tsearch2
 
-SHLIB_LINK := -lm
+SHLIB_LINK += $(filter -lm, $(LIBS))
 
 
 ifdef USE_PGXS
