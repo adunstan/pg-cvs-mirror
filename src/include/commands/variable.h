@@ -5,7 +5,7 @@
  * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/commands/variable.h,v 1.24 2004/08/29 04:13:06 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/commands/variable.h,v 1.25 2004/12/31 22:03:28 pgsql Exp $
  */
 #ifndef VARIABLE_H
 #define VARIABLE_H
@@ -26,6 +26,9 @@ extern bool assign_random_seed(double value,
 extern const char *show_random_seed(void);
 extern const char *assign_client_encoding(const char *value,
 					   bool doit, GucSource source);
+extern const char *assign_role(const char *value,
+							 bool doit, GucSource source);
+extern const char *show_role(void);
 extern const char *assign_session_authorization(const char *value,
 							 bool doit, GucSource source);
 extern const char *show_session_authorization(void);
