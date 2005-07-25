@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/libpq/auth.c,v 1.125 2005/06/14 17:43:13 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/libpq/auth.c,v 1.126 2005/06/27 02:04:24 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -234,7 +234,7 @@ pg_krb5_recvauth(Port *port)
 
 	kusername = pg_an_to_ln(kusername);
 	if (pg_krb_caseins_users)
-		ret = strncasecmp(port->user_name, kusername, SM_DATABASE_USER);
+		ret = pg_strncasecmp(port->user_name, kusername, SM_DATABASE_USER);
 	else
 		ret = strncmp(port->user_name, kusername, SM_DATABASE_USER);
 	if (ret)
