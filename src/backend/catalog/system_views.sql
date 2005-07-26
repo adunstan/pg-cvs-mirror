@@ -3,20 +3,22 @@
  *
  * Copyright (c) 1996-2005, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/backend/catalog/system_views.sql,v 1.15 2005/06/18 19:33:42 tgl Exp $
+ * $PostgreSQL: pgsql/src/backend/catalog/system_views.sql,v 1.16 2005/06/28 05:08:52 tgl Exp $
  */
 
 CREATE VIEW pg_roles AS 
     SELECT 
         rolname,
         rolsuper,
+        rolinherit,
         rolcreaterole,
         rolcreatedb,
         rolcatupdate,
         rolcanlogin,
         '********'::text as rolpassword,
         rolvaliduntil,
-        rolconfig
+        rolconfig,
+        oid
     FROM pg_authid;
 
 CREATE VIEW pg_shadow AS
