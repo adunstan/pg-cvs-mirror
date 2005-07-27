@@ -5,7 +5,7 @@
  *	Implements the basic DB functions used by the archiver.
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/bin/pg_dump/pg_backup_db.c,v 1.62 2005/06/21 20:45:44 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/bin/pg_dump/pg_backup_db.c,v 1.63 2005/07/01 21:03:25 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -266,7 +266,7 @@ ConnectDatabase(Archive *AHX,
 	/* check to see that the backend connection was successfully made */
 	if (PQstatus(AH->connection) == CONNECTION_BAD)
 		die_horribly(AH, modulename, "connection to database \"%s\" failed: %s",
-					 dbname, PQerrorMessage(AH->connection));
+					 PQdb(AH->connection), PQerrorMessage(AH->connection));
 
 	/* check for version mismatch */
 	_check_database_version(AH, ignoreVersion);
