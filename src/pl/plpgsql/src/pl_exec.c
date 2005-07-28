@@ -3,7 +3,7 @@
  *			  procedural language
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/pl/plpgsql/src/pl_exec.c,v 1.148 2005/06/22 07:28:47 neilc Exp $
+ *	  $PostgreSQL: pgsql/src/pl/plpgsql/src/pl_exec.c,v 1.149 2005/06/26 22:05:42 tgl Exp $
  *
  *	  This software is copyrighted by Jan Wieck - Hamburg.
  *
@@ -1143,7 +1143,7 @@ exec_stmt_getdiag(PLpgSQL_execstate *estate, PLpgSQL_stmt_getdiag *stmt)
 	{
 		PLpgSQL_diag_item	*diag_item = (PLpgSQL_diag_item *) lfirst(lc);
 		PLpgSQL_datum		*var;
-		bool				 isnull;
+		bool				 isnull = false;
 
 		if (diag_item->target <= 0)
 			continue;
@@ -1434,7 +1434,7 @@ exec_stmt_fori(PLpgSQL_execstate *estate, PLpgSQL_stmt_fori *stmt)
 			}
 			else
 			{
-			    /*
+				/*
 				 * otherwise, this is a named continue that does not
 				 * match the current statement's label, if any: return
 				 * RC_CONTINUE so that the CONTINUE will propagate up
