@@ -31,7 +31,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/vacuumlazy.c,v 1.54 2005/05/19 21:35:46 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/vacuumlazy.c,v 1.55 2005/07/14 05:13:40 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -182,8 +182,8 @@ lazy_vacuum_rel(Relation onerel, VacuumStmt *vacstmt)
 						hasindex);
 
 	/* report results to the stats collector, too */
-	pgstat_report_vacuum(RelationGetRelid(onerel), vacstmt->analyze,
-						 vacrelstats->rel_tuples);
+	pgstat_report_vacuum(RelationGetRelid(onerel), onerel->rd_rel->relisshared,
+		   				 vacstmt->analyze, vacrelstats->rel_tuples);
 }
 
 
