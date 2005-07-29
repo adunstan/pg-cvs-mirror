@@ -1,4 +1,4 @@
-# $PostgreSQL: pgsql/contrib/Makefile,v 1.58 2005/07/29 14:46:55 momjian Exp $
+# $PostgreSQL: pgsql/contrib/Makefile,v 1.59 2005/07/29 15:13:10 momjian Exp $
 
 subdir = contrib
 top_builddir = ..
@@ -20,7 +20,6 @@ WANTED_DIRS = \
 		lo		\
 		ltree		\
 		oid2name	\
-		pg_autovacuum	\
 		pg_buffercache	\
 		pg_trgm		\
 		pgbench		\
