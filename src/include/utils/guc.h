@@ -7,7 +7,7 @@
  * Copyright (c) 2000-2005, PostgreSQL Global Development Group
  * Written by Peter Eisentraut <peter_e@gmx.net>.
  *
- * $PostgreSQL: pgsql/src/include/utils/guc.h,v 1.60 2005/03/25 16:17:28 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/utils/guc.h,v 1.61 2005/06/26 03:04:12 momjian Exp $
  *--------------------------------------------------------------------
  */
 #ifndef GUC_H
@@ -134,6 +134,9 @@ extern char *HbaFileName;
 extern char *IdentFileName;
 extern char *external_pid_file;
 
+extern int  tcp_keepalives_idle;
+extern int  tcp_keepalives_interval;
+extern int  tcp_keepalives_count;
 
 extern void SetConfigOption(const char *name, const char *value,
 				GucContext context, GucSource source);
