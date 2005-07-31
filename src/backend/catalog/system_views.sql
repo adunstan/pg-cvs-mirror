@@ -3,7 +3,7 @@
  *
  * Copyright (c) 1996-2005, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/backend/catalog/system_views.sql,v 1.16 2005/06/28 05:08:52 tgl Exp $
+ * $PostgreSQL: pgsql/src/backend/catalog/system_views.sql,v 1.17 2005/07/26 16:38:26 tgl Exp $
  */
 
 CREATE VIEW pg_roles AS 
@@ -15,6 +15,7 @@ CREATE VIEW pg_roles AS
         rolcreatedb,
         rolcatupdate,
         rolcanlogin,
+        rolconnlimit,
         '********'::text as rolpassword,
         rolvaliduntil,
         rolconfig,
