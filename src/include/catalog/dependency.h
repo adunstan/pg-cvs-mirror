@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/catalog/dependency.h,v 1.14 2004/12/31 22:03:24 pgsql Exp $
+ * $PostgreSQL: pgsql/src/include/catalog/dependency.h,v 1.15 2005/07/07 20:39:59 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -173,6 +173,10 @@ extern void recordMultipleDependencies(const ObjectAddress *depender,
 						   DependencyType behavior);
 
 extern long deleteDependencyRecordsFor(Oid classId, Oid objectId);
+
+extern long changeDependencyFor(Oid classId, Oid objectId,
+								Oid refClassId, Oid oldRefObjectId,
+								Oid newRefObjectId);
 
 /* in pg_shdepend.c */
 
