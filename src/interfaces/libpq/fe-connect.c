@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------------
+conninfo_parse/*-------------------------------------------------------------------------
  *
  * fe-connect.c
  *	  functions related to setting up a connection to the backend
@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-connect.c,v 1.313 2005/06/27 02:04:26 neilc Exp $
+ *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-connect.c,v 1.314 2005/07/13 15:25:55 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
