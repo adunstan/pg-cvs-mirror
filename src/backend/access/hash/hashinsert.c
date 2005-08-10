@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/hash/hashinsert.c,v 1.35 2004/12/31 21:59:13 pgsql Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/hash/hashinsert.c,v 1.36 2005/03/21 01:23:57 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -88,7 +88,8 @@ _hash_doinsert(Relation rel, HashItem hitem)
 				(errcode(ERRCODE_PROGRAM_LIMIT_EXCEEDED),
 				 errmsg("index row size %lu exceeds hash maximum %lu",
 						(unsigned long) itemsz,
-						(unsigned long) HashMaxItemSize((Page) metap))));
+						(unsigned long) HashMaxItemSize((Page) metap)),
+				 errhint("Values larger than a buffer page cannot be indexed.")));
 
 	/*
 	 * Compute the target bucket number, and convert to block number.
