@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-connect.c,v 1.315 2005/08/09 04:50:44 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-connect.c,v 1.316 2005/08/09 05:14:26 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1082,15 +1082,12 @@ keep_going:						/* We will come back to here until there
 					 * since we are in nonblock mode.  If it does, well,
 					 * too bad.
 					 */
-			retry_connect:
 					if (connect(conn->sock, addr_cur->ai_addr,
 								addr_cur->ai_addrlen) < 0)
 					{
-						if (SOCK_ERRNO == EINTR)
-							/* Interrupted system call - just try again */
-							goto retry_connect;
 						if (SOCK_ERRNO == EINPROGRESS ||
 							SOCK_ERRNO == EWOULDBLOCK ||
+							SOCK_ERRNO == EINTR ||
 							SOCK_ERRNO == 0)
 						{
 							/*
