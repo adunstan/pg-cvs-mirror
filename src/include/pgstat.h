@@ -5,7 +5,7 @@
  *
  *	Copyright (c) 2001-2005, PostgreSQL Global Development Group
  *
- *	$PostgreSQL: pgsql/src/include/pgstat.h,v 1.33 2005/07/14 05:13:43 tgl Exp $
+ *	$PostgreSQL: pgsql/src/include/pgstat.h,v 1.34 2005/07/29 19:30:09 tgl Exp $
  * ----------
  */
 #ifndef PGSTAT_H
@@ -367,6 +367,7 @@ extern bool pgstat_collect_blocklevel;
 extern void pgstat_init(void);
 extern int	pgstat_start(void);
 extern void pgstat_beterm(int pid);
+extern void pgstat_reset_all(void);
 
 #ifdef EXEC_BACKEND
 extern void PgstatBufferMain(int argc, char *argv[]);
