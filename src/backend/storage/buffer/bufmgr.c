@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/storage/buffer/bufmgr.c,v 1.192 2005/08/08 19:44:22 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/storage/buffer/bufmgr.c,v 1.193 2005/08/12 05:05:50 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -153,6 +153,8 @@ ReadBuffer(Relation reln, BlockNumber blockNum)
 		 * block is not currently in memory.
 		 */
 		bufHdr = BufferAlloc(reln, blockNum, &found);
+		/* we are guaranted that nobody else has touched this will-be-new block */
+		Assert(!(found && isExtend));
 		if (found)
 			BufferHitCount++;
 	}
