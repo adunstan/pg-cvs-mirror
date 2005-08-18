@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/optimizer/plan/planagg.c,v 1.6 2005/07/23 21:05:46 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/optimizer/plan/planagg.c,v 1.7 2005/07/28 20:26:21 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -519,7 +519,8 @@ make_agg_subplan(PlannerInfo *root, MinMaxAggInfo *info, List *constant_quals)
 
 	plan = (Plan *) make_limit(plan, 
 							   subparse->limitOffset,
-							   subparse->limitCount);
+							   subparse->limitCount,
+							   0, 1);
 
 	/*
 	 * Convert the plan into an InitPlan, and make a Param for its result.
