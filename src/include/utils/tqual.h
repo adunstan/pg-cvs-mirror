@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/utils/tqual.h,v 1.56 2005/03/20 23:40:34 neilc Exp $
+ * $PostgreSQL: pgsql/src/include/utils/tqual.h,v 1.57 2005/05/19 21:35:48 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -42,7 +42,6 @@ typedef struct SnapshotData
 	TransactionId *xip;			/* array of xact IDs in progress */
 	/* note: all ids in xip[] satisfy xmin <= xip[i] < xmax */
 	CommandId	curcid;			/* in my xact, CID < curcid are visible */
-	ItemPointerData tid;		/* required for Dirty snapshot -:( */
 } SnapshotData;
 
 typedef SnapshotData *Snapshot;
