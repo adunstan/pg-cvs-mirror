@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/storage/ipc/pmsignal.c,v 1.17 2004/08/29 05:06:48 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/storage/ipc/pmsignal.c,v 1.18 2004/12/31 22:00:56 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -48,7 +48,9 @@ PMSignalInit(void)
 	bool		found;
 
 	PMSignalFlags = (sig_atomic_t *)
-		ShmemInitStruct("PMSignalFlags", NUM_PMSIGNALS * sizeof(sig_atomic_t), &found);
+		ShmemInitStruct("PMSignalFlags",
+						NUM_PMSIGNALS * sizeof(sig_atomic_t),
+						&found);
 
 	if (!found)
 		MemSet(PMSignalFlags, 0, NUM_PMSIGNALS * sizeof(sig_atomic_t));

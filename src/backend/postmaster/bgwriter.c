@@ -37,7 +37,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/postmaster/bgwriter.c,v 1.17 2005/06/30 00:00:51 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/postmaster/bgwriter.c,v 1.18 2005/08/02 20:52:08 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -462,15 +462,19 @@ ReqShutdownHandler(SIGNAL_ARGS)
  * BgWriterShmemSize
  *		Compute space needed for bgwriter-related shared memory
  */
-int
+Size
 BgWriterShmemSize(void)
 {
+	Size		size;
+
 	/*
 	 * Currently, the size of the requests[] array is arbitrarily set
 	 * equal to NBuffers.  This may prove too large or small ...
 	 */
-	return MAXALIGN(sizeof(BgWriterShmemStruct) +
-					(NBuffers - 1) *sizeof(BgWriterRequest));
+	size = offsetof(BgWriterShmemStruct, requests);
+	size = add_size(size, mul_size(NBuffers, sizeof(BgWriterRequest)));
+
+	return size;
 }
 
 /*

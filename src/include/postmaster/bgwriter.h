@@ -5,7 +5,7 @@
  *
  * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/include/postmaster/bgwriter.h,v 1.5 2005/03/04 20:21:06 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/postmaster/bgwriter.h,v 1.6 2005/06/30 00:00:52 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -28,7 +28,7 @@ extern void RequestCheckpoint(bool waitforit, bool warnontime);
 extern bool ForwardFsyncRequest(RelFileNode rnode, BlockNumber segno);
 extern void AbsorbFsyncRequests(void);
 
-extern int	BgWriterShmemSize(void);
+extern Size BgWriterShmemSize(void);
 extern void BgWriterShmemInit(void);
 
 #endif   /* _BGWRITER_H */

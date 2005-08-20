@@ -48,7 +48,7 @@
  * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/backend/access/transam/slru.c,v 1.25 2005/06/19 21:34:01 tgl Exp $
+ * $PostgreSQL: pgsql/src/backend/access/transam/slru.c,v 1.26 2005/07/04 04:51:44 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -141,9 +141,10 @@ static int	SlruSelectLRUPage(SlruCtl ctl, int pageno);
  * Initialization of shared memory
  */
 
-int
+Size
 SimpleLruShmemSize(void)
 {
+	/* we assume NUM_SLRU_BUFFERS isn't so large as to risk overflow */
 	return BUFFERALIGN(sizeof(SlruSharedData)) + BLCKSZ * NUM_SLRU_BUFFERS;
 }
 

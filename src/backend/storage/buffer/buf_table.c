@@ -13,7 +13,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/storage/buffer/buf_table.c,v 1.40 2005/03/04 20:21:06 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/storage/buffer/buf_table.c,v 1.41 2005/05/29 04:23:04 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -37,7 +37,7 @@ static HTAB *SharedBufHash;
  * Estimate space needed for mapping hashtable
  *		size is the desired hash table size (possibly more than NBuffers)
  */
-int
+Size
 BufTableShmemSize(int size)
 {
 	return hash_estimate_size(size, sizeof(BufferLookupEnt));
