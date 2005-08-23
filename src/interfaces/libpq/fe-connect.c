@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-connect.c,v 1.316 2005/08/09 05:14:26 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-connect.c,v 1.317 2005/08/11 22:53:41 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -55,7 +55,11 @@
 #endif
 
 #ifdef ENABLE_THREAD_SAFETY
+#ifdef WIN32
+#include "pthread-win32.h"
+#else
 #include <pthread.h>
+#endif
 #endif
 
 #include "libpq/ip.h"
