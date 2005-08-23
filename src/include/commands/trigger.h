@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/commands/trigger.h,v 1.53 2005/04/11 19:51:15 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/commands/trigger.h,v 1.54 2005/05/30 07:20:58 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -112,6 +112,9 @@ extern void DropTrigger(Oid relid, const char *trigname,
 extern void RemoveTriggerById(Oid trigOid);
 
 extern void renametrig(Oid relid, const char *oldname, const char *newname);
+
+extern void EnableDisableTrigger(Relation rel, const char *tgname,
+								 bool enable, bool skip_system);
 
 extern void RelationBuildTriggers(Relation relation);
 
