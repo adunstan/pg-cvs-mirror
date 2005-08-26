@@ -26,7 +26,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/execMain.c,v 1.253 2005/08/18 21:34:20 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/execMain.c,v 1.254 2005/08/20 00:39:55 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -759,6 +759,7 @@ InitPlan(QueryDesc *queryDesc, bool explainOnly)
 												  namespaceId,
 												  InvalidOid,
 												  InvalidOid,
+												  GetUserId(),
 												  tupdesc,
 												  RELKIND_RELATION,
 												  false,

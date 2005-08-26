@@ -11,7 +11,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/cluster.c,v 1.137 2005/05/06 17:24:53 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/cluster.c,v 1.138 2005/05/10 13:16:26 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -577,6 +577,7 @@ make_new_heap(Oid OIDOldHeap, const char *NewName, Oid NewTableSpace)
 										  RelationGetNamespace(OldHeap),
 										  NewTableSpace,
 										  InvalidOid,
+										  OldHeap->rd_rel->relowner,
 										  tupdesc,
 										  OldHeap->rd_rel->relkind,
 										  OldHeap->rd_rel->relisshared,
