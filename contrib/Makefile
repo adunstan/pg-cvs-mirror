@@ -1,4 +1,4 @@
-# $PostgreSQL: pgsql/contrib/Makefile,v 1.59 2005/07/29 15:13:10 momjian Exp $
+# $PostgreSQL: pgsql/contrib/Makefile,v 1.60 2005/07/29 19:38:21 tgl Exp $
 
 subdir = contrib
 top_builddir = ..
@@ -39,7 +39,7 @@ WANTED_DIRS = \
 #		mac		\ (does not have a makefile)
 #		oracle		\ (does not have a makefile)
 #		start-scripts	\ (does not have a makefile)
-#		xml2		\ (non-standard makefile)
+#		xml2		\ (requires libxml installed)
 
 
 all install installdirs uninstall clean distclean maintainer-clean:
