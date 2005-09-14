@@ -4,7 +4,7 @@
  *						  procedural language
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/pl/plpgsql/src/gram.y,v 1.79 2005/07/02 08:59:47 neilc Exp $
+ *	  $PostgreSQL: pgsql/src/pl/plpgsql/src/gram.y,v 1.80 2005/07/02 17:01:59 momjian Exp $
  *
  *	  This software is copyrighted by Jan Wieck - Hamburg.
  *
@@ -458,13 +458,13 @@ decl_cursor_args :
 					}
 				;
 
-decl_cursor_arglist : decl_cursor_arglist decl_cursor_arg
-					{
-						$$ = lappend($1, $2);
-					}
-				| decl_cursor_arg
+decl_cursor_arglist : decl_cursor_arg
 					{
 						$$ = list_make1($1);
+					}
+				| decl_cursor_arglist ',' decl_cursor_arg
+					{
+						$$ = lappend($1, $3);
 					}
 				;
 
