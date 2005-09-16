@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/tcop/postgres.c,v 1.457 2005/08/11 21:11:45 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/tcop/postgres.c,v 1.458 2005/09/02 21:50:54 momjian Exp $
  *
  * NOTES
  *	  this is the "main" module of the postgres backend and
@@ -2205,7 +2205,7 @@ ProcessInterrupts(void)
 		DisableCatchupInterrupt();
 		ereport(ERROR,
 				(errcode(ERRCODE_QUERY_CANCELED),
-				 errmsg("canceling query due to user request")));
+				 errmsg("canceling query due to user request or statement timeout")));
 	}
 	/* If we get here, do nothing (probably, QueryCancelPending was reset) */
 }
