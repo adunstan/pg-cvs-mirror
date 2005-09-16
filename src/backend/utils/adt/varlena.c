@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/varlena.c,v 1.132 2005/08/24 17:50:00 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/varlena.c,v 1.133 2005/08/26 17:40:36 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1727,7 +1727,7 @@ textToQualifiedNameList(text *textval)
  *			   identifiers.
  * Outputs:
  *	namelist: filled with a palloc'd list of pointers to identifiers within
- *			  rawstring.  Caller should freeList() this even on error return.
+ *			  rawstring.  Caller should list_free() this even on error return.
  *
  * Returns TRUE if okay, FALSE if there is a syntax error in the string.
  *
