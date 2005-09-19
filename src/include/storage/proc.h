@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/storage/proc.h,v 1.80 2005/07/31 17:19:22 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/storage/proc.h,v 1.81 2005/08/20 23:26:34 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -116,6 +116,8 @@ typedef struct PROC_HDR
 /* configurable options */
 extern int	DeadlockTimeout;
 extern int	StatementTimeout;
+
+extern volatile bool cancel_from_timeout;
 
 
 /*
