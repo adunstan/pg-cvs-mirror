@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/gist/gistscan.c,v 1.58 2005/05/17 03:34:18 neilc Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/gist/gistscan.c,v 1.59 2005/06/27 12:45:22 teodor Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -380,7 +380,7 @@ gistadjone(IndexScanDesc scan,
  */
 static void
 adjustiptr(IndexScanDesc scan,
-		   ItemPointer iptr, GISTSearchStack	*stk,
+		   ItemPointer iptr, GISTSearchStack *stk,
 		   int op,
 		   BlockNumber blkno,
 		   OffsetNumber offnum, XLogRecPtr newlsn, XLogRecPtr oldlsn)
@@ -422,7 +422,8 @@ adjustiptr(IndexScanDesc scan,
 					}
 					break;
 				default:
-					elog(ERROR, "Bad operation in GiST scan adjust: %d", op);
+					elog(ERROR, "unrecognized GiST scan adjust operation: %d",
+						 op);
 			}
 		}
 	}
