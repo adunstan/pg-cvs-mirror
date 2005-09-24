@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/cache/catcache.c,v 1.122 2005/08/08 19:17:22 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/cache/catcache.c,v 1.123 2005/08/13 22:18:07 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -161,6 +161,8 @@ GetCCHashEqFuncs(Oid keytype, PGFunction *hashfunc, RegProcedure *eqfunc)
 			break;
 		default:
 			elog(FATAL, "type %u not supported as catcache key", keytype);
+			*hashfunc = NULL;	/* keep compiler quiet */
+			*eqfunc = InvalidOid;
 			break;
 	}
 }
