@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/port/path.c,v 1.57 2005/08/12 21:07:53 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/port/path.c,v 1.58 2005/08/29 19:39:39 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -536,6 +536,24 @@ void
 get_locale_path(const char *my_exec_path, char *ret_path)
 {
 	make_relative_path(ret_path, LOCALEDIR, PGBINDIR, my_exec_path);
+}
+
+/*
+ *	get_doc_path
+ */
+void
+get_doc_path(const char *my_exec_path, char *ret_path)
+{
+	make_relative_path(ret_path, DOCDIR, PGBINDIR, my_exec_path);
+}
+
+/*
+ *	get_man_path
+ */
+void
+get_man_path(const char *my_exec_path, char *ret_path)
+{
+	make_relative_path(ret_path, MANDIR, PGBINDIR, my_exec_path);
 }
 
 

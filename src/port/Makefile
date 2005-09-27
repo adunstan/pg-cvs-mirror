@@ -15,7 +15,7 @@
 #		for use only by the backend binaries
 #
 # IDENTIFICATION
-#    $PostgreSQL: pgsql/src/port/Makefile,v 1.27 2005/08/12 19:43:31 momjian Exp $
+#    $PostgreSQL: pgsql/src/port/Makefile,v 1.28 2005/08/12 19:45:14 momjian Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -81,6 +81,8 @@ pg_config_paths.h: $(top_builddir)/src/Makefile.global
 	echo "#define LIBDIR \"$(libdir)\"" >>$@
 	echo "#define PKGLIBDIR \"$(pkglibdir)\"" >>$@
 	echo "#define LOCALEDIR \"$(localedir)\"" >>$@
+	echo "#define DOCDIR \"$(docdir)\"" >>$@
+	echo "#define MANDIR \"$(mandir)\"" >>$@
 
 clean distclean maintainer-clean:
 	rm -f libpgport.a libpgport_srv.a $(LIBOBJS) $(LIBOBJS_SRV) pg_config_paths.h
