@@ -1,4 +1,4 @@
-# $PostgreSQL: pgsql/contrib/vacuumlo/Makefile,v 1.13 2004/08/20 20:13:10 momjian Exp $
+# $PostgreSQL: pgsql/contrib/vacuumlo/Makefile,v 1.14 2005/03/25 18:17:12 momjian Exp $
 
 PROGRAM = vacuumlo
 OBJS	= vacuumlo.o
@@ -9,7 +9,7 @@ PG_LIBS = $(libpq_pgport)
 DOCS = README.vacuumlo
 
 ifdef USE_PGXS
-PGXS = $(shell pg_config --pgxs)
+PGXS := $(shell pg_config --pgxs)
 include $(PGXS)
 else
 subdir = contrib/vacuumlo

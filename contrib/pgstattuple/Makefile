@@ -2,7 +2,7 @@
 #
 # pgstattuple Makefile
 #
-# $PostgreSQL: pgsql-server/contrib/pgstattuple/Makefile,v 1.2 2003/11/29 22:39:29 pgsql Exp $
+# $PostgreSQL: pgsql/contrib/pgstattuple/Makefile,v 1.3 2004/08/20 20:13:07 momjian Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -14,7 +14,7 @@ DOCS		= README.pgstattuple README.pgstattuple.euc_jp
 DATA_built	= pgstattuple.sql
 
 ifdef USE_PGXS
-PGXS = $(shell pg_config --pgxs)
+PGXS := $(shell pg_config --pgxs)
 include $(PGXS)
 else
 subdir = contrib/pgstattuple

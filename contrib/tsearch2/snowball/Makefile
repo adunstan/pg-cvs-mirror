@@ -1,4 +1,4 @@
-# $PostgreSQL: pgsql/contrib/tsearch2/snowball/Makefile,v 1.5 2003/11/29 19:51:36 pgsql Exp $
+# $PostgreSQL: pgsql/contrib/tsearch2/snowball/Makefile,v 1.6 2005/09/15 11:14:18 teodor Exp $
 
 
 PG_CPPFLAGS = -I$(srcdir)/..
@@ -6,7 +6,7 @@ SUBOBJS = english_stem.o api.o russian_stem.o utilities.o
 EXTRA_CLEAN = SUBSYS.o $(SUBOBJS)
 
 ifdef USE_PGXS
-PGXS = $(shell pg_config --pgxs)
+PGXS := $(shell pg_config --pgxs)
 include $(PGXS)
 else
 subdir = contrib/tsearch2

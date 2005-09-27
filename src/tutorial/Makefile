@@ -9,7 +9,7 @@
 # to build using the surrounding source tree.
 #
 # IDENTIFICATION
-#    $PostgreSQL: pgsql/src/tutorial/Makefile,v 1.17 2003/11/29 19:52:14 pgsql Exp $
+#    $PostgreSQL: pgsql/src/tutorial/Makefile,v 1.18 2005/01/13 18:23:22 tgl Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -24,7 +24,7 @@ top_builddir = ../..
 include $(top_builddir)/src/Makefile.global
 include $(top_srcdir)/src/makefiles/pgxs.mk
 else
-PGXS = $(shell pg_config --pgxs)
+PGXS := $(shell pg_config --pgxs)
 include $(PGXS)
 endif
 
