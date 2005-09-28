@@ -14,7 +14,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/optimizer/plan/planmain.c,v 1.86 2005/07/02 23:00:41 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/optimizer/plan/planmain.c,v 1.87 2005/08/27 22:13:43 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -155,7 +155,7 @@ query_planner(PlannerInfo *root, List *tlist, double tuple_fraction,
 	 */
 	build_base_rel_tlists(root, tlist);
 
-	(void) distribute_quals_to_rels(root, (Node *) parse->jointree);
+	(void) distribute_quals_to_rels(root, (Node *) parse->jointree, false);
 
 	/*
 	 * Use the completed lists of equijoined keys to deduce any implied
