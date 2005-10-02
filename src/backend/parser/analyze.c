@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- *	$PostgreSQL: pgsql/src/backend/parser/analyze.c,v 1.323 2005/07/28 22:27:00 tgl Exp $
+ *	$PostgreSQL: pgsql/src/backend/parser/analyze.c,v 1.324 2005/08/01 20:31:09 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -912,12 +912,15 @@ transformColumnDefinition(ParseState *pstate, CreateStmtContext *cxt,
 		 * DEFAULT).
 		 *
 		 * Create an expression tree representing the function call
-		 * nextval('"sequencename"')
+		 * nextval('sequencename').  We cannot reduce the raw tree
+		 * to cooked form until after the sequence is created, but
+		 * there's no need to do so.
 		 */
 		qstring = quote_qualified_identifier(snamespace, sname);
 		snamenode = makeNode(A_Const);
 		snamenode->val.type = T_String;
 		snamenode->val.val.str = qstring;
+		snamenode->typename = SystemTypeName("regclass");
 		funccallnode = makeNode(FuncCall);
 		funccallnode->funcname = SystemFuncName("nextval");
 		funccallnode->args = list_make1(snamenode);
