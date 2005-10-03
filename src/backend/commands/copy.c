@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/copy.c,v 1.250 2005/09/24 17:53:12 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/copy.c,v 1.251 2005/09/24 22:54:36 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -857,7 +857,7 @@ DoCopy(const CopyStmt *stmt)
 							  (is_from ? RowExclusiveLock : AccessShareLock));
 
 	/* check read-only transaction */
-	if (XactReadOnly && !is_from &&
+	if (XactReadOnly && is_from &&
 		!isTempNamespace(RelationGetNamespace(cstate->rel)))
 		ereport(ERROR,
 				(errcode(ERRCODE_READ_ONLY_SQL_TRANSACTION),
