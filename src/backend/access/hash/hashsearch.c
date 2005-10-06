@@ -8,13 +8,14 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/hash/hashsearch.c,v 1.37 2004/08/29 05:06:40 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/hash/hashsearch.c,v 1.38 2004/12/31 21:59:13 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
 #include "postgres.h"
 
 #include "access/hash.h"
+#include "pgstat.h"
 #include "storage/lmgr.h"
 
 
@@ -129,6 +130,8 @@ _hash_first(IndexScanDesc scan, ScanDirection dir)
 	IndexTuple	itup;
 	ItemPointer current;
 	OffsetNumber offnum;
+
+	pgstat_count_index_scan(&scan->xs_pgstat_info);
 
 	current = &(scan->currentItemData);
 	ItemPointerSetInvalid(current);
