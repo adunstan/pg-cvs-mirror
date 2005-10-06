@@ -10,7 +10,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/tcop/utility.c,v 1.242 2005/07/31 17:19:19 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/tcop/utility.c,v 1.243 2005/08/01 04:03:57 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -823,7 +823,7 @@ ProcessUtility(Node *parsetree,
 			{
 				ListenStmt *stmt = (ListenStmt *) parsetree;
 
-				Async_Listen(stmt->relation->relname, MyProcPid);
+				Async_Listen(stmt->relation->relname);
 			}
 			break;
 
@@ -831,7 +831,7 @@ ProcessUtility(Node *parsetree,
 			{
 				UnlistenStmt *stmt = (UnlistenStmt *) parsetree;
 
-				Async_Unlisten(stmt->relation->relname, MyProcPid);
+				Async_Unlisten(stmt->relation->relname);
 			}
 			break;
 
