@@ -4,7 +4,7 @@
  *						  procedural language
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/pl/plpgsql/src/gram.y,v 1.80 2005/07/02 17:01:59 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/pl/plpgsql/src/gram.y,v 1.81 2005/09/14 13:46:47 tgl Exp $
  *
  *	  This software is copyrighted by Jan Wieck - Hamburg.
  *
@@ -1985,6 +1985,8 @@ make_select_stmt(void)
 	while(nparams-- > 0)
 		expr->params[nparams] = params[nparams];
 	plpgsql_dstring_free(&ds);
+
+	check_sql_expr(expr->query);
 
 	if (have_into)
 	{
