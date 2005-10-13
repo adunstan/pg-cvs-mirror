@@ -16,7 +16,7 @@
  * Copyright (c) 2003-2005, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/port/getaddrinfo.c,v 1.18 2005/08/24 22:13:23 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/port/getaddrinfo.c,v 1.19 2005/08/25 17:51:01 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -68,7 +68,7 @@ static bool
 haveNativeWindowsIPv6routines(void)
 {
 	void	   *hLibrary = NULL;
-	static bool alreadyLookedForIpv6routines = FALSE;
+	static bool alreadyLookedForIpv6routines = false;
 
 	if (alreadyLookedForIpv6routines)
 		return (getaddrinfo_ptr != NULL);
@@ -126,7 +126,7 @@ haveNativeWindowsIPv6routines(void)
 		}
 	}
 
-	alreadyLookedForIpv6routines = TRUE;
+	alreadyLookedForIpv6routines = true;
 	return (getaddrinfo_ptr != NULL);
 }
 
