@@ -9,7 +9,7 @@
  * Author: Andreas Pflug <pgadmin@pse-consulting.de>
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/genfile.c,v 1.6 2005/08/29 19:39:39 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/genfile.c,v 1.7 2005/10/15 02:49:28 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -134,7 +134,7 @@ pg_read_file(PG_FUNCTION_ARGS)
 
 	nbytes = fread(VARDATA(buf), 1, (size_t) bytes_to_read, file);
 
-	if (nbytes < 0)
+	if (ferror(file))
 		ereport(ERROR,
 				(errcode_for_file_access(),
 				 errmsg("could not read file \"%s\": %m", filename)));
