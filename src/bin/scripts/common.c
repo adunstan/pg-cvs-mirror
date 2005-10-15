@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/bin/scripts/common.c,v 1.17 2005/02/22 04:41:30 momjian Exp $
+ * $PostgreSQL: pgsql/src/bin/scripts/common.c,v 1.18 2005/08/15 21:02:26 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -20,7 +20,7 @@
 #include "common.h"
 
 #ifndef HAVE_INT_OPTRESET
-int		optreset;
+int			optreset;
 #endif
 
 
@@ -97,8 +97,8 @@ connectDatabase(const char *dbname, const char *pghost, const char *pgport,
 		password = simple_prompt("Password: ", 100, false);
 
 	/*
-	 * Start the connection.  Loop until we have a password if requested
-	 * by backend.
+	 * Start the connection.  Loop until we have a password if requested by
+	 * backend.
 	 */
 	do
 	{

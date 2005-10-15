@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/lockcmds.c,v 1.11 2004/08/29 04:12:30 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/lockcmds.c,v 1.12 2004/12/31 21:59:41 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -31,8 +31,8 @@ LockTableCommand(LockStmt *lockstmt)
 	ListCell   *p;
 
 	/*
-	 * Iterate over the list and open, lock, and close the relations one
-	 * at a time
+	 * Iterate over the list and open, lock, and close the relations one at a
+	 * time
 	 */
 
 	foreach(p, lockstmt->relations)
@@ -43,8 +43,8 @@ LockTableCommand(LockStmt *lockstmt)
 		Relation	rel;
 
 		/*
-		 * We don't want to open the relation until we've checked
-		 * privilege. So, manually get the relation OID.
+		 * We don't want to open the relation until we've checked privilege.
+		 * So, manually get the relation OID.
 		 */
 		reloid = RangeVarGetRelid(relation, false);
 

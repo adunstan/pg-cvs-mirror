@@ -20,7 +20,7 @@
  *
  *
  * IDENTIFICATION
- *		$PostgreSQL: pgsql/src/bin/pg_dump/pg_backup_files.c,v 1.25 2004/03/03 21:28:54 tgl Exp $
+ *		$PostgreSQL: pgsql/src/bin/pg_dump/pg_backup_files.c,v 1.26 2005/06/21 20:45:44 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -469,7 +469,7 @@ _StartBlobs(ArchiveHandle *AH, TocEntry *te)
 
 	if (ctx->blobToc == NULL)
 		die_horribly(AH, modulename,
-					 "could not open large object TOC for output: %s\n", strerror(errno));
+		"could not open large object TOC for output: %s\n", strerror(errno));
 }
 
 /*

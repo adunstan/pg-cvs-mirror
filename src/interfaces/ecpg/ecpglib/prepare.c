@@ -1,4 +1,4 @@
-/* $PostgreSQL: pgsql-server/src/interfaces/ecpg/ecpglib/prepare.c,v 1.12 2004/05/21 13:50:12 meskes Exp $ */
+/* $PostgreSQL: pgsql/src/interfaces/ecpg/ecpglib/prepare.c,v 1.13 2004/10/05 10:48:37 meskes Exp $ */
 
 #define POSTGRES_ECPG_INTERNAL
 #include "postgres_fe.h"
@@ -46,9 +46,9 @@ replace_variables(char *text)
 
 		if (!string && *ptr == ':')
 		{
-			if (ptr[1]==':')
-				ptr+=2; /* skip  '::' */
-		        else
+			if (ptr[1] == ':')
+				ptr += 2;		/* skip  '::' */
+			else
 			{
 				*ptr = '?';
 				for (++ptr; *ptr && isvarchar(*ptr); ptr++)
@@ -120,8 +120,8 @@ ECPGdeallocate(int lineno, int c, char *name)
 	if (INFORMIX_MODE(compat))
 	{
 		/*
-		 * Just ignore all errors since we do not know the list of cursors
-		 * we are allowed to free. We have to trust the software.
+		 * Just ignore all errors since we do not know the list of cursors we
+		 * are allowed to free. We have to trust the software.
 		 */
 		return true;
 	}

@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/catalog/pg_index.h,v 1.36 2005/03/29 00:17:17 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/catalog/pg_index.h,v 1.37 2005/04/14 01:38:20 tgl Exp $
  *
  * NOTES
  *	  the genbki.sh script reads this file and generates .bki
@@ -45,11 +45,11 @@ CATALOG(pg_index,2610) BKI_WITHOUT_OIDS
 	/* VARIABLE LENGTH FIELDS: */
 	int2vector	indkey;			/* column numbers of indexed cols, or 0 */
 	oidvector	indclass;		/* opclass identifiers */
-	text		indexprs;		/* expression trees for index attributes
-								 * that are not simple column references;
-								 * one for each zero entry in indkey[] */
-	text		indpred;		/* expression tree for predicate, if a
-								 * partial index; else NULL */
+	text		indexprs;		/* expression trees for index attributes that
+								 * are not simple column references; one for
+								 * each zero entry in indkey[] */
+	text		indpred;		/* expression tree for predicate, if a partial
+								 * index; else NULL */
 } FormData_pg_index;
 
 /* ----------------

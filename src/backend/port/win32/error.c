@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/port/win32/error.c,v 1.4 2004/12/31 22:00:37 pgsql Exp $
+ *	  $PostgreSQL: pgsql/src/backend/port/win32/error.c,v 1.5 2005/10/07 16:34:48 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -178,7 +178,7 @@ _dosmaperr(unsigned long e)
 			errno = doserrors[i].doserr;
 			ereport(DEBUG5,
 					(errmsg_internal("mapped win32 error code %lu to %d",
-									  e, errno)));
+									 e, errno)));
 			return;
 		}
 	}

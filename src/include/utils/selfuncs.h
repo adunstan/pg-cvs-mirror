@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/utils/selfuncs.h,v 1.22 2005/03/06 22:15:05 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/utils/selfuncs.h,v 1.23 2005/06/05 22:32:58 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -36,7 +36,7 @@
 #define DEFAULT_INEQ_SEL  0.3333333333333333
 
 /* default selectivity estimate for range inequalities "A > b AND A < c" */
-#define DEFAULT_RANGE_INEQ_SEL  0.005
+#define DEFAULT_RANGE_INEQ_SEL	0.005
 
 /* default selectivity estimate for pattern-match operators such as LIKE */
 #define DEFAULT_MATCH_SEL	0.005

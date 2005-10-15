@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/rewrite/rewriteSupport.c,v 1.60 2004/12/31 22:00:46 pgsql Exp $
+ *	  $PostgreSQL: pgsql/src/backend/rewrite/rewriteSupport.c,v 1.61 2005/04/14 20:03:25 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -56,8 +56,7 @@ SetRelationRuleStatus(Oid relationId, bool relHasRules,
 	Form_pg_class classForm;
 
 	/*
-	 * Find the tuple to update in pg_class, using syscache for the
-	 * lookup.
+	 * Find the tuple to update in pg_class, using syscache for the lookup.
 	 */
 	relationRelation = heap_open(RelationRelationId, RowExclusiveLock);
 	tuple = SearchSysCacheCopy(RELOID,

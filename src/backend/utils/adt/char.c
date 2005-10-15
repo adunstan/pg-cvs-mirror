@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/char.c,v 1.41 2004/10/04 22:49:51 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/char.c,v 1.42 2004/12/31 22:01:21 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -187,9 +187,9 @@ text_char(PG_FUNCTION_ARGS)
 	char		result;
 
 	/*
-	 * An empty input string is converted to \0 (for consistency with
-	 * charin). If the input is longer than one character, the excess data
-	 * is silently discarded.
+	 * An empty input string is converted to \0 (for consistency with charin).
+	 * If the input is longer than one character, the excess data is silently
+	 * discarded.
 	 */
 	if (VARSIZE(arg1) > VARHDRSZ)
 		result = *(VARDATA(arg1));

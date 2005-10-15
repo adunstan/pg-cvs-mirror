@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/storage/buffer/buf_init.c,v 1.75 2005/08/12 05:05:50 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/storage/buffer/buf_init.c,v 1.76 2005/08/20 23:26:17 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -120,8 +120,8 @@ InitBufferPool(void)
 			buf->buf_id = i;
 
 			/*
-			 * Initially link all the buffers together as unused.
-			 * Subsequent management of this list is done by freelist.c.
+			 * Initially link all the buffers together as unused. Subsequent
+			 * management of this list is done by freelist.c.
 			 */
 			buf->freeNext = i + 1;
 

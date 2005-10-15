@@ -1,4 +1,4 @@
-/* $PostgreSQL: pgsql-server/src/interfaces/ecpg/ecpglib/memory.c,v 1.5 2003/11/29 19:52:08 pgsql Exp $ */
+/* $PostgreSQL: pgsql/src/interfaces/ecpg/ecpglib/memory.c,v 1.6 2004/12/30 09:36:37 meskes Exp $ */
 
 #define POSTGRES_ECPG_INTERNAL
 #include "postgres_fe.h"
@@ -50,7 +50,7 @@ ECPGstrdup(const char *string, int lineno)
 
 	if (string == NULL)
 		return NULL;
-	
+
 	new = strdup(string);
 	if (!new)
 	{

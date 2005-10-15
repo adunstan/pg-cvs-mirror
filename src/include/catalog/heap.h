@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/catalog/heap.h,v 1.74 2005/04/14 01:38:20 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/catalog/heap.h,v 1.75 2005/08/26 03:08:15 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -23,8 +23,7 @@
 typedef struct RawColumnDefault
 {
 	AttrNumber	attnum;			/* attribute to attach default to */
-	Node	   *raw_default;	/* default value (untransformed parse
-								 * tree) */
+	Node	   *raw_default;	/* default value (untransformed parse tree) */
 } RawColumnDefault;
 
 typedef struct CookedConstraint

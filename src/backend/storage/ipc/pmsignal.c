@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/storage/ipc/pmsignal.c,v 1.18 2004/12/31 22:00:56 pgsql Exp $
+ *	  $PostgreSQL: pgsql/src/backend/storage/ipc/pmsignal.c,v 1.19 2005/08/20 23:26:20 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -112,9 +112,9 @@ PostmasterIsAlive(bool amDirectChild)
 	{
 		/*
 		 * Use kill() to see if the postmaster is still alive.	This can
-		 * sometimes give a false positive result, since the postmaster's
-		 * PID may get recycled, but it is good enough for existing uses
-		 * by indirect children.
+		 * sometimes give a false positive result, since the postmaster's PID
+		 * may get recycled, but it is good enough for existing uses by
+		 * indirect children.
 		 */
 		return (kill(PostmasterPid, 0) == 0);
 	}

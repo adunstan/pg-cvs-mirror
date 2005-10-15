@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/optimizer/util/tlist.c,v 1.68 2004/12/31 22:00:23 pgsql Exp $
+ *	  $PostgreSQL: pgsql/src/backend/optimizer/util/tlist.c,v 1.69 2005/04/06 16:34:06 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -93,7 +93,7 @@ add_to_flat_tlist(List *tlist, List *vars)
 		{
 			TargetEntry *tle;
 
-			tle = makeTargetEntry(copyObject(var), /* copy needed?? */
+			tle = makeTargetEntry(copyObject(var),		/* copy needed?? */
 								  next_resno++,
 								  NULL,
 								  false);

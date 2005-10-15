@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/tutorial/beard.c,v 1.11 2004/08/29 04:13:13 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/tutorial/beard.c,v 1.12 2004/12/31 22:04:05 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -55,7 +55,7 @@ beard(Oid picture)
 
 	beard_fd = DatumGetInt32(DirectFunctionCall2(lo_open,
 												 ObjectIdGetDatum(beard),
-											  Int32GetDatum(INV_WRITE)));
+												 Int32GetDatum(INV_WRITE)));
 	if (beard_fd < 0)
 		elog(ERROR, "Cannot access beard large object");
 

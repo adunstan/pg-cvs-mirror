@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2005, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/psql/common.h,v 1.43 2005/05/30 18:28:11 momjian Exp $
+ * $PostgreSQL: pgsql/src/bin/psql/common.h,v 1.44 2005/06/13 06:36:22 neilc Exp $
  */
 #ifndef COMMON_H
 #define COMMON_H
@@ -35,7 +35,7 @@ extern void *pg_calloc(size_t nmemb, size_t size);
 extern bool setQFout(const char *fname);
 
 extern void
-psql_error(const char *fmt, ...)
+psql_error(const char *fmt,...)
 /* This lets gcc check the format string for consistency. */
 __attribute__((format(printf, 1, 2)));
 

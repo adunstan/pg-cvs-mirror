@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/storage/procarray.h,v 1.4 2005/08/20 01:26:29 ishii Exp $
+ * $PostgreSQL: pgsql/src/include/storage/procarray.h,v 1.5 2005/08/20 23:26:34 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -27,7 +27,7 @@ extern bool TransactionIdIsActive(TransactionId xid);
 extern TransactionId GetOldestXmin(bool allDbs);
 
 extern PGPROC *BackendPidGetProc(int pid);
-extern int BackendXidGetPid(TransactionId xid);
+extern int	BackendXidGetPid(TransactionId xid);
 extern bool IsBackendPid(int pid);
 extern bool DatabaseHasActiveBackends(Oid databaseId, bool ignoreMyself);
 

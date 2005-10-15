@@ -26,7 +26,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $PostgreSQL: pgsql/contrib/pgcrypto/pgcrypto.c,v 1.18 2005/03/21 05:19:55 neilc Exp $
+ * $PostgreSQL: pgsql/contrib/pgcrypto/pgcrypto.c,v 1.19 2005/09/24 19:14:04 tgl Exp $
  */
 
 #include "postgres.h"
@@ -244,7 +244,7 @@ pg_gen_salt_rounds(PG_FUNCTION_ARGS)
 	if (len < 0)
 		ereport(ERROR,
 				(errcode(ERRCODE_INVALID_PARAMETER_VALUE),
-			 errmsg("gen_salt: %s", px_strerror(len))));
+				 errmsg("gen_salt: %s", px_strerror(len))));
 
 	res = (text *) palloc(len + VARHDRSZ);
 	VARATT_SIZEP(res) = len + VARHDRSZ;

@@ -30,7 +30,7 @@
  * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/nodes/pg_list.h,v 1.51 2004/12/31 22:03:34 pgsql Exp $
+ * $PostgreSQL: pgsql/src/include/nodes/pg_list.h,v 1.52 2005/07/28 20:26:22 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -93,7 +93,6 @@ list_length(List *l)
 {
 	return l ? l->length : 0;
 }
-
 #else
 
 extern ListCell *list_head(List *l);

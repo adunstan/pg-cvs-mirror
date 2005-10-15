@@ -4,7 +4,7 @@
  * darcy@druid.net
  * http://www.druid.net/darcy/
  *
- * $PostgreSQL: pgsql/contrib/chkpass/chkpass.c,v 1.12 2003/11/29 22:39:18 pgsql Exp $
+ * $PostgreSQL: pgsql/contrib/chkpass/chkpass.c,v 1.13 2005/01/29 22:35:01 tgl Exp $
  * best viewed with tabs set to 4
  */
 
@@ -90,8 +90,8 @@ chkpass_in(PG_FUNCTION_ARGS)
 
 	mysalt[0] = salt_chars[random() & 0x3f];
 	mysalt[1] = salt_chars[random() & 0x3f];
-	mysalt[2] = 0;				/* technically the terminator is not
-								 * necessary but I like to play safe */
+	mysalt[2] = 0;				/* technically the terminator is not necessary
+								 * but I like to play safe */
 	strcpy(result->password, crypt(str, mysalt));
 	PG_RETURN_POINTER(result);
 }

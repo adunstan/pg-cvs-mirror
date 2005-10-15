@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/mb/conversion_procs/utf8_and_johab/utf8_and_johab.c,v 1.10 2005/03/07 04:30:54 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/mb/conversion_procs/utf8_and_johab/utf8_and_johab.c,v 1.11 2005/09/24 17:53:24 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -45,7 +45,7 @@ johab_to_utf8(PG_FUNCTION_ARGS)
 	Assert(len >= 0);
 
 	LocalToUtf(src, dest, LUmapJOHAB,
-			sizeof(LUmapJOHAB) / sizeof(pg_local_to_utf), PG_JOHAB, len);
+			   sizeof(LUmapJOHAB) / sizeof(pg_local_to_utf), PG_JOHAB, len);
 
 	PG_RETURN_VOID();
 }

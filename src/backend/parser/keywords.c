@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/parser/keywords.c,v 1.164 2005/07/31 17:19:18 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/parser/keywords.c,v 1.165 2005/08/23 22:40:27 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -393,8 +393,8 @@ ScanKeywordLookup(const char *text)
 		return NULL;
 
 	/*
-	 * Apply an ASCII-only downcasing.	We must not use tolower() since it
-	 * may produce the wrong translation in some locales (eg, Turkish).
+	 * Apply an ASCII-only downcasing.	We must not use tolower() since it may
+	 * produce the wrong translation in some locales (eg, Turkish).
 	 */
 	for (i = 0; i < len; i++)
 	{

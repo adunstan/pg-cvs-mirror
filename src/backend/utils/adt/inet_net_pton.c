@@ -14,7 +14,7 @@
  * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT
  * OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  *
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/inet_net_pton.c,v 1.19 2004/10/07 15:21:53 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/inet_net_pton.c,v 1.20 2005/02/01 00:59:09 tgl Exp $
  */
 
 #if defined(LIBC_SCCS) && !defined(lint)
@@ -207,7 +207,8 @@ inet_cidr_pton_ipv4(const char *src, u_char *dst, size_t size)
 			bits = 24;
 		else if (*odst >= 128)	/* Class B */
 			bits = 16;
-		else					/* Class A */
+		else
+			/* Class A */
 			bits = 8;
 		/* If imputed mask is narrower than specified octets, widen. */
 		if (bits < ((dst - odst) * 8))

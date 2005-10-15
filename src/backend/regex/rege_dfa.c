@@ -28,7 +28,7 @@
  * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
- * $PostgreSQL: pgsql/src/backend/regex/rege_dfa.c,v 1.4 2003/11/29 19:51:55 pgsql Exp $
+ * $PostgreSQL: pgsql/src/backend/regex/rege_dfa.c,v 1.5 2005/09/24 22:54:38 tgl Exp $
  *
  */
 
@@ -145,8 +145,7 @@ shortest(struct vars * v,
 		 chr *start,			/* where the match should start */
 		 chr *min,				/* match must end at or after here */
 		 chr *max,				/* match must end at or before here */
-		 chr **coldp,			/* store coldstart pointer here, if
-								 * nonNULL */
+		 chr **coldp,			/* store coldstart pointer here, if nonNULL */
 		 int *hitstopp)			/* record whether hit v->stop, if non-NULL */
 {
 	chr		   *cp;
@@ -222,8 +221,7 @@ shortest(struct vars * v,
 	if (ss == NULL)
 		return NULL;
 
-	if (coldp != NULL)			/* report last no-progress state set, if
-								 * any */
+	if (coldp != NULL)			/* report last no-progress state set, if any */
 		*coldp = lastcold(v, d);
 
 	if ((ss->flags & POSTSTATE) && cp > min)

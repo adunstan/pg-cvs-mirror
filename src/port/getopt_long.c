@@ -35,7 +35,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $PostgreSQL: pgsql/src/port/getopt_long.c,v 1.3 2003/11/29 19:52:13 pgsql Exp $
+ * $PostgreSQL: pgsql/src/port/getopt_long.c,v 1.4 2005/07/28 04:03:14 tgl Exp $
  */
 
 #include "c.h"
@@ -115,7 +115,7 @@ getopt_long(int argc, char *const argv[],
 								return BADARG;
 							if (opterr)
 								fprintf(stderr,
-								"%s: option requires an argument -- %s\n",
+								   "%s: option requires an argument -- %s\n",
 										argv[0], place);
 							place = EMSG;
 							optind++;
