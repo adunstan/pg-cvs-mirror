@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/rewrite/rewriteDefine.c,v 1.105 2005/06/28 05:08:59 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/rewrite/rewriteDefine.c,v 1.106 2005/10/15 02:49:24 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -191,7 +191,6 @@ DefineQueryRewrite(RuleStmt *stmt)
 	Oid			ev_relid;
 	Oid			ruleId;
 	int			event_attno;
-	Oid			event_attype;
 	ListCell   *l;
 	Query	   *query;
 	AclResult	aclresult;
@@ -432,7 +431,6 @@ DefineQueryRewrite(RuleStmt *stmt)
 	 * This rule is allowed - prepare to install it.
 	 */
 	event_attno = -1;
-	event_attype = InvalidOid;
 
 	/*
 	 * We want the rule's table references to be checked as though by the rule

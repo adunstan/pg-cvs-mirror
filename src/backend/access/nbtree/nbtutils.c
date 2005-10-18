@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/nbtree/nbtutils.c,v 1.63 2005/06/13 23:14:48 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/nbtree/nbtutils.c,v 1.64 2005/10/15 02:49:09 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -79,11 +79,9 @@ ScanKey
 _bt_mkscankey_nodata(Relation rel)
 {
 	ScanKey		skey;
-	TupleDesc	itupdesc;
 	int			natts;
 	int			i;
 
-	itupdesc = RelationGetDescr(rel);
 	natts = RelationGetNumberOfAttributes(rel);
 
 	skey = (ScanKey) palloc(natts * sizeof(ScanKeyData));
