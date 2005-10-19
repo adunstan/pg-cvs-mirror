@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/execQual.c,v 1.180 2005/06/26 22:05:36 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/execQual.c,v 1.181 2005/10/15 02:49:16 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -3180,7 +3180,7 @@ ExecInitExpr(Expr *node, PlanState *parent)
 				{
 					/* generic record, use runtime type assignment */
 					rstate->tupdesc = ExecTypeFromExprList(rowexpr->args);
-					rstate->tupdesc = BlessTupleDesc(rstate->tupdesc);
+					BlessTupleDesc(rstate->tupdesc);
 				}
 				else
 				{
