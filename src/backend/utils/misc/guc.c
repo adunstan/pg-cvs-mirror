@@ -10,7 +10,7 @@
  * Written by Peter Eisentraut <peter_e@gmx.net>.
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.252 2005/01/01 05:43:08 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.252.4.1 2005/03/25 16:17:38 tgl Exp $
  *
  *--------------------------------------------------------------------
  */
@@ -2583,9 +2583,6 @@ SelectConfigFiles(const char *userDoption, const char *progname)
 	free(fname);
 
 	free(configdir);
-
-	/* If timezone is not set, determine what the OS uses */
-	pg_timezone_initialize();
 
 	return true;
 }

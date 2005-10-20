@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/bootstrap/bootstrap.c,v 1.197 2004/12/31 21:59:34 pgsql Exp $
+ *	  $PostgreSQL: pgsql/src/backend/bootstrap/bootstrap.c,v 1.198 2005/01/14 21:08:44 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -354,6 +354,8 @@ BootstrapMain(int argc, char *argv[])
 	{
 		if (!SelectConfigFiles(userDoption, progname))
 			proc_exit(1);
+		/* If timezone is not set, determine what the OS uses */
+		pg_timezone_initialize();
 	}
 
 	/* Validate we have been given a reasonable-looking DataDir */
