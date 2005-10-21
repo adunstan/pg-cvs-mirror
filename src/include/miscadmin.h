@@ -13,7 +13,7 @@
  * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/miscadmin.h,v 1.179 2005/08/17 22:14:34 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/miscadmin.h,v 1.180 2005/10/15 02:49:41 momjian Exp $
  *
  * NOTES
  *	  some of the information in this file should be moved to other files.
@@ -83,15 +83,17 @@ do { \
 	if (InterruptPending) \
 		ProcessInterrupts(); \
 } while(0)
+
 #else							/* WIN32 */
 
 #define CHECK_FOR_INTERRUPTS() \
 do { \
-	if (WaitForSingleObjectEx(pgwin32_signal_event,0,TRUE) == WAIT_OBJECT_0) \
-		pgwin32_dispatch_queued_signals(); \
+	if (UNBLOCKED_SIGNAL_QUEUE()) \
+		pgwin32_check_queued_signals(); \
 	if (InterruptPending) \
 		ProcessInterrupts(); \
 } while(0)
+
 #endif   /* WIN32 */
 
 

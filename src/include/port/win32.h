@@ -1,4 +1,4 @@
-/* $PostgreSQL: pgsql/src/include/port/win32.h,v 1.46 2005/06/16 17:53:54 momjian Exp $ */
+/* $PostgreSQL: pgsql/src/include/port/win32.h,v 1.47 2005/10/15 02:49:45 momjian Exp $ */
 
 /* undefine and redefine after #include */
 #undef mkdir
@@ -214,11 +214,17 @@ typedef int pid_t;
 
 
 /* In backend/port/win32/signal.c */
-extern DLLIMPORT HANDLE pgwin32_signal_event;
+extern DLLIMPORT volatile int pg_signal_queue;
+extern DLLIMPORT int pg_signal_mask;
+extern HANDLE pgwin32_signal_event;
 extern HANDLE pgwin32_initial_signal_pipe;
+
+#define UNBLOCKED_SIGNAL_QUEUE()	(pg_signal_queue & ~pg_signal_mask)
+
 
 void		pgwin32_signal_initialize(void);
 HANDLE		pgwin32_create_signal_listener(pid_t pid);
+void		pgwin32_check_queued_signals(void);
 void		pgwin32_dispatch_queued_signals(void);
 void		pg_queue_signal(int signum);
 
