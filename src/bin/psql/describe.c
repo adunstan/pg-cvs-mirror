@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2005, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/psql/describe.c,v 1.127 2005/10/15 02:49:40 momjian Exp $
+ * $PostgreSQL: pgsql/src/bin/psql/describe.c,v 1.128 2005/10/20 05:15:09 tgl Exp $
  */
 #include "postgres_fe.h"
 #include "describe.h"
@@ -702,6 +702,9 @@ describeOneTableDetails(const char *schemaname,
 	bool		retval;
 
 	retval = false;
+
+	/* This output looks confusing in expanded mode. */
+	myopt.expanded = false;
 
 	initPQExpBuffer(&buf);
 	initPQExpBuffer(&title);
