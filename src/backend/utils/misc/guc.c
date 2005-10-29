@@ -10,7 +10,7 @@
  * Written by Peter Eisentraut <peter_e@gmx.net>.
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.294 2005/10/16 18:26:00 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.295 2005/10/20 20:05:45 tgl Exp $
  *
  *--------------------------------------------------------------------
  */
@@ -719,7 +719,7 @@ static struct config_bool ConfigureNamesBool[] =
 
 	{
 		{"autovacuum", PGC_SIGHUP, AUTOVACUUM,
-			gettext_noop("Starts the auto vacuum subprocess."),
+			gettext_noop("Starts the autovacuum subprocess."),
 			NULL
 		},
 		&autovacuum_start_daemon,

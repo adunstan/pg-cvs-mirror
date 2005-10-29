@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *		$PostgreSQL: pgsql/src/backend/access/transam/twophase.c,v 1.14 2005/10/13 22:55:55 momjian Exp $
+ *		$PostgreSQL: pgsql/src/backend/access/transam/twophase.c,v 1.15 2005/10/15 02:49:09 momjian Exp $
  *
  * NOTES
  *		Each global transaction is associated with a global transaction
@@ -904,7 +904,7 @@ EndPrepare(GlobalTransaction gxact)
 		close(fd);
 		ereport(ERROR,
 				(errcode_for_file_access(),
-				 errmsg("could not seek twophase state file: %m")));
+				 errmsg("could not seek in twophase state file: %m")));
 	}
 
 	/*
