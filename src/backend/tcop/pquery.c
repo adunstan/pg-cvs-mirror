@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/tcop/pquery.c,v 1.95 2005/10/15 02:49:27 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/tcop/pquery.c,v 1.96 2005/11/03 17:11:38 alvherre Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -376,7 +376,7 @@ PortalStart(Portal portal, ParamListInfo params, Snapshot snapshot)
 
 				/*
 				 * Create QueryDesc in portal's context; for the moment, set
-				 * the destination to None.
+				 * the destination to DestNone.
 				 */
 				queryDesc = CreateQueryDesc((Query *) linitial(portal->parseTrees),
 										(Plan *) linitial(portal->planTrees),
@@ -757,8 +757,8 @@ PortalRunSelect(Portal portal,
 
 	/*
 	 * Force the queryDesc destination to the right thing.	This supports
-	 * MOVE, for example, which will pass in dest = None.  This is okay to
-	 * change as long as we do it on every fetch.  (The Executor must not
+	 * MOVE, for example, which will pass in dest = DestNone.  This is okay
+	 * to change as long as we do it on every fetch.  (The Executor must not
 	 * assume that dest never changes.)
 	 */
 	if (queryDesc)
