@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/async.c,v 1.125 2005/10/06 21:30:32 neilc Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/async.c,v 1.126 2005/10/15 02:49:15 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -994,7 +994,7 @@ ProcessIncomingNotify(void)
 static void
 NotifyMyFrontEnd(char *relname, int32 listenerPID)
 {
-	if (whereToSendOutput == Remote)
+	if (whereToSendOutput == DestRemote)
 	{
 		StringInfoData buf;
 
