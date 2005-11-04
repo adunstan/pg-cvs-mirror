@@ -1,5 +1,5 @@
 <!--
-$PostgreSQL: pgsql/doc/src/sgml/ref/pg_ctl-ref.sgml,v 1.30 2004/12/22 02:17:15 momjian Exp $
+$PostgreSQL: pgsql/doc/src/sgml/ref/pg_ctl-ref.sgml,v 1.31 2005/02/21 02:13:26 neilc Exp $
 PostgreSQL documentation
 -->
 
@@ -308,7 +308,7 @@ PostgreSQL documentation
      <term><option>-U <replaceable class="parameter">username</replaceable></option></term>
      <listitem>
       <para>
-       Username for the user to start the service. For domain users, use the
+       User name for the user to start the service. For domain users, use the
        format <literal>DOMAIN\username</literal>.
       </para>
      </listitem>
