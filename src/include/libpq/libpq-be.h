@@ -11,7 +11,7 @@
  * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/libpq/libpq-be.h,v 1.51 2005/09/12 02:26:33 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/libpq/libpq-be.h,v 1.52 2005/10/15 02:49:44 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -80,7 +80,6 @@ typedef struct Port
 	 * but since it gets used by elog.c in the same way as database_name and
 	 * other members of this struct, we may as well keep it here.
 	 */
-	const char *commandTag;		/* current command tag */
 	struct timeval session_start;		/* for session duration logging */
 
 	/*
