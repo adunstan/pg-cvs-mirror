@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/access/nbtree.h,v 1.86 2005/06/06 17:01:24 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/access/nbtree.h,v 1.87 2005/10/15 02:49:42 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -429,6 +429,7 @@ extern void _bt_metapinit(Relation rel);
 extern void _bt_initmetapage(Page page, BlockNumber rootbknum, uint32 level);
 extern Buffer _bt_getroot(Relation rel, int access);
 extern Buffer _bt_gettrueroot(Relation rel);
+extern void _bt_checkpage(Relation rel, Buffer buf);
 extern Buffer _bt_getbuf(Relation rel, BlockNumber blkno, int access);
 extern Buffer _bt_relandgetbuf(Relation rel, Buffer obuf,
 				 BlockNumber blkno, int access);
