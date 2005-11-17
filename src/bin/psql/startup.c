@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2005, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/psql/startup.c,v 1.125 2005/10/15 02:49:40 momjian Exp $
+ * $PostgreSQL: pgsql/src/bin/psql/startup.c,v 1.126 2005/10/27 13:34:47 momjian Exp $
  */
 #include "postgres_fe.h"
 
@@ -206,7 +206,8 @@ main(int argc, char *argv[])
 	{
 		need_pass = false;
 		pset.db = PQsetdbLogin(options.host, options.port, NULL, NULL,
-				 options.action == ACT_LIST_DB ? "postgres" : options.dbname,
+				 options.action == ACT_LIST_DB && options.dbname == NULL ? 
+							   "postgres" : options.dbname,
 							   username, password);
 
 		if (PQstatus(pset.db) == CONNECTION_BAD &&
