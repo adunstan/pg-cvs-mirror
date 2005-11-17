@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/optimizer/util/clauses.c,v 1.200 2005/07/03 21:14:17 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/optimizer/util/clauses.c,v 1.201 2005/10/15 02:49:21 momjian Exp $
  *
  * HISTORY
  *	  AUTHOR			DATE			MAJOR EVENT
@@ -784,7 +784,7 @@ contain_nonstrict_functions_walker(Node *node, void *context)
 	}
 	if (IsA(node, ArrayRef))
 	{
-		/* array assignment is nonstrict */
+		/* array assignment is nonstrict, but subscripting is strict */
 		if (((ArrayRef *) node)->refassgnexpr != NULL)
 			return true;
 		/* else fall through to check args */
@@ -842,7 +842,8 @@ contain_nonstrict_functions_walker(Node *node, void *context)
 		return true;
 	if (IsA(node, CaseWhen))
 		return true;
-	/* NB: ArrayExpr might someday be nonstrict */
+	if (IsA(node, ArrayExpr))
+		return true;
 	if (IsA(node, RowExpr))
 		return true;
 	if (IsA(node, CoalesceExpr))

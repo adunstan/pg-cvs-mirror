@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/catalog/pg_proc.c,v 1.134 2005/10/15 02:49:14 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/catalog/pg_proc.c,v 1.135 2005/10/29 00:31:50 petere Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -119,12 +119,15 @@ ProcedureCreate(const char *procedureName,
 		 * need to use deconstruct_array() since the array data is just going
 		 * to look like a C array of OID values.
 		 */
-		allParamCount = ARR_DIMS(DatumGetPointer(allParameterTypes))[0];
-		if (ARR_NDIM(DatumGetPointer(allParameterTypes)) != 1 ||
+		ArrayType *allParamArray = (ArrayType *) DatumGetPointer(allParameterTypes);
+
+		allParamCount = ARR_DIMS(allParamArray)[0];
+		if (ARR_NDIM(allParamArray) != 1 ||
 			allParamCount <= 0 ||
-			ARR_ELEMTYPE(DatumGetPointer(allParameterTypes)) != OIDOID)
+			ARR_HASNULL(allParamArray) ||
+			ARR_ELEMTYPE(allParamArray) != OIDOID)
 			elog(ERROR, "allParameterTypes is not a 1-D Oid array");
-		allParams = (Oid *) ARR_DATA_PTR(DatumGetPointer(allParameterTypes));
+		allParams = (Oid *) ARR_DATA_PTR(allParamArray);
 		Assert(allParamCount >= parameterCount);
 		/* we assume caller got the contents right */
 	}

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/acl.c,v 1.126 2005/10/15 02:49:27 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/acl.c,v 1.127 2005/11/04 17:25:15 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -352,7 +352,7 @@ allocacl(int n)
 	new_acl = (Acl *) palloc0(size);
 	new_acl->size = size;
 	new_acl->ndim = 1;
-	new_acl->flags = 0;
+	new_acl->dataoffset = 0;	/* we never put in any nulls */
 	new_acl->elemtype = ACLITEMOID;
 	ARR_LBOUND(new_acl)[0] = 1;
 	ARR_DIMS(new_acl)[0] = n;
