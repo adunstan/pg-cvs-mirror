@@ -26,7 +26,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/execMain.c,v 1.256 2005/10/15 02:49:16 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/execMain.c,v 1.257 2005/11/14 17:42:54 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1458,8 +1458,8 @@ ExecInsert(TupleTableSlot *slot,
 /* ----------------------------------------------------------------
  *		ExecDelete
  *
- *		DELETE is like UPDATE, we delete the tuple and its
- *		index tuples.
+ *		DELETE is like UPDATE, except that we delete the tuple and no
+ *		index modifications are needed
  * ----------------------------------------------------------------
  */
 static void
