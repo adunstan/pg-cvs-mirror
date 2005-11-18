@@ -33,7 +33,7 @@
  *	  ENHANCEMENTS, OR MODIFICATIONS.
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/pl/plperl/plperl.c,v 1.93 2005/10/15 02:49:49 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/pl/plperl/plperl.c,v 1.94 2005/10/18 17:13:14 tgl Exp $
  *
  **********************************************************************/
 
@@ -207,12 +207,16 @@ plperl_init_all(void)
 	"    { " \
 	"      $res .= _plperl_to_pg_array($elem); " \
 	"    } " \
-	"    else " \
+	"    elsif (defined($elem)) " \
 	"    { " \
 	"      my $str = qq($elem); " \
 	"      $str =~ s/([\"\\\\])/\\\\$1/g; " \
 	"      $res .= qq(\"$str\"); " \
 	"    } " \
+	"    else " \
+	"    { "\
+	"      $res .= 'NULL' ; " \
+	"    } "\
 	"  } " \
 	"  return qq({$res}); " \
 	"} "
