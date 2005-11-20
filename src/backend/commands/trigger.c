@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/trigger.c,v 1.194 2005/08/24 17:38:35 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/trigger.c,v 1.195 2005/10/15 02:49:15 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1769,7 +1769,6 @@ ltrmark:;
 
 		Assert(ItemIdIsUsed(lp));
 
-		tuple.t_datamcxt = NULL;
 		tuple.t_data = (HeapTupleHeader) PageGetItem((Page) dp, lp);
 		tuple.t_len = ItemIdGetLength(lp);
 		tuple.t_self = *tid;

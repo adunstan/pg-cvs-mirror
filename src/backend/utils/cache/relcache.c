@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/cache/relcache.c,v 1.229 2005/09/16 04:13:18 neilc Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/cache/relcache.c,v 1.230 2005/10/15 02:49:31 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -2998,7 +2998,6 @@ load_relcache_init_file(void)
 				goto read_failed;
 
 			/* Fix up internal pointers in the tuple -- see heap_copytuple */
-			rel->rd_indextuple->t_datamcxt = CurrentMemoryContext;
 			rel->rd_indextuple->t_data = (HeapTupleHeader) ((char *) rel->rd_indextuple + HEAPTUPLESIZE);
 			rel->rd_index = (Form_pg_index) GETSTRUCT(rel->rd_indextuple);
 
