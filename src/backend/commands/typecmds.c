@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/typecmds.c,v 1.82 2005/10/18 01:06:24 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/typecmds.c,v 1.83 2005/11/19 17:39:44 adunstan Exp $
  *
  * DESCRIPTION
  *	  The "DefineFoo" routines take the parse tree and pick out the
@@ -2122,7 +2122,8 @@ AlterTypeOwner(List *names, Oid newOwnerId)
  * AlterTypeOwnerInternal - change type owner unconditionally
  *
  * This is currently only used to propagate ALTER TABLE OWNER to the
- * table's rowtype.  It assumes the caller has done all needed checks.
+ * table's rowtype, and to implement REASSIGN OWNED BY.  It assumes the
+ * caller has done all needed checks.
  */
 void
 AlterTypeOwnerInternal(Oid typeOid, Oid newOwnerId)
