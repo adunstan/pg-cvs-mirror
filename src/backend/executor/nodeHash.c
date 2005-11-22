@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/nodeHash.c,v 1.96 2005/10/15 02:49:17 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/nodeHash.c,v 1.97 2005/11/20 19:49:07 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -237,8 +237,8 @@ ExecHashTableCreate(Hash *node, List *hashOperators)
 	/*
 	 * Initialize the hash table control block.
 	 *
-	 * The hashtable control block is just palloc'd from the executor's per-query
-	 * memory context.
+	 * The hashtable control block is just palloc'd from the executor's
+	 * per-query memory context.
 	 */
 	hashtable = (HashJoinTable) palloc(sizeof(HashJoinTableData));
 	hashtable->nbuckets = nbuckets;

@@ -10,7 +10,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/tcop/utility.c,v 1.247 2005/11/21 12:49:32 alvherre Exp $
+ *	  $PostgreSQL: pgsql/src/backend/tcop/utility.c,v 1.248 2005/11/22 15:24:18 adunstan Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -146,7 +146,7 @@ DropErrorMsgNonExistent(RangeVar *rel, char rightkind, bool missing_ok)
 	{
 		if (rentry->kind == rightkind)
 		{
-			if (! missing_ok)
+			if (!missing_ok)
 			{
 				ereport(ERROR,
 						(errcode(rentry->nonexistent_code),
@@ -160,7 +160,7 @@ DropErrorMsgNonExistent(RangeVar *rel, char rightkind, bool missing_ok)
 		}
 	}
 
-	Assert(rentry->kind != '\0');	   /* Should be impossible */
+	Assert(rentry->kind != '\0');		/* Should be impossible */
 }
 
 /*
@@ -586,7 +586,7 @@ ProcessUtility(Node *parsetree,
 
 						case OBJECT_TYPE:
 							/* RemoveType does its own permissions checks */
-							RemoveType(names, stmt->behavior, 
+							RemoveType(names, stmt->behavior,
 									   stmt->missing_ok);
 							break;
 
@@ -595,7 +595,7 @@ ProcessUtility(Node *parsetree,
 							/*
 							 * RemoveDomain does its own permissions checks
 							 */
-							RemoveDomain(names, stmt->behavior, 
+							RemoveDomain(names, stmt->behavior,
 										 stmt->missing_ok);
 							break;
 

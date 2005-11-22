@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/parser/keywords.c,v 1.167 2005/11/19 17:39:44 adunstan Exp $
+ *	  $PostgreSQL: pgsql/src/backend/parser/keywords.c,v 1.168 2005/11/21 12:49:32 alvherre Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -160,7 +160,7 @@ static const ScanKeyword ScanKeywords[] = {
 	{"header", HEADER},
 	{"hold", HOLD},
 	{"hour", HOUR_P},
-	{"if",IF_P},
+	{"if", IF_P},
 	{"ilike", ILIKE},
 	{"immediate", IMMEDIATE},
 	{"immutable", IMMUTABLE},
