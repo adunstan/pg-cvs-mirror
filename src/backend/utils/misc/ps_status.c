@@ -5,7 +5,7 @@
  * to contain some useful information. Mechanism differs wildly across
  * platforms.
  *
- * $PostgreSQL: pgsql/src/backend/utils/misc/ps_status.c,v 1.25 2005/10/15 02:49:36 momjian Exp $
+ * $PostgreSQL: pgsql/src/backend/utils/misc/ps_status.c,v 1.26 2005/11/05 03:04:52 tgl Exp $
  *
  * Copyright (c) 2000-2005, PostgreSQL Global Development Group
  * various details abducted from various places
@@ -380,7 +380,7 @@ get_ps_display(int *displen)
 
 	/* Remove any trailing spaces to offset the effect of PS_PADDING */
 	offset = ps_buffer_size;
-	while (offset > ps_buffer_fixed_size && ps_buffer[offset-1] == PS_PADDING)
+	while (offset > ps_buffer_fixed_size && ps_buffer[offset - 1] == PS_PADDING)
 		offset--;
 
 	*displen = offset - ps_buffer_fixed_size;

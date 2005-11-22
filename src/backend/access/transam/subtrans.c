@@ -22,7 +22,7 @@
  * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/backend/access/transam/subtrans.c,v 1.10 2005/08/20 23:26:08 tgl Exp $
+ * $PostgreSQL: pgsql/src/backend/access/transam/subtrans.c,v 1.11 2005/10/15 02:49:09 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -261,8 +261,8 @@ ShutdownSUBTRANS(void)
 	/*
 	 * Flush dirty SUBTRANS pages to disk
 	 *
-	 * This is not actually necessary from a correctness point of view. We do it
-	 * merely as a debugging aid.
+	 * This is not actually necessary from a correctness point of view. We do
+	 * it merely as a debugging aid.
 	 */
 	SimpleLruFlush(SubTransCtl, false);
 }
@@ -276,9 +276,9 @@ CheckPointSUBTRANS(void)
 	/*
 	 * Flush dirty SUBTRANS pages to disk
 	 *
-	 * This is not actually necessary from a correctness point of view. We do it
-	 * merely to improve the odds that writing of dirty pages is done by the
-	 * checkpoint process and not by backends.
+	 * This is not actually necessary from a correctness point of view. We do
+	 * it merely to improve the odds that writing of dirty pages is done by
+	 * the checkpoint process and not by backends.
 	 */
 	SimpleLruFlush(SubTransCtl, true);
 }

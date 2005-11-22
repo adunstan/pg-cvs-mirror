@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/optimizer/util/restrictinfo.c,v 1.41.2.1 2005/11/14 23:54:35 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/optimizer/util/restrictinfo.c,v 1.41.2.2 2005/11/16 17:08:12 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -43,7 +43,7 @@ static RestrictInfo *join_clause_is_redundant(PlannerInfo *root,
  * Build a RestrictInfo node containing the given subexpression.
  *
  * The is_pushed_down and outerjoin_delayed flags must be supplied by the
- * caller.  required_relids can be NULL, in which case it defaults to the
+ * caller.	required_relids can be NULL, in which case it defaults to the
  * actual clause contents (i.e., clause_relids).
  *
  * We initialize fields that depend only on the given subexpression, leaving

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/rewrite/rewriteDefine.c,v 1.106 2005/10/15 02:49:24 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/rewrite/rewriteDefine.c,v 1.107 2005/10/18 01:06:24 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -462,8 +462,9 @@ DefineQueryRewrite(RuleStmt *stmt)
 		 * appropriate, also modify the 'relkind' field to show that the
 		 * relation is now a view.
 		 *
-		 * Important side effect: an SI notice is broadcast to force all backends
-		 * (including me!) to update relcache entries with the new rule.
+		 * Important side effect: an SI notice is broadcast to force all
+		 * backends (including me!) to update relcache entries with the new
+		 * rule.
 		 */
 		SetRelationRuleStatus(ev_relid, true, RelisBecomingView);
 	}

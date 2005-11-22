@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/nodes/nodes.h,v 1.175 2005/08/01 20:31:15 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/nodes/nodes.h,v 1.176 2005/10/15 02:49:45 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -141,8 +141,8 @@ typedef enum NodeTag
 	/*
 	 * TAGS FOR EXPRESSION STATE NODES (execnodes.h)
 	 *
-	 * These correspond (not always one-for-one) to primitive nodes derived from
-	 * Expr.
+	 * These correspond (not always one-for-one) to primitive nodes derived
+	 * from Expr.
 	 */
 	T_ExprState = 400,
 	T_GenericExprState,

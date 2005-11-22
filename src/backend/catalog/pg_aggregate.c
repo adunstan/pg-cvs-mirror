@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/catalog/pg_aggregate.c,v 1.75 2005/04/14 20:03:23 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/catalog/pg_aggregate.c,v 1.76 2005/10/15 02:49:14 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -104,10 +104,10 @@ AggregateCreate(const char *aggName,
 	 * enforce_generic_type_consistency, if transtype isn't polymorphic) must
 	 * exactly match declared transtype.
 	 *
-	 * In the non-polymorphic-transtype case, it might be okay to allow a rettype
-	 * that's binary-coercible to transtype, but I'm not quite convinced that
-	 * it's either safe or useful.  When transtype is polymorphic we *must*
-	 * demand exact equality.
+	 * In the non-polymorphic-transtype case, it might be okay to allow a
+	 * rettype that's binary-coercible to transtype, but I'm not quite
+	 * convinced that it's either safe or useful.  When transtype is
+	 * polymorphic we *must* demand exact equality.
 	 */
 	if (rettype != aggTransType)
 		ereport(ERROR,
