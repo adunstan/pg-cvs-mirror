@@ -10,7 +10,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/tcop/utility.c,v 1.246 2005/11/19 17:39:45 adunstan Exp $
+ *	  $PostgreSQL: pgsql/src/backend/tcop/utility.c,v 1.247 2005/11/21 12:49:32 alvherre Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -840,7 +840,7 @@ ProcessUtility(Node *parsetree,
 			{
 				DropdbStmt *stmt = (DropdbStmt *) parsetree;
 
-				dropdb(stmt->dbname);
+				dropdb(stmt->dbname, stmt->missing_ok);
 			}
 			break;
 
