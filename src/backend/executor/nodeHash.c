@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/nodeHash.c,v 1.97 2005/11/20 19:49:07 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/nodeHash.c,v 1.98 2005/11/22 18:17:10 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -164,7 +164,7 @@ ExecInitHash(Hash *node, EState *estate)
 	 * initialize tuple type. no need to initialize projection info because
 	 * this node doesn't do projections
 	 */
-	ExecAssignResultTypeFromOuterPlan(&hashstate->ps);
+	ExecAssignResultTypeFromTL(&hashstate->ps);
 	hashstate->ps.ps_ProjInfo = NULL;
 
 	return hashstate;
