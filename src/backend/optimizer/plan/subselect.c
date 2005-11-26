@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/optimizer/plan/subselect.c,v 1.100 2005/10/15 02:49:20 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/optimizer/plan/subselect.c,v 1.101 2005/11/22 18:17:13 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1024,7 +1024,7 @@ finalize_plan(Plan *plan, List *rtable,
 			break;
 
 		case T_TidScan:
-			finalize_primnode((Node *) ((TidScan *) plan)->tideval,
+			finalize_primnode((Node *) ((TidScan *) plan)->tidquals,
 							  &context);
 			break;
 
