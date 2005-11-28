@@ -4,7 +4,7 @@
 #
 # Copyright (c) 1994, Regents of the University of California
 #
-# $PostgreSQL: pgsql/src/Makefile,v 1.35 2004/10/06 08:49:59 momjian Exp $
+# $PostgreSQL: pgsql/src/Makefile,v 1.36 2005/01/13 18:23:21 tgl Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -24,6 +24,7 @@ all install installdirs uninstall dep depend distprep:
 	$(MAKE) -C pl $@
 	$(MAKE) -C makefiles $@
 	$(MAKE) -C utils $@
+	$(MAKE) -C test/regress $@
 
 install: install-local
 
