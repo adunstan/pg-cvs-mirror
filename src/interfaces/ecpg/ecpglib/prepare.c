@@ -1,4 +1,4 @@
-/* $PostgreSQL: pgsql-server/src/interfaces/ecpg/ecpglib/prepare.c,v 1.12 2004/05/21 13:50:12 meskes Exp $ */
+/* $PostgreSQL: pgsql/src/interfaces/ecpg/ecpglib/prepare.c,v 1.13 2004/10/05 10:48:37 meskes Exp $ */
 
 #define POSTGRES_ECPG_INTERNAL
 #include "postgres_fe.h"
@@ -60,7 +60,7 @@ replace_variables(char *text)
 
 /* handle the EXEC SQL PREPARE statement */
 bool
-ECPGprepare(int lineno, char *name, char *variable)
+ECPGprepare(int lineno, const char *name, const char *variable)
 {
 	struct statement *stmt;
 	struct prepared_statement *this;
@@ -112,7 +112,7 @@ ECPGprepare(int lineno, char *name, char *variable)
 
 /* handle the EXEC SQL DEALLOCATE PREPARE statement */
 bool
-ECPGdeallocate(int lineno, int c, char *name)
+ECPGdeallocate(int lineno, int c, const char *name)
 {
 	bool		ret = ECPGdeallocate_one(lineno, name);
 	enum COMPAT_MODE compat = c;
@@ -133,7 +133,7 @@ ECPGdeallocate(int lineno, int c, char *name)
 }
 
 bool
-ECPGdeallocate_one(int lineno, char *name)
+ECPGdeallocate_one(int lineno, const char *name)
 {
 	struct prepared_statement *this,
 			   *prev;
