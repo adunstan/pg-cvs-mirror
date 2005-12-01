@@ -10,7 +10,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/numutils.c,v 1.69 2005/10/15 02:49:29 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/numutils.c,v 1.70 2005/11/30 23:10:08 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -73,7 +73,7 @@ pg_atoi(char *s, int size, int c)
 				 errmsg("invalid input syntax for integer: \"%s\"",
 						s)));
 
-	errno = 0;
+	errno = 0;	/* avoid having to check the result for failure */
 	l = strtol(s, &badp, 10);
 
 	/* We made no progress parsing the string, so bail out */
