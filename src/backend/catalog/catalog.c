@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/catalog/catalog.c,v 1.63 2005/08/12 01:35:56 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/catalog/catalog.c,v 1.64 2005/10/15 02:49:12 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -309,7 +309,8 @@ GetNewOidWithIndex(Relation relation, Relation indexrel)
 					ObjectIdGetDatum(newOid));
 
 		/* see notes above about using SnapshotDirty */
-		scan = index_beginscan(relation, indexrel, SnapshotDirty, 1, &key);
+		scan = index_beginscan(relation, indexrel, true,
+							   SnapshotDirty, 1, &key);
 
 		collides = HeapTupleIsValid(index_getnext(scan, ForwardScanDirection));
 

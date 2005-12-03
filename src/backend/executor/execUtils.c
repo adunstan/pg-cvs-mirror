@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/execUtils.c,v 1.129 2005/11/23 20:27:57 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/execUtils.c,v 1.130 2005/12/02 20:03:40 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -692,6 +692,28 @@ ExecAssignScanTypeFromOuterPlan(ScanState *scanstate)
  *				  Scan node support
  * ----------------------------------------------------------------
  */
+
+/* ----------------------------------------------------------------
+ *		ExecRelationIsTargetRelation
+ *
+ *		Detect whether a relation (identified by rangetable index)
+ *		is one of the target relations of the query.
+ * ----------------------------------------------------------------
+ */
+bool
+ExecRelationIsTargetRelation(EState *estate, Index scanrelid)
+{
+	ResultRelInfo *resultRelInfos;
+	int			i;
+
+	resultRelInfos = estate->es_result_relations;
+	for (i = 0; i < estate->es_num_result_relations; i++)
+	{
+		if (resultRelInfos[i].ri_RangeTableIndex == scanrelid)
+			return true;
+	}
+	return false;
+}
 
 /* ----------------------------------------------------------------
  *		ExecOpenScanRelation
