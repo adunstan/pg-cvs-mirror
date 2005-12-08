@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/storage/file/fd.c,v 1.122 2005/11/22 18:17:20 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/storage/file/fd.c,v 1.123 2005/12/01 20:24:18 tgl Exp $
  *
  * NOTES:
  *
@@ -1405,7 +1405,7 @@ TryAgain:
  *		dir = AllocateDir(path);
  *		while ((dirent = ReadDir(dir, path)) != NULL)
  *			process dirent;
- *		FreeDir(path);
+ *		FreeDir(dir);
  *
  * since a NULL dir parameter is taken as indicating AllocateDir failed.
  * (Make sure errno hasn't been changed since AllocateDir if you use this
