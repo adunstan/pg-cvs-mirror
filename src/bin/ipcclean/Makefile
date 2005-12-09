@@ -5,7 +5,7 @@
 # Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
 # Portions Copyright (c) 1994, Regents of the University of California
 #
-# $PostgreSQL: pgsql/src/bin/ipcclean/Makefile,v 1.17 2003/11/29 19:52:04 pgsql Exp $
+# $PostgreSQL: pgsql/src/bin/ipcclean/Makefile,v 1.18 2005/01/01 20:44:20 tgl Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -20,13 +20,13 @@ ipcclean: ipcclean.sh
 	chmod a+x $@
 
 install: all installdirs
-	$(INSTALL_SCRIPT) ipcclean $(DESTDIR)$(bindir)/ipcclean
+	$(INSTALL_SCRIPT) ipcclean '$(DESTDIR)$(bindir)/ipcclean'
 
 installdirs:
-	$(mkinstalldirs) $(DESTDIR)$(bindir)
+	$(mkinstalldirs) '$(DESTDIR)$(bindir)'
 
 uninstall:
-	rm -f $(DESTDIR)$(bindir)/ipcclean
+	rm -f '$(DESTDIR)$(bindir)/ipcclean'
 
 clean distclean maintainer-clean:
 	rm -f ipcclean
