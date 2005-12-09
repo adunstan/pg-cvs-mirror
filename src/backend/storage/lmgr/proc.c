@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/storage/lmgr/proc.c,v 1.167 2005/10/15 02:49:26 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/storage/lmgr/proc.c,v 1.168 2005/11/22 18:17:21 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -630,7 +630,7 @@ ProcSleep(LockMethod lockMethodTable,
 		  LOCK *lock,
 		  PROCLOCK *proclock)
 {
-	LWLockId	masterLock = lockMethodTable->masterLock;
+	LWLockId	masterLock = LockMgrLock;
 	PROC_QUEUE *waitQueue = &(lock->waitProcs);
 	LOCKMASK	myHeldLocks = MyProc->heldLocks;
 	bool		early_deadlock = false;
