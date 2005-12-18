@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2005, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/psql/startup.c,v 1.127 2005/11/17 23:42:26 adunstan Exp $
+ * $PostgreSQL: pgsql/src/bin/psql/startup.c,v 1.128 2005/11/22 18:17:29 momjian Exp $
  */
 #include "postgres_fe.h"
 
@@ -286,7 +286,7 @@ main(int argc, char *argv[])
 						options.action_string,
 						strlen(options.action_string));
 
-		successResult = HandleSlashCmds(scan_state, NULL) != CMD_ERROR
+		successResult = HandleSlashCmds(scan_state, NULL) != PSQL_CMD_ERROR
 			? EXIT_SUCCESS : EXIT_FAILURE;
 
 		psql_scan_destroy(scan_state);
