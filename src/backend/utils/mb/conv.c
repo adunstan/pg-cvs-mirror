@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/mb/conv.c,v 1.55 2005/10/15 02:49:33 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/mb/conv.c,v 1.56 2005/10/29 00:31:52 petere Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -413,7 +413,7 @@ LocalToUtf(unsigned char *iso, unsigned char *utf,
 
 	for (; len > 0 && *iso; len -= l)
 	{
-		if (*iso < 0x80)
+		if (!IS_HIGHBIT_SET(*iso))
 		{
 			*utf++ = *iso++;
 			l = 1;
