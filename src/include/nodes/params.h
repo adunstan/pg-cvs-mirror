@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/nodes/params.h,v 1.27 2004/08/29 05:06:57 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/nodes/params.h,v 1.28 2004/12/31 22:03:34 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -32,6 +32,11 @@
  * PARAM_EXEC:	The parameter is an internal executor parameter.
  *				It has a number contained in the `paramid' field.
  *
+ * PARAM_SUBLINK: The parameter represents an output column of a SubLink
+ *				node's sub-select.  The column number is contained in the
+ *				`paramid' field.  (This type of Param is converted to
+ *				PARAM_EXEC during planning.)
+ *
  * PARAM_INVALID should never appear in a Param node; it's used to mark
  * the end of a ParamListInfo array.
  *
@@ -44,6 +49,7 @@
 #define PARAM_NAMED		11
 #define PARAM_NUM		12
 #define PARAM_EXEC		15
+#define PARAM_SUBLINK	16
 #define PARAM_INVALID	100
 
 
