@@ -10,7 +10,7 @@
  * Written by Peter Eisentraut <peter_e@gmx.net>.
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.302 2005/12/20 02:30:36 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.303 2005/12/23 00:38:04 momjian Exp $
  *
  *--------------------------------------------------------------------
  */
@@ -90,7 +90,7 @@
 
 /* XXX these should appear in other modules' header files */
 extern bool Log_disconnections;
-extern DLLIMPORT bool check_function_bodies;
+extern bool check_function_bodies;
 extern int	CommitDelay;
 extern int	CommitSiblings;
 extern char *default_tablespace;
