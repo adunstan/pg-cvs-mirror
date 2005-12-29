@@ -33,7 +33,7 @@
  *	  ENHANCEMENTS, OR MODIFICATIONS.
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/pl/plperl/plperl.c,v 1.96 2005/11/22 18:17:33 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/pl/plperl/plperl.c,v 1.97 2005/12/28 18:34:16 tgl Exp $
  *
  **********************************************************************/
 
@@ -56,6 +56,9 @@
 #include "miscadmin.h"
 #include "mb/pg_wchar.h"
 
+/* define this before the perl headers get a chance to mangle DLLIMPORT */
+extern DLLIMPORT bool check_function_bodies;
+
 /* perl stuff */
 #include "EXTERN.h"
 #include "perl.h"
@@ -68,8 +71,6 @@
 #define pTHX_
 #define pTHX void
 #endif
-
-extern DLLIMPORT bool check_function_bodies;
 
 
 /**********************************************************************
