@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/storage/lwlock.h,v 1.23 2005/10/15 02:49:46 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/storage/lwlock.h,v 1.24 2005/12/11 21:02:18 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -27,6 +27,7 @@ typedef enum LWLockId
 {
 	BufMappingLock,
 	BufFreelistLock,
+	ShmemIndexLock,
 	OidGenLock,
 	XidGenLock,
 	ProcArrayLock,
