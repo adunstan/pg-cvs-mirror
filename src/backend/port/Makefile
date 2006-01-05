@@ -13,7 +13,7 @@
 # be converted to Method 2.  
 #
 # IDENTIFICATION
-#    $PostgreSQL: /cvsroot/pgsql-server/src/backend/port/Makefile,v 1.19 2003/05/15 16:35:29 momjian Exp $
+#    $PostgreSQL: pgsql/src/backend/port/Makefile,v 1.20 2003/11/29 19:51:54 pgsql Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -25,9 +25,6 @@ OBJS+=dynloader.o pg_sema.o pg_shmem.o
 
 OBJS+=$(TAS)
 
-ifeq ($(PORTNAME), qnx4)
-OBJS+=qnx4/SUBSYS.o
-endif
 ifeq ($(PORTNAME), beos)
 OBJS+=beos/SUBSYS.o
 endif
@@ -42,11 +39,6 @@ all: SUBSYS.o
 
 SUBSYS.o: $(OBJS)
 	$(LD) $(LDREL) $(LDOUT) $@ $^
-
-qnx4/SUBSYS.o: qnx4.dir
-
-qnx4.dir:
-	$(MAKE) -C qnx4 all
 
 beos/SUBSYS.o: beos.dir
 
@@ -74,6 +66,5 @@ distclean clean:
 	rm -f SUBSYS.o $(OBJS) ipc_test ipc_test.o
 	$(MAKE) -C beos clean
 	$(MAKE) -C darwin clean
-	$(MAKE) -C qnx4 clean
 	$(MAKE) -C win32 clean
 

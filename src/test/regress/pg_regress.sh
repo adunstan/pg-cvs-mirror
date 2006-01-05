@@ -1,5 +1,5 @@
 #! /bin/sh
-# $PostgreSQL: pgsql/src/test/regress/pg_regress.sh,v 1.61 2005/11/01 15:09:11 adunstan Exp $
+# $PostgreSQL: pgsql/src/test/regress/pg_regress.sh,v 1.62 2005/12/09 21:19:36 petere Exp $
 
 me=`basename $0`
 : ${TMPDIR=/tmp}
@@ -216,7 +216,7 @@ esac
 # On some platforms we can't use Unix sockets.
 # ----------
 case $host_platform in
-    *-*-cygwin* | *-*-mingw32* | *-*-qnx* | *beos*)
+    *-*-cygwin* | *-*-mingw32* | *beos*)
         unix_sockets=no;;
     *)
         unix_sockets=yes;;
@@ -228,7 +228,7 @@ esac
 # ----------
 
 case $host_platform in
-    *-*-qnx* | *-*-sco3.2v5*)
+    *-*-sco3.2v5*)
         DIFFFLAGS=-b;;
     *)
         DIFFFLAGS=-w;;

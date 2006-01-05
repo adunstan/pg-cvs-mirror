@@ -2,7 +2,7 @@
 #
 # Makefile for the plpgsql shared object
 #
-# $PostgreSQL: pgsql/src/pl/plpgsql/src/Makefile,v 1.26 2004/06/03 19:21:31 tgl Exp $
+# $PostgreSQL: pgsql/src/pl/plpgsql/src/Makefile,v 1.27 2005/12/09 21:19:36 petere Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -21,14 +21,7 @@ rpath :=
 
 OBJS = pl_gram.o pl_handler.o pl_comp.o pl_exec.o pl_funcs.o
 
-ifneq ($(PORTNAME), qnx4)
 all: all-lib
-else
-all:
-	@echo "*****"
-	@echo "* PL/pgSQL was not built due to library manager problems."
-	@echo "*****"
-endif
 
 # Shared library stuff
 include $(top_srcdir)/src/Makefile.shlib
