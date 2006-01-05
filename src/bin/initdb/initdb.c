@@ -42,7 +42,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  * Portions taken from FreeBSD.
  *
- * $PostgreSQL: pgsql/src/bin/initdb/initdb.c,v 1.103 2005/12/31 23:50:59 tgl Exp $
+ * $PostgreSQL: pgsql/src/bin/initdb/initdb.c,v 1.104 2006/01/02 16:45:12 adunstan Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -633,8 +633,6 @@ get_id(void)
 
 	pw = getpwuid(geteuid());
 
-#ifndef __BEOS__				/* no root check on BEOS */
-
 	if (geteuid() == 0)			/* 0 is root's uid */
 	{
 		fprintf(stderr,
@@ -645,7 +643,6 @@ get_id(void)
 				progname);
 		exit(1);
 	}
-#endif
 #else							/* the windows code */
 
 	struct passwd_win32

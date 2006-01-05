@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/tcop/postgres.c,v 1.474 2005/12/31 16:50:44 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/tcop/postgres.c,v 1.475 2006/01/04 21:06:31 tgl Exp $
  *
  * NOTES
  *	  this is the "main" module of the postgres backend and
@@ -3520,7 +3520,6 @@ ShowUsage(const char *title)
 					 (long) user.tv_usec,
 					 (long) sys.tv_sec,
 					 (long) sys.tv_usec);
-/* BeOS has rusage but only has some fields, and not these... */
 #if defined(HAVE_GETRUSAGE)
 	appendStringInfo(&str,
 					 "!\t%ld/%ld [%ld/%ld] filesystem blocks in/out\n",
