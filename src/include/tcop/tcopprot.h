@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/tcop/tcopprot.h,v 1.77 2005/08/11 21:11:50 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/tcop/tcopprot.h,v 1.78 2005/10/15 02:49:46 momjian Exp $
  *
  * OLD COMMENTS
  *	  This file was created so that other c files could get the two
@@ -28,6 +28,7 @@
 extern CommandDest whereToSendOutput;
 extern DLLIMPORT const char *debug_query_string;
 extern int	max_stack_depth;
+extern int	PostAuthDelay;
 
 /* GUC-configurable parameters */
 
@@ -67,5 +68,8 @@ extern void ResetUsage(void);
 extern void ShowUsage(const char *title);
 extern void set_debug_options(int debug_flag,
 				  GucContext context, GucSource source);
+extern bool set_plan_disabling_options(const char *arg,
+									  GucContext context, GucSource source);
+extern const char *get_stats_option_name(const char *arg);
 
 #endif   /* TCOPPROT_H */

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/cache/relcache.c,v 1.232 2005/11/22 18:17:24 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/cache/relcache.c,v 1.233 2005/12/09 01:22:04 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -551,7 +551,7 @@ RelationBuildRuleLock(Relation relation)
 	 *
 	 * Note: since we scan the rules using RewriteRelRulenameIndexId, we will
 	 * be reading the rules in name order, except possibly during
-	 * emergency-recovery operations (ie, IsIgnoringSystemIndexes). This in
+	 * emergency-recovery operations (ie, IgnoreSystemIndexes). This in
 	 * turn ensures that rules will be fired in name order.
 	 */
 	rewrite_desc = heap_open(RewriteRelationId, AccessShareLock);
