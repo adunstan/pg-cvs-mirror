@@ -33,7 +33,7 @@
  *	  ENHANCEMENTS, OR MODIFICATIONS.
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/pl/plperl/plperl.c,v 1.97 2005/12/28 18:34:16 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/pl/plperl/plperl.c,v 1.98 2005/12/29 14:28:31 adunstan Exp $
  *
  **********************************************************************/
 
@@ -60,18 +60,7 @@
 extern DLLIMPORT bool check_function_bodies;
 
 /* perl stuff */
-#include "EXTERN.h"
-#include "perl.h"
-#include "XSUB.h"
-#include "ppport.h"
-#include "spi_internal.h"
-
-/* just in case these symbols aren't provided */
-#ifndef pTHX_
-#define pTHX_
-#define pTHX void
-#endif
-
+#include "plperl.h"
 
 /**********************************************************************
  * The information we cache about loaded procedures
