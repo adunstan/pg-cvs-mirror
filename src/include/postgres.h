@@ -10,7 +10,7 @@
  * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  * Portions Copyright (c) 1995, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/postgres.h,v 1.70 2004/12/31 22:03:19 pgsql Exp $
+ * $PostgreSQL: pgsql/src/include/postgres.h,v 1.71 2005/04/14 01:38:21 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -484,7 +484,6 @@ extern DLLIMPORT bool assert_enabled;
 /*
  * Trap
  *		Generates an exception if the given condition is true.
- *
  */
 #define Trap(condition, errorType) \
 		do { \
@@ -510,7 +509,6 @@ extern DLLIMPORT bool assert_enabled;
 #define AssertMacro(condition)	((void)true)
 #define AssertArg(condition)
 #define AssertState(condition)
-#define assert_enabled 0
 #else
 #define Assert(condition) \
 		Trap(!(condition), "FailedAssertion")
