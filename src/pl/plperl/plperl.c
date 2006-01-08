@@ -33,7 +33,7 @@
  *	  ENHANCEMENTS, OR MODIFICATIONS.
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/pl/plperl/plperl.c,v 1.94 2005/10/18 17:13:14 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/pl/plperl/plperl.c,v 1.94.2.1 2005/11/22 18:23:30 momjian Exp $
  *
  **********************************************************************/
 
@@ -57,6 +57,12 @@
 #include "mb/pg_wchar.h"
 
 /* perl stuff */
+
+/* stop perl from hijacking stdio and other stuff */
+#ifdef WIN32
+#define WIN32IO_IS_STDIO
+#endif 
+
 #include "EXTERN.h"
 #include "perl.h"
 #include "XSUB.h"
