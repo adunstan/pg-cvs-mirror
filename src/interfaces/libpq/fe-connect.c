@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-connect.c,v 1.323 2005/10/17 16:24:20 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-connect.c,v 1.324 2005/11/22 18:17:32 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -2936,7 +2936,7 @@ PQsetClientEncoding(PGconn *conn, const char *encoding)
 		status = 0;				/* everything is ok */
 	}
 	PQclear(res);
-	return (status);
+	return status;
 }
 
 PGVerbosity

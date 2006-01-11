@@ -11,7 +11,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/libpq/be-secure.c,v 1.59 2005/10/15 02:49:17 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/libpq/be-secure.c,v 1.60 2005/11/22 18:17:11 momjian Exp $
  *
  *	  Since the server static private key ($DataDir/server.key)
  *	  will normally be stored unencrypted so that the database
@@ -486,7 +486,7 @@ my_SSL_set_fd(SSL *s, int fd)
 	SSL_set_bio(s, bio, bio);
 	ret = 1;
 err:
-	return (ret);
+	return ret;
 }
 
 /*

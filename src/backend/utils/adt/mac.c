@@ -1,7 +1,7 @@
 /*
  *	PostgreSQL type definitions for MAC addresses.
  *
- *	$PostgreSQL: pgsql/src/backend/utils/adt/mac.c,v 1.34 2004/08/29 05:06:49 momjian Exp $
+ *	$PostgreSQL: pgsql/src/backend/utils/adt/mac.c,v 1.35 2005/10/15 02:49:28 momjian Exp $
  */
 
 #include "postgres.h"
@@ -194,7 +194,7 @@ text_macaddr(PG_FUNCTION_ARGS)
 
 	result = DirectFunctionCall1(macaddr_in, CStringGetDatum(str));
 
-	return (result);
+	return result;
 }
 
 /*

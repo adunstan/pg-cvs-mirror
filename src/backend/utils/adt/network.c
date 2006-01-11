@@ -1,7 +1,7 @@
 /*
  *	PostgreSQL type definitions for the INET and CIDR types.
  *
- *	$PostgreSQL: pgsql/src/backend/utils/adt/network.c,v 1.56 2005/10/17 16:24:19 tgl Exp $
+ *	$PostgreSQL: pgsql/src/backend/utils/adt/network.c,v 1.57 2005/12/25 02:14:17 momjian Exp $
  *
  *	Jon Postel RIP 16 Oct 1998
  */
@@ -898,7 +898,7 @@ bitncmp(void *l, void *r, int n)
 	b = n / 8;
 	x = memcmp(l, r, b);
 	if (x)
-		return (x);
+		return x;
 
 	lb = ((const u_char *) l)[b];
 	rb = ((const u_char *) r)[b];

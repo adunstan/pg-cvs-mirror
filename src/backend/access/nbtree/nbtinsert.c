@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/nbtree/nbtinsert.c,v 1.128 2005/11/06 19:29:00 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/nbtree/nbtinsert.c,v 1.129 2005/11/22 18:17:06 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1498,7 +1498,7 @@ _bt_newroot(Relation rel, Buffer lbuf, Buffer rbuf)
 	/* write and let go of metapage buffer */
 	_bt_wrtbuf(rel, metabuf);
 
-	return (rootbuf);
+	return rootbuf;
 }
 
 /*
