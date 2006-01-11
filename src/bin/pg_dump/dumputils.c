@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/bin/pg_dump/dumputils.c,v 1.22 2005/12/02 22:06:07 tgl Exp $
+ * $PostgreSQL: pgsql/src/bin/pg_dump/dumputils.c,v 1.23 2005/12/03 21:06:18 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -480,10 +480,8 @@ buildACLCommands(const char *name, const char *type,
 	 * If we didn't find any owner privs, the owner must have revoked 'em all
 	 */
 	if (!found_owner_privs && owner)
-	{
 		appendPQExpBuffer(firstsql, "REVOKE ALL ON %s %s FROM %s;\n",
 						  type, name, fmtId(owner));
-	}
 
 	destroyPQExpBuffer(grantee);
 	destroyPQExpBuffer(grantor);
