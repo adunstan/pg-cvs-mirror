@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/storage/lmgr/lmgr.c,v 1.79 2005/10/15 02:49:26 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/storage/lmgr/lmgr.c,v 1.80 2005/12/09 01:22:04 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -383,13 +383,6 @@ XactLockTableWait(TransactionId xid)
 			break;
 		xid = SubTransGetParent(xid);
 	}
-
-	/*
-	 * Transaction was committed/aborted/crashed - we have to update pg_clog
-	 * if transaction is still marked as running.
-	 */
-	if (!TransactionIdDidCommit(xid) && !TransactionIdDidAbort(xid))
-		TransactionIdAbort(xid);
 }
 
 /*
@@ -420,13 +413,6 @@ ConditionalXactLockTableWait(TransactionId xid)
 			break;
 		xid = SubTransGetParent(xid);
 	}
-
-	/*
-	 * Transaction was committed/aborted/crashed - we have to update pg_clog
-	 * if transaction is still marked as running.
-	 */
-	if (!TransactionIdDidCommit(xid) && !TransactionIdDidAbort(xid))
-		TransactionIdAbort(xid);
 
 	return true;
 }
