@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/optimizer/path/clausesel.c,v 1.75 2005/10/15 02:49:19 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/optimizer/path/clausesel.c,v 1.76 2005/11/25 19:47:49 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -662,6 +662,14 @@ clause_selectivity(PlannerInfo *root,
 							is_join_clause,
 							varRelid,
 							jointype);
+	}
+	else if (IsA(clause, RowCompareExpr))
+	{
+		/* Use node specific selectivity calculation function */
+		s1 = rowcomparesel(root,
+						   (RowCompareExpr *) clause,
+						   varRelid,
+						   jointype);
 	}
 	else if (IsA(clause, NullTest))
 	{
