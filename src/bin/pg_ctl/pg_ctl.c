@@ -4,7 +4,7 @@
  *
  * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/pg_ctl/pg_ctl.c,v 1.61 2005/10/15 02:49:38 momjian Exp $
+ * $PostgreSQL: pgsql/src/bin/pg_ctl/pg_ctl.c,v 1.61.2.1 2005/11/22 18:23:26 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1521,10 +1521,13 @@ main(int argc, char **argv)
 		do_wait = false;
 	}
 
-	snprintf(def_postopts_file, MAXPGPATH, "%s/postmaster.opts.default", pg_data);
-	snprintf(postopts_file, MAXPGPATH, "%s/postmaster.opts", pg_data);
-	snprintf(pid_file, MAXPGPATH, "%s/postmaster.pid", pg_data);
-	snprintf(conf_file, MAXPGPATH, "%s/postgresql.conf", pg_data);
+	if (pg_data != NULL)
+	{
+		snprintf(def_postopts_file, MAXPGPATH, "%s/postmaster.opts.default", pg_data);
+		snprintf(postopts_file, MAXPGPATH, "%s/postmaster.opts", pg_data);
+		snprintf(pid_file, MAXPGPATH, "%s/postmaster.pid", pg_data);
+		snprintf(conf_file, MAXPGPATH, "%s/postgresql.conf", pg_data);
+	}
 
 	switch (ctl_command)
 	{
