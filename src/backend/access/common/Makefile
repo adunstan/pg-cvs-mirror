@@ -4,7 +4,7 @@
 #    Makefile for access/common
 #
 # IDENTIFICATION
-#    $PostgreSQL: /cvsroot/pgsql-server/src/backend/access/common/Makefile,v 1.19 2000/08/31 16:09:30 petere Exp $
+#    $PostgreSQL: pgsql/src/backend/access/common/Makefile,v 1.20 2003/11/29 19:51:39 pgsql Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -12,8 +12,7 @@ subdir = src/backend/access/common
 top_builddir = ../../../..
 include $(top_builddir)/src/Makefile.global
 
-OBJS = heaptuple.o indextuple.o indexvalid.o printtup.o \
-       scankey.o tupdesc.o  
+OBJS = heaptuple.o indextuple.o printtup.o scankey.o tupdesc.o  
 
 all: SUBSYS.o
 
