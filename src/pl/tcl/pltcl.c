@@ -31,7 +31,7 @@
  *	  ENHANCEMENTS, OR MODIFICATIONS.
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/pl/tcl/pltcl.c,v 1.93 2004/09/14 03:21:27 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/pl/tcl/pltcl.c,v 1.94 2004/11/21 21:17:05 tgl Exp $
  *
  **********************************************************************/
 
@@ -533,6 +533,7 @@ pltcl_func_handler(PG_FUNCTION_ARGS)
 					tupType = HeapTupleHeaderGetTypeId(td);
 					tupTypmod = HeapTupleHeaderGetTypMod(td);
 					tupdesc = lookup_rowtype_tupdesc(tupType, tupTypmod);
+					tupdesc = CreateTupleDescCopy(tupdesc);
 					/* Build a temporary HeapTuple control structure */
 					tmptup.t_len = HeapTupleHeaderGetDatumLength(td);
 					tmptup.t_data = td;
@@ -541,6 +542,7 @@ pltcl_func_handler(PG_FUNCTION_ARGS)
 					pltcl_build_tuple_argument(&tmptup, tupdesc, &list_tmp);
 					Tcl_DStringAppendElement(&tcl_cmd,
 											 Tcl_DStringValue(&list_tmp));
+					FreeTupleDesc(tupdesc);
 				}
 			}
 			else
