@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/spi.c,v 1.144 2005/11/03 17:11:36 alvherre Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/spi.c,v 1.145 2005/11/22 18:17:10 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -921,8 +921,8 @@ SPI_cursor_open(const char *name, void *plan,
 	 * Set up the portal.
 	 */
 	PortalDefineQuery(portal,
-					  NULL,		/* unfortunately don't have sourceText */
-					  "SELECT", /* nor the raw parse tree... */
+					  spiplan->query,
+					  "SELECT", /* don't have the raw parse tree... */
 					  list_make1(queryTree),
 					  list_make1(planTree),
 					  PortalGetHeapMemory(portal));
