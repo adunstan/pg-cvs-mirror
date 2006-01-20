@@ -10,7 +10,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/postmaster/autovacuum.c,v 1.5.2.3 2005/11/28 17:23:12 alvherre Exp $
+ *	  $PostgreSQL: pgsql/src/backend/postmaster/autovacuum.c,v 1.5.2.4 2006/01/18 20:35:16 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -625,7 +625,7 @@ do_autovacuum(PgStat_StatDBEntry *dbentry)
 		 * Skip temp tables (i.e. those in temp namespaces).  We cannot safely
 		 * process other backends' temp tables.
 		 */
-		if (isTempNamespace(classForm->relnamespace))
+		if (isAnyTempNamespace(classForm->relnamespace))
 			continue;
 
 		relid = HeapTupleGetOid(tuple);
