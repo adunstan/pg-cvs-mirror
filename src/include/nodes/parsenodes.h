@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/nodes/parsenodes.h,v 1.297 2005/11/28 04:35:32 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/nodes/parsenodes.h,v 1.298 2005/12/07 15:20:55 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -884,7 +884,8 @@ typedef struct AlterDomainStmt
  */
 typedef enum GrantObjectType
 {
-	ACL_OBJECT_RELATION,		/* table, view, sequence */
+	ACL_OBJECT_RELATION,		/* table, view */
+	ACL_OBJECT_SEQUENCE,		/* sequence */
 	ACL_OBJECT_DATABASE,		/* database */
 	ACL_OBJECT_FUNCTION,		/* function */
 	ACL_OBJECT_LANGUAGE,		/* procedural language */
