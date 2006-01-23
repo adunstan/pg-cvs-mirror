@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/nbtree/nbtsearch.c,v 1.99 2005/12/07 19:37:53 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/nbtree/nbtsearch.c,v 1.100 2006/01/17 00:09:01 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -509,8 +509,8 @@ _bt_first(IndexScanDesc scan, ScanDirection dir)
 	pgstat_count_index_scan(&scan->xs_pgstat_info);
 
 	/*
-	 * Examine the scan keys and eliminate any redundant keys; also discover
-	 * how many keys must be matched to continue the scan.
+	 * Examine the scan keys and eliminate any redundant keys; also mark the
+	 * keys that must be matched to continue the scan.
 	 */
 	_bt_preprocess_keys(scan);
 
