@@ -1,6 +1,6 @@
-# $PostgreSQL: pgsql/contrib/tsearch2/snowball/Makefile,v 1.7 2005/09/27 17:13:12 tgl Exp $
+# $PostgreSQL: pgsql/contrib/tsearch2/snowball/Makefile,v 1.8 2005/10/18 01:30:48 tgl Exp $
 
-SUBOBJS = english_stem.o api.o russian_stem.o utilities.o
+SUBOBJS = english_stem.o api.o russian_stem.o russian_stem_UTF8.o utilities.o
 
 EXTRA_CLEAN = SUBSYS.o $(SUBOBJS)
 
