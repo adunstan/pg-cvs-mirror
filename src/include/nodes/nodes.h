@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/nodes/nodes.h,v 1.180 2005/12/28 01:30:01 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/nodes/nodes.h,v 1.181 2006/01/01 01:41:42 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -190,6 +190,7 @@ typedef enum NodeTag
 	T_InnerIndexscanInfo,
 	T_OuterJoinInfo,
 	T_InClauseInfo,
+	T_AppendRelInfo,
 
 	/*
 	 * TAGS FOR MEMORY NODES (memnodes.h)
