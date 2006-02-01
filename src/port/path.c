@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/port/path.c,v 1.50.4.2 2005/12/23 22:34:33 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/port/path.c,v 1.50.4.3 2006/02/01 00:47:03 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -303,7 +303,7 @@ const char *
 get_progname(const char *argv0)
 {
 	const char  *nodir_name;
-	const char	*progname;
+	char		*progname;
 
 	nodir_name = last_dir_separator(argv0);
 	if (nodir_name)
