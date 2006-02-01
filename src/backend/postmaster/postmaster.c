@@ -37,7 +37,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/postmaster/postmaster.c,v 1.443.4.4 2005/11/05 03:05:04 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/postmaster/postmaster.c,v 1.443.4.5 2006/01/06 02:58:40 tgl Exp $
  *
  * NOTES
  *
@@ -167,9 +167,6 @@ char	   *ListenAddresses;
  * count against the limit.
  */
 int			ReservedBackends;
-
-
-static const char *progname = NULL;
 
 /* The socket(s) we're listening to. */
 #define MAXLISTEN	64
@@ -374,9 +371,6 @@ PostmasterMain(int argc, char *argv[])
 	int			status;
 	char	   *userDoption = NULL;
 	int			i;
-
-	/* This will call exit() if strdup() fails. */
-	progname = get_progname(argv[0]);	
 
 	MyProcPid = PostmasterPid = getpid();
 

@@ -13,7 +13,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/main/main.c,v 1.94 2004/12/31 21:59:53 pgsql Exp $
+ *	  $PostgreSQL: pgsql/src/backend/main/main.c,v 1.94.4.1 2006/01/05 00:55:07 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -45,7 +45,7 @@
 #include "libpq/pqsignal.h"
 #endif
 
-
+const char *progname;
 
 int
 main(int argc, char *argv[])
@@ -100,6 +100,8 @@ main(int argc, char *argv[])
 					 argv[0], strerror(errno));
 #endif
 #endif   /* NOFIXADE */
+
+	progname = get_progname(argv[0]);
 
 #if defined(WIN32)
 	{
