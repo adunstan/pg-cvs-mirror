@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/storage/lmgr/s_lock.c,v 1.40 2005/10/15 02:49:26 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/storage/lmgr/s_lock.c,v 1.41 2005/11/22 18:17:21 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -120,7 +120,7 @@ s_lock(volatile slock_t *lock, const char *file, int line)
 
 			/* increase delay by a random fraction between 1X and 2X */
 			cur_delay += (int) (cur_delay *
-				  (((double) random()) / ((double) MAX_RANDOM_VALUE)) + 0.5);
+				  ((double) random() / (double) MAX_RANDOM_VALUE) + 0.5);
 			/* wrap back to minimum delay when max is exceeded */
 			if (cur_delay > MAX_DELAY_MSEC)
 				cur_delay = MIN_DELAY_MSEC;
