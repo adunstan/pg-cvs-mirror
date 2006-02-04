@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/nodes/parsenodes.h,v 1.298 2005/12/07 15:20:55 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/nodes/parsenodes.h,v 1.299 2006/01/21 02:16:20 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1193,6 +1193,7 @@ typedef struct DropRoleStmt
 {
 	NodeTag		type;
 	List	   *roles;			/* List of roles to remove */
+	bool		missing_ok;		/* skip error if a role is missing? */
 } DropRoleStmt;
 
 /* ----------------------

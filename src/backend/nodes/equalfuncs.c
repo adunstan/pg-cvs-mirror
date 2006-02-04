@@ -18,7 +18,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/nodes/equalfuncs.c,v 1.260 2005/12/28 01:29:59 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/nodes/equalfuncs.c,v 1.261 2006/01/31 21:39:23 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1398,6 +1398,7 @@ static bool
 _equalDropRoleStmt(DropRoleStmt *a, DropRoleStmt *b)
 {
 	COMPARE_NODE_FIELD(roles);
+	COMPARE_SCALAR_FIELD(missing_ok);
 
 	return true;
 }
