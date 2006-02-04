@@ -4,7 +4,7 @@
 #
 # Copyright (c) 2003-2005, PostgreSQL Global Development Group
 #
-# $PostgreSQL: pgsql/src/tools/thread/Makefile,v 1.7 2004/04/26 18:32:33 momjian Exp $
+# $PostgreSQL: pgsql/src/tools/thread/Makefile,v 1.8 2005/01/01 20:44:34 tgl Exp $
 #
 #-------------------------------------------------------------------------
 
