@@ -4,7 +4,7 @@
  *
  * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/pg_ctl/pg_ctl.c,v 1.63 2006/01/05 03:01:37 momjian Exp $
+ * $PostgreSQL: pgsql/src/bin/pg_ctl/pg_ctl.c,v 1.64 2006/01/14 15:41:28 petere Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1313,7 +1313,7 @@ main(int argc, char **argv)
 		}
 		else if (strcmp(argv[1], "-V") == 0 || strcmp(argv[1], "--version") == 0)
 		{
-			printf("%s (PostgreSQL) %s\n", progname, PG_VERSION);
+			puts("pg_ctl (PostgreSQL) " PG_VERSION);
 			exit(0);
 		}
 	}
