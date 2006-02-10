@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/port/win32/security.c,v 1.8 2004/12/31 22:00:37 pgsql Exp $
+ *	  $PostgreSQL: pgsql/src/backend/port/win32/security.c,v 1.9 2005/10/15 02:49:23 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -78,8 +78,8 @@ pgwin32_is_admin(void)
 
 	for (x = 0; x < Groups->GroupCount; x++)
 	{
-		if (EqualSid(AdministratorsSid, Groups->Groups[x].Sid) ||
-			EqualSid(PowerUsersSid, Groups->Groups[x].Sid))
+		if ((EqualSid(AdministratorsSid, Groups->Groups[x].Sid) && (Groups->Groups[x].Attributes & SE_GROUP_ENABLED)) ||
+			(EqualSid(PowerUsersSid, Groups->Groups[x].Sid) && (Groups->Groups[x].Attributes & SE_GROUP_ENABLED)))
 		{
 			success = TRUE;
 			break;
