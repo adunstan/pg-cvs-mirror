@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/catalog/dependency.h,v 1.17 2005/10/15 02:49:42 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/catalog/dependency.h,v 1.18 2005/11/21 12:49:32 alvherre Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -178,6 +178,12 @@ extern long changeDependencyFor(Oid classId, Oid objectId,
 					Oid newRefObjectId);
 
 extern bool objectIsInternalDependency(Oid classId, Oid objectId);
+
+extern List* getDependentOids(Oid classId, Oid objId,
+							  Oid refClassId, DependencyType deptype);
+
+extern List* getReferencingOids(Oid refClassId, Oid refObjId, Oid refObjSubId,
+								Oid classId, DependencyType deptype);
 
 /* in pg_shdepend.c */
 
