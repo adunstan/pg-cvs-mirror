@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/index/indexam.c,v 1.86 2005/10/15 02:49:09 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/index/indexam.c,v 1.87 2005/12/03 05:51:00 tgl Exp $
  *
  * INTERFACE ROUTINES
  *		index_open		- open an index relation by relation OID
@@ -685,6 +685,11 @@ index_getmulti(IndexScanDesc scan,
  *		callback routine tells whether a given main-heap tuple is
  *		to be deleted
  *
+ *      passing NULL callback_state can be interpreted by the 
+ *      index access method as meaning that the index does not need
+ *      to be scanned in logical sequence to remove rows for this call
+ *      index_vacuum_cleanup is always required after this, however.
+ * 
  *		return value is an optional palloc'd struct of statistics
  * ----------------
  */
