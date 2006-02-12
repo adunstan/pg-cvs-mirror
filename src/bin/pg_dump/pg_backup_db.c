@@ -5,7 +5,7 @@
  *	Implements the basic DB functions used by the archiver.
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/bin/pg_dump/pg_backup_db.c,v 1.67 2006/02/05 20:58:47 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/bin/pg_dump/pg_backup_db.c,v 1.68 2006/02/09 18:28:29 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -15,7 +15,10 @@
 #include "pg_backup_db.h"
 #include "dumputils.h"
 
+#ifndef WIN32_CLIENT_ONLY
 #include <unistd.h>
+#endif
+
 #include <ctype.h>
 
 #ifdef HAVE_TERMIOS_H
