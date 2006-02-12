@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2005, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/psql/help.c,v 1.106 2005/10/15 02:49:40 momjian Exp $
+ * $PostgreSQL: pgsql/src/bin/psql/help.c,v 1.107 2006/02/11 21:55:35 momjian Exp $
  */
 #include "postgres_fe.h"
 #include "common.h"
@@ -173,7 +173,7 @@ slashUsage(unsigned short int pager)
 	 * in 80 columns >> "
 	 */
 	fprintf(output, _("General\n"));
-	fprintf(output, _("  \\c[onnect] [DBNAME|- [USER]]\n"
+	fprintf(output, _("  \\c[onnect] [DBNAME|- USER|- HOST|- PORT|-]\n"
 			"                 connect to new database (currently \"%s\")\n"),
 			PQdb(pset.db));
 	fprintf(output, _("  \\cd [DIR]      change the current working directory\n"));
