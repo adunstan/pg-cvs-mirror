@@ -3,7 +3,7 @@
  * pg_freespacemap.c
  *	  display some contents of the free space map.
  *
- *	  $PostgreSQL$
+ *	  $PostgreSQL: pgsql/contrib/pg_freespacemap/pg_freespacemap.c,v 1.1 2006/02/12 03:55:53 momjian Exp $
  *-------------------------------------------------------------------------
  */
 #include "postgres.h"
@@ -15,6 +15,8 @@
 #define		NUM_FREESPACE_PAGES_ELEM 	6
 
 #if defined(WIN32) || defined(__CYGWIN__)
+/* Need DLLIMPORT for some things that are not so marked in main headers */
+extern DLLIMPORT int	MaxFSMPages;
 extern DLLIMPORT volatile uint32 InterruptHoldoffCount;
 #endif
 
