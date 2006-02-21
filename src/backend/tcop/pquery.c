@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/tcop/pquery.c,v 1.97 2005/11/03 21:35:57 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/tcop/pquery.c,v 1.98 2005/11/22 18:17:21 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -795,7 +795,7 @@ PortalRunSelect(Portal portal,
 			nprocessed = queryDesc->estate->es_processed;
 		}
 
-		if (direction != NoMovementScanDirection)
+		if (!ScanDirectionIsNoMovement(direction))
 		{
 			long		oldPos;
 
@@ -837,7 +837,7 @@ PortalRunSelect(Portal portal,
 			nprocessed = queryDesc->estate->es_processed;
 		}
 
-		if (direction != NoMovementScanDirection)
+		if (!ScanDirectionIsNoMovement(direction))
 		{
 			if (nprocessed > 0 && portal->atEnd)
 			{
@@ -890,13 +890,13 @@ RunFromStore(Portal portal, ScanDirection direction, long count,
 
 	(*dest->rStartup) (dest, CMD_SELECT, portal->tupDesc);
 
-	if (direction == NoMovementScanDirection)
+	if (ScanDirectionIsNoMovement(direction))
 	{
 		/* do nothing except start/stop the destination */
 	}
 	else
 	{
-		bool		forward = (direction == ForwardScanDirection);
+		bool		forward = ScanDirectionIsForward(direction);
 
 		for (;;)
 		{
