@@ -1,4 +1,4 @@
-# $PostgreSQL: pgsql/contrib/Makefile,v 1.61 2005/09/01 22:02:44 tgl Exp $
+# $PostgreSQL: pgsql/contrib/Makefile,v 1.62 2006/02/12 03:55:52 momjian Exp $
 
 subdir = contrib
 top_builddir = ..
@@ -38,7 +38,6 @@ WANTED_DIRS = \
 #		adddepend	\ (does not have a makefile)
 #		mSQL-interface	\ (requires msql installed)
 #		mac		\ (does not have a makefile)
-#		oracle		\ (does not have a makefile)
 #		start-scripts	\ (does not have a makefile)
 #		xml2		\ (requires libxml installed)
 
