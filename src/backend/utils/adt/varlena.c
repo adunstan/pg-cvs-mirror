@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/varlena.c,v 1.141 2005/11/22 18:17:23 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/varlena.c,v 1.142 2005/12/22 22:50:00 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -81,7 +81,7 @@ static void appendStringInfoText(StringInfo str, const text *t);
  *		ereport(ERROR, ...) if bad form.
  *
  *		BUGS:
- *				The input is scaned twice.
+ *				The input is scanned twice.
  *				The error checking of input is minimal.
  */
 Datum
