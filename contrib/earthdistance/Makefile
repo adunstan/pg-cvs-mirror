@@ -1,7 +1,8 @@
-# $PostgreSQL: pgsql/contrib/earthdistance/Makefile,v 1.15 2005/07/24 23:30:09 tgl Exp $
+# $PostgreSQL: pgsql/contrib/earthdistance/Makefile,v 1.16 2005/09/27 17:13:02 tgl Exp $
 
 MODULES = earthdistance
 DATA_built = earthdistance.sql
+DATA = uninstall_earthdistance.sql
 DOCS = README.earthdistance
 REGRESS = earthdistance
 

@@ -1,9 +1,10 @@
-# $PostgreSQL: pgsql/contrib/fuzzystrmatch/Makefile,v 1.5 2004/08/20 20:13:04 momjian Exp $
+# $PostgreSQL: pgsql/contrib/fuzzystrmatch/Makefile,v 1.6 2005/09/27 17:13:03 tgl Exp $
 
 MODULE_big = fuzzystrmatch
 SRCS += fuzzystrmatch.c dmetaphone.c
 OBJS = $(SRCS:.c=.o)
 DATA_built = fuzzystrmatch.sql
+DATA = uninstall_fuzzystrmatch.sql
 DOCS = README.fuzzystrmatch README.soundex
 
 ifdef USE_PGXS
