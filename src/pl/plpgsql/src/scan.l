@@ -4,7 +4,7 @@
  *			  procedural language
  *
  * IDENTIFICATION
- *    $PostgreSQL: pgsql/src/pl/plpgsql/src/scan.l,v 1.41 2005/06/22 01:35:02 neilc Exp $
+ *    $PostgreSQL: pgsql/src/pl/plpgsql/src/scan.l,v 1.42 2005/06/26 19:16:07 tgl Exp $
  *
  *    This software is copyrighted by Jan Wieck - Hamburg.
  *
@@ -522,7 +522,7 @@ plpgsql_scanner_init(const char *str, int functype)
 	 * Hack: skip any initial newline, so that in the common coding layout
 	 *		CREATE FUNCTION ... AS '
 	 *			code body
-	 *		' LANGUAGE 'plpgsql';
+	 *		' LANGUAGE plpgsql;
 	 * we will think "line 1" is what the programmer thinks of as line 1.
 	 *----------
 	 */
