@@ -4,7 +4,7 @@
  * IDENTIFICATION
  *
  *	  This software is copyrighted by Mark Hollomon
- *	  but is shameless cribbed from pltcl.c by Jan Wieck.
+ *	  but is shamelessly cribbed from pltcl.c by Jan Wieck.
  *
  *	  The author hereby grants permission  to  use,  copy,	modify,
  *	  distribute,  and	license this software and its documentation
@@ -33,7 +33,7 @@
  *	  ENHANCEMENTS, OR MODIFICATIONS.
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/pl/plperl/plperl.c,v 1.101 2006/01/28 16:20:31 adunstan Exp $
+ *	  $PostgreSQL: pgsql/src/pl/plperl/plperl.c,v 1.102 2006/02/26 22:26:39 neilc Exp $
  *
  **********************************************************************/
 
