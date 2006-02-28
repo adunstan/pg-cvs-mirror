@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/executor/nodeLimit.h,v 1.10 2004/08/29 04:13:06 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/executor/nodeLimit.h,v 1.11 2004/12/31 22:03:29 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -17,7 +17,7 @@
 #include "nodes/execnodes.h"
 
 extern int	ExecCountSlotsLimit(Limit *node);
-extern LimitState *ExecInitLimit(Limit *node, EState *estate);
+extern LimitState *ExecInitLimit(Limit *node, EState *estate, int eflags);
 extern TupleTableSlot *ExecLimit(LimitState *node);
 extern void ExecEndLimit(LimitState *node);
 extern void ExecReScanLimit(LimitState *node, ExprContext *exprCtxt);

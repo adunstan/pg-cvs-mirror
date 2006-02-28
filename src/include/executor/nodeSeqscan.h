@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/executor/nodeSeqscan.h,v 1.21 2004/08/29 04:13:06 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/executor/nodeSeqscan.h,v 1.22 2004/12/31 22:03:29 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -17,7 +17,7 @@
 #include "nodes/execnodes.h"
 
 extern int	ExecCountSlotsSeqScan(SeqScan *node);
-extern SeqScanState *ExecInitSeqScan(SeqScan *node, EState *estate);
+extern SeqScanState *ExecInitSeqScan(SeqScan *node, EState *estate, int eflags);
 extern TupleTableSlot *ExecSeqScan(SeqScanState *node);
 extern void ExecEndSeqScan(SeqScanState *node);
 extern void ExecSeqMarkPos(SeqScanState *node);

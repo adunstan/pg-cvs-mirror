@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/nodeTidscan.c,v 1.45 2005/11/26 22:14:56 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/nodeTidscan.c,v 1.46 2005/12/02 20:03:41 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -465,7 +465,7 @@ ExecTidRestrPos(TidScanState *node)
  * ----------------------------------------------------------------
  */
 TidScanState *
-ExecInitTidScan(TidScan *node, EState *estate)
+ExecInitTidScan(TidScan *node, EState *estate, int eflags)
 {
 	TidScanState *tidstate;
 	Relation	currentRelation;

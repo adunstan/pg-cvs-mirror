@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/nodeIndexscan.c,v 1.109 2005/12/03 05:51:02 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/nodeIndexscan.c,v 1.110 2006/01/25 20:29:23 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -458,7 +458,7 @@ ExecIndexRestrPos(IndexScanState *node)
  * ----------------------------------------------------------------
  */
 IndexScanState *
-ExecInitIndexScan(IndexScan *node, EState *estate)
+ExecInitIndexScan(IndexScan *node, EState *estate, int eflags)
 {
 	IndexScanState *indexstate;
 	Relation	currentRelation;
