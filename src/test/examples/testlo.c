@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/test/examples/testlo.c,v 1.24 2004/10/01 17:34:19 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/test/examples/testlo.c,v 1.25 2004/12/31 22:03:58 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -113,7 +113,7 @@ overwrite(PGconn *conn, Oid lobjId, int start, int len)
 	int			nwritten;
 	int			i;
 
-	lobj_fd = lo_open(conn, lobjId, INV_READ);
+	lobj_fd = lo_open(conn, lobjId, INV_WRITE);
 	if (lobj_fd < 0)
 		fprintf(stderr, "can't open large object %u", lobjId);
 
@@ -156,7 +156,7 @@ exportFile(PGconn *conn, Oid lobjId, char *filename)
 	int			fd;
 
 	/*
-	 * create an inversion "object"
+	 * open the large object
 	 */
 	lobj_fd = lo_open(conn, lobjId, INV_READ);
 	if (lobj_fd < 0)
@@ -173,7 +173,7 @@ exportFile(PGconn *conn, Oid lobjId, char *filename)
 	}
 
 	/*
-	 * read in from the Unix file and write to the inversion file
+	 * read in from the inversion file and write to the Unix file
 	 */
 	while ((nbytes = lo_read(conn, lobj_fd, buf, BUFSIZE)) > 0)
 	{
