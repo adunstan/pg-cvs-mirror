@@ -1,7 +1,7 @@
 /* -----------------------------------------------------------------------
  * formatting.c
  *
- * $PostgreSQL: pgsql/src/backend/utils/adt/formatting.c,v 1.104 2006/02/12 04:44:15 momjian Exp $
+ * $PostgreSQL: pgsql/src/backend/utils/adt/formatting.c,v 1.106 2006/02/12 23:48:23 momjian Exp $
  *
  *
  *	 Portions Copyright (c) 1999-2005, PostgreSQL Global Development Group
@@ -163,6 +163,7 @@ struct FormatNode
 
 /* ----------
  * Full months
+ *	This needs to be NLS-localized someday.
  * ----------
  */
 static char *months_full[] = {
