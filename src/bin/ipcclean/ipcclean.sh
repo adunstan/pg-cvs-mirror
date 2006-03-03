@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $PostgreSQL: pgsql/src/bin/ipcclean/ipcclean.sh,v 1.15 2003/11/29 19:52:04 pgsql Exp $
+# $PostgreSQL: pgsql/src/bin/ipcclean/ipcclean.sh,v 1.16 2006/01/05 01:56:29 momjian Exp $
 #
 
 CMDNAME=`basename $0`
@@ -19,7 +19,8 @@ if [ "$1" = '-?' -o "$1" = "--help" ]; then
     exit 0
 fi
 
-if [ "$USER" = 'root' -o "$LOGNAME" = 'root' ]
+# only check $LOGNAME if $USER is not set
+if [ "$USER" = 'root' -o \( ! "$USER" -a "$LOGNAME" = 'root' \) ]
 then
   (
     echo "$CMDNAME: cannot be run as root" 1>&2
