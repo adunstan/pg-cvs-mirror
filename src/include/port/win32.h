@@ -1,4 +1,4 @@
-/* $PostgreSQL: pgsql/src/include/port/win32.h,v 1.49 2005/10/25 15:15:16 tgl Exp $ */
+/* $PostgreSQL: pgsql/src/include/port/win32.h,v 1.50 2006/01/10 01:01:03 adunstan Exp $ */
 
 /* undefine and redefine after #include */
 #undef mkdir
@@ -39,6 +39,7 @@
 #else							/* not BUILDING_DLL */
 #define DLLIMPORT __declspec (dllimport)
 #endif
+
 #elif defined(WIN32_CLIENT_ONLY)
 
 #if defined(_DLL)
@@ -46,6 +47,7 @@
 #else							/* not _DLL */
 #define DLLIMPORT __declspec (dllimport)
 #endif
+
 #else							/* not CYGWIN, not MSVC, not MingW */
 
 #define DLLIMPORT
