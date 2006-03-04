@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/storage/file/fd.c,v 1.124 2005/12/08 15:38:29 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/storage/file/fd.c,v 1.125 2006/01/17 23:52:31 tgl Exp $
  *
  * NOTES:
  *
@@ -1236,7 +1236,7 @@ FileTruncate(File file, long offset)
  * Ideally this should be the *only* direct call of fopen() in the backend.
  */
 FILE *
-AllocateFile(char *name, char *mode)
+AllocateFile(const char *name, const char *mode)
 {
 	FILE	   *file;
 
