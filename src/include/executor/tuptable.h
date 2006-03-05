@@ -4,10 +4,10 @@
  *	  tuple table support stuff
  *
  *
- * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/executor/tuptable.h,v 1.28 2005/03/16 21:38:10 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/executor/tuptable.h,v 1.29 2005/10/15 02:49:44 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -9,12 +9,12 @@
  * See utils/resowner/README for more info.
  *
  *
- * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/resowner/resowner.c,v 1.16 2005/11/22 18:17:27 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/resowner/resowner.c,v 1.17 2005/12/08 19:19:22 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

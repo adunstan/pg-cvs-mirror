@@ -4,12 +4,12 @@
  *		Hash functions for use in dynahash.c hashtables
  *
  *
- * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/hash/hashfn.c,v 1.24 2005/06/08 23:02:05 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/hash/hashfn.c,v 1.25 2005/10/15 02:49:33 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

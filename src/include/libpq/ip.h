@@ -3,9 +3,9 @@
  * ip.h
  *	  Definitions for IPv6-aware network access.
  *
- * Copyright (c) 2003-2005, PostgreSQL Global Development Group
+ * Copyright (c) 2003-2006, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/include/libpq/ip.h,v 1.15 2005/10/17 16:24:20 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/libpq/ip.h,v 1.16 2005/11/22 18:17:30 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

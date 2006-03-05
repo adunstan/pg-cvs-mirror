@@ -4,10 +4,10 @@
  *	 functions for instrumentation of plan execution
  *
  *
- * Copyright (c) 2001-2005, PostgreSQL Global Development Group
+ * Copyright (c) 2001-2006, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/instrument.c,v 1.12 2005/04/16 20:07:35 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/instrument.c,v 1.13 2005/10/15 02:49:17 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

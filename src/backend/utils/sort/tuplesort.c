@@ -87,11 +87,11 @@
  * above.  Nonetheless, with large workMem we can have many tapes.
  *
  *
- * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/sort/tuplesort.c,v 1.60 2006/02/26 22:58:12 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/sort/tuplesort.c,v 1.61 2006/03/04 19:05:06 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

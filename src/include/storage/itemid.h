@@ -4,10 +4,10 @@
  *	  Standard POSTGRES buffer page item identifier definitions.
  *
  *
- * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/storage/itemid.h,v 1.24 2004/12/31 22:03:42 pgsql Exp $
+ * $PostgreSQL: pgsql/src/include/storage/itemid.h,v 1.25 2005/09/22 16:46:00 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

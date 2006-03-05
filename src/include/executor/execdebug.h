@@ -4,10 +4,10 @@
  *	  #defines governing debugging behaviour in the executor
  *
  *
- * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/executor/execdebug.h,v 1.27 2005/05/13 21:20:16 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/executor/execdebug.h,v 1.28 2005/10/15 02:49:44 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

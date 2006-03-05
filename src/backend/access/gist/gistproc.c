@@ -6,11 +6,11 @@
  * This gives R-tree behavior, with Guttman's poly-time split algorithm.
  *
  *
- * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	$PostgreSQL: pgsql/src/backend/access/gist/gistproc.c,v 1.3 2005/10/15 02:49:08 momjian Exp $
+ *	$PostgreSQL: pgsql/src/backend/access/gist/gistproc.c,v 1.4 2005/11/07 17:36:44 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

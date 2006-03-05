@@ -2,9 +2,9 @@
 #
 # Makefile for tools/thread
 #
-# Copyright (c) 2003-2005, PostgreSQL Global Development Group
+# Copyright (c) 2003-2006, PostgreSQL Global Development Group
 #
-# $PostgreSQL: pgsql/src/tools/thread/Makefile,v 1.8 2005/01/01 20:44:34 tgl Exp $
+# $PostgreSQL: pgsql/src/test/thread/Makefile,v 1.1 2006/02/04 01:00:02 momjian Exp $
 #
 #-------------------------------------------------------------------------
 

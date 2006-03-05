@@ -14,11 +14,11 @@
  * either.	This might need to be fixed someday.
  *
  *
- * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/nodes/equalfuncs.c,v 1.263 2006/02/19 00:04:26 neilc Exp $
+ *	  $PostgreSQL: pgsql/src/backend/nodes/equalfuncs.c,v 1.264 2006/03/03 03:30:52 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

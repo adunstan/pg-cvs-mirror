@@ -1,9 +1,9 @@
 /*
  * PostgreSQL System Views
  *
- * Copyright (c) 1996-2005, PostgreSQL Global Development Group
+ * Copyright (c) 1996-2006, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/backend/catalog/system_views.sql,v 1.24 2006/01/16 18:15:30 neilc Exp $
+ * $PostgreSQL: pgsql/src/backend/catalog/system_views.sql,v 1.25 2006/01/18 06:49:26 neilc Exp $
  */
 
 CREATE VIEW pg_roles AS 

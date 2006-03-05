@@ -2,10 +2,10 @@
 #
 # Makefile for src/bin/ipcclean
 #
-# Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
+# Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
 # Portions Copyright (c) 1994, Regents of the University of California
 #
-# $PostgreSQL: pgsql/src/bin/ipcclean/Makefile,v 1.18 2005/01/01 20:44:20 tgl Exp $
+# $PostgreSQL: pgsql/src/bin/ipcclean/Makefile,v 1.19 2005/12/09 21:19:35 petere Exp $
 #
 #-------------------------------------------------------------------------
 

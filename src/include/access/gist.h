@@ -6,10 +6,10 @@
  *	  changes should be made with care.
  *
  *
- * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/access/gist.h,v 1.50 2005/10/15 02:49:42 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/access/gist.h,v 1.51 2005/11/07 17:36:46 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

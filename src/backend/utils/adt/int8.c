@@ -3,11 +3,11 @@
  * int8.c
  *	  Internal 64-bit integer operations
  *
- * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/int8.c,v 1.58 2005/03/12 20:25:06 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/int8.c,v 1.59 2005/10/15 02:49:28 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

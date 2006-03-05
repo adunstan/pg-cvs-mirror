@@ -4,10 +4,10 @@
  *	  Stubs for getrusage(3).
  *
  *
- * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/rusagestub.h,v 1.15 2004/12/31 22:03:19 pgsql Exp $
+ * $PostgreSQL: pgsql/src/include/rusagestub.h,v 1.16 2005/07/27 12:44:10 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */

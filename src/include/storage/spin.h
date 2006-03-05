@@ -46,10 +46,10 @@
  *	be again.
  *
  *
- * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/storage/spin.h,v 1.26 2005/10/13 06:17:34 neilc Exp $
+ * $PostgreSQL: pgsql/src/include/storage/spin.h,v 1.27 2005/12/29 18:08:05 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

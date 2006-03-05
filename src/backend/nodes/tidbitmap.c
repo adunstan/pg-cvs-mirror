@@ -20,10 +20,10 @@
  * point, but for now that seems useless complexity.
  *
  *
- * Copyright (c) 2003-2005, PostgreSQL Global Development Group
+ * Copyright (c) 2003-2006, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/nodes/tidbitmap.c,v 1.7 2005/09/02 19:02:20 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/nodes/tidbitmap.c,v 1.8 2005/10/15 02:49:19 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

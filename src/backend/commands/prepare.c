@@ -7,10 +7,10 @@
  * accessed via the extended FE/BE query protocol.
  *
  *
- * Copyright (c) 2002-2005, PostgreSQL Global Development Group
+ * Copyright (c) 2002-2006, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/prepare.c,v 1.47 2006/01/18 06:49:26 neilc Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/prepare.c,v 1.48 2006/02/19 00:04:26 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */

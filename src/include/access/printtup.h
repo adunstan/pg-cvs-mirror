@@ -4,10 +4,10 @@
  *
  *
  *
- * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/access/printtup.h,v 1.32 2004/12/31 22:03:21 pgsql Exp $
+ * $PostgreSQL: pgsql/src/include/access/printtup.h,v 1.33 2005/03/16 21:38:09 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

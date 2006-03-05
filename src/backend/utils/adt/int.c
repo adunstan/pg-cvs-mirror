@@ -3,12 +3,12 @@
  * int.c
  *	  Functions for the built-in integer types (except int8).
  *
- * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/int.c,v 1.69 2005/11/17 22:14:53 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/int.c,v 1.70 2006/03/02 21:13:04 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

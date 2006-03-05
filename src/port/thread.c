@@ -5,9 +5,9 @@
  *		  Prototypes and macros around system calls, used to help make
  *		  threaded libraries reentrant and safe to use from threaded applications.
  *
- * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/port/thread.c,v 1.30 2005/07/28 04:03:14 tgl Exp $
+ * $PostgreSQL: pgsql/src/port/thread.c,v 1.31 2005/10/15 02:49:51 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

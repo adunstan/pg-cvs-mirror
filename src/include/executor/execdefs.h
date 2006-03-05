@@ -4,10 +4,10 @@
  *
  *
  *
- * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/executor/execdefs.h,v 1.17 2004/12/31 22:03:29 pgsql Exp $
+ * $PostgreSQL: pgsql/src/include/executor/execdefs.h,v 1.18 2005/05/13 21:20:16 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

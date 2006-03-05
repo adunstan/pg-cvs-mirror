@@ -4,10 +4,10 @@
  *	  POSTGRES relation scan descriptor definitions.
  *
  *
- * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/access/relscan.h,v 1.42 2005/11/26 03:03:07 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/access/relscan.h,v 1.43 2005/12/03 05:51:03 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

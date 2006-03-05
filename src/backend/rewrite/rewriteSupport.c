@@ -3,12 +3,12 @@
  * rewriteSupport.c
  *
  *
- * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/rewrite/rewriteSupport.c,v 1.61 2005/04/14 20:03:25 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/rewrite/rewriteSupport.c,v 1.62 2005/10/15 02:49:24 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

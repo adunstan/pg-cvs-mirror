@@ -20,10 +20,10 @@
  * for multiple subtypes or strategy numbers of a single opclass.
  *
  *
- * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/catalog/pg_amop.h,v 1.67 2005/11/07 17:36:46 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/catalog/pg_amop.h,v 1.68 2006/01/26 02:35:49 tgl Exp $
  *
  * NOTES
  *	 the genbki.sh script reads this file and generates .bki

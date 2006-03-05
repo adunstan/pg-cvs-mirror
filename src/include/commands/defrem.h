@@ -4,10 +4,10 @@
  *	  POSTGRES define and remove utility definitions.
  *
  *
- * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/commands/defrem.h,v 1.69 2005/11/21 12:49:32 alvherre Exp $
+ * $PostgreSQL: pgsql/src/include/commands/defrem.h,v 1.70 2006/02/10 19:01:12 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

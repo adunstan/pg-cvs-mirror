@@ -3,12 +3,12 @@
  * twophase_rmgr.c
  *	  Two-phase-commit resource managers tables
  *
- * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/transam/twophase_rmgr.c,v 1.1 2005/06/17 22:32:42 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/transam/twophase_rmgr.c,v 1.2 2005/10/15 02:49:09 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

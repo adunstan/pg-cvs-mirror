@@ -3,12 +3,12 @@
  * schemacmds.c
  *	  schema creation/manipulation commands
  *
- * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/schemacmds.c,v 1.37 2005/11/21 12:49:31 alvherre Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/schemacmds.c,v 1.38 2005/11/22 18:17:09 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

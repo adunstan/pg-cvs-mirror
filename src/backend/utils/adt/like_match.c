@@ -16,10 +16,10 @@
  * MatchTextIC (MBMatchTextIC)
  * do_like_escape (MB_do_like_escape)
  *
- * Copyright (c) 1996-2005, PostgreSQL Global Development Group
+ * Copyright (c) 1996-2006, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *	$PostgreSQL: pgsql/src/backend/utils/adt/like_match.c,v 1.11 2005/09/24 17:53:15 tgl Exp $
+ *	$PostgreSQL: pgsql/src/backend/utils/adt/like_match.c,v 1.12 2005/10/15 02:49:28 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
