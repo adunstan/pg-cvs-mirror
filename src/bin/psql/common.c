@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2006, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/psql/common.c,v 1.113 2006/03/03 23:38:30 tgl Exp $
+ * $PostgreSQL: pgsql/src/bin/psql/common.c,v 1.114 2006/03/05 15:58:51 momjian Exp $
  */
 #include "postgres_fe.h"
 #include "common.h"
@@ -1320,6 +1320,29 @@ is_superuser(void)
 		return false;
 
 	val = PQparameterStatus(pset.db, "is_superuser");
+
+	if (val && strcmp(val, "on") == 0)
+		return true;
+
+	return false;
+}
+
+
+/*
+ * Test if the current session uses standard string literals.
+ *
+ * Note: this will correctly detect the setting only with a protocol-3.0
+ * or newer backend; otherwise it will always say "false".
+ */
+bool
+standard_strings(void)
+{
+	const char *val;
+
+	if (!pset.db)
+		return false;
+
+	val = PQparameterStatus(pset.db, "standard_conforming_strings");
 
 	if (val && strcmp(val, "on") == 0)
 		return true;
