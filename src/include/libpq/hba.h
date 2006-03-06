@@ -4,7 +4,7 @@
  *	  Interface to hba.c
  *
  *
- * $PostgreSQL: pgsql/src/include/libpq/hba.h,v 1.40 2005/08/11 21:11:48 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/libpq/hba.h,v 1.41 2005/10/15 02:49:44 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -26,6 +26,9 @@ typedef enum UserAuth
 #ifdef USE_PAM
 	,uaPAM
 #endif   /* USE_PAM */
+#ifdef USE_LDAP
+    ,uaLDAP
+#endif
 } UserAuth;
 
 typedef struct Port hbaPort;
