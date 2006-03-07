@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/optimizer/plan/initsplan.c,v 1.114 2006/01/31 21:39:24 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/optimizer/plan/initsplan.c,v 1.115 2006/03/05 15:58:29 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -362,18 +362,6 @@ deconstruct_recurse(PlannerInfo *root, Node *jtnode, bool below_outer_join,
 													&leftids);
 				*qualscope = bms_union(leftids, rightids);
 				nonnullable_rels = leftids;
-				break;
-			case JOIN_UNION:
-
-				/*
-				 * This is where we fail if upper levels of planner haven't
-				 * rewritten UNION JOIN as an Append ...
-				 */
-				ereport(ERROR,
-						(errcode(ERRCODE_FEATURE_NOT_SUPPORTED),
-						 errmsg("UNION JOIN is not implemented")));
-				nonnullable_rels = NULL;		/* keep compiler quiet */
-				leftjoinlist = rightjoinlist = NIL;
 				break;
 			default:
 				elog(ERROR, "unrecognized join type: %d",

@@ -2,7 +2,7 @@
 #
 # Makefile for parser
 #
-# $PostgreSQL: /cvsroot/pgsql-server/src/backend/parser/Makefile,v 1.41 2003/05/29 20:40:36 tgl Exp $
+# $PostgreSQL: pgsql/src/backend/parser/Makefile,v 1.42 2003/11/29 19:51:51 pgsql Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -57,8 +57,7 @@ endif
 
 
 # Force these dependencies to be known even without dependency info built:
-
-gram.o keywords.o parser.o: $(srcdir)/parse.h
+gram.o keywords.o: $(srcdir)/parse.h
 
 
 # gram.c, parse.h, and scan.c are in the distribution tarball, so they
@@ -66,4 +65,4 @@ gram.o keywords.o parser.o: $(srcdir)/parse.h
 clean: 
 	rm -f SUBSYS.o $(OBJS)
 # And the garbage that might have been left behind by partial build:
-	@rm -f y.tab.c y.tab.h lex.yy.c
+	@rm -f y.tab.h y.tab.c y.output lex.yy.c
