@@ -1,12 +1,7 @@
 #ifndef _ECPG_SQL3TYPES_H
 #define _ECPG_SQL3TYPES_H
 
-/* SQL3 dynamic type codes
- *
- * Copyright (c) 2000, Christof Petig <christof.petig@wtal.de>
- *
- * $PostgreSQL: pgsql-server/src/interfaces/ecpg/include/sql3types.h,v 1.9 2003/11/29 19:52:08 pgsql Exp $
- */
+/* SQL3 dynamic type codes */
 
 /* chapter 13.1 table 2: Codes used for SQL data types in Dynamic SQL */
 
