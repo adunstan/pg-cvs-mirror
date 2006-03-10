@@ -56,7 +56,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/nbtree/nbtsort.c,v 1.98 2006/01/25 23:04:21 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/nbtree/nbtsort.c,v 1.99 2006/03/05 15:58:21 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -460,6 +460,12 @@ _bt_buildadd(BTWriteState *wstate, BTPageState *state, IndexTuple itup)
 	OffsetNumber last_off;
 	Size		pgspc;
 	Size		itupsz;
+
+	/*
+	 * This is a handy place to check for cancel interrupts during the
+	 * btree load phase of index creation.
+	 */
+	CHECK_FOR_INTERRUPTS();
 
 	npage = state->btps_page;
 	nblkno = state->btps_blkno;
