@@ -1,6 +1,4 @@
-<!--
-$PostgreSQL: pgsql/doc/src/sgml/plhandler.sgml,v 1.4 2005/01/05 23:42:03 tgl Exp $
--->
+<!-- $PostgreSQL: pgsql/doc/src/sgml/advanced.sgml,v 1.49 2005/04/09 03:52:43 momjian Exp $ -->
 
  <chapter id="plhandler">
    <title>Writing A Procedural Language Handler</title>

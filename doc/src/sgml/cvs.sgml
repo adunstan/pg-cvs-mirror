@@ -1,6 +1,4 @@
-<!--
-$PostgreSQL: pgsql/doc/src/sgml/cvs.sgml,v 1.35 2005/10/15 20:15:48 neilc Exp $
--->
+<!-- $PostgreSQL: pgsql/doc/src/sgml/advanced.sgml,v 1.49 2005/04/09 03:52:43 momjian Exp $ -->
 
 <appendix id="cvs">
  <appendixinfo>

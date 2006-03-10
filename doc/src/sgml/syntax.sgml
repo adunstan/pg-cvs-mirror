@@ -1,6 +1,4 @@
-<!--
-$PostgreSQL: pgsql/doc/src/sgml/syntax.sgml,v 1.104 2005/10/23 19:29:49 tgl Exp $
--->
+<!-- $PostgreSQL: pgsql/doc/src/sgml/advanced.sgml,v 1.49 2005/04/09 03:52:43 momjian Exp $ -->
 
 <chapter id="sql-syntax">
  <title>SQL Syntax</title>

@@ -1,6 +1,4 @@
-<!--
-$PostgreSQL: pgsql/doc/src/sgml/query.sgml,v 1.44 2005/03/10 23:21:20 tgl Exp $
--->
+<!-- $PostgreSQL: pgsql/doc/src/sgml/advanced.sgml,v 1.49 2005/04/09 03:52:43 momjian Exp $ -->
 
  <chapter id="tutorial-sql">
   <title>The <acronym>SQL</acronym> Language</title>

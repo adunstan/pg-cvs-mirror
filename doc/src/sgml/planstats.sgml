@@ -1,6 +1,4 @@
-<!--
-$PostgreSQL: pgsql/doc/src/sgml/planstats.sgml,v 1.4 2005/10/15 20:12:32 neilc Exp $
--->
+<!-- $PostgreSQL: pgsql/doc/src/sgml/advanced.sgml,v 1.49 2005/04/09 03:52:43 momjian Exp $ -->
 
 <chapter id="planner-stats-details">
  <title>How the Planner Uses Statistics</title>

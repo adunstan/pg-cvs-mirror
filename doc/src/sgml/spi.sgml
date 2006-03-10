@@ -1,6 +1,4 @@
-<!--
-$PostgreSQL: pgsql/doc/src/sgml/spi.sgml,v 1.43 2005/09/12 18:40:19 neilc Exp $
--->
+<!-- $PostgreSQL: pgsql/doc/src/sgml/advanced.sgml,v 1.49 2005/04/09 03:52:43 momjian Exp $ -->
 
 <chapter id="spi">
  <title>Server Programming Interface</title>

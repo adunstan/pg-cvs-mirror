@@ -1,6 +1,5 @@
-<!--
-$PostgreSQL: pgsql/doc/src/sgml/backup.sgml,v 2.77 2006/02/24 14:03:01 momjian Exp $
--->
+<!-- $PostgreSQL: pgsql/doc/src/sgml/advanced.sgml,v 1.49 2005/04/09 03:52:43 momjian Exp $ -->
+
 <chapter id="backup">
  <title>Backup and Restore</title>
 

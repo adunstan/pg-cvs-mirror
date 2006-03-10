@@ -1,6 +1,4 @@
-<!--
-$PostgreSQL: pgsql/doc/src/sgml/xtypes.sgml,v 1.25 2005/01/10 00:04:38 tgl Exp $
--->
+<!-- $PostgreSQL: pgsql/doc/src/sgml/advanced.sgml,v 1.49 2005/04/09 03:52:43 momjian Exp $ -->
 
  <sect1 id="xtypes">
   <title>User-Defined Types</title>

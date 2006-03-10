@@ -1,6 +1,6 @@
+<!-- $PostgreSQL: pgsql/doc/src/sgml/advanced.sgml,v 1.49 2005/04/09 03:52:43 momjian Exp $ -->
 <!--
  Documentation of the system catalogs, directed toward PostgreSQL developers
- $PostgreSQL: pgsql/doc/src/sgml/catalogs.sgml,v 2.119 2006/01/21 19:05:59 tgl Exp $
  -->
 
 <chapter id="catalogs">

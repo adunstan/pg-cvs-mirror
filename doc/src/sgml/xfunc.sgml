@@ -1,6 +1,4 @@
-<!--
-$PostgreSQL: pgsql/doc/src/sgml/xfunc.sgml,v 1.109 2005/11/29 01:46:54 alvherre Exp $
--->
+<!-- $PostgreSQL: pgsql/doc/src/sgml/advanced.sgml,v 1.49 2005/04/09 03:52:43 momjian Exp $ -->
 
  <sect1 id="xfunc">
   <title>User-Defined Functions</title>
