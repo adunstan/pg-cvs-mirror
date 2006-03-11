@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/int.c,v 1.70 2006/03/02 21:13:04 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/int.c,v 1.71 2006/03/05 15:58:42 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -39,13 +39,6 @@
 #include "utils/array.h"
 #include "utils/builtins.h"
 
-
-#ifndef SHRT_MAX
-#define SHRT_MAX (0x7FFF)
-#endif
-#ifndef SHRT_MIN
-#define SHRT_MIN (-0x8000)
-#endif
 
 #define SAMESIGN(a,b)	(((a) < 0) == ((b) < 0))
 

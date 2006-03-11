@@ -10,7 +10,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/numutils.c,v 1.72 2005/12/02 02:49:11 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/numutils.c,v 1.73 2006/03/05 15:58:43 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -21,26 +21,6 @@
 #include <ctype.h>
 
 #include "utils/builtins.h"
-
-#ifndef INT_MAX
-#define INT_MAX (0x7FFFFFFFL)
-#endif
-#ifndef INT_MIN
-#define INT_MIN (-INT_MAX-1)
-#endif
-#ifndef SHRT_MAX
-#define SHRT_MAX (0x7FFF)
-#endif
-#ifndef SHRT_MIN
-#define SHRT_MIN (-SHRT_MAX-1)
-#endif
-#ifndef SCHAR_MAX
-#define SCHAR_MAX (0x7F)
-#endif
-#ifndef SCHAR_MIN
-#define SCHAR_MIN (-SCHAR_MAX-1)
-#endif
-
 
 /*
  * pg_atoi: convert string to integer

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/float.c,v 1.121 2006/03/05 15:58:41 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/float.c,v 1.122 2006/03/10 20:15:25 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -72,13 +72,6 @@
 #ifndef M_PI
 /* from my RH5.2 gcc math.h file - thomas 2000-04-03 */
 #define M_PI 3.14159265358979323846
-#endif
-
-#ifndef SHRT_MAX
-#define SHRT_MAX 32767
-#endif
-#ifndef SHRT_MIN
-#define SHRT_MIN (-32768)
 #endif
 
 /* Recent HPUXen have isfinite() macro in place of more standard finite() */
