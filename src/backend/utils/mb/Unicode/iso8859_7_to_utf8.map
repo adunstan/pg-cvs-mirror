@@ -1,3 +1,5 @@
+/* $PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.314 2006/03/07 02:54:23 momjian Exp $ */
+
 static pg_local_to_utf LUmapISO8859_7[ 125 ] = {
   {0x0080, 0xc280},
   {0x0081, 0xc281},

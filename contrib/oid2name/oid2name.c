@@ -4,6 +4,7 @@
  *
  * Originally by
  * B. Palmer, bpalmer@crimelabs.net 1-17-2001
+ * $PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.314 2006/03/07 02:54:23 momjian Exp $
  */
 #include "postgres_fe.h"
 

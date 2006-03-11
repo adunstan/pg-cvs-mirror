@@ -1,4 +1,6 @@
 /*
+ * $PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.314 2006/03/07 02:54:23 momjian Exp $
+ *
  * This code comes from John the Ripper password cracker, with reentrant
  * and crypt(3) interfaces added, but optimizations specific to password
  * cracking removed.

@@ -1,2 +1,4 @@
+# $PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.314 2006/03/07 02:54:23 momjian Exp $
+
 # Force _GNU_SOURCE on; plperl is broken with Perl 5.8.0 otherwise
 CPPFLAGS="-D_GNU_SOURCE"

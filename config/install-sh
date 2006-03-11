@@ -1,6 +1,8 @@
 #!/bin/sh
 # install - install a program, script, or datafile
 
+# $PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.314 2006/03/07 02:54:23 momjian Exp $
+
 scriptversion=2005-02-02.21
 
 # This originates from X11R5 (mit/util/scripts/install.sh), which was

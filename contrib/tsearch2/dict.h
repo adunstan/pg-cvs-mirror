@@ -1,3 +1,5 @@
+/* $PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.314 2006/03/07 02:54:23 momjian Exp $ */
+
 #ifndef __DICT_H__
 #define __DICT_H__
 #include "postgres.h"

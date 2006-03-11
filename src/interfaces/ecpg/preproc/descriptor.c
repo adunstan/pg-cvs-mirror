@@ -1,6 +1,8 @@
 /*
  * functions needed for descriptor handling
  *
+ * $PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.314 2006/03/07 02:54:23 momjian Exp $
+ *
  * since descriptor might be either a string constant or a string var
  * we need to check for a constant if we expect a constant
  */

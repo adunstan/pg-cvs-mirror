@@ -1,6 +1,8 @@
 /*
 moddatetime.c
 
+$PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.314 2006/03/07 02:54:23 momjian Exp $
+
 What is this?
 It is a function to be called from a trigger for the purpose of updating
 a modification datetime stamp in a record when that record is UPDATEd.

@@ -1,6 +1,7 @@
 /*
  * this is a small part of c.h since we don't want to leak all postgres
  * definitions into ecpg programs
+ * $PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.314 2006/03/07 02:54:23 momjian Exp $
  */
 
 #ifndef _ECPGLIB_H

@@ -1,4 +1,6 @@
 /******************************************************************************
+  $PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.314 2006/03/07 02:54:23 momjian Exp $
+
   This file contains routines that can be bound to a Postgres backend and
   called by the backend in the process of processing queries.  The calling
   format for these routines is dictated by Postgres architecture.

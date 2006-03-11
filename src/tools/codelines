@@ -1,4 +1,6 @@
-:
+#!/bin/sh
+
+# $PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.314 2006/03/07 02:54:23 momjian Exp $
 
 # This script is used to compute the total number of "C" lines in the release
 # This should be run from the top of the CVS tree after a 'make distclean'

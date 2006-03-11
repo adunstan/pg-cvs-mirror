@@ -3,6 +3,8 @@
 # mkldexport
 #	create an AIX exports file from an object file
 #
+# $PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.314 2006/03/07 02:54:23 momjian Exp $
+#
 # Usage:
 #	mkldexport objectfile [location]
 # where

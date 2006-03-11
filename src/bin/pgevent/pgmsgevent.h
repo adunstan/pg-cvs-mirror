@@ -1,3 +1,5 @@
+/* $PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.314 2006/03/07 02:54:23 momjian Exp $ */
+
 /*	*/
 /*	 Values are 32 bit values layed out as follows: */
 /*	*/

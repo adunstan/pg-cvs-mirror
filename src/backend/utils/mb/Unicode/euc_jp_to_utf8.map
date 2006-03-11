@@ -1,3 +1,5 @@
+/* $PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.314 2006/03/07 02:54:23 momjian Exp $ */
+
 static pg_local_to_utf LUmapEUC_JP[] = {
   {0x8ea1, 0xefbda1},
   {0x8ea2, 0xefbda2},

@@ -1,3 +1,5 @@
+/* $PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.314 2006/03/07 02:54:23 momjian Exp $ */
+
 static pg_local_to_utf LUmapGBK[ 21792 ] = {
   {0x0080, 0xe282ac},
   {0x8140, 0xe4b882},

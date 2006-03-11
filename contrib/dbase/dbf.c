@@ -1,3 +1,5 @@
+/* $PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.314 2006/03/07 02:54:23 momjian Exp $ */
+
 /* Routines to read and write xBase-files (.dbf)
 
    By Maarten Boekhold, 29th of oktober 1995

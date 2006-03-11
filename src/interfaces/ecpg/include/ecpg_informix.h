@@ -1,5 +1,6 @@
 /*
  * This file contains stuff needed to be as compatible to Informix as possible.
+ * $PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.314 2006/03/07 02:54:23 momjian Exp $
  */
 #ifndef _ECPG_INFORMIX_H
 #define _ECPG_INFORMIX_H

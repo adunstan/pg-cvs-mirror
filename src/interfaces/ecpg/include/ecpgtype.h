@@ -4,6 +4,8 @@
  *
  * All types that can be handled for host variable declarations has to
  * be handled eventually.
+ *
+ * $PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.314 2006/03/07 02:54:23 momjian Exp $
  */
 
 /*

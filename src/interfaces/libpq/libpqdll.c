@@ -1,3 +1,5 @@
+/* $PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.314 2006/03/07 02:54:23 momjian Exp $ */
+
 #define WIN32_LEAN_AND_MEAN
 #include <winsock.h>
 #include <windows.h>

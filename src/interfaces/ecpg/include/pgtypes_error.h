@@ -1,3 +1,5 @@
+/* $PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.314 2006/03/07 02:54:23 momjian Exp $ */
+
 #define PGTYPES_NUM_OVERFLOW		301
 #define PGTYPES_NUM_BAD_NUMERIC		302
 #define PGTYPES_NUM_DIVIDE_ZERO		303

@@ -1,5 +1,7 @@
 # ISO 3166 alpha-2 country codes
 #
+# $PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.314 2006/03/07 02:54:23 momjian Exp $
+#
 # @(#)iso3166.tab	1.17
 #
 # From Paul Eggert (2004-06-14):
