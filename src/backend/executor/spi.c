@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/spi.c,v 1.147 2006/02/28 04:10:28 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/spi.c,v 1.148 2006/03/05 15:58:26 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1282,7 +1282,7 @@ _SPI_prepare_plan(const char *src, _SPI_plan *plan)
 		Node	   *parsetree = (Node *) lfirst(list_item);
 		List	   *query_list;
 
-		query_list = pg_analyze_and_rewrite(parsetree, argtypes, nargs);
+		query_list = pg_analyze_and_rewrite(parsetree, src, argtypes, nargs);
 
 		query_list_list = lappend(query_list_list, query_list);
 

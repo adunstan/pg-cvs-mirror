@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-connect.c,v 1.326 2006/02/13 22:33:57 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-connect.c,v 1.327 2006/03/05 15:59:08 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1918,6 +1918,8 @@ freePGconn(PGconn *conn)
 		free(conn->krbsrvname);
 #endif
 	/* Note that conn->Pfdebug is not ours to close or free */
+	if (conn->last_query)
+		free(conn->last_query);
 	pg_freeaddrinfo_all(conn->addrlist_family, conn->addrlist);
 	notify = conn->notifyHead;
 	while (notify != NULL)

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/schemacmds.c,v 1.38 2005/11/22 18:17:09 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/schemacmds.c,v 1.39 2006/03/05 15:58:24 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -121,7 +121,7 @@ CreateSchemaCommand(CreateSchemaStmt *stmt)
 		List	   *querytree_list;
 		ListCell   *querytree_item;
 
-		querytree_list = parse_analyze(parsetree, NULL, 0);
+		querytree_list = parse_analyze(parsetree, NULL, NULL, 0);
 
 		foreach(querytree_item, querytree_list)
 		{
