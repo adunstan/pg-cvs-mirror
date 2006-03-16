@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/access/tupdesc.h,v 1.47 2005/03/07 04:42:17 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/access/tupdesc.h,v 1.48 2006/03/05 15:58:53 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -91,5 +91,7 @@ extern void TupleDescInitEntry(TupleDesc desc,
 				   int attdim);
 
 extern TupleDesc BuildDescForRelation(List *schema);
+
+extern TupleDesc BuildDescFromLists(List *names, List *types, List *typmods);
 
 #endif   /* TUPDESC_H */

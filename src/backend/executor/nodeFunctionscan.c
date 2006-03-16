@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/nodeFunctionscan.c,v 1.36 2006/02/28 04:10:27 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/nodeFunctionscan.c,v 1.37 2006/03/05 15:58:26 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -202,7 +202,9 @@ ExecInitFunctionScan(FunctionScan *node, EState *estate, int eflags)
 	}
 	else if (functypclass == TYPEFUNC_RECORD)
 	{
-		tupdesc = BuildDescForRelation(rte->coldeflist);
+		tupdesc = BuildDescFromLists(rte->eref->colnames,
+									 rte->funccoltypes,
+									 rte->funccoltypmods);
 	}
 	else
 	{
