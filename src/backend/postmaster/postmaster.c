@@ -37,7 +37,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/postmaster/postmaster.c,v 1.481 2006/02/01 16:00:06 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/postmaster/postmaster.c,v 1.482 2006/03/05 15:58:36 momjian Exp $
  *
  * NOTES
  *
@@ -810,7 +810,7 @@ PostmasterMain(int argc, char *argv[])
 		DNSServiceRegistrationCreate(bonjour_name,
 									 "_postgresql._tcp.",
 									 "",
-									 htonl(PostPortNumber),
+									 htons(PostPortNumber),
 									 "",
 									 (DNSServiceRegistrationReply) reg_reply,
 									 NULL);
