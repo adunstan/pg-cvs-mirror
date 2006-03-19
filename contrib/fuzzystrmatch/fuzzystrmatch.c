@@ -5,7 +5,7 @@
  *
  * Joe Conway <mail@joeconway.com>
  *
- * $PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.314 2006/03/07 02:54:23 momjian Exp $
+ * $PostgreSQL: pgsql/contrib/fuzzystrmatch/fuzzystrmatch.c,v 1.19 2006/03/11 04:38:29 momjian Exp $
  * Copyright (c) 2001-2006, PostgreSQL Global Development Group
  * ALL RIGHTS RESERVED;
  *
@@ -347,14 +347,10 @@ _metaphone(
 	if (max_phonemes == 0)
 	{							/* Assume largest possible */
 		*phoned_word = palloc(sizeof(char) * strlen(word) +1);
-		if (!*phoned_word)
-			return META_ERROR;
 	}
 	else
 	{
 		*phoned_word = palloc(sizeof(char) * max_phonemes + 1);
-		if (!*phoned_word)
-			return META_ERROR;
 	}
 
 	/*-- The first phoneme has to be processed specially. --*/
