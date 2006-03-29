@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/init/postinit.c,v 1.160 2006/01/04 21:06:32 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/init/postinit.c,v 1.161 2006/03/05 15:58:46 momjian Exp $
  *
  *
  *-------------------------------------------------------------------------
@@ -166,7 +166,7 @@ ReverifyMyDatabase(const char *name)
 		 * other backend will eventually try to write them and die in
 		 * mdblindwrt.	Flush any such pages to forestall trouble.
 		 */
-		DropBuffers(MyDatabaseId);
+		DropDatabaseBuffers(MyDatabaseId);
 		/* Now I can commit hara-kiri with a clear conscience... */
 		ereport(FATAL,
 				(errcode(ERRCODE_UNDEFINED_DATABASE),
