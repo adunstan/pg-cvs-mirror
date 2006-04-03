@@ -1,4 +1,4 @@
-# $PostgreSQL: pgsql/contrib/Makefile,v 1.62 2006/02/12 03:55:52 momjian Exp $
+# $PostgreSQL: pgsql/contrib/Makefile,v 1.63 2006/02/25 19:18:58 petere Exp $
 
 subdir = contrib
 top_builddir = ..
@@ -42,7 +42,7 @@ WANTED_DIRS = \
 #		xml2		\ (requires libxml installed)
 
 
-all install installdirs uninstall clean distclean maintainer-clean:
+all install installdirs uninstall distprep clean distclean maintainer-clean:
 	@for dir in $(WANTED_DIRS); do \
 		$(MAKE) -C $$dir $@ || exit; \
 	done
