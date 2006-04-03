@@ -11,7 +11,7 @@
  * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/access/xlog_internal.h,v 1.10 2006/03/05 15:58:54 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/access/xlog_internal.h,v 1.11 2006/03/24 04:32:13 tgl Exp $
  */
 #ifndef XLOG_INTERNAL_H
 #define XLOG_INTERNAL_H
@@ -182,8 +182,8 @@ typedef XLogLongPageHeaderData *XLogLongPageHeader;
 
 /* Check if an xrecoff value is in a plausible range */
 #define XRecOffIsValid(xrecoff) \
-		((xrecoff) % BLCKSZ >= SizeOfXLogShortPHD && \
-		(BLCKSZ - (xrecoff) % BLCKSZ) >= SizeOfXLogRecord)
+		((xrecoff) % XLOG_BLCKSZ >= SizeOfXLogShortPHD && \
+		(XLOG_BLCKSZ - (xrecoff) % XLOG_BLCKSZ) >= SizeOfXLogRecord)
 
 /*
  * The XLog directory and control file (relative to $PGDATA)
