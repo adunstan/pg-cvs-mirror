@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/nodes/print.c,v 1.77 2005/10/15 02:49:19 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/nodes/print.c,v 1.78 2006/03/05 15:58:28 momjian Exp $
  *
  * HISTORY
  *	  AUTHOR			DATE			MAJOR EVENT
@@ -357,8 +357,7 @@ print_expr(Node *expr, List *rtable)
 		getTypeOutputInfo(c->consttype,
 						  &typoutput, &typIsVarlena);
 
-		outputstr = DatumGetCString(OidFunctionCall1(typoutput,
-													 c->constvalue));
+		outputstr = OidOutputFunctionCall(typoutput, c->constvalue);
 		printf("%s", outputstr);
 		pfree(outputstr);
 	}

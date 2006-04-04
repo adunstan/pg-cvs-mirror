@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/spi.c,v 1.148 2006/03/05 15:58:26 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/spi.c,v 1.149 2006/03/14 22:48:19 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -629,9 +629,9 @@ SPI_fname(TupleDesc tupdesc, int fnumber)
 char *
 SPI_getvalue(HeapTuple tuple, TupleDesc tupdesc, int fnumber)
 {
+	char	   *result;
 	Datum		origval,
-				val,
-				result;
+				val;
 	bool		isnull;
 	Oid			typoid,
 				foutoid;
@@ -666,14 +666,13 @@ SPI_getvalue(HeapTuple tuple, TupleDesc tupdesc, int fnumber)
 	else
 		val = origval;
 
-	result = OidFunctionCall1(foutoid,
-							  val);
+	result = OidOutputFunctionCall(foutoid, val);
 
 	/* Clean up detoasted copy, if any */
 	if (val != origval)
 		pfree(DatumGetPointer(val));
 
-	return DatumGetCString(result);
+	return result;
 }
 
 Datum
