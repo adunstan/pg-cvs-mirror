@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/catalog/pg_type.h,v 1.169 2006/01/16 18:15:30 neilc Exp $
+ * $PostgreSQL: pgsql/src/include/catalog/pg_type.h,v 1.170 2006/03/05 15:58:55 momjian Exp $
  *
  * NOTES
  *	  the genbki.sh script reads this file and generates .bki
@@ -156,7 +156,7 @@ CATALOG(pg_type,1247) BKI_BOOTSTRAP
 	bool		typnotnull;
 
 	/*
-	 * Domains use typbasetype to show the base (or complex) type that the
+	 * Domains use typbasetype to show the base (or domain) type that the
 	 * domain is based on.	Zero if the type is not a domain.
 	 */
 	Oid			typbasetype;
