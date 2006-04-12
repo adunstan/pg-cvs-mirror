@@ -34,7 +34,7 @@
  *
  *
  * IDENTIFICATION
- *		$PostgreSQL: pgsql/src/bin/pg_dump/pg_restore.c,v 1.72 2005/09/28 13:11:26 petere Exp $
+ *		$PostgreSQL: pgsql/src/bin/pg_dump/pg_restore.c,v 1.73 2005/10/15 02:49:39 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -224,7 +224,6 @@ main(int argc, char **argv)
 				break;
 
 			case 'n':			/* Dump data for this schema only */
-				opts->selTypes = 1;
 				opts->schemaNames = strdup(optarg);
 				break;
 
