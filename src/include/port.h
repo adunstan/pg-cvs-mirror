@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/port.h,v 1.84.2.4 2006/03/04 04:30:51 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/port.h,v 1.84.2.5 2006/03/05 05:33:19 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -255,10 +255,8 @@ extern int	win32_open(const char *, int,...);
 #define		open(a,b,...)	win32_open(a,b,##__VA_ARGS__)
 #endif
 
-#ifndef __BORLANDC__
 #define popen(a,b) _popen(a,b)
 #define pclose(a) _pclose(a)
-#endif
 
 /* Missing rand functions */
 extern long lrand48(void);
