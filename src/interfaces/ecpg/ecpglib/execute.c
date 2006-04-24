@@ -1,4 +1,4 @@
-/* $PostgreSQL: pgsql/src/interfaces/ecpg/ecpglib/execute.c,v 1.38.4.2 2005/06/02 12:37:25 meskes Exp $ */
+/* $PostgreSQL: pgsql/src/interfaces/ecpg/ecpglib/execute.c,v 1.38.4.3 2005/11/30 12:51:06 meskes Exp $ */
 
 /*
  * The aim is to get a simpler inteface to the database routines.
@@ -869,7 +869,7 @@ ECPGstore_input(const int lineno, const bool force_indicator, const struct varia
 
 					if (var->arrsize > 1)
 					{
-						for (element = 0; element < var->arrsize; element++)
+						for (element = 0; element < var->arrsize; element++, nval = PGTYPESnumeric_new())
 						{
 							if (var->type == ECPGt_numeric)
 								PGTYPESnumeric_copy((numeric *) ((var + var->offset * element)->value), nval);
