@@ -1,4 +1,4 @@
-/* $PostgreSQL: pgsql/src/interfaces/ecpg/preproc/preproc.y,v 1.320 2006/02/08 09:10:04 meskes Exp $ */
+/* $PostgreSQL: pgsql/src/interfaces/ecpg/preproc/preproc.y,v 1.321 2006/03/07 01:00:19 tgl Exp $ */
 
 /* Copyright comment */
 %{
@@ -1196,6 +1196,8 @@ VariableResetStmt:	RESET var_name
 			{ $$ = make_str("reset transaction isolation level"); }
 		| RESET SESSION AUTHORIZATION
 			{ $$ = make_str("reset session authorization"); }
+		| RESET CONNECTION
+			{ $$ = make_str("reset connection"); }
 		| RESET ALL
 			{ $$ = make_str("reset all"); }
 		;
