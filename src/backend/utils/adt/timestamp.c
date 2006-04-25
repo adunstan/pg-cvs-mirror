@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/timestamp.c,v 1.161 2006/03/05 15:58:44 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/timestamp.c,v 1.162 2006/03/06 22:49:16 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -917,6 +917,18 @@ Datum
 now(PG_FUNCTION_ARGS)
 {
 	PG_RETURN_TIMESTAMPTZ(GetCurrentTransactionStartTimestamp());
+}
+
+Datum
+statement_timestamp(PG_FUNCTION_ARGS)
+{
+	PG_RETURN_TIMESTAMPTZ(GetCurrentStatementStartTimestamp());
+}
+
+Datum
+clock_timestamp(PG_FUNCTION_ARGS)
+{
+	PG_RETURN_TIMESTAMPTZ(GetCurrentTimestamp());
 }
 
 Datum
