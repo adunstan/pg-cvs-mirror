@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/storage/large_object.h,v 1.31 2004/12/31 22:03:42 pgsql Exp $
+ * $PostgreSQL: pgsql/src/include/storage/large_object.h,v 1.32 2005/06/13 02:26:52 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -71,7 +71,7 @@ typedef struct LargeObjectDesc
 /* inversion stuff in inv_api.c */
 extern void close_lo_relation(bool isCommit);
 extern Oid	inv_create(Oid lobjId);
-extern LargeObjectDesc *inv_open(Oid lobjId, int flags);
+extern LargeObjectDesc *inv_open(Oid lobjId, int flags, MemoryContext mcxt);
 extern void inv_close(LargeObjectDesc *obj_desc);
 extern int	inv_drop(Oid lobjId);
 extern int	inv_seek(LargeObjectDesc *obj_desc, int offset, int whence);
