@@ -11,7 +11,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-secure.c,v 1.75 2006/03/05 15:59:09 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-secure.c,v 1.76 2006/04/27 00:36:34 momjian Exp $
  *
  * NOTES
  *	  [ Most of these notes are wrong/obsolete, but perhaps not all ]
@@ -1014,9 +1014,9 @@ SSLerrfree(char *buf)
 }
 
 /*
- *	Return pointer to SSL object.
+ *	Return pointer to OpenSSL object.
  */
-SSL *
+void *
 PQgetssl(PGconn *conn)
 {
 	if (!conn)
