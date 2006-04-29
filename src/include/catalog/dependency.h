@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/catalog/dependency.h,v 1.20 2006/02/12 19:11:01 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/catalog/dependency.h,v 1.21 2006/03/05 15:58:54 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -206,5 +206,8 @@ extern void dropDatabaseDependencies(Oid databaseId);
 extern void shdepDropOwned(List *relids, DropBehavior behavior);
 
 extern void shdepReassignOwned(List *relids, Oid newrole);
+
+extern void performSequenceDefaultDeletion(const ObjectAddress *object,
+					DropBehavior behavior, int deleteFlag);
 
 #endif   /* DEPENDENCY_H */
