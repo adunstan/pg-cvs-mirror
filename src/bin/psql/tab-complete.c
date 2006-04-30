@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2006, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/psql/tab-complete.c,v 1.149 2006/03/05 15:58:52 momjian Exp $
+ * $PostgreSQL: pgsql/src/bin/psql/tab-complete.c,v 1.150 2006/04/02 09:02:41 alvherre Exp $
  */
 
 /*----------------------------------------------------------------------
@@ -1373,7 +1373,8 @@ psql_completion(char *text, int start, int end)
 	{
 		static const char *const list_privileg[] =
 		{"SELECT", "INSERT", "UPDATE", "DELETE", "RULE", "REFERENCES",
-		"TRIGGER", "CREATE", "TEMPORARY", "EXECUTE", "USAGE", "ALL", NULL};
+		 "TRIGGER", "CREATE", "CONNECT", "TEMPORARY", "EXECUTE", "USAGE",
+		 "ALL", NULL};
 
 		COMPLETE_WITH_LIST(list_privileg);
 	}
