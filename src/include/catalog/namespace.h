@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/catalog/namespace.h,v 1.40 2006/04/25 14:09:16 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/catalog/namespace.h,v 1.41 2006/04/25 14:11:59 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -44,6 +44,7 @@ extern bool TypeIsVisible(Oid typid);
 extern FuncCandidateList FuncnameGetCandidates(List *names, int nargs);
 extern bool FunctionIsVisible(Oid funcid);
 
+extern Oid	OpernameGetOprid(List *names, Oid oprleft, Oid oprright);
 extern FuncCandidateList OpernameGetCandidates(List *names, char oprkind);
 extern bool OperatorIsVisible(Oid oprid);
 
