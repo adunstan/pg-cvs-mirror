@@ -12,7 +12,7 @@
  * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/interfaces/libpq/libpq-int.h,v 1.99 2004/12/31 22:03:50 pgsql Exp $
+ * $PostgreSQL: pgsql/src/interfaces/libpq/libpq-int.h,v 1.100 2005/01/06 00:59:47 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -303,6 +303,7 @@ struct pg_conn
 	char		cryptSalt[2];	/* password salt received from backend */
 	pgParameterStatus *pstatus; /* ParameterStatus data */
 	int			client_encoding;	/* encoding id */
+	bool		std_strings;	/* standard_conforming_strings */
 	PGVerbosity verbosity;		/* error/notice message verbosity */
 	PGlobjfuncs *lobjfuncs;		/* private state for large-object access
 								 * fns */
