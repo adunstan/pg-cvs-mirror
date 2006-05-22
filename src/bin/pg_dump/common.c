@@ -11,7 +11,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/bin/pg_dump/common.c,v 1.88 2006/03/02 01:18:24 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/bin/pg_dump/common.c,v 1.89 2006/03/05 15:58:50 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -768,7 +768,7 @@ parseOidArray(const char *str, Oid *array, int arraysize)
 			{
 				if (argNum >= arraysize)
 				{
-					write_msg(NULL, "could not parse numeric array: too many numbers\n");
+					write_msg(NULL, "could not parse numeric array \"%s\": too many numbers\n", str);
 					exit_nicely();
 				}
 				temp[j] = '\0';
@@ -783,7 +783,7 @@ parseOidArray(const char *str, Oid *array, int arraysize)
 			if (!(isdigit((unsigned char) s) || s == '-') ||
 				j >= sizeof(temp) - 1)
 			{
-				write_msg(NULL, "could not parse numeric array: invalid character in number\n");
+				write_msg(NULL, "could not parse numeric array \"%s\": invalid character in number\n", str);
 				exit_nicely();
 			}
 			temp[j++] = s;
