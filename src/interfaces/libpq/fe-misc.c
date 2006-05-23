@@ -23,7 +23,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-misc.c,v 1.125 2006/03/05 15:59:09 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-misc.c,v 1.126 2006/05/18 18:19:47 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -60,6 +60,7 @@
 #include "libpq-int.h"
 #include "pqsignal.h"
 #include "mb/pg_wchar.h"
+#include "pg_config_paths.h"
 
 
 static int	pqPutMsgBytes(const void *buf, size_t len, PGconn *conn);
