@@ -1,7 +1,7 @@
 /**********************************************************************
  * plperl.c - perl as a procedural language for PostgreSQL
  *
- *	  $PostgreSQL: pgsql/src/pl/plperl/plperl.c,v 1.107 2006/03/19 22:22:56 neilc Exp $
+ *	  $PostgreSQL: pgsql/src/pl/plperl/plperl.c,v 1.108 2006/04/04 19:35:37 tgl Exp $
  *
  **********************************************************************/
 
@@ -524,6 +524,12 @@ plperl_trigger_build_args(FunctionCallInfo fcinfo)
 
 	hv_store(hv, "relname", 7,
 			 newSVpv(SPI_getrelname(tdata->tg_relation), 0), 0);
+
+	hv_store(hv, "table_name", 10,
+			 newSVpv(SPI_getrelname(tdata->tg_relation), 0), 0);
+
+	hv_store(hv, "table_schema", 12,
+			 newSVpv(SPI_getnspname(tdata->tg_relation), 0), 0);
 
 	if (TRIGGER_FIRED_BEFORE(tdata->tg_event))
 		when = "BEFORE";
