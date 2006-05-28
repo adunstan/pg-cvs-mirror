@@ -17,7 +17,7 @@
  *
  *
  * IDENTIFICATION
- *		$PostgreSQL: pgsql/src/bin/pg_dump/pg_backup_archiver.h,v 1.68 2005/10/15 02:49:38 momjian Exp $
+ *		$PostgreSQL: pgsql/src/bin/pg_dump/pg_backup_archiver.h,v 1.69 2006/02/05 20:58:47 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -325,6 +325,9 @@ extern void WriteDataChunks(ArchiveHandle *AH);
 
 extern teReqs TocIDRequired(ArchiveHandle *AH, DumpId id, RestoreOptions *ropt);
 extern bool checkSeek(FILE *fp);
+
+#define appendStringLiteralAHX(buf,str,AH) \
+	appendStringLiteral(buf, str, (AH)->public.encoding, (AH)->public.std_strings)
 
 /*
  * Mandatory routines for each supported format
