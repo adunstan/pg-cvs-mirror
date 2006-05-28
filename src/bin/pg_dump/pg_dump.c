@@ -12,7 +12,7 @@
  *	by PostgreSQL
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/bin/pg_dump/pg_dump.c,v 1.433 2006/03/05 15:58:50 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/bin/pg_dump/pg_dump.c,v 1.434 2006/05/26 23:48:54 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1445,8 +1445,6 @@ dumpStdStrings(Archive *AH)
 
 		check_sql_result(res, g_conn, qry->data, PGRES_TUPLES_OK);
 
-		PQclear(res);
-
 		resetPQExpBuffer(qry);
 
 		std_strings = (strcmp(PQgetvalue(res, 0, 0), "on") == 0);
@@ -1454,7 +1452,8 @@ dumpStdStrings(Archive *AH)
 		appendStringLiteral(qry, PQgetvalue(res, 0, 0), true, !std_strings);
 		appendPQExpBuffer(qry, ";\n");
 		puts(PQgetvalue(res, 0, 0));
-		
+
+		PQclear(res);
 	}
 	
 	ArchiveEntry(AH, nilCatalogId, createDumpId(),
