@@ -5,7 +5,7 @@
  * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/bin/scripts/dropdb.c,v 1.15 2005/06/21 04:02:33 tgl Exp $
+ * $PostgreSQL: pgsql/src/bin/scripts/dropdb.c,v 1.16 2006/03/05 15:58:52 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -131,6 +131,7 @@ main(int argc, char *argv[])
 		exit(1);
 	}
 
+	PQclear(result);
 	PQfinish(conn);
 	if (!quiet)
 	{
