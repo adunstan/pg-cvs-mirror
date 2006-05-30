@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/parser/parse_coerce.c,v 2.135 2006/03/05 15:58:33 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/pl/plpgsql/src/scan.l,v 1.45 2006/03/09 21:29:38 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -222,6 +222,12 @@ dump			{ return O_DUMP;			}
 {param}{space}*\.{space}*{identifier}{space}*%ROWTYPE	{
 	plpgsql_error_lineno = plpgsql_scanner_lineno();
 	return plpgsql_parse_dblwordrowtype(yytext); }
+{identifier}{space}*\.\(\*\)		{
+	plpgsql_error_lineno = plpgsql_scanner_lineno();
+	return plpgsql_parse_recfieldnames(yytext); }
+{identifier}{space}*\.\({identifier}\)		{
+	plpgsql_error_lineno = plpgsql_scanner_lineno();
+	return plpgsql_parse_recindex(yytext); }
 
 {digit}+		{ return T_NUMBER;			}
 
