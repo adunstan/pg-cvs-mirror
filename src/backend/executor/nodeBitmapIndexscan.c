@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/nodeBitmapIndexscan.c,v 1.17 2006/03/05 15:58:26 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/nodeBitmapIndexscan.c,v 1.18 2006/05/23 15:21:52 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -112,7 +112,7 @@ MultiExecBitmapIndexScan(BitmapIndexScanState *node)
 
 	/* must provide our own instrumentation support */
 	if (node->ss.ps.instrument)
-		InstrStopNodeMulti(node->ss.ps.instrument, nTuples);
+		InstrStopNode(node->ss.ps.instrument, nTuples);
 
 	return (Node *) tbm;
 }

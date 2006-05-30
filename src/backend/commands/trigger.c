@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/trigger.c,v 1.200 2006/03/05 15:58:25 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/trigger.c,v 1.201 2006/04/27 00:33:41 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1306,7 +1306,7 @@ ExecCallTriggerFunc(TriggerData *trigdata,
 	 * one "tuple returned" (really the number of firings).
 	 */
 	if (instr)
-		InstrStopNode(instr + tgindx, true);
+		InstrStopNode(instr + tgindx, 1);
 
 	return (HeapTuple) DatumGetPointer(result);
 }
@@ -2154,7 +2154,7 @@ AfterTriggerExecute(AfterTriggerEvent event,
 	 * one "tuple returned" (really the number of firings).
 	 */
 	if (instr)
-		InstrStopNode(instr + tgindx, true);
+		InstrStopNode(instr + tgindx, 1);
 }
 
 
