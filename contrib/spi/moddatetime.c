@@ -1,7 +1,7 @@
 /*
 moddatetime.c
 
-$PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.314 2006/03/07 02:54:23 momjian Exp $
+$PostgreSQL: pgsql/contrib/spi/moddatetime.c,v 1.12 2006/03/11 04:38:30 momjian Exp $
 
 What is this?
 It is a function to be called from a trigger for the purpose of updating
@@ -16,6 +16,8 @@ OH, me, I'm Terry Mackintosh <terry@terrym.com>
 
 #include "executor/spi.h"		/* this is what you need to work with SPI */
 #include "commands/trigger.h"	/* -"- and triggers */
+
+PG_MODULE_MAGIC;
 
 extern Datum moddatetime(PG_FUNCTION_ARGS);
 

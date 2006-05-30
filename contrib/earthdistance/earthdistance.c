@@ -1,4 +1,4 @@
-/* $PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.314 2006/03/07 02:54:23 momjian Exp $ */
+/* $PostgreSQL: pgsql/contrib/earthdistance/earthdistance.c,v 1.10 2006/03/11 04:38:29 momjian Exp $ */
 
 #include "postgres.h"
 
@@ -6,6 +6,8 @@
 
 #include "utils/geo_decls.h"	/* for Pt */
 
+
+PG_MODULE_MAGIC;
 
 /* Earth's radius is in statute miles. */
 const double EARTH_RADIUS = 3958.747716;

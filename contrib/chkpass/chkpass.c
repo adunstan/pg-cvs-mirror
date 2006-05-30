@@ -4,7 +4,7 @@
  * darcy@druid.net
  * http://www.druid.net/darcy/
  *
- * $PostgreSQL: pgsql/contrib/chkpass/chkpass.c,v 1.14 2005/10/15 02:49:04 momjian Exp $
+ * $PostgreSQL: pgsql/contrib/chkpass/chkpass.c,v 1.15 2006/03/19 22:22:55 neilc Exp $
  * best viewed with tabs set to 4
  */
 
@@ -19,6 +19,8 @@
 #endif
 
 #include "fmgr.h"
+
+PG_MODULE_MAGIC;
 
 /*
  * This type encrypts it's input unless the first character is a colon.

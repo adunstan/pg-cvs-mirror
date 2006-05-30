@@ -1,7 +1,7 @@
 /*
  *	PostgreSQL definitions for managed Large Objects.
  *
- *	$PostgreSQL: pgsql/contrib/lo/lo.c,v 1.14 2003/11/29 19:51:35 pgsql Exp $
+ *	$PostgreSQL: pgsql/contrib/lo/lo.c,v 1.15 2005/06/23 00:06:37 tgl Exp $
  *
  */
 
@@ -17,6 +17,7 @@
 /* Required for triggers */
 #include "commands/trigger.h"
 
+PG_MODULE_MAGIC;
 
 #define atooid(x)  ((Oid) strtoul((x), NULL, 10))
 

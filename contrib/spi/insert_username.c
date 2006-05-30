@@ -1,7 +1,7 @@
 /*
  * insert_username.c
  * $Modified: Thu Oct 16 08:13:42 1997 by brook $
- * $PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.314 2006/03/07 02:54:23 momjian Exp $
+ * $PostgreSQL: pgsql/contrib/spi/insert_username.c,v 1.13 2006/03/11 04:38:30 momjian Exp $
  *
  * insert user name in response to a trigger
  * usage:  insert_username (column_name)
@@ -10,6 +10,8 @@
 #include "executor/spi.h"		/* this is what you need to work with SPI */
 #include "commands/trigger.h"	/* -"- and triggers */
 #include "miscadmin.h"			/* for GetUserName() */
+
+PG_MODULE_MAGIC;
 
 extern Datum insert_username(PG_FUNCTION_ARGS);
 
