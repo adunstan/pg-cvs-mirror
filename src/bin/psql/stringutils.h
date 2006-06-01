@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2006, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/psql/stringutils.h,v 1.22 2005/01/01 05:43:08 momjian Exp $
+ * $PostgreSQL: pgsql/src/bin/psql/stringutils.h,v 1.23 2006/03/05 15:58:52 momjian Exp $
  */
 #ifndef STRINGUTILS_H
 #define STRINGUTILS_H
@@ -15,6 +15,7 @@ extern char *strtokx(const char *s,
 		const char *delim,
 		const char *quote,
 		char escape,
+		bool e_strings,
 		bool del_quotes,
 		int encoding);
 
