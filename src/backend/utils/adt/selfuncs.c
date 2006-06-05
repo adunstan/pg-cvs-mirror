@@ -15,7 +15,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/selfuncs.c,v 1.204 2006/05/02 04:34:18 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/selfuncs.c,v 1.205 2006/05/02 11:28:55 teodor Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -4555,9 +4555,9 @@ genericcostestimate(PlannerInfo *root,
 	 * Compute the index access cost.
 	 *
 	 * Disk cost: our generic assumption is that the index pages will be read
-	 * sequentially, so they have cost 1.0 each, not random_page_cost.
+	 * sequentially, so they cost seq_page_cost each, not random_page_cost.
 	 */
-	*indexTotalCost = numIndexPages;
+	*indexTotalCost = seq_page_cost * numIndexPages;
 
 	/*
 	 * CPU cost: any complex expressions in the indexquals will need to be
