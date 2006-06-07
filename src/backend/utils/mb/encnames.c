@@ -2,7 +2,7 @@
  * Encoding names and routines for work with it. All
  * in this file is shared bedween FE and BE.
  *
- * $PostgreSQL: pgsql/src/backend/utils/mb/encnames.c,v 1.28 2006/02/12 22:32:42 tgl Exp $
+ * $PostgreSQL: pgsql/src/backend/utils/mb/encnames.c,v 1.29 2006/02/18 16:15:22 petere Exp $
  */
 #ifdef FRONTEND
 #include "postgres_fe.h"
@@ -13,9 +13,7 @@
 #include "utils/builtins.h"
 #endif
 
-#ifndef WIN32_CLIENT_ONLY
 #include <unistd.h>
-#endif
 
 #include "mb/pg_wchar.h"
 #include <ctype.h>

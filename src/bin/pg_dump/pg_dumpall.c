@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
- * $PostgreSQL: pgsql/src/bin/pg_dump/pg_dumpall.c,v 1.77 2006/05/28 21:13:54 tgl Exp $
+ * $PostgreSQL: pgsql/src/bin/pg_dump/pg_dumpall.c,v 1.78 2006/05/31 11:02:42 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -14,10 +14,7 @@
 #include "postgres_fe.h"
 
 #include <time.h>
-
-#ifndef WIN32_CLIENT_ONLY
 #include <unistd.h>
-#endif
 
 #ifdef ENABLE_NLS
 #include <locale.h>

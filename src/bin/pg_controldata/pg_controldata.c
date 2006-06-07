@@ -6,7 +6,7 @@
  * copyright (c) Oliver Elphick <olly@lfix.co.uk>, 2001;
  * licence: BSD
  *
- * $PostgreSQL: pgsql/src/bin/pg_controldata/pg_controldata.c,v 1.27 2005/10/15 02:49:37 momjian Exp $
+ * $PostgreSQL: pgsql/src/bin/pg_controldata/pg_controldata.c,v 1.28 2006/04/03 23:35:04 tgl Exp $
  */
 #include "postgres.h"
 
@@ -104,7 +104,7 @@ main(int argc, char *argv[])
 
 	snprintf(ControlFilePath, MAXPGPATH, "%s/global/pg_control", DataDir);
 
-	if ((fd = open(ControlFilePath, O_RDONLY)) == -1)
+	if ((fd = open(ControlFilePath, O_RDONLY, 0)) == -1)
 	{
 		fprintf(stderr, _("%s: could not open file \"%s\" for reading: %s\n"),
 				progname, ControlFilePath, strerror(errno));

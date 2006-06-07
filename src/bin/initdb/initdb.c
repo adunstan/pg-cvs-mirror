@@ -42,7 +42,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  * Portions taken from FreeBSD.
  *
- * $PostgreSQL: pgsql/src/bin/initdb/initdb.c,v 1.115 2006/05/26 23:48:54 momjian Exp $
+ * $PostgreSQL: pgsql/src/bin/initdb/initdb.c,v 1.116 2006/05/27 18:07:06 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -2269,8 +2269,7 @@ setlocales(void)
 }
 
 #ifdef WIN32
-/* MingW headers are incomplete */
-typedef WINAPI BOOL (*__CreateRestrictedToken)(HANDLE, DWORD, DWORD, PSID_AND_ATTRIBUTES, DWORD, PLUID_AND_ATTRIBUTES, DWORD, PSID_AND_ATTRIBUTES, PHANDLE);
+typedef BOOL (WINAPI *__CreateRestrictedToken)(HANDLE, DWORD, DWORD, PSID_AND_ATTRIBUTES, DWORD, PLUID_AND_ATTRIBUTES, DWORD, PSID_AND_ATTRIBUTES, PHANDLE);
 #define DISABLE_MAX_PRIVILEGE   0x1 
 
 /*
