@@ -3,11 +3,10 @@
  *
  * Copyright (c) 2000-2006, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/psql/help.c,v 1.109 2006/02/12 04:04:32 momjian Exp $
+ * $PostgreSQL: pgsql/src/bin/psql/help.c,v 1.110 2006/03/05 15:58:51 momjian Exp $
  */
 #include "postgres_fe.h"
 #include "common.h"
-#include "pqexpbuffer.h"
 #include "input.h"
 #include "print.h"
 #include "help.h"
