@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/pl/plpgsql/src/scan.l,v 1.48 2006/05/30 12:03:13 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/pl/plpgsql/src/scan.l,v 1.49 2006/05/30 13:40:55 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -116,6 +116,7 @@ dolqinside		[^$]+
 \.\.			{ return K_DOTDOT;			}
 alias			{ return K_ALIAS;			}
 begin			{ return K_BEGIN;			}
+by				{ return K_BY;   			}
 close			{ return K_CLOSE;			}
 constant		{ return K_CONSTANT;		}
 continue		{ return K_CONTINUE;		}
