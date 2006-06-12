@@ -13,7 +13,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/main/main.c,v 1.100 2006/02/01 00:31:59 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/main/main.c,v 1.101 2006/03/05 15:58:27 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -117,6 +117,9 @@ main(int argc, char *argv[])
 						 argv[0], err);
 			exit(1);
 		}
+
+        /* In case of general protection fault, don't show GUI popup box */
+        SetErrorMode(SEM_FAILCRITICALERRORS | SEM_NOGPFAULTERRORBOX);
 	}
 #endif
 
