@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2006, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/psql/variables.c,v 1.22 2005/10/15 02:49:41 momjian Exp $
+ * $PostgreSQL: pgsql/src/bin/psql/variables.c,v 1.23 2006/03/05 15:58:52 momjian Exp $
  */
 #include "postgres_fe.h"
 #include "common.h"
@@ -127,7 +127,11 @@ PrintVariables(VariableSpace space)
 	struct _variable *ptr;
 
 	for (ptr = space->next; ptr; ptr = ptr->next)
+	{
 		printf("%s = '%s'\n", ptr->name, ptr->value);
+		if (cancel_pressed)
+			break;
+	}
 }
 
 bool

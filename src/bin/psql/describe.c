@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2006, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/psql/describe.c,v 1.138 2006/05/31 11:02:42 momjian Exp $
+ * $PostgreSQL: pgsql/src/bin/psql/describe.c,v 1.139 2006/06/01 00:15:36 tgl Exp $
  */
 #include "postgres_fe.h"
 #include "describe.h"
@@ -659,6 +659,11 @@ describeTableDetails(const char *pattern, bool verbose)
 		relname = PQgetvalue(res, i, 2);
 
 		if (!describeOneTableDetails(nspname, relname, oid, verbose))
+		{
+			PQclear(res);
+			return false;
+		}
+		if (cancel_pressed)
 		{
 			PQclear(res);
 			return false;
