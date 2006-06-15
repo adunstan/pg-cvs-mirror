@@ -9,7 +9,7 @@
  *
  * Copyright (c) 2003-2006, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/pl/plpgsql/src/plerrcodes.h,v 1.6 2005/01/01 20:44:32 tgl Exp $
+ * $PostgreSQL: pgsql/src/pl/plpgsql/src/plerrcodes.h,v 1.7 2006/03/05 15:59:10 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -722,3 +722,13 @@
 {
 	"index_corrupted", ERRCODE_INDEX_CORRUPTED
 },
+
+{
+	"no_data_found", ERRCODE_NO_DATA
+},
+
+{
+	"too_many_rows", ERRCODE_CARDINALITY_VIOLATION
+},
+
+
