@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/nodeFunctionscan.c,v 1.37 2006/03/05 15:58:26 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/nodeFunctionscan.c,v 1.38 2006/03/16 00:31:54 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -220,7 +220,7 @@ ExecInitFunctionScan(FunctionScan *node, EState *estate, int eflags)
 	BlessTupleDesc(tupdesc);
 
 	scanstate->tupdesc = tupdesc;
-	ExecAssignScanType(&scanstate->ss, tupdesc, false);
+	ExecAssignScanType(&scanstate->ss, tupdesc);
 
 	/*
 	 * Other node-specific setup

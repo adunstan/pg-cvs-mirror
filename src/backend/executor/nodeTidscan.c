@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/nodeTidscan.c,v 1.47 2006/02/28 04:10:28 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/nodeTidscan.c,v 1.48 2006/03/05 15:58:26 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -524,7 +524,7 @@ ExecInitTidScan(TidScan *node, EState *estate, int eflags)
 	/*
 	 * get the scan type from the relation descriptor.
 	 */
-	ExecAssignScanType(&tidstate->ss, RelationGetDescr(currentRelation), false);
+	ExecAssignScanType(&tidstate->ss, RelationGetDescr(currentRelation));
 
 	/*
 	 * Initialize result tuple type and projection info.
