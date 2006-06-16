@@ -10,7 +10,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/tcop/utility.c,v 1.256 2006/04/15 17:45:41 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/tcop/utility.c,v 1.257 2006/04/30 18:30:40 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -986,12 +986,12 @@ ProcessUtility(Node *parsetree,
 					case OBJECT_RULE:
 						/* RemoveRewriteRule checks permissions */
 						RemoveRewriteRule(relId, stmt->property,
-										  stmt->behavior);
+										  stmt->behavior, stmt->missing_ok);
 						break;
 					case OBJECT_TRIGGER:
 						/* DropTrigger checks permissions */
 						DropTrigger(relId, stmt->property,
-									stmt->behavior);
+									stmt->behavior, stmt->missing_ok);
 						break;
 					default:
 						elog(ERROR, "unrecognized object type: %d",
