@@ -10,7 +10,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/postmaster/autovacuum.c,v 1.18 2006/05/03 22:45:26 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/postmaster/autovacuum.c,v 1.19 2006/05/19 15:15:37 alvherre Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -208,7 +208,7 @@ autovac_forkexec(void)
 	int			ac = 0;
 
 	av[ac++] = "postgres";
-	av[ac++] = "-forkautovac";
+	av[ac++] = "--forkautovac";
 	av[ac++] = NULL;			/* filled in by postmaster_forkexec */
 	av[ac] = NULL;
 
