@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/varlena.c,v 1.146 2006/04/04 19:35:36 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/varlena.c,v 1.147 2006/05/21 20:05:19 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -19,7 +19,7 @@
 #include "access/tuptoaster.h"
 #include "catalog/pg_type.h"
 #include "lib/stringinfo.h"
-#include "libpq/crypt.h"
+#include "libpq/md5.h"
 #include "libpq/pqformat.h"
 #include "mb/pg_wchar.h"
 #include "miscadmin.h"
