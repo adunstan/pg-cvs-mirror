@@ -1,4 +1,4 @@
-/* $PostgreSQL: pgsql/src/interfaces/ecpg/pgtypeslib/numeric.c,v 1.25 2006/03/11 04:38:40 momjian Exp $ */
+/* $PostgreSQL: pgsql/src/interfaces/ecpg/pgtypeslib/numeric.c,v 1.26 2006/04/24 09:45:22 meskes Exp $ */
 
 #include "postgres_fe.h"
 #include <ctype.h>
@@ -131,7 +131,10 @@ PGTYPESnumeric_new(void)
 		return NULL;
 
 	if (alloc_var(var, 0) < 0)
+	{
+		free(var);
 		return NULL;
+	}
 
 	return var;
 }

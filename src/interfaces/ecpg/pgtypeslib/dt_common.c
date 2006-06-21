@@ -1,4 +1,4 @@
-/* $PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.314 2006/03/07 02:54:23 momjian Exp $ */
+/* $PostgreSQL: pgsql/src/interfaces/ecpg/pgtypeslib/dt_common.c,v 1.34 2006/03/11 04:38:39 momjian Exp $ */
 
 #include "postgres_fe.h"
 
@@ -1035,7 +1035,7 @@ abstime2tm(AbsoluteTime _time, int *tzp, struct tm * tm, char **tzn)
 		*tzp = -tm->tm_gmtoff;	/* tm_gmtoff is Sun/DEC-ism */
 
 		/*
-		 * XXX FreeBSD man pages indicate that this should work - tgl 97/04/23
+		 * FreeBSD man pages indicate that this should work - tgl 97/04/23
 		 */
 		if (tzn != NULL)
 		{
@@ -2739,7 +2739,7 @@ PGTYPEStimestamp_defmt_scan(char **str, char *fmt, timestamp * d,
 			}
 			else
 			{
-				/* XXX Error: no match */
+				/* Error: no match */
 				err = 1;
 				return err;
 			}
