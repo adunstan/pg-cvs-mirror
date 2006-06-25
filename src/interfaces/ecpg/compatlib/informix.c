@@ -1,4 +1,4 @@
-/* $PostgreSQL: pgsql/src/interfaces/ecpg/compatlib/informix.c,v 1.43 2006/06/21 10:24:40 meskes Exp $ */
+/* $PostgreSQL: pgsql/src/interfaces/ecpg/compatlib/informix.c,v 1.44 2006/06/23 14:50:01 meskes Exp $ */
 
 #include <stdlib.h>
 #include <string.h>
@@ -666,14 +666,10 @@ intoasc(interval * i, char *str)
 	return 0;
 }
 
-/***************************************************************************
-						  rfmt.c  -  description
-							 -------------------
-	begin				 : Wed Apr 2 2003
-	copyright			 : (C) 2003 by Carsten Wolff
-	email				 : carsten.wolff@credativ.de
-	Contributed under the PostgreSQL License by credativ GmbH
- ***************************************************************************/
+/*
+ *	rfmt.c  -  description
+ *	by Carsten Wolff <carsten.wolff@credativ.de>, Wed Apr 2 2003
+ */
 
 static struct
 {
