@@ -1,6 +1,6 @@
 /* dynamic SQL support routines
  *
- * $PostgreSQL: pgsql/src/interfaces/ecpg/ecpglib/descriptor.c,v 1.14 2006/01/15 22:46:53 neilc Exp $
+ * $PostgreSQL: pgsql/src/interfaces/ecpg/ecpglib/descriptor.c,v 1.15 2006/06/21 10:24:40 meskes Exp $
  */
 
 #define POSTGRES_ECPG_INTERNAL
@@ -349,7 +349,7 @@ ECPGget_desc(int lineno, const char *desc_name, int index,...)
 					return false;
 				}
 				/* allocate storage if needed */
-				if (arrsize == 0 && var != NULL && *(void **) var == NULL)
+				if (arrsize == 0 && *(void **) var == NULL)
 				{
 					void *mem = (void *) ECPGalloc(offset * ntuples, lineno);
 					if (!mem)
