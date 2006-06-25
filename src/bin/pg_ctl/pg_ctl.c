@@ -4,7 +4,7 @@
  *
  * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/pg_ctl/pg_ctl.c,v 1.68 2006/06/07 22:24:44 momjian Exp $
+ * $PostgreSQL: pgsql/src/bin/pg_ctl/pg_ctl.c,v 1.69 2006/06/18 15:38:37 petere Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1608,7 +1608,7 @@ main(int argc, char **argv)
 					wait_set = true;
 					break;
 				default:
-					write_stderr(_("%s: invalid option %s\n"), progname, optarg);
+					/* getopt_long already issued a suitable error message */
 					do_advice();
 					exit(1);
 			}
