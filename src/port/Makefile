@@ -15,7 +15,7 @@
 #		for use only by the backend binaries
 #
 # IDENTIFICATION
-#    $PostgreSQL: pgsql/src/port/Makefile,v 1.30 2005/12/09 21:19:36 petere Exp $
+#    $PostgreSQL: pgsql/src/port/Makefile,v 1.31 2006/05/08 02:18:50 momjian Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -64,6 +64,10 @@ thread_srv.o: thread.c
 	$(CC) $(CFLAGS) $(subst -DFRONTEND,, $(CPPFLAGS)) -c $< -o $@
 
 # Dependency is to ensure that path changes propagate
+#
+# We create a separate file rather than put these in pg_config.h
+# because many of these values come from makefiles and are not
+# available to configure.
 pg_config_paths.h: $(top_builddir)/src/Makefile.global
 	echo "#define PGBINDIR \"$(bindir)\"" >$@
 	echo "#define PGSHAREDIR \"$(datadir)\"" >>$@
