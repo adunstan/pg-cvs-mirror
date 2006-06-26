@@ -1,7 +1,7 @@
 /*
  * Headers for port/dirent.c, win32 native implementation of dirent functions
  *
- * $PostgreSQL$
+ * $PostgreSQL: pgsql/src/include/port/win32_msvc/dirent.h,v 1.1 2006/06/07 22:24:45 momjian Exp $
  */
 
 #ifndef _WIN32VC_DIRENT_H
