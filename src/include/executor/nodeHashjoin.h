@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/executor/nodeHashjoin.h,v 1.31 2006/02/28 04:10:28 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/executor/nodeHashjoin.h,v 1.32 2006/03/05 15:58:56 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -23,7 +23,7 @@ extern TupleTableSlot *ExecHashJoin(HashJoinState *node);
 extern void ExecEndHashJoin(HashJoinState *node);
 extern void ExecReScanHashJoin(HashJoinState *node, ExprContext *exprCtxt);
 
-extern void ExecHashJoinSaveTuple(HeapTuple heapTuple, uint32 hashvalue,
+extern void ExecHashJoinSaveTuple(MinimalTuple tuple, uint32 hashvalue,
 					  BufFile **fileptr);
 
 #endif   /* NODEHASHJOIN_H */
