@@ -18,7 +18,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/postmaster/syslogger.c,v 1.24 2006/06/07 22:24:44 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/postmaster/syslogger.c,v 1.25 2006/06/18 15:38:37 petere Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -141,8 +141,7 @@ SysLoggerMain(int argc, char *argv[])
 
 	am_syslogger = true;
 
-	init_ps_display("logger process", "", "");
-	set_ps_display("");
+	init_ps_display("logger process", "", "", "");
 
 	/*
 	 * If we restarted, our stderr is already redirected into our own input

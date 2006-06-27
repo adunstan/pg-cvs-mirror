@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/bootstrap/bootstrap.c,v 1.216 2006/06/08 23:55:48 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/bootstrap/bootstrap.c,v 1.217 2006/06/18 15:38:36 petere Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -353,8 +353,7 @@ BootstrapMain(int argc, char *argv[])
 				statmsg = "??? process";
 				break;
 		}
-		init_ps_display(statmsg, "", "");
-		set_ps_display("");
+		init_ps_display(statmsg, "", "", "");
 	}
 
 	/* Acquire configuration parameters, unless inherited from postmaster */
