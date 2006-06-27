@@ -10,7 +10,7 @@
  * Written by Peter Eisentraut <peter_e@gmx.net>.
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.321 2006/06/05 02:49:58 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.322 2006/06/19 01:51:21 tgl Exp $
  *
  *--------------------------------------------------------------------
  */
@@ -725,7 +725,7 @@ static struct config_bool ConfigureNamesBool[] =
 						 "at which that command began execution.")
 		},
 		&pgstat_collect_querystring,
-		false, NULL, NULL
+		true, NULL, NULL
 	},
 
 	{
