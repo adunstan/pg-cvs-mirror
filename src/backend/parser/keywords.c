@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/parser/keywords.c,v 1.170 2005/12/27 04:00:07 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/parser/keywords.c,v 1.171 2006/03/05 15:58:32 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -169,6 +169,7 @@ static const ScanKeyword ScanKeywords[] = {
 	{"including", INCLUDING},
 	{"increment", INCREMENT},
 	{"index", INDEX},
+	{"indexes", INDEXES},
 	{"inherit", INHERIT},
 	{"inherits", INHERITS},
 	{"initially", INITIALLY},
