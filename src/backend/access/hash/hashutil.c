@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/hash/hashutil.c,v 1.46 2006/01/25 23:26:11 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/hash/hashutil.c,v 1.47 2006/03/05 15:58:21 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -172,4 +172,17 @@ _hash_checkpage(Relation rel, Buffer buf, int flags)
 							RelationGetRelationName(rel)),
 					 errhint("Please REINDEX it.")));
 	}
+}
+
+Datum
+hashoption(PG_FUNCTION_ARGS)
+{
+#define HASH_MIN_FILLFACTOR			50
+#define HASH_DEFAULT_FILLFACTOR		75
+
+	ArrayType	   *options = (ArrayType *) PG_GETARG_POINTER(0);
+
+	/* Use index common routine. */
+	PG_RETURN_BYTEA_P(genam_option(options,
+		HASH_MIN_FILLFACTOR, HASH_DEFAULT_FILLFACTOR));
 }

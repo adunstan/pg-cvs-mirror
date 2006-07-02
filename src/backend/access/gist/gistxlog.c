@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *			 $PostgreSQL: pgsql/src/backend/access/gist/gistxlog.c,v 1.19 2006/05/19 16:15:17 teodor Exp $
+ *			 $PostgreSQL: pgsql/src/backend/access/gist/gistxlog.c,v 1.20 2006/05/19 17:15:41 teodor Exp $
  *-------------------------------------------------------------------------
  */
 #include "postgres.h"
@@ -690,7 +690,7 @@ gistContinueInsert(gistIncompleteInsert *insert)
 			 * that wiil be enough space....
 			 */
 
-			if (gistnospace(pages[0], itup, lenitup, *todelete))
+			if (gistnospace(pages[0], itup, lenitup, *todelete, 0))
 			{
 
 				/* no space left on page, so we must split */

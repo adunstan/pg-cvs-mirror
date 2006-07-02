@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/bin/pg_dump/pg_dump.h,v 1.124 2006/03/02 01:18:26 tgl Exp $
+ * $PostgreSQL: pgsql/src/bin/pg_dump/pg_dump.h,v 1.125 2006/03/05 15:58:51 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -180,6 +180,7 @@ typedef struct _tableInfo
 	char	   *relacl;
 	char		relkind;
 	char	   *reltablespace;	/* relation tablespace */
+	char	   *reloptions;		/* options specified by WITH (...) */
 	bool		hasindex;		/* does it have any indexes? */
 	bool		hasrules;		/* does it have any rules? */
 	bool		hasoids;		/* does it have OIDs? */
@@ -247,6 +248,7 @@ typedef struct _indxInfo
 	TableInfo  *indextable;		/* link to table the index is for */
 	char	   *indexdef;
 	char	   *tablespace;		/* tablespace in which index is stored */
+	char	   *options;		/* options specified by WITH (...) */
 	int			indnkeys;
 	Oid		   *indkeys;
 	bool		indisclustered;
