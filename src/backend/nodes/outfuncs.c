@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/nodes/outfuncs.c,v 1.275 2006/07/01 18:38:32 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/nodes/outfuncs.c,v 1.276 2006/07/02 02:23:20 momjian Exp $
  *
  * NOTES
  *	  Every node type that can appear in stored rules' parsetrees *must*
@@ -1509,7 +1509,6 @@ _outQuery(StringInfo str, Query *node)
 
 	WRITE_INT_FIELD(resultRelation);
 	WRITE_NODE_FIELD(into);
-	WRITE_BOOL_FIELD(intoHasOids);
 	WRITE_NODE_FIELD(intoOptions);
 	WRITE_ENUM_FIELD(intoOnCommit, OnCommitAction);
 	WRITE_STRING_FIELD(intoTableSpaceName);
