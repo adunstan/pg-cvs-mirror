@@ -8,7 +8,7 @@
  * Darko Prenosil <Darko.Prenosil@finteh.hr>
  * Shridhar Daithankar <shridhar_daithankar@persistent.co.in>
  *
- * $PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.314 2006/03/07 02:54:23 momjian Exp $
+ * $PostgreSQL: pgsql/contrib/dblink/dblink.h,v 1.15 2006/03/11 04:38:29 momjian Exp $
  * Copyright (c) 2001-2006, PostgreSQL Global Development Group
  * ALL RIGHTS RESERVED;
  *
@@ -33,6 +33,8 @@
 
 #ifndef DBLINK_H
 #define DBLINK_H
+
+#include "fmgr.h"
 
 /*
  * External declarations
