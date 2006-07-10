@@ -26,11 +26,13 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $PostgreSQL: pgcrypto.h,v 1.7 2001/10/28 06:25:41 momjian Exp $
+ * $PostgreSQL: pgsql/contrib/pgcrypto/pgcrypto.h,v 1.8 2003/11/29 22:39:28 pgsql Exp $
  */
 
 #ifndef _PG_CRYPTO_H
 #define _PG_CRYPTO_H
+
+#include "fmgr.h"
 
 /* exported functions */
 Datum		pg_digest(PG_FUNCTION_ARGS);

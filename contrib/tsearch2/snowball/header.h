@@ -1,10 +1,10 @@
-/* $PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.314 2006/03/07 02:54:23 momjian Exp $ */
+/* $PostgreSQL: pgsql/contrib/tsearch2/snowball/header.h,v 1.7 2006/03/11 04:38:30 momjian Exp $ */
 
 #include <limits.h>
 
 #include "api.h"
 
-#define HEAD 2*sizeof(int)
+#define HEAD (2 * sizeof(int))
 
 #define SIZE(p)		   ((int *)(p))[-1]
 #define SET_SIZE(p, n) ((int *)(p))[-1] = n
