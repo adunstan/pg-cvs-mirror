@@ -14,18 +14,18 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/resowner/resowner.c,v 1.19 2006/04/03 13:44:33 teodor Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/resowner/resowner.c,v 1.20 2006/06/16 18:42:23 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
 #include "postgres.h"
 
-#include "utils/resowner.h"
 #include "access/gistscan.h"
 #include "access/hash.h"
 #include "storage/bufmgr.h"
 #include "storage/proc.h"
 #include "utils/memutils.h"
+#include "utils/resowner.h"
 #include "utils/relcache.h"
 
 

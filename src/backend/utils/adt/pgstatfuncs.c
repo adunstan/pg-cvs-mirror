@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/pgstatfuncs.c,v 1.29 2006/05/19 19:08:26 alvherre Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/pgstatfuncs.c,v 1.30 2006/06/19 01:51:21 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -20,9 +20,9 @@
 #include "miscadmin.h"
 #include "nodes/execnodes.h"
 #include "pgstat.h"
+#include "utils/builtins.h"
 #include "utils/hsearch.h"
 #include "utils/inet.h"
-#include "utils/builtins.h"
 #include "libpq/ip.h"
 
 /* bogus ... these externs should be in a header file */
