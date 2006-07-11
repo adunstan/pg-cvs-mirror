@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/tcop/fastpath.c,v 1.87 2006/06/11 15:49:28 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/tcop/fastpath.c,v 1.88 2006/06/14 01:24:14 tgl Exp $
  *
  * NOTES
  *	  This cruft is the server side of PQfn.
@@ -23,8 +23,8 @@
 #include "catalog/pg_proc.h"
 #include "libpq/libpq.h"
 #include "libpq/pqformat.h"
-#include "miscadmin.h"
 #include "mb/pg_wchar.h"
+#include "miscadmin.h"
 #include "tcop/fastpath.h"
 #include "tcop/tcopprot.h"
 #include "utils/acl.h"

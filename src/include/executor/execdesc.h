@@ -8,15 +8,15 @@
  * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/executor/execdesc.h,v 1.30 2004/12/31 22:03:29 pgsql Exp $
+ * $PostgreSQL: pgsql/src/include/executor/execdesc.h,v 1.31 2006/03/05 15:58:56 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
 #ifndef EXECDESC_H
 #define EXECDESC_H
 
-#include "nodes/parsenodes.h"
 #include "nodes/execnodes.h"
+#include "nodes/parsenodes.h"
 #include "tcop/dest.h"
 
 
