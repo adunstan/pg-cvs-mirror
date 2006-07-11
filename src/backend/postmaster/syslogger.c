@@ -18,7 +18,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/postmaster/syslogger.c,v 1.25 2006/06/18 15:38:37 petere Exp $
+ *	  $PostgreSQL: pgsql/src/backend/postmaster/syslogger.c,v 1.26 2006/06/27 22:16:43 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -33,10 +33,10 @@
 
 #include "libpq/pqsignal.h"
 #include "miscadmin.h"
+#include "pgtime.h"
 #include "postmaster/fork_process.h"
 #include "postmaster/postmaster.h"
 #include "postmaster/syslogger.h"
-#include "pgtime.h"
 #include "storage/ipc.h"
 #include "storage/pg_shmem.h"
 #include "utils/guc.h"

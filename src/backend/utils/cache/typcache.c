@@ -36,14 +36,14 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/cache/typcache.c,v 1.18 2006/03/05 15:58:45 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/cache/typcache.c,v 1.19 2006/06/16 18:42:23 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
 #include "postgres.h"
 
-#include "access/heapam.h"
 #include "access/hash.h"
+#include "access/heapam.h"
 #include "access/nbtree.h"
 #include "catalog/pg_type.h"
 #include "commands/defrem.h"
