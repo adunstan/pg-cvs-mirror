@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/common/indextuple.c,v 1.75 2005/10/15 02:49:08 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/common/indextuple.c,v 1.76 2006/03/05 15:58:20 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -17,8 +17,8 @@
 #include "postgres.h"
 
 #include "access/heapam.h"
-#include "access/tuptoaster.h"
 #include "access/itup.h"
+#include "access/tuptoaster.h"
 #include "catalog/pg_type.h"
 
 

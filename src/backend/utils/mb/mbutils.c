@@ -4,14 +4,14 @@
  * (currently mule internal code (mic) is used)
  * Tatsuo Ishii
  *
- * $PostgreSQL: pgsql/src/backend/utils/mb/mbutils.c,v 1.55 2006/01/12 22:04:02 neilc Exp $
+ * $PostgreSQL: pgsql/src/backend/utils/mb/mbutils.c,v 1.56 2006/05/21 20:05:19 tgl Exp $
  */
 #include "postgres.h"
 
 #include "access/xact.h"
 #include "catalog/namespace.h"
-#include "miscadmin.h"
 #include "mb/pg_wchar.h"
+#include "miscadmin.h"
 #include "utils/builtins.h"
 #include "utils/memutils.h"
 #include "utils/syscache.h"
