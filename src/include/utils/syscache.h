@@ -9,7 +9,7 @@
  * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/utils/syscache.h,v 1.62 2006/03/05 15:59:08 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/utils/syscache.h,v 1.63 2006/05/03 22:45:26 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -17,6 +17,7 @@
 #define SYSCACHE_H
 
 #include "access/htup.h"
+#include "utils/catcache.h"
 
 /*
  *		Declarations for util/syscache.c.
