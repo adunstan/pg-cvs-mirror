@@ -6,14 +6,16 @@
  * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/utils/lsyscache.h,v 1.103 2006/03/05 15:59:07 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/utils/lsyscache.h,v 1.104 2006/04/05 22:11:57 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
 #ifndef LSYSCACHE_H
 #define LSYSCACHE_H
 
+#include "access/attnum.h"
 #include "access/htup.h"
+#include "nodes/pg_list.h"
 
 /* I/O function selector for get_type_io_data */
 typedef enum IOFuncSelector
