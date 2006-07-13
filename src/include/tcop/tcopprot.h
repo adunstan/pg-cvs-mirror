@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/tcop/tcopprot.h,v 1.80 2006/03/05 15:59:00 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/tcop/tcopprot.h,v 1.81 2006/03/14 22:48:23 tgl Exp $
  *
  * OLD COMMENTS
  *	  This file was created so that other c files could get the two
@@ -20,8 +20,6 @@
 #define TCOPPROT_H
 
 #include "executor/execdesc.h"
-#include "nodes/params.h"
-#include "tcop/dest.h"
 #include "utils/guc.h"
 
 

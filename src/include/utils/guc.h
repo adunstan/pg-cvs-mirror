@@ -7,13 +7,12 @@
  * Copyright (c) 2000-2006, PostgreSQL Global Development Group
  * Written by Peter Eisentraut <peter_e@gmx.net>.
  *
- * $PostgreSQL: pgsql/src/include/utils/guc.h,v 1.67 2006/03/07 03:01:22 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/utils/guc.h,v 1.68 2006/05/11 19:15:35 tgl Exp $
  *--------------------------------------------------------------------
  */
 #ifndef GUC_H
 #define GUC_H
 
-#include "nodes/pg_list.h"
 #include "tcop/dest.h"
 #include "utils/array.h"
 
