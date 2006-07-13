@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/access/htup.h,v 1.82 2006/05/10 23:18:39 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/access/htup.h,v 1.83 2006/06/27 02:51:39 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -15,9 +15,8 @@
 #define HTUP_H
 
 #include "storage/bufpage.h"
+#include "storage/itemptr.h"
 #include "storage/relfilenode.h"
-#include "access/transam.h"
-
 
 /*
  * MaxTupleAttributeNumber limits the number of (user) columns in a tuple.

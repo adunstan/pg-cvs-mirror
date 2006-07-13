@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/backend/access/transam/xlog.c,v 1.241 2006/06/22 20:42:57 tgl Exp $
+ * $PostgreSQL: pgsql/src/backend/access/transam/xlog.c,v 1.242 2006/06/27 18:59:17 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -25,6 +25,7 @@
 #include "access/clog.h"
 #include "access/multixact.h"
 #include "access/subtrans.h"
+#include "access/transam.h"
 #include "access/twophase.h"
 #include "access/xact.h"
 #include "access/xlog.h"

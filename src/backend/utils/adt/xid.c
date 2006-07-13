@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/xid.c,v 1.7 2004/12/31 22:01:22 pgsql Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/xid.c,v 1.8 2006/03/05 15:58:45 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -16,10 +16,10 @@
 
 #include <limits.h>
 
+#include "access/transam.h"
 #include "access/xact.h"
 #include "libpq/pqformat.h"
 #include "utils/builtins.h"
-
 
 #define PG_GETARG_TRANSACTIONID(n)	DatumGetTransactionId(PG_GETARG_DATUM(n))
 #define PG_RETURN_TRANSACTIONID(x)	return TransactionIdGetDatum(x)

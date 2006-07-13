@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/timestamp.c,v 1.163 2006/04/25 00:25:18 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/timestamp.c,v 1.164 2006/06/20 22:52:00 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -30,7 +30,6 @@
 #include "utils/array.h"
 #include "utils/builtins.h"
 #include "utils/datetime.h"
-
 
 /*
  * gcc's -ffast-math switch breaks routines that expect exact results from

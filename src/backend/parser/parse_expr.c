@@ -8,13 +8,14 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/parser/parse_expr.c,v 1.192 2006/04/22 01:26:00 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/parser/parse_expr.c,v 1.193 2006/06/26 17:24:41 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
 
 #include "postgres.h"
 
+#include "catalog/pg_type.h"
 #include "commands/dbcommands.h"
 #include "mb/pg_wchar.h"
 #include "miscadmin.h"

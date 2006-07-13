@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/executor/tuptable.h,v 1.32 2006/06/27 02:51:40 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/executor/tuptable.h,v 1.33 2006/06/27 21:31:20 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -15,7 +15,6 @@
 #define TUPTABLE_H
 
 #include "access/htup.h"
-#include "access/tupdesc.h"
 
 
 /*----------

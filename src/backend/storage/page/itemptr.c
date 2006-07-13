@@ -8,13 +8,14 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/storage/page/itemptr.c,v 1.14 2004/12/31 22:01:10 pgsql Exp $
+ *	  $PostgreSQL: pgsql/src/backend/storage/page/itemptr.c,v 1.15 2006/03/05 15:58:39 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
 #include "postgres.h"
 
 #include "storage/bufpage.h"
+#include "storage/itemptr.h"
 
 /*
  * ItemPointerEquals

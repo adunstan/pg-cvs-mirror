@@ -23,13 +23,15 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/storage/ipc/procarray.c,v 1.11 2006/03/05 15:58:37 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/storage/ipc/procarray.c,v 1.12 2006/06/19 01:51:21 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
 #include "postgres.h"
 
 #include "access/subtrans.h"
+#include "access/transam.h"
+#include "access/xact.h"
 #include "access/twophase.h"
 #include "miscadmin.h"
 #include "storage/proc.h"

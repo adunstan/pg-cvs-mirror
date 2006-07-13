@@ -42,7 +42,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/error/elog.c,v 1.170 2006/06/20 22:52:00 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/error/elog.c,v 1.171 2006/07/11 16:35:33 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -57,6 +57,8 @@
 #include <syslog.h>
 #endif
 
+#include "access/transam.h"
+#include "access/xact.h"
 #include "libpq/libpq.h"
 #include "libpq/pqformat.h"
 #include "mb/pg_wchar.h"

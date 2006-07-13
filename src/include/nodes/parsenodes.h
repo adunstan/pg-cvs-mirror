@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/nodes/parsenodes.h,v 1.315 2006/07/03 22:45:40 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/nodes/parsenodes.h,v 1.316 2006/07/13 15:09:57 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -15,7 +15,7 @@
 #define PARSENODES_H
 
 #include "nodes/primnodes.h"
-
+#include "nodes/value.h"
 
 /* Possible sources of a Query */
 typedef enum QuerySource

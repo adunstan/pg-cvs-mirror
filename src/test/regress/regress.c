@@ -1,11 +1,12 @@
 /*
- * $PostgreSQL: pgsql/src/test/regress/regress.c,v 1.66 2006/05/30 14:09:32 momjian Exp $
+ * $PostgreSQL: pgsql/src/test/regress/regress.c,v 1.67 2006/05/30 21:21:30 tgl Exp $
  */
 
 #include "postgres.h"
 
 #include <float.h>				/* faked on sunos */
 
+#include "access/transam.h"
 #include "utils/geo_decls.h"	/* includes <math.h> */
 #include "executor/executor.h"	/* For GetAttributeByName */
 #include "commands/sequence.h"	/* for nextval() */

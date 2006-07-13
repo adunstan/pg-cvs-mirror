@@ -7,14 +7,13 @@
  * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/parser/parse_coerce.h,v 1.61 2006/03/05 15:58:57 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/parser/parse_coerce.h,v 1.62 2006/04/05 22:11:57 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
 #ifndef PARSE_COERCE_H
 #define PARSE_COERCE_H
 
-#include "catalog/pg_type.h"
 #include "parser/parse_node.h"
 
 

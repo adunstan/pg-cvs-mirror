@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/storage/itempos.h,v 1.21 2005/05/25 21:40:42 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/storage/itempos.h,v 1.22 2006/03/05 15:58:59 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -39,7 +39,7 @@ typedef ItemSubpositionData *ItemSubposition;
  *		struct	objpos	*OBJP;
  *		unsigned		LEN;
  */
-#define PSKIP(OBJP, LEN)\
+#define PSKIP(OBJP, LEN) \
 		do { (OBJP)->op_cp += (LEN); (OBJP)->op_len -= (LEN); } while (0)
 
 #endif   /* ITEMPOS_H */

@@ -31,7 +31,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/vacuumlazy.c,v 1.72 2006/07/03 22:45:38 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/vacuumlazy.c,v 1.73 2006/07/10 16:20:50 alvherre Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -41,6 +41,7 @@
 
 #include "access/genam.h"
 #include "access/heapam.h"
+#include "access/transam.h"
 #include "access/xlog.h"
 #include "catalog/catalog.h"
 #include "commands/vacuum.h"

@@ -8,15 +8,15 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/nbtree/nbtxlog.c,v 1.32 2006/04/13 03:53:05 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/nbtree/nbtxlog.c,v 1.33 2006/05/08 00:00:10 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
 #include "postgres.h"
 
 #include "access/nbtree.h"
+#include "access/transam.h"
 #include "access/xlogutils.h"
-
 
 /*
  * We must keep track of expected insertions due to page splits, and apply

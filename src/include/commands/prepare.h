@@ -6,7 +6,7 @@
  *
  * Copyright (c) 2002-2006, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/include/commands/prepare.h,v 1.19 2006/04/25 14:09:18 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/commands/prepare.h,v 1.20 2006/04/25 14:11:59 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -14,9 +14,7 @@
 #define PREPARE_H
 
 #include "executor/executor.h"
-#include "nodes/parsenodes.h"
-#include "tcop/dest.h"
-
+#include "utils/timestamp.h"
 
 /*
  * The data structure representing a prepared statement

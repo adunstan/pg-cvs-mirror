@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/storage/ipc/shmem.c,v 1.90 2006/01/04 21:06:31 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/storage/ipc/shmem.c,v 1.91 2006/03/05 15:58:37 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -67,7 +67,9 @@
 
 #include "access/transam.h"
 #include "miscadmin.h"
+#include "storage/lwlock.h"
 #include "storage/pg_shmem.h"
+#include "storage/shmem.h"
 #include "storage/spin.h"
 #include "utils/tqual.h"
 
