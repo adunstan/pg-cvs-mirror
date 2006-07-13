@@ -1,7 +1,7 @@
 /*
  * FreeSec: libcrypt for NetBSD
  *
- * $PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.314 2006/03/07 02:54:23 momjian Exp $
+ * $PostgreSQL: pgsql/contrib/pgcrypto/crypt-des.c,v 1.14 2006/03/11 04:38:30 momjian Exp $
  *
  * Copyright (c) 1994 David Burren
  * All rights reserved.
@@ -70,6 +70,9 @@
 #include <arpa/inet.h>
 
 #define _PASSWORD_EFMT1 '_'
+
+static const char _crypt_a64[] =
+"./0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
 static uint8 IP[64] = {
 	58, 50, 42, 34, 26, 18, 10, 2, 60, 52, 44, 36, 28, 20, 12, 4,
