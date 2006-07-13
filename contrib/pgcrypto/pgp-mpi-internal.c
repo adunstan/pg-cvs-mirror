@@ -26,7 +26,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $PostgreSQL: pgsql/contrib/pgcrypto/pgp-mpi-internal.c,v 1.4 2005/10/15 02:49:06 momjian Exp $
+ * $PostgreSQL: pgsql/contrib/pgcrypto/pgp-mpi-internal.c,v 1.5 2006/07/13 04:15:25 neilc Exp $
  */
 #include "postgres.h"
 
@@ -47,7 +47,7 @@ static void mp_clear_free(mpz_t *a)
 {
 	if (!a)
 		return;
-	// fixme: no clear?
+	/* fixme: no clear? */
 	mp_int_free(a);
 }
 
