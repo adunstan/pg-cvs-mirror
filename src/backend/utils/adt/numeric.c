@@ -14,7 +14,7 @@
  * Copyright (c) 1998-2006, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/numeric.c,v 1.92 2006/03/05 15:58:43 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/numeric.c,v 1.93 2006/03/10 20:15:26 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -25,7 +25,6 @@
 #include <float.h>
 #include <limits.h>
 #include <math.h>
-#include <errno.h>
 
 #include "catalog/pg_type.h"
 #include "libpq/pqformat.h"

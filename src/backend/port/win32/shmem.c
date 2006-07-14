@@ -6,15 +6,12 @@
  * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/port/win32/shmem.c,v 1.11 2005/10/15 02:49:23 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/port/win32/shmem.c,v 1.12 2006/03/05 15:58:35 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
 
 #include "postgres.h"
-
-#include <stdio.h>
-#include <errno.h>
 
 static DWORD s_segsize = 0;
 

@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/storage/freespace/freespace.c,v 1.51 2006/02/12 03:55:53 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/storage/freespace/freespace.c,v 1.52 2006/03/05 15:58:37 momjian Exp $
  *
  *
  * NOTES:
@@ -58,7 +58,6 @@
  */
 #include "postgres.h"
 
-#include <errno.h>
 #include <limits.h>
 #include <math.h>
 #include <unistd.h>

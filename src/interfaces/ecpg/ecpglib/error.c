@@ -1,9 +1,7 @@
-/* $PostgreSQL: pgsql/src/interfaces/ecpg/ecpglib/error.c,v 1.11 2005/10/15 02:49:47 momjian Exp $ */
+/* $PostgreSQL: pgsql/src/interfaces/ecpg/ecpglib/error.c,v 1.12 2006/03/17 15:46:13 meskes Exp $ */
 
 #define POSTGRES_ECPG_INTERNAL
 #include "postgres_fe.h"
-
-#include <stdio.h>
 
 #include "ecpgerrno.h"
 #include "ecpgtype.h"
