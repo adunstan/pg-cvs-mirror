@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/hash/hashinsert.c,v 1.41 2006/01/25 23:26:11 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/hash/hashinsert.c,v 1.42 2006/03/05 15:58:20 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -16,7 +16,6 @@
 #include "postgres.h"
 
 #include "access/hash.h"
-#include "storage/lmgr.h"
 
 
 static OffsetNumber _hash_pgaddtup(Relation rel, Buffer buf,

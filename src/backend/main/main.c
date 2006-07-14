@@ -13,7 +13,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/main/main.c,v 1.102 2006/06/12 16:17:20 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/main/main.c,v 1.103 2006/06/18 15:38:37 petere Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -35,8 +35,6 @@
 #endif
 
 #include "bootstrap/bootstrap.h"
-#include "miscadmin.h"
-#include "pgstat.h"
 #include "postmaster/postmaster.h"
 #include "tcop/tcopprot.h"
 #include "utils/help_config.h"

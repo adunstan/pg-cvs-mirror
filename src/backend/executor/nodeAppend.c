@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/nodeAppend.c,v 1.68 2006/03/05 15:58:26 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/nodeAppend.c,v 1.69 2006/05/23 15:21:51 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -57,10 +57,8 @@
 
 #include "postgres.h"
 
-#include "access/heapam.h"
 #include "executor/execdebug.h"
 #include "executor/nodeAppend.h"
-#include "parser/parsetree.h"
 
 static bool exec_append_initialize_next(AppendState *appendstate);
 

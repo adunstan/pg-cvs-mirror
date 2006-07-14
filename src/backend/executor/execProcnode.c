@@ -12,7 +12,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/execProcnode.c,v 1.55 2006/05/30 14:01:57 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/execProcnode.c,v 1.56 2006/06/09 19:30:56 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -103,7 +103,6 @@
 #include "executor/nodeTidscan.h"
 #include "executor/nodeUnique.h"
 #include "miscadmin.h"
-#include "tcop/tcopprot.h"
 
 /* ------------------------------------------------------------------------
  *		ExecInitNode

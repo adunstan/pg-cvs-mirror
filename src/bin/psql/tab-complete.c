@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2006, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/psql/tab-complete.c,v 1.152 2006/05/28 02:27:08 alvherre Exp $
+ * $PostgreSQL: pgsql/src/bin/psql/tab-complete.c,v 1.153 2006/06/11 23:06:00 tgl Exp $
  */
 
 /*----------------------------------------------------------------------
@@ -53,7 +53,6 @@
 #include "pqexpbuffer.h"
 #include "common.h"
 #include "settings.h"
-
 
 #ifdef HAVE_RL_FILENAME_COMPLETION_FUNCTION
 #define filename_completion_function rl_filename_completion_function

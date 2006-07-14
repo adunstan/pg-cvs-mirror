@@ -8,14 +8,12 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/execGrouping.c,v 1.19 2006/06/28 17:05:49 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/execGrouping.c,v 1.20 2006/07/11 16:35:31 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
 #include "postgres.h"
 
-#include "access/hash.h"
-#include "access/heapam.h"
 #include "executor/executor.h"
 #include "parser/parse_oper.h"
 #include "utils/lsyscache.h"

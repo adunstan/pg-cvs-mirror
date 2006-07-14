@@ -10,7 +10,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/nabstime.c,v 1.146 2005/10/22 14:27:29 adunstan Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/nabstime.c,v 1.147 2006/03/05 15:58:42 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -22,10 +22,8 @@
 #include <time.h>
 #include <sys/time.h>
 
-#include "access/xact.h"
 #include "libpq/pqformat.h"
 #include "miscadmin.h"
-#include "pgtime.h"
 #include "utils/builtins.h"
 #include "utils/nabstime.h"
 

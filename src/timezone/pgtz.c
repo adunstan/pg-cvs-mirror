@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/timezone/pgtz.c,v 1.42 2006/07/14 04:59:30 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/timezone/pgtz.c,v 1.43 2006/07/14 05:28:29 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -19,7 +19,6 @@
 #include <time.h>
 
 #include "miscadmin.h"
-#include "pgtime.h"
 #include "pgtz.h"
 #include "storage/fd.h"
 #include "tzfile.h"

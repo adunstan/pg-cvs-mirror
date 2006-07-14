@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/libpq/auth.c,v 1.137 2006/07/13 16:49:15 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/libpq/auth.c,v 1.138 2006/07/14 05:28:27 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -26,12 +26,9 @@
 
 #include "libpq/auth.h"
 #include "libpq/crypt.h"
-#include "libpq/hba.h"
 #include "libpq/ip.h"
 #include "libpq/libpq.h"
-#include "libpq/pqcomm.h"
 #include "libpq/pqformat.h"
-#include "miscadmin.h"
 #include "storage/ipc.h"
 
 

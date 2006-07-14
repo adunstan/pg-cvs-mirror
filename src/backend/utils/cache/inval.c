@@ -80,7 +80,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/cache/inval.c,v 1.75 2006/01/19 21:49:21 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/cache/inval.c,v 1.76 2006/03/05 15:58:45 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -92,7 +92,6 @@
 #include "miscadmin.h"
 #include "storage/sinval.h"
 #include "storage/smgr.h"
-#include "utils/catcache.h"
 #include "utils/inval.h"
 #include "utils/memutils.h"
 #include "utils/relcache.h"

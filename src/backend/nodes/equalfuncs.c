@@ -18,15 +18,13 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/nodes/equalfuncs.c,v 1.275 2006/07/02 05:17:26 neilc Exp $
+ *	  $PostgreSQL: pgsql/src/backend/nodes/equalfuncs.c,v 1.276 2006/07/03 22:45:38 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
 
 #include "postgres.h"
 
-#include "nodes/params.h"
-#include "nodes/parsenodes.h"
 #include "nodes/relation.h"
 #include "utils/datum.h"
 

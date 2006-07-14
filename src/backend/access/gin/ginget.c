@@ -8,17 +8,13 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *          $PostgreSQL: pgsql/src/backend/access/gin/ginutil.c,v 1.10 2006/03 /05 15:58:20 momjian Exp $
+ *          $PostgreSQL: pgsql/src/backend/access/gin/ginget.c,v 1.1 2006/05/02 11:28:54 teodor Exp $
  *-------------------------------------------------------------------------
  */
 
 #include "postgres.h"
-#include "access/genam.h"
 #include "access/gin.h"
-#include "access/heapam.h"
 #include "catalog/index.h"
-#include "miscadmin.h"
-#include "storage/freespace.h"
 #include "utils/memutils.h"
 
 static OffsetNumber

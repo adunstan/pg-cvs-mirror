@@ -3,15 +3,13 @@
  *
  * Copyright (c) 2000-2006, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/psql/stringutils.c,v 1.42 2006/03/05 15:58:52 momjian Exp $
+ * $PostgreSQL: pgsql/src/bin/psql/stringutils.c,v 1.43 2006/06/01 01:28:00 tgl Exp $
  */
 #include "postgres_fe.h"
 
 #include <ctype.h>
 
-#include "libpq-fe.h"
 #include "common.h"
-#include "settings.h"
 #include "stringutils.h"
 
 

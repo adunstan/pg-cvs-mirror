@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *          $PostgreSQL: pgsql/src/backend/access/gin/ginutil.c,v 1.3 2006/07/03 22:45:36 tgl Exp $
+ *          $PostgreSQL: pgsql/src/backend/access/gin/ginutil.c,v 1.4 2006/07/11 21:05:57 tgl Exp $
  *-------------------------------------------------------------------------
  */
 
@@ -17,7 +17,6 @@
 #include "access/gin.h"
 #include "access/heapam.h"
 #include "access/reloptions.h"
-#include "miscadmin.h"
 #include "storage/freespace.h"
 
 void 

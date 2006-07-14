@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/storage/ipc/sinval.c,v 1.79 2005/11/22 18:17:20 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/storage/ipc/sinval.c,v 1.80 2006/03/05 15:58:37 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -22,7 +22,6 @@
 #include "storage/backendid.h"
 #include "storage/ipc.h"
 #include "storage/proc.h"
-#include "storage/sinval.h"
 #include "storage/sinvaladt.h"
 #include "utils/inval.h"
 

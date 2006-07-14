@@ -11,7 +11,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/optimizer/path/pathkeys.c,v 1.75 2006/01/29 17:27:42 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/optimizer/path/pathkeys.c,v 1.76 2006/03/05 15:58:28 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -26,7 +26,6 @@
 #include "optimizer/var.h"
 #include "parser/parsetree.h"
 #include "parser/parse_expr.h"
-#include "parser/parse_func.h"
 #include "utils/lsyscache.h"
 #include "utils/memutils.h"
 

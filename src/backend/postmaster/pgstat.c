@@ -13,7 +13,7 @@
  *
  *	Copyright (c) 2001-2006, PostgreSQL Global Development Group
  *
- *	$PostgreSQL: pgsql/src/backend/postmaster/pgstat.c,v 1.133 2006/06/29 20:00:08 tgl Exp $
+ *	$PostgreSQL: pgsql/src/backend/postmaster/pgstat.c,v 1.134 2006/07/13 16:49:15 momjian Exp $
  * ----------
  */
 #include "postgres.h"
@@ -54,13 +54,8 @@
 #include "storage/ipc.h"
 #include "storage/pg_shmem.h"
 #include "storage/pmsignal.h"
-#include "storage/procarray.h"
-#include "tcop/tcopprot.h"
-#include "utils/hsearch.h"
 #include "utils/memutils.h"
 #include "utils/ps_status.h"
-#include "utils/rel.h"
-#include "utils/syscache.h"
 
 
 /* ----------

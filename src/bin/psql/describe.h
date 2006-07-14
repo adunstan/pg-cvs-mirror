@@ -3,12 +3,11 @@
  *
  * Copyright (c) 2000-2006, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/psql/describe.h,v 1.30 2006/02/12 03:22:19 momjian Exp $
+ * $PostgreSQL: pgsql/src/bin/psql/describe.h,v 1.31 2006/03/05 15:58:51 momjian Exp $
  */
 #ifndef DESCRIBE_H
 #define DESCRIBE_H
 
-#include "settings.h"
 
 /* \da */
 extern bool describeAggregates(const char *pattern, bool verbose);

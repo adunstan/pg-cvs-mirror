@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/varchar.c,v 1.116 2006/05/21 20:05:19 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/varchar.c,v 1.117 2006/07/11 18:26:11 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -16,13 +16,8 @@
 
 
 #include "access/hash.h"
-#include "catalog/pg_type.h"
-#include "lib/stringinfo.h"
 #include "libpq/pqformat.h"
-#include "miscadmin.h"
-#include "utils/array.h"
 #include "utils/builtins.h"
-#include "utils/fmgroids.h"
 #include "mb/pg_wchar.h"
 
 

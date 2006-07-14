@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/variable.c,v 1.116 2006/02/12 22:32:42 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/variable.c,v 1.117 2006/03/05 15:58:25 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -22,11 +22,8 @@
 #include "catalog/pg_authid.h"
 #include "commands/variable.h"
 #include "miscadmin.h"
-#include "parser/scansup.h"
-#include "pgtime.h"
 #include "utils/acl.h"
 #include "utils/builtins.h"
-#include "utils/guc.h"
 #include "utils/syscache.h"
 #include "utils/tqual.h"
 #include "mb/pg_wchar.h"

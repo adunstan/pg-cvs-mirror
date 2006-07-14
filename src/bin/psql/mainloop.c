@@ -3,18 +3,15 @@
  *
  * Copyright (c) 2000-2006, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/psql/mainloop.c,v 1.79 2006/06/11 23:06:00 tgl Exp $
+ * $PostgreSQL: pgsql/src/bin/psql/mainloop.c,v 1.80 2006/06/14 16:49:02 tgl Exp $
  */
 #include "postgres_fe.h"
 #include "mainloop.h"
 
-#include "pqexpbuffer.h"
 
 #include "command.h"
 #include "common.h"
 #include "input.h"
-#include "prompt.h"
-#include "psqlscan.h"
 #include "settings.h"
 
 

@@ -8,20 +8,16 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/pgstatfuncs.c,v 1.30 2006/06/19 01:51:21 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/pgstatfuncs.c,v 1.31 2006/07/11 17:26:59 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
 #include "postgres.h"
 
-#include "access/xact.h"
-#include "fmgr.h"
 #include "funcapi.h"
 #include "miscadmin.h"
-#include "nodes/execnodes.h"
 #include "pgstat.h"
 #include "utils/builtins.h"
-#include "utils/hsearch.h"
 #include "utils/inet.h"
 #include "libpq/ip.h"
 

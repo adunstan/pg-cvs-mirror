@@ -17,7 +17,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/storage/large_object/inv_api.c,v 1.116 2006/04/26 00:34:57 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/storage/large_object/inv_api.c,v 1.117 2006/07/13 16:49:16 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -34,7 +34,6 @@
 #include "libpq/libpq-fs.h"
 #include "storage/large_object.h"
 #include "utils/fmgroids.h"
-#include "utils/lsyscache.h"
 #include "utils/resowner.h"
 
 

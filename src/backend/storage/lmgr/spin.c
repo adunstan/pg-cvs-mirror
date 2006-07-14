@@ -16,14 +16,12 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/storage/lmgr/spin.c,v 1.18 2005/11/22 18:17:21 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/storage/lmgr/spin.c,v 1.19 2006/03/05 15:58:39 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
 #include "postgres.h"
 
-#include "storage/lwlock.h"
-#include "storage/pg_sema.h"
 #include "storage/spin.h"
 
 

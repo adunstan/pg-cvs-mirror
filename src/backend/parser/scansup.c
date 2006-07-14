@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/parser/scansup.c,v 1.31 2005/12/25 02:14:17 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/parser/scansup.c,v 1.32 2006/03/05 15:58:34 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -17,7 +17,6 @@
 
 #include <ctype.h>
 
-#include "miscadmin.h"
 #include "parser/scansup.h"
 #include "mb/pg_wchar.h"
 

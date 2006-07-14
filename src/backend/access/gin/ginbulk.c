@@ -8,19 +8,12 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *          $PostgreSQL: pgsql/src/backend/access/gin/ginbulk.c,v 1.1 2006/05/02 11:28:54 teodor Exp $
+ *          $PostgreSQL: pgsql/src/backend/access/gin/ginbulk.c,v 1.2 2006/07/11 16:55:34 teodor Exp $
  *-------------------------------------------------------------------------
  */
 
 #include "postgres.h"
-#include "access/genam.h"
 #include "access/gin.h"
-#include "access/heapam.h"
-#include "catalog/index.h"
-#include "miscadmin.h"
-#include "storage/freespace.h"
-#include "utils/memutils.h"
-#include "access/tuptoaster.h"
 
 #define DEF_NENTRY	2048
 #define DEF_NPTR	4

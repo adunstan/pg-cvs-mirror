@@ -8,17 +8,13 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *          $PostgreSQL: pgsql/src/backend/access/gin/ginbtree.c,v 1.2 2006/05/26 08:01:17 teodor Exp $
+ *          $PostgreSQL: pgsql/src/backend/access/gin/ginbtree.c,v 1.3 2006/05/29 08:39:44 teodor Exp $
  *-------------------------------------------------------------------------
  */
 
 #include "postgres.h"
-#include "access/genam.h"
 #include "access/gin.h"
-#include "access/heapam.h"
-#include "catalog/index.h"
 #include "miscadmin.h"
-#include "storage/freespace.h"
 
 /*
  * Locks buffer by needed method for search.

@@ -12,7 +12,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/storage/lmgr/deadlock.c,v 1.38 2005/12/11 21:02:18 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/storage/lmgr/deadlock.c,v 1.39 2006/03/05 15:58:38 momjian Exp $
  *
  *	Interface:
  *
@@ -25,7 +25,6 @@
  */
 #include "postgres.h"
 
-#include "catalog/pg_class.h"
 #include "lib/stringinfo.h"
 #include "miscadmin.h"
 #include "storage/proc.h"

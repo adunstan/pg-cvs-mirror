@@ -9,11 +9,10 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/bin/pg_dump/pg_dump_sort.c,v 1.13 2006/03/02 01:18:26 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/bin/pg_dump/pg_dump_sort.c,v 1.14 2006/03/05 15:58:51 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
-#include "pg_dump.h"
 #include "pg_backup_archiver.h"
 
 
