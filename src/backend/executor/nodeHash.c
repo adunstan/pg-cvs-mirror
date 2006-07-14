@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/nodeHash.c,v 1.105 2006/07/13 16:49:15 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/nodeHash.c,v 1.106 2006/07/13 20:14:12 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -22,6 +22,7 @@
 #include "postgres.h"
 
 #include <math.h>
+#include <limits.h>
 
 #include "executor/execdebug.h"
 #include "executor/hashjoin.h"
