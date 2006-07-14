@@ -15,7 +15,7 @@
 #		for use only by the backend binaries
 #
 # IDENTIFICATION
-#    $PostgreSQL: pgsql/src/port/Makefile,v 1.21 2004/10/27 11:51:40 neilc Exp $
+#    $PostgreSQL: pgsql/src/port/Makefile,v 1.21.4.1 2006/05/08 02:18:21 momjian Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -45,6 +45,8 @@ thread.o: thread.c
 	$(CC) $(CFLAGS) $(CPPFLAGS) $(PTHREAD_CFLAGS) -c $<
 
 path.o: path.c pg_config_paths.h
+
+path_srv.o: path.c pg_config_paths.h
 
 #
 # Server versions of object files
