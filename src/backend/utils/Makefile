@@ -1,10 +1,10 @@
 #
 # Makefile for utils
 #
-# $PostgreSQL: pgsql-server/src/backend/utils/Makefile,v 1.22 2004/01/04 05:57:21 tgl Exp $
+# $PostgreSQL: pgsql/src/backend/utils/Makefile,v 1.23 2004/07/17 03:29:15 tgl Exp $
 #
 
-subdir = src/backend/utils/
+subdir = src/backend/utils
 top_builddir = ../../..
 include $(top_builddir)/src/Makefile.global
 

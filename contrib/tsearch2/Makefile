@@ -1,4 +1,4 @@
-# $PostgreSQL: pgsql/contrib/tsearch2/Makefile,v 1.14 2006/05/02 11:28:54 teodor Exp $
+# $PostgreSQL: pgsql/contrib/tsearch2/Makefile,v 1.15 2006/05/31 14:05:31 teodor Exp $
 
 MODULE_big = tsearch2
 OBJS = dict_ex.o dict.o snmap.o stopword.o common.o prs_dcfg.o \
@@ -36,6 +36,8 @@ endif
 
 
 $(SUBDIROBJS): $(SUBDIRS:%=%-recursive) ;
+
+.PHONY: $(SUBDIRS:%=%-recursive)
 
 $(SUBDIRS:%=%-recursive):
 	$(MAKE) -C $(subst -recursive,,$@) SUBSYS.o

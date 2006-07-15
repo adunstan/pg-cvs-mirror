@@ -4,7 +4,7 @@
 #    Makefile for port/nextstep
 #
 # IDENTIFICATION
-#    $PostgreSQL: /cvsroot/pgsql-server/src/backend/port/nextstep/Makefile,v 1.7 2003/04/24 17:16:13 momjian Exp $
+#    $PostgreSQL: pgsql/src/backend/port/nextstep/Makefile,v 1.8 2003/11/29 19:51:54 pgsql Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -12,7 +12,7 @@ subdir = src/backend/port/nextstep
 top_builddir = ../../../..
 include $(top_builddir)/src/Makefile.global
 
-OBJS = dynloader.o port.o
+OBJS = port.o
 
 all: SUBSYS.o
 
