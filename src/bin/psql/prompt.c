@@ -3,14 +3,9 @@
  *
  * Copyright (c) 2000-2006, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/psql/prompt.c,v 1.45 2006/06/11 23:06:00 tgl Exp $
+ * $PostgreSQL: pgsql/src/bin/psql/prompt.c,v 1.46 2006/07/14 14:52:26 momjian Exp $
  */
 #include "postgres_fe.h"
-#include "prompt.h"
-
-
-#include "settings.h"
-#include "common.h"
 
 #ifdef WIN32
 #include <io.h>
@@ -21,6 +16,12 @@
 #include <unistd.h>
 #include <netdb.h>
 #endif
+
+#include "common.h"
+#include "input.h"
+#include "prompt.h"
+#include "settings.h"
+
 
 /*--------------------------
  * get_prompt
