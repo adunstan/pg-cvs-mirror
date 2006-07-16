@@ -18,7 +18,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/postmaster/syslogger.c,v 1.26 2006/06/27 22:16:43 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/postmaster/syslogger.c,v 1.27 2006/07/11 18:26:10 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -348,7 +348,7 @@ SysLoggerMain(int argc, char *argv[])
 		 * detect pipe EOF.  The main thread just wakes up once a second to
 		 * check for SIGHUP and rotation conditions.
 		 */
-		pgwin32_backend_usleep(1000000);
+		pg_usleep(1000000L);
 #endif   /* WIN32 */
 
 		if (pipe_eof_seen)
