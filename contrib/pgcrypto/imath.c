@@ -3,7 +3,7 @@
   Name:     imath.c
   Purpose:  Arbitrary precision integer arithmetic routines.
   Author:   M. J. Fromberger <http://www.dartmouth.edu/~sting/>
-  Info:     $Id: imath.c,v 1.2 2006/07/15 15:27:14 tgl Exp $
+  Info:     $PostgreSQL$
 
   Copyright (C) 2002 Michael J. Fromberger, All Rights Reserved.
 
