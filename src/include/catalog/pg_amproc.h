@@ -19,7 +19,7 @@
  * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/catalog/pg_amproc.h,v 1.57 2006/05/02 11:28:55 teodor Exp $
+ * $PostgreSQL: pgsql/src/include/catalog/pg_amproc.h,v 1.58 2006/05/02 15:23:16 teodor Exp $
  *
  * NOTES
  *	  the genbki.sh script reads this file and generates .bki
@@ -124,6 +124,7 @@ DATA(insert (	2098	0 1 2187 ));
 DATA(insert (	2099	0 1  377 ));
 DATA(insert (	2233	0 1  380 ));
 DATA(insert (	2234	0 1  381 ));
+DATA(insert (	2789    0 1 2794 ));
 
 
 /* hash */
