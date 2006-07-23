@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/storage/lock.h,v 1.93 2005/12/11 21:02:18 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/storage/lock.h,v 1.94 2006/03/05 15:58:59 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -19,22 +19,14 @@
 #include "storage/shmem.h"
 
 
-/*
- * Number of partitions the shared lock tables are divided into.
- *
- * See LockTagToPartition() if you change this.
- */
-#define NUM_LOCK_PARTITIONS  16
+/* struct PGPROC is declared in proc.h, but must forward-reference it */
+typedef struct PGPROC PGPROC;
 
-/* originally in procq.h */
 typedef struct PROC_QUEUE
 {
 	SHM_QUEUE	links;			/* head of list of PGPROC objects */
 	int			size;			/* number of entries in list */
 } PROC_QUEUE;
-
-/* struct PGPROC is declared in proc.h, but must forward-reference it */
-typedef struct PGPROC PGPROC;
 
 /* GUC variables */
 extern int	max_locks_per_xact;
