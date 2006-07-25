@@ -9,7 +9,7 @@
  * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/utils/datetime.h,v 1.58 2006/03/05 15:59:07 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/utils/datetime.h,v 1.59 2006/06/06 16:20:11 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -20,6 +20,7 @@
 #include <math.h>
 
 #include "utils/timestamp.h"
+#include "utils/tzparser.h"
 
 
 /* ----------------------------------------------------------------
@@ -300,5 +301,8 @@ extern int	DecodeUnits(int field, char *lowtoken, int *val);
 extern int	j2day(int jd);
 
 extern bool CheckDateTokenTables(void);
+extern void InstallTimeZoneAbbrevs(tzEntry *abbrevs, int n);
+
+extern Datum pg_timezonenames(PG_FUNCTION_ARGS);
 
 #endif   /* DATETIME_H */
