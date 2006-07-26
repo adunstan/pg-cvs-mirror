@@ -10,7 +10,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/optimizer/plan/createplan.c,v 1.213 2006/07/11 16:35:31 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/optimizer/plan/createplan.c,v 1.214 2006/07/14 14:52:20 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -2863,7 +2863,7 @@ make_setop(SetOpCmd cmd, Plan *lefttree,
  */
 Limit *
 make_limit(Plan *lefttree, Node *limitOffset, Node *limitCount,
-		   int offset_est, int count_est)
+		   int64 offset_est, int64 count_est)
 {
 	Limit	   *node = makeNode(Limit);
 	Plan	   *plan = &node->plan;
