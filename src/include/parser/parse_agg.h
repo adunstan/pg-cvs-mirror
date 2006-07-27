@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/parser/parse_agg.h,v 1.32 2004/12/31 22:03:38 pgsql Exp $
+ * $PostgreSQL: pgsql/src/include/parser/parse_agg.h,v 1.33 2006/03/05 15:58:57 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -19,7 +19,8 @@ extern void transformAggregateCall(ParseState *pstate, Aggref *agg);
 
 extern void parseCheckAggregates(ParseState *pstate, Query *qry);
 
-extern void build_aggregate_fnexprs(Oid agg_input_type,
+extern void build_aggregate_fnexprs(Oid *agg_input_types,
+						int agg_num_inputs,
 						Oid agg_state_type,
 						Oid agg_result_type,
 						Oid transfn_oid,
