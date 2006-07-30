@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/catalog/index.c,v 1.268 2006/07/03 22:45:37 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/catalog/index.c,v 1.269 2006/07/13 16:49:13 momjian Exp $
  *
  *
  * INTERFACE ROUTINES
@@ -1367,7 +1367,8 @@ IndexBuildHeapScan(Relation heapRelation,
 	else
 	{
 		snapshot = SnapshotAny;
-		OldestXmin = GetOldestXmin(heapRelation->rd_rel->relisshared);
+		/* okay to ignore lazy VACUUMs here */
+		OldestXmin = GetOldestXmin(heapRelation->rd_rel->relisshared, true);
 	}
 
 	scan = heap_beginscan(heapRelation, /* relation */
