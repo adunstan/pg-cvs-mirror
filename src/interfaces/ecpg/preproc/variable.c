@@ -1,4 +1,4 @@
-/* $Header: /home/cvsmirror/pg/pgsql/src/interfaces/ecpg/preproc/variable.c,v 1.40 2006/07/30 10:24:10 meskes Exp $ */
+/* $PostgreSQL$ */
 
 #include "postgres_fe.h"
 
