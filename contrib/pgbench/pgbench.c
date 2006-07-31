@@ -1,5 +1,5 @@
 /*
- * $PostgreSQL: pgsql/contrib/pgbench/pgbench.c,v 1.50 2006/07/26 07:24:50 ishii Exp $
+ * $PostgreSQL: pgsql/contrib/pgbench/pgbench.c,v 1.51 2006/07/28 22:58:26 ishii Exp $
  *
  * pgbench: a simple benchmark program for PostgreSQL
  * written by Tatsuo Ishii
@@ -1344,7 +1344,7 @@ main(int argc, char **argv)
 			exit(1);
 		}
 
-		memset(state + sizeof(*state), 0, sizeof(*state) * (nclients - 1));
+		memset(state + 1, 0, sizeof(*state) * (nclients - 1));
 
 		for (i = 1; i < nclients; i++)
 		{
