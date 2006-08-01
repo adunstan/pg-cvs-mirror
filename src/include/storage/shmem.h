@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/storage/shmem.h,v 1.46 2006/01/04 21:06:32 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/storage/shmem.h,v 1.47 2006/03/05 15:59:00 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -37,6 +37,11 @@ typedef unsigned long SHMEM_OFFSET;
  */
 extern DLLIMPORT SHMEM_OFFSET ShmemBase;
 
+
+/* coerce an offset into a pointer in a specified address space.  This
+ * macro (only) is not confined to the primary shared memory region */
+#define MAKE_PTRFROM(base,xx_offs)\
+  (base+((unsigned long)(xx_offs)))
 
 /* coerce an offset into a pointer in this process's address space */
 #define MAKE_PTR(xx_offs)\
