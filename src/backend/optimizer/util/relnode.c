@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/optimizer/util/relnode.c,v 1.79 2006/07/14 14:52:21 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/optimizer/util/relnode.c,v 1.80 2006/07/31 20:09:04 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -96,8 +96,13 @@ build_simple_rel(PlannerInfo *root, int relid, RelOptKind reloptkind)
 			break;
 		case RTE_SUBQUERY:
 		case RTE_FUNCTION:
-			/* Subquery or function --- set up attr range and arrays */
-			/* Note: 0 is included in range to support whole-row Vars */
+		case RTE_VALUES:
+			/*
+			 * Subquery, function, or values list --- set up attr range
+			 * and arrays
+			 *
+			 * Note: 0 is included in range to support whole-row Vars
+			 */
 			rel->min_attr = 0;
 			rel->max_attr = list_length(rte->eref->colnames);
 			rel->attr_needed = (Relids *)

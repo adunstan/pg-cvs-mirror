@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/parser/parse_node.c,v 1.92 2006/03/14 22:48:21 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/parser/parse_node.c,v 1.93 2006/07/14 14:52:22 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -258,7 +258,7 @@ transformArraySubscripts(ParseState *pstate,
 
 	/*
 	 * If doing an array store, coerce the source value to the right type.
-	 * (This should agree with the coercion done by updateTargetListEntry.)
+	 * (This should agree with the coercion done by transformAssignedExpr.)
 	 */
 	if (assignFrom != NULL)
 	{

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/parser/parse_type.c,v 1.81 2006/04/30 18:30:39 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/parser/parse_type.c,v 1.82 2006/07/14 14:52:22 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -426,6 +426,7 @@ parseTypeString(const char *str, Oid *type_id, int32 *typmod)
 		stmt->whereClause != NULL ||
 		stmt->groupClause != NIL ||
 		stmt->havingClause != NULL ||
+		stmt->valuesLists != NIL ||
 		stmt->sortClause != NIL ||
 		stmt->limitOffset != NULL ||
 		stmt->limitCount != NULL ||
