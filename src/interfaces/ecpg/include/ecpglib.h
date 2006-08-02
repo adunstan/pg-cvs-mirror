@@ -1,7 +1,7 @@
 /*
  * this is a small part of c.h since we don't want to leak all postgres
  * definitions into ecpg programs
- * $PostgreSQL: pgsql/src/interfaces/ecpg/include/ecpglib.h,v 1.66 2006/03/11 04:38:39 momjian Exp $
+ * $PostgreSQL: pgsql/src/interfaces/ecpg/include/ecpglib.h,v 1.67 2006/07/11 13:54:25 momjian Exp $
  */
 
 #ifndef _ECPGLIB_H
@@ -84,6 +84,10 @@ bool		ECPGdescribe(int, bool, const char *,...);
 
 /* dynamic result allocation */
 void		ECPGfree_auto_mem(void);
+
+#ifdef ENABLE_THREAD_SAFETY
+void		ecpg_pthreads_init();
+#endif
 
 #ifdef __cplusplus
 }
