@@ -8,13 +8,14 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *          $PostgreSQL: pgsql/src/backend/access/gin/ginscan.c,v 1.2 2006/05/02 15:48:11 tgl Exp $
+ *          $PostgreSQL: pgsql/src/backend/access/gin/ginscan.c,v 1.3 2006/07/14 14:52:16 momjian Exp $
  *-------------------------------------------------------------------------
  */
 
 #include "postgres.h"
 #include "access/genam.h"
 #include "access/gin.h"
+#include "pgstat.h"
 #include "utils/memutils.h"
 
 
@@ -155,6 +156,8 @@ newScanKey( IndexScanDesc scan ) {
 
 	if ( so->nkeys == 0 )
 		elog(ERROR, "Gin doesn't support full scan due to it's awful inefficiency");
+
+	pgstat_count_index_scan(&scan->xs_pgstat_info);
 }
 
 Datum
