@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-exec.c,v 1.187 2006/06/27 00:03:41 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-exec.c,v 1.188 2006/07/04 13:22:15 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -973,6 +973,7 @@ PQsendQueryGuts(PGconn *conn,
 		pqPuts("", conn) < 0 ||
 		pqPuts(stmtName, conn) < 0)
 		goto sendFailed;
+
 	if (nParams > 0 && paramFormats)
 	{
 		if (pqPutInt(nParams, 2, conn) < 0)
@@ -988,8 +989,10 @@ PQsendQueryGuts(PGconn *conn,
 		if (pqPutInt(0, 2, conn) < 0)
 			goto sendFailed;
 	}
+
 	if (pqPutInt(nParams, 2, conn) < 0)
 		goto sendFailed;
+
 	for (i = 0; i < nParams; i++)
 	{
 		if (paramValues && paramValues[i])
