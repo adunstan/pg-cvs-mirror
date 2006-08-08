@@ -14,7 +14,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/portalcmds.c,v 1.47 2006/06/27 02:51:39 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/portalcmds.c,v 1.48 2006/07/13 16:49:14 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -112,6 +112,7 @@ PerformCursorOpen(DeclareCursorStmt *stmt, ParamListInfo params)
 	 * submitted more than one semicolon delimited queries.
 	 */
 	PortalDefineQuery(portal,
+					  NULL,
 					  pstrdup(debug_query_string),
 					  "SELECT", /* cursor's query is always a SELECT */
 					  list_make1(query),
