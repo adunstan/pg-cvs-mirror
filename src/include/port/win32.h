@@ -1,4 +1,4 @@
-/* $PostgreSQL: pgsql/src/include/port/win32.h,v 1.54 2006/07/30 01:45:21 momjian Exp $ */
+/* $PostgreSQL: pgsql/src/include/port/win32.h,v 1.55 2006/08/08 18:49:14 momjian Exp $ */
 
 /* undefine and redefine after #include */
 #undef mkdir
@@ -162,7 +162,7 @@ struct itimerval
 	struct timeval it_interval;
 	struct timeval it_value;
 };
-int			setitimer(int which, const struct itimerval * value, struct itimerval * ovalue);
+int			setitimer(int which, const struct itimerval *value, struct itimerval *ovalue);
 
 
 /*
