@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/optimizer/util/tlist.c,v 1.71 2006/02/03 21:08:49 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/optimizer/util/tlist.c,v 1.72 2006/03/05 15:58:32 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -174,6 +174,8 @@ get_sortgrouplist_exprs(List *sortClauses, List *targetList)
  *
  * Resjunk columns are ignored if junkOK is true; otherwise presence of
  * a resjunk column will always cause a 'false' result.
+ *
+ * Note: currently no callers care about comparing typmods.
  */
 bool
 tlist_same_datatypes(List *tlist, List *colTypes, bool junkOK)
