@@ -1,4 +1,4 @@
-# $PostgreSQL: pgsql/config/general.m4,v 1.3 2003/11/29 19:51:17 pgsql Exp $
+# $PostgreSQL: pgsql/config/general.m4,v 1.4 2006/05/30 13:52:25 momjian Exp $
 
 # This file defines new macros to process configure command line
 # arguments, to replace the brain-dead AC_ARG_WITH and AC_ARG_ENABLE.
@@ -27,7 +27,7 @@ m4_define([_m4_divert(PGAC_ARGS)],     5432)
 # This is the base layer. TYPE is either "with" or "enable", depending
 # on what you like. NAME is the rest of the option name, HELP-STRING
 # as usual. ACTION-IF-YES is executed if the option is given without
-# and argument (or "yes", which is the same); similar for ACTION-IF-NO.
+# an argument (or "yes", which is the same); similar for ACTION-IF-NO.
 
 AC_DEFUN([PGAC_ARG],
 [
