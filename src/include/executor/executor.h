@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/executor/executor.h,v 1.127 2006/06/16 18:42:23 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/executor/executor.h,v 1.128 2006/08/04 21:33:36 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -132,6 +132,7 @@ extern void ExecConstraints(ResultRelInfo *resultRelInfo,
 				TupleTableSlot *slot, EState *estate);
 extern TupleTableSlot *EvalPlanQual(EState *estate, Index rti,
 			 ItemPointer tid, TransactionId priorXmax, CommandId curCid);
+extern DestReceiver *CreateIntoRelDestReceiver(void);
 
 /*
  * prototypes from functions in execProcnode.c

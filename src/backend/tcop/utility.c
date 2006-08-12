@@ -10,7 +10,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/tcop/utility.c,v 1.262 2006/07/14 14:52:23 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/tcop/utility.c,v 1.263 2006/07/31 01:16:37 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1148,7 +1148,7 @@ UtilityReturnsTuples(Node *parsetree)
 				switch (ChoosePortalStrategy(entry->query_list))
 				{
 					case PORTAL_ONE_SELECT:
-						return true;
+					case PORTAL_ONE_RETURNING:
 					case PORTAL_UTIL_SELECT:
 						return true;
 					case PORTAL_MULTI_QUERY:
