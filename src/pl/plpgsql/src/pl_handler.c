@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/pl/plpgsql/src/pl_handler.c,v 1.29 2006/05/30 22:12:16 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/pl/plpgsql/src/pl_handler.c,v 1.30 2006/08/08 19:15:09 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -28,6 +28,8 @@ extern DLLIMPORT bool check_function_bodies;
 
 PG_MODULE_MAGIC;
 
+PLpgSQL_plugin **plugin_ptr = NULL;
+
 
 /*
  * _PG_init()			- library load-time initialization
@@ -45,6 +47,9 @@ _PG_init(void)
 
 	plpgsql_HashTableInit();
 	RegisterXactCallback(plpgsql_xact_cb, NULL);
+
+	/* Set up a rendezvous point with optional instrumentation plugin */
+	plugin_ptr = (PLpgSQL_plugin **) find_rendezvous_variable("PLpgSQL_plugin");
 
 	inited = true;
 }
