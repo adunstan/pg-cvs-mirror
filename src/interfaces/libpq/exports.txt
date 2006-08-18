@@ -1,4 +1,4 @@
-# $PostgreSQL: pgsql/src/interfaces/libpq/exports.txt,v 1.11 2006/05/28 22:42:05 tgl Exp $
+# $PostgreSQL: pgsql/src/interfaces/libpq/exports.txt,v 1.13 2006/07/04 13:22:15 momjian Exp $
 # Functions to be exported by libpq DLLs
 PQconnectdb               1
 PQsetdbLogin              2
@@ -130,3 +130,9 @@ PQescapeByteaConn         127
 PQencryptPassword         128
 PQisthreadsafe            129
 enlargePQExpBuffer        130
+PQnparams                 131
+PQparamtype               132
+PQdescribePrepared        133
+PQdescribePortal          134
+PQsendDescribePrepared    135
+PQsendDescribePortal      136
