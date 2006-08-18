@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/interfaces/ecpg/preproc/keywords.c,v 1.73 2006/03/05 15:59:08 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/interfaces/ecpg/preproc/keywords.c,v 1.74 2006/08/02 13:43:23 meskes Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -277,6 +277,7 @@ static ScanKeyword ScanKeywords[] = {
 	{"reset", RESET},
 	{"restart", RESTART},
 	{"restrict", RESTRICT},
+	{"returning", RETURNING},
 	{"returns", RETURNS},
 	{"revoke", REVOKE},
 	{"right", RIGHT},
