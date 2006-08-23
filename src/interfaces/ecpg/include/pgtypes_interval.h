@@ -1,7 +1,13 @@
-/* $PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.314 2006/03/07 02:54:23 momjian Exp $ */
+/* $PostgreSQL: pgsql/src/interfaces/ecpg/include/pgtypes_interval.h,v 1.9 2006/03/11 04:38:39 momjian Exp $ */
 
 #ifndef PGTYPES_INTERVAL
 #define PGTYPES_INTERVAL
+
+#include <ecpg_config.h>
+
+#if defined(USE_INTEGER_DATETIMES) && (defined(HAVE_LONG_INT_64) || defined(HAVE_LONG_LONG_INT_64))
+#define HAVE_INT64_TIMESTAMP
+#endif
 
 typedef struct
 {
