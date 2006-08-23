@@ -1,6 +1,6 @@
 /* dynamic SQL support routines
  *
- * $PostgreSQL: pgsql/src/interfaces/ecpg/ecpglib/descriptor.c,v 1.17 2006/07/05 10:49:56 meskes Exp $
+ * $PostgreSQL: pgsql/src/interfaces/ecpg/ecpglib/descriptor.c,v 1.18 2006/08/04 08:52:17 meskes Exp $
  */
 
 #define POSTGRES_ECPG_INTERNAL
@@ -520,7 +520,7 @@ ECPGset_desc(int lineno, const char *desc_name, int index,...)
 		{
 			case ECPGd_data:
 				{
-					if (!ECPGstore_input(lineno, true, var, &tobeinserted, &malloced))
+					if (!ECPGstore_input(lineno, true, var, &tobeinserted, &malloced, false))
 					{
 						ECPGfree(var);
 						return false;
