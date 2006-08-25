@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/nodes/parsenodes.h,v 1.323 2006/08/12 20:05:56 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/nodes/parsenodes.h,v 1.324 2006/08/21 00:57:26 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1463,6 +1463,7 @@ typedef struct IndexStmt
 	bool		unique;			/* is index unique? */
 	bool		primary;		/* is index on primary key? */
 	bool		isconstraint;	/* is it from a CONSTRAINT clause? */
+	bool		concurrent;		/* should this be a concurrent index build? */
 } IndexStmt;
 
 /* ----------------------

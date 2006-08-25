@@ -1,4 +1,4 @@
-<!-- $PostgreSQL: pgsql/doc/src/sgml/indexam.sgml,v 2.15 2006/07/03 22:45:36 tgl Exp $ -->
+<!-- $PostgreSQL: pgsql/doc/src/sgml/indexam.sgml,v 2.16 2006/07/31 20:08:59 tgl Exp $ -->
 
 <chapter id="indexam">
  <title>Index Access Method Interface Definition</title>
@@ -646,6 +646,16 @@ amrestrpos (IndexScanDesc scan);
       </para>
      </listitem>
     </itemizedlist>
+  </para>
+
+  <para>
+   Furthermore, immediately before raising a uniqueness violation
+   according to the above rules, the access method must recheck the
+   liveness of the row being inserted.  If it is committed dead then
+   no error should be raised.  (This case cannot occur during the
+   ordinary scenario of inserting a row that's just been created by
+   the current transaction.  It can happen during
+   <command>CREATE UNIQUE INDEX CONCURRENTLY</>, however.) 
   </para>
 
   <para>
