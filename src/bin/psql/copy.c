@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2006, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/psql/copy.c,v 1.65 2006/06/07 22:24:45 momjian Exp $
+ * $PostgreSQL: pgsql/src/bin/psql/copy.c,v 1.66 2006/06/14 16:49:02 tgl Exp $
  */
 #include "postgres_fe.h"
 #include "copy.h"
@@ -704,7 +704,7 @@ handleCopyIn(PGconn *conn, FILE *copystream, bool isbinary)
 	/* Prompt if interactive input */
 	if (isatty(fileno(copystream)))
 	{
-		if (!QUIET())
+		if (!pset.quiet)
 			puts(_("Enter data to be copied followed by a newline.\n"
 				   "End with a backslash and a period on a line by itself."));
 		prompt = get_prompt(PROMPT_COPY);
