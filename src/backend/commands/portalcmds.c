@@ -14,7 +14,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/portalcmds.c,v 1.49 2006/08/08 01:23:15 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/portalcmds.c,v 1.50 2006/08/12 20:05:54 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -114,6 +114,7 @@ PerformCursorOpen(DeclareCursorStmt *stmt, ParamListInfo params)
 	PortalDefineQuery(portal,
 					  NULL,
 					  pstrdup(debug_query_string),
+					  NULL,
 					  "SELECT", /* cursor's query is always a SELECT */
 					  list_make1(query),
 					  list_make1(plan),
