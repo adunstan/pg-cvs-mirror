@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/commands/copy.h,v 1.26 2006/03/03 19:54:10 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/commands/copy.h,v 1.27 2006/03/05 15:58:55 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -15,8 +15,11 @@
 #define COPY_H
 
 #include "nodes/parsenodes.h"
+#include "tcop/dest.h"
 
 
 extern uint64 DoCopy(const CopyStmt *stmt);
+
+extern DestReceiver *CreateCopyDestReceiver(void);
 
 #endif   /* COPY_H */
