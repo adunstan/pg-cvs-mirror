@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/copy.c,v 1.269 2006/08/30 23:34:21 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/copy.c,v 1.270 2006/08/31 00:35:32 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -685,7 +685,7 @@ CopyLoadRawBuf(CopyState cstate)
 
 
 /*
- *	 DoCopy executes the SQL COPY statement.
+ *	 DoCopy executes the SQL COPY statement
  *
  * Either unload or reload contents of table <relation>, depending on <from>.
  * (<from> = TRUE means we are inserting into the table.)  In the "TO" case
