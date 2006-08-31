@@ -1,14 +1,14 @@
 /*-------------------------------------------------------------------------
  *
  * copy.c
- *		Implements the COPY utility command.
+ *		Implements the COPY utility command
  *
  * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/copy.c,v 1.268 2006/07/14 14:52:18 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/copy.c,v 1.269 2006/08/30 23:34:21 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
