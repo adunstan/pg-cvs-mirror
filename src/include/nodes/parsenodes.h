@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/nodes/parsenodes.h,v 1.325 2006/08/25 04:06:56 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/nodes/parsenodes.h,v 1.326 2006/08/30 23:34:22 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1439,13 +1439,13 @@ typedef enum FetchDirection
 	FETCH_RELATIVE
 } FetchDirection;
 
-#define FETCH_ALL	LONG_MAX
+#define FETCH_ALL	LLONG_MAX
 
 typedef struct FetchStmt
 {
 	NodeTag		type;
 	FetchDirection direction;	/* see above */
-	long		howMany;		/* number of rows, or position argument */
+	int64		howMany;		/* number of rows, or position argument */
 	char	   *portalname;		/* name of portal (cursor) */
 	bool		ismove;			/* TRUE if MOVE */
 } FetchStmt;
