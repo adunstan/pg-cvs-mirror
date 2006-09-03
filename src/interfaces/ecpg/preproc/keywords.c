@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/interfaces/ecpg/preproc/keywords.c,v 1.74 2006/08/02 13:43:23 meskes Exp $
+ *	  $PostgreSQL: pgsql/src/interfaces/ecpg/preproc/keywords.c,v 1.75 2006/08/18 15:59:35 meskes Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -81,6 +81,7 @@ static ScanKeyword ScanKeywords[] = {
 	{"comment", COMMENT},
 	{"commit", COMMIT},
 	{"committed", COMMITTED},
+	{"concurrently", CONCURRENTLY},
 	{"connection", CONNECTION},
 	{"constraint", CONSTRAINT},
 	{"constraints", CONSTRAINTS},
