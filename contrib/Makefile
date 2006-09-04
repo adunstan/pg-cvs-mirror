@@ -1,4 +1,4 @@
-# $PostgreSQL: pgsql/contrib/Makefile,v 1.65 2006/04/23 02:17:59 ishii Exp $
+# $PostgreSQL: pgsql/contrib/Makefile,v 1.66 2006/05/30 13:25:57 momjian Exp $
 
 subdir = contrib
 top_builddir = ..
@@ -35,6 +35,10 @@ WANTED_DIRS = \
 		tsearch2	\
 		userlock	\
 		vacuumlo
+
+ifeq ($(with_openssl),yes)
+WANTED_DIRS += sslinfo
+endif
 
 # Missing:
 #		adddepend	\ (does not have a makefile)
