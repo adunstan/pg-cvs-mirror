@@ -26,7 +26,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $PostgreSQL: pgsql/contrib/pgcrypto/pgcrypto.h,v 1.9 2006/07/10 22:06:11 momjian Exp $
+ * $PostgreSQL: pgsql/contrib/pgcrypto/pgcrypto.h,v 1.10 2006/07/13 04:15:25 neilc Exp $
  */
 
 #ifndef _PG_CRYPTO_H
@@ -36,9 +36,7 @@
 
 /* exported functions */
 Datum		pg_digest(PG_FUNCTION_ARGS);
-Datum		pg_digest_exists(PG_FUNCTION_ARGS);
 Datum		pg_hmac(PG_FUNCTION_ARGS);
-Datum		pg_hmac_exists(PG_FUNCTION_ARGS);
 Datum		pg_gen_salt(PG_FUNCTION_ARGS);
 Datum		pg_gen_salt_rounds(PG_FUNCTION_ARGS);
 Datum		pg_crypt(PG_FUNCTION_ARGS);
@@ -46,7 +44,6 @@ Datum		pg_encrypt(PG_FUNCTION_ARGS);
 Datum		pg_decrypt(PG_FUNCTION_ARGS);
 Datum		pg_encrypt_iv(PG_FUNCTION_ARGS);
 Datum		pg_decrypt_iv(PG_FUNCTION_ARGS);
-Datum		pg_cipher_exists(PG_FUNCTION_ARGS);
 Datum		pg_random_bytes(PG_FUNCTION_ARGS);
 
 #endif
