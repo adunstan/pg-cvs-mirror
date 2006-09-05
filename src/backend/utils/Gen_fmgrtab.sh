@@ -9,7 +9,7 @@
 #
 #
 # IDENTIFICATION
-#    $PostgreSQL: pgsql/src/backend/utils/Gen_fmgrtab.sh,v 1.31 2004/12/31 22:01:18 pgsql Exp $
+#    $PostgreSQL: pgsql/src/backend/utils/Gen_fmgrtab.sh,v 1.32 2006/03/05 15:58:40 momjian Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -89,7 +89,7 @@ if [ $? -ne 0 ]; then
 fi
 
 
-cpp_define=`echo $OIDSFILE | tr abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ | sed -e 's/[^A-Z]/_/g'`
+cpp_define=`echo $OIDSFILE | tr abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ | sed -e 's/[^ABCDEFGHIJKLMNOPQRSTUVWXYZ]/_/g'`
 
 #
 # Generate fmgroids.h
