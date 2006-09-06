@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/functions.c,v 1.104 2006/07/14 14:52:19 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/functions.c,v 1.105 2006/08/12 20:05:55 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -442,6 +442,7 @@ postquel_sub_params(SQLFunctionCachePtr fcache,
 
 			prm->value = fcinfo->arg[i];
 			prm->isnull = fcinfo->argnull[i];
+			prm->pflags = 0;
 			prm->ptype = fcache->argtypes[i];
 		}
 	}
