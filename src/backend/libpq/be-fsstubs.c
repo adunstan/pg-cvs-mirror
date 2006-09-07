@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/libpq/be-fsstubs.c,v 1.81 2006/03/05 15:58:27 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/libpq/be-fsstubs.c,v 1.82 2006/04/26 00:34:57 tgl Exp $
  *
  * NOTES
  *	  This should be moved to a more appropriate place.  It is here
@@ -165,7 +165,7 @@ lo_read(int fd, char *buf, int len)
 }
 
 int
-lo_write(int fd, char *buf, int len)
+lo_write(int fd, const char *buf, int len)
 {
 	int			status;
 
