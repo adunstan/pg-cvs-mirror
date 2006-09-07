@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/spi.c,v 1.161 2006/09/03 03:19:44 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/spi.c,v 1.162 2006/09/06 20:40:47 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -921,7 +921,6 @@ SPI_cursor_open(const char *name, void *plan,
 	PortalDefineQuery(portal,
 					  NULL,		/* no statement name */
 					  spiplan->query,
-					  NULL,
 					  CreateQueryTag(PortalListGetPrimaryQuery(qtlist)),
 					  qtlist,
 					  ptlist,
