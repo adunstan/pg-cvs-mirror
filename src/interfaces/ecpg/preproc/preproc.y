@@ -1,4 +1,4 @@
-/* $PostgreSQL: pgsql/src/interfaces/ecpg/preproc/preproc.y,v 1.336 2006/09/03 19:30:43 tgl Exp $ */
+/* $PostgreSQL: pgsql/src/interfaces/ecpg/preproc/preproc.y,v 1.337 2006/09/05 10:00:52 meskes Exp $ */
 
 /* Copyright comment */
 %{
@@ -6038,7 +6038,7 @@ action : SQL_CONTINUE
 		| SQL_CALL name
 		{
 			$<action>$.code = W_DO;
-			$<action>$.command = cat_str(3, $2, make_str("("), make_str(")"));
+			$<action>$.command = cat2_str($2, make_str("()"));
 			$<action>$.str = cat2_str(make_str("call"), mm_strdup($<action>$.command));
 		}
 		;
