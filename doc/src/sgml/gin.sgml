@@ -1,4 +1,4 @@
-<!-- $PostgreSQL: pgsql/doc/src/sgml/gin.sgml,v 1.26 2006/03/10 19:10:48 momjian Exp $ -->
+<!-- $PostgreSQL: pgsql/doc/src/sgml/gin.sgml,v 2.1 2006/09/14 11:16:27 teodor Exp $ -->
 
 <chapter id="GIN">
 <title>GIN Indexes</title>
@@ -174,7 +174,7 @@
 	</para>
    </listitem>
   </varlistentry>
- <variablelist>
+ </variablelist>
 
 </sect1>
 
