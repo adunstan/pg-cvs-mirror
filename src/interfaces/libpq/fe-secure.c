@@ -11,7 +11,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-secure.c,v 1.85 2006/07/14 16:59:19 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-secure.c,v 1.86 2006/09/04 14:57:27 petere Exp $
  *
  * NOTES
  *	  [ Most of these notes are wrong/obsolete, but perhaps not all ]
@@ -107,10 +107,6 @@
 #else
 #include <pthread.h>
 #endif
-#endif
-
-#ifndef HAVE_STRDUP
-#include "strdup.h"
 #endif
 
 #ifdef USE_SSL

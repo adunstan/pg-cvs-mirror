@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-connect.c,v 1.334 2006/07/27 13:20:24 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-connect.c,v 1.335 2006/09/15 21:34:23 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -21,10 +21,6 @@
 #include <ctype.h>
 #include <time.h>
 #include <unistd.h>
-
-#ifndef HAVE_STRDUP
-#include "strdup.h"
-#endif
 
 #include "libpq-fe.h"
 #include "libpq-int.h"
