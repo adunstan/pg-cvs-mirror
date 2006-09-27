@@ -7,7 +7,7 @@
  *
  * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/port/thread.c,v 1.33 2006/06/07 22:24:46 momjian Exp $
+ * $PostgreSQL: pgsql/src/port/thread.c,v 1.34 2006/07/06 02:12:32 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -81,7 +81,7 @@ pqStrerror(int errnum, char *strerrbuf, size_t buflen)
 #endif
 #else
 	/* no strerror_r() available, just use strerror */
-	StrNCpy(strerrbuf, strerror(errnum), buflen);
+	strlcpy(strerrbuf, strerror(errnum), buflen);
 
 	return strerrbuf;
 #endif
