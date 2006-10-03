@@ -10,7 +10,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/functioncmds.c,v 1.76 2006/07/14 14:52:18 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/functioncmds.c,v 1.77 2006/09/25 15:17:34 tgl Exp $
  *
  * DESCRIPTION
  *	  These routines take the parse tree and pick out the
@@ -690,7 +690,7 @@ RemoveFunction(RemoveFuncStmt *stmt)
 	{
 		/* can only get here if stmt->missing_ok */
 		ereport(NOTICE,
-				(errmsg("function %s(%s) does not exist ... skipping",
+				(errmsg("function %s(%s) does not exist, skipping",
 						NameListToString(functionName),
 						TypeNameListToString(argTypes))));
 		return;
