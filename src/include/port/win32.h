@@ -1,4 +1,8 @@
-/* $PostgreSQL: pgsql/src/include/port/win32.h,v 1.58 2006/08/10 01:41:29 momjian Exp $ */
+/* $PostgreSQL: pgsql/src/include/port/win32.h,v 1.59 2006/09/16 13:35:49 tgl Exp $ */
+
+#if defined(_MSC_VER) || defined(__BORLANDC__)
+#define	WIN32_ONLY_COMPILER
+#endif
 
 /* undefine and redefine after #include */
 #undef mkdir
