@@ -1,4 +1,4 @@
-/* $PostgreSQL: pgsql/src/include/port/win32.h,v 1.59 2006/09/16 13:35:49 tgl Exp $ */
+/* $PostgreSQL: pgsql/src/include/port/win32.h,v 1.60 2006/10/03 03:59:22 momjian Exp $ */
 
 #if defined(_MSC_VER) || defined(__BORLANDC__)
 #define	WIN32_ONLY_COMPILER
@@ -271,9 +271,6 @@ typedef unsigned short mode_t;
  */
 #define inline __inline
 #define __inline__ __inline
-
-#undef errcode
-#define errcode __msvc_errcode
 
 #define _S_IRWXU	(_S_IREAD | _S_IWRITE | _S_IEXEC)
 #define _S_IXUSR	_S_IEXEC
