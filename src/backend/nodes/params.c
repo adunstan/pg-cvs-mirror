@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/nodes/params.c,v 1.5 2006/03/05 15:58:28 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/nodes/params.c,v 1.6 2006/04/22 01:25:59 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -37,14 +37,14 @@ copyParamList(ParamListInfo from)
 
 	/* sizeof(ParamListInfoData) includes the first array element */
 	size = sizeof(ParamListInfoData) +
-		(from->numParams - 1) * sizeof(ParamExternData);
+		(from->numParams - 1) *sizeof(ParamExternData);
 
 	retval = (ParamListInfo) palloc(size);
 	memcpy(retval, from, size);
 
 	/*
-	 * Flat-copy is not good enough for pass-by-ref data values, so make
-	 * a pass over the array to copy those.
+	 * Flat-copy is not good enough for pass-by-ref data values, so make a
+	 * pass over the array to copy those.
 	 */
 	for (i = 0; i < retval->numParams; i++)
 	{

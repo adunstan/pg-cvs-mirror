@@ -1,2 +1,1 @@
-/* $PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.314 2006/03/07 02:54:23 momjian Exp $ */
-
+/* $PostgreSQL: pgsql/src/include/port/linux.h,v 1.41 2006/03/11 04:38:38 momjian Exp $ */

@@ -12,7 +12,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/nodeSubqueryscan.c,v 1.30 2006/06/16 18:42:22 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/nodeSubqueryscan.c,v 1.31 2006/07/14 14:52:19 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -204,7 +204,7 @@ ExecInitSubqueryScan(SubqueryScan *node, EState *estate, int eflags)
 	 * too soon during shutdown.
 	 */
 	ExecAssignScanType(&subquerystate->ss,
-			CreateTupleDescCopy(ExecGetResultType(subquerystate->subplan)));
+			 CreateTupleDescCopy(ExecGetResultType(subquerystate->subplan)));
 
 	/*
 	 * Initialize result tuple type and projection info.

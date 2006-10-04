@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/catalog/pg_class.h,v 1.94 2006/07/03 22:45:40 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/catalog/pg_class.h,v 1.95 2006/07/10 16:20:51 alvherre Exp $
  *
  * NOTES
  *	  the genbki.sh script reads this file and generates .bki
@@ -66,7 +66,7 @@ CATALOG(pg_class,1259) BKI_BOOTSTRAP
 	bool		relhasrules;	/* has associated rules */
 	bool		relhassubclass; /* has derived classes */
 	TransactionId relminxid;	/* minimum Xid present in table */
-	TransactionId relvacuumxid;	/* Xid used as last vacuum OldestXmin */
+	TransactionId relvacuumxid; /* Xid used as last vacuum OldestXmin */
 
 	/*
 	 * VARIABLE LENGTH FIELDS start here.  These fields may be NULL, too.

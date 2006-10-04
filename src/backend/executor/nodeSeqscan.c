@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/nodeSeqscan.c,v 1.59 2006/06/16 18:42:22 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/nodeSeqscan.c,v 1.60 2006/07/14 14:52:19 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -148,7 +148,7 @@ InitScanRelation(SeqScanState *node, EState *estate)
 	 * open that relation and acquire appropriate lock on it.
 	 */
 	currentRelation = ExecOpenScanRelation(estate,
-										   ((SeqScan *) node->ps.plan)->scanrelid);
+									 ((SeqScan *) node->ps.plan)->scanrelid);
 
 	currentScanDesc = heap_beginscan(currentRelation,
 									 estate->es_snapshot,

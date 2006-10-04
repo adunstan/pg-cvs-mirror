@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/optimizer/util/restrictinfo.c,v 1.47 2006/04/07 17:05:39 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/optimizer/util/restrictinfo.c,v 1.48 2006/07/01 18:38:33 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -169,14 +169,15 @@ make_restrictinfo_from_bitmapqual(Path *bitmapqual,
 				 */
 				return NIL;
 			}
+
 			/*
 			 * If the sublist contains multiple RestrictInfos, we create an
 			 * AND subclause.  If there's just one, we have to check if it's
 			 * an OR clause, and if so flatten it to preserve AND/OR flatness
 			 * of our output.
 			 *
-			 * We construct lists with and without sub-RestrictInfos, so
-			 * as not to have to regenerate duplicate RestrictInfos below.
+			 * We construct lists with and without sub-RestrictInfos, so as
+			 * not to have to regenerate duplicate RestrictInfos below.
 			 */
 			if (list_length(sublist) > 1)
 			{
@@ -186,7 +187,7 @@ make_restrictinfo_from_bitmapqual(Path *bitmapqual,
 			}
 			else
 			{
-				RestrictInfo   *subri = (RestrictInfo *) linitial(sublist);
+				RestrictInfo *subri = (RestrictInfo *) linitial(sublist);
 
 				Assert(IsA(subri, RestrictInfo));
 				if (restriction_is_or_clause(subri))

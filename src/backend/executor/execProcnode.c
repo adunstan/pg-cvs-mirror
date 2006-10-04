@@ -12,7 +12,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/execProcnode.c,v 1.57 2006/07/14 14:52:18 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/execProcnode.c,v 1.58 2006/08/02 01:59:45 joe Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -197,7 +197,7 @@ ExecInitNode(Plan *node, EState *estate, int eflags)
 
 		case T_ValuesScan:
 			result = (PlanState *) ExecInitValuesScan((ValuesScan *) node,
-														estate, eflags);
+													  estate, eflags);
 			break;
 
 			/*

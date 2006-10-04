@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/storage/file/fd.c,v 1.128 2006/05/30 13:04:59 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/storage/file/fd.c,v 1.129 2006/08/24 03:15:43 tgl Exp $
  *
  * NOTES:
  *
@@ -1026,7 +1026,7 @@ retry:
 		 * in which case immediate retry is indicated.
 		 */
 #ifdef WIN32
-		DWORD error = GetLastError();
+		DWORD		error = GetLastError();
 
 		switch (error)
 		{
@@ -1081,7 +1081,7 @@ retry:
 		 * See comments in FileRead()
 		 */
 #ifdef WIN32
-		DWORD error = GetLastError();
+		DWORD		error = GetLastError();
 
 		switch (error)
 		{
@@ -1279,8 +1279,8 @@ TryAgain:
 	}
 
 	/*
-	 * TEMPORARY hack to log the Windows error code on fopen failures,
-	 * in hopes of diagnosing some hard-to-reproduce problems.
+	 * TEMPORARY hack to log the Windows error code on fopen failures, in
+	 * hopes of diagnosing some hard-to-reproduce problems.
 	 */
 #ifdef WIN32
 	{

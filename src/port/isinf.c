@@ -7,7 +7,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/port/isinf.c,v 1.8 2006/01/05 01:56:30 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/port/isinf.c,v 1.9 2006/03/05 15:59:10 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -73,4 +73,5 @@ isinf(double x)
 	return 0;
 }
 #endif
+
 #endif

@@ -1,5 +1,5 @@
 /*
- * $PostgreSQL$
+ * $PostgreSQL: pgsql/src/include/port/win32/sys/socket.h,v 1.6 2006/07/16 01:35:28 tgl Exp $
  */
 #ifndef WIN32_SYS_SOCKET_H
 #define WIN32_SYS_SOCKET_H
@@ -29,4 +29,4 @@
  */
 #undef gai_strerror
 
-#endif /* WIN32_SYS_SOCKET_H */
+#endif   /* WIN32_SYS_SOCKET_H */

@@ -26,7 +26,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $PostgreSQL: pgsql/contrib/pgcrypto/internal.c,v 1.23 2005/10/15 02:49:06 momjian Exp $
+ * $PostgreSQL: pgsql/contrib/pgcrypto/internal.c,v 1.24 2006/07/13 04:15:24 neilc Exp $
  */
 
 #include "postgres.h"
@@ -78,10 +78,10 @@
 static void init_md5(PX_MD * h);
 static void init_sha1(PX_MD * h);
 
-void init_sha224(PX_MD * h);
-void init_sha256(PX_MD * h);
-void init_sha384(PX_MD * h);
-void init_sha512(PX_MD * h);
+void		init_sha224(PX_MD * h);
+void		init_sha256(PX_MD * h);
+void		init_sha384(PX_MD * h);
+void		init_sha512(PX_MD * h);
 
 struct int_digest
 {
