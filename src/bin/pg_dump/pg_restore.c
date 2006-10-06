@@ -34,7 +34,7 @@
  *
  *
  * IDENTIFICATION
- *		$PostgreSQL: pgsql/src/bin/pg_dump/pg_restore.c,v 1.80 2006/08/01 18:21:44 momjian Exp $
+ *		$PostgreSQL: pgsql/src/bin/pg_dump/pg_restore.c,v 1.81 2006/09/27 15:41:23 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -396,9 +396,10 @@ usage(const char *progname)
 			 "                           use SESSION AUTHORIZATION commands instead of\n"
 			 "                           OWNER TO commands\n"));
 	printf(_("  -X no-data-for-failed-tables\n"
-			 "                           do not restore data of tables which could not be\n"
+			 "                           do not restore data of tables that could not be\n"
 			 "                           created\n"));
-	printf(_("  -1, --single-transaction restore as a single transaction\n"));
+	printf(_("  -1, --single-transaction\n"
+			 "                           restore as a single transaction\n"));
 
 	printf(_("\nConnection options:\n"));
 	printf(_("  -h, --host=HOSTNAME      database server host or socket directory\n"));

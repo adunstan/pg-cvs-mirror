@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *			$PostgreSQL: pgsql/src/backend/access/gin/ginscan.c,v 1.5 2006/09/14 11:26:49 teodor Exp $
+ *			$PostgreSQL: pgsql/src/backend/access/gin/ginscan.c,v 1.6 2006/10/04 00:29:48 momjian Exp $
  *-------------------------------------------------------------------------
  */
 
@@ -176,7 +176,7 @@ newScanKey(IndexScanDesc scan)
 	if (so->nkeys == 0)
 		ereport(ERROR,
 				(errcode(ERRCODE_FEATURE_NOT_SUPPORTED),
-				 errmsg("GIN index doesn't support search with void query")));
+				 errmsg("GIN index does not support search with void query")));
 
 	pgstat_count_index_scan(&scan->xs_pgstat_info);
 }

@@ -11,7 +11,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-secure.c,v 1.87 2006/09/27 15:41:24 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-secure.c,v 1.88 2006/10/04 00:30:13 momjian Exp $
  *
  * NOTES
  *	  [ Most of these notes are wrong/obsolete, but perhaps not all ]
@@ -808,7 +808,7 @@ initialize_SSL(PGconn *conn)
 					char	   *err = SSLerrmessage();
 
 					printfPQExpBuffer(&conn->errorMessage,
-									  libpq_gettext("Installed SSL library does not support CRL certificates, file \"%s\"\n"),
+									  libpq_gettext("SSL library does not support CRL certificates (file \"%s\")\n"),
 									  fnbuf);
 					SSLerrfree(err);
 					return -1;
