@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/parser/keywords.c,v 1.175 2006/08/12 02:52:05 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/parser/keywords.c,v 1.176 2006/08/25 04:06:52 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -67,6 +67,7 @@ static const ScanKeyword ScanKeywords[] = {
 	{"cache", CACHE},
 	{"called", CALLED},
 	{"cascade", CASCADE},
+	{"cascaded", CASCADED},
 	{"case", CASE},
 	{"cast", CAST},
 	{"chain", CHAIN},
