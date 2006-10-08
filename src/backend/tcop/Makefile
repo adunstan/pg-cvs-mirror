@@ -4,7 +4,7 @@
 #    Makefile for tcop
 #
 # IDENTIFICATION
-#    $PostgreSQL: /cvsroot/pgsql-server/src/backend/tcop/Makefile,v 1.24 2000/08/31 16:10:40 petere Exp $
+#    $PostgreSQL: pgsql/src/backend/tcop/Makefile,v 1.25 2003/11/29 19:51:57 pgsql Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -13,6 +13,8 @@ top_builddir = ../../..
 include $(top_builddir)/src/Makefile.global
 
 OBJS= dest.o fastpath.o postgres.o pquery.o utility.o
+
+override CPPFLAGS += -DWIN32_STACK_RLIMIT=$(WIN32_STACK_RLIMIT)
 
 all: SUBSYS.o
 
