@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/include/pgtime.h,v 1.12 2006/03/05 15:58:53 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/include/pgtime.h,v 1.13 2006/09/16 20:14:33 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -55,6 +55,7 @@ extern size_t pg_strftime(char *s, size_t max, const char *format,
 extern void pg_timezone_initialize(void);
 extern pg_tz *pg_tzset(const char *tzname);
 extern bool tz_acceptable(pg_tz *tz);
+extern bool pg_get_timezone_offset(const pg_tz *tz, long int *gmtoff);
 extern const char *pg_get_timezone_name(pg_tz *tz);
 
 extern pg_tzenum *pg_tzenumerate_start(void);
