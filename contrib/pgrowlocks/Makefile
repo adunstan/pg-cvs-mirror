@@ -2,14 +2,12 @@
 #
 # pgrowlocks Makefile
 #
-# $PostgreSQL: pgsql/contrib/pgrowlocks/Makefile,v 1.1 2006/04/23 01:12:58 ishii Exp $
+# $PostgreSQL: pgsql/contrib/pgrowlocks/Makefile,v 1.2 2006/09/30 18:08:32 tgl Exp $
 #
 #-------------------------------------------------------------------------
 
-SRCS		= pgrowlocks.c
-
 MODULE_big	= pgrowlocks
-OBJS		= $(SRCS:.c=.o)
+OBJS		= pgrowlocks.o
 DOCS		= README.pgrowlocks README.pgrowlocks.euc_jp
 DATA_built	= pgrowlocks.sql
 DATA		= uninstall_pgrowlocks.sql

@@ -2,14 +2,12 @@
 #
 # pgstattuple Makefile
 #
-# $PostgreSQL: pgsql/contrib/pgstattuple/Makefile,v 1.5 2006/02/27 12:54:39 petere Exp $
+# $PostgreSQL: pgsql/contrib/pgstattuple/Makefile,v 1.6 2006/09/02 17:05:29 momjian Exp $
 #
 #-------------------------------------------------------------------------
 
-SRCS		= pgstattuple.c pgstatindex.c
-
 MODULE_big	= pgstattuple
-OBJS		= $(SRCS:.c=.o)
+OBJS		= pgstattuple.o pgstatindex.o
 DOCS		= README.pgstattuple README.pgstattuple.euc_jp
 DATA_built	= pgstattuple.sql
 DATA      	= uninstall_pgstattuple.sql

@@ -1,8 +1,7 @@
-# $PostgreSQL: pgsql/contrib/fuzzystrmatch/Makefile,v 1.6 2005/09/27 17:13:03 tgl Exp $
+# $PostgreSQL: pgsql/contrib/fuzzystrmatch/Makefile,v 1.7 2006/02/27 12:54:38 petere Exp $
 
 MODULE_big = fuzzystrmatch
-SRCS += fuzzystrmatch.c dmetaphone.c
-OBJS = $(SRCS:.c=.o)
+OBJS = fuzzystrmatch.o dmetaphone.o
 DATA_built = fuzzystrmatch.sql
 DATA = uninstall_fuzzystrmatch.sql
 DOCS = README.fuzzystrmatch README.soundex
