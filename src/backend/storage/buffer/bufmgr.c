@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/storage/buffer/bufmgr.c,v 1.211 2006/09/25 22:01:10 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/storage/buffer/bufmgr.c,v 1.212 2006/10/04 00:29:57 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -694,21 +694,14 @@ retry:
 		BufTableDelete(&oldTag, oldHash);
 
 	/*
-	 * Avoid accepting a cancel interrupt when we release the mapping lock;
-	 * that would leave the buffer free but not on the freelist.  (Which would
-	 * not be fatal, since it'd get picked up again by the clock scanning
-	 * code, but we'd rather be sure it gets to the freelist.)
+	 * Done with mapping lock.
 	 */
-	HOLD_INTERRUPTS();
-
 	LWLockRelease(oldPartitionLock);
 
 	/*
 	 * Insert the buffer at the head of the list of free buffers.
 	 */
 	StrategyFreeBuffer(buf, true);
-
-	RESUME_INTERRUPTS();
 }
 
 /*
