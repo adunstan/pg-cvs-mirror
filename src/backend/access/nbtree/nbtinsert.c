@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/nbtree/nbtinsert.c,v 1.127 2005/10/15 02:49:09 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/nbtree/nbtinsert.c,v 1.127.2.1 2005/11/22 18:23:04 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1230,8 +1230,8 @@ _bt_insert_parent(Relation rel,
 
 		/* Check for error only after writing children */
 		if (pbuf == InvalidBuffer)
-			elog(ERROR, "failed to re-find parent key in \"%s\"",
-				 RelationGetRelationName(rel));
+			elog(ERROR, "failed to re-find parent key in \"%s\" for split pages %u/%u",
+				 RelationGetRelationName(rel), bknum, rbknum);
 
 		/* Recursively update the parent */
 		_bt_insertonpg(rel, pbuf, stack->bts_parent,
