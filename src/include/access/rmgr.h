@@ -3,7 +3,7 @@
  *
  * Resource managers definition
  *
- * $PostgreSQL: pgsql/src/include/access/rmgr.h,v 1.15 2005/11/07 17:36:46 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/access/rmgr.h,v 1.16 2006/05/02 11:28:55 teodor Exp $
  */
 #ifndef RMGR_H
 #define RMGR_H
@@ -12,6 +12,9 @@ typedef uint8 RmgrId;
 
 /*
  * Built-in resource managers
+ *
+ * Note: RM_MAX_ID could be as much as 255 without breaking the XLOG file
+ * format, but we keep it small to minimize the size of RmgrTable[].
  */
 #define RM_XLOG_ID				0
 #define RM_XACT_ID				1
@@ -20,6 +23,7 @@ typedef uint8 RmgrId;
 #define RM_DBASE_ID				4
 #define RM_TBLSPC_ID			5
 #define RM_MULTIXACT_ID			6
+#define RM_HEAP2_ID				9
 #define RM_HEAP_ID				10
 #define RM_BTREE_ID				11
 #define RM_HASH_ID				12

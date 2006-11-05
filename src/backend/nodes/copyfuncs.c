@@ -15,7 +15,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/nodes/copyfuncs.c,v 1.351 2006/10/04 00:29:53 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/nodes/copyfuncs.c,v 1.352 2006/10/13 21:43:18 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -2350,8 +2350,8 @@ _copyVacuumStmt(VacuumStmt *from)
 	COPY_SCALAR_FIELD(vacuum);
 	COPY_SCALAR_FIELD(full);
 	COPY_SCALAR_FIELD(analyze);
-	COPY_SCALAR_FIELD(freeze);
 	COPY_SCALAR_FIELD(verbose);
+	COPY_SCALAR_FIELD(freeze_min_age);
 	COPY_NODE_FIELD(relation);
 	COPY_NODE_FIELD(va_cols);
 

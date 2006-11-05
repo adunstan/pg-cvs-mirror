@@ -10,7 +10,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/transam/xact.c,v 1.226 2006/08/27 19:11:46 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/transam/xact.c,v 1.227 2006/10/04 00:29:49 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -468,8 +468,12 @@ TransactionIdIsCurrentTransactionId(TransactionId xid)
 	 * is what we need during bootstrap.  (Bootstrap mode only inserts tuples,
 	 * it never updates or deletes them, so all tuples can be presumed good
 	 * immediately.)
+	 *
+	 * Likewise, InvalidTransactionId and FrozenTransactionId are certainly
+	 * not my transaction ID, so we can just return "false" immediately for
+	 * any non-normal XID.
 	 */
-	if (xid == BootstrapTransactionId)
+	if (!TransactionIdIsNormal(xid))
 		return false;
 
 	/*
