@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/execQual.c,v 1.197 2006/11/06 18:21:31 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/execQual.c,v 1.198 2006/11/08 00:45:30 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -302,7 +302,7 @@ ExecEvalArrayRef(ArrayRefExprState *astate,
 				if (isAssignment)
 					ereport(ERROR,
 							(errcode(ERRCODE_NULL_VALUE_NOT_ALLOWED),
-							 errmsg("array subscript in assignment must not be NULL")));
+							 errmsg("array subscript in assignment must not be null")));
 				*isNull = true;
 				return (Datum) NULL;
 			}
