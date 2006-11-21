@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/timezone/pgtz.c,v 1.46 2006/10/04 00:30:14 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/timezone/pgtz.c,v 1.47 2006/10/16 19:58:27 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -729,7 +729,7 @@ static const struct
 								 * Tallinn, Vilnius */
 	{
 		"GMT Standard Time", "GMT Daylight Time",
-		"Europe/Dublin"
+		"Europe/London"
 	},							/* (GMT) Greenwich Mean Time : Dublin,
 								 * Edinburgh, Lisbon, London */
 	{
