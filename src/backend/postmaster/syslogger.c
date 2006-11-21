@@ -18,7 +18,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/postmaster/syslogger.c,v 1.27 2006/07/11 18:26:10 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/postmaster/syslogger.c,v 1.28 2006/07/16 20:17:04 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -180,6 +180,17 @@ SysLoggerMain(int argc, char *argv[])
 	if (syslogPipe[1])
 		CloseHandle(syslogPipe[1]);
 	syslogPipe[1] = 0;
+#endif
+
+	/*
+	 * If possible, make this process a group leader, so that the postmaster
+	 * can signal any child processes too.  (syslogger probably never has
+	 * any child processes, but for consistency we make all postmaster
+	 * child processes do this.)
+	 */
+#ifdef HAVE_SETSID
+	if (setsid() < 0)
+		elog(FATAL, "setsid() failed: %m");
 #endif
 
 	/*

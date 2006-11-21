@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/storage/lmgr/proc.c,v 1.179 2006/07/30 02:07:18 alvherre Exp $
+ *	  $PostgreSQL: pgsql/src/backend/storage/lmgr/proc.c,v 1.180 2006/10/04 00:29:57 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1243,6 +1243,10 @@ CheckStatementTimeout(void)
 		/* Time to die */
 		statement_timeout_active = false;
 		cancel_from_timeout = true;
+#ifdef HAVE_SETSID
+		/* try to signal whole process group */
+		kill(-MyProcPid, SIGINT);
+#endif
 		kill(MyProcPid, SIGINT);
 	}
 	else
