@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/spi.c,v 1.163 2006/09/07 22:52:00 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/spi.c,v 1.164 2006/10/04 00:29:53 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -254,6 +254,19 @@ AtEOSubXact_SPI(bool isCommit, SubTransactionId mySubid)
 				(errcode(ERRCODE_WARNING),
 				 errmsg("subtransaction left non-empty SPI stack"),
 				 errhint("Check for missing \"SPI_finish\" calls.")));
+
+	/*
+	 * If we are aborting a subtransaction and there is an open SPI context
+	 * surrounding the subxact, clean up to prevent memory leakage.
+	 */
+	if (_SPI_current && !isCommit)
+	{
+		/* free Executor memory the same as _SPI_end_call would do */
+		MemoryContextResetAndDeleteChildren(_SPI_current->execCxt);
+		/* throw away any partially created tuple-table */
+		SPI_freetuptable(_SPI_current->tuptable);
+		_SPI_current->tuptable = NULL;
+	}
 }
 
 
