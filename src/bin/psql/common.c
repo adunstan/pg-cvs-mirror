@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2005, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/psql/common.c,v 1.95 2005/01/01 05:43:08 momjian Exp $
+ * $PostgreSQL: pgsql/src/bin/psql/common.c,v 1.95.4.1 2005/11/04 18:35:51 tgl Exp $
  */
 #include "postgres_fe.h"
 #include "common.h"
@@ -892,7 +892,7 @@ PrintQueryResults(PGresult *results)
 
 		case PGRES_COMMAND_OK:
 			{
-				char		buf[10];
+				char		buf[16];
 
 				success = true;
 				snprintf(buf, sizeof(buf),
