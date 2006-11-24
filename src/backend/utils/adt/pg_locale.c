@@ -4,7 +4,7 @@
  *
  * Portions Copyright (c) 2002-2006, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/backend/utils/adt/pg_locale.c,v 1.36 2006/06/03 17:36:10 tgl Exp $
+ * $PostgreSQL: pgsql/src/backend/utils/adt/pg_locale.c,v 1.37 2006/10/04 00:29:59 momjian Exp $
  *
  *-----------------------------------------------------------------------
  */
@@ -26,8 +26,7 @@
  * required information obtained from localeconv(), and set them back.
  * The cached information is only used by the formatting functions
  * (to_char, etc.) and the money type.	For the user, this should all be
- * transparent.  (Actually, LC_TIME doesn't do anything at all right
- * now.)
+ * transparent.
  *
  * !!! NOW HEAR THIS !!!
  *
