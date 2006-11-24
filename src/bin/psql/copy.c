@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2006, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/psql/copy.c,v 1.69 2006/10/04 00:30:05 momjian Exp $
+ * $PostgreSQL: pgsql/src/bin/psql/copy.c,v 1.70 2006/10/06 17:14:00 petere Exp $
  */
 #include "postgres_fe.h"
 #include "copy.h"
@@ -597,6 +597,18 @@ do_copy(const char *args)
 	}
 
 	PQclear(result);
+
+	/*
+	 * Make sure we have pumped libpq dry of results; else it may still be
+	 * in ASYNC_BUSY state, leading to false readings in, eg, get_prompt().
+	 */
+	while ((result = PQgetResult(pset.db)) != NULL)
+	{
+		success = false;
+		psql_error("\\copy: unexpected response (%d)\n",
+				   PQresultStatus(result));
+		PQclear(result);
+	}
 
 	if (options->file != NULL)
 	{
