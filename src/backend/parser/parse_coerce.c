@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/parser/parse_coerce.c,v 2.144 2006/10/04 00:29:55 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/parser/parse_coerce.c,v 2.145 2006/10/11 20:21:03 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -954,9 +954,8 @@ select_common_type(List *typeids, const char *context)
 				ereport(ERROR,
 						(errcode(ERRCODE_DATATYPE_MISMATCH),
 
-				/*
-				 * translator: first %s is name of a SQL construct, eg CASE
-				 */
+				/*------
+				  translator: first %s is name of a SQL construct, eg CASE */
 						 errmsg("%s types %s and %s cannot be matched",
 								context,
 								format_type_be(ptype),
