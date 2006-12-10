@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/nodes/outfuncs.c,v 1.284 2006/08/25 04:06:50 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/nodes/outfuncs.c,v 1.285 2006/09/19 22:49:52 tgl Exp $
  *
  * NOTES
  *	  Every node type that can appear in stored rules' parsetrees *must*
@@ -634,6 +634,7 @@ _outParam(StringInfo str, Param *node)
 	WRITE_ENUM_FIELD(paramkind, ParamKind);
 	WRITE_INT_FIELD(paramid);
 	WRITE_OID_FIELD(paramtype);
+	WRITE_INT_FIELD(paramtypmod);
 }
 
 static void

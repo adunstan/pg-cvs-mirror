@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/parser/parse_expr.c,v 1.197 2006/08/12 20:05:55 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/parser/parse_expr.c,v 1.198 2006/10/04 00:29:55 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -572,6 +572,7 @@ transformParamRef(ParseState *pstate, ParamRef *pref)
 	param->paramkind = PARAM_EXTERN;
 	param->paramid = paramno;
 	param->paramtype = toppstate->p_paramtypes[paramno - 1];
+	param->paramtypmod = -1;
 
 	return (Node *) param;
 }
@@ -1180,6 +1181,7 @@ transformSubLink(ParseState *pstate, SubLink *sublink)
 			param->paramkind = PARAM_SUBLINK;
 			param->paramid = tent->resno;
 			param->paramtype = exprType((Node *) tent->expr);
+			param->paramtypmod = exprTypmod((Node *) tent->expr);
 
 			right_list = lappend(right_list, param);
 		}
@@ -1721,6 +1723,8 @@ exprTypmod(Node *expr)
 				}
 			}
 			break;
+		case T_Param:
+			return ((Param *) expr)->paramtypmod;
 		case T_FuncExpr:
 			{
 				int32		coercedTypmod;
