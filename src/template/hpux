@@ -1,6 +1,6 @@
-# $PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.314 2006/03/07 02:54:23 momjian Exp $
+# $PostgreSQL: pgsql/src/template/hpux,v 1.15 2006/03/11 04:38:41 momjian Exp $
 
-CPPFLAGS="-D_XOPEN_SOURCE_EXTENDED"
+CPPFLAGS="$CPPFLAGS -D_XOPEN_SOURCE_EXTENDED"
 
 if test "$GCC" != yes ; then
   CC="$CC -Ae"
