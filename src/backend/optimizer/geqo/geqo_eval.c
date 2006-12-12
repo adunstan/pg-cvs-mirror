@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/backend/optimizer/geqo/geqo_eval.c,v 1.80 2006/03/05 15:58:28 momjian Exp $
+ * $PostgreSQL: pgsql/src/backend/optimizer/geqo/geqo_eval.c,v 1.81 2006/10/24 17:50:22 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -258,7 +258,7 @@ desirable_join(PlannerInfo *root,
 	/*
 	 * Join if there is an applicable join clause.
 	 */
-	if (have_relevant_joinclause(outer_rel, inner_rel))
+	if (have_relevant_joinclause(root, outer_rel, inner_rel))
 		return true;
 
 	/*
