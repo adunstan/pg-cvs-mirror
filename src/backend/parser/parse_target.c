@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/parser/parse_target.c,v 1.148 2006/08/14 23:39:32 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/parser/parse_target.c,v 1.149 2006/10/04 00:29:56 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1314,6 +1314,21 @@ FigureColnameInternal(Node *node, char **name)
 					*name = "least";
 					return 2;
 			}
+			break;
+		case T_XmlExpr:
+			/* make SQL/XML functions act like a regular function */
+			switch (((XmlExpr*) node)->op)
+			{		
+				case IS_XMLCONCAT:
+					*name = "xmlconcat";
+					return 2;
+				case IS_XMLELEMENT:
+					*name = "xmlelement";
+					return 2;
+				case IS_XMLFOREST:
+					*name = "xmlforest";
+					return 2;
+			} 
 			break;
 		default:
 			break;

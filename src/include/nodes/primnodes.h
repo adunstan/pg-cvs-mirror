@@ -10,7 +10,7 @@
  * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/nodes/primnodes.h,v 1.117 2006/10/04 00:30:09 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/nodes/primnodes.h,v 1.118 2006/12/10 22:13:27 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -764,6 +764,26 @@ typedef struct BooleanTest
 	Expr	   *arg;			/* input expression */
 	BoolTestType booltesttype;	/* test type */
 } BooleanTest;
+
+/*
+ * XmlExpr - holder for SQL/XML functions XMLCONCAT,
+ * XMLELEMENT, XMLFOREST
+ */
+typedef enum XmlExprOp
+{
+	IS_XMLCONCAT,
+	IS_XMLELEMENT,
+	IS_XMLFOREST,
+} XmlExprOp;
+
+typedef struct XmlExpr
+{
+	Expr		xpr;
+	XmlExprOp	op;				/* xml expression type */
+	char	   *name;			/* element name */
+	List	   *named_args;
+	List	   *args;
+} XmlExpr;
 
 /*
  * CoerceToDomain
