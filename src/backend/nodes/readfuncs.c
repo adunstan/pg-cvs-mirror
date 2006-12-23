@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/nodes/readfuncs.c,v 1.196 2006/12/10 22:13:26 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/nodes/readfuncs.c,v 1.197 2006/12/21 16:05:13 petere Exp $
  *
  * NOTES
  *	  Path and Plan nodes do not have any readfuncs support, because we
@@ -672,7 +672,7 @@ _readRowCompareExpr(void)
 
 	READ_ENUM_FIELD(rctype, RowCompareType);
 	READ_NODE_FIELD(opnos);
-	READ_NODE_FIELD(opclasses);
+	READ_NODE_FIELD(opfamilies);
 	READ_NODE_FIELD(largs);
 	READ_NODE_FIELD(rargs);
 
