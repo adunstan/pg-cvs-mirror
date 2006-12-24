@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/parser/parse_target.c,v 1.149 2006/10/04 00:29:56 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/parser/parse_target.c,v 1.150 2006/12/21 16:05:14 petere Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1327,6 +1327,15 @@ FigureColnameInternal(Node *node, char **name)
 					return 2;
 				case IS_XMLFOREST:
 					*name = "xmlforest";
+					return 2;
+				case IS_XMLPARSE:
+					*name = "xmlparse";
+					return 2;
+				case IS_XMLPI:
+					*name = "xmlpi";
+					return 2;
+				case IS_XMLROOT:
+					*name = "xmlroot";
 					return 2;
 			} 
 			break;

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/pl/plpgsql/src/pl_exec.c,v 1.179 2006/09/22 21:39:58 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/pl/plpgsql/src/pl_exec.c,v 1.180 2006/10/04 00:30:13 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -4487,6 +4487,18 @@ exec_simple_check_node(Node *node)
 			{
 				MinMaxExpr *expr = (MinMaxExpr *) node;
 
+				if (!exec_simple_check_node((Node *) expr->args))
+					return FALSE;
+
+				return TRUE;
+			}
+
+		case T_XmlExpr:
+			{
+				XmlExpr *expr = (XmlExpr *) node;
+
+				if (!exec_simple_check_node((Node *) expr->named_args))
+					return FALSE;
 				if (!exec_simple_check_node((Node *) expr->args))
 					return FALSE;
 
