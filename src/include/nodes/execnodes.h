@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/nodes/execnodes.h,v 1.163 2006/12/21 16:05:16 petere Exp $
+ * $PostgreSQL: pgsql/src/include/nodes/execnodes.h,v 1.164 2006/12/24 00:29:20 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -327,6 +327,8 @@ typedef struct EState
 	uint32		es_processed;	/* # of tuples processed */
 	Oid			es_lastoid;		/* last oid processed (by INSERT) */
 	List	   *es_rowMarks;	/* not good place, but there is no other */
+
+	bool		es_is_subquery;	/* true if subquery (es_query_cxt not mine) */
 
 	bool		es_instrument;	/* true requests runtime instrumentation */
 	bool		es_select_into; /* true if doing SELECT INTO */
