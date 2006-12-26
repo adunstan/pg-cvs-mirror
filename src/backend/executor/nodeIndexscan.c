@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/nodeIndexscan.c,v 1.116 2006/07/31 20:09:04 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/nodeIndexscan.c,v 1.117 2006/10/04 00:29:52 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -167,6 +167,8 @@ ExecIndexReScan(IndexScanState *node, ExprContext *exprCtxt)
 	estate = node->ss.ps.state;
 	econtext = node->iss_RuntimeContext;		/* context for runtime keys */
 	scanrelid = ((IndexScan *) node->ss.ps.plan)->scan.scanrelid;
+
+	node->ss.ps.ps_TupFromTlist = false;
 
 	if (econtext)
 	{
@@ -475,6 +477,8 @@ ExecInitIndexScan(IndexScan *node, EState *estate, int eflags)
 	 * create expression context for node
 	 */
 	ExecAssignExprContext(estate, &indexstate->ss.ps);
+
+	indexstate->ss.ps.ps_TupFromTlist = false;
 
 	/*
 	 * initialize child expressions
