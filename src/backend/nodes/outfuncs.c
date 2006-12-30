@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/nodes/outfuncs.c,v 1.288 2006/12/23 00:43:10 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/nodes/outfuncs.c,v 1.289 2006/12/24 00:29:18 tgl Exp $
  *
  * NOTES
  *	  Every node type that can appear in stored rules' parsetrees *must*
@@ -1476,7 +1476,8 @@ _outTypeName(StringInfo str, TypeName *node)
 	WRITE_BOOL_FIELD(timezone);
 	WRITE_BOOL_FIELD(setof);
 	WRITE_BOOL_FIELD(pct_type);
-	WRITE_INT_FIELD(typmod);
+	WRITE_NODE_FIELD(typmods);
+	WRITE_INT_FIELD(typemod);
 	WRITE_NODE_FIELD(arrayBounds);
 	WRITE_INT_FIELD(location);
 }
