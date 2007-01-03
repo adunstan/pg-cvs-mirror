@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/tablecmds.c,v 1.207 2006/12/23 00:43:09 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/tablecmds.c,v 1.208 2006/12/30 21:21:53 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -6083,7 +6083,7 @@ copy_relation_data(Relation rel, SMgrRelation dst)
 		 * rel, because there's no need for smgr to schedule an fsync for this
 		 * write; we'll do it ourselves below.
 		 */
-		smgrwrite(dst, blkno, buf, true);
+		smgrextend(dst, blkno, buf, true);
 	}
 
 	/*
