@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/catalog/pg_type.h,v 1.176 2006/12/30 21:21:55 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/catalog/pg_type.h,v 1.177 2007/01/03 01:19:51 darcy Exp $
  *
  * NOTES
  *	  the genbki.sh script reads this file and generates .bki
@@ -244,7 +244,7 @@ typedef FormData_pg_type *Form_pg_type;
  * ----------------
  */
 
-/* keep the following ordered by OID so that later changes can be made easier*/
+/* keep the following ordered by OID so that later changes can be made more easily */
 
 /* Make sure the typlen, typbyval, and typalign values here match the initial
    values for attlen, attbyval, and attalign in both places in pg_attribute.h
