@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/tcop/postgres.c,v 1.517 2006/11/21 00:49:55 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/tcop/postgres.c,v 1.518 2006/11/21 20:59:52 tgl Exp $
  *
  * NOTES
  *	  this is the "main" module of the postgres backend and
@@ -2757,6 +2757,11 @@ PostgresMain(int argc, char *argv[], const char *username)
 	ctx = PGC_POSTMASTER;
 	gucsource = PGC_S_ARGV;		/* initial switches came from command line */
 
+	/*
+	 * Parse command-line options.  CAUTION: keep this in sync with
+	 * postmaster/postmaster.c (the option sets should not conflict)
+	 * and with the common help() function in main/main.c.
+	 */
 	while ((flag = getopt(argc, argv, "A:B:c:D:d:EeFf:h:ijk:lN:nOo:Pp:r:S:sTt:v:W:y:-:")) != -1)
 	{
 		switch (flag)
