@@ -4,10 +4,10 @@
  *	  prototypes for restrictinfo.c.
  *
  *
- * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/optimizer/restrictinfo.h,v 1.37 2006/07/01 18:38:33 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/optimizer/restrictinfo.h,v 1.38 2006/10/04 00:30:09 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

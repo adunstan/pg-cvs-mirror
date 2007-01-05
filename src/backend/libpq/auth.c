@@ -3,12 +3,12 @@
  * auth.c
  *	  Routines to handle network authentication
  *
- * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/libpq/auth.c,v 1.145 2006/10/06 17:13:59 petere Exp $
+ *	  $PostgreSQL: pgsql/src/backend/libpq/auth.c,v 1.146 2006/11/06 01:27:52 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */

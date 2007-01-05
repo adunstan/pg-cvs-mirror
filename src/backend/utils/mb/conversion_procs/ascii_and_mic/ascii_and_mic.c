@@ -2,11 +2,11 @@
  *
  *	  ASCII and MULE_INTERNAL
  *
- * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/mb/conversion_procs/ascii_and_mic/ascii_and_mic.c,v 1.11 2006/03/05 15:58:47 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/mb/conversion_procs/ascii_and_mic/ascii_and_mic.c,v 1.12 2006/05/30 22:12:14 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

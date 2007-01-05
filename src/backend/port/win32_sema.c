@@ -3,10 +3,10 @@
  * win32_sema.c
  *	  Microsoft Windows Win32 Semaphores Emulation
  *
- * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/port/win32_sema.c,v 1.2 2006/07/16 02:44:01 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/port/win32_sema.c,v 1.3 2006/10/04 00:29:56 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

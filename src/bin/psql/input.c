@@ -1,9 +1,9 @@
 /*
  * psql - the PostgreSQL interactive terminal
  *
- * Copyright (c) 2000-2006, PostgreSQL Global Development Group
+ * Copyright (c) 2000-2007, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/psql/input.c,v 1.60 2006/10/04 00:30:06 momjian Exp $
+ * $PostgreSQL: pgsql/src/bin/psql/input.c,v 1.61 2006/12/24 19:14:28 tgl Exp $
  */
 #include "postgres_fe.h"
 

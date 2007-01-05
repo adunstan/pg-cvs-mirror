@@ -4,10 +4,10 @@
  *	  prototypes for parse_relation.c.
  *
  *
- * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/parser/parse_relation.h,v 1.54 2006/08/02 01:59:48 joe Exp $
+ * $PostgreSQL: pgsql/src/include/parser/parse_relation.h,v 1.55 2006/10/04 00:30:09 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

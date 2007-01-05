@@ -1,9 +1,9 @@
 /*
  * psql - the PostgreSQL interactive terminal
  *
- * Copyright (c) 2000-2006, PostgreSQL Global Development Group
+ * Copyright (c) 2000-2007, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/psql/mainloop.c,v 1.83 2006/08/29 15:19:51 tgl Exp $
+ * $PostgreSQL: pgsql/src/bin/psql/mainloop.c,v 1.84 2006/10/04 00:30:06 momjian Exp $
  */
 #include "postgres_fe.h"
 #include "mainloop.h"

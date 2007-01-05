@@ -32,10 +32,10 @@
  * is no wider than Oid and both are unsigned types.
  *
  *
- * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/nodes/pg_list.h,v 1.54 2006/03/05 15:58:57 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/nodes/pg_list.h,v 1.55 2006/08/27 19:11:46 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -4,10 +4,10 @@
  *
  *
  *
- * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/parser/parse_func.h,v 1.56 2006/04/15 17:45:41 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/parser/parse_func.h,v 1.57 2006/10/04 00:30:09 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -2,11 +2,11 @@
  *
  *	  Utility functions for conversion procs.
  *
- * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/mb/conv.c,v 1.60 2006/05/21 20:05:19 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/mb/conv.c,v 1.61 2006/10/04 00:30:02 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -4,10 +4,10 @@
  *	  This file provides some definitions to support creation of toast tables
  *
  *
- * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/catalog/toasting.h,v 1.1 2006/07/31 01:16:37 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/catalog/toasting.h,v 1.2 2006/10/04 00:30:08 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

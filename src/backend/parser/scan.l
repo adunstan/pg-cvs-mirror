@@ -20,11 +20,11 @@
  * resulting "lex.backup" file says that no backing up is needed.
  *
  *
- * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/parser/scan.l,v 1.137 2006/09/03 03:19:44 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/parser/scan.l,v 1.138 2006/09/22 21:39:57 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

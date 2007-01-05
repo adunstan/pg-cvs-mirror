@@ -3,12 +3,12 @@
  * nodeBitmapOr.c
  *	  routines to handle BitmapOr nodes.
  *
- * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/nodeBitmapOr.c,v 1.6 2006/05/23 15:21:52 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/nodeBitmapOr.c,v 1.7 2006/05/30 14:01:58 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -33,11 +33,11 @@
  * restart needs to be forced.)
  *
  *
- * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/postmaster/bgwriter.c,v 1.32 2006/11/30 18:29:12 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/postmaster/bgwriter.c,v 1.33 2006/12/01 19:55:28 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

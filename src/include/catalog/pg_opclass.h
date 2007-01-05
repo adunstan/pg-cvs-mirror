@@ -25,10 +25,10 @@
  * AMs support this.
  *
  *
- * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/catalog/pg_opclass.h,v 1.71 2006/07/21 20:51:33 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/catalog/pg_opclass.h,v 1.72 2006/12/23 00:43:12 tgl Exp $
  *
  * NOTES
  *	  the genbki.sh script reads this file and generates .bki

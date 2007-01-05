@@ -3,12 +3,12 @@
  * restrictinfo.c
  *	  RestrictInfo node manipulation routines.
  *
- * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/optimizer/util/restrictinfo.c,v 1.49 2006/10/04 00:29:55 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/optimizer/util/restrictinfo.c,v 1.50 2006/12/23 00:43:11 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

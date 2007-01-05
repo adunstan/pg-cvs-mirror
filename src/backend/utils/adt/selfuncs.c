@@ -10,12 +10,12 @@
  *	  Index cost functions are registered in the pg_am catalog
  *	  in the "amcostestimate" attribute.
  *
- * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/selfuncs.c,v 1.216 2006/12/23 00:43:11 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/selfuncs.c,v 1.217 2007/01/03 22:39:26 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

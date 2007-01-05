@@ -15,9 +15,9 @@
  *	needed anymore.  Improve it someday.
  *
  *
- * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/backend/utils/adt/ri_triggers.c,v 1.88 2006/08/27 21:41:21 tgl Exp $
+ * $PostgreSQL: pgsql/src/backend/utils/adt/ri_triggers.c,v 1.89 2006/10/04 00:29:59 momjian Exp $
  *
  * ----------
  */

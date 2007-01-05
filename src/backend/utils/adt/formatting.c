@@ -1,10 +1,10 @@
 /* -----------------------------------------------------------------------
  * formatting.c
  *
- * $PostgreSQL: pgsql/src/backend/utils/adt/formatting.c,v 1.115 2006/11/24 22:25:56 momjian Exp $
+ * $PostgreSQL: pgsql/src/backend/utils/adt/formatting.c,v 1.116 2006/11/28 12:53:44 petere Exp $
  *
  *
- *	 Portions Copyright (c) 1999-2006, PostgreSQL Global Development Group
+ *	 Portions Copyright (c) 1999-2007, PostgreSQL Global Development Group
  *
  *
  *	 TO_CHAR(); TO_TIMESTAMP(); TO_DATE(); TO_NUMBER();

@@ -6,12 +6,12 @@
 #    files.  These .bki files are used to initialize the postgres template
 #    database.
 #
-# Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
+# Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
 # Portions Copyright (c) 1994, Regents of the University of California
 #
 #
 # IDENTIFICATION
-#    $PostgreSQL$
+#    $PostgreSQL: pgsql/src/tools/msvc/genbki.pl,v 1.1 2006/11/29 19:49:31 tgl Exp $
 #
 #-------------------------------------------------------------------------
 

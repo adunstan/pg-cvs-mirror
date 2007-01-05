@@ -5,9 +5,9 @@
  * to contain some useful information. Mechanism differs wildly across
  * platforms.
  *
- * $PostgreSQL: pgsql/src/backend/utils/misc/ps_status.c,v 1.32 2006/09/27 18:40:10 tgl Exp $
+ * $PostgreSQL: pgsql/src/backend/utils/misc/ps_status.c,v 1.33 2006/10/04 00:30:04 momjian Exp $
  *
- * Copyright (c) 2000-2006, PostgreSQL Global Development Group
+ * Copyright (c) 2000-2007, PostgreSQL Global Development Group
  * various details abducted from various places
  *--------------------------------------------------------------------
  */

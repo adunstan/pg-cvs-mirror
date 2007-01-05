@@ -9,10 +9,10 @@
  *	  polluting the namespace with lots of stuff...
  *
  *
- * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/c.h,v 1.213 2006/10/03 20:33:20 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/c.h,v 1.214 2006/10/04 00:30:06 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
