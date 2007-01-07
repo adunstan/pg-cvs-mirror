@@ -13,7 +13,7 @@
 # be converted to Method 2.  
 #
 # IDENTIFICATION
-#    $PostgreSQL: pgsql/src/backend/port/Makefile,v 1.22 2006/01/05 03:01:35 momjian Exp $
+#    $PostgreSQL: pgsql/src/backend/port/Makefile,v 1.23 2006/04/28 17:09:16 momjian Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -49,7 +49,7 @@ win32.dir:
 
 tas.o: tas.s
 ifeq ($(PORTNAME), solaris)
-	# preprocess assembler file with cpp, used by x86
+# preprocess assembler file with cpp, used by x86
 	$(CC) $(CFLAGS) -c -P $<
 	mv $*.i $*_cpp.s
 	$(CC) $(CFLAGS) -c $*_cpp.s -o $@

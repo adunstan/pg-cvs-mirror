@@ -2,7 +2,7 @@
 #
 # PostgreSQL documentation makefile
 #
-# $PostgreSQL: pgsql/doc/src/sgml/Makefile,v 1.85 2006/12/15 01:20:59 momjian Exp $
+# $PostgreSQL: pgsql/doc/src/sgml/Makefile,v 1.86 2006/12/15 16:50:07 momjian Exp $
 #
 #----------------------------------------------------------------------------
 
@@ -153,7 +153,7 @@ JADE.tex.call = $(JADE) $(JADEFLAGS) $(SGMLINCLUDE) $(CATALOG) -d $(srcdir)/styl
 
 %.dvi: %.tex-ps
 	@rm -f $*.aux $*.log
-	# multiple runs are necessary to create proper intra-document links
+# multiple runs are necessary to create proper intra-document links
 	jadetex $<
 	jadetex $<
 	jadetex $<
@@ -164,7 +164,7 @@ JADE.tex.call = $(JADE) $(JADEFLAGS) $(SGMLINCLUDE) $(CATALOG) -d $(srcdir)/styl
 
 %.pdf: %.tex-pdf
 	@rm -f $*.aux $*.log $*.out
-	# multiple runs are necessary to create proper intra-document links
+# multiple runs are necessary to create proper intra-document links
 	pdfjadetex $<
 	pdfjadetex $<
 	pdfjadetex $<
