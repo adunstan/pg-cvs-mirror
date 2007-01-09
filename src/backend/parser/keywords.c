@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/parser/keywords.c,v 1.179 2006/12/24 00:29:18 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/parser/keywords.c,v 1.180 2007/01/05 22:19:33 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -242,6 +242,7 @@ static const ScanKeyword ScanKeywords[] = {
 	{"nowait", NOWAIT},
 	{"null", NULL_P},
 	{"nullif", NULLIF},
+	{"nulls", NULLS_P},
 	{"numeric", NUMERIC},
 	{"object", OBJECT_P},
 	{"of", OF},

@@ -15,7 +15,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/selfuncs.c,v 1.217 2007/01/03 22:39:26 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/selfuncs.c,v 1.218 2007/01/05 22:19:42 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -5101,7 +5101,7 @@ btcostestimate(PG_FUNCTION_ARGS)
 
 		if (get_attstatsslot(tuple, InvalidOid, 0,
 							 STATISTIC_KIND_CORRELATION,
-							 index->ordering[0],
+							 index->fwdsortop[0],
 							 NULL, NULL, &numbers, &nnumbers))
 		{
 			double		varCorrelation;
@@ -5113,6 +5113,23 @@ btcostestimate(PG_FUNCTION_ARGS)
 				*indexCorrelation = varCorrelation * 0.75;
 			else
 				*indexCorrelation = varCorrelation;
+
+			free_attstatsslot(InvalidOid, NULL, 0, numbers, nnumbers);
+		}
+		else if (get_attstatsslot(tuple, InvalidOid, 0,
+								  STATISTIC_KIND_CORRELATION,
+								  index->revsortop[0],
+								  NULL, NULL, &numbers, &nnumbers))
+		{
+			double		varCorrelation;
+
+			Assert(nnumbers == 1);
+			varCorrelation = numbers[0];
+
+			if (index->ncolumns > 1)
+				*indexCorrelation = - varCorrelation * 0.75;
+			else
+				*indexCorrelation = - varCorrelation;
 
 			free_attstatsslot(InvalidOid, NULL, 0, numbers, nnumbers);
 		}

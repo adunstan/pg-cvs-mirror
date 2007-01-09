@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/utils/lsyscache.h,v 1.109 2006/12/30 21:21:56 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/utils/lsyscache.h,v 1.110 2007/01/05 22:19:59 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -37,6 +37,7 @@ extern Oid	get_opfamily_member(Oid opfamily, Oid lefttype, Oid righttype,
 								int16 strategy);
 extern bool get_op_mergejoin_info(Oid eq_op, Oid *left_sortop,
 					  Oid *right_sortop, Oid *opfamily);
+extern bool get_op_compare_function(Oid opno, Oid *cmpfunc, bool *reverse);
 extern Oid	get_op_hash_function(Oid opno);
 extern void get_op_btree_interpretation(Oid opno,
 							List **opfamilies, List **opstrats);
