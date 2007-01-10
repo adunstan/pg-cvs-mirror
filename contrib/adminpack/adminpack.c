@@ -3,12 +3,12 @@
  * adminpack.c
  *
  *
- * Copyright (c) 2002 - 2006, PostgreSQL Global Development Group
+ * Copyright (c) 2002-2007, PostgreSQL Global Development Group
  *
  * Author: Andreas Pflug <pgadmin@pse-consulting.de>
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/contrib/adminpack/adminpack.c,v 1.7 2006/10/20 00:59:03 tgl Exp $
+ *	  $PostgreSQL: pgsql/contrib/adminpack/adminpack.c,v 1.8 2006/11/06 03:06:40 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
