@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/optimizer/util/clauses.c,v 1.227 2007/01/05 22:19:32 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/optimizer/util/clauses.c,v 1.228 2007/01/09 02:14:13 tgl Exp $
  *
  * HISTORY
  *	  AUTHOR			DATE			MAJOR EVENT
@@ -3995,6 +3995,7 @@ expression_tree_mutator(Node *node,
 
 				FLATCOPY(newnode, ininfo, InClauseInfo);
 				MUTATE(newnode->sub_targetlist, ininfo->sub_targetlist, List *);
+				/* Assume we need not make a copy of in_operators list */
 				return (Node *) newnode;
 			}
 			break;
