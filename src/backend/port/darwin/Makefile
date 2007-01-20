@@ -4,7 +4,7 @@
 #    Makefile for port/darwin
 #
 # IDENTIFICATION
-#    $PostgreSQL: /cvsroot/pgsql-server/src/backend/port/darwin/Makefile,v 1.3 2002/05/05 01:03:26 tgl Exp $
+#    $PostgreSQL: pgsql/src/backend/port/darwin/Makefile,v 1.4 2003/11/29 19:51:54 pgsql Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -19,12 +19,5 @@ all: SUBSYS.o
 SUBSYS.o: $(OBJS)
 	$(LD) $(LDREL) $(LDOUT) SUBSYS.o $(OBJS)
 
-depend dep:
-	$(CC) -MM $(CFLAGS) *.c >depend
-
 clean:
 	rm -f SUBSYS.o $(OBJS)
-
-ifeq (depend,$(wildcard depend))
-include depend
-endif

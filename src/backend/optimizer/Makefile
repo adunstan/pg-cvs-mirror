@@ -1,7 +1,7 @@
 #
 # Makefile for optimizer
 #
-# $PostgreSQL: /cvsroot/pgsql-server/src/backend/optimizer/Makefile,v 1.10 2002/08/10 17:59:28 petere Exp $
+# $PostgreSQL: pgsql/src/backend/optimizer/Makefile,v 1.11 2003/11/29 19:51:50 pgsql Exp $
 #
 
 subdir = src/backend/optimizer
@@ -25,6 +25,3 @@ $(SUBDIRS:%=%-recursive):
 clean:
 	for dir in $(SUBDIRS); do $(MAKE) -C $$dir $@ || exit; done
 	rm -f SUBSYS.o
-
-dep depend: 
-	for dir in $(SUBDIRS); do $(MAKE) -C $$dir $@ || exit; done

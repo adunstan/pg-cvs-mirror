@@ -4,7 +4,7 @@
 #    Makefile for storage/lmgr
 #
 # IDENTIFICATION
-#    $PostgreSQL: pgsql/src/backend/storage/lmgr/Makefile,v 1.20 2004/10/07 00:08:04 neilc Exp $
+#    $PostgreSQL: pgsql/src/backend/storage/lmgr/Makefile,v 1.21 2006/04/28 22:54:31 momjian Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -30,12 +30,5 @@ s_lock_test: s_lock.c $(top_builddir)/src/port/libpgport.a
 check: s_lock_test
 	./s_lock_test
 
-depend dep:
-	$(CC) -MM $(CFLAGS) *.c >depend
-
 clean distclean maintainer-clean: 
 	rm -f SUBSYS.o $(OBJS) s_lock_test
-
-ifeq (depend,$(wildcard depend))
-include depend
-endif

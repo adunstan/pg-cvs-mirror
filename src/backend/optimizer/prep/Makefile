@@ -4,7 +4,7 @@
 #    Makefile for optimizer/prep
 #
 # IDENTIFICATION
-#    $PostgreSQL: /cvsroot/pgsql-server/src/backend/optimizer/prep/Makefile,v 1.14 2003/01/20 18:54:54 tgl Exp $
+#    $PostgreSQL: pgsql/src/backend/optimizer/prep/Makefile,v 1.15 2003/11/29 19:51:51 pgsql Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -19,13 +19,5 @@ all: SUBSYS.o
 SUBSYS.o: $(OBJS)
 	$(LD) $(LDREL) $(LDOUT) SUBSYS.o $(OBJS)
 
-depend dep:
-	$(CC) -MM $(CFLAGS) *.c >depend
-
 clean: 
 	rm -f SUBSYS.o $(OBJS)
-
-ifeq (depend,$(wildcard depend))
-include depend
-endif
-

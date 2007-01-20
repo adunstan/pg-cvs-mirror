@@ -4,7 +4,7 @@
 #    Makefile for utils/init
 #
 # IDENTIFICATION
-#    $PostgreSQL: pgsql/src/backend/utils/init/Makefile,v 1.18 2005/02/20 02:22:00 tgl Exp $
+#    $PostgreSQL: pgsql/src/backend/utils/init/Makefile,v 1.20 2005/05/10 22:27:30 momjian Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -19,12 +19,5 @@ all: SUBSYS.o
 SUBSYS.o: $(OBJS)
 	$(LD) $(LDREL) $(LDOUT) SUBSYS.o $(OBJS)
 
-depend dep:
-	$(CC) -MM $(CFLAGS) *.c >depend
-
 clean: 
 	rm -f SUBSYS.o $(OBJS)
-
-ifeq (depend,$(wildcard depend))
-include depend
-endif

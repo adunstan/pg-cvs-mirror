@@ -4,7 +4,7 @@
 #    Makefile for storage/buffer
 #
 # IDENTIFICATION
-#    $PostgreSQL: /cvsroot/pgsql-server/src/backend/storage/buffer/Makefile,v 1.16 2001/09/27 19:10:02 tgl Exp $
+#    $PostgreSQL: pgsql/src/backend/storage/buffer/Makefile,v 1.17 2003/11/29 19:51:56 pgsql Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -19,12 +19,5 @@ all: SUBSYS.o
 SUBSYS.o: $(OBJS)
 	$(LD) $(LDREL) $(LDOUT) SUBSYS.o $(OBJS)
 
-depend dep:
-	$(CC) -MM $(CFLAGS) *.c >depend
-
 clean: 
 	rm -f SUBSYS.o $(OBJS)
-
-ifeq (depend,$(wildcard depend))
-include depend
-endif

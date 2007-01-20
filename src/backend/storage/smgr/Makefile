@@ -4,7 +4,7 @@
 #    Makefile for storage/smgr
 #
 # IDENTIFICATION
-#    $PostgreSQL: pgsql-server/src/backend/storage/smgr/Makefile,v 1.14 2003/11/29 19:51:57 pgsql Exp $
+#    $PostgreSQL: pgsql/src/backend/storage/smgr/Makefile,v 1.15 2004/02/10 01:55:26 tgl Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -19,12 +19,5 @@ all: SUBSYS.o
 SUBSYS.o: $(OBJS)
 	$(LD) $(LDREL) $(LDOUT) SUBSYS.o $(OBJS)
 
-depend dep:
-	$(CC) -MM $(CFLAGS) *.c >depend
-
 clean: 
 	rm -f SUBSYS.o $(OBJS)
-
-ifeq (depend,$(wildcard depend))
-include depend
-endif

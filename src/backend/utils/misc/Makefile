@@ -4,7 +4,7 @@
 #    Makefile for utils/misc
 #
 # IDENTIFICATION
-#    $PostgreSQL: pgsql/src/backend/utils/misc/Makefile,v 1.25 2006/03/07 01:03:12 tgl Exp $
+#    $PostgreSQL: pgsql/src/backend/utils/misc/Makefile,v 1.26 2006/07/25 03:51:21 tgl Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -43,10 +43,3 @@ endif
 clean: 
 	rm -f SUBSYS.o $(OBJS)
 	@rm -f lex.yy.c
-
-depend dep:
-	$(CC) -MM $(CFLAGS) *.c >depend
-
-ifeq (depend,$(wildcard depend))
-include depend
-endif

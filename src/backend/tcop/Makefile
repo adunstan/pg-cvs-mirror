@@ -4,7 +4,7 @@
 #    Makefile for tcop
 #
 # IDENTIFICATION
-#    $PostgreSQL: pgsql/src/backend/tcop/Makefile,v 1.26 2006/10/08 17:15:34 tgl Exp $
+#    $PostgreSQL: pgsql/src/backend/tcop/Makefile,v 1.27 2006/12/14 20:51:14 petere Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -23,12 +23,5 @@ all: SUBSYS.o
 SUBSYS.o: $(OBJS)
 	$(LD) $(LDREL) $(LDOUT) SUBSYS.o $(OBJS)
 
-depend dep:
-	$(CC) -MM $(CFLAGS) *.c >depend
-
 clean: 
 	rm -f SUBSYS.o $(OBJS) 
-
-ifeq (depend,$(wildcard depend))
-include depend
-endif
