@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/parser/parse_agg.c,v 1.74 2006/12/10 22:13:26 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/parser/parse_agg.c,v 1.75 2007/01/05 22:19:33 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -171,6 +171,7 @@ parseCheckAggregates(ParseState *pstate, Query *qry)
 	{
 		root = makeNode(PlannerInfo);
 		root->parse = qry;
+		root->planner_cxt = CurrentMemoryContext;
 		root->hasJoinRTEs = true;
 
 		groupClauses = (List *) flatten_join_alias_vars(root,
