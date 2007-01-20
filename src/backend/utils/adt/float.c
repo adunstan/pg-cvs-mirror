@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/float.c,v 1.146 2007/01/06 20:21:29 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/float.c,v 1.147 2007/01/16 21:41:13 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1787,7 +1787,7 @@ setseed(PG_FUNCTION_ARGS)
 
 	srandom((unsigned int) iseed);
 
-	PG_RETURN_INT32(iseed);
+	PG_RETURN_VOID();
 }
 
 
