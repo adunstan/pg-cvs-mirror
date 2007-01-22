@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/optimizer/util/restrictinfo.c,v 1.51 2007/01/05 22:19:33 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/optimizer/util/restrictinfo.c,v 1.52 2007/01/20 20:45:40 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -344,6 +344,9 @@ make_restrictinfo_internal(Expr *clause,
 
 	restrictinfo->left_ec = NULL;
 	restrictinfo->right_ec = NULL;
+	restrictinfo->left_em = NULL;
+	restrictinfo->right_em = NULL;
+	restrictinfo->scansel_cache = NIL;
 
 	restrictinfo->outer_is_left = false;
 
