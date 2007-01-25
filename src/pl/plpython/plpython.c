@@ -1,7 +1,7 @@
 /**********************************************************************
  * plpython.c - python as a procedural language for PostgreSQL
  *
- *	$PostgreSQL: pgsql/src/pl/plpython/plpython.c,v 1.89 2006/10/04 00:30:14 momjian Exp $
+ *	$PostgreSQL: pgsql/src/pl/plpython/plpython.c,v 1.90 2006/11/21 21:51:05 tgl Exp $
  *
  *********************************************************************
  */
@@ -1580,8 +1580,8 @@ static PyObject *
 PLyBool_FromString(const char *src)
 {
 	if (src[0] == 't')
-		return PyInt_FromLong(1);
-	return PyInt_FromLong(0);
+		Py_RETURN_TRUE;
+	Py_RETURN_FALSE;
 }
 
 static PyObject *
