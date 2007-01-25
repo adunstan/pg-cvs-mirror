@@ -1,4 +1,4 @@
-/* $PostgreSQL: /cvsroot/pgsql-server/src/interfaces/ecpg/ecpglib/typename.c,v 1.9 2003/09/09 10:46:37 meskes Exp $ */
+/* $PostgreSQL: pgsql-server/src/interfaces/ecpg/ecpglib/typename.c,v 1.10 2003/11/29 19:52:08 pgsql Exp $ */
 
 #define POSTGRES_ECPG_INTERNAL
 #include "postgres_fe.h"
@@ -66,7 +66,7 @@ ECPGtype_name(enum ECPGttype typ)
 	return NULL;
 }
 
-unsigned int
+int
 ECPGDynamicType(Oid type)
 {
 	switch (type)
