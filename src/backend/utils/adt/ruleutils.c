@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/ruleutils.c,v 1.244 2007/01/20 01:08:42 neilc Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/ruleutils.c,v 1.245 2007/01/20 23:13:01 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -529,8 +529,7 @@ pg_get_triggerdef(PG_FUNCTION_ARGS)
 		char	   *p;
 		int			i;
 
-		val = (bytea *)
-			DatumGetPointer(fastgetattr(ht_trig,
+		val = DatumGetByteaP(fastgetattr(ht_trig,
 										Anum_pg_trigger_tgargs,
 										tgrel->rd_att, &isnull));
 		if (isnull)
