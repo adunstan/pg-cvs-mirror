@@ -17,7 +17,7 @@
  *
  *
  * IDENTIFICATION
- *		$PostgreSQL: pgsql/src/bin/pg_dump/pg_backup_archiver.h,v 1.72 2006/07/18 17:42:00 momjian Exp $
+ *		$PostgreSQL: pgsql/src/bin/pg_dump/pg_backup_archiver.h,v 1.73 2006/10/04 00:30:05 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -121,12 +121,6 @@ typedef void (*PrintExtraTocPtr) (struct _archiveHandle * AH, struct _tocEntry *
 typedef void (*PrintTocDataPtr) (struct _archiveHandle * AH, struct _tocEntry * te, RestoreOptions *ropt);
 
 typedef size_t (*CustomOutPtr) (struct _archiveHandle * AH, const void *buf, size_t len);
-
-typedef enum _archiveMode
-{
-	archModeWrite,
-	archModeRead
-} ArchiveMode;
 
 typedef struct _outputContext
 {
