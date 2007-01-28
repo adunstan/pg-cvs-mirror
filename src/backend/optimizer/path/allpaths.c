@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/optimizer/path/allpaths.c,v 1.153 2006/09/19 22:49:52 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/optimizer/path/allpaths.c,v 1.154 2006/10/04 00:29:53 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -382,6 +382,12 @@ set_append_rel_pathlist(PlannerInfo *root, RelOptInfo *rel,
 			}
 		}
 	}
+
+	/*
+	 * Set "raw tuples" count equal to "rows" for the appendrel; needed
+	 * because some places assume rel->tuples is valid for any baserel.
+	 */
+	rel->tuples = rel->rows;
 
 	/*
 	 * Finally, build Append path and install it as the only access path for
