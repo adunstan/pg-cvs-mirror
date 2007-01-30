@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/pl/plpgsql/src/plpgsql.h,v 1.82 2007/01/05 22:20:02 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/pl/plpgsql/src/plpgsql.h,v 1.83 2007/01/28 16:15:49 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -580,6 +580,8 @@ typedef struct PLpgSQL_function
 	int			ndatums;
 	PLpgSQL_datum **datums;
 	PLpgSQL_stmt_block *action;
+
+	unsigned long use_count;
 } PLpgSQL_function;
 
 
