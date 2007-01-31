@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *			$PostgreSQL: pgsql/src/backend/access/gin/ginbulk.c,v 1.6 2006/10/04 00:29:47 momjian Exp $
+ *			$PostgreSQL: pgsql/src/backend/access/gin/ginbulk.c,v 1.7 2007/01/05 22:19:21 momjian Exp $
  *-------------------------------------------------------------------------
  */
 
@@ -191,13 +191,13 @@ ginChooseElem(BuildAccumulator *accum, ItemPointer heapptr, Datum *entries, uint
  * next middle on left part and middle of right part.
  */
 void
-ginInsertRecordBA(BuildAccumulator *accum, ItemPointer heapptr, Datum *entries, uint32 nentry)
+ginInsertRecordBA(BuildAccumulator *accum, ItemPointer heapptr, Datum *entries, int32 nentry)
 {
 	uint32		i,
 				nbit = 0,
 				offset;
 
-	if (nentry == 0)
+	if (nentry <= 0)
 		return;
 
 	i = nentry - 1;
