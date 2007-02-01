@@ -1,5 +1,5 @@
 <!--
-$PostgreSQL: pgsql/doc/src/sgml/ref/create_type.sgml,v 1.66 2006/12/30 21:21:52 tgl Exp $
+$PostgreSQL: pgsql/doc/src/sgml/ref/create_type.sgml,v 1.67 2007/01/31 23:26:03 momjian Exp $
 PostgreSQL documentation
 -->
 
@@ -591,7 +591,7 @@ CREATE TABLE myboxes (
 
   <para>
    If the internal structure of <type>box</type> were an array of four
-   <type>float4</> elements, we might instead use
+   <type>float4</> elements, we might instead use:
 <programlisting>
 CREATE TYPE box (
     INTERNALLENGTH = 16,
