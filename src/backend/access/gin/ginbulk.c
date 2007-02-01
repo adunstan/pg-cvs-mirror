@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *			$PostgreSQL: pgsql/src/backend/access/gin/ginbulk.c,v 1.7 2007/01/05 22:19:21 momjian Exp $
+ *			$PostgreSQL: pgsql/src/backend/access/gin/ginbulk.c,v 1.8 2007/01/31 15:09:45 teodor Exp $
  *-------------------------------------------------------------------------
  */
 
@@ -187,7 +187,7 @@ ginChooseElem(BuildAccumulator *accum, ItemPointer heapptr, Datum *entries, uint
 
 /*
  * Insert one heap pointer. Suppose entries is sorted.
- * Insertion order trys to get binary tree balanced: first insert middle value,
+ * Insertion order tries to get binary tree balanced: first insert middle value,
  * next middle on left part and middle of right part.
  */
 void

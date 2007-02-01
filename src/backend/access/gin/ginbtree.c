@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *			$PostgreSQL: pgsql/src/backend/access/gin/ginbtree.c,v 1.6 2006/11/12 06:55:53 neilc Exp $
+ *			$PostgreSQL: pgsql/src/backend/access/gin/ginbtree.c,v 1.7 2007/01/05 22:19:21 momjian Exp $
  *-------------------------------------------------------------------------
  */
 
@@ -317,7 +317,7 @@ ginInsertValue(GinBtree btree, GinBtreeStack *stack)
 
 			/*
 			 * newlpage is a pointer to memory page, it doesn't associate
-			 * with buffer, stack->buffer shoud be untouched
+			 * with buffer, stack->buffer should be untouched
 			 */
 			newlpage = btree->splitPage(btree, stack->buffer, rbuffer, stack->off, &rdata);
 
