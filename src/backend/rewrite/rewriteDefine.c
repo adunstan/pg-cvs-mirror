@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/rewrite/rewriteDefine.c,v 1.115 2006/10/04 00:29:56 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/rewrite/rewriteDefine.c,v 1.116 2007/01/05 22:19:36 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -349,7 +349,7 @@ DefineQueryRewrite(RuleStmt *stmt)
 						(errcode(ERRCODE_OBJECT_NOT_IN_PREREQUISITE_STATE),
 						 errmsg("could not convert table \"%s\" to a view because it has triggers",
 								event_obj->relname),
-						 errhint("In particular, the table may not be involved in any foreign key relationships.")));
+						 errhint("In particular, the table cannot be involved in any foreign key relationships.")));
 
 			if (event_relation->rd_rel->relhasindex)
 				ereport(ERROR,

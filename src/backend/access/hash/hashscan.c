@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/hash/hashscan.c,v 1.40 2006/03/05 15:58:20 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/hash/hashscan.c,v 1.41 2007/01/05 22:19:22 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -99,7 +99,7 @@ _hash_dropscan(IndexScanDesc scan)
 		last = chk;
 
 	if (chk == NULL)
-		elog(ERROR, "hash scan list trashed; can't find 0x%p", (void *) scan);
+		elog(ERROR, "hash scan list trashed; cannot find 0x%p", (void *) scan);
 
 	if (last == NULL)
 		HashScans = chk->hashsl_next;

@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/opclasscmds.c,v 1.52 2007/01/05 22:19:26 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/opclasscmds.c,v 1.53 2007/01/23 05:07:17 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -508,7 +508,7 @@ DefineOpClass(CreateOpClassStmt *stmt)
 		else if (!amstorage)
 			ereport(ERROR,
 					(errcode(ERRCODE_INVALID_OBJECT_DEFINITION),
-					 errmsg("storage type may not be different from data type for access method \"%s\"",
+					 errmsg("storage type cannot be different from data type for access method \"%s\"",
 							stmt->amname)));
 	}
 
@@ -932,7 +932,7 @@ AlterOpFamilyAdd(List *opfamilyname, Oid amoid, Oid opfamilyoid,
 			case OPCLASS_ITEM_STORAGETYPE:
 				ereport(ERROR,
 						(errcode(ERRCODE_SYNTAX_ERROR),
-						   errmsg("STORAGE may not be specified in ALTER OPERATOR FAMILY")));
+						   errmsg("STORAGE cannot be specified in ALTER OPERATOR FAMILY")));
 				break;
 			default:
 				elog(ERROR, "unrecognized item type: %d", item->itemtype);

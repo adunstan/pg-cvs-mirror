@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/catalog/dependency.c,v 1.61 2006/12/23 00:43:09 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/catalog/dependency.c,v 1.62 2007/01/05 22:19:24 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -607,7 +607,7 @@ recursiveDeletion(const ObjectAddress *object,
 							(errcode(ERRCODE_DEPENDENT_OBJECTS_STILL_EXIST),
 							 errmsg("cannot drop %s because %s requires it",
 									objDescription, otherObjDesc),
-							 errhint("You may drop %s instead.",
+							 errhint("You can drop %s instead.",
 									 otherObjDesc)));
 				}
 

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/optimizer/plan/initsplan.c,v 1.127 2007/01/08 16:47:30 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/optimizer/plan/initsplan.c,v 1.128 2007/01/20 20:45:39 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -636,9 +636,9 @@ distribute_qual_to_rels(PlannerInfo *root, Node *clause,
 	 * Otherwise the parser messed up.
 	 */
 	if (!bms_is_subset(relids, qualscope))
-		elog(ERROR, "JOIN qualification may not refer to other relations");
+		elog(ERROR, "JOIN qualification cannot refer to other relations");
 	if (ojscope && !bms_is_subset(relids, ojscope))
-		elog(ERROR, "JOIN qualification may not refer to other relations");
+		elog(ERROR, "JOIN qualification cannot refer to other relations");
 
 	/*
 	 * If the clause is variable-free, our normal heuristic for pushing it

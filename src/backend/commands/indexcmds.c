@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/indexcmds.c,v 1.153 2007/01/20 23:13:01 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/indexcmds.c,v 1.154 2007/01/25 04:35:10 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -315,7 +315,7 @@ DefineIndex(RangeVar *heapRelation,
 		if (list_length(rangetable) != 1 || getrelid(1, rangetable) != relationId)
 			ereport(ERROR,
 					(errcode(ERRCODE_INVALID_COLUMN_REFERENCE),
-					 errmsg("index expressions and predicates may refer only to the table being indexed")));
+					 errmsg("index expressions and predicates can refer only to the table being indexed")));
 	}
 
 	/*

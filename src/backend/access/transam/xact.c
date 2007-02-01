@@ -10,7 +10,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/transam/xact.c,v 1.230 2006/12/06 18:06:47 neilc Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/transam/xact.c,v 1.231 2007/01/05 22:19:23 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -2582,7 +2582,7 @@ RequireTransactionChain(void *stmtNode, const char *stmtType)
 	ereport(ERROR,
 			(errcode(ERRCODE_NO_ACTIVE_SQL_TRANSACTION),
 	/* translator: %s represents an SQL statement name */
-			 errmsg("%s may only be used in transaction blocks",
+			 errmsg("%s can only be used in transaction blocks",
 					stmtType)));
 }
 

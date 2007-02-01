@@ -28,7 +28,7 @@
  * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
- * $PostgreSQL: pgsql/src/backend/regex/rege_dfa.c,v 1.5 2005/09/24 22:54:38 tgl Exp $
+ * $PostgreSQL: pgsql/src/backend/regex/rege_dfa.c,v 1.6 2005/10/15 02:49:24 momjian Exp $
  *
  */
 
@@ -691,7 +691,7 @@ pickss(struct vars * v,			/* used only for debug flags */
 		}
 
 	/* nobody's old enough?!? -- something's really wrong */
-	FDEBUG(("can't find victim to replace!\n"));
+	FDEBUG(("cannot find victim to replace!\n"));
 	assert(NOTREACHED);
 	ERR(REG_ASSERT);
 	return d->ssets;

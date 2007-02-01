@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/optimizer/util/clauses.c,v 1.230 2007/01/17 17:25:52 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/optimizer/util/clauses.c,v 1.231 2007/01/22 01:35:20 tgl Exp $
  *
  * HISTORY
  *	  AUTHOR			DATE			MAJOR EVENT
@@ -482,7 +482,7 @@ count_agg_clauses_walker(Node *node, AggClauseCounts *counts)
 		if (contain_agg_clause((Node *) aggref->args))
 			ereport(ERROR,
 					(errcode(ERRCODE_GROUPING_ERROR),
-					 errmsg("aggregate function calls may not be nested")));
+					 errmsg("aggregate function calls cannot be nested")));
 
 		/*
 		 * Having checked that, we need not recurse into the argument.

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/parser/parse_agg.c,v 1.75 2007/01/05 22:19:33 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/parser/parse_agg.c,v 1.76 2007/01/20 20:45:40 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -70,7 +70,7 @@ transformAggregateCall(ParseState *pstate, Aggref *agg)
 		if (checkExprHasAggs((Node *) agg->args))
 			ereport(ERROR,
 					(errcode(ERRCODE_GROUPING_ERROR),
-					 errmsg("aggregate function calls may not be nested")));
+					 errmsg("aggregate function calls cannot be nested")));
 	}
 
 	if (min_varlevel < 0)

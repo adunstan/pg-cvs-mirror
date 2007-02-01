@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/init/miscinit.c,v 1.159 2006/10/04 00:30:02 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/init/miscinit.c,v 1.160 2007/01/05 22:19:44 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1079,7 +1079,7 @@ ValidatePgVersion(const char *path)
 						path),
 				 errdetail("File \"%s\" does not contain valid data.",
 						   full_path),
-				 errhint("You may need to initdb.")));
+				 errhint("You might need to initdb.")));
 
 	FreeFile(file);
 
