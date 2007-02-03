@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/nodes/parsenodes.h,v 1.338 2007/01/09 02:14:15 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/nodes/parsenodes.h,v 1.339 2007/01/23 05:07:18 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -484,6 +484,17 @@ typedef struct LockingClause
 	bool		forUpdate;		/* true = FOR UPDATE, false = FOR SHARE */
 	bool		noWait;			/* NOWAIT option */
 } LockingClause;
+
+/*
+ * XMLSERIALIZE
+ */
+typedef struct XmlSerialize
+{
+	NodeTag		type;
+	XmlOptionType xmloption;
+	Node	   *expr;
+	TypeName   *typename;
+} XmlSerialize;
 
 
 /****************************************************************************

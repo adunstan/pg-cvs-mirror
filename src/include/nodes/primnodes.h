@@ -10,7 +10,7 @@
  * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/nodes/primnodes.h,v 1.122 2007/01/05 22:19:56 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/nodes/primnodes.h,v 1.123 2007/01/14 13:11:54 petere Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -726,8 +726,15 @@ typedef enum XmlExprOp
 	IS_XMLPARSE,				/* XMLPARSE(text, is_doc, preserve_ws) */
 	IS_XMLPI,					/* XMLPI(name [, args]) */
 	IS_XMLROOT,					/* XMLROOT(xml, version, standalone) */
+	IS_XMLSERIALIZE,			/* XMLSERIALIZE(is_document, xmlval) */
 	IS_DOCUMENT					/* xmlval IS DOCUMENT */
 } XmlExprOp;
+
+typedef enum
+{
+	XMLOPTION_DOCUMENT,
+	XMLOPTION_CONTENT
+} XmlOptionType;
 
 typedef struct XmlExpr
 {
@@ -737,6 +744,9 @@ typedef struct XmlExpr
 	List	   *named_args;		/* non-XML expressions for xml_attributes */
 	List	   *arg_names;		/* parallel list of Value strings */
 	List	   *args;			/* list of expressions */
+	XmlOptionType xmloption;	/* DOCUMENT or CONTENT */
+	Oid			type;			/* target type for XMLSERIALIZE */
+	int32		typmod;
 } XmlExpr;
 
 /*

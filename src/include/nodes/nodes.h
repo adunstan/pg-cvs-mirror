@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/nodes/nodes.h,v 1.192 2007/01/20 20:45:40 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/nodes/nodes.h,v 1.193 2007/01/23 05:07:18 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -331,6 +331,7 @@ typedef enum NodeTag
 	T_FunctionParameter,
 	T_LockingClause,
 	T_RowMarkClause,
+	T_XmlSerialize,
 
 	/*
 	 * TAGS FOR RANDOM OTHER STUFF
