@@ -36,7 +36,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/vacuumlazy.c,v 1.81 2006/11/05 22:42:08 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/vacuumlazy.c,v 1.82 2007/01/05 22:19:27 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -513,7 +513,7 @@ lazy_scan_heap(Relation onerel, LVRelStats *vacrelstats,
 				(errmsg("relation \"%s.%s\" contains more than \"max_fsm_pages\" pages with useful free space",
 						get_namespace_name(RelationGetNamespace(onerel)),
 						relname),
-				 errhint("Consider compacting this relation or increasing the configuration parameter \"max_fsm_pages\".")));
+				 errhint("Consider using VACUUM FULL on this relation or increasing the configuration parameter \"max_fsm_pages\".")));
 }
 
 
