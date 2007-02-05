@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/heap/hio.c,v 1.63 2006/07/03 22:45:37 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/heap/hio.c,v 1.64 2007/01/05 22:19:22 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -118,12 +118,12 @@ RelationGetBufferForTuple(Relation relation, Size len,
 	/*
 	 * If we're gonna fail for oversize tuple, do it right away
 	 */
-	if (len > MaxTupleSize)
+	if (len > MaxHeapTupleSize)
 		ereport(ERROR,
 				(errcode(ERRCODE_PROGRAM_LIMIT_EXCEEDED),
 				 errmsg("row is too big: size %lu, maximum size %lu",
 						(unsigned long) len,
-						(unsigned long) MaxTupleSize)));
+						(unsigned long) MaxHeapTupleSize)));
 
 	/* Compute desired extra freespace due to fillfactor option */
 	saveFreeSpace = RelationGetTargetPageFreeSpace(relation,
@@ -147,7 +147,7 @@ RelationGetBufferForTuple(Relation relation, Size len,
 	 * When use_fsm is false, we either put the tuple onto the existing target
 	 * page or extend the relation.
 	 */
-	if (len + saveFreeSpace <= MaxTupleSize)
+	if (len + saveFreeSpace <= MaxHeapTupleSize)
 		targetBlock = relation->rd_targblock;
 	else
 	{
