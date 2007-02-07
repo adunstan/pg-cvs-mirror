@@ -37,7 +37,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/postmaster/postmaster.c,v 1.515 2007/01/28 06:32:03 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/postmaster/postmaster.c,v 1.516 2007/01/29 20:17:40 momjian Exp $
  *
  * NOTES
  *
@@ -2083,6 +2083,9 @@ reaper(SIGNAL_ARGS)
 					PgArchPID = pgarch_start();
 				if (PgStatPID == 0)
 					PgStatPID = pgstat_start();
+				/* at this point we are really open for business */
+				ereport(LOG,
+						(errmsg("database system is ready to accept connections")));
 			}
 
 			continue;
