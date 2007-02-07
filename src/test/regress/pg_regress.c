@@ -11,7 +11,7 @@
  * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/test/regress/pg_regress.c,v 1.27 2007/01/19 21:21:13 alvherre Exp $
+ * $PostgreSQL: pgsql/src/test/regress/pg_regress.c,v 1.28 2007/02/01 19:10:30 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -349,8 +349,7 @@ replace_string(char *string, char *replace, char *replacement)
 	{
 		char *dup = strdup(string);
 
-		strncpy(string, dup, ptr - string);
-		string[ptr - string] = 0;
+		strlcpy(string, dup, ptr - string + 1);
 		strcat(string, replacement);
 		strcat(string, dup + (ptr - string) + strlen(replace));
 		free(dup);

@@ -10,7 +10,7 @@
  * Written by Peter Eisentraut <peter_e@gmx.net>.
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.371 2007/01/25 11:53:51 petere Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.372 2007/02/01 19:10:28 momjian Exp $
  *
  *--------------------------------------------------------------------
  */
@@ -5729,8 +5729,7 @@ ParseLongOption(const char *string, char **name, char **value)
 	if (string[equal_pos] == '=')
 	{
 		*name = guc_malloc(FATAL, equal_pos + 1);
-		strncpy(*name, string, equal_pos);
-		(*name)[equal_pos] = '\0';
+		strlcpy(*name, string, equal_pos + 1);
 
 		*value = guc_strdup(FATAL, &string[equal_pos + 1]);
 	}
