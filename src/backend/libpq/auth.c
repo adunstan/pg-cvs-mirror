@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/libpq/auth.c,v 1.146 2006/11/06 01:27:52 neilc Exp $
+ *	  $PostgreSQL: pgsql/src/backend/libpq/auth.c,v 1.147 2007/01/05 22:19:29 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -216,6 +216,9 @@ pg_krb5_recvauth(Port *port)
 	krb5_ticket *ticket;
 	char	   *kusername;
 
+	if (get_role_line(port->user_name) == NULL)
+		return STATUS_ERROR;
+	
 	ret = pg_krb5_init();
 	if (ret != STATUS_OK)
 		return ret;
