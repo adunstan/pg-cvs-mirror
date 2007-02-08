@@ -11,7 +11,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-secure.c,v 1.90 2007/01/05 22:20:01 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-secure.c,v 1.91 2007/01/26 17:45:41 neilc Exp $
  *
  * NOTES
  *	  [ Most of these notes are wrong/obsolete, but perhaps not all ]
@@ -1018,8 +1018,7 @@ SSLerrmessage(void)
 	errreason = ERR_reason_error_string(errcode);
 	if (errreason != NULL)
 	{
-		strncpy(errbuf, errreason, SSL_ERR_LEN - 1);
-		errbuf[SSL_ERR_LEN - 1] = '\0';
+		strlcpy(errbuf, errreason, SSL_ERR_LEN);
 		return errbuf;
 	}
 	snprintf(errbuf, SSL_ERR_LEN, libpq_gettext("SSL error code %lu"), errcode);
