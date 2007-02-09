@@ -15,7 +15,7 @@
 #		for use only by the backend binaries
 #
 # IDENTIFICATION
-#    $PostgreSQL: pgsql/src/port/Makefile,v 1.32 2006/06/26 18:40:50 momjian Exp $
+#    $PostgreSQL: pgsql/src/port/Makefile,v 1.33 2006/07/14 16:45:43 tgl Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -27,7 +27,7 @@ override CPPFLAGS := -I$(top_builddir)/src/port -DFRONTEND $(CPPFLAGS)
 LIBS += $(PTHREAD_LIBS)
 
 # Replace all object files so they use FRONTEND define
-LIBOBJS_SRV := $(LIBOBJS:%.o=%_srv.o)
+LIBOBJS_SRV = $(LIBOBJS:%.o=%_srv.o)
 
 all: libpgport.a libpgport_srv.a
 

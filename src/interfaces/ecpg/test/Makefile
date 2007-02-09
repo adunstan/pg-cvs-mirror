@@ -1,4 +1,4 @@
-# $PostgreSQL: pgsql/src/interfaces/ecpg/test/Makefile,v 1.64 2007/01/20 17:16:17 petere Exp $
+# $PostgreSQL: pgsql/src/interfaces/ecpg/test/Makefile,v 1.65 2007/01/21 09:23:29 petere Exp $
 
 subdir = src/interfaces/ecpg/test
 top_builddir = ../../../..
@@ -12,7 +12,7 @@ TEMP_PORT = 5$(DEF_PGPORT)
 MULTIBYTE = SQL_ASCII
 
 # locale
-NOLOCALE :=
+NOLOCALE =
 ifdef NO_LOCALE
 NOLOCALE += --no-locale
 endif
