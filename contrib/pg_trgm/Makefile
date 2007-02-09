@@ -1,6 +1,4 @@
-# $PostgreSQL$
-
-PG_CPPFLAGS = -I.
+# $PostgreSQL: pgsql/contrib/pg_trgm/Makefile,v 1.5 2007/02/09 17:04:00 petere Exp $
 
 MODULE_big = pg_trgm
 OBJS = trgm_op.o trgm_gist.o 
