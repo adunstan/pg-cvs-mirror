@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/libpq/ip.c,v 1.38 2006/10/19 23:17:39 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/libpq/ip.c,v 1.39 2007/01/05 22:19:29 momjian Exp $
  *
  * This file and the IPV6 implementation were initially provided by
  * Nigel Kukard <nkukard@lbsd.net>, Linux Based Systems Design
@@ -175,9 +175,9 @@ pg_getnameinfo_all(const struct sockaddr_storage * addr, int salen,
 	if (rc != 0)
 	{
 		if (node)
-			StrNCpy(node, "???", nodelen);
+			strlcpy(node, "???", nodelen);
 		if (service)
-			StrNCpy(service, "???", servicelen);
+			strlcpy(service, "???", servicelen);
 	}
 
 	return rc;

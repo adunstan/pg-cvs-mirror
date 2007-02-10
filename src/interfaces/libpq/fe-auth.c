@@ -10,7 +10,7 @@
  * exceed INITIAL_EXPBUFFER_SIZE (currently 256 bytes).
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-auth.c,v 1.121 2006/10/04 00:30:12 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-auth.c,v 1.122 2007/01/05 22:20:00 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -418,7 +418,7 @@ pg_password_sendauth(PGconn *conn, const char *password, AuthRequest areq)
 			{
 				char		salt[3];
 
-				StrNCpy(salt, conn->cryptSalt, 3);
+				strlcpy(salt, conn->cryptSalt, sizeof(salt));
 				crypt_pwd = crypt(password, salt);
 				break;
 			}

@@ -9,7 +9,7 @@
  * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/backend/libpq/crypt.c,v 1.71 2006/07/14 14:52:19 momjian Exp $
+ * $PostgreSQL: pgsql/src/backend/libpq/crypt.c,v 1.72 2007/01/05 22:19:29 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -110,7 +110,7 @@ md5_crypt_verify(const Port *port, const char *role, char *client_pass)
 			{
 				char		salt[3];
 
-				StrNCpy(salt, port->cryptSalt, 3);
+				strlcpy(salt, port->cryptSalt, sizeof(salt));
 				crypt_pwd = crypt(shadow_pass, salt);
 				break;
 			}

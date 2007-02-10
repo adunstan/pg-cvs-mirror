@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/tcop/postgres.c,v 1.520 2007/01/04 00:57:51 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/tcop/postgres.c,v 1.521 2007/01/05 22:19:39 momjian Exp $
  *
  * NOTES
  *	  this is the "main" module of the postgres backend and
@@ -2846,7 +2846,7 @@ PostgresMain(int argc, char *argv[], const char *username)
 			case 'r':
 				/* send output (stdout and stderr) to the given file */
 				if (secure)
-					StrNCpy(OutputFileName, optarg, MAXPGPATH);
+					strlcpy(OutputFileName, optarg, MAXPGPATH);
 				break;
 
 			case 'S':
