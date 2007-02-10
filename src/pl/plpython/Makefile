@@ -1,4 +1,4 @@
-# $PostgreSQL: pgsql/src/pl/plpython/Makefile,v 1.26 2006/07/21 00:24:04 tgl Exp $
+# $PostgreSQL: pgsql/src/pl/plpython/Makefile,v 1.27 2007/02/09 15:56:00 petere Exp $
 
 subdir = src/pl/plpython
 top_builddir = ../../..
@@ -17,7 +17,7 @@ endif
 # and we have to remove -lpython from the link since we are building our own
 ifeq ($(PORTNAME), win32)
 shared_libpython = yes
-python_includespec = $(subst \,/,$(python_includespec))
+python_includespec := $(subst \,/,$(python_includespec))
 override python_libspec =
 endif
 
