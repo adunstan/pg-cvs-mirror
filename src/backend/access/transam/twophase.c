@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *		$PostgreSQL: pgsql/src/backend/access/transam/twophase.c,v 1.16 2005/10/29 00:31:50 petere Exp $
+ *		$PostgreSQL: pgsql/src/backend/access/transam/twophase.c,v 1.16.2.1 2005/11/22 18:23:05 momjian Exp $
  *
  * NOTES
  *		Each global transaction is associated with a global transaction
@@ -389,6 +389,18 @@ LockGXact(const char *gid, Oid user)
 					(errcode(ERRCODE_INSUFFICIENT_PRIVILEGE),
 				  errmsg("permission denied to finish prepared transaction"),
 					 errhint("Must be superuser or the user that prepared the transaction.")));
+
+		/*
+		 * Note: it probably would be possible to allow committing from another
+		 * database; but at the moment NOTIFY is known not to work and there
+		 * may be some other issues as well.  Hence disallow until someone
+		 * gets motivated to make it work.
+		 */
+		if (MyDatabaseId != gxact->proc.databaseId)
+			ereport(ERROR,
+					(errcode(ERRCODE_FEATURE_NOT_SUPPORTED),
+					 errmsg("prepared transaction belongs to another database"),
+					 errhint("Connect to the database where the transaction was prepared to finish it.")));
 
 		/* OK for me to lock it */
 		gxact->locking_xid = GetTopTransactionId();
