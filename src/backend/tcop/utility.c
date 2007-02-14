@@ -10,7 +10,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/tcop/utility.c,v 1.270 2007/01/05 22:19:39 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/tcop/utility.c,v 1.271 2007/01/23 05:07:18 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -973,7 +973,7 @@ ProcessUtility(Node *parsetree,
 			break;
 
 		case T_CreateTrigStmt:
-			CreateTrigger((CreateTrigStmt *) parsetree, false);
+			CreateTrigger((CreateTrigStmt *) parsetree, InvalidOid);
 			break;
 
 		case T_DropPropertyStmt:
