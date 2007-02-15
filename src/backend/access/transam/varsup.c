@@ -6,7 +6,7 @@
  * Copyright (c) 2000-2007, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/transam/varsup.c,v 1.76 2006/11/05 22:42:07 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/transam/varsup.c,v 1.77 2007/01/05 22:19:23 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -72,7 +72,7 @@ GetNewTransactionId(bool isSubXact)
 		 * still gives plenty of chances before we get into real trouble.
 		 */
 		if (IsUnderPostmaster && (xid % 65536) == 0)
-			SendPostmasterSignal(PMSIGNAL_START_AUTOVAC);
+			SendPostmasterSignal(PMSIGNAL_START_AUTOVAC_LAUNCHER);
 
 		if (IsUnderPostmaster &&
 		 TransactionIdFollowsOrEquals(xid, ShmemVariableCache->xidStopLimit))
@@ -286,7 +286,7 @@ SetTransactionIdLimit(TransactionId oldest_datfrozenxid,
 	 */
 	if (TransactionIdFollowsOrEquals(curXid, xidVacLimit) &&
 		IsUnderPostmaster)
-		SendPostmasterSignal(PMSIGNAL_START_AUTOVAC);
+		SendPostmasterSignal(PMSIGNAL_START_AUTOVAC_LAUNCHER);
 
 	/* Give an immediate warning if past the wrap warn point */
 	if (TransactionIdFollowsOrEquals(curXid, xidWarnLimit))
