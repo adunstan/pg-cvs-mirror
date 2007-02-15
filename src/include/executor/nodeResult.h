@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/executor/nodeResult.h,v 1.22 2006/03/05 15:58:56 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/executor/nodeResult.h,v 1.23 2007/01/05 22:19:54 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -20,6 +20,8 @@ extern int	ExecCountSlotsResult(Result *node);
 extern ResultState *ExecInitResult(Result *node, EState *estate, int eflags);
 extern TupleTableSlot *ExecResult(ResultState *node);
 extern void ExecEndResult(ResultState *node);
+extern void ExecResultMarkPos(ResultState *node);
+extern void ExecResultRestrPos(ResultState *node);
 extern void ExecReScanResult(ResultState *node, ExprContext *exprCtxt);
 
 #endif   /* NODERESULT_H */
