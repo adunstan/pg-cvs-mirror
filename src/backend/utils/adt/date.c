@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/date.c,v 1.126 2006/12/30 21:21:54 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/date.c,v 1.127 2007/01/05 22:19:40 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1748,6 +1748,7 @@ time_part(PG_FUNCTION_ARGS)
 			case DTK_DECADE:
 			case DTK_CENTURY:
 			case DTK_MILLENNIUM:
+			case DTK_ISOYEAR:
 			default:
 				ereport(ERROR,
 						(errcode(ERRCODE_INVALID_PARAMETER_VALUE),
