@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/optimizer/path/clausesel.c,v 1.82 2006/10/04 00:29:53 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/optimizer/path/clausesel.c,v 1.83 2007/01/05 22:19:31 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -537,7 +537,7 @@ clause_selectivity(PlannerInfo *root,
 	else if (IsA(clause, Param))
 	{
 		/* see if we can replace the Param */
-		Node	   *subst = estimate_expression_value(clause);
+		Node	   *subst = estimate_expression_value(root, clause);
 
 		if (IsA(subst, Const))
 		{
