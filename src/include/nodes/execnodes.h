@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/nodes/execnodes.h,v 1.166 2007/01/05 22:19:55 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/nodes/execnodes.h,v 1.167 2007/02/06 02:59:13 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -344,7 +344,7 @@ typedef struct EState
 	ExprContext *es_per_tuple_exprcontext;
 
 	/* Below is to re-evaluate plan qual in READ COMMITTED mode */
-	Plan	   *es_topPlan;		/* link to top of plan tree */
+	PlannedStmt *es_plannedstmt;	/* link to top of plan tree */
 	struct evalPlanQual *es_evalPlanQual;		/* chain of PlanQual states */
 	bool	   *es_evTupleNull; /* local array of EPQ status */
 	HeapTuple  *es_evTuple;		/* shared array of EPQ substitute tuples */
