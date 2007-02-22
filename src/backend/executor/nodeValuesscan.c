@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/nodeValuesscan.c,v 1.5 2007/01/05 22:19:28 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/nodeValuesscan.c,v 1.6 2007/02/19 02:23:11 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -25,7 +25,6 @@
 
 #include "executor/executor.h"
 #include "executor/nodeValuesscan.h"
-#include "parser/parsetree.h"
 #include "utils/memutils.h"
 
 

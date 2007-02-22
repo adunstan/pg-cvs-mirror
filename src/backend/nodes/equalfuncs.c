@@ -18,7 +18,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/nodes/equalfuncs.c,v 1.298 2007/02/03 14:06:54 petere Exp $
+ *	  $PostgreSQL: pgsql/src/backend/nodes/equalfuncs.c,v 1.299 2007/02/20 17:32:15 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -306,9 +306,8 @@ _equalSubPlan(SubPlan *a, SubPlan *b)
 	COMPARE_SCALAR_FIELD(subLinkType);
 	COMPARE_NODE_FIELD(testexpr);
 	COMPARE_NODE_FIELD(paramIds);
-	/* should compare plans, but have to settle for comparing plan IDs */
 	COMPARE_SCALAR_FIELD(plan_id);
-	COMPARE_NODE_FIELD(rtable);
+	COMPARE_SCALAR_FIELD(firstColType);
 	COMPARE_SCALAR_FIELD(useHashTable);
 	COMPARE_SCALAR_FIELD(unknownEqFalse);
 	COMPARE_NODE_FIELD(setParam);

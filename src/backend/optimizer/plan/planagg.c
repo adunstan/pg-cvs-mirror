@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/optimizer/plan/planagg.c,v 1.27 2007/02/19 07:03:29 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/optimizer/plan/planagg.c,v 1.28 2007/02/20 17:32:15 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -188,10 +188,10 @@ optimize_minmax_aggregates(PlannerInfo *root, List *tlist, Path *best_path)
 	/*
 	 * Generate the output plan --- basically just a Result
 	 */
-	plan = (Plan *) make_result(tlist, hqual, NULL);
+	plan = (Plan *) make_result(root, tlist, hqual, NULL);
 
 	/* Account for evaluation cost of the tlist (make_result did the rest) */
-	cost_qual_eval(&tlist_cost, tlist);
+	cost_qual_eval(&tlist_cost, tlist, root);
 	plan->startup_cost += tlist_cost.startup;
 	plan->total_cost += tlist_cost.startup + tlist_cost.per_tuple;
 
