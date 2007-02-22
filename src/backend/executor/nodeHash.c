@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/nodeHash.c,v 1.109 2007/01/28 23:21:26 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/nodeHash.c,v 1.110 2007/01/30 01:33:36 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -731,7 +731,10 @@ ExecHashGetHashValue(HashJoinTable hashtable,
 		if (isNull)
 		{
 			if (hashtable->hashStrict[i] && !keep_nulls)
-				return false;	/* cannot match */
+			{
+				MemoryContextSwitchTo(oldContext);
+				return false;							/* cannot match */
+			}
 			/* else, leave hashkey unmodified, equivalent to hashcode 0 */
 		}
 		else
