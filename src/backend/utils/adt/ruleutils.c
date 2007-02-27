@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/ruleutils.c,v 1.250 2007/02/22 23:44:25 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/ruleutils.c,v 1.251 2007/02/23 21:59:44 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -5298,7 +5298,7 @@ string_to_text(char *str)
 
 	tlen = slen + VARHDRSZ;
 	result = (text *) palloc(tlen);
-	VARATT_SIZEP(result) = tlen;
+	SET_VARSIZE(result, tlen);
 	memcpy(VARDATA(result), str, slen);
 
 	pfree(str);

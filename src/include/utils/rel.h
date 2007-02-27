@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/utils/rel.h,v 1.96 2007/01/25 02:17:26 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/utils/rel.h,v 1.97 2007/02/14 01:58:58 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -222,7 +222,7 @@ typedef Relation *RelationPtr;
  */
 typedef struct StdRdOptions
 {
-	int32		vl_len;			/* required to be a bytea */
+	int32		vl_len_;		/* varlena header (do not touch directly!) */
 	int			fillfactor;		/* page fill factor in percent (0..100) */
 } StdRdOptions;
 

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/pgstatfuncs.c,v 1.37 2007/01/05 22:19:41 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/pgstatfuncs.c,v 1.38 2007/02/07 23:11:29 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -398,7 +398,7 @@ pg_stat_get_backend_activity(PG_FUNCTION_ARGS)
 
 	len = strlen(activity);
 	result = palloc(VARHDRSZ + len);
-	VARATT_SIZEP(result) = VARHDRSZ + len;
+	SET_VARSIZE(result, VARHDRSZ + len);
 	memcpy(VARDATA(result), activity, len);
 
 	PG_RETURN_TEXT_P(result);

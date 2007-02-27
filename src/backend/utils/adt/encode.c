@@ -7,7 +7,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/encode.c,v 1.17 2006/03/05 15:58:41 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/encode.c,v 1.18 2007/01/05 22:19:40 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -63,7 +63,7 @@ binary_encode(PG_FUNCTION_ARGS)
 	if (res > resultlen)
 		elog(FATAL, "overflow - encode estimate too small");
 
-	VARATT_SIZEP(result) = VARHDRSZ + res;
+	SET_VARSIZE(result, VARHDRSZ + res);
 
 	PG_RETURN_TEXT_P(result);
 }
@@ -99,7 +99,7 @@ binary_decode(PG_FUNCTION_ARGS)
 	if (res > resultlen)
 		elog(FATAL, "overflow - decode estimate too small");
 
-	VARATT_SIZEP(result) = VARHDRSZ + res;
+	SET_VARSIZE(result, VARHDRSZ + res);
 
 	PG_RETURN_BYTEA_P(result);
 }

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/datum.c,v 1.32 2006/03/05 15:58:41 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/datum.c,v 1.33 2007/01/05 22:19:40 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -79,7 +79,7 @@ datumGetSize(Datum value, bool typByVal, int typLen)
 						(errcode(ERRCODE_DATA_EXCEPTION),
 						 errmsg("invalid Datum pointer")));
 
-			size = (Size) VARATT_SIZE(s);
+			size = (Size) VARSIZE(s);
 		}
 		else if (typLen == -2)
 		{

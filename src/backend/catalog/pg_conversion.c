@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/catalog/pg_conversion.c,v 1.34 2007/01/05 22:19:25 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/catalog/pg_conversion.c,v 1.35 2007/02/14 01:58:56 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -338,7 +338,7 @@ pg_convert_using(PG_FUNCTION_ARGS)
 	 */
 	len = strlen(result) + VARHDRSZ;
 	retval = palloc(len);
-	VARATT_SIZEP(retval) = len;
+	SET_VARSIZE(retval, len);
 	memcpy(VARDATA(retval), result, len - VARHDRSZ);
 
 	pfree(result);

@@ -7,7 +7,7 @@
  *
  * IDENTIFICATION
  *
- * $PostgreSQL: pgsql/src/backend/utils/adt/version.c,v 1.13 2003/11/29 19:52:00 pgsql Exp $
+ * $PostgreSQL: pgsql/src/backend/utils/adt/version.c,v 1.14 2007/01/20 01:08:42 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -23,7 +23,7 @@ pgsql_version(PG_FUNCTION_ARGS)
 	int			n = strlen(PG_VERSION_STR);
 	text	   *ret = (text *) palloc(n + VARHDRSZ);
 
-	VARATT_SIZEP(ret) = n + VARHDRSZ;
+	SET_VARSIZE(ret, n + VARHDRSZ);
 	memcpy(VARDATA(ret), PG_VERSION_STR, n);
 
 	PG_RETURN_TEXT_P(ret);

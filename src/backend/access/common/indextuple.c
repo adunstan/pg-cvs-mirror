@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/common/indextuple.c,v 1.79 2006/07/14 19:05:52 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/common/indextuple.c,v 1.80 2007/01/05 22:19:21 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -84,7 +84,7 @@ index_form_tuple(TupleDesc tupleDescriptor,
 		 * If value is above size target, and is of a compressible datatype,
 		 * try to compress it in-line.
 		 */
-		if (VARATT_SIZE(untoasted_values[i]) > TOAST_INDEX_TARGET &&
+		if (VARSIZE(untoasted_values[i]) > TOAST_INDEX_TARGET &&
 			!VARATT_IS_EXTENDED(untoasted_values[i]) &&
 			(att->attstorage == 'x' || att->attstorage == 'm'))
 		{

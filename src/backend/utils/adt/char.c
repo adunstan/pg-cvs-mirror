@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/char.c,v 1.45 2006/03/11 01:19:22 neilc Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/char.c,v 1.46 2007/01/05 22:19:40 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -203,11 +203,11 @@ char_text(PG_FUNCTION_ARGS)
 	 */
 	if (arg1 != '\0')
 	{
-		VARATT_SIZEP(result) = VARHDRSZ + 1;
+		SET_VARSIZE(result, VARHDRSZ + 1);
 		*(VARDATA(result)) = arg1;
 	}
 	else
-		VARATT_SIZEP(result) = VARHDRSZ;
+		SET_VARSIZE(result, VARHDRSZ);
 
 	PG_RETURN_TEXT_P(result);
 }

@@ -6,7 +6,7 @@
  * Copyright (c) 2003-2007, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/array_userfuncs.c,v 1.20 2006/07/14 14:52:23 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/array_userfuncs.c,v 1.21 2007/01/05 22:19:39 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -376,7 +376,7 @@ array_cat(PG_FUNCTION_ARGS)
 		nbytes = ndatabytes + ARR_OVERHEAD_NONULLS(ndims);
 	}
 	result = (ArrayType *) palloc(nbytes);
-	result->size = nbytes;
+	SET_VARSIZE(result, nbytes);
 	result->ndim = ndims;
 	result->dataoffset = dataoffset;
 	result->elemtype = element_type;

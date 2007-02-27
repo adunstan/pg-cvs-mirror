@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/utils/varbit.h,v 1.24 2006/12/30 21:21:56 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/utils/varbit.h,v 1.25 2007/01/05 22:20:00 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -22,8 +22,7 @@
  */
 typedef struct
 {
-	int32		vl_len;			/* standard varlena header (total size in
-								 * bytes) */
+	int32		vl_len_;		/* varlena header (do not touch directly!) */
 	int32		bit_len;		/* number of valid bits */
 	bits8		bit_dat[1];		/* bit string, most sig. byte first */
 } VarBit;

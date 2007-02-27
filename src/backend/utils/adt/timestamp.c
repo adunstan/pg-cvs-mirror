@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/timestamp.c,v 1.172 2007/02/16 03:39:45 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/timestamp.c,v 1.173 2007/02/19 17:41:39 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -3199,8 +3199,8 @@ timestamp_text(PG_FUNCTION_ARGS)
 
 	result = palloc(len);
 
-	VARATT_SIZEP(result) = len;
-	memmove(VARDATA(result), str, len - VARHDRSZ);
+	SET_VARSIZE(result, len);
+	memcpy(VARDATA(result), str, len - VARHDRSZ);
 
 	pfree(str);
 
@@ -3260,8 +3260,8 @@ timestamptz_text(PG_FUNCTION_ARGS)
 
 	result = palloc(len);
 
-	VARATT_SIZEP(result) = len;
-	memmove(VARDATA(result), str, len - VARHDRSZ);
+	SET_VARSIZE(result, len);
+	memcpy(VARDATA(result), str, len - VARHDRSZ);
 
 	pfree(str);
 
@@ -3320,8 +3320,8 @@ interval_text(PG_FUNCTION_ARGS)
 
 	result = palloc(len);
 
-	VARATT_SIZEP(result) = len;
-	memmove(VARDATA(result), str, len - VARHDRSZ);
+	SET_VARSIZE(result, len);
+	memcpy(VARDATA(result), str, len - VARHDRSZ);
 
 	pfree(str);
 
