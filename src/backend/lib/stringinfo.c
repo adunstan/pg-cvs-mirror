@@ -9,7 +9,7 @@
  * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- *	  $PostgreSQL: pgsql/src/backend/lib/stringinfo.c,v 1.43 2006/03/05 15:58:27 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/lib/stringinfo.c,v 1.44 2007/01/05 22:19:29 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -49,8 +49,20 @@ initStringInfo(StringInfo str)
 
 	str->data = (char *) palloc(size);
 	str->maxlen = size;
-	str->len = 0;
+	resetStringInfo(str);
+}
+
+/*
+ * resetStringInfo
+ *
+ * Reset the StringInfo: the data buffer remains valid, but its
+ * previous content, if any, is cleared.
+ */
+void
+resetStringInfo(StringInfo str)
+{
 	str->data[0] = '\0';
+	str->len = 0;
 	str->cursor = 0;
 }
 
