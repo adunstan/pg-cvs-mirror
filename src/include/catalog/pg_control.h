@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/catalog/pg_control.h,v 1.34 2006/12/08 19:50:53 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/catalog/pg_control.h,v 1.35 2007/01/05 22:19:52 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -22,7 +22,7 @@
 
 
 /* Version identifier for this pg_control format */
-#define PG_CONTROL_VERSION	831
+#define PG_CONTROL_VERSION	832
 
 /*
  * Body of CheckPoint XLOG records.  This is declared here because we keep
@@ -32,9 +32,6 @@ typedef struct CheckPoint
 {
 	XLogRecPtr	redo;			/* next RecPtr available when we began to
 								 * create CheckPoint (i.e. REDO start point) */
-	XLogRecPtr	undo;			/* first record of oldest in-progress
-								 * transaction when we started (i.e. UNDO end
-								 * point) */
 	TimeLineID	ThisTimeLineID; /* current TLI */
 	uint32		nextXidEpoch;	/* higher-order bits of nextXid */
 	TransactionId nextXid;		/* next free XID */
