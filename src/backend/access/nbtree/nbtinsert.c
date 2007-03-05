@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/nbtree/nbtinsert.c,v 1.152 2007/02/21 20:02:17 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/nbtree/nbtinsert.c,v 1.153 2007/03/03 20:13:06 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1851,8 +1851,8 @@ _bt_vacuum_one_page(Relation rel, Buffer buffer)
 	BTPageOpaque opaque = (BTPageOpaque) PageGetSpecialPointer(page);
 
 	/*
-	 * Scan over all items to see which ones need deleted according to
-	 * LP_DELETE flags.
+	 * Scan over all items to see which ones need to be deleted 
+	 * according to LP_DELETE flags.
 	 */
 	minoff = P_FIRSTDATAKEY(opaque);
 	maxoff = PageGetMaxOffsetNumber(page);
