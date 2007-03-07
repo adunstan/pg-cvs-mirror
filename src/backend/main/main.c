@@ -13,7 +13,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/main/main.c,v 1.106 2007/01/04 00:57:51 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/main/main.c,v 1.107 2007/01/05 22:19:29 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -177,7 +177,7 @@ main(int argc, char *argv[])
 #endif
 
 	if (argc > 1 && strcmp(argv[1], "--boot") == 0)
-		exit(BootstrapMain(argc, argv));
+		AuxiliaryProcessMain(argc, argv);	/* does not return */
 
 	if (argc > 1 && strcmp(argv[1], "--describe-config") == 0)
 		exit(GucInfoMain());
