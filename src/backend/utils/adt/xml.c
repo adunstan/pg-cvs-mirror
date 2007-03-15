@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/backend/utils/adt/xml.c,v 1.33 2007/03/01 14:52:04 petere Exp $
+ * $PostgreSQL: pgsql/src/backend/utils/adt/xml.c,v 1.34 2007/03/03 19:32:55 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1800,7 +1800,7 @@ query_to_xmlschema(PG_FUNCTION_ARGS)
 	const char *targetns = _textout(PG_GETARG_TEXT_P(3));
 
 	const char *result;
-	void	   *plan;
+	SPIPlanPtr	plan;
 	Portal		portal;
 
 	SPI_connect();
@@ -1871,7 +1871,7 @@ query_to_xml_and_xmlschema(PG_FUNCTION_ARGS)
 	const char *targetns = _textout(PG_GETARG_TEXT_P(3));
 
 	const char *xmlschema;
-	void	   *plan;
+	SPIPlanPtr	plan;
 	Portal		portal;
 
 	SPI_connect();
