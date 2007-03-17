@@ -1,4 +1,4 @@
-/* $PostgreSQL: pgsql/src/interfaces/ecpg/ecpglib/connect.c,v 1.38 2007/01/11 15:47:33 meskes Exp $ */
+/* $PostgreSQL: pgsql/src/interfaces/ecpg/ecpglib/connect.c,v 1.39 2007/01/12 10:00:12 meskes Exp $ */
 
 #define POSTGRES_ECPG_INTERNAL
 #include "postgres_fe.h"
@@ -473,7 +473,7 @@ ECPGconnect(int lineno, int c, const char *name, const char *user, const char *p
 	if (PQstatus(this->connection) == CONNECTION_BAD)
 	{
 		const char *errmsg = PQerrorMessage(this->connection);
-		char	   *db = realname ? realname : "<DEFAULT>";
+		const char *db = realname ? realname : "<DEFAULT>";
 
 		ECPGlog("connect: could not open database %s on %s port %s %s%s%s%s in line %d\n\t%s\n",
 				db,
