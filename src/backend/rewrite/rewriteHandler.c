@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/rewrite/rewriteHandler.c,v 1.170 2007/02/01 19:10:27 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/rewrite/rewriteHandler.c,v 1.171 2007/03/01 18:50:28 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -643,6 +643,7 @@ rewriteTargetList(Query *parsetree, Relation target_relation,
 				else
 				{
 					new_expr = (Node *) makeConst(att_tup->atttypid,
+												  -1,
 												  att_tup->attlen,
 												  (Datum) 0,
 												  true, /* isnull */
@@ -981,6 +982,7 @@ rewriteValuesRTE(RangeTblEntry *rte, Relation target_relation, List *attrnos)
 				if (!new_expr)
 				{
 					new_expr = (Node *) makeConst(att_tup->atttypid,
+												  -1,
 												  att_tup->attlen,
 												  (Datum) 0,
 												  true, /* isnull */

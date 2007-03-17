@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/parser/parse_coerce.c,v 2.149 2006/12/24 00:29:19 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/parser/parse_coerce.c,v 2.150 2007/01/05 22:19:34 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -186,6 +186,7 @@ coerce_type(ParseState *pstate, Node *node,
 		targetType = typeidType(baseTypeId);
 
 		newcon->consttype = baseTypeId;
+		newcon->consttypmod = -1;
 		newcon->constlen = typeLen(targetType);
 		newcon->constbyval = typeByVal(targetType);
 		newcon->constisnull = con->constisnull;
@@ -661,6 +662,7 @@ build_coercion_expression(Node *node, Oid funcId,
 	{
 		/* Pass target typmod as an int4 constant */
 		cons = makeConst(INT4OID,
+						 -1,
 						 sizeof(int32),
 						 Int32GetDatum(targetTypMod),
 						 false,
@@ -673,6 +675,7 @@ build_coercion_expression(Node *node, Oid funcId,
 	{
 		/* Pass it a boolean isExplicit parameter, too */
 		cons = makeConst(BOOLOID,
+						 -1,
 						 sizeof(bool),
 						 BoolGetDatum(isExplicit),
 						 false,

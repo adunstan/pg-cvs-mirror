@@ -22,7 +22,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/optimizer/prep/prepunion.c,v 1.138 2007/02/19 07:03:30 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/optimizer/prep/prepunion.c,v 1.139 2007/02/22 22:00:24 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -545,6 +545,7 @@ generate_setop_tlist(List *colTypes, int flag,
 		/* Add a resjunk flag column */
 		/* flag value is the given constant */
 		expr = (Node *) makeConst(INT4OID,
+								  -1,
 								  sizeof(int4),
 								  Int32GetDatum(flag),
 								  false,
