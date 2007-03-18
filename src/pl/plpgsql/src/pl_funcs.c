@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/pl/plpgsql/src/pl_funcs.c,v 1.56 2007/01/05 22:20:02 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/pl/plpgsql/src/pl_funcs.c,v 1.57 2007/01/28 17:58:13 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -474,7 +474,7 @@ plpgsql_stmt_typename(PLpgSQL_stmt *stmt)
  **********************************************************************/
 static int	dump_indent;
 
-static void dump_ind();
+static void dump_ind(void);
 static void dump_stmt(PLpgSQL_stmt *stmt);
 static void dump_block(PLpgSQL_stmt_block *block);
 static void dump_assign(PLpgSQL_stmt_assign *stmt);

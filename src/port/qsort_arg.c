@@ -9,7 +9,7 @@
  *
  *	CAUTION: if you change this file, see also qsort.c
  *
- *	$PostgreSQL: pgsql/src/port/qsort_arg.c,v 1.2 2006/10/04 00:30:14 momjian Exp $
+ *	$PostgreSQL: pgsql/src/port/qsort_arg.c,v 1.3 2006/10/12 15:04:55 tgl Exp $
  */
 
 /*	$NetBSD: qsort.c,v 1.13 2003/08/07 16:43:42 agc Exp $	*/
@@ -73,11 +73,7 @@ do {		\
 	(es) % sizeof(long) ? 2 : (es) == sizeof(long)? 0 : 1;
 
 static void
-swapfunc(a, b, n, swaptype)
-char	   *a,
-		   *b;
-size_t		n;
-int			swaptype;
+swapfunc(char *a, char *b, size_t n, int swaptype)
 {
 	if (swaptype <= 1)
 		swapcode(long, a, b, n);
