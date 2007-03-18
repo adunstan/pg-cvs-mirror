@@ -4,7 +4,7 @@
 #
 # Copyright (c) 1998-2007, PostgreSQL Global Development Group
 #
-# $PostgreSQL: pgsql/src/interfaces/ecpg/preproc/Makefile,v 1.123 2007/01/05 22:20:00 momjian Exp $
+# $PostgreSQL: pgsql/src/interfaces/ecpg/preproc/Makefile,v 1.124 2007/03/17 19:25:23 meskes Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -57,7 +57,7 @@ else
 	@$(missing) flex $< $@
 endif
 
-c_keywords.o ecpg_keywords.o keywords.o preproc.o: preproc.h
+c_keywords.o ecpg_keywords.o keywords.o preproc.o parser.o: preproc.h
 
 parser.c: $(top_srcdir)/src/backend/parser/parser.c
 	rm -f $@ && $(LN_S) $< .
