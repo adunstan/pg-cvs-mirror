@@ -9,14 +9,14 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/bin/pg_dump/pg_dump_sort.c,v 1.16 2007/01/05 22:19:48 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/bin/pg_dump/pg_dump_sort.c,v 1.17 2007/01/23 17:54:50 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
 #include "pg_backup_archiver.h"
 
 
-static char *modulename = gettext_noop("sorter");
+static const char *modulename = gettext_noop("sorter");
 
 /*
  * Sort priority for object types when dumping a pre-7.3 database.
