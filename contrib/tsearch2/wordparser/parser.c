@@ -1,4 +1,4 @@
-/* $PostgreSQL: pgsql/contrib/tsearch2/wordparser/parser.c,v 1.11 2006/10/04 00:29:47 momjian Exp $ */
+/* $PostgreSQL: pgsql/contrib/tsearch2/wordparser/parser.c,v 1.12 2007/01/15 15:16:28 teodor Exp $ */
 
 #include "postgres.h"
 
@@ -117,7 +117,7 @@ p_isalnum(TParser *prs)
 	{
 		if (lc_ctype_is_c())
 		{
-			unsigned int c = *(unsigned int*)(prs->wstr + prs->state->poschar);
+			unsigned int c = *(prs->wstr + prs->state->poschar);
 
 			/*
 			 * any non-ascii symbol with multibyte encoding
