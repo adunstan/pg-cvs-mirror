@@ -1,9 +1,9 @@
 #-------------------------------------------------------------------------
 #
-# $PostgreSQL: pgsql/src/backend/utils/mb/conversion_procs/euc_jp_and_sjis/Makefile,v 1.4 2007/02/09 15:55:58 petere Exp $
+# $PostgreSQL: pgsql/src/backend/utils/mb/conversion_procs/euc_jis_2004_and_shift_jis_2004/Makefile,v 1.1 2007/03/25 11:56:02 ishii Exp $
 #
 #-------------------------------------------------------------------------
-subdir = src/backend/utils/mb/conversion_procs/euc_jis_2004_and_shit_jis_2004
+subdir = src/backend/utils/mb/conversion_procs/euc_jis_2004_and_shift_jis_2004
 top_builddir = ../../../../../..
 include $(top_builddir)/src/Makefile.global
 
