@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/utils/xml.h,v 1.16 2007/02/16 07:46:55 petere Exp $
+ * $PostgreSQL: pgsql/src/include/utils/xml.h,v 1.17 2007/03/22 20:14:58 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -46,6 +46,14 @@ extern Datum query_to_xmlschema(PG_FUNCTION_ARGS);
 extern Datum cursor_to_xmlschema(PG_FUNCTION_ARGS);
 extern Datum table_to_xml_and_xmlschema(PG_FUNCTION_ARGS);
 extern Datum query_to_xml_and_xmlschema(PG_FUNCTION_ARGS);
+
+extern Datum schema_to_xml(PG_FUNCTION_ARGS);
+extern Datum schema_to_xmlschema(PG_FUNCTION_ARGS);
+extern Datum schema_to_xml_and_xmlschema(PG_FUNCTION_ARGS);
+
+extern Datum database_to_xml(PG_FUNCTION_ARGS);
+extern Datum database_to_xmlschema(PG_FUNCTION_ARGS);
+extern Datum database_to_xml_and_xmlschema(PG_FUNCTION_ARGS);
 
 typedef enum
 {
