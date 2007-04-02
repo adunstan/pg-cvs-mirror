@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/nodes/parsenodes.h,v 1.342 2007/03/13 00:33:43 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/nodes/parsenodes.h,v 1.343 2007/03/19 23:38:32 wieck Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1705,6 +1705,17 @@ typedef struct CompositeTypeStmt
 	RangeVar   *typevar;		/* the composite type to be created */
 	List	   *coldeflist;		/* list of ColumnDef nodes */
 } CompositeTypeStmt;
+
+/* ----------------------
+ *		Create Type Statement, enum types
+ * ----------------------
+ */
+typedef struct CreateEnumStmt
+{
+	NodeTag		type;
+	List	   *typename;		/* qualified name (list of Value strings) */
+	List	   *vals;			/* enum values (list of Value strings) */
+} CreateEnumStmt;
 
 
 /* ----------------------

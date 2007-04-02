@@ -15,7 +15,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/nodes/copyfuncs.c,v 1.371 2007/03/17 00:11:03 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/nodes/copyfuncs.c,v 1.372 2007/03/27 23:21:09 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -2361,6 +2361,17 @@ _copyCompositeTypeStmt(CompositeTypeStmt *from)
 	return newnode;
 }
 
+static CreateEnumStmt *
+_copyCreateEnumStmt(CreateEnumStmt *from)
+{
+	CreateEnumStmt *newnode = makeNode(CreateEnumStmt);
+
+	COPY_NODE_FIELD(typename);
+	COPY_NODE_FIELD(vals);
+
+	return newnode;
+}
+
 static ViewStmt *
 _copyViewStmt(ViewStmt *from)
 {
@@ -3311,6 +3322,9 @@ copyObject(void *from)
 			break;
 		case T_CompositeTypeStmt:
 			retval = _copyCompositeTypeStmt(from);
+			break;
+		case T_CreateEnumStmt:
+			retval = _copyCreateEnumStmt(from);
 			break;
 		case T_ViewStmt:
 			retval = _copyViewStmt(from);

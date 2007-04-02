@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/utils/lsyscache.h,v 1.116 2007/01/30 01:33:36 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/utils/lsyscache.h,v 1.117 2007/02/14 01:58:58 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -105,6 +105,7 @@ extern char get_typstorage(Oid typid);
 extern Node *get_typdefault(Oid typid);
 extern char get_typtype(Oid typid);
 extern bool type_is_rowtype(Oid typid);
+extern bool type_is_enum(Oid typid);
 extern Oid	get_typ_typrelid(Oid typid);
 extern Oid	get_element_type(Oid typid);
 extern Oid	get_array_type(Oid typid);

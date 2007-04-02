@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/access/hash.h,v 1.75 2007/01/20 18:43:35 neilc Exp $
+ * $PostgreSQL: pgsql/src/include/access/hash.h,v 1.76 2007/01/30 01:33:36 tgl Exp $
  *
  * NOTES
  *		modeled after Margo Seltzer's hash implementation for unix.
@@ -258,6 +258,7 @@ extern Datum hashint2(PG_FUNCTION_ARGS);
 extern Datum hashint4(PG_FUNCTION_ARGS);
 extern Datum hashint8(PG_FUNCTION_ARGS);
 extern Datum hashoid(PG_FUNCTION_ARGS);
+extern Datum hashenum(PG_FUNCTION_ARGS);
 extern Datum hashfloat4(PG_FUNCTION_ARGS);
 extern Datum hashfloat8(PG_FUNCTION_ARGS);
 extern Datum hashoidvector(PG_FUNCTION_ARGS);

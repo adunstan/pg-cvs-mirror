@@ -61,7 +61,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/nodeAgg.c,v 1.150 2007/02/02 00:07:03 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/nodeAgg.c,v 1.151 2007/02/22 23:44:24 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1363,8 +1363,8 @@ ExecInitAgg(Agg *node, EState *estate, int eflags)
 
 		/*
 		 * Get actual datatypes of the inputs.	These could be different from
-		 * the agg's declared input types, when the agg accepts ANY, ANYARRAY
-		 * or ANYELEMENT.
+		 * the agg's declared input types, when the agg accepts ANY or
+		 * a polymorphic type.
 		 */
 		i = 0;
 		foreach(lc, aggref->args)
@@ -1421,7 +1421,7 @@ ExecInitAgg(Agg *node, EState *estate, int eflags)
 
 		/* resolve actual type of transition state, if polymorphic */
 		aggtranstype = aggform->aggtranstype;
-		if (aggtranstype == ANYARRAYOID || aggtranstype == ANYELEMENTOID)
+		if (IsPolymorphicType(aggtranstype))
 		{
 			/* have to fetch the agg's declared input types... */
 			Oid		   *declaredArgTypes;
