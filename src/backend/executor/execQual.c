@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/execQual.c,v 1.215 2007/02/27 23:48:07 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/execQual.c,v 1.216 2007/03/27 23:21:08 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1896,8 +1896,8 @@ ExecEvalScalarArrayOp(ScalarArrayOpExprState *sstate,
 		else
 		{
 			elt = fetch_att(s, typbyval, typlen);
-			s = att_addlength(s, typlen, PointerGetDatum(s));
-			s = (char *) att_align(s, typalign);
+			s = att_addlength_pointer(s, typlen, s);
+			s = (char *) att_align_nominal(s, typalign);
 			fcinfo.arg[1] = elt;
 			fcinfo.argnull[1] = false;
 		}

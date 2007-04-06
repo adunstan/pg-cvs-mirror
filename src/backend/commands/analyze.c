@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/analyze.c,v 1.102 2007/01/05 22:19:25 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/analyze.c,v 1.103 2007/01/09 02:14:11 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1478,7 +1478,7 @@ compute_minimal_stats(VacAttrStatsP stats,
 		 */
 		if (is_varlena)
 		{
-			total_width += VARSIZE(DatumGetPointer(value));
+			total_width += VARSIZE_ANY(DatumGetPointer(value));
 
 			/*
 			 * If the value is toasted, we want to detoast it just once to
@@ -1792,7 +1792,7 @@ compute_scalar_stats(VacAttrStatsP stats,
 		 */
 		if (is_varlena)
 		{
-			total_width += VARSIZE(DatumGetPointer(value));
+			total_width += VARSIZE_ANY(DatumGetPointer(value));
 
 			/*
 			 * If the value is toasted, we want to detoast it just once to

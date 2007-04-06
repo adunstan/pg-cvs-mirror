@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/access/heapam.h,v 1.120 2007/01/25 02:17:26 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/access/heapam.h,v 1.121 2007/03/29 00:15:39 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -200,7 +200,8 @@ extern Size heap_compute_data_size(TupleDesc tupleDesc,
 					   Datum *values, bool *isnull);
 extern void heap_fill_tuple(TupleDesc tupleDesc,
 				Datum *values, bool *isnull,
-				char *data, uint16 *infomask, bits8 *bit);
+				char *data, Size data_size,
+				uint16 *infomask, bits8 *bit);
 extern bool heap_attisnull(HeapTuple tup, int attnum);
 extern Datum nocachegetattr(HeapTuple tup, int attnum,
 			   TupleDesc att, bool *isnull);
