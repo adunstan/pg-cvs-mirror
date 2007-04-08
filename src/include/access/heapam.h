@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/access/heapam.h,v 1.121 2007/03/29 00:15:39 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/access/heapam.h,v 1.122 2007/04/06 04:21:43 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -194,6 +194,7 @@ extern XLogRecPtr log_heap_clean(Relation reln, Buffer buffer,
 extern XLogRecPtr log_heap_freeze(Relation reln, Buffer buffer,
 								  TransactionId cutoff_xid,
 								  OffsetNumber *offsets, int offcnt);
+extern XLogRecPtr log_newpage(RelFileNode *rnode, BlockNumber blk, Page page);
 
 /* in common/heaptuple.c */
 extern Size heap_compute_data_size(TupleDesc tupleDesc,
