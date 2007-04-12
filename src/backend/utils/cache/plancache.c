@@ -33,7 +33,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/cache/plancache.c,v 1.4 2007/03/23 19:53:51 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/cache/plancache.c,v 1.5 2007/03/26 00:36:19 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -878,6 +878,15 @@ PlanCacheCallback(Datum arg, Oid relid)
 			}
 		}
 	}
+}
+
+/*
+ * ResetPlanCache: drop all cached plans.
+ */
+void
+ResetPlanCache(void)
+{
+	PlanCacheCallback((Datum) 0, InvalidOid);
 }
 
 /*

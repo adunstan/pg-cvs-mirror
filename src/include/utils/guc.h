@@ -7,7 +7,7 @@
  * Copyright (c) 2000-2007, PostgreSQL Global Development Group
  * Written by Peter Eisentraut <peter_e@gmx.net>.
  *
- * $PostgreSQL: pgsql/src/include/utils/guc.h,v 1.79 2007/01/25 04:35:11 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/utils/guc.h,v 1.80 2007/03/06 02:06:15 momjian Exp $
  *--------------------------------------------------------------------
  */
 #ifndef GUC_H
@@ -201,7 +201,7 @@ extern int	GetNumConfigOptions(void);
 extern void SetPGVariable(const char *name, List *args, bool is_local);
 extern void GetPGVariable(const char *name, DestReceiver *dest);
 extern TupleDesc GetPGVariableResultDesc(const char *name);
-extern void ResetPGVariable(const char *name);
+extern void ResetPGVariable(const char *name, bool isTopLevel);
 
 extern char *flatten_set_variable_args(const char *name, List *args);
 
