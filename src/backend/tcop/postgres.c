@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/tcop/postgres.c,v 1.530 2007/03/29 19:10:10 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/tcop/postgres.c,v 1.531 2007/04/16 01:14:57 tgl Exp $
  *
  * NOTES
  *	  this is the "main" module of the postgres backend and
@@ -1237,6 +1237,7 @@ exec_parse_message(const char *query_string,	/* string to execute */
 							   commandTag,
 							   paramTypes,
 							   numParams,
+							   0,				/* default cursor options */
 							   stmt_list,
 							   false);
 	}
@@ -1261,6 +1262,7 @@ exec_parse_message(const char *query_string,	/* string to execute */
 												 commandTag,
 												 newParamTypes,
 												 numParams,
+												 0,	/* cursor options */
 												 stmt_list,
 												 fully_planned,
 												 true,
