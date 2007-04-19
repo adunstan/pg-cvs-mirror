@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/analyze.c,v 1.104 2007/04/06 04:21:42 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/analyze.c,v 1.105 2007/04/18 16:44:17 alvherre Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -468,7 +468,7 @@ analyze_rel(Oid relid, VacuumStmt *vacstmt)
 	/* Log the action if appropriate */
 	if (IsAutoVacuumWorkerProcess() && Log_autovacuum >= 0)
 	{
-		long	diff;
+		long	diff = 0L;
 
 		if (Log_autovacuum > 0)
 		{
