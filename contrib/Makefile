@@ -1,4 +1,4 @@
-# $PostgreSQL: pgsql/contrib/Makefile,v 1.73 2007/04/14 12:57:07 adunstan Exp $
+# $PostgreSQL: pgsql/contrib/Makefile,v 1.74 2007/04/15 12:48:23 adunstan Exp $
 
 subdir = contrib
 top_builddir = ..
@@ -35,6 +35,10 @@ WANTED_DIRS = \
 
 ifeq ($(with_openssl),yes)
 WANTED_DIRS += sslinfo
+endif
+
+ifeq ($(with_ossp_uuid),yes)
+WANTED_DIRS += uuid-ossp
 endif
 
 ifeq ($(with_libxml),yes)
