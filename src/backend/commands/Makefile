@@ -4,7 +4,7 @@
 #    Makefile for backend/commands
 #
 # IDENTIFICATION
-#    $PostgreSQL: pgsql/src/backend/commands/Makefile,v 1.34 2004/06/18 06:13:22 tgl Exp $
+#    $PostgreSQL: pgsql/src/backend/commands/Makefile,v 1.35 2007/01/20 17:16:11 petere Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -14,7 +14,7 @@ include $(top_builddir)/src/Makefile.global
 
 OBJS = aggregatecmds.o alter.o analyze.o async.o cluster.o comment.o  \
 	conversioncmds.o copy.o \
-	dbcommands.o define.o explain.o functioncmds.o \
+	dbcommands.o define.o discard.o explain.o functioncmds.o \
 	indexcmds.o lockcmds.o operatorcmds.o opclasscmds.o \
 	portalcmds.o prepare.o proclang.o \
 	schemacmds.o sequence.o tablecmds.o tablespace.o trigger.o \

@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/nodes/parsenodes.h,v 1.345 2007/04/12 06:53:48 neilc Exp $
+ * $PostgreSQL: pgsql/src/include/nodes/parsenodes.h,v 1.346 2007/04/16 01:14:57 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1869,6 +1869,24 @@ typedef struct VariableResetStmt
 	NodeTag		type;
 	char	   *name;
 } VariableResetStmt;
+
+/* ----------------------
+ * Discard Statement
+ * ----------------------
+ */
+
+typedef enum DiscardMode
+{
+	DISCARD_ALL,
+	DISCARD_PLANS,
+	DISCARD_TEMP
+} DiscardMode;
+
+typedef struct DiscardStmt
+{
+	NodeTag		type;
+	DiscardMode	target;
+} DiscardStmt;
 
 /* ----------------------
  *		LOCK Statement
