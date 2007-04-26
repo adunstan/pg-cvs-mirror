@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/storage/smgr/md.c,v 1.114 2004/12/31 22:01:13 pgsql Exp $
+ *	  $PostgreSQL: pgsql/src/backend/storage/smgr/md.c,v 1.114.4.1 2006/11/20 01:08:10 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -792,6 +792,7 @@ mdsync(void)
 									entry->rnode.spcNode,
 									entry->rnode.dbNode,
 									entry->rnode.relNode)));
+					hash_seq_term(&hstat);
 					return false;
 				}
 			}
