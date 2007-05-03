@@ -1,5 +1,5 @@
 /*
- * $PostgreSQL: pgsql/contrib/pgstattuple/pgstattuple.c,v 1.25 2006/10/04 00:29:46 momjian Exp $
+ * $PostgreSQL: pgsql/contrib/pgstattuple/pgstattuple.c,v 1.26 2007/03/25 19:45:13 tgl Exp $
  *
  * Copyright (c) 2001,2002	Tatsuo Ishii
  *
@@ -360,7 +360,7 @@ pgstat_hash_page(pgstattuple_type * stat, Relation rel, BlockNumber blkno)
 	Page		page;
 
 	_hash_getlock(rel, blkno, HASH_SHARE);
-	buf = _hash_getbuf(rel, blkno, HASH_READ);
+	buf = _hash_getbuf(rel, blkno, HASH_READ, 0);
 	page = BufferGetPage(buf);
 
 	if (PageGetSpecialSize(page) == MAXALIGN(sizeof(HashPageOpaqueData)))
