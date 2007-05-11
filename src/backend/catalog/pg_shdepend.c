@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/catalog/pg_shdepend.c,v 1.16 2007/01/05 22:19:25 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/catalog/pg_shdepend.c,v 1.17 2007/03/03 19:32:54 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1254,7 +1254,7 @@ shdepReassignOwned(List *roleids, Oid newrole)
 					break;
 
 				case TypeRelationId:
-					AlterTypeOwnerInternal(sdepForm->objid, newrole);
+					AlterTypeOwnerInternal(sdepForm->objid, newrole, true);
 					break;
 
 				case OperatorRelationId:
