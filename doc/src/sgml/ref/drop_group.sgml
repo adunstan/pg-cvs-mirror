@@ -1,5 +1,5 @@
 <!--
-$PostgreSQL: pgsql/doc/src/sgml/ref/drop_group.sgml,v 1.12 2006/02/04 19:06:46 adunstan Exp $
+$PostgreSQL: pgsql/doc/src/sgml/ref/drop_group.sgml,v 1.13 2006/09/16 00:30:18 momjian Exp $
 PostgreSQL documentation
 -->
 
@@ -29,8 +29,7 @@ DROP GROUP [ IF EXISTS ] <replaceable class="PARAMETER">name</replaceable> [, ..
 
   <para>
    <command>DROP GROUP</command> is now an alias for
-   <xref linkend="sql-droprole" endterm="sql-droprole-title">,
-   which see for more information.
+   <xref linkend="sql-droprole" endterm="sql-droprole-title">.
   </para>
  </refsect1>
 
