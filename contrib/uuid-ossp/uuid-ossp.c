@@ -4,7 +4,7 @@
  *
  * Copyright (c) 2007 PostgreSQL Global Development Group
  *
- * $PostgreSQL$
+ * $PostgreSQL: pgsql/contrib/uuid-ossp/uuid-ossp.c,v 1.1 2007/04/21 17:26:17 petere Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -14,7 +14,7 @@
 #include "utils/builtins.h"
 #include "utils/uuid.h"
 
-#include <ossp/uuid.h>
+#include <uuid.h>
 
 
 /* better both be 16 */
