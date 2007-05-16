@@ -96,7 +96,7 @@
  * Portions Copyright (c) 1994-5, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/heap/rewriteheap.c,v 1.2 2007/04/17 20:49:39 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/heap/rewriteheap.c,v 1.3 2007/04/17 21:29:31 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -537,6 +537,8 @@ raw_heap_insert(RewriteState state, HeapTuple tup)
 	Size			len;
 	OffsetNumber	newoff;
 	HeapTuple		heaptup;
+
+	heap_freeze_tuple(tup->t_data, state->rs_oldest_xmin, InvalidBuffer);
 
 	/*
 	 * If the new tuple is too big for storage or contains already toasted
