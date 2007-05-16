@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/catalog/index.h,v 1.72 2007/01/05 22:19:52 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/catalog/index.h,v 1.73 2007/01/09 02:14:15 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -53,7 +53,7 @@ extern void FormIndexDatum(IndexInfo *indexInfo,
 			   Datum *values,
 			   bool *isnull);
 
-extern void setNewRelfilenode(Relation relation);
+extern void setNewRelfilenode(Relation relation, TransactionId freezeXid);
 
 extern void index_build(Relation heapRelation,
 			Relation indexRelation,
