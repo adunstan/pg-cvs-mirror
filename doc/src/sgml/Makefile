@@ -2,7 +2,7 @@
 #
 # PostgreSQL documentation makefile
 #
-# $PostgreSQL: pgsql/doc/src/sgml/Makefile,v 1.95 2007/02/09 15:55:57 petere Exp $
+# $PostgreSQL: pgsql/doc/src/sgml/Makefile,v 1.96 2007/02/09 20:40:13 neilc Exp $
 #
 #----------------------------------------------------------------------------
 
@@ -11,6 +11,7 @@ top_builddir = ../../..
 include $(top_builddir)/src/Makefile.global
 
 .NOTPARALLEL:
+.PRECIOUS: %-A4.tex-ps %-US.tex-ps %-A4.tex-pdf %-US.tex-pdf
 
 ifndef COLLATEINDEX
 COLLATEINDEX = $(DOCBOOKSTYLE)/bin/collateindex.pl
