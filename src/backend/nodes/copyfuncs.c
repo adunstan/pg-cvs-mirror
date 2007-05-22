@@ -15,7 +15,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/nodes/copyfuncs.c,v 1.374 2007/04/26 16:13:10 neilc Exp $
+ *	  $PostgreSQL: pgsql/src/backend/nodes/copyfuncs.c,v 1.375 2007/04/27 22:05:47 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1425,6 +1425,7 @@ _copyOuterJoinInfo(OuterJoinInfo *from)
 	COPY_BITMAPSET_FIELD(min_righthand);
 	COPY_SCALAR_FIELD(is_full_join);
 	COPY_SCALAR_FIELD(lhs_strict);
+	COPY_SCALAR_FIELD(delay_upper_joins);
 
 	return newnode;
 }
