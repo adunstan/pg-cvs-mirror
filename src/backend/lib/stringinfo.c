@@ -9,7 +9,7 @@
  * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- *	  $PostgreSQL: pgsql/src/backend/lib/stringinfo.c,v 1.44 2007/01/05 22:19:29 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/lib/stringinfo.c,v 1.45 2007/03/03 19:32:54 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -234,14 +234,17 @@ enlargeStringInfo(StringInfo str, int needed)
 	int			newlen;
 
 	/*
-	 * Guard against ridiculous "needed" values, which can occur if we're fed
-	 * bogus data.	Without this, we can get an overflow or infinite loop in
-	 * the following.
+	 * Guard against out-of-range "needed" values.  Without this, we can get
+	 * an overflow or infinite loop in the following.
 	 */
-	if (needed < 0 ||
-		((Size) needed) >= (MaxAllocSize - (Size) str->len))
-		elog(ERROR, "invalid string enlargement request size %d",
-			 needed);
+	if (needed < 0)				/* should not happen */
+		elog(ERROR, "invalid string enlargement request size: %d", needed);
+	if (((Size) needed) >= (MaxAllocSize - (Size) str->len))
+		ereport(ERROR,
+				(errcode(ERRCODE_PROGRAM_LIMIT_EXCEEDED),
+				 errmsg("out of memory"),
+				 errdetail("Cannot enlarge string buffer containing %d bytes by %d more bytes.",
+						   str->len, needed)));
 
 	needed += str->len + 1;		/* total space required now */
 
