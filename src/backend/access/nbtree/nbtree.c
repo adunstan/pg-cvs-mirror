@@ -12,7 +12,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/nbtree/nbtree.c,v 1.153 2006/11/01 19:43:17 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/nbtree/nbtree.c,v 1.154 2007/01/05 22:19:23 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -786,9 +786,10 @@ restart:
 	/*
 	 * We can't use _bt_getbuf() here because it always applies
 	 * _bt_checkpage(), which will barf on an all-zero page. We want to
-	 * recycle all-zero pages, not fail.
+	 * recycle all-zero pages, not fail.  Also, we want to use a nondefault
+	 * buffer access strategy.
 	 */
-	buf = ReadBuffer(rel, blkno);
+	buf = ReadBufferWithStrategy(rel, blkno, info->strategy);
 	LockBuffer(buf, BT_READ);
 	page = BufferGetPage(buf);
 	opaque = (BTPageOpaque) PageGetSpecialPointer(page);
