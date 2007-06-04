@@ -1,5 +1,5 @@
 <!--
-$PostgreSQL: pgsql/doc/src/sgml/ref/clusterdb.sgml,v 1.20 2007/02/21 23:21:11 momjian Exp $
+$PostgreSQL: pgsql/doc/src/sgml/ref/clusterdb.sgml,v 1.21 2007/03/26 17:23:36 tgl Exp $
 PostgreSQL documentation
 -->
 
@@ -102,7 +102,7 @@ PostgreSQL documentation
       <term><option>--quiet</></term>
       <listitem>
        <para>
-        Do not display a response.
+        Do not display progress messages.
        </para>
       </listitem>
      </varlistentry>
