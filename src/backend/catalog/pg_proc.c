@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/catalog/pg_proc.c,v 1.143 2007/01/22 01:35:20 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/catalog/pg_proc.c,v 1.144 2007/04/02 03:49:37 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -147,6 +147,7 @@ ProcedureCreate(const char *procedureName,
 		{
 			case ANYARRAYOID:
 			case ANYELEMENTOID:
+			case ANYNONARRAYOID:
 			case ANYENUMOID:
 				genericInParam = true;
 				break;
@@ -170,6 +171,7 @@ ProcedureCreate(const char *procedureName,
 			{
 				case ANYARRAYOID:
 				case ANYELEMENTOID:
+				case ANYNONARRAYOID:
 				case ANYENUMOID:
 					genericOutParam = true;
 					break;

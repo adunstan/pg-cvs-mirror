@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/backend/utils/adt/xml.c,v 1.42 2007/04/06 04:21:43 tgl Exp $
+ * $PostgreSQL: pgsql/src/backend/utils/adt/xml.c,v 1.43 2007/05/21 17:10:29 petere Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1481,7 +1481,7 @@ map_sql_value_to_xml_value(Datum value, Oid type)
 
 	initStringInfo(&buf);
 
-	if (is_array_type(type))
+	if (type_is_array(type))
 	{
 		int i;
 		ArrayType *array;
