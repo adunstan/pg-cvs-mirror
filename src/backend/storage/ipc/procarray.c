@@ -23,7 +23,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/storage/ipc/procarray.c,v 1.24 2007/04/03 16:34:36 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/storage/ipc/procarray.c,v 1.25 2007/06/01 19:38:07 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -422,9 +422,8 @@ GetOldestXmin(bool allDbs, bool ignoreVacuum)
 	 * are no xacts running at all, that will be the subtrans truncation
 	 * point!)
 	 */
-	if (IsTransactionState())
-		result = GetTopTransactionId();
-	else
+	result = GetTopTransactionId();
+	if (!TransactionIdIsValid(result))
 		result = ReadNewTransactionId();
 
 	LWLockAcquire(ProcArrayLock, LW_SHARED);

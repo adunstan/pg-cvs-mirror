@@ -42,7 +42,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/error/elog.c,v 1.184 2007/05/02 15:32:41 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/error/elog.c,v 1.185 2007/05/04 02:01:02 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1593,12 +1593,7 @@ log_line_prefix(StringInfo buf)
 				break;
 			case 'x':
 				if (MyProcPort)
-				{
-					if (IsTransactionState())
-						appendStringInfo(buf, "%u", GetTopTransactionId());
-					else
-						appendStringInfo(buf, "%u", InvalidTransactionId);
-				}
+					appendStringInfo(buf, "%u", GetTopTransactionId());
 				break;
 			case '%':
 				appendStringInfoChar(buf, '%');
