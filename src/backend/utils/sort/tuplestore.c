@@ -38,7 +38,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/sort/tuplestore.c,v 1.31 2007/05/21 17:57:34 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/sort/tuplestore.c,v 1.32 2007/06/03 17:08:26 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -424,15 +424,11 @@ tuplestore_puttuple_common(Tuplestorestate *state, void *tuple)
 				return;
 
 			/*
-			 * Nope; time to switch to tape-based operation.
-			 *
-			 * If the temp table is slated to outlive the current transaction,
-			 * force it into my database's default tablespace, so that it will
-			 * not pose a threat to possible tablespace drop attempts.
+			 * Nope; time to switch to tape-based operation.  Make sure that
+			 * the temp file(s) are created in suitable temp tablespaces.
 			 */
-			state->myfile = BufFileCreateTemp(state->interXact,
-											  state->interXact ? InvalidOid :
-											  GetTempTablespace());
+			PrepareTempTablespaces();
+			state->myfile = BufFileCreateTemp(state->interXact);
 			state->status = TSS_WRITEFILE;
 			dumptuples(state);
 			break;
