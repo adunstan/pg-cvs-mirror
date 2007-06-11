@@ -15,7 +15,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/nodes/copyfuncs.c,v 1.376 2007/05/22 23:23:55 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/nodes/copyfuncs.c,v 1.377 2007/06/05 21:31:04 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1295,6 +1295,20 @@ _copySetToDefault(SetToDefault *from)
 
 	COPY_SCALAR_FIELD(typeId);
 	COPY_SCALAR_FIELD(typeMod);
+
+	return newnode;
+}
+
+/*
+ * _copyCurrentOfExpr
+ */
+static CurrentOfExpr *
+_copyCurrentOfExpr(CurrentOfExpr *from)
+{
+	CurrentOfExpr *newnode = makeNode(CurrentOfExpr);
+
+	COPY_SCALAR_FIELD(cvarno);
+	COPY_STRING_FIELD(cursor_name);
 
 	return newnode;
 }
@@ -3176,6 +3190,9 @@ copyObject(void *from)
 			break;
 		case T_SetToDefault:
 			retval = _copySetToDefault(from);
+			break;
+		case T_CurrentOfExpr:
+			retval = _copyCurrentOfExpr(from);
 			break;
 		case T_TargetEntry:
 			retval = _copyTargetEntry(from);

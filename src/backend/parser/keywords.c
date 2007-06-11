@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/parser/keywords.c,v 1.186 2007/04/02 03:49:38 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/parser/keywords.c,v 1.187 2007/04/26 16:13:12 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -101,6 +101,7 @@ static const ScanKeyword ScanKeywords[] = {
 	{"createuser", CREATEUSER},
 	{"cross", CROSS},
 	{"csv", CSV},
+	{"current", CURRENT_P},
 	{"current_date", CURRENT_DATE},
 	{"current_role", CURRENT_ROLE},
 	{"current_time", CURRENT_TIME},
