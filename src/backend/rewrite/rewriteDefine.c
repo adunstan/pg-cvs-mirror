@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/rewrite/rewriteDefine.c,v 1.119 2007/03/19 23:38:29 wieck Exp $
+ *	  $PostgreSQL: pgsql/src/backend/rewrite/rewriteDefine.c,v 1.120 2007/04/27 22:05:48 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -20,8 +20,8 @@
 #include "catalog/pg_rewrite.h"
 #include "miscadmin.h"
 #include "optimizer/clauses.h"
-#include "parser/analyze.h"
 #include "parser/parse_expr.h"
+#include "parser/parse_utilcmd.h"
 #include "rewrite/rewriteDefine.h"
 #include "rewrite/rewriteManip.h"
 #include "rewrite/rewriteSupport.h"
@@ -191,7 +191,7 @@ DefineRule(RuleStmt *stmt, const char *queryString)
 	Node	   *whereClause;
 
 	/* Parse analysis ... */
-	analyzeRuleStmt(stmt, queryString, &actions, &whereClause);
+	transformRuleStmt(stmt, queryString, &actions, &whereClause);
 
 	/* ... and execution */
 	DefineQueryRewrite(stmt->rulename,

@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/nodes/makefuncs.c,v 1.54 2007/01/05 22:19:30 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/nodes/makefuncs.c,v 1.55 2007/03/17 00:11:03 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -132,6 +132,20 @@ flatCopyTargetEntry(TargetEntry *src_tle)
 	Assert(IsA(src_tle, TargetEntry));
 	memcpy(tle, src_tle, sizeof(TargetEntry));
 	return tle;
+}
+
+/*
+ * makeFromExpr -
+ *	  creates a FromExpr node
+ */
+FromExpr *
+makeFromExpr(List *fromlist, Node *quals)
+{
+	FromExpr   *f = makeNode(FromExpr);
+
+	f->fromlist = fromlist;
+	f->quals = quals;
+	return f;
 }
 
 /*
