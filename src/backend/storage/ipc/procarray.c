@@ -23,7 +23,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/storage/ipc/procarray.c,v 1.25 2007/06/01 19:38:07 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/storage/ipc/procarray.c,v 1.26 2007/06/07 21:45:59 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1008,7 +1008,7 @@ CheckOtherDBBackends(Oid databaseId)
 				 */
 				LWLockRelease(ProcArrayLock);
 
-				(void) kill(autopid, SIGINT);		/* ignore any error */
+				(void) kill(autopid, SIGTERM);		/* ignore any error */
 
 				break;
 			}
