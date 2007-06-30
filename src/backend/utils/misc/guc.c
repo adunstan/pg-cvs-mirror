@@ -10,7 +10,7 @@
  * Written by Peter Eisentraut <peter_e@gmx.net>.
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.402 2007/06/21 22:59:12 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.403 2007/06/28 00:02:39 tgl Exp $
  *
  *--------------------------------------------------------------------
  */
@@ -584,6 +584,14 @@ static struct config_bool ConfigureNamesBool[] =
 				 "background and any controlling terminals are dissociated.")
 		},
 		&SilentMode,
+		false, NULL, NULL
+	},
+	{
+		{"log_checkpoints", PGC_SIGHUP, LOGGING_WHAT,
+			gettext_noop("Logs each checkpoint."),
+			NULL
+		},
+		&log_checkpoints,
 		false, NULL, NULL
 	},
 	{
