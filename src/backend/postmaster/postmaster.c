@@ -37,7 +37,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/postmaster/postmaster.c,v 1.529 2007/06/29 17:07:39 alvherre Exp $
+ *	  $PostgreSQL: pgsql/src/backend/postmaster/postmaster.c,v 1.530 2007/07/01 18:28:41 tgl Exp $
  *
  * NOTES
  *
@@ -1727,6 +1727,13 @@ ConnCreate(int serverFd)
 		RandomSalt(port->cryptSalt, port->md5Salt);
 	}
 
+	/*
+     * Allocate GSSAPI specific state struct
+	 */
+#ifdef ENABLE_GSS
+	port->gss = (pg_gssinfo *)calloc(1, sizeof(pg_gssinfo));
+#endif
+
 	return port;
 }
 
@@ -1740,6 +1747,8 @@ ConnFree(Port *conn)
 #ifdef USE_SSL
 	secure_close(conn);
 #endif
+	if (conn->gss)
+		free(conn->gss);
 	free(conn);
 }
 

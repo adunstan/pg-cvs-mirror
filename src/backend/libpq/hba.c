@@ -10,7 +10,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/libpq/hba.c,v 1.159 2007/02/08 04:52:18 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/libpq/hba.c,v 1.160 2007/02/10 14:58:54 petere Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -602,6 +602,8 @@ parse_hba_auth(ListCell **line_item, UserAuth *userauth_p,
 		*userauth_p = uaPassword;
 	else if (strcmp(token, "krb5") == 0)
 		*userauth_p = uaKrb5;
+	else if (strcmp(token, "gss") == 0)
+		*userauth_p = uaGSS;
 	else if (strcmp(token, "reject") == 0)
 		*userauth_p = uaReject;
 	else if (strcmp(token, "md5") == 0)

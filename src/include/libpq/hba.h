@@ -4,7 +4,7 @@
  *	  Interface to hba.c
  *
  *
- * $PostgreSQL: pgsql/src/include/libpq/hba.h,v 1.44 2006/10/04 00:30:08 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/libpq/hba.h,v 1.45 2006/11/05 22:42:10 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -22,7 +22,8 @@ typedef enum UserAuth
 	uaIdent,
 	uaPassword,
 	uaCrypt,
-	uaMD5
+	uaMD5,
+	uaGSS
 #ifdef USE_PAM
 	,uaPAM
 #endif   /* USE_PAM */
