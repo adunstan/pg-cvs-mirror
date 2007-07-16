@@ -66,7 +66,7 @@
  * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- *	  $PostgreSQL: pgsql/src/include/storage/s_lock.h,v 1.158 2007/01/05 22:19:58 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/include/storage/s_lock.h,v 1.159 2007/05/04 15:20:52 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -749,6 +749,8 @@ typedef abilock_t slock_t;
  * AIX (POWER)
  */
 #define HAS_TEST_AND_SET
+
+#include <sys/atomic_op.h>
 
 typedef unsigned int slock_t;
 
