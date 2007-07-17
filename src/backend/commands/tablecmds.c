@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/tablecmds.c,v 1.228 2007/06/23 22:12:50 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/tablecmds.c,v 1.229 2007/07/03 01:30:36 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -3794,6 +3794,7 @@ ATExecAddIndex(AlteredTableInfo *tab, Relation rel,
 				stmt->indexParams,		/* parameters */
 				(Expr *) stmt->whereClause,
 				stmt->options,
+				stmt->src_options,
 				stmt->unique,
 				stmt->primary,
 				stmt->isconstraint,
