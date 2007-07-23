@@ -12,7 +12,7 @@
  * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/interfaces/libpq/libpq-int.h,v 1.115 2006/08/18 19:52:39 tgl Exp $
+ * $PostgreSQL: pgsql/src/interfaces/libpq/libpq-int.h,v 1.116 2006/10/04 00:30:13 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -57,7 +57,6 @@ typedef int ssize_t;			/* ssize_t doesn't exist in VC (at least not
 /*
  * POSTGRES backend dependent Constants.
  */
-#define PQERRORMSG_LENGTH 1024
 #define CMDSTATUS_LEN 40
 
 /*
