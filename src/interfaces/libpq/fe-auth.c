@@ -10,7 +10,7 @@
  * exceed INITIAL_EXPBUFFER_SIZE (currently 256 bytes).
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-auth.c,v 1.127 2007/07/12 14:43:21 mha Exp $
+ *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-auth.c,v 1.128 2007/07/23 10:16:54 mha Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -933,7 +933,7 @@ pg_fe_sendauth(AuthRequest areq, PGconn *conn, const char *hostname,
 			break;
 #else
 		case AUTH_REQ_SSPI:
-			snpritnf(PQerrormsg, PQERRORMSG_LENGTH,
+			snprintf(PQerrormsg, PQERRORMSG_LENGTH,
 					libpq_gettext("SSPI authentication not supported\n"));
 			return STATUS_ERROR;
 #endif
