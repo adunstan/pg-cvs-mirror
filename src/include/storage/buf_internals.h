@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/storage/buf_internals.h,v 1.90 2007/05/30 20:12:03 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/storage/buf_internals.h,v 1.91 2007/06/28 00:02:40 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -163,7 +163,7 @@ typedef struct sbufdesc
 
 
 /* in buf_init.c */
-extern DLLIMPORT BufferDesc *BufferDescriptors;
+extern PGDLLIMPORT BufferDesc *BufferDescriptors;
 
 /* in localbuf.c */
 extern BufferDesc *LocalBufferDescriptors;

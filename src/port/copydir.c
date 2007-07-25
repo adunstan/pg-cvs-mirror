@@ -11,7 +11,7 @@
  *	as a service.
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/port/copydir.c,v 1.18 2006/07/18 22:36:46 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/port/copydir.c,v 1.19 2007/01/05 22:20:02 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -26,7 +26,7 @@
 
 /*
  *	On Windows, call non-macro versions of palloc; we can't reference
- *	CurrentMemoryContext in this file because of DLLIMPORT conflict.
+ *	CurrentMemoryContext in this file because of PGDLLIMPORT conflict.
  */
 #if defined(WIN32) || defined(__CYGWIN__)
 #undef palloc

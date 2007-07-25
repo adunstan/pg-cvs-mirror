@@ -5,7 +5,7 @@
  *
  * Copyright (c) 2004-2007, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/include/postmaster/syslogger.h,v 1.8 2007/01/05 22:19:57 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/postmaster/syslogger.h,v 1.9 2007/06/14 01:48:51 adunstan Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -64,8 +64,8 @@ typedef union
 extern bool Redirect_stderr;
 extern int	Log_RotationAge;
 extern int	Log_RotationSize;
-extern DLLIMPORT char *Log_directory;
-extern DLLIMPORT char *Log_filename;
+extern PGDLLIMPORT char *Log_directory;
+extern PGDLLIMPORT char *Log_filename;
 extern bool Log_truncate_on_rotation;
 
 extern bool am_syslogger;

@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/utils/tqual.h,v 1.65 2007/01/05 22:19:59 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/utils/tqual.h,v 1.66 2007/03/25 19:45:14 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -61,10 +61,10 @@ typedef struct SnapshotData
 #define InvalidSnapshot		((Snapshot) NULL)
 
 /* Static variables representing various special snapshot semantics */
-extern DLLIMPORT SnapshotData SnapshotNowData;
-extern DLLIMPORT SnapshotData SnapshotSelfData;
-extern DLLIMPORT SnapshotData SnapshotAnyData;
-extern DLLIMPORT SnapshotData SnapshotToastData;
+extern PGDLLIMPORT SnapshotData SnapshotNowData;
+extern PGDLLIMPORT SnapshotData SnapshotSelfData;
+extern PGDLLIMPORT SnapshotData SnapshotAnyData;
+extern PGDLLIMPORT SnapshotData SnapshotToastData;
 
 #define SnapshotNow			(&SnapshotNowData)
 #define SnapshotSelf		(&SnapshotSelfData)
@@ -84,9 +84,9 @@ extern DLLIMPORT SnapshotData SnapshotToastData;
 	((snapshot)->satisfies == HeapTupleSatisfiesMVCC)
 
 
-extern DLLIMPORT Snapshot SerializableSnapshot;
-extern DLLIMPORT Snapshot LatestSnapshot;
-extern DLLIMPORT Snapshot ActiveSnapshot;
+extern PGDLLIMPORT Snapshot SerializableSnapshot;
+extern PGDLLIMPORT Snapshot LatestSnapshot;
+extern PGDLLIMPORT Snapshot ActiveSnapshot;
 
 extern TransactionId TransactionXmin;
 extern TransactionId RecentXmin;

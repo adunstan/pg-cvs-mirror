@@ -1,4 +1,4 @@
-/* $PostgreSQL: pgsql-server/src/include/port/cygwin.h,v 1.5 2003/11/29 19:52:08 pgsql Exp $ */
+/* $PostgreSQL: pgsql/src/include/port/cygwin.h,v 1.6 2003/12/23 03:31:30 momjian Exp $ */
 
 #include <cygwin/version.h>
 
@@ -14,8 +14,8 @@
 #endif
 
 #ifdef BUILDING_DLL
-#define DLLIMPORT __declspec (dllexport)
+#define PGDLLIMPORT __declspec (dllexport)
 #else
-#define DLLIMPORT __declspec (dllimport)
+#define PGDLLIMPORT __declspec (dllimport)
 
 #endif
