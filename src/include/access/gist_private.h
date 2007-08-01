@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/access/gist_private.h,v 1.25 2007/01/05 22:19:51 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/access/gist_private.h,v 1.26 2007/01/20 18:43:35 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -199,8 +199,6 @@ typedef struct GistSplitVector
 	bool	   *spl_equiv;		/* equivalent tuples which can be freely
 								 * distributed between left and right pages */
 } GistSplitVector;
-
-#define XLogRecPtrIsInvalid( r )	( (r).xlogid == 0 && (r).xrecoff == 0 )
 
 typedef struct
 {

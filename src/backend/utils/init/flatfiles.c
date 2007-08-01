@@ -23,7 +23,7 @@
  * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/backend/utils/init/flatfiles.c,v 1.25 2007/04/06 04:21:43 tgl Exp $
+ * $PostgreSQL: pgsql/src/backend/utils/init/flatfiles.c,v 1.26 2007/06/12 17:16:52 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -855,6 +855,14 @@ AtEOXact_UpdateFlatFiles(bool isCommit)
 	 * Signal the postmaster to reload its caches.
 	 */
 	SendPostmasterSignal(PMSIGNAL_PASSWORD_CHANGE);
+
+	/*
+	 * Force synchronous commit, to minimize the window between changing
+	 * the flat files on-disk and marking the transaction committed.  It's
+	 * not great that there is any window at all, but definitely we don't
+	 * want to make it larger than necessary.
+	 */
+	ForceSyncCommit();
 }
 
 
