@@ -38,7 +38,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/sort/tuplestore.c,v 1.32 2007/06/03 17:08:26 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/sort/tuplestore.c,v 1.33 2007/06/07 19:19:57 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -322,6 +322,7 @@ tuplestore_end(Tuplestorestate *state)
 			pfree(state->memtuples[i]);
 		pfree(state->memtuples);
 	}
+	pfree(state);
 }
 
 /*
