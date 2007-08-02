@@ -13,7 +13,7 @@
  *
  *	Copyright (c) 2001-2007, PostgreSQL Global Development Group
  *
- *	$PostgreSQL: pgsql/src/backend/postmaster/pgstat.c,v 1.160 2007/06/28 00:02:38 tgl Exp $
+ *	$PostgreSQL: pgsql/src/backend/postmaster/pgstat.c,v 1.161 2007/07/08 22:23:16 tgl Exp $
  * ----------
  */
 #include "postgres.h"
@@ -2167,6 +2167,8 @@ PgstatCollectorMain(int argc, char *argv[])
 	IsUnderPostmaster = true;	/* we are a postmaster subprocess now */
 
 	MyProcPid = getpid();		/* reset MyProcPid */
+
+	MyStartTime = time(NULL);  	/* record Start Time for logging */
 
 	/*
 	 * If possible, make this process a group leader, so that the postmaster

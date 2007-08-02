@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/tcop/postgres.c,v 1.535 2007/06/29 17:07:39 alvherre Exp $
+ *	  $PostgreSQL: pgsql/src/backend/tcop/postgres.c,v 1.536 2007/07/09 01:15:14 tgl Exp $
  *
  * NOTES
  *	  this is the "main" module of the postgres backend and
@@ -2785,6 +2785,8 @@ PostgresMain(int argc, char *argv[], const char *username)
 	 * standalone; cheap enough to do over)
 	 */
 	MyProcPid = getpid();
+
+	MyStartTime = time(NULL);
 
 	/*
 	 * Fire up essential subsystems: error and memory management

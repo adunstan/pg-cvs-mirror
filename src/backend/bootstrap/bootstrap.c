@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/bootstrap/bootstrap.c,v 1.234 2007/06/28 00:02:37 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/bootstrap/bootstrap.c,v 1.235 2007/07/24 04:54:09 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -212,6 +212,8 @@ AuxiliaryProcessMain(int argc, char *argv[])
 	 * initialize globals
 	 */
 	MyProcPid = getpid();
+
+	MyStartTime = time(NULL);
 
 	/*
 	 * Fire up essential subsystems: error and memory management
