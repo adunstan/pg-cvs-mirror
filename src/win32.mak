@@ -1,6 +1,6 @@
-# $PostgreSQL: pgsql/src/win32.mak,v 1.14 2006/08/08 22:44:05 momjian Exp $
+# $PostgreSQL: pgsql/src/win32.mak,v 1.15 2007/03/05 14:18:38 mha Exp $
 
-# Top-file makefile for building Win32 libpq with Visual C++ 6.0.
+# Top-file makefile for building Win32 libpq with Visual C++ 7.1.
 # (see src/tools/msvc for tools to build with Visual C++ 2005 and newer)
 
 !IF "$(OS)" == "Windows_NT"
