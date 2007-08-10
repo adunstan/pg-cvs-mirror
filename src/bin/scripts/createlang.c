@@ -5,7 +5,7 @@
  * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/bin/scripts/createlang.c,v 1.24 2006/07/14 14:52:27 momjian Exp $
+ * $PostgreSQL: pgsql/src/bin/scripts/createlang.c,v 1.25 2007/01/05 22:19:50 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -138,6 +138,8 @@ main(int argc, char *argv[])
 		memset(&popt, 0, sizeof(popt));
 		popt.topt.format = PRINT_ALIGNED;
 		popt.topt.border = 1;
+		popt.topt.start_table = true;
+		popt.topt.stop_table = true;
 		popt.topt.encoding = PQclientEncoding(conn);
 		popt.title = _("Procedural Languages");
 		printQuery(result, &popt, stdout, NULL);
