@@ -1,4 +1,4 @@
-# $PostgreSQL: pgsql/src/interfaces/ecpg/test/Makefile,v 1.70 2007/06/12 15:00:41 alvherre Exp $
+# $PostgreSQL: pgsql/src/interfaces/ecpg/test/Makefile,v 1.71 2007/06/15 08:23:52 meskes Exp $
 
 subdir = src/interfaces/ecpg/test
 top_builddir = ../../../..
@@ -6,7 +6,7 @@ include $(top_builddir)/src/Makefile.global
 
 # port number for temp-installation test postmaster
 # this is also defined in test/connect/Makefile
-TEMP_PORT = 5$(DEF_PGPORT)
+TEMP_PORT = 4$(DEF_PGPORT)
 
 # where to find psql for testing an existing installation
 PSQLDIR = $(bindir)
