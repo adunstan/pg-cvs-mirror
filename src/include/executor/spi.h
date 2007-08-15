@@ -2,7 +2,7 @@
  *
  * spi.h
  *
- * $PostgreSQL: pgsql/src/include/executor/spi.h,v 1.57 2006/09/03 03:19:45 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/executor/spi.h,v 1.58 2006/10/04 00:30:08 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -95,7 +95,7 @@ extern int SPI_execute_snapshot(void *plan,
 					 Datum *Values, const char *Nulls,
 					 Snapshot snapshot,
 					 Snapshot crosscheck_snapshot,
-					 bool read_only, long tcount);
+					 bool read_only, bool fire_triggers, long tcount);
 extern void *SPI_prepare(const char *src, int nargs, Oid *argtypes);
 extern void *SPI_saveplan(void *plan);
 extern int	SPI_freeplan(void *plan);
