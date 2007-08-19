@@ -37,7 +37,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/postmaster/postmaster.c,v 1.539 2007/08/04 03:15:49 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/postmaster/postmaster.c,v 1.540 2007/08/09 01:18:43 tgl Exp $
  *
  * NOTES
  *
@@ -1282,8 +1282,8 @@ ServerLoop(void)
 			}
 		}
 
-		/* If we have lost the system logger, try to start a new one */
-		if (SysLoggerPID == 0 && Redirect_stderr)
+		/* If we have lost the log collector, try to start a new one */
+		if (SysLoggerPID == 0 && Logging_collector)
 			SysLoggerPID = SysLogger_Start();
 
 		/*

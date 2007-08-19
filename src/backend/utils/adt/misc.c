@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/misc.c,v 1.55 2006/11/21 20:59:53 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/misc.c,v 1.56 2007/01/05 22:19:41 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -144,10 +144,10 @@ pg_rotate_logfile(PG_FUNCTION_ARGS)
 				(errcode(ERRCODE_INSUFFICIENT_PRIVILEGE),
 				 (errmsg("must be superuser to rotate log files"))));
 
-	if (!Redirect_stderr)
+	if (!Logging_collector)
 	{
 		ereport(WARNING,
-		(errmsg("rotation not possible because log redirection not active")));
+		(errmsg("rotation not possible because log collection not active")));
 		PG_RETURN_BOOL(false);
 	}
 
