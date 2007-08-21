@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/nodes/nodes.h,v 1.201 2007/06/11 01:16:30 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/nodes/nodes.h,v 1.202 2007/07/25 12:22:53 mha Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -312,6 +312,8 @@ typedef enum NodeTag
 	T_ReassignOwnedStmt,
 	T_CompositeTypeStmt,
 	T_CreateEnumStmt,
+	T_AlterTSDictionaryStmt,
+	T_AlterTSConfigurationStmt,
 
 	/*
 	 * TAGS FOR PARSE TREE NODES (parsenodes.h)

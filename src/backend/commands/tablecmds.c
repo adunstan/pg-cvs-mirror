@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/tablecmds.c,v 1.229 2007/07/03 01:30:36 neilc Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/tablecmds.c,v 1.230 2007/07/17 05:02:00 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -5079,8 +5079,13 @@ ATExecAlterColumnType(AlteredTableInfo *tab, Relation rel,
 			case OCLASS_LANGUAGE:
 			case OCLASS_OPERATOR:
 			case OCLASS_OPCLASS:
+			case OCLASS_OPFAMILY:
 			case OCLASS_TRIGGER:
 			case OCLASS_SCHEMA:
+			case OCLASS_TSPARSER:
+			case OCLASS_TSDICT:
+			case OCLASS_TSTEMPLATE:
+			case OCLASS_TSCONFIG:
 
 				/*
 				 * We don't expect any of these sorts of objects to depend on

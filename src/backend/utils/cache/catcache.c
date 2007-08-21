@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/cache/catcache.c,v 1.136 2007/01/05 22:19:42 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/cache/catcache.c,v 1.137 2007/04/21 04:49:20 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -134,6 +134,8 @@ GetCCHashEqFuncs(Oid keytype, PGFunction *hashfunc, RegProcedure *eqfunc)
 		case REGOPERATOROID:
 		case REGCLASSOID:
 		case REGTYPEOID:
+		case REGCONFIGOID:
+		case REGDICTIONARYOID:
 			*hashfunc = hashoid;
 			*eqfunc = F_OIDEQ;
 			break;
