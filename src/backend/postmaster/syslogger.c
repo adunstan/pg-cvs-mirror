@@ -18,7 +18,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/postmaster/syslogger.c,v 1.36 2007/08/04 01:26:53 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/postmaster/syslogger.c,v 1.37 2007/08/19 01:41:24 adunstan Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1007,7 +1007,7 @@ static void
 logfile_rotate(bool time_based_rotation, int size_rotation_for)
 {
 	char	   *filename;
-	char       *csvfilename;
+	char       *csvfilename = NULL;
 	FILE	   *fh;
 
 	rotation_requested = false;
