@@ -1,5 +1,5 @@
 /*
- * $PostgreSQL: pgsql/contrib/pgbench/pgbench.c,v 1.69 2007/07/15 22:34:26 tgl Exp $
+ * $PostgreSQL: pgsql/contrib/pgbench/pgbench.c,v 1.70 2007/08/22 23:03:27 tgl Exp $
  *
  * pgbench: a simple benchmark program for PostgreSQL
  * written by Tatsuo Ishii
@@ -53,7 +53,12 @@ extern int	optind;
 /********************************************************************
  * some configurable parameters */
 
-#define MAXCLIENTS 1024			/* max number of clients allowed */
+/* max number of clients allowed */
+#ifdef FD_SETSIZE
+#define MAXCLIENTS 	(FD_SETSIZE - 10)
+#else
+#define MAXCLIENTS 	1024
+#endif
 
 int			nclients = 1;		/* default number of simulated clients */
 int			nxacts = 10;		/* default number of transactions per clients */
