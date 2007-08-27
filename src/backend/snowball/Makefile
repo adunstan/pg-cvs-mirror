@@ -2,7 +2,7 @@
 #
 # Makefile for src/backend/snowball
 #
-# $PostgreSQL: pgsql/src/backend/snowball/Makefile,v 1.1 2007/08/21 01:11:15 tgl Exp $
+# $PostgreSQL: pgsql/src/backend/snowball/Makefile,v 1.2 2007/08/25 01:06:24 tgl Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -64,7 +64,7 @@ LANGUAGES=  \
 	russian 	english		\
 	spanish 	spanish		\
 	swedish 	swedish		\
-	turkish		turkish		\
+	turkish		turkish
 
 
 SQLSCRIPT= snowball_create.sql
