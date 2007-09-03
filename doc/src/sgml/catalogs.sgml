@@ -1,4 +1,4 @@
-<!-- $PostgreSQL: pgsql/doc/src/sgml/catalogs.sgml,v 2.154 2007/06/08 21:09:49 alvherre Exp $ -->
+<!-- $PostgreSQL: pgsql/doc/src/sgml/catalogs.sgml,v 2.155 2007/06/20 19:24:05 neilc Exp $ -->
 <!--
  Documentation of the system catalogs, directed toward PostgreSQL developers
  -->
@@ -3633,6 +3633,13 @@
        Additional information about how to invoke the function.
        Again, the interpretation is language-specific
       </entry>
+     </row>
+
+     <row>
+      <entry><structfield>proconfig</structfield></entry>
+      <entry><type>text[]</type></entry>
+      <entry></entry>
+      <entry>Function's local settings for run-time configuration variables</entry>
      </row>
 
      <row>
