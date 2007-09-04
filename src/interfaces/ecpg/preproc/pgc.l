@@ -12,7 +12,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/interfaces/ecpg/preproc/pgc.l,v 1.154 2007/08/22 08:20:58 meskes Exp $
+ *	  $PostgreSQL: pgsql/src/interfaces/ecpg/preproc/pgc.l,v 1.155 2007/08/29 13:58:13 meskes Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1152,7 +1152,7 @@ lex_init(void)
 	/* initialize literal buffer to a reasonable but expansible size */
 	if (literalbuf == NULL)
 	{
-		literalalloc = 128;
+		literalalloc = 1024;
 		literalbuf = (char *) malloc(literalalloc);
 	}
 	startlit();
