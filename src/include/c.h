@@ -12,7 +12,7 @@
  * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/c.h,v 1.219 2007/02/27 23:48:09 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/c.h,v 1.220 2007/07/25 12:22:52 mha Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -369,6 +369,8 @@ typedef Oid regproc;
 typedef regproc RegProcedure;
 
 typedef uint32 TransactionId;
+
+typedef uint32 LocalTransactionId;
 
 typedef uint32 SubTransactionId;
 

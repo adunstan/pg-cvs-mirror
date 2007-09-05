@@ -3,7 +3,7 @@
  *
  * Copyright (c) 1996-2007, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/backend/catalog/system_views.sql,v 1.40 2007/08/21 01:11:13 tgl Exp $
+ * $PostgreSQL: pgsql/src/backend/catalog/system_views.sql,v 1.41 2007/08/25 17:47:44 tgl Exp $
  */
 
 CREATE VIEW pg_roles AS 
@@ -145,8 +145,8 @@ CREATE VIEW pg_locks AS
     SELECT * 
     FROM pg_lock_status() AS L
     (locktype text, database oid, relation oid, page int4, tuple int2,
-     transactionid xid, classid oid, objid oid, objsubid int2,
-     transaction xid, pid int4, mode text, granted boolean);
+     virtualxid text, transactionid xid, classid oid, objid oid, objsubid int2,
+     virtualtransaction text, pid int4, mode text, granted boolean);
 
 CREATE VIEW pg_cursors AS
     SELECT C.name, C.statement, C.is_holdable, C.is_binary,
