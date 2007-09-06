@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/parser/parse_target.c,v 1.153 2007/01/14 13:11:54 petere Exp $
+ *	  $PostgreSQL: pgsql/src/backend/parser/parse_target.c,v 1.154 2007/02/03 14:06:54 petere Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -393,7 +393,7 @@ transformAssignedExpr(ParseState *pstate,
 			 * is not really a source value to work with. Insert a NULL
 			 * constant as the source value.
 			 */
-			colVar = (Node *) makeNullConst(attrtype);
+			colVar = (Node *) makeNullConst(attrtype, attrtypmod);
 		}
 		else
 		{
