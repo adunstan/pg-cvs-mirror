@@ -37,7 +37,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/postmaster/bgwriter.c,v 1.40 2007/06/30 19:12:01 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/postmaster/bgwriter.c,v 1.41 2007/07/03 14:51:24 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -295,6 +295,7 @@ BackgroundWriterMain(void)
 		/* we needn't bother with the other ResourceOwnerRelease phases */
 		AtEOXact_Buffers(false);
 		AtEOXact_Files();
+		AtEOXact_HashTables(false);
 
 		/* Warn any waiting backends that the checkpoint failed. */
 		if (ckpt_active)

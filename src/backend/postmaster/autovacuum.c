@@ -55,7 +55,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/postmaster/autovacuum.c,v 1.55 2007/07/01 18:30:54 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/postmaster/autovacuum.c,v 1.56 2007/08/02 23:39:44 adunstan Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -472,6 +472,7 @@ AutoVacLauncherMain(int argc, char *argv[])
 		 */
 		LWLockReleaseAll();
 		AtEOXact_Files();
+		AtEOXact_HashTables(false);
 
 		/*
 		 * Now return to normal top-level context and clear ErrorContext for
