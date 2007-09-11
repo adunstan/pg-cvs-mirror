@@ -10,7 +10,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/transam/xact.c,v 1.249 2007/09/07 20:59:26 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/transam/xact.c,v 1.250 2007/09/08 20:31:14 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1454,7 +1454,7 @@ StartTransaction(void)
 	 */
 	xactStartTimestamp = stmtStartTimestamp;
 	xactStopTimestamp = 0;
-	pgstat_report_txn_timestamp(xactStartTimestamp);
+	pgstat_report_xact_timestamp(xactStartTimestamp);
 
 	/*
 	 * initialize current transaction state fields
@@ -1648,7 +1648,7 @@ CommitTransaction(void)
 	AtEOXact_ComboCid();
 	AtEOXact_HashTables(true);
 	AtEOXact_PgStat(true);
-	pgstat_report_txn_timestamp(0);
+	pgstat_report_xact_timestamp(0);
 
 	CurrentResourceOwner = NULL;
 	ResourceOwnerDelete(TopTransactionResourceOwner);
@@ -1999,7 +1999,7 @@ AbortTransaction(void)
 	AtEOXact_ComboCid();
 	AtEOXact_HashTables(false);
 	AtEOXact_PgStat(false);
-	pgstat_report_txn_timestamp(0);
+	pgstat_report_xact_timestamp(0);
 
 	/*
 	 * State remains TRANS_ABORT until CleanupTransaction().
