@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/hash/hashpage.c,v 1.67 2007/05/03 16:45:58 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/hash/hashpage.c,v 1.68 2007/05/30 20:11:51 tgl Exp $
  *
  * NOTES
  *	  Postgres hash pages look like ordinary relation pages.  The opaque
@@ -830,7 +830,7 @@ _hash_splitbucket(Relation rel,
 			}
 
 			noffnum = OffsetNumberNext(PageGetMaxOffsetNumber(npage));
-			if (PageAddItem(npage, (Item) itup, itemsz, noffnum, LP_USED)
+			if (PageAddItem(npage, (Item) itup, itemsz, noffnum, false)
 				== InvalidOffsetNumber)
 				elog(ERROR, "failed to add index item to \"%s\"",
 					 RelationGetRelationName(rel));

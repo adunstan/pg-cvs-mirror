@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/heap/hio.c,v 1.64 2007/01/05 22:19:22 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/heap/hio.c,v 1.65 2007/02/05 04:22:18 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -41,7 +41,7 @@ RelationPutHeapTuple(Relation relation,
 	pageHeader = BufferGetPage(buffer);
 
 	offnum = PageAddItem(pageHeader, (Item) tuple->t_data,
-						 tuple->t_len, InvalidOffsetNumber, LP_USED);
+						 tuple->t_len, InvalidOffsetNumber, false);
 
 	if (offnum == InvalidOffsetNumber)
 		elog(PANIC, "failed to add tuple to page");

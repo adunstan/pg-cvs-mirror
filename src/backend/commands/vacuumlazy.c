@@ -36,7 +36,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/vacuumlazy.c,v 1.93 2007/09/10 21:40:03 alvherre Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/vacuumlazy.c,v 1.94 2007/09/12 02:05:48 alvherre Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -642,7 +642,7 @@ lazy_vacuum_page(Relation onerel, BlockNumber blkno, Buffer buffer,
 			break;				/* past end of tuples for this block */
 		toff = ItemPointerGetOffsetNumber(&vacrelstats->dead_tuples[tupindex]);
 		itemid = PageGetItemId(page, toff);
-		itemid->lp_flags &= ~LP_USED;
+		ItemIdSetUnused(itemid);
 	}
 
 	uncnt = PageRepairFragmentation(page, unused);
