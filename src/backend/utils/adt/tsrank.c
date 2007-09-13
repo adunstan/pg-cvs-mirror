@@ -7,7 +7,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/tsrank.c,v 1.5 2007/09/11 08:46:29 teodor Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/tsrank.c,v 1.6 2007/09/11 16:01:40 teodor Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -707,7 +707,7 @@ calc_rank_cd(float4 *arrdata, TSVector txt, TSQuery query, int method)
 	}
 
 	qr.query = query;
-	qr.operandexist = (int*)palloc0(sizeof(bool) * query->size);
+	qr.operandexist = (bool*)palloc0(sizeof(bool) * query->size);
 
 	doc = get_docrep(txt, &qr, &doclen);
 	if (!doc)
