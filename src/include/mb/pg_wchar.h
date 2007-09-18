@@ -1,4 +1,4 @@
-/* $PostgreSQL: pgsql/src/include/mb/pg_wchar.h,v 1.71 2007/03/25 11:56:04 ishii Exp $ */
+/* $PostgreSQL: pgsql/src/include/mb/pg_wchar.h,v 1.72 2007/04/15 10:56:30 ishii Exp $ */
 
 #ifndef PG_WCHAR_H
 #define PG_WCHAR_H
@@ -371,6 +371,8 @@ extern void UtfToLocal(const unsigned char *utf, unsigned char *iso,
 
 extern bool pg_verifymbstr(const char *mbstr, int len, bool noError);
 extern bool pg_verify_mbstr(int encoding, const char *mbstr, int len,
+				bool noError);
+extern int pg_verify_mbstr_len(int encoding, const char *mbstr, int len,
 				bool noError);
 
 extern void report_invalid_encoding(int encoding, const char *mbstr, int len);
