@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/float.c,v 1.129 2006/10/04 00:29:58 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/float.c,v 1.130 2006/10/05 01:40:45 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -2469,8 +2469,7 @@ float8_corr(PG_FUNCTION_ARGS)
 	if (numeratorX <= 0 || numeratorY <= 0)
 		PG_RETURN_NULL();
 
-	PG_RETURN_FLOAT8(sqrt((numeratorXY * numeratorXY) /
-						  (numeratorX * numeratorY)));
+	PG_RETURN_FLOAT8(numeratorXY / sqrt(numeratorX * numeratorY));
 }
 
 Datum
