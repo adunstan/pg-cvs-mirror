@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/optimizer/var.h,v 1.34 2006/03/05 15:58:57 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/optimizer/var.h,v 1.35 2007/01/05 22:19:56 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -18,6 +18,7 @@
 
 
 extern Relids pull_varnos(Node *node);
+extern void pull_varattnos(Node *node, Bitmapset **varattnos);
 extern bool contain_var_reference(Node *node, int varno, int varattno,
 					  int levelsup);
 extern bool contain_var_clause(Node *node);
