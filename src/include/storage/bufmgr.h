@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/storage/bufmgr.h,v 1.106 2007/07/25 12:22:53 mha Exp $
+ * $PostgreSQL: pgsql/src/include/storage/bufmgr.h,v 1.107 2007/09/20 17:56:32 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -32,8 +32,8 @@ extern PGDLLIMPORT int NBuffers;
 
 /* in bufmgr.c */
 extern bool zero_damaged_pages;
-extern double bgwriter_lru_percent;
 extern int	bgwriter_lru_maxpages;
+extern double bgwriter_lru_multiplier;
 
 /* in buf_init.c */
 extern PGDLLIMPORT char *BufferBlocks;

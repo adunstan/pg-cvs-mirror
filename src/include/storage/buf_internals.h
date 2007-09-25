@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/storage/buf_internals.h,v 1.91 2007/06/28 00:02:40 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/storage/buf_internals.h,v 1.92 2007/07/25 12:22:53 mha Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -188,7 +188,7 @@ extern void StrategyFreeBuffer(volatile BufferDesc *buf);
 extern bool StrategyRejectBuffer(BufferAccessStrategy strategy,
 								 volatile BufferDesc *buf);
 
-extern int	StrategySyncStart(void);
+extern int	StrategySyncStart(uint32 *complete_passes, uint32 *num_buf_alloc);
 extern Size StrategyShmemSize(void);
 extern void StrategyInitialize(bool init);
 
