@@ -4,7 +4,7 @@
  *
  * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/pg_ctl/pg_ctl.c,v 1.82 2007/07/08 19:07:38 tgl Exp $
+ * $PostgreSQL: pgsql/src/bin/pg_ctl/pg_ctl.c,v 1.83 2007/07/12 18:15:52 mha Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -535,7 +535,7 @@ unlimit_core_size(void)
 	getrlimit(RLIMIT_CORE,&lim);
 	if (lim.rlim_max == 0)
 	{
-			write_stderr(_("%s: cannot set core size, disallowed by hard limit.\n"), 
+			write_stderr(_("%s: cannot set core size, disallowed by hard limit\n"), 
 						 progname);
 			return;
 	}
