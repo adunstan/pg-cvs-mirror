@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/access/xlog.h,v 1.82 2007/08/01 22:45:09 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/access/xlog.h,v 1.83 2007/09/05 18:10:48 tgl Exp $
  */
 #ifndef XLOG_H
 #define XLOG_H
@@ -138,13 +138,15 @@ extern XLogRecPtr XactLastRecEnd;
 /* these variables are GUC parameters related to XLOG */
 extern int	CheckPointSegments;
 extern int	XLOGbuffers;
+extern bool XLogArchiveMode;
 extern char *XLogArchiveCommand;
 extern int	XLogArchiveTimeout;
 extern char *XLOG_sync_method;
 extern const char XLOG_sync_method_default[];
 extern bool log_checkpoints;
 
-#define XLogArchivingActive()	(XLogArchiveCommand[0] != '\0')
+#define XLogArchivingActive()	(XLogArchiveMode)
+#define XLogArchiveCommandSet()	(XLogArchiveCommand[0] != '\0')
 
 #ifdef WAL_DEBUG
 extern bool XLOG_DEBUG;
