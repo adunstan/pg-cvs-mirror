@@ -4,7 +4,7 @@
 #
 # Copyright (c) 2003-2007, PostgreSQL Global Development Group
 #
-# $PostgreSQL: pgsql/src/tools/fsync/Makefile,v 1.3 2006/10/13 14:19:29 momjian Exp $
+# $PostgreSQL: pgsql/src/tools/fsync/Makefile,v 1.4 2007/01/05 22:20:05 momjian Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -12,7 +12,7 @@ subdir = src/tools/fsync
 top_builddir = ../../..
 include $(top_builddir)/src/Makefile.global
 
-override CPPFLAGS := -DFRONTEND -I$(libpq_srcdir) $(CPPFLAGS)
+override CPPFLAGS := -I$(libpq_srcdir) $(CPPFLAGS)
 
 OBJS= test_fsync.o
 
