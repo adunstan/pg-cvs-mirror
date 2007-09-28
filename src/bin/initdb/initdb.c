@@ -42,7 +42,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  * Portions taken from FreeBSD.
  *
- * $PostgreSQL: pgsql/src/bin/initdb/initdb.c,v 1.140 2007/08/21 01:11:20 tgl Exp $
+ * $PostgreSQL: pgsql/src/bin/initdb/initdb.c,v 1.141 2007/09/25 16:29:34 petere Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -971,7 +971,7 @@ find_matching_ts_config(const char *lc_type)
 			   *ptr;
 
 	/*
-	 * Convert lc_ctype to a language name by stripping ".utf8" or
+	 * Convert lc_ctype to a language name by stripping ".utf8", "@euro", or
 	 * what-have-you
 	 */
 	if (lc_type == NULL)
@@ -979,7 +979,7 @@ find_matching_ts_config(const char *lc_type)
 	else
 	{
 		ptr = langname = xstrdup(lc_type);
-		while (*ptr && *ptr != '.')
+		while (*ptr && *ptr != '.' && *ptr != '@')
 			ptr++;
 		*ptr = '\0';
 	}
