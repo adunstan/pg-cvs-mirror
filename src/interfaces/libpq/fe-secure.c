@@ -11,7 +11,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-secure.c,v 1.95 2007/10/01 20:30:06 mha Exp $
+ *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-secure.c,v 1.96 2007/10/02 00:25:20 tgl Exp $
  *
  * NOTES
  *	  [ Most of these notes are wrong/obsolete, but perhaps not all ]
@@ -588,9 +588,9 @@ client_cert_cb(SSL *ssl, X509 **x509, EVP_PKEY **pkey)
 
 #ifndef WIN32
 	struct stat buf2;
+	FILE		*fp;
 #endif
 	char		fnbuf[MAXPGPATH];
-	FILE		*fp;
 	BIO			*bio;
 	PGconn		*conn = (PGconn *) SSL_get_app_data(ssl);
 	char		sebuf[256];
