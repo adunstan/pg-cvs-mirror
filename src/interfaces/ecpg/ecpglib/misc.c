@@ -1,4 +1,4 @@
-/* $PostgreSQL: pgsql/src/interfaces/ecpg/ecpglib/misc.c,v 1.36 2007/08/14 10:01:52 meskes Exp $ */
+/* $PostgreSQL: pgsql/src/interfaces/ecpg/ecpglib/misc.c,v 1.37 2007/09/30 11:38:48 meskes Exp $ */
 
 #define POSTGRES_ECPG_INTERNAL
 #include "postgres_fe.h"
@@ -431,6 +431,7 @@ DllMain(HANDLE module, DWORD reason, LPVOID reserved)
 		auto_mem_key_init();
 		ecpg_actual_connection_init();
 		ecpg_sqlca_key_init();
+		descriptor_key_init();
 	}
 	return TRUE;
 }
