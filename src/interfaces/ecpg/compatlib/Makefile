@@ -4,7 +4,7 @@
 #
 # Copyright (c) 1994, Regents of the University of California
 #
-# $PostgreSQL: pgsql/src/interfaces/ecpg/compatlib/Makefile,v 1.28 2007/10/03 13:20:19 meskes Exp $
+# $PostgreSQL: pgsql/src/interfaces/ecpg/compatlib/Makefile,v 1.29 2007/10/03 13:24:54 meskes Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -22,6 +22,9 @@ override CPPFLAGS := -I../include -I$(top_srcdir)/src/interfaces/ecpg/include \
 override CFLAGS += $(PTHREAD_CFLAGS)
 SHLIB_LINK = -L../ecpglib -lecpg -L../pgtypeslib -lpgtypes $(libpq) -lm \
 	$(PTHREAD_LIBS)
+
+# Need to recompile any libpgport object files
+LIBS := $(filter-out -lpgport, $(LIBS))
 
 OBJS= informix.o $(filter snprintf.o, $(LIBOBJS))
 
