@@ -1,7 +1,7 @@
 
 # -*-perl-*- hey - emacs - this is a perl file
 
-# $PostgreSQL: pgsql/src/tools/msvc/vcregress.pl,v 1.3 2007/09/24 21:42:34 adunstan Exp $
+# $PostgreSQL: pgsql/src/tools/msvc/vcregress.pl,v 1.4 2007/09/28 00:14:58 adunstan Exp $
 
 use strict;
 
@@ -139,7 +139,7 @@ sub ecpgcheck
         "../../../../$Config/pg_regress_ecpg/pg_regress_ecpg",
         "--psqldir=../../../$Config/psql",
         "--dbname=regress1,connectdb",
-        "--createrole=connectuser,connectdb",
+        "--create-role=connectuser,connectdb",
         "--schedule=${schedule}_schedule",
         "--multibyte=SQL_ASCII",
         "--load-language=plpgsql",
