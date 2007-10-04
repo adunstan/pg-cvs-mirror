@@ -4,7 +4,7 @@
 #
 # Copyright (c) 1994, Regents of the University of California
 #
-# $PostgreSQL: pgsql/src/interfaces/ecpg/ecpglib/Makefile,v 1.48 2007/09/27 19:53:44 tgl Exp $
+# $PostgreSQL: pgsql/src/interfaces/ecpg/ecpglib/Makefile,v 1.49 2007/10/03 11:11:12 meskes Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -41,7 +41,7 @@ ifeq ($(PORTNAME), win32)
 SHLIB_LINK += -lshfolder
 endif
 
-all: all-lib
+all: def-files all-lib
 
 # Shared library stuff
 include $(top_srcdir)/src/Makefile.shlib

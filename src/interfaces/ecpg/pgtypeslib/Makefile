@@ -4,7 +4,7 @@
 #
 # Copyright (c) 1994, Regents of the University of California
 #
-# $PostgreSQL: pgsql/src/interfaces/ecpg/pgtypeslib/Makefile,v 1.34 2007/10/03 13:20:19 meskes Exp $
+# $PostgreSQL: pgsql/src/interfaces/ecpg/pgtypeslib/Makefile,v 1.35 2007/10/03 15:24:19 meskes Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -34,7 +34,7 @@ ifneq ($(PORTNAME), win32)
 DLL_DEFFILE=libpgtypesdll.def
 endif
 
-all: all-lib
+all: def-files all-lib
 
 # Shared library stuff
 include $(top_srcdir)/src/Makefile.shlib
