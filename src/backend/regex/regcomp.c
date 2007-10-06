@@ -28,7 +28,7 @@
  * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
- * $PostgreSQL: pgsql/src/backend/regex/regcomp.c,v 1.43 2005/05/25 21:40:40 momjian Exp $
+ * $PostgreSQL: pgsql/src/backend/regex/regcomp.c,v 1.44 2005/10/15 02:49:24 momjian Exp $
  *
  */
 
@@ -2132,7 +2132,7 @@ dump(regex_t *re,
 
 	fprintf(f, "\n\n\n========= DUMP ==========\n");
 	fprintf(f, "nsub %d, info 0%lo, csize %d, ntree %d\n",
-			re->re_nsub, re->re_info, re->re_csize, g->ntree);
+			(int) re->re_nsub, re->re_info, re->re_csize, g->ntree);
 
 	dumpcolors(&g->cmap, f);
 	if (!NULLCNFA(g->search))
