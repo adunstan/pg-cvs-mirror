@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-connect.c,v 1.350 2007/07/23 10:16:54 mha Exp $
+ *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-connect.c,v 1.351 2007/07/23 17:52:06 mha Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -3723,7 +3723,6 @@ PasswordFromFile(char *hostname, char *port, char *dbname, char *username)
 		fprintf(stderr,
 		libpq_gettext("WARNING: password file \"%s\" is not a plain file\n"),
 				pgpassfile);
-		free(pgpassfile);
 		return NULL;
 	}
 
