@@ -3,7 +3,7 @@ package Mkvcbuild;
 #
 # Package that generates build files for msvc build
 #
-# $PostgreSQL: pgsql/src/tools/msvc/Mkvcbuild.pm,v 1.21 2007/10/03 13:43:24 mha Exp $
+# $PostgreSQL: pgsql/src/tools/msvc/Mkvcbuild.pm,v 1.22 2007/10/13 22:55:38 tgl Exp $
 #
 use Carp;
 use Win32;
@@ -178,6 +178,7 @@ sub mkvcbuild
     # src/bin
     my $initdb = AddSimpleFrontend('initdb');
     $initdb->AddIncludeDir('src\interfaces\libpq');
+    $initdb->AddDefine('FRONTEND');
     $initdb->AddLibrary('wsock32.lib ws2_32.lib');
 
     my $pgconfig = AddSimpleFrontend('pg_config');
