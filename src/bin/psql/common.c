@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2007, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/psql/common.c,v 1.134 2007/04/16 20:15:38 mha Exp $
+ * $PostgreSQL: pgsql/src/bin/psql/common.c,v 1.135 2007/06/22 01:09:28 neilc Exp $
  */
 #include "postgres_fe.h"
 #include "common.h"
@@ -22,7 +22,6 @@
 #include "settings.h"
 #include "command.h"
 #include "copy.h"
-#include "mb/pg_wchar.h"
 #include "mbprint.h"
 
 

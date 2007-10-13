@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
- * $PostgreSQL: pgsql/src/bin/pg_dump/pg_dumpall.c,v 1.91 2007/05/15 20:20:21 alvherre Exp $
+ * $PostgreSQL: pgsql/src/bin/pg_dump/pg_dumpall.c,v 1.92 2007/07/08 19:07:38 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -27,7 +27,6 @@ int			optreset;
 #endif
 
 #include "dumputils.h"
-#include "mb/pg_wchar.h"
 
 
 /* version string we expect back from pg_dump */
