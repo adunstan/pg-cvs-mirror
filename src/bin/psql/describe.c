@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2007, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/psql/describe.c,v 1.158 2007/08/21 01:11:22 tgl Exp $
+ * $PostgreSQL: pgsql/src/bin/psql/describe.c,v 1.159 2007/08/22 02:25:34 tgl Exp $
  */
 #include "postgres_fe.h"
 #include "describe.h"
@@ -2101,7 +2101,7 @@ describeOneTSParser(const char *oid, const char *nspname, const char *prsname)
 					  _("Get next token"), oid,
 					  _("End parse"), oid,
 					  _("Get headline"), oid,
-					  _("Get lexeme types"), oid
+					  _("Get token types"), oid
 		);
 
 	res = PSQLexec(buf.data, false);
