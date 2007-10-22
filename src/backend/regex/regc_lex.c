@@ -28,7 +28,7 @@
  * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
- * $PostgreSQL: pgsql/src/backend/regex/regc_lex.c,v 1.4 2003/11/29 19:51:55 pgsql Exp $
+ * $PostgreSQL: pgsql/src/backend/regex/regc_lex.c,v 1.5 2005/10/15 02:49:24 momjian Exp $
  *
  */
 
@@ -1071,6 +1071,7 @@ brenext(struct vars * v,
 	}
 
 	assert(NOTREACHED);
+	return 0;
 }
 
 /*
