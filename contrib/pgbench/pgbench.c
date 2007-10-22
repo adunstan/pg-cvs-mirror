@@ -1,5 +1,5 @@
 /*
- * $PostgreSQL: pgsql/contrib/pgbench/pgbench.c,v 1.71 2007/08/25 09:21:14 ishii Exp $
+ * $PostgreSQL: pgsql/contrib/pgbench/pgbench.c,v 1.72 2007/09/27 20:39:43 tgl Exp $
  *
  * pgbench: a simple benchmark program for PostgreSQL
  * written by Tatsuo Ishii
@@ -24,6 +24,8 @@
 #include <ctype.h>
 
 #ifdef WIN32
+#undef FD_SETSIZE
+#define FD_SETSIZE 1024
 #include <win32.h>
 #else
 #include <sys/time.h>
