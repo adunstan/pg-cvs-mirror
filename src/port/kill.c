@@ -9,7 +9,7 @@
  *	signals that the backend can recognize.
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/port/kill.c,v 1.7 2006/03/05 15:59:10 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/port/kill.c,v 1.8 2007/01/05 22:20:02 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -38,7 +38,7 @@ pgkill(int pid, int sig)
 		errno = EINVAL;
 		return -1;
 	}
-	wsprintf(pipename, "\\\\.\\pipe\\pgsignal_%i", pid);
+	snprintf(pipename, sizeof(pipename), "\\\\.\\pipe\\pgsignal_%u", pid);
 	if (!CallNamedPipe(pipename, &sigData, 1, &sigRet, 1, &bytes, 1000))
 	{
 		if (GetLastError() == ERROR_FILE_NOT_FOUND)
