@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/parser/gramparse.h,v 1.37 2006/05/27 17:38:46 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/parser/gramparse.h,v 1.38 2007/01/05 22:19:56 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -54,6 +54,5 @@ extern void parser_init(void);
 extern int	base_yyparse(void);
 extern List *SystemFuncName(char *name);
 extern TypeName *SystemTypeName(char *name);
-extern bool exprIsNullConstant(Node *arg);
 
 #endif   /* GRAMPARSE_H */
