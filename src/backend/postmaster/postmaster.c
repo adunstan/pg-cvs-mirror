@@ -37,7 +37,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/postmaster/postmaster.c,v 1.542 2007/09/26 22:36:30 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/postmaster/postmaster.c,v 1.543 2007/10/26 21:50:10 mha Exp $
  *
  * NOTES
  *
@@ -1709,17 +1709,17 @@ processCancelRequest(Port *port, void *pkt)
 			}
 			else
 				/* Right PID, wrong key: no way, Jose */
-				ereport(DEBUG2,
-				 (errmsg_internal("bad key in cancel request for process %d",
-								  backendPID)));
+				ereport(LOG,
+						(errmsg("bad key in cancel request for process %d",
+								backendPID)));
 			return;
 		}
 	}
 
 	/* No matching backend */
-	ereport(DEBUG2,
-			(errmsg_internal("bad pid in cancel request for process %d",
-							 backendPID)));
+	ereport(LOG,
+			(errmsg("bad pid in cancel request for process %d",
+					backendPID)));
 }
 
 /*
