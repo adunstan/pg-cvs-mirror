@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/utils/selfuncs.h,v 1.23 2005/06/05 22:32:58 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/utils/selfuncs.h,v 1.24 2005/10/15 02:49:46 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -80,7 +80,7 @@ extern Pattern_Prefix_Status pattern_fixed_prefix(Const *patt,
 					 Pattern_Type ptype,
 					 Const **prefix,
 					 Const **rest);
-extern Const *make_greater_string(const Const *str_const);
+extern Const *make_greater_string(const Const *str_const, FmgrInfo *ltproc);
 
 extern Datum eqsel(PG_FUNCTION_ARGS);
 extern Datum neqsel(PG_FUNCTION_ARGS);
