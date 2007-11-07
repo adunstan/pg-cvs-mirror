@@ -2,7 +2,7 @@
  * pltcl.c		- PostgreSQL support for Tcl as
  *				  procedural language (PL)
  *
- *	  $PostgreSQL: pgsql/src/pl/tcl/pltcl.c,v 1.114 2007/09/28 22:33:20 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/pl/tcl/pltcl.c,v 1.115 2007/10/05 17:06:11 tgl Exp $
  *
  **********************************************************************/
 
@@ -505,7 +505,7 @@ pltcl_call_handler(PG_FUNCTION_ARGS)
 
 
 /*
- * Alternate handler for unsafe functions
+ * Alternative handler for unsafe functions
  */
 PG_FUNCTION_INFO_V1(pltclu_call_handler);
 

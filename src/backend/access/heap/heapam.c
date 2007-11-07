@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/heap/heapam.c,v 1.242 2007/09/21 21:25:42 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/heap/heapam.c,v 1.243 2007/10/16 17:05:26 tgl Exp $
  *
  *
  * INTERFACE ROUTINES
@@ -1056,7 +1056,7 @@ heap_openrv(const RangeVar *relation, LOCKMODE lockmode)
 /* ----------------
  *		heap_beginscan	- begin relation scan
  *
- * heap_beginscan_bm is an alternate entry point for setting up a HeapScanDesc
+ * heap_beginscan_bm is an alternative entry point for setting up a HeapScanDesc
  * for a bitmap heap scan.  Although that scan technology is really quite
  * unlike a standard seqscan, there is just enough commonality to make it
  * worth using the same data structure.

@@ -1,4 +1,4 @@
-<!-- $PostgreSQL: pgsql/doc/src/sgml/ecpg.sgml,v 1.82 2007/02/16 03:56:45 momjian Exp $ -->
+<!-- $PostgreSQL: pgsql/doc/src/sgml/ecpg.sgml,v 1.83 2007/04/17 17:30:35 tgl Exp $ -->
 
 <chapter id="ecpg">
  <title><application>ECPG</application> - Embedded <acronym>SQL</acronym> in C</title>
@@ -1771,7 +1771,7 @@ int PGTYPEStimestamp_fmt_asc(timestamp *ts, char *output, int str_len, char *fmt
            <literal>%Ow</literal> 
            <literal>%OW</literal> 
            <literal>%Oy</literal> 
-           are supposed to provide alternate representations.
+           are supposed to provide alternative representations.
           </para>
           <para>
            Additionally <literal>%OB</literal> implemented to represent

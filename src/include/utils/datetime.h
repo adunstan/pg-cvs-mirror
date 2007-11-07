@@ -9,7 +9,7 @@
  * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/utils/datetime.h,v 1.66 2007/05/29 04:58:43 neilc Exp $
+ * $PostgreSQL: pgsql/src/include/utils/datetime.h,v 1.67 2007/06/12 16:01:31 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -29,7 +29,7 @@
  * String definitions for standard time quantities.
  *
  * These strings are the defaults used to form output time strings.
- * Other alternate forms are hardcoded into token tables in datetime.c.
+ * Other alternative forms are hardcoded into token tables in datetime.c.
  * ----------------------------------------------------------------
  */
 
