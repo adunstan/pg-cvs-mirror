@@ -1,12 +1,10 @@
-# $PostgreSQL: pgsql/contrib/pgbench/Makefile,v 1.14 2005/09/27 17:13:08 tgl Exp $
+# $PostgreSQL: pgsql/contrib/pgbench/Makefile,v 1.15 2007/06/26 22:05:03 tgl Exp $
 
 PROGRAM = pgbench
 OBJS	= pgbench.o
 
 PG_CPPFLAGS = -I$(libpq_srcdir)
 PG_LIBS = $(libpq_pgport)
-
-DOCS = README.pgbench README.pgbench_jis
 
 ifdef USE_PGXS
 PG_CONFIG = pg_config

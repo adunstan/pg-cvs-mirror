@@ -1,10 +1,9 @@
-# $PostgreSQL: pgsql/contrib/seg/Makefile,v 1.18 2007/02/09 17:24:33 petere Exp $
+# $PostgreSQL: pgsql/contrib/seg/Makefile,v 1.19 2007/06/26 22:05:03 tgl Exp $
 
 MODULE_big = seg
 OBJS = seg.o segparse.o
 DATA_built = seg.sql
 DATA = uninstall_seg.sql
-DOCS = README.seg
 REGRESS = seg
 
 EXTRA_CLEAN = y.tab.c y.tab.h
