@@ -10,7 +10,7 @@
  * Copyright (c) 2002-2007, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/prepare.c,v 1.76 2007/05/25 17:54:25 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/prepare.c,v 1.77 2007/06/23 22:12:50 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -90,7 +90,7 @@ PrepareQuery(PrepareStmt *stmt, const char *queryString)
 		foreach(l, stmt->argtypes)
 		{
 			TypeName   *tn = lfirst(l);
-			Oid			toid = typenameTypeId(pstate, tn);
+			Oid			toid = typenameTypeId(pstate, tn, NULL);
 
 			argtypes[i++] = toid;
 		}

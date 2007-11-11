@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/operatorcmds.c,v 1.35 2007/01/05 22:19:26 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/operatorcmds.c,v 1.36 2007/06/02 23:36:35 petere Exp $
  *
  * DESCRIPTION
  *	  The "DefineFoo" routines take the parse tree and pick out the
@@ -149,9 +149,9 @@ DefineOperator(List *names, List *parameters)
 
 	/* Transform type names to type OIDs */
 	if (typeName1)
-		typeId1 = typenameTypeId(NULL, typeName1);
+		typeId1 = typenameTypeId(NULL, typeName1, NULL);
 	if (typeName2)
-		typeId2 = typenameTypeId(NULL, typeName2);
+		typeId2 = typenameTypeId(NULL, typeName2, NULL);
 
 	/*
 	 * now have OperatorCreate do all the work..
