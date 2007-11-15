@@ -5,7 +5,7 @@
  * to contain some useful information. Mechanism differs wildly across
  * platforms.
  *
- * $PostgreSQL: pgsql/src/backend/utils/misc/ps_status.c,v 1.34 2007/01/05 22:19:46 momjian Exp $
+ * $PostgreSQL: pgsql/src/backend/utils/misc/ps_status.c,v 1.35 2007/02/16 21:34:04 momjian Exp $
  *
  * Copyright (c) 2000-2007, PostgreSQL Global Development Group
  * various details abducted from various places
@@ -155,7 +155,7 @@ save_ps_display_args(int argc, char **argv)
 
 		ps_buffer = argv[0];
 		last_status_len = ps_buffer_size = end_of_area - argv[0];
-		
+
 		/*
 		 * move the environment out of the way
 		 */

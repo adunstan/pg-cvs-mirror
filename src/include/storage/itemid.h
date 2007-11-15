@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/storage/itemid.h,v 1.27 2007/01/05 22:19:58 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/storage/itemid.h,v 1.28 2007/09/12 22:10:26 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -31,7 +31,7 @@ typedef struct ItemIdData
 typedef ItemIdData *ItemId;
 
 /*
- * lp_flags has these possible states.  An UNUSED line pointer is available
+ * lp_flags has these possible states.	An UNUSED line pointer is available
  * for immediate re-use, the other states are not.
  */
 #define LP_UNUSED		0		/* unused (should always have lp_len=0) */

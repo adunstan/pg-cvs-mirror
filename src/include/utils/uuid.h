@@ -7,10 +7,10 @@
  *
  * Copyright (c) 2007, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/include/utils/uuid.h,v 1.1 2007/01/28 16:16:54 neilc Exp $
+ * $PostgreSQL: pgsql/src/include/utils/uuid.h,v 1.2 2007/01/28 20:25:38 neilc Exp $
  *
  *-------------------------------------------------------------------------
- */ 
+ */
 #ifndef UUID_H
 #define UUID_H
 

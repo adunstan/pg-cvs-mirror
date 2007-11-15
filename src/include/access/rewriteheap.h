@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994-5, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/access/rewriteheap.h,v 1.1 2007/04/08 01:26:33 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/access/rewriteheap.h,v 1.2 2007/05/17 15:28:29 alvherre Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -27,4 +27,4 @@ extern void rewrite_heap_tuple(RewriteState state, HeapTuple oldTuple,
 				   HeapTuple newTuple);
 extern void rewrite_heap_dead_tuple(RewriteState state, HeapTuple oldTuple);
 
-#endif /* REWRITE_HEAP_H */
+#endif   /* REWRITE_HEAP_H */

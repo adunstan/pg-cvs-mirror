@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/rewrite/rewriteDefine.h,v 1.25 2007/03/19 23:38:32 wieck Exp $
+ * $PostgreSQL: pgsql/src/include/rewrite/rewriteDefine.h,v 1.26 2007/08/27 03:36:08 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -16,10 +16,10 @@
 
 #include "nodes/parsenodes.h"
 
-#define	RULE_FIRES_ON_ORIGIN	'O'
-#define	RULE_FIRES_ALWAYS		'A'
-#define	RULE_FIRES_ON_REPLICA	'R'
-#define	RULE_DISABLED			'D'
+#define RULE_FIRES_ON_ORIGIN	'O'
+#define RULE_FIRES_ALWAYS		'A'
+#define RULE_FIRES_ON_REPLICA	'R'
+#define RULE_DISABLED			'D'
 
 extern void DefineRule(RuleStmt *stmt, const char *queryString);
 

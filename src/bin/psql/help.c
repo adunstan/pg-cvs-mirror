@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2007, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/psql/help.c,v 1.117 2007/02/23 18:20:59 momjian Exp $
+ * $PostgreSQL: pgsql/src/bin/psql/help.c,v 1.118 2007/08/21 01:11:22 tgl Exp $
  */
 #include "postgres_fe.h"
 
@@ -185,7 +185,7 @@ slashUsage(unsigned short int pager)
 			ON(pset.timing));
 	fprintf(output, _("  \\unset NAME    unset (delete) internal variable\n"));
 	fprintf(output, _("  \\prompt [TEXT] NAME\n"
-					  "                 prompt user to set internal variable\n"));
+				 "                 prompt user to set internal variable\n"));
 	fprintf(output, _("  \\! [COMMAND]   execute command in shell or start interactive shell\n"));
 	fprintf(output, "\n");
 

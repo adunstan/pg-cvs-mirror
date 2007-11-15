@@ -10,7 +10,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/port/sysv_shmem.c,v 1.50 2007/03/21 14:39:23 mha Exp $
+ *	  $PostgreSQL: pgsql/src/backend/port/sysv_shmem.c,v 1.51 2007/07/02 20:11:54 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -247,7 +247,7 @@ PGSharedMemoryIsInUse(unsigned long id1, unsigned long id2)
 	/*
 	 * Try to attach to the segment and see if it matches our data directory.
 	 * This avoids shmid-conflict problems on machines that are running
-	 * several postmasters under the same userid. 
+	 * several postmasters under the same userid.
 	 */
 	if (stat(DataDir, &statbuf) < 0)
 		return true;			/* if can't stat, be conservative */

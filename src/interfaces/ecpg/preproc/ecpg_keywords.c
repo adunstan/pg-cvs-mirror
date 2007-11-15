@@ -4,7 +4,7 @@
  *	  lexical token lookup for reserved words in postgres embedded SQL
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/interfaces/ecpg/preproc/ecpg_keywords.c,v 1.35 2007/06/12 07:55:56 meskes Exp $
+ *	  $PostgreSQL: pgsql/src/interfaces/ecpg/preproc/ecpg_keywords.c,v 1.36 2007/08/22 08:20:58 meskes Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -63,4 +63,3 @@ static const ScanKeyword ScanECPGKeywords[] = {
 	{"var", SQL_VAR},
 	{"whenever", SQL_WHENEVER},
 };
-

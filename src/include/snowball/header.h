@@ -15,7 +15,7 @@
  *
  * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  *
- * $PostgreSQL$
+ * $PostgreSQL: pgsql/src/include/snowball/header.h,v 1.1 2007/08/21 01:11:28 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -59,4 +59,4 @@
 #endif
 #define free(a)			pfree(a)
 
-#endif /* SNOWBALL_HEADR_H */
+#endif   /* SNOWBALL_HEADR_H */

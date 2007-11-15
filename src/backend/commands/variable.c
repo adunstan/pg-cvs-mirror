@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/variable.c,v 1.120 2007/01/05 22:19:27 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/variable.c,v 1.121 2007/08/04 01:26:53 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -463,16 +463,16 @@ assign_log_timezone(const char *value, bool doit, GucSource source)
 	{
 		/*
 		 * UNKNOWN is the value shown as the "default" for log_timezone in
-		 * guc.c.  We interpret it as being a complete no-op; we don't
-		 * change the timezone setting.  Note that if there is a known
-		 * timezone setting, we will return that name rather than UNKNOWN
-		 * as the canonical spelling.
+		 * guc.c.  We interpret it as being a complete no-op; we don't change
+		 * the timezone setting.  Note that if there is a known timezone
+		 * setting, we will return that name rather than UNKNOWN as the
+		 * canonical spelling.
 		 *
-		 * During GUC initialization, since the timezone library isn't set
-		 * up yet, pg_get_timezone_name will return NULL and we will leave
-		 * the setting as UNKNOWN.	If this isn't overridden from the
-		 * config file then pg_timezone_initialize() will eventually
-		 * select a default value from the environment.
+		 * During GUC initialization, since the timezone library isn't set up
+		 * yet, pg_get_timezone_name will return NULL and we will leave the
+		 * setting as UNKNOWN.	If this isn't overridden from the config file
+		 * then pg_timezone_initialize() will eventually select a default
+		 * value from the environment.
 		 */
 		if (doit)
 		{

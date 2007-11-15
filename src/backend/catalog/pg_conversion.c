@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/catalog/pg_conversion.c,v 1.37 2007/09/18 17:41:17 adunstan Exp $
+ *	  $PostgreSQL: pgsql/src/backend/catalog/pg_conversion.c,v 1.38 2007/09/24 01:29:28 adunstan Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -275,4 +275,3 @@ FindConversion(const char *conname, Oid connamespace)
 
 	return conoid;
 }
-

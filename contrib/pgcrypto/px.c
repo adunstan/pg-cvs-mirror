@@ -26,7 +26,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $PostgreSQL: pgsql/contrib/pgcrypto/px.c,v 1.15 2005/10/15 02:49:06 momjian Exp $
+ * $PostgreSQL: pgsql/contrib/pgcrypto/px.c,v 1.16 2007/08/23 16:15:51 tgl Exp $
  */
 
 #include "postgres.h"
@@ -286,7 +286,7 @@ combo_decrypt(PX_Combo * cx, const uint8 *data, unsigned dlen,
 		/* with padding, empty ciphertext is not allowed */
 		if (cx->padding)
 			return PXE_DECRYPT_FAILED;
-		
+
 		/* without padding, report empty result */
 		*rlen = 0;
 		return 0;

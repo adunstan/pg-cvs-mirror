@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/cache/catcache.c,v 1.137 2007/04/21 04:49:20 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/cache/catcache.c,v 1.138 2007/08/21 01:11:19 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1043,10 +1043,10 @@ IndexScanOK(CatCache *cache, ScanKey cur_skey)
 	if (cache->id == INDEXRELID)
 	{
 		/*
-		 * Rather than tracking exactly which indexes have to be loaded
-		 * before we can use indexscans (which changes from time to time),
-		 * just force all pg_index searches to be heap scans until we've
-		 * built the critical relcaches.
+		 * Rather than tracking exactly which indexes have to be loaded before
+		 * we can use indexscans (which changes from time to time), just force
+		 * all pg_index searches to be heap scans until we've built the
+		 * critical relcaches.
 		 */
 		if (!criticalRelcachesBuilt)
 			return false;

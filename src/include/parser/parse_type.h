@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/parser/parse_type.h,v 1.36 2007/04/02 03:49:41 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/parser/parse_type.h,v 1.37 2007/11/11 19:22:49 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -20,11 +20,11 @@
 typedef HeapTuple Type;
 
 extern Type LookupTypeName(ParseState *pstate, const TypeName *typename,
-						   int32 *typmod_p);
+			   int32 *typmod_p);
 extern Type typenameType(ParseState *pstate, const TypeName *typename,
-						 int32 *typmod_p);
-extern Oid	typenameTypeId(ParseState *pstate, const TypeName *typename,
-						   int32 *typmod_p);
+			 int32 *typmod_p);
+extern Oid typenameTypeId(ParseState *pstate, const TypeName *typename,
+			   int32 *typmod_p);
 
 extern char *TypeNameToString(const TypeName *typename);
 extern char *TypeNameListToString(List *typenames);

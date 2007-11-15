@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/commands/tablecmds.h,v 1.33 2007/05/11 20:17:10 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/commands/tablecmds.h,v 1.34 2007/07/03 01:30:37 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -47,8 +47,8 @@ extern void renamerel(Oid myrelid,
 		  ObjectType reltype);
 
 extern void find_composite_type_dependencies(Oid typeOid,
-											 const char *origTblName,
-											 const char *origTypeName);
+								 const char *origTblName,
+								 const char *origTypeName);
 
 extern AttrNumber *varattnos_map(TupleDesc old, TupleDesc new);
 extern AttrNumber *varattnos_map_schema(TupleDesc old, List *schema);

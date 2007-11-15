@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/rewrite/rewriteDefine.c,v 1.121 2007/06/23 22:12:51 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/rewrite/rewriteDefine.c,v 1.122 2007/08/27 03:36:08 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -671,16 +671,16 @@ EnableDisableRule(Relation rel, const char *rulename,
 	Assert(eventRelationOid == owningRel);
 	if (!pg_class_ownercheck(eventRelationOid, GetUserId()))
 		aclcheck_error(ACLCHECK_NOT_OWNER, ACL_KIND_CLASS,
-						get_rel_name(eventRelationOid));
-	
+					   get_rel_name(eventRelationOid));
+
 	/*
 	 * Change ev_enabled if it is different from the desired new state.
 	 */
 	if (DatumGetChar(((Form_pg_rewrite) GETSTRUCT(ruletup))->ev_enabled) !=
-			fires_when)
-		{
+		fires_when)
+	{
 		((Form_pg_rewrite) GETSTRUCT(ruletup))->ev_enabled =
-					CharGetDatum(fires_when);
+			CharGetDatum(fires_when);
 		simple_heap_update(pg_rewrite_desc, &ruletup->t_self, ruletup);
 
 		/* keep system catalog indexes current */

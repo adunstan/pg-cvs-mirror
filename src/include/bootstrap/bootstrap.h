@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/bootstrap/bootstrap.h,v 1.46 2007/03/07 13:35:03 alvherre Exp $
+ * $PostgreSQL: pgsql/src/include/bootstrap/bootstrap.h,v 1.47 2007/07/24 04:54:09 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -32,7 +32,7 @@ typedef struct hashnode
 extern Relation boot_reldesc;
 extern Form_pg_attribute attrtypes[MAXATTR];
 extern int	numattr;
-extern void	AuxiliaryProcessMain(int argc, char *argv[]);
+extern void AuxiliaryProcessMain(int argc, char *argv[]);
 
 extern void index_register(Oid heap, Oid ind, IndexInfo *indexInfo);
 
@@ -71,6 +71,6 @@ typedef enum
 	StartupProcess,
 	BgWriterProcess,
 	WalWriterProcess
-} AuxProcType;
+}	AuxProcType;
 
 #endif   /* BOOTSTRAP_H */

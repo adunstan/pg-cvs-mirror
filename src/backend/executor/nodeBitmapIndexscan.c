@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/nodeBitmapIndexscan.c,v 1.22 2007/01/05 22:19:28 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/nodeBitmapIndexscan.c,v 1.23 2007/05/25 17:54:25 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -259,9 +259,9 @@ ExecInitBitmapIndexScan(BitmapIndexScan *node, EState *estate, int eflags)
 	indexstate->ss.ss_currentScanDesc = NULL;
 
 	/*
-	 * If we are just doing EXPLAIN (ie, aren't going to run the plan),
-	 * stop here.  This allows an index-advisor plugin to EXPLAIN a plan
-	 * containing references to nonexistent indexes.
+	 * If we are just doing EXPLAIN (ie, aren't going to run the plan), stop
+	 * here.  This allows an index-advisor plugin to EXPLAIN a plan containing
+	 * references to nonexistent indexes.
 	 */
 	if (eflags & EXEC_FLAG_EXPLAIN_ONLY)
 		return indexstate;
