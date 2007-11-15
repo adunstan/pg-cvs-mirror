@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/analyze.c,v 1.110 2007/10/24 20:55:36 alvherre Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/analyze.c,v 1.111 2007/11/15 21:14:33 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1346,7 +1346,7 @@ typedef struct
 	FmgrInfo   *cmpFn;
 	int			cmpFlags;
 	int		   *tupnoLink;
-}	CompareScalarsContext;
+} CompareScalarsContext;
 
 
 static void compute_minimal_stats(VacAttrStatsP stats,

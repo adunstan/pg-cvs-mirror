@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/executor/execdesc.h,v 1.34 2007/02/20 17:32:17 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/executor/execdesc.h,v 1.35 2007/11/15 21:14:43 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -50,7 +50,7 @@ typedef struct QueryDesc
 } QueryDesc;
 
 /* in pquery.c */
-extern QueryDesc *CreateQueryDesc(PlannedStmt * plannedstmt,
+extern QueryDesc *CreateQueryDesc(PlannedStmt *plannedstmt,
 				Snapshot snapshot,
 				Snapshot crosscheck_snapshot,
 				DestReceiver *dest,

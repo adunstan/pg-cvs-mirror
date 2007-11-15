@@ -1,7 +1,7 @@
 /*
  * txtquery operations with ltree
  * Teodor Sigaev <teodor@stack.net>
- * $PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.314 2006/03/07 02:54:23 momjian Exp $
+ * $PostgreSQL: pgsql/contrib/ltree/ltxtquery_op.c,v 1.6 2006/03/11 04:38:29 momjian Exp $
  */
 
 #include "ltree.h"
@@ -45,7 +45,7 @@ typedef struct
 {
 	ltree	   *node;
 	char	   *operand;
-}	CHKVAL;
+} CHKVAL;
 
 static bool
 checkcondition_str(void *checkval, ITEM * val)

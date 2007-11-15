@@ -7,7 +7,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/tsearch/dict_simple.c,v 1.4 2007/11/14 18:36:37 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/tsearch/dict_simple.c,v 1.5 2007/11/15 21:14:38 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -24,7 +24,7 @@ typedef struct
 {
 	StopList	stoplist;
 	bool		accept;
-}	DictSimple;
+} DictSimple;
 
 
 Datum

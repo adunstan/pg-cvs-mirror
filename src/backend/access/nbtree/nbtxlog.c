@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/nbtree/nbtxlog.c,v 1.46 2007/09/20 17:56:30 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/nbtree/nbtxlog.c,v 1.47 2007/11/15 21:14:32 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -40,7 +40,7 @@ typedef struct bt_incomplete_action
 	BlockNumber rightblk;		/* right half of split */
 	/* these fields are for a delete: */
 	BlockNumber delblk;			/* parent block to be deleted */
-}	bt_incomplete_action;
+} bt_incomplete_action;
 
 static List *incomplete_actions;
 

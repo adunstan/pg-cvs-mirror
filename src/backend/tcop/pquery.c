@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/tcop/pquery.c,v 1.117 2007/09/03 18:46:30 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/tcop/pquery.c,v 1.118 2007/11/15 21:14:38 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -32,7 +32,7 @@
 Portal		ActivePortal = NULL;
 
 
-static void ProcessQuery(PlannedStmt * plan,
+static void ProcessQuery(PlannedStmt *plan,
 			 ParamListInfo params,
 			 DestReceiver *dest,
 			 char *completionTag);
@@ -57,7 +57,7 @@ static void DoPortalRewind(Portal portal);
  * CreateQueryDesc
  */
 QueryDesc *
-CreateQueryDesc(PlannedStmt * plannedstmt,
+CreateQueryDesc(PlannedStmt *plannedstmt,
 				Snapshot snapshot,
 				Snapshot crosscheck_snapshot,
 				DestReceiver *dest,
@@ -141,7 +141,7 @@ FreeQueryDesc(QueryDesc *qdesc)
  * error; otherwise the executor's memory usage will be leaked.
  */
 static void
-ProcessQuery(PlannedStmt * plan,
+ProcessQuery(PlannedStmt *plan,
 			 ParamListInfo params,
 			 DestReceiver *dest,
 			 char *completionTag)

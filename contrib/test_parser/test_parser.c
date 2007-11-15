@@ -6,7 +6,7 @@
  * Copyright (c) 2007, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/contrib/test_parser/test_parser.c,v 1.1 2007/10/15 21:36:50 tgl Exp $
+ *	  $PostgreSQL: pgsql/contrib/test_parser/test_parser.c,v 1.2 2007/11/15 21:14:31 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -35,7 +35,7 @@ typedef struct
 	int			lexid;
 	char	   *alias;
 	char	   *descr;
-}	LexDescr;
+} LexDescr;
 
 /*
  * prototypes

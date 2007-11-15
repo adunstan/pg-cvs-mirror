@@ -15,7 +15,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/selfuncs.c,v 1.239 2007/11/09 20:10:02 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/selfuncs.c,v 1.240 2007/11/15 21:14:39 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -3160,8 +3160,7 @@ convert_string_datum(Datum value, Oid typid)
 		/*
 		 *
 		 * http://connect.microsoft.com/VisualStudio/feedback/ViewFeedback.aspx
-		 * ?FeedbackID=99694
-		 */
+		 * ?FeedbackID=99694 */
 		{
 			char		x[1];
 

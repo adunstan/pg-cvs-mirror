@@ -5,7 +5,7 @@
  *
  * Copyright (c) 2004-2007, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/include/postmaster/syslogger.h,v 1.11 2007/08/19 01:41:25 adunstan Exp $
+ * $PostgreSQL: pgsql/src/include/postmaster/syslogger.h,v 1.12 2007/11/15 21:14:44 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -49,13 +49,13 @@ typedef struct
 	char		is_last;		/* last chunk of message? 't' or 'f' ('T' or
 								 * 'F' for CSV case) */
 	char		data[1];		/* data payload starts here */
-}	PipeProtoHeader;
+} PipeProtoHeader;
 
 typedef union
 {
 	PipeProtoHeader proto;
 	char		filler[PIPE_CHUNK_SIZE];
-}	PipeProtoChunk;
+} PipeProtoChunk;
 
 #define PIPE_HEADER_SIZE  offsetof(PipeProtoHeader, data)
 #define PIPE_MAX_PAYLOAD  ((int) (PIPE_CHUNK_SIZE - PIPE_HEADER_SIZE))

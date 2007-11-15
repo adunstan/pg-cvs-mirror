@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/parser/parse_coerce.h,v 1.71 2007/06/05 21:31:08 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/parser/parse_coerce.h,v 1.72 2007/11/15 21:14:44 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -42,7 +42,7 @@ typedef enum CoercionPathType
 	COERCION_PATH_RELABELTYPE,	/* binary-compatible cast, no function */
 	COERCION_PATH_ARRAYCOERCE,	/* need an ArrayCoerceExpr node */
 	COERCION_PATH_COERCEVIAIO	/* need a CoerceViaIO node */
-}	CoercionPathType;
+} CoercionPathType;
 
 
 extern bool IsBinaryCoercible(Oid srctype, Oid targettype);

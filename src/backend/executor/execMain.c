@@ -26,7 +26,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/execMain.c,v 1.298 2007/09/20 17:56:31 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/execMain.c,v 1.299 2007/11/15 21:14:34 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -95,7 +95,7 @@ static TupleTableSlot *EvalPlanQualNext(EState *estate);
 static void EndEvalPlanQual(EState *estate);
 static void ExecCheckRTPerms(List *rangeTable);
 static void ExecCheckRTEPerms(RangeTblEntry *rte);
-static void ExecCheckXactReadOnly(PlannedStmt * plannedstmt);
+static void ExecCheckXactReadOnly(PlannedStmt *plannedstmt);
 static void EvalPlanQualStart(evalPlanQual *epq, EState *estate,
 				  evalPlanQual *priorepq);
 static void EvalPlanQualStop(evalPlanQual *epq);
@@ -411,7 +411,7 @@ ExecCheckRTEPerms(RangeTblEntry *rte)
  * Check that the query does not imply any writes to non-temp tables.
  */
 static void
-ExecCheckXactReadOnly(PlannedStmt * plannedstmt)
+ExecCheckXactReadOnly(PlannedStmt *plannedstmt)
 {
 	ListCell   *l;
 

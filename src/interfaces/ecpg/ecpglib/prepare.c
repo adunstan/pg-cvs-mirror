@@ -1,4 +1,4 @@
-/* $PostgreSQL: pgsql/src/interfaces/ecpg/ecpglib/prepare.c,v 1.23 2007/11/05 20:57:24 tgl Exp $ */
+/* $PostgreSQL: pgsql/src/interfaces/ecpg/ecpglib/prepare.c,v 1.24 2007/11/15 21:14:45 momjian Exp $ */
 
 #define POSTGRES_ECPG_INTERNAL
 #include "postgres_fe.h"
@@ -28,7 +28,7 @@ typedef struct
 	char	   *ecpgQuery;
 	long		execs;			/* # of executions		*/
 	char	   *connection;		/* connection for the statement		*/
-}	stmtCacheEntry;
+} stmtCacheEntry;
 
 static int	nextStmtID = 1;
 static const int stmtCacheNBuckets = 2039;		/* # buckets - a prime # */

@@ -7,7 +7,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/tsearch/dict_ispell.c,v 1.3 2007/08/25 00:03:59 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/tsearch/dict_ispell.c,v 1.4 2007/11/15 21:14:38 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -26,7 +26,7 @@ typedef struct
 {
 	StopList	stoplist;
 	IspellDict	obj;
-}	DictISpell;
+} DictISpell;
 
 Datum
 dispell_init(PG_FUNCTION_ARGS)

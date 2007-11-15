@@ -18,7 +18,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/postmaster/syslogger.c,v 1.40 2007/09/22 18:19:18 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/postmaster/syslogger.c,v 1.41 2007/11/15 21:14:37 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -103,7 +103,7 @@ typedef struct
 {
 	int32		pid;			/* PID of source process */
 	StringInfoData data;		/* accumulated data, as a StringInfo */
-}	save_buffer;
+} save_buffer;
 
 #define CHUNK_SLOTS 20
 static save_buffer saved_chunks[CHUNK_SLOTS];

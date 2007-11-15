@@ -7,7 +7,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/tsearch/dict_synonym.c,v 1.4 2007/08/25 02:29:45 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/tsearch/dict_synonym.c,v 1.5 2007/11/15 21:14:38 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -24,13 +24,13 @@ typedef struct
 {
 	char	   *in;
 	char	   *out;
-}	Syn;
+} Syn;
 
 typedef struct
 {
 	int			len;			/* length of syn array */
 	Syn		   *syn;
-}	DictSyn;
+} DictSyn;
 
 /*
  * Finds the next whitespace-delimited word within the 'in' string.
