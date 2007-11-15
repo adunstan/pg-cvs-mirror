@@ -37,7 +37,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/postmaster/postmaster.c,v 1.544 2007/11/05 00:00:34 neilc Exp $
+ *	  $PostgreSQL: pgsql/src/backend/postmaster/postmaster.c,v 1.545 2007/11/08 14:47:51 petere Exp $
  *
  * NOTES
  *
@@ -4524,7 +4524,7 @@ pgwin32_deadchild_callback(PVOID lpParameter, BOOLEAN TimerOrWaitFired)
 		/*
 		 * Should never happen. Inform user and set a fixed exitcode.
 		 */
-		write_stderr("could not read exitcode for process\n");
+		write_stderr("could not read exit code for process\n");
 		exitcode = 255;
 	}
 

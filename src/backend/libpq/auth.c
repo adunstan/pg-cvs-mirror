@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/libpq/auth.c,v 1.156 2007/09/14 15:58:02 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/libpq/auth.c,v 1.157 2007/11/09 17:31:07 mha Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -585,7 +585,7 @@ pg_GSS_recvauth(Port *port)
 {
 	ereport(LOG,
 			(errcode(ERRCODE_FEATURE_NOT_SUPPORTED),
-			 errmsg("GSSAPI not implemented on this server.")));
+			 errmsg("GSSAPI not implemented on this server")));
 	return STATUS_ERROR;
 }
 #endif	/* ENABLE_GSS */
@@ -868,7 +868,7 @@ pg_SSPI_recvauth(Port *port)
 {
 	ereport(LOG,
 			(errcode(ERRCODE_FEATURE_NOT_SUPPORTED),
-			 errmsg("SSPI not implemented on this server.")));
+			 errmsg("SSPI not implemented on this server")));
 	return STATUS_ERROR;
 }
 #endif	/* ENABLE_SSPI */
