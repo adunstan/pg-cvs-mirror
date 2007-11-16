@@ -3,7 +3,7 @@
  *	  header file for postgres inverted index access method implementation.
  *
  *	Copyright (c) 2006, PostgreSQL Global Development Group
- *	$PostgreSQL: pgsql/src/include/access/gin.h,v 1.8 2006/10/04 00:30:06 momjian Exp $
+ *	$PostgreSQL: pgsql/src/include/access/gin.h,v 1.9 2006/10/05 17:57:40 tgl Exp $
  *--------------------------------------------------------------------------
  */
 
@@ -450,7 +450,7 @@ typedef struct
 	uint32		maxdepth;
 	EntryAccumulator **stack;
 	uint32		stackpos;
-	uint32		allocatedMemory;
+	long		allocatedMemory;
 
 	uint32		length;
 	EntryAccumulator *entryallocator;
