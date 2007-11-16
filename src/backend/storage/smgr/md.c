@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/storage/smgr/md.c,v 1.132 2007/11/15 21:49:47 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/storage/smgr/md.c,v 1.133 2007/11/15 22:25:16 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1185,7 +1185,7 @@ mdpostckpt(void)
 		 * New entries are appended to the end, so if the entry is new we've
 		 * reached the end of old entries.
 		 */
-		if (entry->cycle_ctr == mdsync_cycle_ctr)
+		if (entry->cycle_ctr == mdckpt_cycle_ctr)
 			break;
 
 		/* Else assert we haven't missed it */
