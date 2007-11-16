@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/mb/conv.c,v 1.63 2007/03/25 11:56:02 ishii Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/mb/conv.c,v 1.64 2007/11/15 23:23:44 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -461,7 +461,7 @@ UtfToLocal(const unsigned char *utf, unsigned char *iso,
 				code = p->code;
 			}
 		}
-		else	/*  no cmap or no remaining data */
+		else	/* no cmap or no remaining data */
 		{
 			p = bsearch(&iutf, map, size1,
 						sizeof(pg_utf_to_local), compare1);
