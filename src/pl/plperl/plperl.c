@@ -33,7 +33,7 @@
  *	  ENHANCEMENTS, OR MODIFICATIONS.
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/pl/plperl/plperl.c,v 1.94.2.5 2006/01/28 16:21:33 adunstan Exp $
+ *	  $PostgreSQL: pgsql/src/pl/plperl/plperl.c,v 1.94.2.6 2007/06/28 17:50:17 tgl Exp $
  *
  **********************************************************************/
 
@@ -74,6 +74,11 @@
 #ifndef pTHX_
 #define pTHX_
 #define pTHX void
+#endif
+
+/* perl may have a different width of "bool", don't buy it */
+#ifdef bool
+#undef bool
 #endif
 
 
