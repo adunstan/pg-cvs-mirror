@@ -19,7 +19,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/postmaster/pgarch.c,v 1.31 2007/09/26 22:36:30 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/postmaster/pgarch.c,v 1.32 2007/11/15 21:14:37 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -492,7 +492,7 @@ pgarch_archiveXlog(char *xlog)
 
 		return false;
 	}
-	ereport(LOG,
+	ereport(DEBUG1,
 			(errmsg("archived transaction log file \"%s\"", xlog)));
 
 	return true;
