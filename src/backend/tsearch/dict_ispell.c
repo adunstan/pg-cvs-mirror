@@ -7,7 +7,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/tsearch/dict_ispell.c,v 1.4 2007/11/15 21:14:38 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/tsearch/dict_ispell.c,v 1.5 2007/11/15 22:25:16 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -79,7 +79,7 @@ dispell_init(PG_FUNCTION_ARGS)
 		{
 			ereport(ERROR,
 					(errcode(ERRCODE_INVALID_PARAMETER_VALUE),
-					 errmsg("unrecognized ISpell parameter: \"%s\"",
+					 errmsg("unrecognized Ispell parameter: \"%s\"",
 							defel->defname)));
 		}
 	}
