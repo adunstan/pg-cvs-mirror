@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2007, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/psql/mainloop.c,v 1.84 2006/10/04 00:30:06 momjian Exp $
+ * $PostgreSQL: pgsql/src/bin/psql/mainloop.c,v 1.85 2007/01/05 22:19:49 momjian Exp $
  */
 #include "postgres_fe.h"
 #include "mainloop.h"
@@ -129,7 +129,11 @@ MainLoop(FILE *source)
 			line = gets_interactive(get_prompt(prompt_status));
 		}
 		else
+		{
 			line = gets_fromFile(source);
+			if (!line && ferror(source))
+				successResult = EXIT_FAILURE;
+		}
 
 		/*
 		 * query_buf holds query already accumulated.  line is the malloc'd
