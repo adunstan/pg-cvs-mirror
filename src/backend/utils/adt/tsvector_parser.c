@@ -7,7 +7,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/tsvector_parser.c,v 1.3 2007/11/15 21:14:39 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/tsvector_parser.c,v 1.4 2007/11/15 22:25:16 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -359,7 +359,8 @@ gettoken_tsvector(TSVectorParseState state,
 				PRSSYNTAXERROR;
 		}
 		else	/* internal error */
-			elog(ERROR, "internal error in gettoken_tsvector");
+			elog(ERROR, "unrecognized state in gettoken_tsvector: %d",
+				 statecode);
 
 		/* get next char */
 		state->prsbuf += pg_mblen(state->prsbuf);
