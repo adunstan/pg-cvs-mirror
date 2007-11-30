@@ -23,7 +23,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/storage/ipc/procarray.c,v 1.36 2007/10/24 20:55:36 alvherre Exp $
+ *	  $PostgreSQL: pgsql/src/backend/storage/ipc/procarray.c,v 1.37 2007/11/15 21:14:38 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -814,7 +814,7 @@ GetSnapshotData(Snapshot snapshot, bool serializable)
 	snapshot->xcnt = count;
 	snapshot->subxcnt = subcount;
 
-	snapshot->curcid = GetCurrentCommandId();
+	snapshot->curcid = GetCurrentCommandId(false);
 
 	return snapshot;
 }

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/heap/tuptoaster.c,v 1.78 2007/10/11 18:19:58 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/heap/tuptoaster.c,v 1.79 2007/11/15 21:14:32 momjian Exp $
  *
  *
  * INTERFACE ROUTINES
@@ -1086,7 +1086,7 @@ toast_save_datum(Relation rel, Datum value,
 	TupleDesc	toasttupDesc;
 	Datum		t_values[3];
 	bool		t_isnull[3];
-	CommandId	mycid = GetCurrentCommandId();
+	CommandId	mycid = GetCurrentCommandId(true);
 	struct varlena *result;
 	struct varatt_external toast_pointer;
 	struct

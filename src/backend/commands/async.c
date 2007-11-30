@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/async.c,v 1.135 2007/01/05 22:19:25 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/async.c,v 1.136 2007/04/12 06:53:46 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -562,7 +562,8 @@ AtCommit_Notify(void)
 				 */
 				result = heap_update(lRel, &lTuple->t_self, rTuple,
 									 &update_ctid, &update_xmax,
-									 GetCurrentCommandId(), InvalidSnapshot,
+									 GetCurrentCommandId(true),
+									 InvalidSnapshot,
 									 false /* no wait for commit */ );
 				switch (result)
 				{

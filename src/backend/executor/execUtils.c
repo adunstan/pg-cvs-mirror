@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/execUtils.c,v 1.151 2007/09/20 17:56:31 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/execUtils.c,v 1.152 2007/11/15 21:14:34 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -177,6 +177,8 @@ CreateExecutorState(void)
 	estate->es_snapshot = SnapshotNow;
 	estate->es_crosscheck_snapshot = InvalidSnapshot;	/* no crosscheck */
 	estate->es_range_table = NIL;
+
+	estate->es_output_cid = (CommandId) 0;
 
 	estate->es_result_relations = NULL;
 	estate->es_num_result_relations = 0;
