@@ -1,8 +1,8 @@
-# $PostgreSQL: pgsql/contrib/spi/Makefile,v 1.26 2005/09/27 17:13:10 tgl Exp $
+# $PostgreSQL: pgsql/contrib/spi/Makefile,v 1.27 2007/06/26 22:05:03 tgl Exp $
 
 MODULES = autoinc insert_username moddatetime refint timetravel
 DATA_built = $(addsuffix .sql, $(MODULES))
-DOCS	= README.spi $(addsuffix .example, $(MODULES))
+DOCS = $(addsuffix .example, $(MODULES))
 
 # this is needed for the regression tests;
 # comment out if you want a quieter refint package for other uses
