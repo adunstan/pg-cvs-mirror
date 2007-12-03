@@ -3,7 +3,7 @@ package Install;
 #
 # Package that provides 'make install' functionality for msvc builds
 #
-# $PostgreSQL: pgsql/src/tools/msvc/Install.pm,v 1.24 2007/10/16 16:00:00 tgl Exp $
+# $PostgreSQL: pgsql/src/tools/msvc/Install.pm,v 1.25 2007/10/23 20:46:12 tgl Exp $
 #
 use strict;
 use warnings;
@@ -339,7 +339,7 @@ sub CopyContribFiles
 
             # Special case for contrib/spi
             $flist =
-"README.spi autoinc.example insert_username.example moddatetime.example refint.example timetravel.example"
+"autoinc.example insert_username.example moddatetime.example refint.example timetravel.example"
               if ($d eq 'spi');
             foreach my $f (split /\s+/,$flist)
             {
