@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/tcop/postgres.c,v 1.537 2007/08/02 23:39:44 adunstan Exp $
+ *	  $PostgreSQL: pgsql/src/backend/tcop/postgres.c,v 1.538 2007/11/15 21:14:38 momjian Exp $
  *
  * NOTES
  *	  this is the "main" module of the postgres backend and
@@ -2578,6 +2578,10 @@ ProcessInterrupts(void)
 			ereport(ERROR,
 					(errcode(ERRCODE_QUERY_CANCELED),
 					 errmsg("canceling statement due to statement timeout")));
+		else if (IsAutoVacuumWorkerProcess())
+			ereport(ERROR,
+					(errcode(ERRCODE_QUERY_CANCELED),
+					 errmsg("canceling autovacuum task")));
 		else
 			ereport(ERROR,
 					(errcode(ERRCODE_QUERY_CANCELED),
