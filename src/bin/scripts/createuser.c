@@ -5,7 +5,7 @@
  * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/bin/scripts/createuser.c,v 1.35 2007/01/05 22:19:50 momjian Exp $
+ * $PostgreSQL: pgsql/src/bin/scripts/createuser.c,v 1.36 2007/06/04 10:02:40 petere Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -329,7 +329,7 @@ help(const char *progname)
 	printf(_("  -h, --host=HOSTNAME       database server host or socket directory\n"));
 	printf(_("  -p, --port=PORT           database server port\n"));
 	printf(_("  -U, --username=USERNAME   user name to connect as (not the one to create)\n"));
-	printf(_("  -W, --password            prompt for password to connect\n"));
+	printf(_("  -W, --password            force password prompt\n"));
 	printf(_("\nIf one of -s, -S, -d, -D, -r, -R and ROLENAME is not specified, you will\n"
 			 "be prompted interactively.\n"));
 	printf(_("\nReport bugs to <pgsql-bugs@postgresql.org>.\n"));
