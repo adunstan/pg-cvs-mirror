@@ -1,5 +1,5 @@
 @echo off
-REM $PostgreSQL: pgsql/src/tools/msvc/clean.bat,v 1.7 2007/10/03 13:43:24 mha Exp $
+REM $PostgreSQL: pgsql/src/tools/msvc/clean.bat,v 1.8 2007/11/13 22:49:47 tgl Exp $
 
 set D=%CD%
 if exist ..\msvc if exist ..\..\..\src cd ..\..\..
@@ -61,7 +61,7 @@ for /r %%f in (*.sql) do if exist %%f.in del %%f
 cd %D%
 
 REM Clean up ecpg regression test files
-msbuild ecpg_regression.proj /t:clean /v:q
+msbuild /NoLogo ecpg_regression.proj /t:clean /v:q
 
 goto :eof
 
