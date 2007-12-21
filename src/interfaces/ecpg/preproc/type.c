@@ -1,4 +1,4 @@
-/* $PostgreSQL: pgsql/src/interfaces/ecpg/preproc/type.c,v 1.75 2007/10/03 11:11:12 meskes Exp $ */
+/* $PostgreSQL: pgsql/src/interfaces/ecpg/preproc/type.c,v 1.76 2007/11/15 21:14:45 momjian Exp $ */
 
 #include "postgres_fe.h"
 
@@ -6,7 +6,7 @@
 
 #define indicator_set ind_type != NULL && ind_type->type != ECPGt_NO_INDICATOR
 
-struct ECPGstruct_member struct_no_indicator = {"no_indicator", &ecpg_no_indicator, NULL};
+static struct ECPGstruct_member struct_no_indicator = {"no_indicator", &ecpg_no_indicator, NULL};
 
 /* malloc + error check */
 void *
