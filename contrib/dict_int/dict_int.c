@@ -3,10 +3,10 @@
  * dict_int.c
  *	  Text search dictionary for integers
  *
- * Copyright (c) 2007, PostgreSQL Global Development Group
+ * Copyright (c) 2007-2008, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/contrib/dict_int/dict_int.c,v 1.1 2007/10/15 21:36:50 tgl Exp $
+ *	  $PostgreSQL: pgsql/contrib/dict_int/dict_int.c,v 1.2 2007/11/15 21:14:29 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
