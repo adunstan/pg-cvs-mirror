@@ -5,10 +5,10 @@
  *	  zillions of large objects (internal, external, jaquith, inversion).
  *	  Now we only support inversion.
  *
- * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/storage/large_object.h,v 1.37 2007/03/03 19:52:46 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/storage/large_object.h,v 1.38 2007/11/15 21:14:44 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

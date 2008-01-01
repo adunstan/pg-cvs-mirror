@@ -2,10 +2,10 @@
 #
 # Makefile for src/bin/pg_dump
 #
-# Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
+# Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
 # Portions Copyright (c) 1994, Regents of the University of California
 #
-# $PostgreSQL: pgsql/src/bin/pg_dump/Makefile,v 1.63 2007/01/05 22:19:48 momjian Exp $
+# $PostgreSQL: pgsql/src/bin/pg_dump/Makefile,v 1.64 2007/09/27 19:53:43 tgl Exp $
 #
 #-------------------------------------------------------------------------
 

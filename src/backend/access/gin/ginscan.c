@@ -4,11 +4,11 @@
  *	  routines to manage scans inverted index relations
  *
  *
- * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *			$PostgreSQL: pgsql/src/backend/access/gin/ginscan.c,v 1.10 2007/05/27 03:50:38 tgl Exp $
+ *			$PostgreSQL: pgsql/src/backend/access/gin/ginscan.c,v 1.11 2007/11/15 21:14:31 momjian Exp $
  *-------------------------------------------------------------------------
  */
 

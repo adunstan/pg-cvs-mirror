@@ -3,12 +3,12 @@
  * nodeLimit.c
  *	  Routines to handle limiting of query results where appropriate
  *
- * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/nodeLimit.c,v 1.31 2007/05/17 19:35:08 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/nodeLimit.c,v 1.32 2007/11/15 21:14:34 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

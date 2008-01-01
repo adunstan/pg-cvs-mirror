@@ -5,10 +5,10 @@
  *	  and related modules.
  *
  *
- * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/executor/execdesc.h,v 1.35 2007/11/15 21:14:43 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/executor/execdesc.h,v 1.36 2007/11/15 22:25:17 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

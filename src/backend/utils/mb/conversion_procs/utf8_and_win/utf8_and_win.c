@@ -2,11 +2,11 @@
  *
  *	  WIN <--> UTF8
  *
- * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/mb/conversion_procs/utf8_and_win/utf8_and_win.c,v 1.10 2007/03/25 11:56:04 ishii Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/mb/conversion_procs/utf8_and_win/utf8_and_win.c,v 1.11 2007/11/15 21:14:41 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

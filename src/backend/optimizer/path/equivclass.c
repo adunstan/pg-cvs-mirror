@@ -6,11 +6,11 @@
  * See src/backend/optimizer/README for discussion of EquivalenceClasses.
  *
  *
- * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/optimizer/path/equivclass.c,v 1.6 2007/11/15 22:25:15 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/optimizer/path/equivclass.c,v 1.7 2007/11/23 19:57:44 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

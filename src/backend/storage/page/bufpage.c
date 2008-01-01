@@ -3,12 +3,12 @@
  * bufpage.c
  *	  POSTGRES standard buffer page code.
  *
- * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/storage/page/bufpage.c,v 1.75 2007/09/21 21:25:42 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/storage/page/bufpage.c,v 1.76 2007/11/15 21:14:38 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

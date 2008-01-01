@@ -3,10 +3,10 @@
  * lsyscache.h
  *	  Convenience routines for common queries in the system catalog cache.
  *
- * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/utils/lsyscache.h,v 1.120 2007/10/13 15:55:40 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/utils/lsyscache.h,v 1.121 2007/11/15 21:14:45 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

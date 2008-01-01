@@ -3,11 +3,11 @@
  * quote.c
  *	  Functions for quoting identifiers and literals
  *
- * Portions Copyright (c) 2000-2007, PostgreSQL Global Development Group
+ * Portions Copyright (c) 2000-2008, PostgreSQL Global Development Group
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/quote.c,v 1.21 2007/01/05 22:19:41 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/quote.c,v 1.22 2007/02/27 23:48:08 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

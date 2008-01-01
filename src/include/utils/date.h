@@ -4,10 +4,10 @@
  *	  Definitions for the SQL92 "date" and "time" types.
  *
  *
- * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/utils/date.h,v 1.37 2007/06/05 21:31:08 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/utils/date.h,v 1.38 2007/07/06 04:16:00 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

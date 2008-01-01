@@ -3,11 +3,11 @@
  * tsquery_op.c
  *	  Various operations with tsquery
  *
- * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/tsquery_op.c,v 1.1 2007/08/21 01:11:19 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/tsquery_op.c,v 1.2 2007/09/07 15:09:56 teodor Exp $
  *
  *-------------------------------------------------------------------------
  */

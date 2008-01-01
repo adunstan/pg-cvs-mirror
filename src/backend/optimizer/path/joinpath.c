@@ -3,12 +3,12 @@
  * joinpath.c
  *	  Routines to find all possible paths for processing a set of joins
  *
- * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/optimizer/path/joinpath.c,v 1.112 2007/05/22 01:40:33 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/optimizer/path/joinpath.c,v 1.113 2007/11/15 21:14:35 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -4,10 +4,10 @@
  *	  storage manager switch public interface declarations.
  *
  *
- * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/storage/smgr.h,v 1.60 2007/11/15 20:36:40 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/storage/smgr.h,v 1.61 2007/11/15 21:14:44 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

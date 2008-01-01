@@ -2,9 +2,9 @@
  * gin.h
  *	  header file for postgres inverted index access method implementation.
  *
- *	Copyright (c) 2006-2007, PostgreSQL Global Development Group
+ *	Copyright (c) 2006-2008, PostgreSQL Global Development Group
  *
- *	$PostgreSQL: pgsql/src/include/access/gin.h,v 1.14 2007/11/15 21:14:42 momjian Exp $
+ *	$PostgreSQL: pgsql/src/include/access/gin.h,v 1.15 2007/11/16 21:50:06 tgl Exp $
  *--------------------------------------------------------------------------
  */
 

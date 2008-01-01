@@ -3,12 +3,12 @@
  * joinrels.c
  *	  Routines to determine which relations should be joined
  *
- * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/optimizer/path/joinrels.c,v 1.88 2007/10/26 18:10:50 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/optimizer/path/joinrels.c,v 1.89 2007/11/15 21:14:36 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

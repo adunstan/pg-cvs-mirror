@@ -3,11 +3,11 @@
  * enum.c
  *	  I/O functions, operators, aggregates etc for enum types
  *
- * Copyright (c) 2006-2007, PostgreSQL Global Development Group
+ * Copyright (c) 2006-2008, PostgreSQL Global Development Group
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/enum.c,v 1.4 2007/09/04 16:41:42 adunstan Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/enum.c,v 1.5 2007/11/15 21:14:39 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

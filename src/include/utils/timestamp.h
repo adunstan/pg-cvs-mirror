@@ -3,10 +3,10 @@
  * timestamp.h
  *	  Definitions for the SQL92 "timestamp" and "interval" types.
  *
- * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/utils/timestamp.h,v 1.71 2007/07/06 04:16:00 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/utils/timestamp.h,v 1.72 2007/11/15 21:14:45 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

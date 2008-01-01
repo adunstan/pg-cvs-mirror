@@ -3,10 +3,10 @@
  * port.h
  *	  Header for src/port/ compatibility functions.
  *
- * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/port.h,v 1.114 2007/10/29 11:25:42 mha Exp $
+ * $PostgreSQL: pgsql/src/include/port.h,v 1.115 2007/11/15 21:14:42 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

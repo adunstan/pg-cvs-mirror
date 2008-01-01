@@ -3,12 +3,12 @@
  * arrayutils.c
  *	  This file contains some support routines required for array functions.
  *
- * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/arrayutils.c,v 1.24 2007/06/15 20:56:50 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/arrayutils.c,v 1.25 2007/11/15 21:14:38 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

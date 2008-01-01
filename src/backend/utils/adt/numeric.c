@@ -11,10 +11,10 @@
  * Transactions on Mathematical Software, Vol. 24, No. 4, December 1998,
  * pages 359-367.
  *
- * Copyright (c) 1998-2007, PostgreSQL Global Development Group
+ * Copyright (c) 1998-2008, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/numeric.c,v 1.106 2007/07/09 16:13:57 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/numeric.c,v 1.107 2007/11/15 21:14:39 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

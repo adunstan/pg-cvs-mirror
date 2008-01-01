@@ -3,12 +3,12 @@
  * hashutil.c
  *	  Utility code for Postgres hash implementation.
  *
- * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/hash/hashutil.c,v 1.51 2007/01/30 01:33:36 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/hash/hashutil.c,v 1.52 2007/05/03 16:45:58 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

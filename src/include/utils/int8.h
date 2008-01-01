@@ -4,10 +4,10 @@
  *	  Declarations for operations on 64-bit integers.
  *
  *
- * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/utils/int8.h,v 1.46 2007/01/05 22:19:59 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/utils/int8.h,v 1.47 2007/06/05 21:31:08 tgl Exp $
  *
  * NOTES
  * These data types are supported on all 64-bit architectures, and may

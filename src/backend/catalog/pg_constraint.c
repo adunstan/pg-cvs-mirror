@@ -3,12 +3,12 @@
  * pg_constraint.c
  *	  routines to support manipulation of the pg_constraint relation
  *
- * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/catalog/pg_constraint.c,v 1.35 2007/02/14 01:58:56 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/catalog/pg_constraint.c,v 1.36 2007/11/15 21:14:33 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

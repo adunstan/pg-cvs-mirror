@@ -4,10 +4,10 @@
  *		Common support routines for bin/scripts/
  *
  *
- * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/bin/scripts/common.c,v 1.29 2007/11/15 21:14:42 momjian Exp $
+ * $PostgreSQL: pgsql/src/bin/scripts/common.c,v 1.30 2007/12/09 19:01:40 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

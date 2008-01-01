@@ -14,11 +14,11 @@
  *
  * Author: Andreas Pflug <pgadmin@pse-consulting.de>
  *
- * Copyright (c) 2004-2007, PostgreSQL Global Development Group
+ * Copyright (c) 2004-2008, PostgreSQL Global Development Group
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/postmaster/syslogger.c,v 1.41 2007/11/15 21:14:37 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/postmaster/syslogger.c,v 1.42 2007/11/15 22:25:16 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

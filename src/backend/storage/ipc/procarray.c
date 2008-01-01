@@ -18,12 +18,12 @@
  * backend PGPROCs at need by checking for pid == 0.
  *
  *
- * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/storage/ipc/procarray.c,v 1.37 2007/11/15 21:14:38 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/storage/ipc/procarray.c,v 1.38 2007/11/30 21:22:54 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

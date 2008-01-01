@@ -39,10 +39,10 @@
  * anything we saw during replay.
  *
  *
- * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/backend/access/transam/multixact.c,v 1.25 2007/09/05 18:10:47 tgl Exp $
+ * $PostgreSQL: pgsql/src/backend/access/transam/multixact.c,v 1.26 2007/11/15 21:14:32 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

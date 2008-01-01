@@ -3,12 +3,12 @@
  * alter.c
  *	  Drivers for generic alter commands
  *
- * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/alter.c,v 1.24 2007/07/03 01:30:36 neilc Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/alter.c,v 1.25 2007/08/21 01:11:14 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

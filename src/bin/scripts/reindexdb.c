@@ -2,9 +2,9 @@
  *
  * reindexdb
  *
- * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/scripts/reindexdb.c,v 1.11 2007/06/04 10:02:40 petere Exp $
+ * $PostgreSQL: pgsql/src/bin/scripts/reindexdb.c,v 1.12 2007/12/11 19:57:32 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

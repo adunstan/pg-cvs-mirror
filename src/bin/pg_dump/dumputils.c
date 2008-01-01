@@ -5,10 +5,10 @@
  *	Lately it's also being used by psql and bin/scripts/ ...
  *
  *
- * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/bin/pg_dump/dumputils.c,v 1.38 2007/11/07 12:24:24 petere Exp $
+ * $PostgreSQL: pgsql/src/bin/pg_dump/dumputils.c,v 1.39 2007/11/15 21:14:41 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

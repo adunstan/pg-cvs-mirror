@@ -3,12 +3,12 @@
  * nodeHashjoin.c
  *	  Routines to handle hash join nodes
  *
- * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/nodeHashjoin.c,v 1.91 2007/06/07 19:19:57 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/nodeHashjoin.c,v 1.92 2007/11/15 21:14:34 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

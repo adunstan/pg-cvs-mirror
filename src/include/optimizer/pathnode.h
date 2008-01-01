@@ -4,10 +4,10 @@
  *	  prototypes for pathnode.c, relnode.c.
  *
  *
- * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/optimizer/pathnode.h,v 1.75 2007/01/10 18:06:04 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/optimizer/pathnode.h,v 1.76 2007/01/20 20:45:40 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

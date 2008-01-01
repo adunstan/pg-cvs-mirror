@@ -3,12 +3,12 @@
  * fe-exec.c
  *	  functions related to sending a query down to the backend
  *
- * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-exec.c,v 1.192 2007/01/05 22:20:01 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-exec.c,v 1.193 2007/10/13 20:18:42 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

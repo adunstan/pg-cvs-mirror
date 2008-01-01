@@ -4,10 +4,10 @@
  *	  postgres transaction access method support code
  *
  *
- * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/access/transam.h,v 1.62 2007/09/08 20:31:15 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/access/transam.h,v 1.63 2007/11/15 21:14:42 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

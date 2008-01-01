@@ -4,12 +4,12 @@
  *
  *	  Routines for tsearch manipulation commands
  *
- * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/tsearchcmds.c,v 1.7 2007/11/15 22:25:15 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/tsearchcmds.c,v 1.8 2007/11/28 21:56:30 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

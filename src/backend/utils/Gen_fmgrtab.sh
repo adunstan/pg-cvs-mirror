@@ -4,12 +4,12 @@
 # Gen_fmgrtab.sh
 #    shell script to generate fmgroids.h and fmgrtab.c from pg_proc.h
 #
-# Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
+# Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
 # Portions Copyright (c) 1994, Regents of the University of California
 #
 #
 # IDENTIFICATION
-#    $PostgreSQL: pgsql/src/backend/utils/Gen_fmgrtab.sh,v 1.36 2007/06/05 21:31:06 tgl Exp $
+#    $PostgreSQL: pgsql/src/backend/utils/Gen_fmgrtab.sh,v 1.37 2007/09/03 00:39:17 tgl Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -105,7 +105,7 @@ cat > "$$-$OIDSFILE" <<FuNkYfMgRsTuFf
  * These macros can be used to avoid a catalog lookup when a specific
  * fmgr-callable function needs to be referenced.
  *
- * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * NOTES
@@ -163,7 +163,7 @@ cat > "$$-$TABLEFILE" <<FuNkYfMgRtAbStUfF
  * $TABLEFILE
  *    The function manager's table of internal functions.
  *
- * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * NOTES

@@ -3,10 +3,10 @@
  * parse_type.h
  *		handle type operations for parser
  *
- * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/parser/parse_type.h,v 1.37 2007/11/11 19:22:49 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/parser/parse_type.h,v 1.38 2007/11/15 21:14:44 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

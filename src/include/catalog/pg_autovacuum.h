@@ -3,10 +3,10 @@
  * pg_autovacuum.h
  *	  definition of the system "autovacuum" relation (pg_autovacuum)
  *
- * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/catalog/pg_autovacuum.h,v 1.6 2007/01/05 22:19:52 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/catalog/pg_autovacuum.h,v 1.7 2007/11/15 21:14:42 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

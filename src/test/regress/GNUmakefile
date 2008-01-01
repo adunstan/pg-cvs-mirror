@@ -3,10 +3,10 @@
 # GNUmakefile--
 #    Makefile for src/test/regress (the regression tests)
 #
-# Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
+# Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
 # Portions Copyright (c) 1994, Regents of the University of California
 #
-# $PostgreSQL: pgsql/src/test/regress/GNUmakefile,v 1.69 2007/09/09 20:40:54 adunstan Exp $
+# $PostgreSQL: pgsql/src/test/regress/GNUmakefile,v 1.70 2007/09/09 22:53:33 adunstan Exp $
 #
 #-------------------------------------------------------------------------
 

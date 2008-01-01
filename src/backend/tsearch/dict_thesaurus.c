@@ -3,11 +3,11 @@
  * dict_thesaurus.c
  *		Thesaurus dictionary: phrase to phrase substitution
  *
- * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/tsearch/dict_thesaurus.c,v 1.9 2007/11/28 04:24:38 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/tsearch/dict_thesaurus.c,v 1.10 2007/11/28 21:56:30 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -3,12 +3,12 @@
  * date.c
  *	  implements DATE and TIME data types specified in SQL-92 standard
  *
- * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994-5, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/date.c,v 1.136 2007/09/26 01:10:42 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/date.c,v 1.137 2007/11/15 21:14:38 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

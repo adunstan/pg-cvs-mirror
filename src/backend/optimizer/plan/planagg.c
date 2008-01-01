@@ -3,12 +3,12 @@
  * planagg.c
  *	  Special planning for aggregate queries.
  *
- * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/optimizer/plan/planagg.c,v 1.34 2007/11/15 21:14:36 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/optimizer/plan/planagg.c,v 1.35 2007/12/03 22:37:17 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -4,11 +4,11 @@
  *	  WAL replay logic for inverted index.
  *
  *
- * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *			 $PostgreSQL: pgsql/src/backend/access/gin/ginxlog.c,v 1.10 2007/10/29 19:26:57 teodor Exp $
+ *			 $PostgreSQL: pgsql/src/backend/access/gin/ginxlog.c,v 1.11 2007/11/15 21:14:31 momjian Exp $
  *-------------------------------------------------------------------------
  */
 #include "postgres.h"

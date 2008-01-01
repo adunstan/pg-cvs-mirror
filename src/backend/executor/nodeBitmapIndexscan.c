@@ -3,12 +3,12 @@
  * nodeBitmapIndexscan.c
  *	  Routines to support bitmapped index scans of relations
  *
- * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/nodeBitmapIndexscan.c,v 1.23 2007/05/25 17:54:25 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/nodeBitmapIndexscan.c,v 1.24 2007/11/15 21:14:34 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

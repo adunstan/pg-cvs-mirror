@@ -3,10 +3,10 @@
  * spi.h
  *				Server Programming Interface public declarations
  *
- * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/executor/spi.h,v 1.63 2007/08/15 19:15:46 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/executor/spi.h,v 1.64 2007/11/15 21:14:43 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

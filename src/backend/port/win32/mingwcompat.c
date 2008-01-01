@@ -3,10 +3,10 @@
  * mingwcompat.c
  *	  MinGW compatibility functions
  *
- * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/port/win32/mingwcompat.c,v 1.2 2007/10/29 14:04:42 mha Exp $
+ *	  $PostgreSQL: pgsql/src/backend/port/win32/mingwcompat.c,v 1.3 2007/11/15 21:14:37 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

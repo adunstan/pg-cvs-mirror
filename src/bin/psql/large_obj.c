@@ -1,9 +1,9 @@
 /*
  * psql - the PostgreSQL interactive terminal
  *
- * Copyright (c) 2000-2007, PostgreSQL Global Development Group
+ * Copyright (c) 2000-2008, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/psql/large_obj.c,v 1.48 2007/01/20 16:57:31 neilc Exp $
+ * $PostgreSQL: pgsql/src/bin/psql/large_obj.c,v 1.49 2007/12/12 21:41:47 tgl Exp $
  */
 #include "postgres_fe.h"
 #include "large_obj.h"

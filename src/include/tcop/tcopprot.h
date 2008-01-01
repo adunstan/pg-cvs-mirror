@@ -4,10 +4,10 @@
  *	  prototypes for postgres.c.
  *
  *
- * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/tcop/tcopprot.h,v 1.90 2007/07/25 12:22:54 mha Exp $
+ * $PostgreSQL: pgsql/src/include/tcop/tcopprot.h,v 1.91 2007/11/15 21:14:44 momjian Exp $
  *
  * OLD COMMENTS
  *	  This file was created so that other c files could get the two

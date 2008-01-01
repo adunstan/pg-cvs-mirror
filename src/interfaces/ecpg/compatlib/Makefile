@@ -2,10 +2,10 @@
 #
 # Makefile for ecpg compatibility library
 #
-# Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
+# Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
 # Portions Copyright (c) 1994, Regents of the University of California
 #
-# $PostgreSQL: pgsql/src/interfaces/ecpg/compatlib/Makefile,v 1.35 2007/10/04 18:32:07 tgl Exp $
+# $PostgreSQL: pgsql/src/interfaces/ecpg/compatlib/Makefile,v 1.36 2007/10/05 01:51:40 tgl Exp $
 #
 #-------------------------------------------------------------------------
 

@@ -17,12 +17,12 @@
  * append relations, and thenceforth share code with the UNION ALL case.
  *
  *
- * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/optimizer/prep/prepunion.c,v 1.144 2007/10/22 17:04:35 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/optimizer/prep/prepunion.c,v 1.145 2007/11/15 21:14:36 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

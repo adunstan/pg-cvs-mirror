@@ -3,10 +3,10 @@
  * postmaster.h
  *	  Exports from postmaster/postmaster.c.
  *
- * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/postmaster/postmaster.h,v 1.16 2007/02/16 02:59:41 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/postmaster/postmaster.h,v 1.17 2007/02/16 17:07:00 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

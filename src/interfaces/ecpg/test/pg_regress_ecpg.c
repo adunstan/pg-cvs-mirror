@@ -8,10 +8,10 @@
  *
  * This code is released under the terms of the PostgreSQL License.
  *
- * Portions Copyright (c) 1996-2007, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/interfaces/ecpg/test/pg_regress_ecpg.c,v 1.2 2007/06/14 13:10:11 mha Exp $
+ * $PostgreSQL: pgsql/src/interfaces/ecpg/test/pg_regress_ecpg.c,v 1.3 2007/11/15 21:14:46 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
