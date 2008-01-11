@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/optimizer/util/clauses.c,v 1.252 2007/11/22 19:09:23 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/optimizer/util/clauses.c,v 1.253 2008/01/01 19:45:50 momjian Exp $
  *
  * HISTORY
  *	  AUTHOR			DATE			MAJOR EVENT
@@ -448,7 +448,8 @@ count_agg_clauses_walker(Node *node, AggClauseCounts *counts)
 			aggtranstype = enforce_generic_type_consistency(inputTypes,
 															declaredArgTypes,
 															agg_nargs,
-															aggtranstype);
+															aggtranstype,
+															false);
 			pfree(declaredArgTypes);
 		}
 
