@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/backend/utils/adt/xml.c,v 1.63 2007/11/28 14:01:51 petere Exp $
+ * $PostgreSQL: pgsql/src/backend/utils/adt/xml.c,v 1.64 2008/01/01 19:45:53 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1821,9 +1821,10 @@ map_sql_value_to_xml_value(Datum value, Oid type)
 static char *
 _SPI_strdup(const char *s)
 {
-	char	   *ret = SPI_palloc(strlen(s) + 1);
+	size_t		len = strlen(s) + 1;
+	char	   *ret = SPI_palloc(len);
 
-	strcpy(ret, s);
+	memcpy(ret, s, len);
 	return ret;
 }
 
