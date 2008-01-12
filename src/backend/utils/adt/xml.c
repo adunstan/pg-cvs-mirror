@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/backend/utils/adt/xml.c,v 1.65 2008/01/12 10:38:32 neilc Exp $
+ * $PostgreSQL: pgsql/src/backend/utils/adt/xml.c,v 1.66 2008/01/12 10:50:03 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -957,6 +957,9 @@ xml_init(void)
 
 		/* Check library compatibility */
 		LIBXML_TEST_VERSION;
+
+		/* The above calls xmlInitParser(); must clean up dangling pointers */
+		xmlCleanupParser();
 
 		first_time = false;
 	}
