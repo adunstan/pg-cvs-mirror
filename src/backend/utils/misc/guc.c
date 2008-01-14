@@ -10,7 +10,7 @@
  * Written by Peter Eisentraut <peter_e@gmx.net>.
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.428 2007/12/28 00:23:23 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.429 2008/01/01 19:45:54 momjian Exp $
  *
  *--------------------------------------------------------------------
  */
@@ -4828,6 +4828,16 @@ GUC_complaint_elevel(GucSource source)
 		 * about problems with the config file.
 		 */
 		elevel = IsUnderPostmaster ? DEBUG3 : LOG;
+	}
+	else if (source == PGC_S_OVERRIDE)
+	{
+		/*
+		 * If we're a postmaster child, this is probably "undo" during
+		 * transaction abort, so we don't want to clutter the log.  There's
+		 * a small chance of a real problem with an OVERRIDE setting,
+		 * though, so suppressing the message entirely wouldn't be desirable.
+		 */
+		elevel = IsUnderPostmaster ? DEBUG5 : LOG;
 	}
 	else if (source < PGC_S_INTERACTIVE)
 		elevel = LOG;
