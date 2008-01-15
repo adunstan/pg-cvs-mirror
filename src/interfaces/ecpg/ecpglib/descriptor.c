@@ -1,6 +1,6 @@
 /* dynamic SQL support routines
  *
- * $PostgreSQL: pgsql/src/interfaces/ecpg/ecpglib/descriptor.c,v 1.27 2007/10/03 16:03:25 tgl Exp $
+ * $PostgreSQL: pgsql/src/interfaces/ecpg/ecpglib/descriptor.c,v 1.28 2007/11/15 21:14:45 momjian Exp $
  */
 
 #define POSTGRES_ECPG_INTERNAL
@@ -529,7 +529,7 @@ ECPGset_desc(int lineno, const char *desc_name, int index,...)
 	for (;;)
 	{
 		enum ECPGdtype itemtype;
-		const char *tobeinserted = NULL;
+		char *tobeinserted = NULL;
 
 		itemtype = va_arg(args, enum ECPGdtype);
 
