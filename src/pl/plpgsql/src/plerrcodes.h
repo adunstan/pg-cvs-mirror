@@ -9,7 +9,7 @@
  *
  * Copyright (c) 2003-2008, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/pl/plpgsql/src/plerrcodes.h,v 1.11 2007/01/05 22:20:02 momjian Exp $
+ * $PostgreSQL: pgsql/src/pl/plpgsql/src/plerrcodes.h,v 1.12 2008/01/01 19:46:00 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -241,6 +241,10 @@
 
 {
 	"untranslatable_character", ERRCODE_UNTRANSLATABLE_CHARACTER
+},
+
+{
+	"not_an_xml_document", ERRCODE_NOT_AN_XML_DOCUMENT
 },
 
 {
