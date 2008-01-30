@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/libpq/auth.c,v 1.161 2007/11/28 13:30:16 petere Exp $
+ *	  $PostgreSQL: pgsql/src/backend/libpq/auth.c,v 1.162 2008/01/01 19:45:49 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -384,7 +384,6 @@ pg_GSS_recvauth(Port *port)
 				min_stat,
 				lmin_s,
 				gflags;
-	char	   *kt_path;
 	int			mtype;
 	int			ret;
 	StringInfoData buf;
@@ -398,11 +397,19 @@ pg_GSS_recvauth(Port *port)
 		 * setenv("KRB5_KTNAME", pg_krb_server_keyfile, 0); except setenv()
 		 * not always available.
 		 */
-		if (!getenv("KRB5_KTNAME"))
+		if (getenv("KRB5_KTNAME") == NULL)
 		{
-			kt_path = palloc(MAXPGPATH + 13);
-			snprintf(kt_path, MAXPGPATH + 13,
-					 "KRB5_KTNAME=%s", pg_krb_server_keyfile);
+			size_t	kt_len = strlen(pg_krb_server_keyfile) + 14;
+			char   *kt_path = malloc(kt_len);
+
+			if (!kt_path)
+			{
+				ereport(LOG,
+						(errcode(ERRCODE_OUT_OF_MEMORY),
+						 errmsg("out of memory")));
+				return STATUS_ERROR;
+			}
+			snprintf(kt_path, kt_len, "KRB5_KTNAME=%s", pg_krb_server_keyfile);
 			putenv(kt_path);
 		}
 	}
