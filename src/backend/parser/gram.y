@@ -11,7 +11,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/parser/gram.y,v 2.604 2007/10/29 19:40:39 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/parser/gram.y,v 2.605 2008/01/01 19:45:50 momjian Exp $
  *
  * HISTORY
  *	  AUTHOR			DATE			MAJOR EVENT
@@ -4825,7 +4825,7 @@ AlterOwnerStmt: ALTER AGGREGATE func_name aggr_args OWNER TO RoleId
 				{
 					AlterOwnerStmt *n = makeNode(AlterOwnerStmt);
 					n->objectType = OBJECT_DATABASE;
-					n->object = list_make1($3);
+					n->object = list_make1(makeString($3));
 					n->newowner = $6;
 					$$ = (Node *)n;
 				}
@@ -4850,7 +4850,7 @@ AlterOwnerStmt: ALTER AGGREGATE func_name aggr_args OWNER TO RoleId
 				{
 					AlterOwnerStmt *n = makeNode(AlterOwnerStmt);
 					n->objectType = OBJECT_LANGUAGE;
-					n->object = list_make1($4);
+					n->object = list_make1(makeString($4));
 					n->newowner = $7;
 					$$ = (Node *)n;
 				}
@@ -4885,7 +4885,7 @@ AlterOwnerStmt: ALTER AGGREGATE func_name aggr_args OWNER TO RoleId
 				{
 					AlterOwnerStmt *n = makeNode(AlterOwnerStmt);
 					n->objectType = OBJECT_SCHEMA;
-					n->object = list_make1($3);
+					n->object = list_make1(makeString($3));
 					n->newowner = $6;
 					$$ = (Node *)n;
 				}
@@ -4901,7 +4901,7 @@ AlterOwnerStmt: ALTER AGGREGATE func_name aggr_args OWNER TO RoleId
 				{
 					AlterOwnerStmt *n = makeNode(AlterOwnerStmt);
 					n->objectType = OBJECT_TABLESPACE;
-					n->object = list_make1($3);
+					n->object = list_make1(makeString($3));
 					n->newowner = $6;
 					$$ = (Node *)n;
 				}
