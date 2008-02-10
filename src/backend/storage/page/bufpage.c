@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/storage/page/bufpage.c,v 1.76 2007/11/15 21:14:38 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/storage/page/bufpage.c,v 1.77 2008/01/01 19:45:52 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -488,6 +488,9 @@ PageGetExactFreeSpace(Page page)
 	 */
 	space = (int) ((PageHeader) page)->pd_upper -
 		(int) ((PageHeader) page)->pd_lower;
+
+	if (space < 0)
+		return 0;
 
 	return (Size) space;
 }
