@@ -27,7 +27,7 @@
  * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
- * $PostgreSQL: /cvsroot/pgsql-server/src/backend/regex/regerror.c,v 1.26 2003/08/04 00:43:21 momjian Exp $
+ * $PostgreSQL: pgsql/src/backend/regex/regerror.c,v 1.27 2003/11/29 19:51:55 pgsql Exp $
  *
  */
 
@@ -40,8 +40,8 @@ static char unk[] = "*** unknown regex error code 0x%x ***";
 static struct rerr
 {
 	int			code;
-	char	   *name;
-	char	   *explain;
+	const char *name;
+	const char *explain;
 }	rerrs[] =
 
 {
@@ -63,7 +63,7 @@ pg_regerror(int errcode,		/* error code, or REG_ATOI or REG_ITOA */
 			size_t errbuf_size) /* available space in errbuf, can be 0 */
 {
 	struct rerr *r;
-	char	   *msg;
+	const char *msg;
 	char		convbuf[sizeof(unk) + 50];		/* 50 = plenty for int */
 	size_t		len;
 	int			icode;
