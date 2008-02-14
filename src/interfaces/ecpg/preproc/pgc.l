@@ -12,7 +12,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/interfaces/ecpg/preproc/pgc.l,v 1.158 2008/01/11 15:19:16 meskes Exp $
+ *	  $PostgreSQL: pgsql/src/interfaces/ecpg/preproc/pgc.l,v 1.159 2008/01/15 10:31:47 meskes Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1320,7 +1320,7 @@ static bool isdefine(void)
 
 static bool isinformixdefine(void)
 {
-	const char *new = NULL;
+/*	const char *new = NULL;
 
 	if (strcmp(yytext, "dec_t") == 0)
 		new = "decimal";
@@ -1344,7 +1344,7 @@ static bool isinformixdefine(void)
 		yy_scan_string(new);
 		return true;
 	}
-
+*/
 	return false;
 }
 

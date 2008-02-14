@@ -1,10 +1,10 @@
-/* $PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.314 2006/03/07 02:54:23 momjian Exp $ */
+/* $PostgreSQL: pgsql/src/interfaces/ecpg/include/decimal.h,v 1.14 2006/03/11 04:38:39 momjian Exp $ */
 
 #ifndef _ECPG_DECIMAL_H
 #define _ECPG_DECIMAL_H
 
 #include <ecpg_informix.h>
 
-typedef decimal dec_t;
+/* typedef decimal dec_t; */
 
 #endif   /* ndef _ECPG_DECIMAL_H */
