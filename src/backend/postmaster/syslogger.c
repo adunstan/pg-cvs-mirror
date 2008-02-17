@@ -18,7 +18,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/postmaster/syslogger.c,v 1.43 2008/01/01 19:45:51 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/postmaster/syslogger.c,v 1.44 2008/01/25 20:42:10 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -331,7 +331,7 @@ SysLoggerMain(int argc, char *argv[])
 		if (!rotation_requested && Log_RotationAge > 0)
 		{
 			/* Do a logfile rotation if it's time */
-			pg_time_t	now = time(NULL);
+			pg_time_t	now = (pg_time_t) time(NULL);
 
 			if (now >= next_rotation_time)
 				rotation_requested = time_based_rotation = true;

@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/utils/timestamp.h,v 1.73 2008/01/01 19:45:59 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/utils/timestamp.h,v 1.74 2008/01/23 21:26:13 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -310,8 +310,8 @@ extern bool TimestampDifferenceExceeds(TimestampTz start_time,
 						   TimestampTz stop_time,
 						   int msec);
 
-extern TimestampTz time_t_to_timestamptz(time_t tm);
-extern time_t timestamptz_to_time_t(TimestampTz t);
+extern TimestampTz time_t_to_timestamptz(pg_time_t tm);
+extern pg_time_t timestamptz_to_time_t(TimestampTz t);
 
 extern const char *timestamptz_to_str(TimestampTz t);
 

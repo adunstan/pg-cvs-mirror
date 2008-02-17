@@ -26,7 +26,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $PostgreSQL: pgsql/contrib/pgcrypto/internal.c,v 1.26 2007/03/28 22:48:58 neilc Exp $
+ * $PostgreSQL: pgsql/contrib/pgcrypto/internal.c,v 1.27 2007/11/15 21:14:31 momjian Exp $
  */
 
 #include "postgres.h"
@@ -649,7 +649,8 @@ system_reseed(void)
 		skip = 1;
 	else if ((t - seed_time) > SYSTEM_RESEED_MAX)
 		skip = 0;
-	else if (!check_time || (t - check_time) > SYSTEM_RESEED_CHECK_TIME)
+	else if (check_time == 0 ||
+			 (t - check_time) > SYSTEM_RESEED_CHECK_TIME)
 	{
 		check_time = t;
 
