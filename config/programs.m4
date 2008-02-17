@@ -1,4 +1,4 @@
-# $PostgreSQL: pgsql/config/programs.m4,v 1.20 2006/05/23 19:28:45 momjian Exp $
+# $PostgreSQL: pgsql/config/programs.m4,v 1.21 2007/07/19 17:15:30 tgl Exp $
 
 
 # PGAC_PATH_YACC
@@ -201,10 +201,6 @@ AC_DEFUN([PGAC_CHECK_GETTEXT],
   AC_CHECK_PROGS(MSGMERGE, msgmerge)
 dnl FIXME: We should probably check for version >=0.10.36.
   AC_CHECK_PROGS(XGETTEXT, xgettext)
-
-  # Note: share/locale is always the default, independent of $datadir
-  localedir='${prefix}/share/locale'
-  AC_SUBST(localedir)
 ])# PGAC_CHECK_GETTEXT
 
 
