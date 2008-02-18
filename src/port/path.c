@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/port/path.c,v 1.73 2007/11/15 21:14:46 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/port/path.c,v 1.74 2008/01/01 19:46:00 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -597,6 +597,15 @@ void
 get_doc_path(const char *my_exec_path, char *ret_path)
 {
 	make_relative_path(ret_path, DOCDIR, PGBINDIR, my_exec_path);
+}
+
+/*
+ *	get_html_path
+ */
+void
+get_html_path(const char *my_exec_path, char *ret_path)
+{
+	make_relative_path(ret_path, HTMLDIR, PGBINDIR, my_exec_path);
 }
 
 /*
