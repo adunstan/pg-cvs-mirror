@@ -4,7 +4,7 @@
 #    Makefile for utils/misc
 #
 # IDENTIFICATION
-#    $PostgreSQL: pgsql/src/backend/utils/misc/Makefile,v 1.26 2006/07/25 03:51:21 tgl Exp $
+#    $PostgreSQL: pgsql/src/backend/utils/misc/Makefile,v 1.27 2007/01/20 17:16:14 petere Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -22,11 +22,7 @@ ifdef krb_srvtab
 override CPPFLAGS += -DPG_KRB_SRVTAB='"$(krb_srvtab)"'
 endif
 
-
-all: SUBSYS.o
-
-SUBSYS.o: $(OBJS)
-	$(LD) $(LDREL) $(LDOUT) SUBSYS.o $(OBJS)
+include $(top_srcdir)/src/backend/common.mk
 
 # guc-file is compiled as part of guc
 guc.o: $(srcdir)/guc-file.c
@@ -41,5 +37,4 @@ endif
 # Note: guc-file.c is not deleted by 'make clean',
 # since we want to ship it in distribution tarballs.
 clean: 
-	rm -f SUBSYS.o $(OBJS)
 	@rm -f lex.yy.c

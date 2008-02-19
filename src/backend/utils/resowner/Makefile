@@ -4,7 +4,7 @@
 #    Makefile for utils/resowner
 #
 # IDENTIFICATION
-#    $PostgreSQL: pgsql/src/backend/utils/resowner/Makefile,v 1.1 2004/07/17 03:30:10 tgl Exp $
+#    $PostgreSQL: pgsql/src/backend/utils/resowner/Makefile,v 1.2 2007/01/20 17:16:14 petere Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -14,10 +14,4 @@ include $(top_builddir)/src/Makefile.global
 
 OBJS = resowner.o
 
-all: SUBSYS.o
-
-SUBSYS.o: $(OBJS)
-	$(LD) $(LDREL) $(LDOUT) SUBSYS.o $(OBJS)
-
-clean: 
-	rm -f SUBSYS.o $(OBJS)
+include $(top_srcdir)/src/backend/common.mk

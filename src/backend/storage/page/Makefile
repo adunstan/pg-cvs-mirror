@@ -4,7 +4,7 @@
 #    Makefile for storage/page
 #
 # IDENTIFICATION
-#    $PostgreSQL: pgsql/src/backend/storage/page/Makefile,v 1.11 2003/11/29 19:51:57 pgsql Exp $
+#    $PostgreSQL: pgsql/src/backend/storage/page/Makefile,v 1.12 2007/01/20 17:16:13 petere Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -14,10 +14,4 @@ include $(top_builddir)/src/Makefile.global
 
 OBJS =  bufpage.o itemptr.o
 
-all: SUBSYS.o
-
-SUBSYS.o: $(OBJS)
-	$(LD) $(LDREL) $(LDOUT) SUBSYS.o $(OBJS)
-
-clean: 
-	rm -f SUBSYS.o $(OBJS)
+include $(top_srcdir)/src/backend/common.mk

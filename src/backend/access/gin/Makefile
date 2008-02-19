@@ -4,7 +4,7 @@
 #    Makefile for access/gin
 #
 # IDENTIFICATION
-#    $PostgreSQL: pgsql/src/backend/access/gin/Makefile,v 1.1 2006/05/02 11:28:54 teodor Exp $
+#    $PostgreSQL: pgsql/src/backend/access/gin/Makefile,v 1.2 2007/01/20 17:16:10 petere Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -16,10 +16,4 @@ OBJS = ginutil.o gininsert.o ginxlog.o ginentrypage.o gindatapage.o \
 	ginbtree.o ginscan.o ginget.o ginvacuum.o ginarrayproc.o \
 	ginbulk.o
 
-all: SUBSYS.o
-
-SUBSYS.o: $(OBJS)
-	$(LD) $(LDREL) $(LDOUT) SUBSYS.o $(OBJS)
-
-clean: 
-	rm -f SUBSYS.o $(OBJS)
+include $(top_srcdir)/src/backend/common.mk
