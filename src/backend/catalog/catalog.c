@@ -10,7 +10,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/catalog/catalog.c,v 1.71 2007/07/25 22:16:18 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/catalog/catalog.c,v 1.72 2008/01/01 19:45:48 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -374,6 +374,8 @@ GetNewOidWithIndex(Relation relation, Relation indexrel)
 	/* Generate new OIDs until we find one not in the table */
 	do
 	{
+		CHECK_FOR_INTERRUPTS();
+
 		newOid = GetNewObjectId();
 
 		ScanKeyInit(&key,
@@ -423,6 +425,8 @@ GetNewRelFileNode(Oid reltablespace, bool relisshared, Relation pg_class)
 
 	do
 	{
+		CHECK_FOR_INTERRUPTS();
+
 		/* Generate the OID */
 		if (pg_class)
 			rnode.relNode = GetNewOid(pg_class);
