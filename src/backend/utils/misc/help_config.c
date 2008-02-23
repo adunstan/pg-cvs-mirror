@@ -10,7 +10,7 @@
  * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/misc/help_config.c,v 1.18 2007/01/05 22:19:46 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/misc/help_config.c,v 1.19 2008/01/01 19:45:54 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -117,7 +117,7 @@ printMixedStruct(mixedStruct *structToPrint)
 
 		case PGC_STRING:
 			printf("STRING\t%s\t\t\t",
-				   structToPrint->string.boot_val);
+				   structToPrint->string.boot_val ? structToPrint->string.boot_val : "");
 			break;
 
 		default:
