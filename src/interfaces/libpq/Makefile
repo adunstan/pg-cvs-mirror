@@ -5,7 +5,7 @@
 # Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
 # Portions Copyright (c) 1994, Regents of the University of California
 #
-# $PostgreSQL: pgsql/src/interfaces/libpq/Makefile,v 1.161 2008/02/26 06:41:24 petere Exp $
+# $PostgreSQL: pgsql/src/interfaces/libpq/Makefile,v 1.162 2008/02/26 13:31:40 petere Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -66,7 +66,7 @@ endif
 
 SHLIB_EXPORTS = exports.txt
 
-all: $(srcdir)/libpq-dist.rc all-lib
+all: all-lib
 
 # Shared library stuff
 include $(top_srcdir)/src/Makefile.shlib
