@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/cache/relcache.c,v 1.230.2.3 2006/01/19 20:28:48 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/cache/relcache.c,v 1.230.2.4 2006/11/05 23:40:38 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -2239,7 +2239,10 @@ RelationCacheInitializePhase2(void)
 
 #define LOAD_CRIT_INDEX(indexoid) \
 		do { \
-			ird = RelationBuildDesc((indexoid), NULL); \
+			ird = RelationBuildDesc(indexoid, NULL); \
+			if (ird == NULL) \
+				elog(PANIC, "could not open critical system index %u", \
+					 indexoid); \
 			ird->rd_isnailed = true; \
 			ird->rd_refcnt = 1; \
 		} while (0)
