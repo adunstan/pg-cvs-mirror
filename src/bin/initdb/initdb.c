@@ -42,7 +42,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  * Portions taken from FreeBSD.
  *
- * $PostgreSQL: pgsql/src/bin/initdb/initdb.c,v 1.152 2008/01/01 19:45:55 momjian Exp $
+ * $PostgreSQL: pgsql/src/bin/initdb/initdb.c,v 1.152.2.1 2008/02/29 15:31:40 mha Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -2349,7 +2349,9 @@ CreateRestrictedProcess(char *cmd, PROCESS_INFORMATION * processInfo)
 		return 0;
 	}
 
+#ifndef __CYGWIN__
 	AddUserToDacl(processInfo->hProcess);
+#endif
 
 	return ResumeThread(processInfo->hThread);
 }
