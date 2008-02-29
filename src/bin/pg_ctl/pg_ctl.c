@@ -4,7 +4,7 @@
  *
  * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/pg_ctl/pg_ctl.c,v 1.92 2008/01/01 19:45:55 momjian Exp $
+ * $PostgreSQL: pgsql/src/bin/pg_ctl/pg_ctl.c,v 1.92.2.1 2008/02/20 22:18:20 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1471,6 +1471,8 @@ CreateRestrictedProcess(char *cmd, PROCESS_INFORMATION * processInfo)
 		}
 	}
 
+    AddUserToDacl(processInfo->hProcess);
+    
 	CloseHandle(restrictedToken);
 
 	ResumeThread(processInfo->hThread);
