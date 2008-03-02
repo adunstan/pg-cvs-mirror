@@ -1,4 +1,4 @@
-/* $PostgreSQL: pgsql/src/interfaces/ecpg/preproc/type.c,v 1.76 2007/11/15 21:14:45 momjian Exp $ */
+/* $PostgreSQL: pgsql/src/interfaces/ecpg/preproc/type.c,v 1.77 2007/12/21 14:33:20 meskes Exp $ */
 
 #include "postgres_fe.h"
 
@@ -259,7 +259,7 @@ ECPGdump_a_type(FILE *o, const char *name, struct ECPGtype * type,
 
 					ECPGdump_a_simple(o, name,
 									  type->u.element->type,
-									  type->u.element->size, type->size, NULL, prefix, type->lineno);
+									  type->u.element->size, type->size, NULL, prefix, type->u.element->lineno);
 
 					if (ind_type != NULL)
 					{
