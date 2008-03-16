@@ -7,7 +7,7 @@
  *
  * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  *
- *	  $PostgreSQL: pgsql/src/include/utils/guc_tables.h,v 1.38 2008/01/01 19:45:59 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/include/utils/guc_tables.h,v 1.39 2008/03/10 12:55:13 mha Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -35,15 +35,6 @@ union config_var_value
 	double		realval;
 	char	   *stringval;
 	int			enumval;
-};
-
-/*
- * Enum values are made up of an array of name-value pairs
- */
-struct config_enum_entry
-{
-	const char *name;
-	int			val;
 };
 
 /*
