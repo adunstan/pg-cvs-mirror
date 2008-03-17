@@ -4,7 +4,7 @@
 #
 # 'make install' installs whole contents of src/include.
 #
-# $PostgreSQL: pgsql/src/include/Makefile,v 1.22 2007/09/10 20:37:36 teodor Exp $
+# $PostgreSQL: pgsql/src/include/Makefile,v 1.23 2007/10/14 17:07:51 tgl Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -60,7 +60,7 @@ uninstall:
 
 
 clean:
-	rm -f utils/fmgroids.h parser/parse.h
+	rm -f utils/fmgroids.h parser/parse.h utils/probes.h
 
 distclean maintainer-clean: clean
 	rm -f pg_config.h dynloader.h pg_config_os.h stamp-h
