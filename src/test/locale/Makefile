@@ -1,4 +1,4 @@
-# $PostgreSQL: /cvsroot/pgsql-server/src/test/locale/Makefile,v 1.8 2002/09/03 21:45:44 petere Exp $
+# $PostgreSQL: pgsql/src/test/locale/Makefile,v 1.9 2003/11/29 19:52:14 pgsql Exp $
 
 subdir = src/test/locale
 top_builddir = ../../..
@@ -13,7 +13,7 @@ all: $(PROGS)
 clean: 
 	rm -f $(PROGS)
 	for d in $(DIRS); do \
-		$(MAKE) -C $$d clean; \
+		$(MAKE) -C $$d clean || exit; \
 	done
 
 check-%: all

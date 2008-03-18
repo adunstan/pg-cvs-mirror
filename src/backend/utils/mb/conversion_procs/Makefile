@@ -4,7 +4,7 @@
 #    Makefile for utils/mb/conversion_procs
 #
 # IDENTIFICATION
-#    $PostgreSQL: pgsql/src/backend/utils/mb/conversion_procs/Makefile,v 1.17 2006/02/27 16:09:49 petere Exp $
+#    $PostgreSQL: pgsql/src/backend/utils/mb/conversion_procs/Makefile,v 1.18 2007/03/25 11:56:02 ishii Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -164,7 +164,8 @@ all: $(SQLSCRIPT)
 
 $(SQLSCRIPT): Makefile
 ifeq ($(enable_shared), yes)
-	@set $(CONVERSIONS) ; \
+	@set -e; \
+	set $(CONVERSIONS) ; \
 	while [ "$$#" -gt 0 ] ; \
 	do \
 		name=$$1;shift; \
@@ -182,7 +183,8 @@ else
 endif
 
 $(REGRESSION_SCRIPT): Makefile
-	@cp regress_prolog $@; \
+	@set -e; \
+	cp regress_prolog $@; \
 	set $(CONVERSIONS) ; \
 	while [ "$$#" -gt 0 ] ; \
 	do \
@@ -210,5 +212,5 @@ uninstall:
 
 clean distclean maintainer-clean:
 	rm -f $(SQLSCRIPT)
-	@for dir in $(DIRS); do $(MAKE) -C $$dir $@; done
+	@for dir in $(DIRS); do $(MAKE) -C $$dir $@ || exit; done
 

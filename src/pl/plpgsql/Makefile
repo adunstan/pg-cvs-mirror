@@ -4,7 +4,7 @@
 #
 # Copyright (c) 1994, Regents of the University of California
 #
-# $PostgreSQL: /cvsroot/pgsql-server/src/pl/plpgsql/Makefile,v 1.7 2001/05/24 22:33:18 momjian Exp $
+# $PostgreSQL: pgsql/src/pl/plpgsql/Makefile,v 1.8 2003/11/29 19:52:12 pgsql Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -12,8 +12,5 @@ subdir = src/pl/plpgsql
 top_builddir = ../../..
 include $(top_builddir)/src/Makefile.global
 
-all install installdirs uninstall distprep:
+all install installdirs uninstall distprep clean distclean maintainer-clean:
 	$(MAKE) -C src $@
-
-clean distclean maintainer-clean:
-	-$(MAKE) -C src $@
