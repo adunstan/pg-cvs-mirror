@@ -1,4 +1,4 @@
-<!-- $PostgreSQL: pgsql/doc/src/sgml/acronyms.sgml,v 1.3 2007/11/01 20:27:33 tgl Exp $ -->
+<!-- $PostgreSQL: pgsql/doc/src/sgml/acronyms.sgml,v 1.4 2007/11/09 22:22:46 alvherre Exp $ -->
 
 <appendix id="acronyms">
  <title>Acronyms</title>
@@ -292,7 +292,7 @@
     <listitem>
      <para>
       <ulink
-      url="http://developer.postgresql.org/cvsweb.cgi/pgsql/src/backend/access/heap/README.HOT">Heap-Only
+      url="http://anoncvs.postgresql.org/cvsweb.cgi/pgsql/src/backend/access/heap/README.HOT">Heap-Only
       Tuples</ulink>
      </para>
     </listitem>
