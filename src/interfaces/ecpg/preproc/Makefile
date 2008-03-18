@@ -4,7 +4,7 @@
 #
 # Copyright (c) 1998-2008, PostgreSQL Global Development Group
 #
-# $PostgreSQL: pgsql/src/interfaces/ecpg/preproc/Makefile,v 1.130 2008/01/01 19:45:59 momjian Exp $
+# $PostgreSQL: pgsql/src/interfaces/ecpg/preproc/Makefile,v 1.131 2008/02/13 18:14:46 momjian Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -22,9 +22,6 @@ override CPPFLAGS := -I../include -I$(top_srcdir)/src/interfaces/ecpg/include \
 	-DMINOR_VERSION=$(MINOR_VERSION) -DPATCHLEVEL=$(PATCHLEVEL) \
 	 $(CPPFLAGS)
 
-ifeq ($(GCC), yes)
-override CFLAGS += -Wno-error
-endif
 override CFLAGS += $(PTHREAD_CFLAGS)
 
 OBJS=	preproc.o type.o ecpg.o output.o parser.o \
