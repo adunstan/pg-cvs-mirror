@@ -55,7 +55,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/postmaster/autovacuum.c,v 1.73 2008/03/14 17:25:58 alvherre Exp $
+ *	  $PostgreSQL: pgsql/src/backend/postmaster/autovacuum.c,v 1.74 2008/03/14 23:49:28 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1849,9 +1849,6 @@ do_autovacuum(void)
 
 	/* Start a transaction so our commands have one to play into. */
 	StartTransactionCommand();
-
-	/* functions in indexes may want a snapshot set */
-	ActiveSnapshot = CopySnapshot(GetTransactionSnapshot());
 
 	/*
 	 * Clean up any dead statistics collector entries for this DB. We always
