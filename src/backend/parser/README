@@ -1,3 +1,8 @@
+$PostgreSQL: pgsql/src/backend/access/gist/README,v 1.3 2005/09/16 14:40:54 teodor Exp $
+
+Parser
+------
+
 This directory does more than tokenize and parse SQL queries.  It also
 creates Query structures for the various complex queries that are passed
 to the optimizer and then executor.
