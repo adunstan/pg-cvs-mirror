@@ -1,3 +1,8 @@
+$PostgreSQL: pgsql/src/backend/access/gin/README,v 1.5 2008/03/20 17:55:14 momjian Exp $
+
+SSL
+===
+
 >From the servers perspective:
 
 

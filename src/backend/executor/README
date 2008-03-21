@@ -1,7 +1,7 @@
-$PostgreSQL: pgsql/src/backend/executor/README,v 1.5 2005/04/28 21:47:12 tgl Exp $
+$PostgreSQL: pgsql/src/backend/executor/README,v 1.6 2008/03/20 17:55:14 momjian Exp $
 
 The Postgres Executor
----------------------
+=====================
 
 The executor processes a tree of "plan nodes".  The plan tree is essentially
 a demand-pull pipeline of tuple processing operations.  Each node, when

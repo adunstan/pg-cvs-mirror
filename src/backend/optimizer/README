@@ -1,7 +1,7 @@
-$PostgreSQL: pgsql/src/backend/access/gist/README,v 1.3 2005/09/16 14:40:54 teodor Exp $
+$PostgreSQL: pgsql/src/backend/optimizer/README,v 1.42 2008/03/20 17:55:14 momjian Exp $
 
 Optimizer
----------
+=========
 
 These directories take the Query structure returned by the parser, and
 generate a plan used by the executor.  The /plan directory generates the

@@ -1,3 +1,8 @@
+$PostgreSQL: pgsql/src/backend/access/gin/README,v 1.5 2008/03/20 17:55:14 momjian Exp $
+
+dynaloader
+==========
+
 Copyright (c) 1992,1993,1995, Jens-Uwe Mager, Helios Software GmbH
 Not derived from licensed software.
 

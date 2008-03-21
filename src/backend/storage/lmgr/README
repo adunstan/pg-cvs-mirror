@@ -1,7 +1,7 @@
-$PostgreSQL: pgsql/src/backend/storage/lmgr/README,v 1.22 2007/10/26 20:45:10 alvherre Exp $
+$PostgreSQL: pgsql/src/backend/storage/lmgr/README,v 1.23 2008/03/20 17:55:15 momjian Exp $
 
 Locking Overview
-----------------
+================
 
 Postgres uses three types of interprocess locks:
 

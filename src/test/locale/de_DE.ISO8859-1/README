@@ -1,2 +1,4 @@
+$PostgreSQL: pgsql/src/backend/access/gin/README,v 1.5 2008/03/20 17:55:14 momjian Exp $
+
 de_DE.ISO-8859-1 (German) locale test.
 Created by Armin Diehl <diehl@net-connection.de>

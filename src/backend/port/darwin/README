@@ -1,7 +1,7 @@
-$PostgreSQL: pgsql/src/backend/access/gist/README,v 1.3 2005/09/16 14:40:54 teodor Exp $
+$PostgreSQL: pgsql/src/backend/port/darwin/README,v 1.4 2008/03/20 17:55:14 momjian Exp $
 
 Darwin
-------
+======
 
 The file system.c included herein is taken directly from Apple's Darwin
 open-source CVS archives, and is redistributed under the BSD copyright
