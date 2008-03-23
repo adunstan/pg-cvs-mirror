@@ -7,7 +7,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/quote.c,v 1.22 2007/02/27 23:48:08 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/quote.c,v 1.23 2008/01/01 19:45:52 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -95,4 +95,20 @@ quote_literal(PG_FUNCTION_ARGS)
 	SET_VARSIZE(result, cp2 - ((char *) result));
 
 	PG_RETURN_TEXT_P(result);
+}
+
+/*
+ * quote_nullable -
+ *    Returns a properly quoted literal, with null values returned
+ *    as the text string 'NULL'.
+ */
+Datum
+quote_nullable(PG_FUNCTION_ARGS)
+{
+	if (PG_ARGISNULL(0))
+		PG_RETURN_DATUM(DirectFunctionCall1(textin,
+											CStringGetDatum("NULL")));
+	else
+		PG_RETURN_DATUM(DirectFunctionCall1(quote_literal,
+											PG_GETARG_DATUM(0)));
 }
