@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/catalog/pg_shdepend.c,v 1.22 2008/01/01 19:45:48 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/catalog/pg_shdepend.c,v 1.23 2008/01/23 15:36:38 alvherre Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -670,7 +670,7 @@ checkSharedDependencies(Oid classId, Oid objectId)
 		ereport(LOG,
 				(errmsg("there are objects dependent on %s",
 						getObjectDescription(&obj)),
-				 errdetail(alldescs.data)));
+				 errdetail("%s", alldescs.data)));
 	}
 
 	pfree(alldescs.data);
