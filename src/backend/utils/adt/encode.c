@@ -7,7 +7,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/encode.c,v 1.20 2008/01/01 19:45:52 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/encode.c,v 1.21 2008/02/26 02:54:08 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -46,7 +46,7 @@ binary_encode(PG_FUNCTION_ARGS)
 
 	datalen = VARSIZE(data) - VARHDRSZ;
 
-	namebuf = DatumGetCString(DirectFunctionCall1(textout, name));
+	namebuf = TextDatumGetCString(name);
 
 	enc = pg_find_encoding(namebuf);
 	if (enc == NULL)
@@ -82,7 +82,7 @@ binary_decode(PG_FUNCTION_ARGS)
 
 	datalen = VARSIZE(data) - VARHDRSZ;
 
-	namebuf = DatumGetCString(DirectFunctionCall1(textout, name));
+	namebuf = TextDatumGetCString(name);
 
 	enc = pg_find_encoding(namebuf);
 	if (enc == NULL)

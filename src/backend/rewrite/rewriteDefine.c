@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/rewrite/rewriteDefine.c,v 1.123 2007/11/15 21:14:37 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/rewrite/rewriteDefine.c,v 1.124 2008/01/01 19:45:51 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -83,8 +83,8 @@ InsertRule(char *rulname,
 	values[i++] = CharGetDatum(evtype + '0');	/* ev_type */
 	values[i++] = CharGetDatum(RULE_FIRES_ON_ORIGIN);	/* ev_enabled */
 	values[i++] = BoolGetDatum(evinstead);		/* is_instead */
-	values[i++] = DirectFunctionCall1(textin, CStringGetDatum(evqual)); /* ev_qual */
-	values[i++] = DirectFunctionCall1(textin, CStringGetDatum(actiontree));		/* ev_action */
+	values[i++] = CStringGetTextDatum(evqual);	/* ev_qual */
+	values[i++] = CStringGetTextDatum(actiontree);		/* ev_action */
 
 	/*
 	 * Ready to store new pg_rewrite tuple

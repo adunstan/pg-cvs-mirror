@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/execQual.c,v 1.226 2008/01/01 19:45:49 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/execQual.c,v 1.227 2008/03/25 19:26:53 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -3039,13 +3039,7 @@ ExecEvalXml(XmlExprState *xmlExpr, ExprContext *econtext,
 	if (*isNull)
 		result = NULL;
 	else
-	{
-		int			len = buf.len + VARHDRSZ;
-
-		result = palloc(len);
-		SET_VARSIZE(result, len);
-		memcpy(VARDATA(result), buf.data, buf.len);
-	}
+		result = cstring_to_text_with_len(buf.data, buf.len);
 
 	pfree(buf.data);
 	return PointerGetDatum(result);

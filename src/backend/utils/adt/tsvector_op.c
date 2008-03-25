@@ -7,7 +7,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/tsvector_op.c,v 1.12 2008/01/01 19:45:53 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/tsvector_op.c,v 1.13 2008/03/05 15:50:37 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1082,7 +1082,7 @@ ts_process_call(FuncCallContext *funcctx)
 static tsstat *
 ts_stat_sql(text *txt, text *ws)
 {
-	char	   *query = TextPGetCString(txt);
+	char	   *query = text_to_cstring(txt);
 	int			i;
 	tsstat	   *newstat,
 			   *stat;
