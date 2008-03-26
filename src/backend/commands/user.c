@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/backend/commands/user.c,v 1.179 2008/03/24 19:47:35 tgl Exp $
+ * $PostgreSQL: pgsql/src/backend/commands/user.c,v 1.180 2008/03/25 22:42:43 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -30,6 +30,7 @@
 #include "utils/guc.h"
 #include "utils/lsyscache.h"
 #include "utils/syscache.h"
+#include "utils/tqual.h"
 
 
 extern bool Password_encryption;

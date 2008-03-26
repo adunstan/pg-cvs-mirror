@@ -13,7 +13,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/dbcommands.c,v 1.203 2007/11/15 21:14:33 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/dbcommands.c,v 1.204 2008/01/01 19:45:48 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -50,6 +50,7 @@
 #include "utils/guc.h"
 #include "utils/lsyscache.h"
 #include "utils/syscache.h"
+#include "utils/tqual.h"
 
 
 /* non-export function prototypes */

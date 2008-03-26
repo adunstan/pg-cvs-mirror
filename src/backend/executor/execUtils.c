@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/execUtils.c,v 1.153 2007/11/30 21:22:54 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/execUtils.c,v 1.154 2008/01/01 19:45:49 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -49,6 +49,7 @@
 #include "parser/parsetree.h"
 #include "utils/memutils.h"
 #include "utils/relcache.h"
+#include "utils/tqual.h"
 
 
 /* ----------------------------------------------------------------

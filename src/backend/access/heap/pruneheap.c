@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/heap/pruneheap.c,v 1.7 2008/03/08 21:57:59 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/heap/pruneheap.c,v 1.8 2008/03/13 18:00:32 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -19,6 +19,7 @@
 #include "miscadmin.h"
 #include "pgstat.h"
 #include "utils/inval.h"
+#include "utils/tqual.h"
 
 
 /* Working data for heap_page_prune and subroutines */

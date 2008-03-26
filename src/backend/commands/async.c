@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/async.c,v 1.138 2008/01/01 19:45:48 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/async.c,v 1.139 2008/03/12 20:11:46 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -101,6 +101,7 @@
 #include "utils/fmgroids.h"
 #include "utils/memutils.h"
 #include "utils/ps_status.h"
+#include "utils/tqual.h"
 
 
 /*

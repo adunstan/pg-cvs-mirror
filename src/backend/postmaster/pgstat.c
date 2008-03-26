@@ -13,7 +13,7 @@
  *
  *	Copyright (c) 2001-2008, PostgreSQL Global Development Group
  *
- *	$PostgreSQL: pgsql/src/backend/postmaster/pgstat.c,v 1.170 2008/03/21 21:08:31 tgl Exp $
+ *	$PostgreSQL: pgsql/src/backend/postmaster/pgstat.c,v 1.171 2008/03/24 18:22:36 tgl Exp $
  * ----------
  */
 #include "postgres.h"
@@ -58,6 +58,7 @@
 #include "utils/guc.h"
 #include "utils/memutils.h"
 #include "utils/ps_status.h"
+#include "utils/tqual.h"
 
 
 /* ----------

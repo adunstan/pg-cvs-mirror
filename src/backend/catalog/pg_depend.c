@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/catalog/pg_depend.c,v 1.25 2007/12/01 23:44:44 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/catalog/pg_depend.c,v 1.26 2008/01/01 19:45:48 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -23,6 +23,7 @@
 #include "miscadmin.h"
 #include "utils/fmgroids.h"
 #include "utils/lsyscache.h"
+#include "utils/tqual.h"
 
 
 static bool isObjectPinned(const ObjectAddress *object, Relation rel);

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/heap/heapam.c,v 1.252 2008/03/26 16:20:46 alvherre Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/heap/heapam.c,v 1.253 2008/03/26 18:48:58 alvherre Exp $
  *
  *
  * INTERFACE ROUTINES
@@ -58,6 +58,7 @@
 #include "utils/relcache.h"
 #include "utils/snapmgr.h"
 #include "utils/syscache.h"
+#include "utils/tqual.h"
 
 
 /* GUC variable */

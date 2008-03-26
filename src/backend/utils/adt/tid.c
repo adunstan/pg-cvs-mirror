@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/tid.c,v 1.58 2007/08/27 00:57:36 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/tid.c,v 1.59 2008/01/01 19:45:52 momjian Exp $
  *
  * NOTES
  *	  input routine largely stolen from boxin().
@@ -28,6 +28,7 @@
 #include "parser/parsetree.h"
 #include "utils/acl.h"
 #include "utils/builtins.h"
+#include "utils/tqual.h"
 
 
 #define DatumGetItemPointer(X)	 ((ItemPointer) DatumGetPointer(X))

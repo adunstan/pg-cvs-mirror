@@ -26,7 +26,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/execMain.c,v 1.302 2008/01/01 19:45:49 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/execMain.c,v 1.303 2008/02/07 17:09:51 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -52,6 +52,7 @@
 #include "utils/acl.h"
 #include "utils/lsyscache.h"
 #include "utils/memutils.h"
+#include "utils/tqual.h"
 
 
 typedef struct evalPlanQual

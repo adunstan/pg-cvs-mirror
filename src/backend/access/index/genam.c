@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/index/genam.c,v 1.63 2007/09/20 17:56:30 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/index/genam.c,v 1.64 2008/01/01 19:45:46 momjian Exp $
  *
  * NOTES
  *	  many of the old access method routines have been turned into
@@ -24,6 +24,7 @@
 #include "access/transam.h"
 #include "miscadmin.h"
 #include "pgstat.h"
+#include "utils/tqual.h"
 
 
 /* ----------------------------------------------------------------

@@ -24,7 +24,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/storage/large_object/inv_api.c,v 1.129 2008/03/26 16:20:47 alvherre Exp $
+ *	  $PostgreSQL: pgsql/src/backend/storage/large_object/inv_api.c,v 1.130 2008/03/26 18:48:59 alvherre Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -43,6 +43,7 @@
 #include "utils/fmgroids.h"
 #include "utils/resowner.h"
 #include "utils/snapmgr.h"
+#include "utils/tqual.h"
 
 
 /*

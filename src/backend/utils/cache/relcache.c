@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/cache/relcache.c,v 1.267 2008/02/27 17:44:19 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/cache/relcache.c,v 1.268 2008/03/25 22:42:44 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -63,6 +63,7 @@
 #include "utils/relcache.h"
 #include "utils/resowner.h"
 #include "utils/syscache.h"
+#include "utils/tqual.h"
 #include "utils/typcache.h"
 
 

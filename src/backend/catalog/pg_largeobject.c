@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/catalog/pg_largeobject.c,v 1.27 2007/01/05 22:19:25 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/catalog/pg_largeobject.c,v 1.28 2008/01/01 19:45:48 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -20,6 +20,7 @@
 #include "catalog/pg_largeobject.h"
 #include "utils/builtins.h"
 #include "utils/fmgroids.h"
+#include "utils/tqual.h"
 
 
 /*

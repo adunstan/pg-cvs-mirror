@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/ruleutils.c,v 1.269 2008/01/06 01:03:16 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/ruleutils.c,v 1.270 2008/03/25 22:42:44 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -45,6 +45,7 @@
 #include "rewrite/rewriteSupport.h"
 #include "utils/fmgroids.h"
 #include "utils/lsyscache.h"
+#include "utils/tqual.h"
 #include "utils/typcache.h"
 #include "utils/xml.h"
 
