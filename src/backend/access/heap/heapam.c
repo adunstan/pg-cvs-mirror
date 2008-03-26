@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/heap/heapam.c,v 1.250 2008/03/04 19:54:06 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/heap/heapam.c,v 1.251 2008/03/08 21:57:59 tgl Exp $
  *
  *
  * INTERFACE ROUTINES
@@ -56,6 +56,7 @@
 #include "utils/inval.h"
 #include "utils/lsyscache.h"
 #include "utils/relcache.h"
+#include "utils/snapmgmt.h"
 #include "utils/syscache.h"
 
 

@@ -23,7 +23,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/storage/ipc/procarray.c,v 1.40 2008/01/09 21:52:36 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/storage/ipc/procarray.c,v 1.41 2008/03/11 20:20:35 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -37,7 +37,7 @@
 #include "access/twophase.h"
 #include "miscadmin.h"
 #include "storage/procarray.h"
-#include "utils/tqual.h"
+#include "utils/snapmgmt.h"
 
 
 /* Our shared memory area */

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/tcop/fastpath.c,v 1.96 2007/03/03 19:32:54 neilc Exp $
+ *	  $PostgreSQL: pgsql/src/backend/tcop/fastpath.c,v 1.97 2008/01/01 19:45:52 momjian Exp $
  *
  * NOTES
  *	  This cruft is the server side of PQfn.
@@ -30,6 +30,7 @@
 #include "tcop/tcopprot.h"
 #include "utils/acl.h"
 #include "utils/lsyscache.h"
+#include "utils/snapmgmt.h"
 #include "utils/syscache.h"
 
 

@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/optimizer/util/plancat.c,v 1.140 2008/01/12 00:11:39 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/optimizer/util/plancat.c,v 1.141 2008/03/15 20:46:31 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -33,6 +33,7 @@
 #include "utils/fmgroids.h"
 #include "utils/lsyscache.h"
 #include "utils/relcache.h"
+#include "utils/snapmgmt.h"
 #include "utils/syscache.h"
 #include "catalog/catalog.h"
 #include "miscadmin.h"

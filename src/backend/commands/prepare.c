@@ -10,7 +10,7 @@
  * Copyright (c) 2002-2008, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/prepare.c,v 1.81 2008/03/25 19:26:53 neilc Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/prepare.c,v 1.82 2008/03/25 22:42:42 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -32,6 +32,7 @@
 #include "tcop/utility.h"
 #include "utils/builtins.h"
 #include "utils/memutils.h"
+#include "utils/snapmgmt.h"
 
 
 /*

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/catalog/index.c,v 1.292 2008/01/30 19:46:48 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/catalog/index.c,v 1.293 2008/03/25 22:42:42 tgl Exp $
  *
  *
  * INTERFACE ROUTINES
@@ -55,6 +55,7 @@
 #include "utils/relcache.h"
 #include "utils/syscache.h"
 #include "utils/tuplesort.h"
+#include "utils/snapmgmt.h"
 
 
 /* state info for validate_index bulkdelete callback */

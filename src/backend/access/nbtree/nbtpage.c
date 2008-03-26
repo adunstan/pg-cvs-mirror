@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/nbtree/nbtpage.c,v 1.105 2007/12/31 04:52:05 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/nbtree/nbtpage.c,v 1.106 2008/01/01 19:45:46 momjian Exp $
  *
  *	NOTES
  *	   Postgres btree pages look like ordinary relation pages.	The opaque
@@ -28,6 +28,7 @@
 #include "storage/freespace.h"
 #include "storage/lmgr.h"
 #include "utils/inval.h"
+#include "utils/snapmgmt.h"
 
 
 /*
