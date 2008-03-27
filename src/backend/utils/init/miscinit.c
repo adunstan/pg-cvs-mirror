@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/init/miscinit.c,v 1.165 2008/01/01 19:45:53 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/init/miscinit.c,v 1.166 2008/01/03 21:23:15 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -841,8 +841,7 @@ CreateLockFile(const char *filename, bool amPostmaster,
 										id1, id2),
 								 errhint("If you're sure there are no old "
 									"server processes still running, remove "
-										 "the shared memory block with "
-									  "the command \"ipcclean\", \"ipcrm\", "
+										 "the shared memory block "
 										 "or just delete the file \"%s\".",
 										 filename)));
 				}
