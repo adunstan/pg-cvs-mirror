@@ -17,12 +17,12 @@
  *
  * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/pg_config/pg_config.c,v 1.26 2008/01/01 19:45:55 momjian Exp $
+ * $PostgreSQL: pgsql/src/bin/pg_config/pg_config.c,v 1.27 2008/02/18 14:51:48 petere Exp $
  *
  *-------------------------------------------------------------------------
  */
 
-#include "postgres.h"
+#include "postgres_fe.h"
 
 #include "port.h"
 

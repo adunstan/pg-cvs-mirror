@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/pl/plpgsql/src/pl_comp.c,v 1.121 2008/01/01 19:46:00 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/pl/plpgsql/src/pl_comp.c,v 1.122 2008/03/25 22:42:45 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -25,6 +25,7 @@
 #include "catalog/pg_attribute.h"
 #include "catalog/pg_class.h"
 #include "catalog/pg_proc.h"
+#include "catalog/pg_proc_fn.h"
 #include "catalog/pg_type.h"
 #include "funcapi.h"
 #include "nodes/makefuncs.h"

@@ -3,12 +3,10 @@
  *
  * Copyright (c) 2000-2008, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/psql/print.c,v 1.95 2007/12/12 21:41:47 tgl Exp $
- *
- * Note: we include postgres.h not postgres_fe.h so that we can include
- * catalog/pg_type.h, and thereby have access to INT4OID and similar macros.
+ * $PostgreSQL: pgsql/src/bin/psql/print.c,v 1.96 2008/01/01 19:45:56 momjian Exp $
  */
-#include "postgres.h"
+#include "postgres_fe.h"
+
 #include "print.h"
 #include "catalog/pg_type.h"
 

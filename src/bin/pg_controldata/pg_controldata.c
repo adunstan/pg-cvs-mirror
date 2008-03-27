@@ -6,9 +6,9 @@
  * copyright (c) Oliver Elphick <olly@lfix.co.uk>, 2001;
  * licence: BSD
  *
- * $PostgreSQL: pgsql/src/bin/pg_controldata/pg_controldata.c,v 1.36 2008/01/21 11:17:46 petere Exp $
+ * $PostgreSQL: pgsql/src/bin/pg_controldata/pg_controldata.c,v 1.37 2008/02/17 02:09:29 tgl Exp $
  */
-#include "postgres.h"
+#include "postgres_fe.h"
 
 #include <unistd.h>
 #include <time.h>

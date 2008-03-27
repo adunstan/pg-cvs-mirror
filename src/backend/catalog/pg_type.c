@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/catalog/pg_type.c,v 1.116 2008/03/19 18:38:30 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/catalog/pg_type.c,v 1.117 2008/03/25 22:42:42 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -21,6 +21,7 @@
 #include "catalog/pg_namespace.h"
 #include "catalog/pg_proc.h"
 #include "catalog/pg_type.h"
+#include "catalog/pg_type_fn.h"
 #include "commands/typecmds.h"
 #include "miscadmin.h"
 #include "parser/scansup.h"

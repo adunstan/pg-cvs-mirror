@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/catalog/pg_proc.c,v 1.149 2008/03/18 22:04:14 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/catalog/pg_proc.c,v 1.150 2008/03/25 22:42:42 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -21,6 +21,7 @@
 #include "catalog/pg_language.h"
 #include "catalog/pg_namespace.h"
 #include "catalog/pg_proc.h"
+#include "catalog/pg_proc_fn.h"
 #include "catalog/pg_type.h"
 #include "executor/functions.h"
 #include "funcapi.h"

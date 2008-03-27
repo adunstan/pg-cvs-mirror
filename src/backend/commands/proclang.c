@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/proclang.c,v 1.75 2008/03/25 22:42:42 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/proclang.c,v 1.76 2008/03/26 21:10:37 alvherre Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -22,6 +22,7 @@
 #include "catalog/pg_namespace.h"
 #include "catalog/pg_pltemplate.h"
 #include "catalog/pg_proc.h"
+#include "catalog/pg_proc_fn.h"
 #include "catalog/pg_type.h"
 #include "commands/dbcommands.h"
 #include "commands/defrem.h"

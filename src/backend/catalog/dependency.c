@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/catalog/dependency.c,v 1.69 2008/01/01 19:45:48 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/catalog/dependency.c,v 1.70 2008/03/26 21:10:37 alvherre Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -29,6 +29,7 @@
 #include "catalog/pg_cast.h"
 #include "catalog/pg_constraint.h"
 #include "catalog/pg_conversion.h"
+#include "catalog/pg_conversion_fn.h"
 #include "catalog/pg_database.h"
 #include "catalog/pg_depend.h"
 #include "catalog/pg_language.h"

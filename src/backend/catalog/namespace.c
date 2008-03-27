@@ -13,7 +13,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/catalog/namespace.c,v 1.103 2007/11/28 18:47:56 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/catalog/namespace.c,v 1.104 2008/01/01 19:45:48 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -24,6 +24,7 @@
 #include "catalog/namespace.h"
 #include "catalog/pg_authid.h"
 #include "catalog/pg_conversion.h"
+#include "catalog/pg_conversion_fn.h"
 #include "catalog/pg_namespace.h"
 #include "catalog/pg_opclass.h"
 #include "catalog/pg_operator.h"
