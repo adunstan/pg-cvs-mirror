@@ -11,7 +11,7 @@
  * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/test/regress/pg_regress.c,v 1.22 2006/09/24 17:10:18 tgl Exp $
+ * $PostgreSQL: pgsql/src/test/regress/pg_regress.c,v 1.23 2006/10/04 00:30:14 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -784,7 +784,7 @@ directory_exists(const char *dir)
 
 	if (stat(dir, &st) != 0)
 		return false;
-	if (st.st_mode & S_IFDIR)
+	if (S_ISDIR(st.st_mode))
 		return true;
 	return false;
 }
