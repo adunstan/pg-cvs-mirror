@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/optimizer/plancat.h,v 1.47 2008/01/01 19:45:58 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/optimizer/plancat.h,v 1.48 2008/03/15 20:46:31 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -31,8 +31,8 @@ extern void get_relation_info(PlannerInfo *root, Oid relationObjectId,
 extern void estimate_rel_size(Relation rel, int32 *attr_widths,
 							  BlockNumber *pages, double *tuples);
 
-extern bool relation_excluded_by_constraints(RelOptInfo *rel,
-								 RangeTblEntry *rte);
+extern bool relation_excluded_by_constraints(PlannerInfo *root,
+								 RelOptInfo *rel, RangeTblEntry *rte);
 
 extern List *build_physical_tlist(PlannerInfo *root, RelOptInfo *rel);
 
