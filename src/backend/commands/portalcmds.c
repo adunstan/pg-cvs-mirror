@@ -14,7 +14,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/portalcmds.c,v 1.68 2007/11/15 22:25:15 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/portalcmds.c,v 1.69 2008/01/01 19:45:49 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -75,6 +75,9 @@ PerformCursorOpen(PlannedStmt *stmt, ParamListInfo params,
 
 	stmt = copyObject(stmt);
 	stmt->utilityStmt = NULL;	/* make it look like plain SELECT */
+
+	if (queryString)			/* copy the source text too for safety */
+		queryString = pstrdup(queryString);
 
 	PortalDefineQuery(portal,
 					  NULL,
