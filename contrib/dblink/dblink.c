@@ -8,7 +8,7 @@
  * Darko Prenosil <Darko.Prenosil@finteh.hr>
  * Shridhar Daithankar <shridhar_daithankar@persistent.co.in>
  *
- * $PostgreSQL: pgsql/contrib/dblink/dblink.c,v 1.71 2008/03/26 21:10:36 alvherre Exp $
+ * $PostgreSQL: pgsql/contrib/dblink/dblink.c,v 1.72 2008/04/04 16:57:21 momjian Exp $
  * Copyright (c) 2001-2008, PostgreSQL Global Development Group
  * ALL RIGHTS RESERVED;
  *
@@ -52,7 +52,6 @@
 #include "nodes/nodes.h"
 #include "nodes/pg_list.h"
 #include "parser/parse_type.h"
-#include "tcop/tcopprot.h"
 #include "utils/acl.h"
 #include "utils/array.h"
 #include "utils/builtins.h"
