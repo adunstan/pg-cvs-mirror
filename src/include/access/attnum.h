@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/access/attnum.h,v 1.23 2007/01/05 22:19:50 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/access/attnum.h,v 1.24 2008/01/01 19:45:56 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -21,6 +21,7 @@
 typedef int16 AttrNumber;
 
 #define InvalidAttrNumber		0
+#define MaxAttrNumber			32767
 
 /* ----------------
  *		support macros
