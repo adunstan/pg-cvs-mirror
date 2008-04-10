@@ -4,7 +4,7 @@
  *
  *	Copyright (c) 2006-2008, PostgreSQL Global Development Group
  *
- *	$PostgreSQL: pgsql/src/include/access/gin.h,v 1.15 2007/11/16 21:50:06 tgl Exp $
+ *	$PostgreSQL: pgsql/src/include/access/gin.h,v 1.16 2008/01/01 19:45:56 momjian Exp $
  *--------------------------------------------------------------------------
  */
 
@@ -422,7 +422,7 @@ extern PGDLLIMPORT int GinFuzzySearchLimit;
 #define ItemPointerSetMin(p)	ItemPointerSet( (p), (BlockNumber)0, (OffsetNumber)0)
 #define ItemPointerIsMin(p) ( ItemPointerGetBlockNumber(p) == (BlockNumber)0 && ItemPointerGetOffsetNumber(p) == (OffsetNumber)0 )
 
-extern Datum gingetmulti(PG_FUNCTION_ARGS);
+extern Datum gingetbitmap(PG_FUNCTION_ARGS);
 extern Datum gingettuple(PG_FUNCTION_ARGS);
 
 /* ginvacuum.c */

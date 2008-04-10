@@ -21,7 +21,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/nodeBitmapHeapscan.c,v 1.24 2008/03/26 18:48:59 alvherre Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/nodeBitmapHeapscan.c,v 1.25 2008/03/26 21:10:38 alvherre Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -206,7 +206,7 @@ BitmapHeapNext(BitmapHeapScanState *node)
 		 * If we are using lossy info, we have to recheck the qual conditions
 		 * at every tuple.
 		 */
-		if (tbmres->ntuples < 0)
+		if (tbmres->recheck)
 		{
 			econtext->ecxt_scantuple = slot;
 			ResetExprContext(econtext);
