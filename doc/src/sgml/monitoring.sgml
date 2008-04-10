@@ -1,4 +1,4 @@
-<!-- $PostgreSQL: pgsql/doc/src/sgml/monitoring.sgml,v 1.55 2007/11/28 15:42:31 petere Exp $ -->
+<!-- $PostgreSQL: pgsql/doc/src/sgml/monitoring.sgml,v 1.56 2008/03/25 22:50:27 neilc Exp $ -->
 
 <chapter id="monitoring">
  <title>Monitoring Database Activity</title>
@@ -664,6 +664,7 @@ postgres: <replaceable>user</> <replaceable>database</> <replaceable>host</> <re
      </row>
 
      <row>
+       <!-- See also the entry for this in func.sgml -->
       <entry><literal><function>pg_backend_pid</function>()</literal></entry>
       <entry><type>integer</type></entry>
       <entry>
