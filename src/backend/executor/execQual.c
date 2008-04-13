@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/execQual.c,v 1.227 2008/03/25 19:26:53 neilc Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/execQual.c,v 1.228 2008/03/25 22:42:43 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -4175,14 +4175,12 @@ ExecInitExpr(Expr *node, PlanState *parent)
 					int			strategy;
 					Oid			lefttype;
 					Oid			righttype;
-					bool		recheck;
 					Oid			proc;
 
 					get_op_opfamily_properties(opno, opfamily,
 											   &strategy,
 											   &lefttype,
-											   &righttype,
-											   &recheck);
+											   &righttype);
 					proc = get_opfamily_proc(opfamily,
 											 lefttype,
 											 righttype,
