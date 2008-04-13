@@ -15,7 +15,7 @@
  *
  *
  * IDENTIFICATION
- *		$PostgreSQL: pgsql/src/bin/pg_dump/pg_backup.h,v 1.45 2007/01/25 03:30:43 momjian Exp $
+ *		$PostgreSQL: pgsql/src/bin/pg_dump/pg_backup.h,v 1.46 2008/03/20 17:36:57 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -116,7 +116,6 @@ typedef struct _restoreOptions
 	char	   *pgport;
 	char	   *pghost;
 	char	   *username;
-	int			ignoreVersion;
 	int			noDataForFailedTables;
 	int			requirePassword;
 	int			exit_on_error;
@@ -144,9 +143,7 @@ PGconn *ConnectDatabase(Archive *AH,
 				const char *pghost,
 				const char *pgport,
 				const char *username,
-				const int reqPwd,
-				const int ignoreVersion);
-
+				int reqPwd);
 
 /* Called to add a TOC entry */
 extern void ArchiveEntry(Archive *AHX,
