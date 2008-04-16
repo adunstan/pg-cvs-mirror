@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/port/win32/signal.c,v 1.19 2007/10/23 17:58:01 mha Exp $
+ *	  $PostgreSQL: pgsql/src/backend/port/win32/signal.c,v 1.20 2008/01/01 19:45:51 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -251,7 +251,7 @@ pg_signal_thread(LPVOID param)
 	char		pipename[128];
 	HANDLE		pipe = pgwin32_initial_signal_pipe;
 
-	snprintf(pipename, sizeof(pipename), "\\\\.\\pipe\\pgsignal_%u", GetCurrentProcessId());
+	snprintf(pipename, sizeof(pipename), "\\\\.\\pipe\\pgsignal_%lu", GetCurrentProcessId());
 
 	for (;;)
 	{
