@@ -10,7 +10,7 @@
  * Written by Peter Eisentraut <peter_e@gmx.net>.
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.445 2008/04/04 11:47:19 mha Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.446 2008/04/04 17:25:23 tgl Exp $
  *
  *--------------------------------------------------------------------
  */
@@ -282,7 +282,6 @@ bool		Debug_print_plan = false;
 bool		Debug_print_parse = false;
 bool		Debug_print_rewritten = false;
 bool		Debug_pretty_print = false;
-bool		Explain_pretty_print = true;
 
 bool		log_parser_stats = false;
 bool		log_planner_stats = false;
@@ -806,15 +805,6 @@ static struct config_bool ConfigureNamesBool[] =
 		false, NULL, NULL
 	},
 #endif
-
-	{
-		{"explain_pretty_print", PGC_USERSET, CLIENT_CONN_OTHER,
-			gettext_noop("Uses the indented output format for EXPLAIN VERBOSE."),
-			NULL
-		},
-		&Explain_pretty_print,
-		true, NULL, NULL
-	},
 
 	{
 		{"track_activities", PGC_SUSET, STATS_COLLECTOR,
