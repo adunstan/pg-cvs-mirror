@@ -1,6 +1,8 @@
 #!/bin/sh
 
-# $PostgreSQL: pgsql/src/tools/ccsym,v 1.7 2006/03/11 04:38:41 momjian Exp $:
+# $PostgreSQL: pgsql/src/tools/TODO2html,v 1.1 2008/04/19 12:34:54 momjian Exp $:
+
+# Converts TODO text file to HTML
 
 [ ! -f COPYRIGHT ] && echo "Run from top of source tree" 1>&2 && exit 1
 
