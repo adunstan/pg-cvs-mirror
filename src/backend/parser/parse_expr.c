@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/parser/parse_expr.c,v 1.226 2008/01/01 19:45:50 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/parser/parse_expr.c,v 1.227 2008/03/20 21:42:48 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -127,9 +127,6 @@ transformExpr(ParseState *pstate, Node *expr)
 				Value	   *val = &con->val;
 
 				result = (Node *) make_const(val);
-				if (con->typename != NULL)
-					result = typecast_expression(pstate, result,
-												 con->typename);
 				break;
 			}
 
@@ -649,8 +646,7 @@ exprIsNullConstant(Node *arg)
 	{
 		A_Const    *con = (A_Const *) arg;
 
-		if (con->val.type == T_Null &&
-			con->typename == NULL)
+		if (con->val.type == T_Null)
 			return true;
 	}
 	return false;
