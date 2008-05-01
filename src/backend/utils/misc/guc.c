@@ -10,7 +10,7 @@
  * Written by Peter Eisentraut <peter_e@gmx.net>.
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.448 2008/04/29 14:59:17 alvherre Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.449 2008/04/29 20:44:49 tgl Exp $
  *
  *--------------------------------------------------------------------
  */
@@ -1339,7 +1339,7 @@ static struct config_int ConfigureNamesInt[] =
 			GUC_UNIT_KB
 		},
 		&work_mem,
-		1024, 8 * BLCKSZ / 1024, MAX_KILOBYTES, NULL, NULL
+		1024, 64, MAX_KILOBYTES, NULL, NULL
 	},
 
 	{
