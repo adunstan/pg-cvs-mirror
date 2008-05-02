@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/storage/file/buffile.c,v 1.29 2008/01/01 19:45:51 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/storage/file/buffile.c,v 1.30 2008/03/10 20:06:27 tgl Exp $
  *
  * NOTES:
  *
@@ -38,9 +38,9 @@
 #include "storage/buffile.h"
 
 /*
- * We break BufFiles into gigabyte-sized segments, whether or not
- * USE_SEGMENTED_FILES is defined.  The reason is that we'd like large
- * temporary BufFiles to be spread across multiple tablespaces when available.
+ * We break BufFiles into gigabyte-sized segments, regardless of RELSEG_SIZE.
+ * The reason is that we'd like large temporary BufFiles to be spread across
+ * multiple tablespaces when available.
  */
 #define MAX_PHYSICAL_FILESIZE	0x40000000
 #define BUFFILE_SEG_SIZE		(MAX_PHYSICAL_FILESIZE / BLCKSZ)
