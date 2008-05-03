@@ -12,7 +12,7 @@
  *	by PostgreSQL
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/bin/pg_dump/pg_dump.c,v 1.487 2008/04/13 03:49:22 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/bin/pg_dump/pg_dump.c,v 1.488 2008/04/14 17:05:33 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -570,6 +570,12 @@ main(int argc, char **argv)
 	if (g_fout->remoteVersion >= 80300)
 		do_sql_command(g_conn, "SET synchronize_seqscans TO off");
 
+	/*
+	 * Disable timeouts if supported.
+	 */
+	if (g_fout->remoteVersion >= 70300)
+		do_sql_command(g_conn, "SET statement_timeout = 0");
+         
 	/*
 	 * Start serializable transaction to dump consistent data.
 	 */
