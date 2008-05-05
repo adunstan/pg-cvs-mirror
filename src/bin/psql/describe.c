@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2008, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/psql/describe.c,v 1.168 2008/05/02 10:16:16 heikki Exp $
+ * $PostgreSQL: pgsql/src/bin/psql/describe.c,v 1.169 2008/05/05 00:11:31 adunstan Exp $
  */
 #include "postgres_fe.h"
 #include "describe.h"
@@ -493,7 +493,7 @@ permissionsList(const char *pattern)
 					  "SELECT n.nspname as \"%s\",\n"
 					  "  c.relname as \"%s\",\n"
 					  "  CASE c.relkind WHEN 'r' THEN '%s' WHEN 'v' THEN '%s' WHEN 'S' THEN '%s' END as \"%s\",\n"
-					  "  c.relacl as \"%s\"\n"
+					  "  pg_catalog.array_to_string(c.relacl, E'\\n') as \"%s\"\n"
 					  "FROM pg_catalog.pg_class c\n"
 	   "     LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace\n"
 					  "WHERE c.relkind IN ('r', 'v', 'S')\n",
