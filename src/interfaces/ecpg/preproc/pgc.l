@@ -12,7 +12,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/interfaces/ecpg/preproc/pgc.l,v 1.159 2008/01/15 10:31:47 meskes Exp $
+ *	  $PostgreSQL: pgsql/src/interfaces/ecpg/preproc/pgc.l,v 1.163 2008/02/17 18:14:29 meskes Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -76,6 +76,7 @@ static struct _if_value
 %option 8bit
 %option never-interactive
 %option nodefault
+%option noinput
 %option noyywrap
 
 %option yylineno
