@@ -7,7 +7,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/tsearch/wparser.c,v 1.7 2008/01/15 17:16:01 teodor Exp $
+ *	  $PostgreSQL: pgsql/src/backend/tsearch/wparser.c,v 1.8 2008/01/15 18:22:47 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -15,7 +15,6 @@
 
 #include "funcapi.h"
 #include "access/genam.h"
-#include "access/heapam.h"
 #include "access/skey.h"
 #include "catalog/indexing.h"
 #include "catalog/namespace.h"

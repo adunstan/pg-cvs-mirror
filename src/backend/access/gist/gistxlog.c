@@ -8,14 +8,15 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *			 $PostgreSQL: pgsql/src/backend/access/gist/gistxlog.c,v 1.26 2007/02/01 19:10:25 momjian Exp $
+ *			 $PostgreSQL: pgsql/src/backend/access/gist/gistxlog.c,v 1.27 2008/01/01 19:45:46 momjian Exp $
  *-------------------------------------------------------------------------
  */
 #include "postgres.h"
 
 #include "access/gist_private.h"
-#include "access/heapam.h"
+#include "access/xlogutils.h"
 #include "miscadmin.h"
+#include "storage/bufmgr.h"
 #include "utils/memutils.h"
 
 

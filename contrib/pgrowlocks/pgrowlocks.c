@@ -1,5 +1,5 @@
 /*
- * $PostgreSQL: pgsql/contrib/pgrowlocks/pgrowlocks.c,v 1.8 2007/11/30 21:22:53 tgl Exp $
+ * $PostgreSQL: pgsql/contrib/pgrowlocks/pgrowlocks.c,v 1.9 2008/03/26 21:10:36 alvherre Exp $
  *
  * Copyright (c) 2005-2006	Tatsuo Ishii
  *
@@ -30,6 +30,7 @@
 #include "catalog/namespace.h"
 #include "funcapi.h"
 #include "miscadmin.h"
+#include "storage/bufmgr.h"
 #include "storage/procarray.h"
 #include "utils/acl.h"
 #include "utils/builtins.h"

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/hash/hashutil.c,v 1.52 2007/05/03 16:45:58 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/hash/hashutil.c,v 1.53 2008/01/01 19:45:46 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -18,6 +18,7 @@
 #include "access/hash.h"
 #include "access/reloptions.h"
 #include "executor/execdebug.h"
+#include "storage/bufmgr.h"
 #include "utils/lsyscache.h"
 
 

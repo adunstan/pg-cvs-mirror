@@ -6,12 +6,13 @@
  * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- *	$PostgreSQL: pgsql/src/backend/executor/execCurrent.c,v 1.5 2008/01/01 19:45:49 momjian Exp $
+ *	$PostgreSQL: pgsql/src/backend/executor/execCurrent.c,v 1.6 2008/03/25 22:42:43 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
 #include "postgres.h"
 
+#include "access/sysattr.h"
 #include "catalog/pg_type.h"
 #include "executor/executor.h"
 #include "utils/builtins.h"

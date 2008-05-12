@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/rowtypes.c,v 1.19 2007/03/03 19:32:55 neilc Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/rowtypes.c,v 1.20 2008/01/01 19:45:52 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -16,7 +16,6 @@
 
 #include <ctype.h>
 
-#include "access/heapam.h"
 #include "catalog/pg_type.h"
 #include "libpq/pqformat.h"
 #include "utils/builtins.h"

@@ -57,7 +57,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/common/heaptuple.c,v 1.120 2008/01/01 19:45:45 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/common/heaptuple.c,v 1.121 2008/04/17 21:37:28 alvherre Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -65,6 +65,7 @@
 #include "postgres.h"
 
 #include "access/heapam.h"
+#include "access/sysattr.h"
 #include "access/tuptoaster.h"
 #include "executor/tuptable.h"
 

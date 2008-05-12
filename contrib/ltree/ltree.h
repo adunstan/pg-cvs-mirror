@@ -1,11 +1,9 @@
-/* $PostgreSQL: pgsql/contrib/ltree/ltree.h,v 1.18 2007/02/28 22:44:38 tgl Exp $ */
+/* $PostgreSQL: pgsql/contrib/ltree/ltree.h,v 1.19 2007/11/16 00:13:02 momjian Exp $ */
 
 #ifndef __LTREE_H__
 #define __LTREE_H__
 
-#include "postgres.h"
-
-#include "utils/builtins.h"
+#include "fmgr.h"
 
 typedef struct
 {

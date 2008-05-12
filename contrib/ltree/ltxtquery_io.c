@@ -1,12 +1,14 @@
 /*
  * txtquery io
  * Teodor Sigaev <teodor@stack.net>
- * $PostgreSQL: pgsql/contrib/ltree/ltxtquery_io.c,v 1.13 2007/02/28 22:44:38 tgl Exp $
+ * $PostgreSQL: pgsql/contrib/ltree/ltxtquery_io.c,v 1.14 2007/11/15 22:25:14 momjian Exp $
  */
+#include "postgres.h"
 
-#include "ltree.h"
 #include <ctype.h>
+
 #include "crc32.h"
+#include "ltree.h"
 
 PG_FUNCTION_INFO_V1(ltxtq_in);
 Datum		ltxtq_in(PG_FUNCTION_ARGS);

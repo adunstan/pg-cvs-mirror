@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/backend/utils/adt/xml.c,v 1.72 2008/04/04 08:33:15 mha Exp $
+ * $PostgreSQL: pgsql/src/backend/utils/adt/xml.c,v 1.73 2008/05/04 16:42:41 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -81,7 +81,6 @@
 #include "utils/datetime.h"
 #include "utils/lsyscache.h"
 #include "utils/memutils.h"
-#include "access/tupmacs.h"
 #include "utils/xml.h"
 
 

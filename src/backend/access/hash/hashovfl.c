@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/hash/hashovfl.c,v 1.61 2007/11/15 21:14:32 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/hash/hashovfl.c,v 1.62 2008/01/01 19:45:46 momjian Exp $
  *
  * NOTES
  *	  Overflow pages look like ordinary relation pages.
@@ -18,6 +18,7 @@
 #include "postgres.h"
 
 #include "access/hash.h"
+#include "storage/bufmgr.h"
 
 
 static Buffer _hash_getovflpage(Relation rel, Buffer metabuf);

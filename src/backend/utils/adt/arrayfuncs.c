@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/arrayfuncs.c,v 1.143 2008/04/11 22:52:05 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/arrayfuncs.c,v 1.144 2008/04/28 14:48:57 alvherre Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -16,7 +16,6 @@
 
 #include <ctype.h>
 
-#include "access/tupmacs.h"
 #include "funcapi.h"
 #include "libpq/pqformat.h"
 #include "parser/parse_coerce.h"

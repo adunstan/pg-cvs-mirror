@@ -4,7 +4,7 @@
  *
  *	Copyright (c) 2006-2008, PostgreSQL Global Development Group
  *
- *	$PostgreSQL: pgsql/src/include/access/gin.h,v 1.17 2008/04/10 22:25:25 tgl Exp $
+ *	$PostgreSQL: pgsql/src/include/access/gin.h,v 1.18 2008/04/22 17:52:43 teodor Exp $
  *--------------------------------------------------------------------------
  */
 
@@ -12,15 +12,13 @@
 #ifndef GIN_H
 #define GIN_H
 
-#include "access/relscan.h"
-#include "access/skey.h"
-#include "access/xlog.h"
-#include "access/xlogdefs.h"
-#include "storage/bufpage.h"
-#include "storage/off.h"
-#include "utils/rel.h"
 #include "access/itup.h"
+#include "access/relscan.h"
 #include "fmgr.h"
+#include "storage/block.h"
+#include "storage/buf.h"
+#include "storage/off.h"
+#include "storage/relfilenode.h"
 
 
 /*

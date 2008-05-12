@@ -1,15 +1,16 @@
 /*
  * GiST support for ltree
  * Teodor Sigaev <teodor@stack.net>
- * $PostgreSQL: pgsql/contrib/ltree/ltree_gist.c,v 1.22 2007/11/16 01:12:24 momjian Exp $
+ * $PostgreSQL: pgsql/contrib/ltree/ltree_gist.c,v 1.23 2008/04/14 17:05:32 tgl Exp $
  */
+#include "postgres.h"
 
-#include "ltree.h"
 #include "access/gist.h"
 #include "access/nbtree.h"
 #include "access/skey.h"
 #include "utils/array.h"
 #include "crc32.h"
+#include "ltree.h"
 
 #define NEXTVAL(x) ( (lquery*)( (char*)(x) + INTALIGN( VARSIZE(x) ) ) )
 

@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/storage/lmgr.h,v 1.60 2008/01/01 19:45:59 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/storage/lmgr.h,v 1.61 2008/03/04 19:54:06 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -15,6 +15,7 @@
 #define LMGR_H
 
 #include "lib/stringinfo.h"
+#include "storage/itemptr.h"
 #include "storage/lock.h"
 #include "utils/rel.h"
 

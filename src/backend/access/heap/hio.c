@@ -8,16 +8,18 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/heap/hio.c,v 1.67 2007/09/20 17:56:30 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/heap/hio.c,v 1.68 2008/01/01 19:45:46 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
 
 #include "postgres.h"
 
-#include "access/heapam.h"
 #include "access/hio.h"
+#include "storage/bufmgr.h"
+#include "storage/bufpage.h"
 #include "storage/freespace.h"
+#include "storage/lmgr.h"
 
 
 /*

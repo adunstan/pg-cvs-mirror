@@ -5,7 +5,7 @@
  * DMN Digital Music Network.
  * www.dmn.com
  *
- * $PostgreSQL: pgsql/contrib/intagg/int_aggregate.c,v 1.25 2006/07/11 17:04:12 momjian Exp $
+ * $PostgreSQL: pgsql/contrib/intagg/int_aggregate.c,v 1.26 2007/02/27 23:48:06 tgl Exp $
  *
  * Copyright (C) Digital Music Network
  * December 20, 2001
@@ -19,8 +19,6 @@
 #include <ctype.h>
 #include <sys/types.h>
 
-#include "access/heapam.h"
-#include "access/tupmacs.h"
 #include "access/xact.h"
 #include "catalog/indexing.h"
 #include "catalog/pg_proc.h"

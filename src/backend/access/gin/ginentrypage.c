@@ -8,13 +8,14 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *			$PostgreSQL: pgsql/src/backend/access/gin/ginentrypage.c,v 1.11 2007/11/15 21:14:31 momjian Exp $
+ *			$PostgreSQL: pgsql/src/backend/access/gin/ginentrypage.c,v 1.12 2008/01/01 19:45:46 momjian Exp $
  *-------------------------------------------------------------------------
  */
 
 #include "postgres.h"
 #include "access/gin.h"
 #include "access/tuptoaster.h"
+#include "storage/bufmgr.h"
 
 /*
  * forms tuple for entry tree. On leaf page, Index tuple has

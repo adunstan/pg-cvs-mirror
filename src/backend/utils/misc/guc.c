@@ -10,7 +10,7 @@
  * Written by Peter Eisentraut <peter_e@gmx.net>.
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.450 2008/05/01 19:55:40 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.451 2008/05/02 21:26:10 tgl Exp $
  *
  *--------------------------------------------------------------------
  */
@@ -55,6 +55,7 @@
 #include "postmaster/syslogger.h"
 #include "postmaster/walwriter.h"
 #include "regex/regex.h"
+#include "storage/bufmgr.h"
 #include "storage/fd.h"
 #include "storage/freespace.h"
 #include "tcop/tcopprot.h"

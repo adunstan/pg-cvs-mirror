@@ -8,15 +8,16 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *			$PostgreSQL: pgsql/src/backend/access/gist/gistutil.c,v 1.24 2007/09/20 17:56:30 tgl Exp $
+ *			$PostgreSQL: pgsql/src/backend/access/gist/gistutil.c,v 1.25 2008/01/01 19:45:46 momjian Exp $
  *-------------------------------------------------------------------------
  */
 #include "postgres.h"
 
 #include "access/gist_private.h"
-#include "access/heapam.h"
 #include "access/reloptions.h"
 #include "storage/freespace.h"
+#include "storage/lmgr.h"
+#include "storage/bufmgr.h"
 
 /*
  * static *S used for temrorary storage (saves stack and palloc() call)

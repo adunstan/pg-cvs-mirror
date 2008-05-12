@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/rewrite/rewriteDefine.h,v 1.27 2007/11/15 21:14:44 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/rewrite/rewriteDefine.h,v 1.28 2008/01/01 19:45:58 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -15,6 +15,7 @@
 #define REWRITEDEFINE_H
 
 #include "nodes/parsenodes.h"
+#include "utils/rel.h"
 
 #define RULE_FIRES_ON_ORIGIN	'O'
 #define RULE_FIRES_ALWAYS		'A'

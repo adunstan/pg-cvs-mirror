@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/tid.c,v 1.59 2008/01/01 19:45:52 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/tid.c,v 1.60 2008/03/26 21:10:39 alvherre Exp $
  *
  * NOTES
  *	  input routine largely stolen from boxin().
@@ -21,6 +21,7 @@
 #include <limits.h>
 
 #include "access/heapam.h"
+#include "access/sysattr.h"
 #include "catalog/namespace.h"
 #include "catalog/pg_type.h"
 #include "libpq/pqformat.h"
