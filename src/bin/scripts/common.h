@@ -4,7 +4,7 @@
  *
  *	Copyright (c) 2003-2008, PostgreSQL Global Development Group
  *
- *	$PostgreSQL: pgsql/src/bin/scripts/common.h,v 1.18 2007/11/15 21:14:42 momjian Exp $
+ *	$PostgreSQL: pgsql/src/bin/scripts/common.h,v 1.19 2008/01/01 19:45:56 momjian Exp $
  */
 #ifndef COMMON_H
 #define COMMON_H
@@ -41,5 +41,7 @@ extern bool executeMaintenanceCommand(PGconn *conn, const char *query,
 extern bool yesno_prompt(const char *question);
 
 extern void setup_cancel_handler(void);
+
+extern char *pg_strdup(const char *string);
 
 #endif   /* COMMON_H */
