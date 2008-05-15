@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/trigger.c,v 1.232 2008/05/12 00:00:48 alvherre Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/trigger.c,v 1.233 2008/05/12 20:01:59 alvherre Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -32,6 +32,7 @@
 #include "miscadmin.h"
 #include "nodes/makefuncs.h"
 #include "parser/parse_func.h"
+#include "pgstat.h"
 #include "storage/bufmgr.h"
 #include "tcop/utility.h"
 #include "utils/acl.h"
@@ -1566,6 +1567,7 @@ ExecCallTriggerFunc(TriggerData *trigdata,
 					MemoryContext per_tuple_context)
 {
 	FunctionCallInfoData fcinfo;
+	PgStat_FunctionCallUsage fcusage;
 	Datum		result;
 	MemoryContext oldContext;
 
@@ -1599,7 +1601,11 @@ ExecCallTriggerFunc(TriggerData *trigdata,
 	 */
 	InitFunctionCallInfoData(fcinfo, finfo, 0, (Node *) trigdata, NULL);
 
+	pgstat_init_function_usage(&fcinfo, &fcusage);
+
 	result = FunctionCallInvoke(&fcinfo);
+
+	pgstat_end_function_usage(&fcusage, true);
 
 	MemoryContextSwitchTo(oldContext);
 

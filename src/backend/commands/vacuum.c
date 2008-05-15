@@ -13,7 +13,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/vacuum.c,v 1.372 2008/05/12 00:00:48 alvherre Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/vacuum.c,v 1.373 2008/05/12 20:02:00 alvherre Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -323,7 +323,7 @@ vacuum(VacuumStmt *vacstmt, List *relids,
 	 * in autovacuum --- autovacuum.c does this for itself.
 	 */
 	if (vacstmt->vacuum && !IsAutoVacuumWorkerProcess())
-		pgstat_vacuum_tabstat();
+		pgstat_vacuum_stat();
 
 	/*
 	 * Create special memory context for cross-transaction storage.
