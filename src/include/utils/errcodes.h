@@ -11,7 +11,7 @@
  *
  * Copyright (c) 2003-2008, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/include/utils/errcodes.h,v 1.23 2007/02/03 14:06:56 petere Exp $
+ * $PostgreSQL: pgsql/src/include/utils/errcodes.h,v 1.24 2008/01/01 19:45:59 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -100,6 +100,9 @@
 
 /* Class 0P - Invalid Role Specification */
 #define ERRCODE_INVALID_ROLE_SPECIFICATION	MAKE_SQLSTATE('0','P', '0','0','0')
+
+/* Class 20 - Case Not Found */
+#define ERRCODE_CASE_NOT_FOUND				MAKE_SQLSTATE('2','0', '0','0','0')
 
 /* Class 21 - Cardinality Violation */
 /* (this means something returned the wrong number of rows) */
