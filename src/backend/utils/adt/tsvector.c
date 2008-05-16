@@ -7,7 +7,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/tsvector.c,v 1.12 2008/03/05 15:50:37 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/tsvector.c,v 1.13 2008/03/10 12:57:05 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -85,14 +85,9 @@ compareentry(const void *va, const void *vb, void *arg)
 	const WordEntryIN *b = (const WordEntryIN *) vb;
 	char	   *BufferStr = (char *) arg;
 
-	if (a->entry.len == b->entry.len)
-	{
-		return strncmp(&BufferStr[a->entry.pos],
-					   &BufferStr[b->entry.pos],
-					   a->entry.len);
-	}
-
-	return (a->entry.len > b->entry.len) ? 1 : -1;
+	return tsCompareString( &BufferStr[a->entry.pos], a->entry.len,
+							&BufferStr[b->entry.pos], b->entry.len,
+							false );
 }
 
 /*
