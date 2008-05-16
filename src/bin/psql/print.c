@@ -3,10 +3,11 @@
  *
  * Copyright (c) 2000-2008, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/psql/print.c,v 1.101 2008/05/13 00:14:11 alvherre Exp $
+ * $PostgreSQL: pgsql/src/bin/psql/print.c,v 1.102 2008/05/16 16:59:05 momjian Exp $
  */
 #include "postgres_fe.h"
 
+#include <limits.h>
 #include <math.h>
 #include <signal.h>
 #include <unistd.h>
