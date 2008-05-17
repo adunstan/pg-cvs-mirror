@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2008, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/psql/print.c,v 1.103 2008/05/16 18:35:38 tgl Exp $
+ * $PostgreSQL: pgsql/src/bin/psql/print.c,v 1.104 2008/05/17 17:52:14 tgl Exp $
  */
 #include "postgres_fe.h"
 
@@ -634,7 +634,7 @@ print_aligned_text(const printTableContent *cont, FILE *fout)
 	}
 
 	/* If we wrapped beyond the display width, use the pager */
-	if (!is_pager && output_columns > 0 &&
+	if (!is_pager && fout == stdout && output_columns > 0 &&
 		(output_columns < total_header_width || output_columns < width_total))
 	{
 		fout = PageOutput(INT_MAX, cont->opt->pager);	/* force pager */
