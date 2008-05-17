@@ -5,7 +5,7 @@
 # Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
 # Portions Copyright (c) 1994, Regents of the University of California
 #
-# $PostgreSQL: pgsql/src/interfaces/ecpg/ecpglib/Makefile,v 1.58 2008/03/21 16:10:23 meskes Exp $
+# $PostgreSQL: pgsql/src/interfaces/ecpg/ecpglib/Makefile,v 1.59 2008/04/07 14:15:58 petere Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -33,7 +33,7 @@ ifneq ($(PORTNAME), win32)
 OBJS += thread.o
 endif
 
-SHLIB_LINK = -L../pgtypeslib -lpgtypes $(libpq) -lm $(PTHREAD_LIBS)
+SHLIB_LINK = -L../pgtypeslib -lpgtypes $(libpq) $(filter -lintl -lm, $(LIBS)) $(PTHREAD_LIBS)
 
 SHLIB_EXPORTS = exports.txt
 
