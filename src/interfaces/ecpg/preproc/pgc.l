@@ -12,7 +12,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/interfaces/ecpg/preproc/pgc.l,v 1.164 2008/05/09 15:36:31 petere Exp $
+ *	  $PostgreSQL: pgsql/src/interfaces/ecpg/preproc/pgc.l,v 1.165 2008/05/16 15:20:04 petere Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -680,7 +680,7 @@ cppline			{space}*#(.*\\{space})*.*{newline}
 						if (!isdefine())
 						{
 							/* Is it an SQL/ECPG keyword? */
-							keyword = ScanKeywordLookup(yytext);
+							keyword = ScanECPGKeywordLookup(yytext);
 							if (keyword != NULL)
 								return keyword->value;
 
