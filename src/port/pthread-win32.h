@@ -1,11 +1,11 @@
 /*
- * $PostgreSQL:$ 
+ * $PostgreSQL: pgsql/src/port/pthread-win32.h,v 1.4 2008/05/17 01:28:25 adunstan Exp $ 
  */
 #ifndef __PTHREAD_H
 #define __PTHREAD_H
 
 typedef ULONG pthread_key_t;
-typedef HANDLE pthread_mutex_t;
+typedef CRITICAL_SECTION *pthread_mutex_t;
 typedef int pthread_once_t;
 
 DWORD		pthread_self(void);
