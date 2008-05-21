@@ -11,7 +11,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/parser/keywords.c,v 1.195 2008/03/27 03:57:33 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/parser/keywords.c,v 1.196 2008/05/16 23:36:05 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -29,8 +29,11 @@
 #define YYSTYPE int
 
 #include "parser/keywords.h"
+#ifndef ECPG_COMPILE
 #include "parser/parse.h"
-
+#else
+#include "preproc.h"
+#endif
 
 /*
  * List of keyword (name, token-value, category) entries.
