@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-connect.c,v 1.357 2008/03/31 02:43:14 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-connect.c,v 1.358 2008/05/16 18:30:53 mha Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1581,7 +1581,8 @@ keep_going:						/* We will come back to here until there is
 					 * needed to hold the whole message; see notes in
 					 * pqParseInput3.
 					 */
-					if (pqCheckInBufferSpace(conn->inCursor + msgLength, conn))
+					if (pqCheckInBufferSpace(conn->inCursor + (size_t) msgLength,
+											 conn))
 						goto error_return;
 					/* We'll come back when there is more data */
 					return PGRES_POLLING_READING;
