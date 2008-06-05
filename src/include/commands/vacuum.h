@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/commands/vacuum.h,v 1.75 2008/01/01 19:45:57 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/commands/vacuum.h,v 1.76 2008/03/14 17:25:59 alvherre Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -113,7 +113,7 @@ extern int	vacuum_freeze_min_age;
 
 
 /* in commands/vacuum.c */
-extern void vacuum(VacuumStmt *vacstmt, List *relids,
+extern void vacuum(VacuumStmt *vacstmt, Oid relid,
 	   BufferAccessStrategy bstrategy, bool for_wraparound, bool isTopLevel);
 extern void vac_open_indexes(Relation relation, LOCKMODE lockmode,
 				 int *nindexes, Relation **Irel);
