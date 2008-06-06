@@ -37,7 +37,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/postmaster/postmaster.c,v 1.556 2008/04/26 22:47:40 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/postmaster/postmaster.c,v 1.557 2008/05/04 21:13:35 tgl Exp $
  *
  * NOTES
  *
@@ -93,6 +93,7 @@
 #endif
 
 #include "access/transam.h"
+#include "access/xlog.h"
 #include "bootstrap/bootstrap.h"
 #include "catalog/pg_control.h"
 #include "lib/dllist.h"

@@ -4,7 +4,7 @@
  *
  *	Copyright (c) 2006-2008, PostgreSQL Global Development Group
  *
- *	$PostgreSQL: pgsql/src/include/access/gin.h,v 1.19 2008/05/12 00:00:53 alvherre Exp $
+ *	$PostgreSQL: pgsql/src/include/access/gin.h,v 1.20 2008/05/16 16:31:01 tgl Exp $
  *--------------------------------------------------------------------------
  */
 
@@ -14,6 +14,7 @@
 
 #include "access/itup.h"
 #include "access/relscan.h"
+#include "access/xlog.h"
 #include "fmgr.h"
 #include "nodes/tidbitmap.h"
 #include "storage/block.h"

@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/access/heapam.h,v 1.133 2008/04/03 17:12:27 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/access/heapam.h,v 1.134 2008/05/12 00:00:53 alvherre Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -17,6 +17,7 @@
 #include "access/htup.h"
 #include "access/relscan.h"
 #include "access/sdir.h"
+#include "access/xlog.h"
 #include "nodes/primnodes.h"
 #include "storage/lock.h"
 #include "utils/snapshot.h"
