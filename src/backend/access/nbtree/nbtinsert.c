@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/nbtree/nbtinsert.c,v 1.165 2008/03/26 21:10:37 alvherre Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/nbtree/nbtinsert.c,v 1.166 2008/05/12 00:00:45 alvherre Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -747,7 +747,8 @@ _bt_insertonpg(Relation rel,
 		/* release buffers; send out relcache inval if metapage changed */
 		if (BufferIsValid(metabuf))
 		{
-			CacheInvalidateRelcache(rel);
+			if (!InRecovery)
+				CacheInvalidateRelcache(rel);
 			_bt_relbuf(rel, metabuf);
 		}
 
@@ -1792,7 +1793,8 @@ _bt_newroot(Relation rel, Buffer lbuf, Buffer rbuf)
 	END_CRIT_SECTION();
 
 	/* send out relcache inval for metapage change */
-	CacheInvalidateRelcache(rel);
+	if (!InRecovery)
+		CacheInvalidateRelcache(rel);
 
 	/* done with metapage */
 	_bt_relbuf(rel, metabuf);
