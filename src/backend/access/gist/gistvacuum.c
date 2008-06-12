@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/gist/gistvacuum.c,v 1.34 2008/01/01 19:45:46 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/gist/gistvacuum.c,v 1.35 2008/05/12 00:00:44 alvherre Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -403,7 +403,7 @@ gistVacuumUpdate(GistVacuum *gv, BlockNumber blkno, bool needunion)
 			}
 			else
 				/* enough free space */
-				gistfillbuffer(gv->index, tempPage, addon, curlenaddon, InvalidOffsetNumber);
+				gistfillbuffer(tempPage, addon, curlenaddon, InvalidOffsetNumber);
 		}
 	}
 
