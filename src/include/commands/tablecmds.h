@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/commands/tablecmds.h,v 1.37 2008/01/30 19:46:48 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/commands/tablecmds.h,v 1.38 2008/03/19 18:38:30 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -20,7 +20,7 @@
 
 extern Oid	DefineRelation(CreateStmt *stmt, char relkind);
 
-extern void RemoveRelation(const RangeVar *relation, DropBehavior behavior);
+extern void RemoveRelations(DropStmt *drop);
 
 extern void AlterTable(AlterTableStmt *stmt);
 
