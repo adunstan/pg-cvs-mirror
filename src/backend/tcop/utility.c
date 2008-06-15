@@ -10,7 +10,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/tcop/utility.c,v 1.292 2008/06/05 15:47:32 alvherre Exp $
+ *	  $PostgreSQL: pgsql/src/backend/tcop/utility.c,v 1.293 2008/06/14 18:04:33 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1454,6 +1454,9 @@ CreateCommandTag(Node *parsetree)
 				case OBJECT_TSCONFIGURATION:
 					tag = "ALTER TEXT SEARCH CONFIGURATION";
 					break;
+				case OBJECT_VIEW:
+					tag = "ALTER VIEW";
+					break;
 				default:
 					tag = "???";
 					break;
@@ -1512,19 +1515,23 @@ CreateCommandTag(Node *parsetree)
 			break;
 
 		case T_AlterTableStmt:
+			switch (((AlterTableStmt *) parsetree)->relkind)
 			{
-				AlterTableStmt *stmt = (AlterTableStmt *) parsetree;
-
-				/*
-				 * We might be supporting ALTER INDEX here, so set the
-				 * completion tag appropriately. Catch all other possibilities
-				 * with ALTER TABLE
-				 */
-
-				if (stmt->relkind == OBJECT_INDEX)
-					tag = "ALTER INDEX";
-				else
+				case OBJECT_TABLE:
 					tag = "ALTER TABLE";
+					break;
+				case OBJECT_INDEX:
+					tag = "ALTER INDEX";
+					break;
+				case OBJECT_SEQUENCE:
+					tag = "ALTER SEQUENCE";
+					break;
+				case OBJECT_VIEW:
+					tag = "ALTER VIEW";
+					break;
+				default:
+					tag = "???";
+					break;
 			}
 			break;
 
