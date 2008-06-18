@@ -7,7 +7,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/tsearch/ts_utils.c,v 1.8 2007/12/27 13:02:48 petere Exp $
+ *	  $PostgreSQL: pgsql/src/backend/tsearch/ts_utils.c,v 1.9 2008/01/01 19:45:52 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -152,14 +152,4 @@ searchstoplist(StopList *s, char *key)
 	return (s->stop && s->len > 0 &&
 			bsearch(&key, s->stop, s->len,
 					sizeof(char *), comparestr)) ? true : false;
-}
-
-char *
-pnstrdup(const char *in, int len)
-{
-	char	   *out = palloc(len + 1);
-
-	memcpy(out, in, len);
-	out[len] = '\0';
-	return out;
 }
