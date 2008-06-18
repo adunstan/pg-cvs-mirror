@@ -4,7 +4,7 @@
  * (currently mule internal code (mic) is used)
  * Tatsuo Ishii
  *
- * $PostgreSQL: pgsql/src/backend/utils/mb/mbutils.c,v 1.71 2008/05/27 12:24:42 mha Exp $
+ * $PostgreSQL: pgsql/src/backend/utils/mb/mbutils.c,v 1.72 2008/06/18 18:42:54 momjian Exp $
  */
 #include "postgres.h"
 
@@ -13,6 +13,7 @@
 #include "mb/pg_wchar.h"
 #include "utils/builtins.h"
 #include "utils/memutils.h"
+#include "utils/pg_locale.h"
 #include "utils/syscache.h"
 
 /*
