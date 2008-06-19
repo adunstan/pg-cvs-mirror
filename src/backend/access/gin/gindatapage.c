@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *			$PostgreSQL: pgsql/src/backend/access/gin/gindatapage.c,v 1.9 2008/01/01 19:45:46 momjian Exp $
+ *			$PostgreSQL: pgsql/src/backend/access/gin/gindatapage.c,v 1.10 2008/05/12 00:00:44 alvherre Exp $
  *-------------------------------------------------------------------------
  */
 
@@ -16,6 +16,7 @@
 
 #include "access/gin.h"
 #include "storage/bufmgr.h"
+#include "utils/rel.h"
 
 int
 compareItemPointers(ItemPointer a, ItemPointer b)

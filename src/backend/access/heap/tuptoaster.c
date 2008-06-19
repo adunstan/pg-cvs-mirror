@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/heap/tuptoaster.c,v 1.87 2008/04/17 21:37:28 alvherre Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/heap/tuptoaster.c,v 1.88 2008/06/13 02:59:47 tgl Exp $
  *
  *
  * INTERFACE ROUTINES
@@ -37,6 +37,7 @@
 #include "catalog/catalog.h"
 #include "utils/fmgroids.h"
 #include "utils/pg_lzcompress.h"
+#include "utils/rel.h"
 #include "utils/typcache.h"
 #include "utils/tqual.h"
 

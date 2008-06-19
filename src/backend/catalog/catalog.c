@@ -10,7 +10,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/catalog/catalog.c,v 1.75 2008/04/12 23:14:21 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/catalog/catalog.c,v 1.76 2008/05/12 00:00:46 alvherre Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -38,7 +38,7 @@
 #include "miscadmin.h"
 #include "storage/fd.h"
 #include "utils/fmgroids.h"
-#include "utils/relcache.h"
+#include "utils/rel.h"
 #include "utils/tqual.h"
 
 

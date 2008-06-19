@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/access/gist_private.h,v 1.29 2008/04/10 22:25:25 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/access/gist_private.h,v 1.30 2008/06/12 09:12:31 heikki Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -16,9 +16,7 @@
 
 #include "access/gist.h"
 #include "access/itup.h"
-#include "access/xlog.h"
-#include "access/xlogdefs.h"
-#include "fmgr.h"
+#include "storage/bufmgr.h"
 
 #define GIST_UNLOCK BUFFER_LOCK_UNLOCK
 #define GIST_SHARE	BUFFER_LOCK_SHARE

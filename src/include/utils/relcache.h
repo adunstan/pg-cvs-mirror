@@ -7,14 +7,27 @@
  * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/utils/relcache.h,v 1.60 2007/09/20 17:56:32 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/utils/relcache.h,v 1.61 2008/01/01 19:45:59 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
 #ifndef RELCACHE_H
 #define RELCACHE_H
 
-#include "utils/rel.h"
+#include "access/tupdesc.h"
+#include "nodes/bitmapset.h"
+#include "nodes/pg_list.h"
+
+
+typedef struct RelationData *Relation;
+
+/* ----------------
+ *		RelationPtr is used in the executor to support index scans
+ *		where we have to keep track of several index relations in an
+ *		array.	-cim 9/10/89
+ * ----------------
+ */
+typedef Relation *RelationPtr;
 
 /*
  * Routines to open (lookup) and close a relcache entry

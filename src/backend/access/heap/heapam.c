@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/heap/heapam.c,v 1.258 2008/06/08 22:00:47 alvherre Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/heap/heapam.c,v 1.259 2008/06/12 09:12:30 heikki Exp $
  *
  *
  * INTERFACE ROUTINES
@@ -42,6 +42,7 @@
 #include "access/heapam.h"
 #include "access/hio.h"
 #include "access/multixact.h"
+#include "access/relscan.h"
 #include "access/sysattr.h"
 #include "access/transam.h"
 #include "access/tuptoaster.h"

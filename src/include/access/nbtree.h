@@ -7,15 +7,15 @@
  * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/access/nbtree.h,v 1.118 2008/04/16 23:59:40 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/access/nbtree.h,v 1.119 2008/06/06 22:35:22 alvherre Exp $
  *
  *-------------------------------------------------------------------------
  */
 #ifndef NBTREE_H
 #define NBTREE_H
 
+#include "access/genam.h"
 #include "access/itup.h"
-#include "access/relscan.h"
 #include "access/sdir.h"
 #include "access/xlog.h"
 #include "access/xlogutils.h"
