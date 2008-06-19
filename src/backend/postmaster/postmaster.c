@@ -37,7 +37,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/postmaster/postmaster.c,v 1.557 2008/05/04 21:13:35 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/postmaster/postmaster.c,v 1.558 2008/06/06 22:35:22 alvherre Exp $
  *
  * NOTES
  *
@@ -3827,16 +3827,6 @@ sigusr1_handler(SIGNAL_ARGS)
 		 * Authorization file has changed.
 		 */
 		load_role();
-	}
-
-	if (CheckPostmasterSignal(PMSIGNAL_WAKEN_CHILDREN))
-	{
-		/*
-		 * Send SIGUSR1 to all children (triggers CatchupInterruptHandler).
-		 * See storage/ipc/sinval[adt].c for the use of this.
-		 */
-		if (Shutdown <= SmartShutdown)
-			SignalChildren(SIGUSR1);
 	}
 
 	if (CheckPostmasterSignal(PMSIGNAL_WAKEN_ARCHIVER) &&
