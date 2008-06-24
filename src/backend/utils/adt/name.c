@@ -14,7 +14,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/name.c,v 1.61 2008/01/01 19:45:52 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/name.c,v 1.62 2008/05/27 00:13:09 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -315,7 +315,7 @@ current_schemas(PG_FUNCTION_ARGS)
 							NAMEOID,
 							NAMEDATALEN,		/* sizeof(Name) */
 							false,		/* Name is not by-val */
-							'i');		/* alignment of Name */
+							'c');		/* alignment of Name */
 
 	PG_RETURN_POINTER(array);
 }
