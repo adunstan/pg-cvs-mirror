@@ -37,7 +37,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/postmaster/postmaster.c,v 1.550 2008/01/01 19:45:51 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/postmaster/postmaster.c,v 1.551 2008/01/11 00:54:09 tgl Exp $
  *
  * NOTES
  *
@@ -4163,7 +4163,7 @@ CreateOptsFile(int argc, char *argv[], char *fullprogname)
 
 	fprintf(fp, "%s", fullprogname);
 	for (i = 1; i < argc; i++)
-		fprintf(fp, " %s%s%s", SYSTEMQUOTE, argv[i], SYSTEMQUOTE);
+		fprintf(fp, " \"%s\"", argv[i]);
 	fputs("\n", fp);
 
 	if (fclose(fp))
