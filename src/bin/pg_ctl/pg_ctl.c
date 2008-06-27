@@ -4,7 +4,7 @@
  *
  * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/pg_ctl/pg_ctl.c,v 1.53.4.4 2006/06/25 04:38:08 alvherre Exp $
+ * $PostgreSQL: pgsql/src/bin/pg_ctl/pg_ctl.c,v 1.53.4.5 2008/02/20 22:18:41 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -535,15 +535,18 @@ do_start(void)
 			{
 				char	   *arg1;
 
-				arg1 = strchr(optline, *SYSTEMQUOTE);
-				if (arg1 == NULL || arg1 == optline)
-					post_opts = "";
-				else
+				/*
+				 * Are we at the first option, as defined by space and
+				 * double-quote?
+				 */
+				if ((arg1 = strstr(optline, " \"")) != NULL ||
+					/* check in case this is an older server */
+				    (arg1 = strstr(optline, " -")) != NULL)
 				{
-					*(arg1 - 1) = '\0'; /* this should be a space */
-					post_opts = arg1;
+					*arg1 = '\0';	/* terminate so we get only program name */
+					post_opts = arg1 + 1; /* point past whitespace */
 				}
-				if (postgres_path != NULL)
+				if (postgres_path == NULL)
 					postgres_path = optline;
 			}
 			else
