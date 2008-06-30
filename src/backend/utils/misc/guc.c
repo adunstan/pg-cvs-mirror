@@ -10,7 +10,7 @@
  * Written by Peter Eisentraut <peter_e@gmx.net>.
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.456 2008/05/28 09:04:06 mha Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.457 2008/06/30 10:58:47 heikki Exp $
  *
  *--------------------------------------------------------------------
  */
@@ -3991,7 +3991,7 @@ ReportGUCOption(struct config_generic * record)
  * If the string parses okay, return true, else false.
  * If okay and result is not NULL, return the value in *result.
  */
-static bool
+bool
 parse_bool(const char *value, bool *result)
 {
 	size_t		len = strlen(value);
