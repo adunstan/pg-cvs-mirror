@@ -12,7 +12,7 @@
  * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/c.h,v 1.227 2008/06/17 16:09:06 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/c.h,v 1.228 2008/06/24 17:58:27 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -99,8 +99,12 @@
 #endif
 
 /*
- *	Use this to mark strings to be translated by gettext, in places where
- *	you don't want an actual function call to occur (eg, constant tables).
+ *	Use this to mark string constants as needing translation at some later
+ *	time, rather than immediately.  This is useful for cases where you need
+ *	access to the original string and translated string, and for cases where
+ *	immediate translation is not possible, like when initializing global
+ *	variables.
+ *		http://www.gnu.org/software/autoconf/manual/gettext/Special-cases.html
  */
 #define gettext_noop(x) (x)
 
