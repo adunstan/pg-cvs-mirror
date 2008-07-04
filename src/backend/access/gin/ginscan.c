@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *			$PostgreSQL: pgsql/src/backend/access/gin/ginscan.c,v 1.14 2008/05/16 16:31:01 tgl Exp $
+ *			$PostgreSQL: pgsql/src/backend/access/gin/ginscan.c,v 1.15 2008/06/19 00:46:03 alvherre Exp $
  *-------------------------------------------------------------------------
  */
 
@@ -58,6 +58,7 @@ fillScanKey(GinState *ginstate, GinScanKey key, Datum query,
 		ItemPointerSet(&(key->scanEntry[i].curItem), InvalidBlockNumber, InvalidOffsetNumber);
 		key->scanEntry[i].offset = InvalidOffsetNumber;
 		key->scanEntry[i].buffer = InvalidBuffer;
+		key->scanEntry[i].partialMatch = NULL;
 		key->scanEntry[i].list = NULL;
 		key->scanEntry[i].nlist = 0;
 		key->scanEntry[i].isPartialMatch = ( ginstate->canPartialMatch && partial_matches ) 
