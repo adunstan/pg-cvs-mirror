@@ -10,7 +10,7 @@
  * Written by Peter Eisentraut <peter_e@gmx.net>.
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.461 2008/07/01 21:07:33 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.462 2008/07/06 19:48:45 tgl Exp $
  *
  *--------------------------------------------------------------------
  */
@@ -1287,6 +1287,7 @@ static struct config_int ConfigureNamesInt[] =
 	},
 
 	{
+		/* This is PGC_SIGHUP so all backends have the same value. */
 		{"deadlock_timeout", PGC_SIGHUP, LOCK_MANAGEMENT,
 			gettext_noop("Sets the time to wait on a lock before checking for deadlock."),
 			NULL,
