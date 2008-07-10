@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/optimizer/plan/planagg.c,v 1.38 2008/04/21 00:26:45 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/optimizer/plan/planagg.c,v 1.39 2008/06/19 00:46:04 alvherre Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -563,7 +563,11 @@ make_agg_subplan(PlannerInfo *root, MinMaxAggInfo *info)
 											 exprType((Node *) tle->expr),
 											 -1);
 
-	/* Make sure the InitPlan gets into the outer list */
+	/*
+	 * Make sure the InitPlan gets into the outer list.  It has to appear
+	 * after any other InitPlans it might depend on, too (see comments in
+	 * ExecReScan).
+	 */
 	root->init_plans = list_concat(root->init_plans, subroot.init_plans);
 }
 
