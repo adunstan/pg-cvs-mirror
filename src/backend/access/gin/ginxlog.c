@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *			 $PostgreSQL: pgsql/src/backend/access/gin/ginxlog.c,v 1.13 2008/05/12 00:00:44 alvherre Exp $
+ *			 $PostgreSQL: pgsql/src/backend/access/gin/ginxlog.c,v 1.14 2008/06/12 09:12:29 heikki Exp $
  *-------------------------------------------------------------------------
  */
 #include "postgres.h"
@@ -549,7 +549,7 @@ ginContinueSplit(ginIncompleteSplit *split)
 
 	if (split->rootBlkno == GIN_ROOT_BLKNO)
 	{
-		prepareEntryScan(&btree, reln, (Datum) 0, NULL);
+		prepareEntryScan(&btree, reln, InvalidOffsetNumber, (Datum) 0, NULL);
 		btree.entry = ginPageGetLinkItup(buffer);
 	}
 	else
