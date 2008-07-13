@@ -11,7 +11,7 @@
  * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/backend/access/transam/xlogutils.c,v 1.55 2008/06/12 09:12:30 heikki Exp $
+ * $PostgreSQL: pgsql/src/backend/access/transam/xlogutils.c,v 1.56 2008/06/19 00:46:03 alvherre Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -279,7 +279,7 @@ XLogReadBuffer(RelFileNode rnode, BlockNumber blkno, bool init)
 		/* check that page has been initialized */
 		Page		page = (Page) BufferGetPage(buffer);
 
-		if (PageIsNew((PageHeader) page))
+		if (PageIsNew(page))
 		{
 			UnlockReleaseBuffer(buffer);
 			log_invalid_page(rnode, blkno, true);

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/hash/hashutil.c,v 1.54 2008/05/12 00:00:44 alvherre Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/hash/hashutil.c,v 1.55 2008/06/19 00:46:03 alvherre Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -164,8 +164,7 @@ _hash_checkpage(Relation rel, Buffer buf, int flags)
 	/*
 	 * Additionally check that the special area looks sane.
 	 */
-	if (((PageHeader) (page))->pd_special !=
-		(BLCKSZ - MAXALIGN(sizeof(HashPageOpaqueData))))
+	if (PageGetSpecialSize(page) != MAXALIGN(sizeof(HashPageOpaqueData)))
 		ereport(ERROR,
 				(errcode(ERRCODE_INDEX_CORRUPTED),
 				 errmsg("index \"%s\" contains corrupted page at block %u",
