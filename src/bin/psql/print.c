@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2008, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/psql/print.c,v 1.107 2008/05/18 06:50:08 adunstan Exp $
+ * $PostgreSQL: pgsql/src/bin/psql/print.c,v 1.108 2008/05/21 16:00:10 mha Exp $
  */
 #include "postgres_fe.h"
 
@@ -2313,7 +2313,7 @@ printQuery(const PGresult *result, const printQueryOpt *opt, FILE *fout, FILE *f
 		}
 
 		printTableAddHeader(&cont, PQfname(result, i),
-							opt->trans_headers, align);
+							opt->translate_header, align);
 	}
 
 	/* set cells */
@@ -2329,7 +2329,7 @@ printQuery(const PGresult *result, const printQueryOpt *opt, FILE *fout, FILE *f
 			else
 				cell = PQgetvalue(result, r, c);
 
-			translate = (opt->trans_columns && opt->trans_columns[c]);
+			translate = (opt->translate_columns && opt->translate_columns[c]);
 			printTableAddCell(&cont, cell, translate);
 		}
 	}

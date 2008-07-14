@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2008, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/psql/large_obj.c,v 1.49 2007/12/12 21:41:47 tgl Exp $
+ * $PostgreSQL: pgsql/src/bin/psql/large_obj.c,v 1.50 2008/01/01 19:45:56 momjian Exp $
  */
 #include "postgres_fe.h"
 #include "large_obj.h"
@@ -293,7 +293,7 @@ do_lo_list(void)
 	myopt.topt.tuples_only = false;
 	myopt.nullPrint = NULL;
 	myopt.title = _("Large objects");
-	myopt.trans_headers = true;
+	myopt.translate_header = true;
 
 	printQuery(res, &myopt, pset.queryFout, pset.logfile);
 
