@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/catalog/pg_aggregate.c,v 1.93 2008/06/19 00:46:04 alvherre Exp $
+ *	  $PostgreSQL: pgsql/src/backend/catalog/pg_aggregate.c,v 1.94 2008/07/16 01:30:22 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -202,7 +202,7 @@ AggregateCreate(const char *aggName,
 							  INTERNALlanguageId,		/* languageObjectId */
 							  InvalidOid,		/* no validator */
 							  "aggregate_dummy",		/* placeholder proc */
-							  "-",		/* probin */
+							  NULL,		/* probin */
 							  true,		/* isAgg */
 							  false,	/* security invoker (currently not
 										 * definable for agg) */
