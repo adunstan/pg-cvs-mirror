@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/tablecmds.c,v 1.258 2008/06/15 16:29:05 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/tablecmds.c,v 1.259 2008/06/19 00:46:04 alvherre Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -761,6 +761,9 @@ ExecuteTruncate(TruncateStmt *stmt)
 	ResultRelInfo *resultRelInfos;
 	ResultRelInfo *resultRelInfo;
 	ListCell   *cell;
+
+	/* make list unique */
+	stmt->relations = list_union(NIL, stmt->relations);
 
 	/*
 	 * Open, exclusive-lock, and check all the explicitly-specified relations
