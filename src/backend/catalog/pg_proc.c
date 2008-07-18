@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/catalog/pg_proc.c,v 1.151 2008/03/27 03:57:33 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/catalog/pg_proc.c,v 1.152 2008/07/16 16:55:23 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -242,6 +242,7 @@ ProcedureCreate(const char *procedureName,
 						elog(ERROR, "variadic parameter must be last");
 					break;
 				case PROARGMODE_OUT:
+				case PROARGMODE_TABLE:
 					/* okay */
 					break;
 				case PROARGMODE_VARIADIC:
