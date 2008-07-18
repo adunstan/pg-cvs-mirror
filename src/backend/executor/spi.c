@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/spi.c,v 1.195 2008/05/12 20:02:00 alvherre Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/spi.c,v 1.196 2008/06/01 17:32:48 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1057,10 +1057,8 @@ SPI_cursor_open_internal(const char *name, SPIPlanPtr plan,
 	 */
 	oldcontext = MemoryContextSwitchTo(PortalGetHeapMemory(portal));
 
-	/* Copy the plan's query string, if available, into the portal */
-	query_string = plansource->query_string;
-	if (query_string)
-		query_string = pstrdup(query_string);
+	/* Copy the plan's query string into the portal */
+	query_string = pstrdup(plansource->query_string);
 
 	/* If the plan has parameters, copy them into the portal */
 	if (plan->nargs > 0)
