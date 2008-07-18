@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2008, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/psql/startup.c,v 1.148 2008/05/16 17:17:00 momjian Exp $
+ * $PostgreSQL: pgsql/src/bin/psql/startup.c,v 1.149 2008/07/01 00:08:18 momjian Exp $
  */
 #include "postgres_fe.h"
 
@@ -281,12 +281,14 @@ main(int argc, char *argv[])
 	 */
 	else
 	{
-		if (!options.no_psqlrc)
-			process_psqlrc(argv[0]);
-
 		connection_warnings();
 		if (!pset.quiet && !pset.notty)
-			printf(_("Type \"help\" for help.\n\n"));
+			printf(_("Type \"help\" for help.\n"));
+		if (!options.no_psqlrc)
+			process_psqlrc(argv[0]);
+		/* output newline here because .psqlrc might output something */
+		if (!pset.quiet && !pset.notty)
+			printf("\n");
 		if (!pset.notty)
 			initializeInput(options.no_readline ? 0 : 1);
 		if (options.action_string)		/* -f - was used */
