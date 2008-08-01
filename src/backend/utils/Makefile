@@ -1,7 +1,7 @@
 #
 # Makefile for utils
 #
-# $PostgreSQL: pgsql/src/backend/utils/Makefile,v 1.26 2008/02/19 10:30:08 petere Exp $
+# $PostgreSQL: pgsql/src/backend/utils/Makefile,v 1.27 2008/03/17 19:44:41 petere Exp $
 #
 
 subdir = src/backend/utils
@@ -20,9 +20,13 @@ $(SUBDIRS:%=%-recursive): fmgroids.h
 fmgroids.h fmgrtab.c: Gen_fmgrtab.sh $(top_srcdir)/src/include/catalog/pg_proc.h
 	AWK='$(AWK)' $(SHELL) $< $(top_srcdir)/src/include/catalog/pg_proc.h
 
+ifneq ($(enable_dtrace), yes)
+probes.h: Gen_dummy_probes.sed
+endif
+
 probes.h: probes.d
 ifeq ($(enable_dtrace), yes)
-	$(DTRACE) -h -s $< -o $@.tmp
+	$(DTRACE) -C -h -s $< -o $@.tmp
 	sed -e 's/POSTGRESQL_/TRACE_POSTGRESQL_/g' $@.tmp >$@
 	rm $@.tmp
 else
