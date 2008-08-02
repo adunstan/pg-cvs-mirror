@@ -10,7 +10,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/optimizer/path/equivclass.c,v 1.9 2008/01/09 20:42:27 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/optimizer/path/equivclass.c,v 1.10 2008/03/31 16:59:26 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -355,7 +355,7 @@ add_eq_member(EquivalenceClass *ec, Expr *expr, Relids relids,
  *	  class it is a member of; if none, build a new single-member
  *	  EquivalenceClass for it.
  *
- * sortref is the SortGroupRef of the originating SortClause, if any,
+ * sortref is the SortGroupRef of the originating SortGroupClause, if any,
  * or zero if not.
  *
  * This can be used safely both before and after EquivalenceClass merging;
