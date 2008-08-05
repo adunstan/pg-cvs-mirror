@@ -42,7 +42,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  * Portions taken from FreeBSD.
  *
- * $PostgreSQL: pgsql/src/bin/initdb/initdb.c,v 1.157 2008/06/26 01:35:45 momjian Exp $
+ * $PostgreSQL: pgsql/src/bin/initdb/initdb.c,v 1.158 2008/07/19 04:01:29 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -2461,7 +2461,8 @@ main(int argc, char *argv[])
 		"pg_multixact/offsets",
 		"base",
 		"base/1",
-		"pg_tblspc"
+		"pg_tblspc",
+		"pg_stat_tmp"
 	};
 
 	progname = get_progname(argv[0]);
