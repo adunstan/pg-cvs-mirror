@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/optimizer/plancat.h,v 1.49 2008/04/01 00:48:33 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/optimizer/plancat.h,v 1.50 2008/06/19 00:46:06 alvherre Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -50,6 +50,7 @@ extern Selectivity restriction_selectivity(PlannerInfo *root,
 extern Selectivity join_selectivity(PlannerInfo *root,
 				 Oid operator,
 				 List *args,
-				 JoinType jointype);
+				 JoinType jointype,
+				 SpecialJoinInfo *sjinfo);
 
 #endif   /* PLANCAT_H */
