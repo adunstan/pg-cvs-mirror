@@ -1,7 +1,7 @@
 /* -----------------------------------------------------------------------
  * formatting.c
  *
- * $PostgreSQL: pgsql/src/backend/utils/adt/formatting.c,v 1.144 2008/06/26 16:06:37 teodor Exp $
+ * $PostgreSQL: pgsql/src/backend/utils/adt/formatting.c,v 1.145 2008/07/12 00:44:37 tgl Exp $
  *
  *
  *	 Portions Copyright (c) 1999-2008, PostgreSQL Global Development Group
@@ -3197,9 +3197,7 @@ do_to_timestamp(text *date_txt, text *fmt,
 		 * ISO week (Monday).
 		 */
 		if (tmfc.d)
-		{
 			isoweekdate2date(tmfc.iw, tmfc.d, &tm->tm_year, &tm->tm_mon, &tm->tm_mday);
-		}
 		else
 			isoweek2date(tmfc.iw, &tm->tm_year, &tm->tm_mon, &tm->tm_mday);
 	}
