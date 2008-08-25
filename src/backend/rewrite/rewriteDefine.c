@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/rewrite/rewriteDefine.c,v 1.127 2008/06/19 00:46:05 alvherre Exp $
+ *	  $PostgreSQL: pgsql/src/backend/rewrite/rewriteDefine.c,v 1.128 2008/08/11 11:05:11 heikki Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -20,8 +20,7 @@
 #include "catalog/namespace.h"
 #include "catalog/pg_rewrite.h"
 #include "miscadmin.h"
-#include "optimizer/clauses.h"
-#include "parser/parse_expr.h"
+#include "nodes/nodeFuncs.h"
 #include "parser/parse_utilcmd.h"
 #include "rewrite/rewriteDefine.h"
 #include "rewrite/rewriteManip.h"

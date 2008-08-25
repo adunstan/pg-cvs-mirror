@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/execQual.c,v 1.231 2008/05/15 00:17:39 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/execQual.c,v 1.232 2008/08/22 00:16:03 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -44,8 +44,8 @@
 #include "funcapi.h"
 #include "miscadmin.h"
 #include "nodes/makefuncs.h"
+#include "nodes/nodeFuncs.h"
 #include "optimizer/planmain.h"
-#include "parser/parse_expr.h"
 #include "pgstat.h"
 #include "utils/acl.h"
 #include "utils/builtins.h"

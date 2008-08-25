@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/pl/plpgsql/src/pl_exec.c,v 1.215 2008/05/15 22:39:49 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/pl/plpgsql/src/pl_exec.c,v 1.216 2008/05/16 18:34:51 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -23,8 +23,7 @@
 #include "catalog/pg_type.h"
 #include "executor/spi_priv.h"
 #include "funcapi.h"
-#include "optimizer/clauses.h"
-#include "parser/parse_expr.h"
+#include "nodes/nodeFuncs.h"
 #include "parser/scansup.h"
 #include "tcop/tcopprot.h"
 #include "utils/array.h"
