@@ -1,7 +1,7 @@
 %{
 /* 
 ** A scanner for EMP-style numeric ranges 
- * $PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.314 2006/03/07 02:54:23 momjian Exp $
+ * $PostgreSQL: pgsql/contrib/cube/cubescan.l,v 1.11 2006/03/11 04:38:28 momjian Exp $
 */
 
 #include "postgres.h"
@@ -29,6 +29,7 @@ void cube_scanner_finish(void);
 %option 8bit
 %option never-interactive
 %option nodefault
+%option noinput
 %option nounput
 %option noyywrap
 %option prefix="cube_yy"
