@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/parser/parse_relation.c,v 1.132 2008/05/12 00:00:50 alvherre Exp $
+ *	  $PostgreSQL: pgsql/src/backend/parser/parse_relation.c,v 1.133 2008/08/25 22:42:33 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -362,7 +362,7 @@ scanRTEForColumn(ParseState *pstate, RangeTblEntry *rte, char *colname,
 						 errmsg("column reference \"%s\" is ambiguous",
 								colname),
 						 parser_errposition(pstate, location)));
-			result = (Node *) make_var(pstate, rte, attnum);
+			result = (Node *) make_var(pstate, rte, attnum, location);
 			/* Require read access */
 			rte->requiredPerms |= ACL_SELECT;
 		}
@@ -390,7 +390,7 @@ scanRTEForColumn(ParseState *pstate, RangeTblEntry *rte, char *colname,
 									 Int16GetDatum(attnum),
 									 0, 0))
 			{
-				result = (Node *) make_var(pstate, rte, attnum);
+				result = (Node *) make_var(pstate, rte, attnum, location);
 				/* Require read access */
 				rte->requiredPerms |= ACL_SELECT;
 			}

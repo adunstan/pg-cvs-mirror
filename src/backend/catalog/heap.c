@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/catalog/heap.c,v 1.337 2008/08/11 11:05:10 heikki Exp $
+ *	  $PostgreSQL: pgsql/src/backend/catalog/heap.c,v 1.338 2008/08/25 22:42:32 tgl Exp $
  *
  *
  * INTERFACE ROUTINES
@@ -2121,7 +2121,8 @@ cookDefault(ParseState *pstate,
 		expr = coerce_to_target_type(pstate, expr, type_id,
 									 atttypid, atttypmod,
 									 COERCION_ASSIGNMENT,
-									 COERCE_IMPLICIT_CAST);
+									 COERCE_IMPLICIT_CAST,
+									 -1);
 		if (expr == NULL)
 			ereport(ERROR,
 					(errcode(ERRCODE_DATATYPE_MISMATCH),

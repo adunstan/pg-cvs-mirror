@@ -19,7 +19,7 @@
  * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- *	$PostgreSQL: pgsql/src/backend/parser/parse_utilcmd.c,v 2.14 2008/07/16 01:30:22 tgl Exp $
+ *	$PostgreSQL: pgsql/src/backend/parser/parse_utilcmd.c,v 2.15 2008/08/25 22:42:33 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -380,9 +380,11 @@ transformColumnDefinition(ParseState *pstate, CreateStmtContext *cxt,
 		snamenode = makeNode(A_Const);
 		snamenode->val.type = T_String;
 		snamenode->val.val.str = qstring;
+		snamenode->location = -1;
 		castnode = makeNode(TypeCast);
 		castnode->typename = SystemTypeName("regclass");
 		castnode->arg = (Node *) snamenode;
+		castnode->location = -1;
 		funccallnode = makeNode(FuncCall);
 		funccallnode->funcname = SystemFuncName("nextval");
 		funccallnode->args = list_make1(castnode);
