@@ -14,15 +14,15 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/parser/parser.c,v 1.72 2007/11/15 21:14:37 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/parser/parser.c,v 1.73 2008/01/01 19:45:51 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
 
 #include "postgres.h"
 
-#include "parser/gramparse.h"	/* required before parser/parse.h! */
-#include "parser/parse.h"
+#include "parser/gramparse.h"	/* required before parser/gram.h! */
+#include "parser/gram.h"
 #include "parser/parser.h"
 
 
