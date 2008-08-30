@@ -15,7 +15,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/nodes/copyfuncs.c,v 1.401 2008/08/22 00:16:03 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/nodes/copyfuncs.c,v 1.402 2008/08/28 23:09:45 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1693,6 +1693,14 @@ _copyFuncCall(FuncCall *from)
 	COPY_SCALAR_FIELD(agg_distinct);
 	COPY_SCALAR_FIELD(func_variadic);
 	COPY_LOCATION_FIELD(location);
+
+	return newnode;
+}
+
+static A_Star *
+_copyAStar(A_Star *from)
+{
+	A_Star  *newnode = makeNode(A_Star);
 
 	return newnode;
 }
@@ -3588,6 +3596,9 @@ copyObject(void *from)
 			break;
 		case T_FuncCall:
 			retval = _copyFuncCall(from);
+			break;
+		case T_A_Star:
+			retval = _copyAStar(from);
 			break;
 		case T_A_Indices:
 			retval = _copyAIndices(from);

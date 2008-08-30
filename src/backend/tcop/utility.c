@@ -10,7 +10,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/tcop/utility.c,v 1.295 2008/07/18 20:26:06 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/tcop/utility.c,v 1.296 2008/08/13 00:07:50 alvherre Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -817,7 +817,10 @@ ProcessUtility(Node *parsetree,
 			{
 				UnlistenStmt *stmt = (UnlistenStmt *) parsetree;
 
-				Async_Unlisten(stmt->relation->relname);
+				if (stmt->relation)
+					Async_Unlisten(stmt->relation->relname);
+				else
+					Async_UnlistenAll();
 			}
 			break;
 
