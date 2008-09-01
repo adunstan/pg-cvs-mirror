@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/tablecmds.c,v 1.263 2008/08/25 22:42:32 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/tablecmds.c,v 1.264 2008/08/28 23:09:45 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -5112,7 +5112,8 @@ createForeignKeyTriggers(Relation rel, FkConstraint *fkconstraint,
 	 * Reconstruct a RangeVar for my relation (not passed in, unfortunately).
 	 */
 	myRel = makeRangeVar(get_namespace_name(RelationGetNamespace(rel)),
-						 pstrdup(RelationGetRelationName(rel)));
+						 pstrdup(RelationGetRelationName(rel)),
+						 -1);
 
 	/* Make changes-so-far visible */
 	CommandCounterIncrement();
