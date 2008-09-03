@@ -11,7 +11,7 @@
  * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/fmgr.h,v 1.58 2008/04/21 00:26:46 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/fmgr.h,v 1.59 2008/05/15 00:17:41 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -357,6 +357,9 @@ extern int no_such_variable
  *
  * Note: we compare magic blocks with memcmp(), so there had better not be
  * any alignment pad bytes in them.
+ *
+ * Note: when changing the contents of magic blocks, be sure to adjust the
+ * incompatible_module_error() function in dfmgr.c.
  *-------------------------------------------------------------------------
  */
 
