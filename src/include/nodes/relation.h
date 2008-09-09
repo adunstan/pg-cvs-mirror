@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/nodes/relation.h,v 1.157 2008/08/05 02:43:17 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/nodes/relation.h,v 1.158 2008/08/14 18:48:00 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -73,6 +73,8 @@ typedef struct PlannerGlobal
 	List	   *finalrtable;	/* "flat" rangetable for executor */
 
 	List	   *relationOids;	/* OIDs of relations the plan depends on */
+
+	List	   *invalItems;		/* other dependencies, as PlanInvalItems */
 
 	bool		transientPlan;	/* redo plan when TransactionXmin changes? */
 } PlannerGlobal;

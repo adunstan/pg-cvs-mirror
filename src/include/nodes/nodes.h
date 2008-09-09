@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/nodes/nodes.h,v 1.210 2008/08/29 22:49:07 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/nodes/nodes.h,v 1.211 2008/08/30 01:39:14 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -67,6 +67,8 @@ typedef enum NodeTag
 	T_Hash,
 	T_SetOp,
 	T_Limit,
+	/* this one isn't a subclass of Plan: */
+	T_PlanInvalItem,
 
 	/*
 	 * TAGS FOR PLAN STATE NODES (execnodes.h)
