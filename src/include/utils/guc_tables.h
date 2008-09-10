@@ -7,7 +7,7 @@
  *
  * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  *
- *	  $PostgreSQL: pgsql/src/include/utils/guc_tables.h,v 1.40 2008/03/16 16:42:44 mha Exp $
+ *	  $PostgreSQL: pgsql/src/include/utils/guc_tables.h,v 1.41 2008/03/17 17:45:09 mha Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -126,6 +126,8 @@ struct config_generic
 	GucSource	reset_source;	/* source of the reset_value */
 	GucSource	source;			/* source of the current actual value */
 	GucStack   *stack;			/* stacked prior values */
+	char	   *sourcefile;		/* file this settings is from (NULL if not file) */
+	int			sourceline;		/* line in source file */
 };
 
 /* bit values in flags field */
