@@ -10,7 +10,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/nabstime.c,v 1.154 2008/03/21 01:31:42 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/nabstime.c,v 1.155 2008/03/25 22:42:44 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -632,7 +632,8 @@ reltimein(PG_FUNCTION_ARGS)
 	dterr = ParseDateTime(str, workbuf, sizeof(workbuf),
 						  field, ftype, MAXDATEFIELDS, &nf);
 	if (dterr == 0)
-		dterr = DecodeInterval(field, ftype, nf, &dtype, tm, &fsec);
+		dterr = DecodeInterval(field, ftype, nf, INTERVAL_FULL_RANGE,
+							   &dtype, tm, &fsec);
 	if (dterr != 0)
 	{
 		if (dterr == DTERR_FIELD_OVERFLOW)
