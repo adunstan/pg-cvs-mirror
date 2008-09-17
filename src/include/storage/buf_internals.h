@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/storage/buf_internals.h,v 1.97 2008/06/19 00:46:06 alvherre Exp $
+ * $PostgreSQL: pgsql/src/include/storage/buf_internals.h,v 1.98 2008/08/11 11:05:11 heikki Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -180,6 +180,8 @@ extern long int BufferHitCount;
 extern long int LocalBufferHitCount;
 extern long int BufferFlushCount;
 extern long int LocalBufferFlushCount;
+extern long int BufFileReadCount;
+extern long int BufFileWriteCount;
 
 
 /*
