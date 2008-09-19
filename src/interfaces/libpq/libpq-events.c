@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL$
+ *	  $PostgreSQL: pgsql/src/interfaces/libpq/libpq-events.c,v 1.1 2008/09/17 04:31:08 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -76,6 +76,7 @@ PQregisterEventProc(PGconn *conn, PGEventProc proc,
 		return FALSE;
 	conn->events[conn->nEvents].passThrough = passThrough;
 	conn->events[conn->nEvents].data = NULL;
+	conn->events[conn->nEvents].resultInitialized = FALSE;
 	conn->nEvents++;
 
 	regevt.conn = conn;

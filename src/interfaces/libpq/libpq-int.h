@@ -12,7 +12,7 @@
  * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/interfaces/libpq/libpq-int.h,v 1.131 2008/05/29 22:02:44 tgl Exp $
+ * $PostgreSQL: pgsql/src/interfaces/libpq/libpq-int.h,v 1.132 2008/09/17 04:31:08 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -156,6 +156,7 @@ typedef struct PGEvent
 	char	   *name;			/* used only for error messages */
 	void	   *passThrough;	/* pointer supplied at registration time */
 	void	   *data;			/* optional state (instance) data */
+	bool		resultInitialized;	/* T if RESULTCREATE/COPY succeeded */
 } PGEvent;
 
 struct pg_result
