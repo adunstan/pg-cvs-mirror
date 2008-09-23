@@ -37,7 +37,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/postmaster/postmaster.c,v 1.563 2008/09/15 12:32:57 mha Exp $
+ *	  $PostgreSQL: pgsql/src/backend/postmaster/postmaster.c,v 1.564 2008/09/23 09:20:36 heikki Exp $
  *
  * NOTES
  *
@@ -3285,6 +3285,10 @@ postmaster_forkexec(int argc, char *argv[])
 
 /*
  * backend_forkexec -- fork/exec off a backend process
+ *
+ * Some operating systems (WIN32) don't have fork() so we have to simulate
+ * it by storing parameters that need to be passed to the child and
+ * then create a new child process.
  *
  * returns the pid of the fork/exec'd process, or -1 on failure
  */
