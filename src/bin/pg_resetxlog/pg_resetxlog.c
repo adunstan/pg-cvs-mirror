@@ -23,7 +23,7 @@
  * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/bin/pg_resetxlog/pg_resetxlog.c,v 1.66 2008/09/23 09:20:38 heikki Exp $
+ * $PostgreSQL: pgsql/src/bin/pg_resetxlog/pg_resetxlog.c,v 1.67 2008/09/24 08:59:42 mha Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -442,7 +442,6 @@ GuessControlValues(void)
 {
 	uint64		sysidentifier;
 	struct timeval tv;
-	char	   *localeptr;
 
 	/*
 	 * Set up a completely default set of pg_control values.
