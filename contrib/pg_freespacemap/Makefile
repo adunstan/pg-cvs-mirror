@@ -1,4 +1,4 @@
-# $PostgreSQL: pgsql/contrib/pg_freespacemap/Makefile,v 1.3 2007/06/26 22:05:02 tgl Exp $
+# $PostgreSQL$
 
 MODULE_big = pg_freespacemap
 OBJS	= pg_freespacemap.o
