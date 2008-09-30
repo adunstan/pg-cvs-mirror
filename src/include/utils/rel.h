@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/utils/rel.h,v 1.106 2008/04/10 22:25:26 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/utils/rel.h,v 1.107 2008/06/19 00:46:06 alvherre Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -194,6 +194,9 @@ typedef struct RelationData
 	List	   *rd_indexprs;	/* index expression trees, if any */
 	List	   *rd_indpred;		/* index predicate tree, if any */
 	void	   *rd_amcache;		/* available for use by index AM */
+
+	/* Cached last-seen size of the FSM */
+	BlockNumber	rd_fsm_nblocks_cache;
 
 	/* use "struct" here to avoid needing to include pgstat.h: */
 	struct PgStat_TableStatus *pgstat_info;		/* statistics collection area */

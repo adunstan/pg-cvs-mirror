@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/heap/hio.c,v 1.71 2008/06/08 22:00:47 alvherre Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/heap/hio.c,v 1.72 2008/07/13 20:45:47 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -163,8 +163,7 @@ RelationGetBufferForTuple(Relation relation, Size len,
 		 * We have no cached target page, so ask the FSM for an initial
 		 * target.
 		 */
-		targetBlock = GetPageWithFreeSpace(&relation->rd_node,
-										   len + saveFreeSpace);
+		targetBlock = GetPageWithFreeSpace(relation, len + saveFreeSpace);
 
 		/*
 		 * If the FSM knows nothing of the rel, try the last page before we
@@ -250,7 +249,7 @@ RelationGetBufferForTuple(Relation relation, Size len,
 		 * Update FSM as to condition of this page, and ask for another page
 		 * to try.
 		 */
-		targetBlock = RecordAndGetPageWithFreeSpace(&relation->rd_node,
+		targetBlock = RecordAndGetPageWithFreeSpace(relation,
 													targetBlock,
 													pageFreeSpace,
 													len + saveFreeSpace);

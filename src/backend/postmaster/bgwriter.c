@@ -37,7 +37,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/postmaster/bgwriter.c,v 1.50 2008/05/12 00:00:50 alvherre Exp $
+ *	  $PostgreSQL: pgsql/src/backend/postmaster/bgwriter.c,v 1.51 2008/08/11 11:05:11 heikki Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -55,7 +55,6 @@
 #include "postmaster/bgwriter.h"
 #include "storage/bufmgr.h"
 #include "storage/fd.h"
-#include "storage/freespace.h"
 #include "storage/ipc.h"
 #include "storage/lwlock.h"
 #include "storage/pmsignal.h"
@@ -398,7 +397,6 @@ BackgroundWriterMain(void)
 			ExitOnAnyError = true;
 			/* Close down the database */
 			ShutdownXLOG(0, 0);
-			DumpFreeSpaceMap(0, 0);
 			/* Normal exit from the bgwriter is here */
 			proc_exit(0);		/* done */
 		}

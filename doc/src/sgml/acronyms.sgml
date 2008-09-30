@@ -1,4 +1,4 @@
-<!-- $PostgreSQL: pgsql/doc/src/sgml/acronyms.sgml,v 1.4 2007/11/09 22:22:46 alvherre Exp $ -->
+<!-- $PostgreSQL: pgsql/doc/src/sgml/acronyms.sgml,v 1.5 2008/03/18 16:05:07 mha Exp $ -->
 
 <appendix id="acronyms">
  <title>Acronyms</title>
@@ -216,7 +216,7 @@
     <term><acronym>FSM</acronym></term>
     <listitem>
      <para>
-      <link linkend="runtime-config-resource-fsm">Free Space Map</link>
+      <link linkend="storage-fsm">Free Space Map</link>
      </para>
     </listitem>
    </varlistentry>

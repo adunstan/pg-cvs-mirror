@@ -7,7 +7,7 @@
  *
  * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  *
- *	  $PostgreSQL: pgsql/src/include/utils/guc_tables.h,v 1.41 2008/03/17 17:45:09 mha Exp $
+ *	  $PostgreSQL: pgsql/src/include/utils/guc_tables.h,v 1.42 2008/09/10 18:09:20 alvherre Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -49,7 +49,6 @@ enum config_group
 	CONN_AUTH_SECURITY,
 	RESOURCES,
 	RESOURCES_MEM,
-	RESOURCES_FSM,
 	RESOURCES_KERNEL,
 	WAL,
 	WAL_SETTINGS,
