@@ -9,7 +9,7 @@
  *
  * Copyright (c) 2003-2008, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/pl/plpgsql/src/plerrcodes.h,v 1.13 2008/01/15 01:36:53 tgl Exp $
+ * $PostgreSQL: pgsql/src/pl/plpgsql/src/plerrcodes.h,v 1.14 2008/05/15 22:39:49 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -481,6 +481,10 @@
 
 {
 	"grouping_error", ERRCODE_GROUPING_ERROR
+},
+
+{
+	"invalid_recursion", ERRCODE_INVALID_RECURSION
 },
 
 {

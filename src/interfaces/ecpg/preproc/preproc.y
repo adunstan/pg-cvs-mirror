@@ -1,4 +1,4 @@
-/* $PostgreSQL: pgsql/src/interfaces/ecpg/preproc/preproc.y,v 1.371 2008/08/20 14:09:16 meskes Exp $ */
+/* $PostgreSQL: pgsql/src/interfaces/ecpg/preproc/preproc.y,v 1.372 2008/09/23 09:20:39 heikki Exp $ */
 
 /* Copyright comment */
 %{
@@ -473,7 +473,7 @@ add_typedef(char *name, char * dimension, char * length, enum ECPGttype type_enu
 
 	QUOTE
 
-	READ REAL REASSIGN RECHECK REFERENCES REINDEX RELATIVE_P RELEASE RENAME
+	READ REAL REASSIGN RECHECK RECURSIVE REFERENCES REINDEX RELATIVE_P RELEASE RENAME
 	REPEATABLE REPLACE REPLICA RESET RESTART RESTRICT RETURNING RETURNS REVOKE
 	RIGHT ROLE ROLLBACK ROW ROWS RULE
 

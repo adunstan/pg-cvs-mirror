@@ -35,7 +35,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/cache/plancache.c,v 1.21 2008/09/09 18:58:08 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/cache/plancache.c,v 1.22 2008/09/15 23:37:39 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -728,15 +728,23 @@ ScanQueryForLocks(Query *parsetree, bool acquire)
 		}
 	}
 
+	/* Recurse into subquery-in-WITH */
+	foreach(lc, parsetree->cteList)
+	{
+		CommonTableExpr *cte = (CommonTableExpr *) lfirst(lc);
+
+		ScanQueryForLocks((Query *) cte->ctequery, acquire);
+	}
+
 	/*
 	 * Recurse into sublink subqueries, too.  But we already did the ones in
-	 * the rtable.
+	 * the rtable and cteList.
 	 */
 	if (parsetree->hasSubLinks)
 	{
 		query_tree_walker(parsetree, ScanQueryWalker,
 						  (void *) &acquire,
-						  QTW_IGNORE_RT_SUBQUERIES);
+						  QTW_IGNORE_RC_SUBQUERIES);
 	}
 }
 

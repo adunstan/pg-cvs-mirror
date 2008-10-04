@@ -24,7 +24,7 @@
  * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/utils/tuplestore.h,v 1.23 2008/03/25 19:26:53 neilc Exp $
+ * $PostgreSQL: pgsql/src/include/utils/tuplestore.h,v 1.24 2008/10/01 19:51:50 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -73,6 +73,8 @@ extern bool tuplestore_advance(Tuplestorestate *state, bool forward);
 extern bool tuplestore_ateof(Tuplestorestate *state);
 
 extern void tuplestore_rescan(Tuplestorestate *state);
+
+extern void tuplestore_clear(Tuplestorestate *state);
 
 extern void tuplestore_end(Tuplestorestate *state);
 

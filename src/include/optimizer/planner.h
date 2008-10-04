@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/optimizer/planner.h,v 1.43 2007/11/15 22:25:17 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/optimizer/planner.h,v 1.44 2008/01/01 19:45:58 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -30,7 +30,8 @@ extern PlannedStmt *planner(Query *parse, int cursorOptions,
 extern PlannedStmt *standard_planner(Query *parse, int cursorOptions,
 				 ParamListInfo boundParams);
 extern Plan *subquery_planner(PlannerGlobal *glob, Query *parse,
-				 Index level, double tuple_fraction,
+				 PlannerInfo *parent_root,
+				 bool hasRecursion, double tuple_fraction,
 				 PlannerInfo **subroot);
 
 #endif   /* PLANNER_H */
