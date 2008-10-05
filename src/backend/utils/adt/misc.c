@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/misc.c,v 1.62 2008/04/17 20:56:41 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/misc.c,v 1.63 2008/07/03 20:58:46 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -35,28 +35,6 @@
 
 #define atooid(x)  ((Oid) strtoul((x), NULL, 10))
 
-
-/*
- * Check if data is Null
- */
-Datum
-nullvalue(PG_FUNCTION_ARGS)
-{
-	if (PG_ARGISNULL(0))
-		PG_RETURN_BOOL(true);
-	PG_RETURN_BOOL(false);
-}
-
-/*
- * Check if data is not Null
- */
-Datum
-nonnullvalue(PG_FUNCTION_ARGS)
-{
-	if (PG_ARGISNULL(0))
-		PG_RETURN_BOOL(false);
-	PG_RETURN_BOOL(true);
-}
 
 /*
  * current_database()
