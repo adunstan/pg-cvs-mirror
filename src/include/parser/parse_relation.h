@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/parser/parse_relation.h,v 1.58 2008/09/01 20:42:45 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/parser/parse_relation.h,v 1.59 2008/10/04 21:56:55 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -23,6 +23,9 @@ extern RangeTblEntry *refnameRangeTblEntry(ParseState *pstate,
 					 const char *refname,
 					 int location,
 					 int *sublevels_up);
+extern CommonTableExpr *scanNameSpaceForCTE(ParseState *pstate,
+											const char *refname,
+											Index *ctelevelsup);
 extern void checkNameSpaceConflicts(ParseState *pstate, List *namespace1,
 						List *namespace2);
 extern int RTERangeTablePosn(ParseState *pstate,
