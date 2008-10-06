@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/gist/gistvacuum.c,v 1.36 2008/06/12 09:12:30 heikki Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/gist/gistvacuum.c,v 1.37 2008/09/30 10:52:10 heikki Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -618,6 +618,9 @@ gistvacuumcleanup(PG_FUNCTION_ARGS)
 		stats->std.pages_removed = lastBlock - lastFilledBlock;
 		totFreePages = totFreePages - stats->std.pages_removed;
 	}
+
+	/* Finally, vacuum the FSM */
+	IndexFreeSpaceMapVacuum(info->index);
 
 	/* return statistics */
 	stats->std.pages_free = totFreePages;
