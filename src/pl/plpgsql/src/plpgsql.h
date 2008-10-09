@@ -3,7 +3,7 @@
  *			  procedural language
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql-server/src/pl/plpgsql/src/plpgsql.h,v 1.55 2004/09/14 23:46:46 neilc Exp $
+ *	  $PostgreSQL: pgsql/src/pl/plpgsql/src/plpgsql.h,v 1.56 2004/09/16 16:58:44 tgl Exp $
  *
  *	  This software is copyrighted by Jan Wieck - Hamburg.
  *
@@ -551,6 +551,10 @@ typedef struct
 typedef struct PLpgSQL_func_hashkey
 {								/* Hash lookup key for functions */
 	Oid			funcOid;
+
+	bool		isTrigger;		/* true if called as a trigger */
+
+	/* be careful that pad bytes in this struct get zeroed! */
 
 	/*
 	 * For a trigger function, the OID of the relation triggered on is
