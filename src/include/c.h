@@ -12,7 +12,7 @@
  * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/c.h,v 1.228 2008/06/24 17:58:27 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/c.h,v 1.229 2008/07/03 02:49:54 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -90,12 +90,13 @@
 /* Must be before gettext() games below */
 #include <locale.h>
 
-#define _(x) gettext((x))
+#define _(x) gettext(x)
 
 #ifdef ENABLE_NLS
 #include <libintl.h>
 #else
 #define gettext(x) (x)
+#define dgettext(d,x) (x)
 #endif
 
 /*
