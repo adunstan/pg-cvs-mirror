@@ -1,7 +1,7 @@
 /**********************************************************************
  * plpython.c - python as a procedural language for PostgreSQL
  *
- *	$PostgreSQL: pgsql/src/pl/plpython/plpython.c,v 1.112 2008/07/18 03:32:53 tgl Exp $
+ *	$PostgreSQL: pgsql/src/pl/plpython/plpython.c,v 1.113 2008/10/09 17:24:05 alvherre Exp $
  *
  *********************************************************************
  */
@@ -54,6 +54,7 @@ typedef int Py_ssize_t;
 #include "executor/spi.h"
 #include "funcapi.h"
 #include "fmgr.h"
+#include "miscadmin.h"
 #include "nodes/makefuncs.h"
 #include "parser/parse_type.h"
 #include "tcop/tcopprot.h"
