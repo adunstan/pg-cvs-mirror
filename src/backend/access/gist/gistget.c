@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/gist/gistget.c,v 1.69 2008/01/01 19:45:46 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/gist/gistget.c,v 1.69.2.1 2008/08/23 10:40:03 teodor Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -126,6 +126,9 @@ gistnext(IndexScanDesc scan, ScanDirection dir, ItemPointer tids,
 	int			ntids = 0;
 
 	so = (GISTScanOpaque) scan->opaque;
+
+	if ( so->qual_ok == false )
+		return 0;
 
 	if (ItemPointerIsValid(&so->curpos) == false)
 	{
