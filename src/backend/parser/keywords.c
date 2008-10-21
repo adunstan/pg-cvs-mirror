@@ -11,7 +11,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/parser/keywords.c,v 1.201 2008/09/23 09:20:36 heikki Exp $
+ *	  $PostgreSQL: pgsql/src/backend/parser/keywords.c,v 1.202 2008/10/04 21:56:54 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -123,6 +123,7 @@ const ScanKeyword ScanKeywords[] = {
 	{"current_user", CURRENT_USER, RESERVED_KEYWORD},
 	{"cursor", CURSOR, UNRESERVED_KEYWORD},
 	{"cycle", CYCLE, UNRESERVED_KEYWORD},
+	{"data", DATA_P, UNRESERVED_KEYWORD},
 	{"database", DATABASE, UNRESERVED_KEYWORD},
 	{"day", DAY_P, UNRESERVED_KEYWORD},
 	{"deallocate", DEALLOCATE, UNRESERVED_KEYWORD},

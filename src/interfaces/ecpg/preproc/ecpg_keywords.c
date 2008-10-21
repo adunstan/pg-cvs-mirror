@@ -4,7 +4,7 @@
  *	  lexical token lookup for reserved words in postgres embedded SQL
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/interfaces/ecpg/preproc/ecpg_keywords.c,v 1.37 2007/11/15 21:14:45 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/interfaces/ecpg/preproc/ecpg_keywords.c,v 1.38 2008/05/20 23:17:32 meskes Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -34,7 +34,6 @@ static const ScanKeyword ScanECPGKeywords[] = {
 	{"cardinality", SQL_CARDINALITY, 0},
 	{"connect", SQL_CONNECT, 0},
 	{"count", SQL_COUNT, 0},
-	{"data", SQL_DATA, 0},
 	{"datetime_interval_code", SQL_DATETIME_INTERVAL_CODE, 0},
 	{"datetime_interval_precision", SQL_DATETIME_INTERVAL_PRECISION, 0},
 	{"describe", SQL_DESCRIBE, 0},
