@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-protocol3.c,v 1.34 2008/01/17 21:21:50 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-protocol3.c,v 1.35 2008/05/29 22:02:44 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -853,7 +853,6 @@ pqGetErrorNotice3(PGconn *conn, bool isError)
 			goto fail;
 		pqClearAsyncResult(conn);
 		conn->result = res;
-		resetPQExpBuffer(&conn->errorMessage);
 		appendPQExpBufferStr(&conn->errorMessage, workBuf.data);
 	}
 	else
