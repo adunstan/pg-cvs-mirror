@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/utils/elog.h,v 1.77 2004/09/16 21:59:17 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/utils/elog.h,v 1.78 2004/12/31 22:03:46 pgsql Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -282,6 +282,7 @@ extern int	Log_destination;
 
 /* Other exported functions */
 extern void DebugFileOpen(void);
+extern bool in_error_recursion_trouble(void);
 
 /*
  * Write errors to stderr (or by equal means when stderr is
