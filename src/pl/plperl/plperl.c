@@ -1,7 +1,7 @@
 /**********************************************************************
  * plperl.c - perl as a procedural language for PostgreSQL
  *
- *	  $PostgreSQL: pgsql/src/pl/plperl/plperl.c,v 1.139 2008/03/28 00:21:56 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/pl/plperl/plperl.c,v 1.140 2008/10/09 17:24:05 alvherre Exp $
  *
  **********************************************************************/
 
@@ -1922,7 +1922,8 @@ plperl_return_next(SV *sv)
 
 		current_call_data->ret_tdesc = CreateTupleDescCopy(tupdesc);
 		current_call_data->tuple_store =
-			tuplestore_begin_heap(true, false, work_mem);
+			tuplestore_begin_heap(rsi->allowedModes & SFRM_Materialize_Random,
+								  false, work_mem);
 		if (prodesc->fn_retistuple)
 		{
 			current_call_data->attinmeta =
