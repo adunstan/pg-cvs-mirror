@@ -22,7 +22,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/nodes/equalfuncs.c,v 1.333 2008/10/06 17:39:26 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/nodes/equalfuncs.c,v 1.334 2008/10/21 20:42:52 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1666,6 +1666,7 @@ _equalCreateCastStmt(CreateCastStmt *a, CreateCastStmt *b)
 	COMPARE_NODE_FIELD(targettype);
 	COMPARE_NODE_FIELD(func);
 	COMPARE_SCALAR_FIELD(context);
+	COMPARE_SCALAR_FIELD(inout);
 
 	return true;
 }
