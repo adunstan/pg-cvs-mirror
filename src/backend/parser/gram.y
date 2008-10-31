@@ -11,7 +11,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/parser/gram.y,v 2.632 2008/10/29 11:24:53 petere Exp $
+ *	  $PostgreSQL: pgsql/src/backend/parser/gram.y,v 2.633 2008/10/31 08:39:20 heikki Exp $
  *
  * HISTORY
  *	  AUTHOR			DATE			MAJOR EVENT
@@ -6668,12 +6668,13 @@ select_offset_value2:
 row_or_rows:
 			ROW		{ $$ = 0; }
 			| ROWS		{ $$ = 0; }
+			;
 
 /* noise words */
 first_or_next:
 			FIRST_P		{ $$ = 0; }
 			| NEXT		{ $$ = 0; }
-
+			;
 
 group_clause:
 			GROUP_P BY expr_list					{ $$ = $3; }
