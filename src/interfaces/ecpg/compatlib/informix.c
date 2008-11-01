@@ -1,4 +1,4 @@
-/* $PostgreSQL: pgsql/src/interfaces/ecpg/compatlib/informix.c,v 1.54 2008/01/08 01:14:52 tgl Exp $ */
+/* $PostgreSQL: pgsql/src/interfaces/ecpg/compatlib/informix.c,v 1.55 2008/05/16 15:20:03 petere Exp $ */
 
 #define POSTGRES_ECPG_INTERNAL
 #include "postgres_fe.h"
@@ -755,10 +755,16 @@ rfmtlong(long lng_val, char *fmt, char *outbuf)
 				fmtchar = ' ';
 
 	temp = (char *) malloc(fmt_len + 1);
+	if (!temp)
+	{
+		errno = ENOMEM;
+		return -1;
+	}
 
 	/* put all info about the long in a struct */
-	if (!temp || initValue(lng_val) == -1)
+	if (initValue(lng_val) == -1)
 	{
+		free(temp);
 		errno = ENOMEM;
 		return -1;
 	}
