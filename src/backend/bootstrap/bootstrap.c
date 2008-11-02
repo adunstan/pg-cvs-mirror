@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/bootstrap/bootstrap.c,v 1.245 2008/09/01 20:42:43 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/bootstrap/bootstrap.c,v 1.246 2008/09/30 10:52:11 heikki Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -169,7 +169,7 @@ struct typmap
 static struct typmap **Typ = NULL;
 static struct typmap *Ap = NULL;
 
-static char Blanks[MAXATTR];
+static bool Nulls[MAXATTR];
 
 Form_pg_attribute attrtypes[MAXATTR];	/* points to attribute info */
 static Datum values[MAXATTR];	/* corresponding attribute values */
@@ -488,7 +488,7 @@ BootstrapModeMain(void)
 	for (i = 0; i < MAXATTR; i++)
 	{
 		attrtypes[i] = NULL;
-		Blanks[i] = ' ';
+		Nulls[i] = false;
 	}
 	for (i = 0; i < STRTABLESIZE; ++i)
 		strtable[i] = NULL;
@@ -797,7 +797,7 @@ InsertOneTuple(Oid objectid)
 	tupDesc = CreateTupleDesc(numattr,
 							  RelationGetForm(boot_reldesc)->relhasoids,
 							  attrtypes);
-	tuple = heap_formtuple(tupDesc, values, Blanks);
+	tuple = heap_form_tuple(tupDesc, values, Nulls);
 	if (objectid != (Oid) 0)
 		HeapTupleSetOid(tuple, objectid);
 	pfree(tupDesc);				/* just free's tupDesc, not the attrtypes */
@@ -807,10 +807,10 @@ InsertOneTuple(Oid objectid)
 	elog(DEBUG4, "row inserted");
 
 	/*
-	 * Reset blanks for next tuple
+	 * Reset null markers for next tuple
 	 */
 	for (i = 0; i < numattr; i++)
-		Blanks[i] = ' ';
+		Nulls[i] = false;
 }
 
 /* ----------------
@@ -857,7 +857,7 @@ InsertOneNull(int i)
 	elog(DEBUG4, "inserting column %d NULL", i);
 	Assert(i >= 0 || i < MAXATTR);
 	values[i] = PointerGetDatum(NULL);
-	Blanks[i] = 'n';
+	Nulls[i] = true;
 }
 
 /* ----------------
