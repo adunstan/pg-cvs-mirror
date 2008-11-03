@@ -4,7 +4,7 @@
  *
  *	Copyright (c) 2006-2008, PostgreSQL Global Development Group
  *
- *	$PostgreSQL: pgsql/src/include/access/gin.h,v 1.24 2008/07/13 21:50:04 tgl Exp $
+ *	$PostgreSQL: pgsql/src/include/access/gin.h,v 1.25 2008/10/20 13:39:44 teodor Exp $
  *--------------------------------------------------------------------------
  */
 
@@ -246,7 +246,6 @@ extern int	compareAttEntries(GinState *ginstate, OffsetNumber attnum_a, Datum a,
 extern Datum *extractEntriesS(GinState *ginstate, OffsetNumber attnum, Datum value,
 				int32 *nentries, bool *needUnique);
 extern Datum *extractEntriesSU(GinState *ginstate, OffsetNumber attnum, Datum value, int32 *nentries);
-extern Page GinPageGetCopyPage(Page page);
 
 extern Datum gin_index_getattr(GinState *ginstate, IndexTuple tuple);
 extern OffsetNumber gintuple_get_attrnum(GinState *ginstate, IndexTuple tuple);

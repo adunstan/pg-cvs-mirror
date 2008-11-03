@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *			$PostgreSQL: pgsql/src/backend/access/gin/ginutil.c,v 1.16 2008/07/11 21:06:29 tgl Exp $
+ *			$PostgreSQL: pgsql/src/backend/access/gin/ginutil.c,v 1.17 2008/09/30 10:52:10 heikki Exp $
  *-------------------------------------------------------------------------
  */
 
@@ -308,21 +308,6 @@ extractEntriesSU(GinState *ginstate, OffsetNumber attnum, Datum value, int32 *ne
 	}
 
 	return entries;
-}
-
-/*
- * It's analog of PageGetTempPage(), but copies whole page
- */
-Page
-GinPageGetCopyPage(Page page)
-{
-	Size		pageSize = PageGetPageSize(page);
-	Page		tmppage;
-
-	tmppage = (Page) palloc(pageSize);
-	memcpy(tmppage, page, pageSize);
-
-	return tmppage;
 }
 
 Datum
