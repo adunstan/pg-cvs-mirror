@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-connect.c,v 1.364 2008/10/27 09:42:31 mha Exp $
+ *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-connect.c,v 1.365 2008/10/28 12:10:44 mha Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1375,7 +1375,7 @@ keep_going:						/* We will come back to here until there is
 					conn->inStart = conn->inCursor;
 					if (SSLok == 'S')
 					{
-						/* Do one-time setup; this creates conn->ssl */
+						/* Set up global SSL state if required */
 						if (pqsecure_initialize(conn) == -1)
 							goto error_return;
 					}
