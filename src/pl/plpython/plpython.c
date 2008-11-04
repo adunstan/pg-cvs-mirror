@@ -1,7 +1,7 @@
 /**********************************************************************
  * plpython.c - python as a procedural language for PostgreSQL
  *
- *	$PostgreSQL: pgsql/src/pl/plpython/plpython.c,v 1.114 2008/10/11 00:09:33 alvherre Exp $
+ *	$PostgreSQL: pgsql/src/pl/plpython/plpython.c,v 1.115 2008/11/02 01:45:28 tgl Exp $
  *
  *********************************************************************
  */
@@ -1282,7 +1282,7 @@ PLy_procedure_create(HeapTuple procTup, Oid tgreloid, char *key)
 				}
 			}
 
-			proc->argnames = (char **) PLy_malloc(sizeof(char *) * proc->nargs);
+			proc->argnames = (char **) PLy_malloc0(sizeof(char *) * proc->nargs);
 			for (i = pos = 0; i < total; i++)
 			{
 				HeapTuple	argTypeTup;
