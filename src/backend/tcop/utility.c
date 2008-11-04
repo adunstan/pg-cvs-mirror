@@ -10,7 +10,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/tcop/utility.c,v 1.298 2008/09/01 20:42:45 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/tcop/utility.c,v 1.299 2008/10/10 13:48:05 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -938,6 +938,11 @@ ProcessUtility(Node *parsetree,
 			break;
 
 		case T_LockStmt:
+			/*
+			 * Since the lock would just get dropped immediately, LOCK TABLE
+			 * outside a transaction block is presumed to be user error.
+			 */
+			RequireTransactionChain(isTopLevel, "LOCK TABLE");
 			LockTableCommand((LockStmt *) parsetree);
 			break;
 
