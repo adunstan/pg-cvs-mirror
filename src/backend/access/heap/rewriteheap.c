@@ -96,7 +96,7 @@
  * Portions Copyright (c) 1994-5, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/heap/rewriteheap.c,v 1.14 2008/06/19 00:46:03 alvherre Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/heap/rewriteheap.c,v 1.15 2008/08/11 11:05:10 heikki Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -575,7 +575,9 @@ raw_heap_insert(RewriteState state, HeapTuple tup)
 	}
 	else if (HeapTupleHasExternal(tup) || tup->t_len > TOAST_TUPLE_THRESHOLD)
 		heaptup = toast_insert_or_update(state->rs_new_rel, tup, NULL,
-										 state->rs_use_wal, false);
+										 HEAP_INSERT_SKIP_FSM |
+										 (state->rs_use_wal ?
+									     0 : HEAP_INSERT_SKIP_WAL));
 	else
 		heaptup = tup;
 
