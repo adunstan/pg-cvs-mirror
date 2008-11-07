@@ -10,7 +10,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/tcop/utility.c,v 1.299 2008/10/10 13:48:05 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/tcop/utility.c,v 1.300 2008/11/04 00:57:19 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -781,7 +781,7 @@ ProcessUtility(Node *parsetree,
 			break;
 
 		case T_AlterDatabaseStmt:
-			AlterDatabase((AlterDatabaseStmt *) parsetree);
+			AlterDatabase((AlterDatabaseStmt *) parsetree, isTopLevel);
 			break;
 
 		case T_AlterDatabaseSetStmt:
