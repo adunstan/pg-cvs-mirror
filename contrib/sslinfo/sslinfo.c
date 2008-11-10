@@ -4,7 +4,7 @@
  * Written by Victor B. Wagner <vitus@cryptocom.ru>, Cryptocom LTD
  * This file is distributed under BSD-style license.
  *
- * $PostgreSQL: pgsql/contrib/sslinfo/sslinfo.c,v 1.4 2006/09/30 18:44:37 tgl Exp $
+ * $PostgreSQL: pgsql/contrib/sslinfo/sslinfo.c,v 1.5 2006/10/04 00:29:46 momjian Exp $
  */
 
 #include "postgres.h"
@@ -306,22 +306,17 @@ X509_NAME_to_text(X509_NAME *name)
 	i = 0;
 	BIO_write(membuf, &i, 1);
 	size = BIO_get_mem_data(membuf, &sp);
-
 	dp = (char *) pg_do_encoding_conversion((unsigned char *) sp,
 											size - 1,
 											PG_UTF8,
 											GetDatabaseEncoding());
-	BIO_free(membuf);
 	outlen = strlen(dp);
 	result = palloc(VARHDRSZ + outlen);
 	memcpy(VARDATA(result), dp, outlen);
-
-	/*
-	 * pg_do_encoding_conversion has annoying habit of returning source
-	 * pointer
-	 */
 	if (dp != sp)
 		pfree(dp);
+
+	BIO_free(membuf);
 	VARATT_SIZEP(result) = outlen + VARHDRSZ;
 	PG_RETURN_TEXT_P(result);
 }
