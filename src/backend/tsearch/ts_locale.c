@@ -7,7 +7,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/tsearch/ts_locale.c,v 1.9 2008/06/18 18:42:54 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/tsearch/ts_locale.c,v 1.10 2008/06/18 20:55:42 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -204,10 +204,6 @@ t_readline(FILE *fp)
 												 len,
 												 PG_UTF8,
 												 GetDatabaseEncoding());
-
-	if (recoded == NULL)		/* should not happen */
-		elog(ERROR, "encoding conversion failed");
-
 	if (recoded == buf)
 	{
 		/*
