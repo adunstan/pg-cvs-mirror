@@ -10,7 +10,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/transam/xact.c,v 1.266 2008/10/20 19:18:18 alvherre Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/transam/xact.c,v 1.267 2008/11/11 13:19:15 heikki Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -26,6 +26,7 @@
 #include "access/twophase.h"
 #include "access/xact.h"
 #include "access/xlogutils.h"
+#include "catalog/catalog.h"
 #include "catalog/namespace.h"
 #include "commands/async.h"
 #include "commands/tablecmds.h"
