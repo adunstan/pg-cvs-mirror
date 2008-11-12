@@ -1,4 +1,4 @@
-# $PostgreSQL: /cvsroot/pgsql-server/config/perl.m4,v 1.2 2002/05/28 16:57:53 petere Exp $
+# $PostgreSQL: pgsql/config/perl.m4,v 1.3 2003/11/29 19:51:17 pgsql Exp $
 
 
 # PGAC_PATH_PERL
@@ -32,4 +32,12 @@ pgac_tmp1=`$PERL -MExtUtils::Embed -e ldopts`
 pgac_tmp2=`$PERL -MConfig -e 'print $Config{ccdlflags}'`
 perl_embed_ldflags=`echo X"$pgac_tmp1" | sed "s/^X//;s%$pgac_tmp2%%"`
 AC_SUBST(perl_embed_ldflags)dnl
-AC_MSG_RESULT([$perl_embed_ldflags])])
+if test -z "$perl_embed_ldflags" ; then
+	AC_MSG_RESULT(no)
+	AC_MSG_ERROR([could not determine flags for linking embedded Perl.
+This probably means that ExtUtils::Embed or ExtUtils::MakeMaker is not
+installed.])
+else
+	AC_MSG_RESULT([$perl_embed_ldflags])
+fi
+])# PGAC_CHECK_PERL_EMBED_LDFLAGS
