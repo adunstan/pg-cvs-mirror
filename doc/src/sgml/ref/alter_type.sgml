@@ -1,5 +1,5 @@
 <!--
-$PostgreSQL: pgsql/doc/src/sgml/ref/alter_type.sgml,v 1.4 2006/09/16 00:30:16 momjian Exp $
+$PostgreSQL: pgsql/doc/src/sgml/ref/alter_type.sgml,v 1.5 2008/03/19 18:38:29 tgl Exp $
 PostgreSQL documentation
 -->
 
@@ -10,9 +10,7 @@ PostgreSQL documentation
  </refmeta>
 
  <refnamediv>
-  <refname>
-   ALTER TYPE
-  </refname>
+  <refname>ALTER TYPE</refname>
   <refpurpose>
    change the definition of a type
   </refpurpose>
