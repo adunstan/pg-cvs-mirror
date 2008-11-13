@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/timezone/pgtz.c,v 1.59 2008/02/16 21:16:04 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/timezone/pgtz.c,v 1.60 2008/07/01 03:40:55 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1496,6 +1496,12 @@ pg_tzenumerate_next(pg_tzenum *dir)
 				   TRUE) != 0)
 		{
 			/* Zone could not be loaded, ignore it */
+			continue;
+		}
+
+		if (!tz_acceptable(&dir->tz))
+		{
+			/* Ignore leap-second zones */
 			continue;
 		}
 
