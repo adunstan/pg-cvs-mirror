@@ -1,5 +1,5 @@
 /* header */
-/* $PostgreSQL: pgsql/src/interfaces/ecpg/preproc/preproc.y,v 1.368 2008/06/26 08:04:05 meskes Exp $ */
+/* $PostgreSQL: pgsql/src/interfaces/ecpg/preproc/ecpg.header,v 1.1 2008/11/14 10:03:33 meskes Exp $ */
 
 /* Copyright comment */
 %{
@@ -95,7 +95,8 @@ mmerror(int error_code, enum errortype type, char * error, ...)
 				fclose(yyin);
 			if (yyout)
 				fclose(yyout);
-			if (unlink(output_filename) != 0 && *output_filename != '-')
+			
+			if (strcmp(output_filename, "-") != 0 && unlink(output_filename) != 0)
 			        fprintf(stderr, _("could not remove output file \"%s\"\n"), output_filename);
 			exit(error_code);
 	}
@@ -390,7 +391,7 @@ add_typedef(char *name, char * dimension, char * length, enum ECPGttype type_enu
 	struct	prep		prep;
 }
 /* tokens */
-/* $PostgreSQL$ */
+/* $PostgreSQL: pgsql/src/interfaces/ecpg/preproc/ecpg.tokens,v 1.1 2008/11/14 10:03:33 meskes Exp $ */
 /* special embedded SQL token */
 %token  SQL_ALLOCATE SQL_AUTOCOMMIT SQL_BOOL SQL_BREAK
                 SQL_CALL SQL_CARDINALITY SQL_CONNECT
@@ -847,7 +848,7 @@ add_typedef(char *name, char * dimension, char * length, enum ECPGttype type_enu
 %type <str> reserved_keyword
 %type <str> SpecialRuleRelation
 /* ecpgtype */
-/* $PostgreSQL$ */
+/* $PostgreSQL: pgsql/src/interfaces/ecpg/preproc/ecpg.type,v 1.1 2008/11/14 10:03:33 meskes Exp $ */
 %type <str> ECPGAllocateDescr
 %type <str> ECPGCKeywords
 %type <str> ECPGColId
@@ -9343,6 +9344,8 @@ mmerror(PARSE_ERROR, ET_WARNING, "unsupported feature will be passed to backend\
 
 
 /* trailer */
+/* $PostgreSQL: pgsql/src/interfaces/ecpg/preproc/ecpg.trailer,v 1.1 2008/11/14 10:03:33 meskes Exp $ */
+
 statements: /*EMPTY*/
                 | statements statement
                 ;
