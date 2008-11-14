@@ -1,11 +1,12 @@
 <!--
-$PostgreSQL: pgsql/doc/src/sgml/ref/alter_role.sgml,v 1.9 2007/09/03 18:46:29 tgl Exp $
+$PostgreSQL: pgsql/doc/src/sgml/ref/alter_role.sgml,v 1.10 2008/04/30 12:38:49 alvherre Exp $
 PostgreSQL documentation
 -->
 
 <refentry id="SQL-ALTERROLE">
  <refmeta>
   <refentrytitle id="sql-alterrole-title">ALTER ROLE</refentrytitle>
+  <manvolnum>7</manvolnum>
   <refmiscinfo>SQL - Language Statements</refmiscinfo>
  </refmeta>
 

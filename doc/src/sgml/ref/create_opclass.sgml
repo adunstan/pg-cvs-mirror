@@ -1,11 +1,12 @@
 <!--
-$PostgreSQL: pgsql/doc/src/sgml/ref/create_opclass.sgml,v 1.21 2007/12/03 23:49:51 tgl Exp $
+$PostgreSQL: pgsql/doc/src/sgml/ref/create_opclass.sgml,v 1.22 2008/04/14 17:05:32 tgl Exp $
 PostgreSQL documentation
 -->
 
 <refentry id="SQL-CREATEOPCLASS">
  <refmeta>
   <refentrytitle id="sql-createopclass-title">CREATE OPERATOR CLASS</refentrytitle>
+  <manvolnum>7</manvolnum>
   <refmiscinfo>SQL - Language Statements</refmiscinfo>
  </refmeta>
 

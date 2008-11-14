@@ -1,8 +1,9 @@
-<!-- $PostgreSQL: pgsql/doc/src/sgml/ref/create_cast.sgml,v 1.29 2008/07/30 21:23:17 tgl Exp $ -->
+<!-- $PostgreSQL: pgsql/doc/src/sgml/ref/create_cast.sgml,v 1.30 2008/10/31 08:39:20 heikki Exp $ -->
 
 <refentry id="SQL-CREATECAST">
  <refmeta>
   <refentrytitle id="SQL-CREATECAST-TITLE">CREATE CAST</refentrytitle>
+  <manvolnum>7</manvolnum>
   <refmiscinfo>SQL - Language Statements</refmiscinfo>
  </refmeta>
 

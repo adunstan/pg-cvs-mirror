@@ -1,11 +1,12 @@
 <!--
-$PostgreSQL: pgsql/doc/src/sgml/ref/alter_sequence.sgml,v 1.22 2008/06/15 01:25:53 tgl Exp $
+$PostgreSQL: pgsql/doc/src/sgml/ref/alter_sequence.sgml,v 1.23 2008/11/12 15:53:34 petere Exp $
 PostgreSQL documentation
 -->
 
 <refentry id="SQL-ALTERSEQUENCE">
  <refmeta>
   <refentrytitle id="SQL-ALTERSEQUENCE-TITLE">ALTER SEQUENCE</refentrytitle>
+  <manvolnum>7</manvolnum>
   <refmiscinfo>SQL - Language Statements</refmiscinfo>
  </refmeta>
 

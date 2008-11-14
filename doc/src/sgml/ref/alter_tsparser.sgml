@@ -1,11 +1,12 @@
 <!--
-$PostgreSQL$
+$PostgreSQL: pgsql/doc/src/sgml/ref/alter_tsparser.sgml,v 1.1 2007/08/21 21:08:47 tgl Exp $
 PostgreSQL documentation
 -->
 
 <refentry id="SQL-ALTERTSPARSER">
  <refmeta>
   <refentrytitle id="SQL-ALTERTSPARSER-TITLE">ALTER TEXT SEARCH PARSER</refentrytitle>
+  <manvolnum>7</manvolnum>
   <refmiscinfo>SQL - Language Statements</refmiscinfo>
  </refmeta>
 

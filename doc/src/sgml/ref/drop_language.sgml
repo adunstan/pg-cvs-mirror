@@ -1,11 +1,12 @@
 <!--
-$PostgreSQL: pgsql/doc/src/sgml/ref/drop_language.sgml,v 1.25 2007/03/26 16:58:38 tgl Exp $
+$PostgreSQL: pgsql/doc/src/sgml/ref/drop_language.sgml,v 1.26 2007/05/15 19:13:55 neilc Exp $
 PostgreSQL documentation
 -->
 
 <refentry id="SQL-DROPLANGUAGE">
  <refmeta>
   <refentrytitle id="SQL-DROPLANGUAGE-TITLE">DROP LANGUAGE</refentrytitle>
+  <manvolnum>7</manvolnum>
   <refmiscinfo>SQL - Language Statements</refmiscinfo>
  </refmeta>
 

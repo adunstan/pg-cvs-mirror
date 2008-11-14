@@ -1,11 +1,12 @@
 <!--
-$PostgreSQL: pgsql/doc/src/sgml/ref/drop_schema.sgml,v 1.7 2005/11/19 17:39:44 adunstan Exp $
+$PostgreSQL: pgsql/doc/src/sgml/ref/drop_schema.sgml,v 1.8 2006/09/16 00:30:18 momjian Exp $
 PostgreSQL documentation
 -->
 
 <refentry id="SQL-DROPSCHEMA">
  <refmeta>
   <refentrytitle id="SQL-DROPSCHEMA-TITLE">DROP SCHEMA</refentrytitle>
+  <manvolnum>7</manvolnum>
   <refmiscinfo>SQL - Language Statements</refmiscinfo>
  </refmeta>
 

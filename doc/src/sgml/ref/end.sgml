@@ -1,11 +1,12 @@
 <!--
-$PostgreSQL: pgsql/doc/src/sgml/ref/end.sgml,v 1.13 2003/11/29 19:51:38 pgsql Exp $
+$PostgreSQL: pgsql/doc/src/sgml/ref/end.sgml,v 1.14 2006/09/16 00:30:18 momjian Exp $
 PostgreSQL documentation
 -->
 
 <refentry id="SQL-END">
  <refmeta>
   <refentrytitle id="SQL-END-TITLE">END</refentrytitle>
+  <manvolnum>7</manvolnum>
   <refmiscinfo>SQL - Language Statements</refmiscinfo>
  </refmeta>
 

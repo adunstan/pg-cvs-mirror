@@ -1,11 +1,12 @@
 <!--
-$PostgreSQL: pgsql/doc/src/sgml/ref/update.sgml,v 1.45 2007/11/28 15:42:31 petere Exp $
+$PostgreSQL: pgsql/doc/src/sgml/ref/update.sgml,v 1.46 2008/02/15 22:17:06 tgl Exp $
 PostgreSQL documentation
 -->
 
 <refentry id="SQL-UPDATE">
  <refmeta>
   <refentrytitle id="SQL-UPDATE-TITLE">UPDATE</refentrytitle>
+  <manvolnum>7</manvolnum>
   <refmiscinfo>SQL - Language Statements</refmiscinfo>
  </refmeta>
 

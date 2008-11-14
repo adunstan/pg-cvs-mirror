@@ -1,11 +1,12 @@
 <!--
-$PostgreSQL: pgsql/doc/src/sgml/ref/vacuum.sgml,v 1.51 2008/02/03 16:24:08 tgl Exp $
+$PostgreSQL: pgsql/doc/src/sgml/ref/vacuum.sgml,v 1.52 2008/09/30 10:52:10 heikki Exp $
 PostgreSQL documentation
 -->
 
 <refentry id="SQL-VACUUM">
  <refmeta>
   <refentrytitle id="sql-vacuum-title">VACUUM</refentrytitle>
+  <manvolnum>7</manvolnum>
   <refmiscinfo>SQL - Language Statements</refmiscinfo>
  </refmeta>
 

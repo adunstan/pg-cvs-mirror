@@ -1,11 +1,12 @@
 <!--
-$PostgreSQL: pgsql/doc/src/sgml/ref/create_view.sgml,v 1.35 2007/02/01 00:28:18 momjian Exp $
+$PostgreSQL: pgsql/doc/src/sgml/ref/create_view.sgml,v 1.36 2007/07/03 01:30:35 neilc Exp $
 PostgreSQL documentation
 -->
 
 <refentry id="SQL-CREATEVIEW">
  <refmeta>
   <refentrytitle id="SQL-CREATEVIEW-TITLE">CREATE VIEW</refentrytitle>
+  <manvolnum>7</manvolnum>
   <refmiscinfo>SQL - Language Statements</refmiscinfo>
  </refmeta>
 

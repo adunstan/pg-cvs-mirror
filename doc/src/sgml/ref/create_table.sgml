@@ -1,11 +1,12 @@
 <!--
-$PostgreSQL: pgsql/doc/src/sgml/ref/create_table.sgml,v 1.109 2007/07/17 05:02:00 neilc Exp $
+$PostgreSQL: pgsql/doc/src/sgml/ref/create_table.sgml,v 1.110 2008/05/09 23:32:04 tgl Exp $
 PostgreSQL documentation
 -->
 
 <refentry id="SQL-CREATETABLE">
  <refmeta>
   <refentrytitle id="sql-createtable-title">CREATE TABLE</refentrytitle>
+  <manvolnum>7</manvolnum>
   <refmiscinfo>SQL - Language Statements</refmiscinfo>
  </refmeta>
 

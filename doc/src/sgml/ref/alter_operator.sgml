@@ -1,11 +1,12 @@
 <!--
-$PostgreSQL: pgsql/doc/src/sgml/ref/alter_operator.sgml,v 1.2 2005/10/13 22:44:51 tgl Exp $
+$PostgreSQL: pgsql/doc/src/sgml/ref/alter_operator.sgml,v 1.3 2006/09/16 00:30:16 momjian Exp $
 PostgreSQL documentation
 -->
 
 <refentry id="SQL-ALTEROPERATOR">
  <refmeta>
   <refentrytitle id="SQL-ALTEROPERATOR-TITLE">ALTER OPERATOR</refentrytitle>
+  <manvolnum>7</manvolnum>
   <refmiscinfo>SQL - Language Statements</refmiscinfo>
  </refmeta>
 

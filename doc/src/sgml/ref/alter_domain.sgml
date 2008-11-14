@@ -1,11 +1,12 @@
 <!--
-$PostgreSQL: pgsql/doc/src/sgml/ref/alter_domain.sgml,v 1.22 2007/05/11 20:16:32 tgl Exp $
+$PostgreSQL: pgsql/doc/src/sgml/ref/alter_domain.sgml,v 1.23 2008/11/12 15:53:34 petere Exp $
 PostgreSQL documentation
 -->
 
 <refentry id="SQL-ALTERDOMAIN">
  <refmeta>
   <refentrytitle id="sql-alterdomain-title">ALTER DOMAIN</refentrytitle>
+  <manvolnum>7</manvolnum>
   <refmiscinfo>SQL - Language Statements</refmiscinfo>
  </refmeta>
 

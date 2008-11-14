@@ -1,11 +1,12 @@
 <!--
-$PostgreSQL: pgsql/doc/src/sgml/ref/drop_user.sgml,v 1.23 2006/09/16 00:30:18 momjian Exp $
+$PostgreSQL: pgsql/doc/src/sgml/ref/drop_user.sgml,v 1.24 2007/05/15 19:43:51 neilc Exp $
 PostgreSQL documentation
 -->
 
 <refentry id="SQL-DROPUSER">
  <refmeta>
   <refentrytitle id="SQL-DROPUSER-TITLE">DROP USER</refentrytitle>
+  <manvolnum>7</manvolnum>
   <refmiscinfo>SQL - Language Statements</refmiscinfo>
  </refmeta>
 

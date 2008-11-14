@@ -1,11 +1,12 @@
 <!--
-$PostgreSQL: pgsql/doc/src/sgml/ref/create_trigger.sgml,v 1.47 2007/02/01 19:10:24 momjian Exp $
+$PostgreSQL: pgsql/doc/src/sgml/ref/create_trigger.sgml,v 1.48 2008/03/28 00:21:55 tgl Exp $
 PostgreSQL documentation
 -->
 
 <refentry id="SQL-CREATETRIGGER">
  <refmeta>
   <refentrytitle id="SQL-CREATETRIGGER-TITLE">CREATE TRIGGER</refentrytitle>
+  <manvolnum>7</manvolnum>
   <refmiscinfo>SQL - Language Statements</refmiscinfo>
  </refmeta>
 

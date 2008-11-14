@@ -1,11 +1,12 @@
 <!--
-$PostgreSQL: pgsql/doc/src/sgml/ref/drop_index.sgml,v 1.22 2005/11/19 17:39:44 adunstan Exp $
+$PostgreSQL: pgsql/doc/src/sgml/ref/drop_index.sgml,v 1.23 2006/09/16 00:30:18 momjian Exp $
 PostgreSQL documentation
 -->
 
 <refentry id="SQL-DROPINDEX">
  <refmeta>
   <refentrytitle id="SQL-DROPINDEX-TITLE">DROP INDEX</refentrytitle>
+  <manvolnum>7</manvolnum>
   <refmiscinfo>SQL - Language Statements</refmiscinfo>
  </refmeta>
 

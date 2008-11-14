@@ -1,11 +1,12 @@
 <!--
-$PostgreSQL: pgsql/doc/src/sgml/ref/create_operator.sgml,v 1.48 2007/02/01 00:28:18 momjian Exp $
+$PostgreSQL: pgsql/doc/src/sgml/ref/create_operator.sgml,v 1.49 2007/11/28 15:42:31 petere Exp $
 PostgreSQL documentation
 -->
 
 <refentry id="SQL-CREATEOPERATOR">
  <refmeta>
   <refentrytitle id="sql-createoperator-title">CREATE OPERATOR</refentrytitle>
+  <manvolnum>7</manvolnum>
   <refmiscinfo>SQL - Language Statements</refmiscinfo>
  </refmeta>
 

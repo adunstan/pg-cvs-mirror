@@ -1,5 +1,5 @@
 # -*-makefile-*-
-# $PostgreSQL: pgsql/src/Makefile.global.in,v 1.244 2008/10/03 15:35:17 petere Exp $
+# $PostgreSQL: pgsql/src/Makefile.global.in,v 1.245 2008/10/29 16:06:46 petere Exp $
 
 #------------------------------------------------------------------------------
 # All PostgreSQL makefiles include this file and use the variables it sets,
@@ -141,8 +141,6 @@ endif # PGXS
 includedir_server = $(pkgincludedir)/server
 includedir_internal = $(pkgincludedir)/internal
 pgxsdir = $(pkglibdir)/pgxs
-
-sqlmansect_dummy = l
 
 
 ##########################################################################

@@ -1,11 +1,12 @@
 <!--
-$PostgreSQL: pgsql/doc/src/sgml/ref/alter_user.sgml,v 1.43 2007/05/15 19:43:51 neilc Exp $
+$PostgreSQL: pgsql/doc/src/sgml/ref/alter_user.sgml,v 1.44 2007/09/03 18:46:29 tgl Exp $
 PostgreSQL documentation
 -->
 
 <refentry id="SQL-ALTERUSER">
  <refmeta>
   <refentrytitle id="sql-alteruser-title">ALTER USER</refentrytitle>
+  <manvolnum>7</manvolnum>
   <refmiscinfo>SQL - Language Statements</refmiscinfo>
  </refmeta>
 

@@ -1,11 +1,12 @@
 <!--
-$PostgreSQL: pgsql/doc/src/sgml/ref/create_tablespace.sgml,v 1.7 2006/10/31 01:52:31 neilc Exp $
+$PostgreSQL: pgsql/doc/src/sgml/ref/create_tablespace.sgml,v 1.8 2007/01/31 23:26:03 momjian Exp $
 PostgreSQL documentation
 -->
 
 <refentry id="SQL-CREATETABLESPACE">
  <refmeta>
   <refentrytitle id="sql-createtablespace-title">CREATE TABLESPACE</refentrytitle>
+  <manvolnum>7</manvolnum>
   <refmiscinfo>SQL - Language Statements</refmiscinfo>
  </refmeta>
 

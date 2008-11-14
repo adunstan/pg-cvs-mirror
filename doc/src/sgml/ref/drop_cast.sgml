@@ -1,8 +1,9 @@
-<!-- $PostgreSQL: pgsql/doc/src/sgml/ref/drop_cast.sgml,v 1.7 2006/06/16 22:27:55 adunstan Exp $ -->
+<!-- $PostgreSQL: pgsql/doc/src/sgml/ref/drop_cast.sgml,v 1.8 2006/09/16 00:30:18 momjian Exp $ -->
 
 <refentry id="SQL-DROPCAST">
  <refmeta>
   <refentrytitle id="SQL-DROPCAST-TITLE">DROP CAST</refentrytitle>
+  <manvolnum>7</manvolnum>
   <refmiscinfo>SQL - Language Statements</refmiscinfo>
  </refmeta>
 

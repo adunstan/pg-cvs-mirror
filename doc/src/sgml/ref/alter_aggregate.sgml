@@ -1,11 +1,12 @@
 <!--
-$PostgreSQL: pgsql/doc/src/sgml/ref/alter_aggregate.sgml,v 1.8 2006/07/27 19:52:04 tgl Exp $
+$PostgreSQL: pgsql/doc/src/sgml/ref/alter_aggregate.sgml,v 1.9 2006/09/16 00:30:16 momjian Exp $
 PostgreSQL documentation
 -->
 
 <refentry id="SQL-ALTERAGGREGATE">
  <refmeta>
   <refentrytitle id="SQL-ALTERAGGREGATE-TITLE">ALTER AGGREGATE</refentrytitle>
+  <manvolnum>7</manvolnum>
   <refmiscinfo>SQL - Language Statements</refmiscinfo>
  </refmeta>
 

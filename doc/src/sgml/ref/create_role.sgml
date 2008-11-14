@@ -1,11 +1,12 @@
 <!--
-$PostgreSQL: pgsql/doc/src/sgml/ref/create_role.sgml,v 1.9 2007/01/31 23:26:03 momjian Exp $
+$PostgreSQL: pgsql/doc/src/sgml/ref/create_role.sgml,v 1.10 2007/11/07 12:24:23 petere Exp $
 PostgreSQL documentation
 -->
 
 <refentry id="SQL-CREATEROLE">
  <refmeta>
   <refentrytitle id="sql-createrole-title">CREATE ROLE</refentrytitle>
+  <manvolnum>7</manvolnum>
   <refmiscinfo>SQL - Language Statements</refmiscinfo>
  </refmeta>
 

@@ -1,11 +1,12 @@
 <!--
-$PostgreSQL: pgsql/doc/src/sgml/ref/drop_database.sgml,v 1.22 2006/05/04 16:07:29 tgl Exp $
+$PostgreSQL: pgsql/doc/src/sgml/ref/drop_database.sgml,v 1.23 2006/09/16 00:30:18 momjian Exp $
 PostgreSQL documentation
 -->
 
 <refentry id="SQL-DROPDATABASE">
  <refmeta>
   <refentrytitle id="SQL-DROPDATABASE-TITLE">DROP DATABASE</refentrytitle>
+  <manvolnum>7</manvolnum>
   <refmiscinfo>SQL - Language Statements</refmiscinfo>
  </refmeta>
 

@@ -1,11 +1,12 @@
 <!--
-$PostgreSQL: pgsql/doc/src/sgml/ref/savepoint.sgml,v 1.4 2005/01/06 20:53:34 tgl Exp $
+$PostgreSQL: pgsql/doc/src/sgml/ref/savepoint.sgml,v 1.5 2006/09/16 00:30:20 momjian Exp $
 PostgreSQL documentation
 -->
 
 <refentry id="SQL-SAVEPOINT">
  <refmeta>
   <refentrytitle id="SQL-SAVEPOINT-TITLE">SAVEPOINT</refentrytitle>
+  <manvolnum>7</manvolnum>
   <refmiscinfo>SQL - Language Statements</refmiscinfo>
  </refmeta>
 
