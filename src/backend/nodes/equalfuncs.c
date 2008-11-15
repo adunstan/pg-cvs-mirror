@@ -22,7 +22,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/nodes/equalfuncs.c,v 1.335 2008/10/31 08:39:20 heikki Exp $
+ *	  $PostgreSQL: pgsql/src/backend/nodes/equalfuncs.c,v 1.336 2008/11/11 18:13:32 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -2005,8 +2005,10 @@ static bool
 _equalRowMarkClause(RowMarkClause *a, RowMarkClause *b)
 {
 	COMPARE_SCALAR_FIELD(rti);
+	COMPARE_SCALAR_FIELD(prti);
 	COMPARE_SCALAR_FIELD(forUpdate);
 	COMPARE_SCALAR_FIELD(noWait);
+	COMPARE_SCALAR_FIELD(isParent);
 
 	return true;
 }
