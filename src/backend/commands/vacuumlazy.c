@@ -29,7 +29,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/vacuumlazy.c,v 1.109 2008/10/31 15:05:00 heikki Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/vacuumlazy.c,v 1.110 2008/11/10 00:49:37 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -40,6 +40,7 @@
 #include "access/genam.h"
 #include "access/heapam.h"
 #include "access/transam.h"
+#include "catalog/storage.h"
 #include "commands/dbcommands.h"
 #include "commands/vacuum.h"
 #include "miscadmin.h"
@@ -827,7 +828,6 @@ lazy_truncate_heap(Relation onerel, LVRelStats *vacrelstats)
 	/*
 	 * Okay to truncate.
 	 */
-	FreeSpaceMapTruncateRel(onerel, new_rel_pages);
 	RelationTruncate(onerel, new_rel_pages);
 
 	/*
