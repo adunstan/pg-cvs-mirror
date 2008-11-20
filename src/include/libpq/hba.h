@@ -4,7 +4,7 @@
  *	  Interface to hba.c
  *
  *
- * $PostgreSQL: pgsql/src/include/libpq/hba.h,v 1.50 2008/10/23 13:31:10 mha Exp $
+ * $PostgreSQL: pgsql/src/include/libpq/hba.h,v 1.51 2008/10/28 12:10:44 mha Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -54,6 +54,7 @@ typedef struct
 	int			ldapport;
 	char	   *ldapprefix;
 	char	   *ldapsuffix;
+	bool		clientcert;
 } HbaLine;
 
 typedef struct Port hbaPort;
