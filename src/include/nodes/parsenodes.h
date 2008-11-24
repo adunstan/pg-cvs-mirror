@@ -13,7 +13,7 @@
  * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/nodes/parsenodes.h,v 1.377 2008/10/31 08:39:22 heikki Exp $
+ * $PostgreSQL: pgsql/src/include/nodes/parsenodes.h,v 1.378 2008/11/15 19:43:46 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1949,6 +1949,7 @@ typedef struct ClusterStmt
 	NodeTag		type;
 	RangeVar   *relation;		/* relation being indexed, or NULL if all */
 	char	   *indexname;		/* original index defined */
+	bool		verbose;		/* print progress info */
 } ClusterStmt;
 
 /* ----------------------
