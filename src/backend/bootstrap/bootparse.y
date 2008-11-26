@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/bootstrap/bootparse.y,v 1.93 2008/09/01 20:42:43 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/bootstrap/bootparse.y,v 1.94 2008/09/02 20:37:54 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -91,6 +91,7 @@ int num_columns_read = 0;
 
 %}
 
+%expect 0
 %name-prefix="boot_yy"
 
 %union

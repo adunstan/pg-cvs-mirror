@@ -1,4 +1,4 @@
-/* $PostgreSQL: pgsql/src/interfaces/ecpg/preproc/ecpg.header,v 1.1 2008/11/14 10:03:33 meskes Exp $ */
+/* $PostgreSQL: pgsql/src/interfaces/ecpg/preproc/ecpg.header,v 1.2 2008/11/14 16:25:34 meskes Exp $ */
 
 /* Copyright comment */
 %{
@@ -372,6 +372,7 @@ add_typedef(char *name, char * dimension, char * length, enum ECPGttype type_enu
 }
 %}
 
+%expect 0
 %name-prefix="base_yy"
 %locations
 
