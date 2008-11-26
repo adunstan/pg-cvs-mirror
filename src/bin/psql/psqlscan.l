@@ -33,7 +33,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/bin/psql/psqlscan.l,v 1.25 2008/05/09 15:36:31 petere Exp $
+ *	  $PostgreSQL: pgsql/src/bin/psql/psqlscan.l,v 1.26 2008/10/29 08:04:53 petere Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1450,6 +1450,12 @@ psql_scan_slash_option(PsqlScanState state,
 				if (fd && pclose(fd) == -1)
 				{
 					psql_error("%s: %s\n", cmd, strerror(errno));
+					error = true;
+				}
+
+				if (PQExpBufferBroken(&output))
+				{
+					psql_error("%s: out of memory\n", cmd);
 					error = true;
 				}
 
