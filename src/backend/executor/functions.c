@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/functions.c,v 1.127 2008/10/31 19:37:56 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/functions.c,v 1.128 2008/10/31 21:07:55 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -500,6 +500,8 @@ postquel_end(execution_state *es)
 
 		PopActiveSnapshot();
 	}
+
+	(*es->qd->dest->rDestroy) (es->qd->dest);
 
 	FreeQueryDesc(es->qd);
 	es->qd = NULL;
