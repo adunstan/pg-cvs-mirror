@@ -7,7 +7,7 @@
  * Copyright (c) 2002-2008, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/fmgr/funcapi.c,v 1.41 2008/07/18 03:32:52 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/fmgr/funcapi.c,v 1.42 2008/08/25 22:42:34 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -182,7 +182,6 @@ shutdown_MultiFuncCall(Datum arg)
 	 * Delete context that holds all multi-call data, including the
 	 * FuncCallContext itself
 	 */
-	MemoryContextSwitchTo(flinfo->fn_mcxt);
 	MemoryContextDelete(funcctx->multi_call_memory_ctx);
 }
 
