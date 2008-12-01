@@ -1,7 +1,7 @@
 /* -----------------------------------------------------------------------
  * formatting.c
  *
- * $PostgreSQL: pgsql/src/backend/utils/adt/formatting.c,v 1.149 2008/10/06 05:03:27 tgl Exp $
+ * $PostgreSQL: pgsql/src/backend/utils/adt/formatting.c,v 1.150 2008/11/10 17:36:53 heikki Exp $
  *
  *
  *	 Portions Copyright (c) 1999-2008, PostgreSQL Global Development Group
@@ -1678,8 +1678,9 @@ is_next_separator(FormatNode *n)
 	 */
 	n++;
 
+	/* end of format string is treated like a non-digit separator */
 	if (n->type == NODE_TYPE_END)
-		return FALSE;
+		return TRUE;
 
 	if (n->type == NODE_TYPE_ACTION)
 	{
