@@ -11,7 +11,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/parser/gram.y,v 2.640 2008/11/24 08:46:03 petere Exp $
+ *	  $PostgreSQL: pgsql/src/backend/parser/gram.y,v 2.641 2008/11/26 08:45:11 petere Exp $
  *
  * HISTORY
  *	  AUTHOR			DATE			MAJOR EVENT
@@ -5837,6 +5837,7 @@ VacuumStmt: VACUUM opt_full opt_freeze opt_verbose
 					n->analyze = false;
 					n->full = $2;
 					n->freeze_min_age = $3 ? 0 : -1;
+					n->scan_all = $3;
 					n->verbose = $4;
 					n->relation = NULL;
 					n->va_cols = NIL;
@@ -5849,6 +5850,7 @@ VacuumStmt: VACUUM opt_full opt_freeze opt_verbose
 					n->analyze = false;
 					n->full = $2;
 					n->freeze_min_age = $3 ? 0 : -1;
+					n->scan_all = $3;
 					n->verbose = $4;
 					n->relation = $5;
 					n->va_cols = NIL;
@@ -5860,6 +5862,7 @@ VacuumStmt: VACUUM opt_full opt_freeze opt_verbose
 					n->vacuum = true;
 					n->full = $2;
 					n->freeze_min_age = $3 ? 0 : -1;
+					n->scan_all = $3;
 					n->verbose |= $4;
 					$$ = (Node *)n;
 				}
