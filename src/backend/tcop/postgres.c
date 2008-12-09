@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/tcop/postgres.c,v 1.557 2008/09/30 10:52:13 heikki Exp $
+ *	  $PostgreSQL: pgsql/src/backend/tcop/postgres.c,v 1.558 2008/11/30 20:51:25 tgl Exp $
  *
  * NOTES
  *	  this is the "main" module of the postgres backend and
@@ -2437,6 +2437,23 @@ drop_unnamed_stmt(void)
  */
 
 /*
+ * proc_sigusr1_handler - handle SIGUSR1 signal.
+ *
+ * SIGUSR1 is multiplexed to handle multiple different events. The signalFlags
+ * array in PGPROC indicates which events have been signaled.
+ */
+void
+proc_sigusr1_handler(SIGNAL_ARGS)
+{
+	int			save_errno = errno;
+
+	if (CheckProcSignal(PROCSIG_CATCHUP_INTERRUPT))
+		HandleCatchupInterrupt();
+
+	errno = save_errno;
+}
+
+/*
  * quickdie() occurs when signalled SIGQUIT by the postmaster.
  *
  * Some backend has bought the farm,
@@ -3180,7 +3197,7 @@ PostgresMain(int argc, char *argv[], const char *username)
 	 * of output during who-knows-what operation...
 	 */
 	pqsignal(SIGPIPE, SIG_IGN);
-	pqsignal(SIGUSR1, CatchupInterruptHandler);
+	pqsignal(SIGUSR1, proc_sigusr1_handler);
 	pqsignal(SIGUSR2, NotifyInterruptHandler);
 	pqsignal(SIGFPE, FloatExceptionHandler);
 

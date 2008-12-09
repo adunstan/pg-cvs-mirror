@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/storage/sinval.h,v 1.47 2008/03/16 19:47:34 alvherre Exp $
+ * $PostgreSQL: pgsql/src/include/storage/sinval.h,v 1.48 2008/06/19 21:32:56 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -90,7 +90,7 @@ extern void ReceiveSharedInvalidMessages(
 							 void (*resetFunction) (void));
 
 /* signal handler for catchup events (SIGUSR1) */
-extern void CatchupInterruptHandler(SIGNAL_ARGS);
+extern void HandleCatchupInterrupt(void);
 
 /*
  * enable/disable processing of catchup events directly from signal handler.
