@@ -18,7 +18,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/postmaster/syslogger.c,v 1.44 2008/01/25 20:42:10 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/postmaster/syslogger.c,v 1.45 2008/02/17 02:09:27 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -184,7 +184,7 @@ SysLoggerMain(int argc, char *argv[])
 	 */
 	if (redirection_done)
 	{
-		int			fd = open(NULL_DEV, O_WRONLY, 0);
+		int			fd = open(DEVNULL, O_WRONLY, 0);
 
 		/*
 		 * The closes might look redundant, but they are not: we want to be
