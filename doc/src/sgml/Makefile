@@ -2,7 +2,7 @@
 #
 # PostgreSQL documentation makefile
 #
-# $PostgreSQL: pgsql/doc/src/sgml/Makefile,v 1.112 2008/11/14 10:22:45 petere Exp $
+# $PostgreSQL: pgsql/doc/src/sgml/Makefile,v 1.113 2008/11/26 11:26:54 petere Exp $
 #
 #----------------------------------------------------------------------------
 
@@ -126,7 +126,7 @@ HTML.index:
 version.sgml: $(top_builddir)/src/Makefile.global
 	{ \
 	  echo "<!entity version \"$(VERSION)\">"; \
-	  echo "<!entity majorversion \"`expr $(VERSION) : '\([0-9][0-9]*\.[0-9][0-9]*\)'`\">"; \
+	  echo "<!entity majorversion \"$(MAJORVERSION)\">"; \
 	} >$@
 
 features-supported.sgml: $(top_srcdir)/src/backend/catalog/sql_feature_packages.txt $(top_srcdir)/src/backend/catalog/sql_features.txt

@@ -4,7 +4,7 @@
  *
  * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/scripts/reindexdb.c,v 1.12 2007/12/11 19:57:32 tgl Exp $
+ * $PostgreSQL: pgsql/src/bin/scripts/reindexdb.c,v 1.13 2008/01/01 19:45:56 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -64,7 +64,7 @@ main(int argc, char *argv[])
 	const char *index = NULL;
 
 	progname = get_progname(argv[0]);
-	set_pglocale_pgservice(argv[0], "pgscripts");
+	set_pglocale_pgservice(argv[0], PG_TEXTDOMAIN("pgscripts"));
 
 	handle_help_version_opts(argc, argv, "reindexdb", help);
 

@@ -11,7 +11,7 @@
  * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/test/regress/pg_regress.c,v 1.53 2008/11/26 13:26:52 tgl Exp $
+ * $PostgreSQL: pgsql/src/test/regress/pg_regress.c,v 1.54 2008/11/28 12:45:34 petere Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1894,7 +1894,7 @@ regression_main(int argc, char *argv[], init_function ifunc, test_function tfunc
 	};
 
 	progname = get_progname(argv[0]);
-	set_pglocale_pgservice(argv[0], "pg_regress");
+	set_pglocale_pgservice(argv[0], PG_TEXTDOMAIN("pg_regress"));
 
 #ifndef HAVE_UNIX_SOCKETS
 	/* no unix domain sockets available, so change default */

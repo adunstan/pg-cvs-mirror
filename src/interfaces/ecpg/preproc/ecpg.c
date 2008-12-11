@@ -1,4 +1,4 @@
-/* $PostgreSQL: pgsql/src/interfaces/ecpg/preproc/ecpg.c,v 1.104 2008/02/17 18:14:29 meskes Exp $ */
+/* $PostgreSQL: pgsql/src/interfaces/ecpg/preproc/ecpg.c,v 1.105 2008/05/16 15:20:04 petere Exp $ */
 
 /* New main for ecpg, the PostgreSQL embedded SQL precompiler. */
 /* (C) Michael Meskes <meskes@postgresql.org> Feb 5th, 1998 */
@@ -138,7 +138,7 @@ main(int argc, char *const argv[])
 	char		my_exec_path[MAXPGPATH];
 	char		include_path[MAXPGPATH];
 
-	set_pglocale_pgservice(argv[0], "ecpg");
+	set_pglocale_pgservice(argv[0], PG_TEXTDOMAIN("ecpg"));
 
 	progname = get_progname(argv[0]);
 

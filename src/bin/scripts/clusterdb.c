@@ -4,7 +4,7 @@
  *
  * Portions Copyright (c) 2002-2008, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/scripts/clusterdb.c,v 1.20 2008/01/01 19:45:56 momjian Exp $
+ * $PostgreSQL: pgsql/src/bin/scripts/clusterdb.c,v 1.21 2008/11/24 08:46:04 petere Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -58,7 +58,7 @@ main(int argc, char *argv[])
 	bool		verbose = false;
 
 	progname = get_progname(argv[0]);
-	set_pglocale_pgservice(argv[0], "pgscripts");
+	set_pglocale_pgservice(argv[0], PG_TEXTDOMAIN("pgscripts"));
 
 	handle_help_version_opts(argc, argv, "clusterdb", help);
 
