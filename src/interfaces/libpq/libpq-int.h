@@ -12,7 +12,7 @@
  * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/interfaces/libpq/libpq-int.h,v 1.136 2008/10/28 12:10:44 mha Exp $
+ * $PostgreSQL: pgsql/src/interfaces/libpq/libpq-int.h,v 1.137 2008/11/13 09:45:25 mha Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -292,6 +292,11 @@ struct pg_conn
 	char	   *pgpass;
 	char	   *sslmode;		/* SSL mode (require,prefer,allow,disable) */
 	char	   *sslverify;		/* Verify server SSL certificate (none,chain,cn) */
+	char	   *sslkey;			/* client key filename */
+	char	   *sslcert;		/* client certificate filename */
+	char	   *sslrootcert;	/* root certificate filename */
+	char	   *sslcrl;			/* certificate revocation list filename */
+
 #if defined(KRB5) || defined(ENABLE_GSS) || defined(ENABLE_SSPI)
 	char	   *krbsrvname;		/* Kerberos service name */
 #endif
