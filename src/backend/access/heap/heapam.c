@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/heap/heapam.c,v 1.270 2008/11/19 10:34:50 heikki Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/heap/heapam.c,v 1.271 2008/12/03 13:05:22 heikki Exp $
  *
  *
  * INTERFACE ROUTINES
@@ -2604,6 +2604,7 @@ l2:
 	HeapTupleHeaderSetXmin(newtup->t_data, xid);
 	HeapTupleHeaderSetCmin(newtup->t_data, cid);
 	HeapTupleHeaderSetXmax(newtup->t_data, 0);	/* for cleanliness */
+	newtup->t_tableOid = RelationGetRelid(relation);
 
 	/*
 	 * Replace cid with a combo cid if necessary.  Note that we already put
