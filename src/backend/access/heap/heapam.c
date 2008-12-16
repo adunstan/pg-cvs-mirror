@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/heap/heapam.c,v 1.222.2.1 2007/02/04 20:00:49 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/heap/heapam.c,v 1.222.2.2 2008/03/04 19:54:23 tgl Exp $
  *
  *
  * INTERFACE ROUTINES
@@ -2058,6 +2058,7 @@ l2:
 	HeapTupleHeaderSetCmin(newtup->t_data, cid);
 	HeapTupleHeaderSetXmax(newtup->t_data, 0);	/* zero out Datum fields */
 	HeapTupleHeaderSetCmax(newtup->t_data, 0);	/* for cleanliness */
+	newtup->t_tableOid = RelationGetRelid(relation);
 
 	/*
 	 * If the toaster needs to be activated, OR if the new tuple will not fit
