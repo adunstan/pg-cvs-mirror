@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/catalog/pg_aggregate.c,v 1.97 2008/11/14 19:47:50 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/catalog/pg_aggregate.c,v 1.98 2008/12/04 17:51:26 petere Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -227,10 +227,10 @@ AggregateCreate(const char *aggName,
 							  PointerGetDatum(NULL),	/* allParamTypes */
 							  PointerGetDatum(NULL),	/* parameterModes */
 							  PointerGetDatum(NULL),	/* parameterNames */
+							  NIL,						/* parameterDefaults */
 							  PointerGetDatum(NULL),	/* proconfig */
 							  1,	/* procost */
-							  0,		/* prorows */
-							  NULL);	/* parameterDefaults */
+							  0);		/* prorows */
 
 	/*
 	 * Okay to create the pg_aggregate entry.
@@ -320,7 +320,7 @@ lookup_agg_function(List *fnName,
 	 * function's return value.  it also returns the true argument types to
 	 * the function.
 	 */
-	fdresult = func_get_detail(fnName, NIL, nargs, input_types, false,
+	fdresult = func_get_detail(fnName, NIL, nargs, input_types, false, false,
 							   &fnOid, rettype, &retset, &nvargs,
 							   &true_oid_array, NULL);
 
