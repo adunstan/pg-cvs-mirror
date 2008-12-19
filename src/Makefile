@@ -4,7 +4,7 @@
 #
 # Copyright (c) 1994, Regents of the University of California
 #
-# $PostgreSQL: pgsql/src/Makefile,v 1.42 2007/08/21 01:11:12 tgl Exp $
+# $PostgreSQL: pgsql/src/Makefile,v 1.43 2008/03/18 16:24:50 petere Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -19,6 +19,7 @@ all install installdirs uninstall distprep:
 	$(MAKE) -C backend $@
 	$(MAKE) -C backend/utils/mb/conversion_procs $@
 	$(MAKE) -C backend/snowball $@
+	$(MAKE) -C backend/foreign $@-fdw
 	$(MAKE) -C include $@
 	$(MAKE) -C interfaces $@
 	$(MAKE) -C bin $@
