@@ -19,7 +19,7 @@
  * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- *	$PostgreSQL: pgsql/src/backend/parser/parse_utilcmd.c,v 2.17 2008/09/01 20:42:45 tgl Exp $
+ *	$PostgreSQL: pgsql/src/backend/parser/parse_utilcmd.c,v 2.18 2008/12/06 23:22:46 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -391,6 +391,7 @@ transformColumnDefinition(ParseState *pstate, CreateStmtContext *cxt,
 		funccallnode->agg_star = false;
 		funccallnode->agg_distinct = false;
 		funccallnode->func_variadic = false;
+		funccallnode->over = NULL;
 		funccallnode->location = -1;
 
 		constraint = makeNode(Constraint);
@@ -1471,6 +1472,10 @@ transformRuleStmt(RuleStmt *stmt, const char *queryString,
 		ereport(ERROR,
 				(errcode(ERRCODE_GROUPING_ERROR),
 		   errmsg("cannot use aggregate function in rule WHERE condition")));
+	if (pstate->p_hasWindowFuncs)
+		ereport(ERROR,
+				(errcode(ERRCODE_WINDOWING_ERROR),
+				 errmsg("cannot use window function in rule WHERE condition")));
 
 	/*
 	 * 'instead nothing' rules with a qualification need a query rangetable so
