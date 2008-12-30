@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/access/nbtree.h,v 1.120 2008/06/19 00:46:06 alvherre Exp $
+ * $PostgreSQL: pgsql/src/include/access/nbtree.h,v 1.121 2008/07/13 20:45:47 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -72,7 +72,7 @@ typedef BTPageOpaqueData *BTPageOpaque;
 #define BTP_META		(1 << 3)	/* meta-page */
 #define BTP_HALF_DEAD	(1 << 4)	/* empty, but still in tree */
 #define BTP_SPLIT_END	(1 << 5)	/* rightmost page of split group */
-#define BTP_HAS_GARBAGE (1 << 6)	/* page has LP_DELETEd tuples */
+#define BTP_HAS_GARBAGE (1 << 6)	/* page has LP_DEAD tuples */
 
 /*
  * The max allowed value of a cycle ID is a bit less than 64K.	This is
