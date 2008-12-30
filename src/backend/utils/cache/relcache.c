@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/cache/relcache.c,v 1.266.2.3 2008/04/16 18:23:12 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/cache/relcache.c,v 1.266.2.4 2008/08/10 19:02:46 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -769,6 +769,8 @@ equalRuleLocks(RuleLock *rlock1, RuleLock *rlock2)
 			if (rule1->event != rule2->event)
 				return false;
 			if (rule1->attrno != rule2->attrno)
+				return false;
+			if (rule1->enabled != rule2->enabled)
 				return false;
 			if (rule1->isInstead != rule2->isInstead)
 				return false;
