@@ -2,9 +2,9 @@
  *
  * UUID generation functions using the OSSP UUID library
  *
- * Copyright (c) 2007-2008 PostgreSQL Global Development Group
+ * Copyright (c) 2007-2009 PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/contrib/uuid-ossp/uuid-ossp.c,v 1.7 2008/01/01 20:31:21 tgl Exp $
+ * $PostgreSQL: pgsql/contrib/uuid-ossp/uuid-ossp.c,v 1.8 2008/03/25 22:42:42 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
