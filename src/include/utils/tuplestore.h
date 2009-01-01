@@ -21,10 +21,10 @@
  * Also, we have changed the API to return tuples in TupleTableSlots,
  * so that there is a check to prevent attempted access to system columns.
  *
- * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/utils/tuplestore.h,v 1.26 2008/12/27 17:39:00 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/utils/tuplestore.h,v 1.27 2008/12/28 18:54:01 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

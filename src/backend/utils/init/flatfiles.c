@@ -20,10 +20,10 @@
  * a way that this is OK.
  *
  *
- * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/backend/utils/init/flatfiles.c,v 1.34 2008/05/12 00:00:52 alvherre Exp $
+ * $PostgreSQL: pgsql/src/backend/utils/init/flatfiles.c,v 1.35 2008/06/12 09:12:31 heikki Exp $
  *
  *-------------------------------------------------------------------------
  */

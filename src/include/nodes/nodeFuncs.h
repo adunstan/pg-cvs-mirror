@@ -3,10 +3,10 @@
  * nodeFuncs.h
  *		Various general-purpose manipulations of Node trees
  *
- * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/nodes/nodeFuncs.h,v 1.28 2008/08/28 23:09:48 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/nodes/nodeFuncs.h,v 1.29 2008/10/04 21:56:55 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

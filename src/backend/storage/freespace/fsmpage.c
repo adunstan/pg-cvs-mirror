@@ -4,11 +4,11 @@
  *	  routines to search and manipulate one FSM page.
  *
  *
- * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/storage/freespace/fsmpage.c,v 1.2 2008/10/07 21:10:11 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/storage/freespace/fsmpage.c,v 1.3 2008/12/10 17:11:18 tgl Exp $
  *
  * NOTES:
  *

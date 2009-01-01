@@ -9,12 +9,12 @@
  * the single-user case works.
  *
  *
- * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/misc/superuser.c,v 1.37 2008/01/01 19:45:54 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/misc/superuser.c,v 1.38 2008/09/09 18:58:08 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

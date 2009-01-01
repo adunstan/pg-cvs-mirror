@@ -57,10 +57,10 @@
  * calls in portal and cursor manipulations.
  *
  *
- * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/tcop/dest.h,v 1.55 2008/10/31 19:37:56 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/tcop/dest.h,v 1.56 2008/11/30 20:51:25 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

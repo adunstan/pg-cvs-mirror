@@ -3,11 +3,11 @@
  * wparser_def.c
  *		Default text search parser
  *
- * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/tsearch/wparser_def.c,v 1.16 2008/10/17 17:27:46 teodor Exp $
+ *	  $PostgreSQL: pgsql/src/backend/tsearch/wparser_def.c,v 1.17 2008/10/17 18:05:19 teodor Exp $
  *
  *-------------------------------------------------------------------------
  */

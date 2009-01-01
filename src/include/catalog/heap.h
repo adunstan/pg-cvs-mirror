@@ -4,10 +4,10 @@
  *	  prototypes for functions in backend/catalog/heap.c
  *
  *
- * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/catalog/heap.h,v 1.88 2008/05/09 23:32:04 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/catalog/heap.h,v 1.89 2008/11/14 01:57:42 alvherre Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -9,10 +9,10 @@
  * there's hardly any use case for using these without superuser-rights
  * anyway.
  *
- * Copyright (c) 2007-2008, PostgreSQL Global Development Group
+ * Copyright (c) 2007-2009, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *	  $PostgreSQL$
+ *	  $PostgreSQL: pgsql/contrib/pageinspect/fsmfuncs.c,v 1.1 2008/09/30 10:52:09 heikki Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -8,8 +8,8 @@
  * Darko Prenosil <Darko.Prenosil@finteh.hr>
  * Shridhar Daithankar <shridhar_daithankar@persistent.co.in>
  *
- * $PostgreSQL: pgsql/contrib/dblink/dblink.c,v 1.75 2008/09/22 13:55:13 tgl Exp $
- * Copyright (c) 2001-2008, PostgreSQL Global Development Group
+ * $PostgreSQL: pgsql/contrib/dblink/dblink.c,v 1.76 2008/11/30 23:23:52 tgl Exp $
+ * Copyright (c) 2001-2009, PostgreSQL Global Development Group
  * ALL RIGHTS RESERVED;
  *
  * Permission to use, copy, modify, and distribute this software and its

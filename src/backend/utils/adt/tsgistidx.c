@@ -3,11 +3,11 @@
  * tsgistidx.c
  *	  GiST support functions for tsvector_ops
  *
- * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/tsgistidx.c,v 1.8 2008/04/14 17:05:33 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/tsgistidx.c,v 1.9 2008/05/16 16:31:01 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -3,12 +3,12 @@
  * indexam.c
  *	  general index access method routines
  *
- * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/index/indexam.c,v 1.110 2008/09/11 14:01:09 alvherre Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/index/indexam.c,v 1.111 2008/10/10 14:17:08 tgl Exp $
  *
  * INTERFACE ROUTINES
  *		index_open		- open an index relation by relation OID

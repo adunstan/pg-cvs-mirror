@@ -5,10 +5,10 @@
  *	  along with the relation's initial contents.
  *
  *
- * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/catalog/pg_statistic.h,v 1.36 2008/07/14 00:51:45 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/catalog/pg_statistic.h,v 1.37 2008/09/19 19:03:41 tgl Exp $
  *
  * NOTES
  *	  the genbki.sh script reads this file and generates .bki

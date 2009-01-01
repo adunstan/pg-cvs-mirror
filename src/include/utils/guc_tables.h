@@ -5,9 +5,9 @@
  *
  * See src/backend/utils/misc/README for design notes.
  *
- * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  *
- *	  $PostgreSQL: pgsql/src/include/utils/guc_tables.h,v 1.43 2008/09/30 10:52:14 heikki Exp $
+ *	  $PostgreSQL: pgsql/src/include/utils/guc_tables.h,v 1.44 2008/11/19 01:10:23 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

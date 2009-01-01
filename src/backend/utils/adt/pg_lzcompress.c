@@ -164,9 +164,9 @@
  *
  *			Jan Wieck
  *
- * Copyright (c) 1999-2008, PostgreSQL Global Development Group
+ * Copyright (c) 1999-2009, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/backend/utils/adt/pg_lzcompress.c,v 1.30 2008/03/07 23:20:21 tgl Exp $
+ * $PostgreSQL: pgsql/src/backend/utils/adt/pg_lzcompress.c,v 1.31 2008/03/08 01:09:36 tgl Exp $
  * ----------
  */
 #include "postgres.h"

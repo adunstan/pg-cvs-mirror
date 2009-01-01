@@ -4,11 +4,11 @@
  *	  support functions for GIN's indexing of any array
  *
  *
- * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/gin/ginarrayproc.c,v 1.12 2008/01/01 19:45:46 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/gin/ginarrayproc.c,v 1.13 2008/04/14 17:05:33 tgl Exp $
  *-------------------------------------------------------------------------
  */
 #include "postgres.h"

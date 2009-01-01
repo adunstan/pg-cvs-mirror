@@ -8,10 +8,10 @@
  * or call fmgr-callable functions.
  *
  *
- * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/fmgr.h,v 1.60 2008/09/03 22:34:50 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/fmgr.h,v 1.61 2008/12/28 18:54:00 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

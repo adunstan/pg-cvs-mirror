@@ -57,11 +57,11 @@
  *	  data copy step when the previous transition value pointer is returned.
  *
  *
- * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/nodeAgg.c,v 1.162 2008/10/16 19:25:55 neilc Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/nodeAgg.c,v 1.163 2008/10/23 15:29:23 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

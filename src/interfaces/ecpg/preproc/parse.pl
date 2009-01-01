@@ -1,9 +1,9 @@
 #!/usr/bin/perl
-# $PostgreSQL$
+# $PostgreSQL: pgsql/src/interfaces/ecpg/preproc/parse.pl,v 1.1 2008/11/14 10:01:04 meskes Exp $
 # parser generater for ecpg
 # call with backend parser as stdin
 #
-# Copyright (c) 2007-2008, PostgreSQL Global Development Group
+# Copyright (c) 2007-2009, PostgreSQL Global Development Group
 #
 # Written by Mike Aubury <mike.aubury@aubit.com>
 #	     Michael Meskes <meskes@postgresql.org>

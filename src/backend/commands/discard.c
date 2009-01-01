@@ -3,11 +3,11 @@
  * discard.c
  *	  The implementation of the DISCARD command
  *
- * Copyright (c) 1996-2008, PostgreSQL Global Development Group
+ * Copyright (c) 1996-2009, PostgreSQL Global Development Group
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/discard.c,v 1.4 2008/01/01 19:45:49 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/discard.c,v 1.5 2008/11/26 01:21:08 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

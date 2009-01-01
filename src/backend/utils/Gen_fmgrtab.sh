@@ -6,12 +6,12 @@
 #
 # NOTE: if you change this, you need to fix Gen_fmgrtab.pl too!
 #
-# Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
+# Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
 # Portions Copyright (c) 1994, Regents of the University of California
 #
 #
 # IDENTIFICATION
-#    $PostgreSQL: pgsql/src/backend/utils/Gen_fmgrtab.sh,v 1.39 2008/05/02 14:16:24 petere Exp $
+#    $PostgreSQL: pgsql/src/backend/utils/Gen_fmgrtab.sh,v 1.40 2008/06/23 17:54:29 tgl Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -124,7 +124,7 @@ cat > "$$-$OIDSFILE" <<FuNkYfMgRsTuFf
  * These macros can be used to avoid a catalog lookup when a specific
  * fmgr-callable function needs to be referenced.
  *
- * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * NOTES
@@ -179,7 +179,7 @@ cat > "$$-$TABLEFILE" <<FuNkYfMgRtAbStUfF
  * $TABLEFILE
  *    The function manager's table of internal functions.
  *
- * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * NOTES

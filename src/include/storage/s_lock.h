@@ -63,10 +63,10 @@
  *	when using the SysV semaphore code.
  *
  *
- * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- *	  $PostgreSQL: pgsql/src/include/storage/s_lock.h,v 1.164 2008/01/01 19:45:59 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/include/storage/s_lock.h,v 1.165 2008/10/29 16:06:47 petere Exp $
  *
  *-------------------------------------------------------------------------
  */

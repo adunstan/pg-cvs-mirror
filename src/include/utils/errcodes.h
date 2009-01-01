@@ -9,9 +9,9 @@
  * string is determined by the MAKE_SQLSTATE() macro, which is not defined
  * in this file; it can be defined by the caller for special purposes.
  *
- * Copyright (c) 2003-2008, PostgreSQL Global Development Group
+ * Copyright (c) 2003-2009, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/include/utils/errcodes.h,v 1.26 2008/10/04 21:56:55 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/utils/errcodes.h,v 1.27 2008/12/28 18:54:01 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

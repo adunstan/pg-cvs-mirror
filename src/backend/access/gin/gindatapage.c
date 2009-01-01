@@ -4,11 +4,11 @@
  *	  page utilities routines for the postgres inverted index access method.
  *
  *
- * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *			$PostgreSQL: pgsql/src/backend/access/gin/gindatapage.c,v 1.11 2008/06/19 00:46:03 alvherre Exp $
+ *			$PostgreSQL: pgsql/src/backend/access/gin/gindatapage.c,v 1.12 2008/11/03 20:47:48 tgl Exp $
  *-------------------------------------------------------------------------
  */
 

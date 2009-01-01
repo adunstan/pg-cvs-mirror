@@ -4,10 +4,10 @@
  *	  Definition of (and support for) access control list data structures.
  *
  *
- * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/utils/acl.h,v 1.104 2008/09/08 00:47:41 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/utils/acl.h,v 1.105 2008/12/19 16:25:19 petere Exp $
  *
  * NOTES
  *	  An ACL array is simply an array of AclItems, representing the union

@@ -4,10 +4,10 @@
  *	  POSTGRES generalized index access method definitions.
  *
  *
- * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/access/genam.h,v 1.73 2008/06/08 22:41:04 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/access/genam.h,v 1.74 2008/06/19 00:46:05 alvherre Exp $
  *
  *-------------------------------------------------------------------------
  */

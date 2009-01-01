@@ -11,10 +11,10 @@
  * at the same address.  This means shared memory pointers can be passed
  * around directly between different processes.
  *
- * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/storage/shmem.h,v 1.53 2008/01/01 19:45:59 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/storage/shmem.h,v 1.54 2008/11/02 21:24:52 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -9,12 +9,12 @@
  * context's MemoryContextMethods struct.
  *
  *
- * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/mmgr/mcxt.c,v 1.64 2008/06/18 18:42:54 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/mmgr/mcxt.c,v 1.65 2008/06/28 16:45:22 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

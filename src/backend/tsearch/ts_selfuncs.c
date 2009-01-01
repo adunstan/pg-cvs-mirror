@@ -3,11 +3,11 @@
  * ts_selfuncs.c
  *	  Selectivity estimation functions for text search operators.
  *
- * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL$
+ *	  $PostgreSQL: pgsql/src/backend/tsearch/ts_selfuncs.c,v 1.1 2008/09/19 19:03:40 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

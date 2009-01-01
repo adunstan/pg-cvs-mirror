@@ -3,9 +3,9 @@
  * ts_type.h
  *	  Definitions for the tsvector and tsquery types
  *
- * Copyright (c) 1998-2008, PostgreSQL Global Development Group
+ * Copyright (c) 1998-2009, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/include/tsearch/ts_type.h,v 1.13 2008/07/14 00:51:45 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/tsearch/ts_type.h,v 1.14 2008/09/19 19:03:41 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -3,10 +3,10 @@
  * snapmgr.h
  *	  POSTGRES snapshot manager
  *
- * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/utils/snapmgr.h,v 1.2 2008/05/12 20:02:02 alvherre Exp $
+ * $PostgreSQL: pgsql/src/include/utils/snapmgr.h,v 1.3 2008/12/04 14:51:02 alvherre Exp $
  *
  *-------------------------------------------------------------------------
  */

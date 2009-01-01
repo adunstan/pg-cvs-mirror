@@ -4,10 +4,10 @@
  *	  POSTGRES process array definitions.
  *
  *
- * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/storage/procarray.h,v 1.22 2008/05/12 20:02:02 alvherre Exp $
+ * $PostgreSQL: pgsql/src/include/storage/procarray.h,v 1.23 2008/08/04 18:03:46 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

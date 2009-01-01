@@ -3,10 +3,10 @@
  * dict_snowball.c
  *		Snowball dictionary
  *
- * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/snowball/dict_snowball.c,v 1.6 2008/01/01 19:45:51 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/snowball/dict_snowball.c,v 1.7 2008/11/10 15:18:40 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

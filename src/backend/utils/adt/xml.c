@@ -4,10 +4,10 @@
  *	  XML data type support.
  *
  *
- * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/backend/utils/adt/xml.c,v 1.80 2008/10/29 08:04:53 petere Exp $
+ * $PostgreSQL: pgsql/src/backend/utils/adt/xml.c,v 1.81 2008/11/10 18:02:20 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -5,10 +5,10 @@
  *	  along with the relation's initial contents.
  *
  *
- * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL$
+ * $PostgreSQL: pgsql/src/include/catalog/pg_foreign_data_wrapper.h,v 1.1 2008/12/19 16:25:18 petere Exp $
  *
  * NOTES
  *	  the genbki.sh script reads this file and generates .bki

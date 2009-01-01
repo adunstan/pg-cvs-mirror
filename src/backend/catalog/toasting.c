@@ -4,11 +4,11 @@
  *	  This file contains routines to support creation of toast tables
  *
  *
- * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/catalog/toasting.c,v 1.10 2008/05/09 23:32:04 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/catalog/toasting.c,v 1.11 2008/09/01 20:42:43 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

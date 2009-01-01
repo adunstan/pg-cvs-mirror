@@ -4,11 +4,11 @@
  *	  routines for fast build of inverted index
  *
  *
- * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *			$PostgreSQL: pgsql/src/backend/access/gin/ginbulk.c,v 1.12 2008/06/29 21:04:01 tgl Exp $
+ *			$PostgreSQL: pgsql/src/backend/access/gin/ginbulk.c,v 1.13 2008/07/11 21:06:29 tgl Exp $
  *-------------------------------------------------------------------------
  */
 

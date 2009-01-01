@@ -4,11 +4,11 @@
  *	  fetch tuples from a GiST scan.
  *
  *
- * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/gist/gistget.c,v 1.78 2008/10/20 16:35:14 teodor Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/gist/gistget.c,v 1.79 2008/10/22 12:53:56 teodor Exp $
  *
  *-------------------------------------------------------------------------
  */

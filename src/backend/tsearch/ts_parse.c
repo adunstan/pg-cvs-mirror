@@ -3,11 +3,11 @@
  * ts_parse.c
  *		main parse functions for tsearch
  *
- * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/tsearch/ts_parse.c,v 1.8 2008/05/16 16:31:01 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/tsearch/ts_parse.c,v 1.9 2008/10/17 18:05:19 teodor Exp $
  *
  *-------------------------------------------------------------------------
  */

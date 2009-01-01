@@ -5,12 +5,12 @@
  *		bits of hard-wired knowledge
  *
  *
- * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/catalog/catalog.c,v 1.79 2008/10/06 14:13:17 heikki Exp $
+ *	  $PostgreSQL: pgsql/src/backend/catalog/catalog.c,v 1.80 2008/12/03 13:05:22 heikki Exp $
  *
  *-------------------------------------------------------------------------
  */

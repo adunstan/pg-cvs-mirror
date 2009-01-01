@@ -4,10 +4,10 @@
  *	  prototypes for planner.c.
  *
  *
- * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/optimizer/planner.h,v 1.44 2008/01/01 19:45:58 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/optimizer/planner.h,v 1.45 2008/10/04 21:56:55 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

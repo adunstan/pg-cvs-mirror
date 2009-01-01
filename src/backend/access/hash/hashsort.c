@@ -14,11 +14,11 @@
  * plenty of locality of access.
  *
  *
- * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL$
+ *	  $PostgreSQL: pgsql/src/backend/access/hash/hashsort.c,v 1.1 2008/03/16 23:15:08 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

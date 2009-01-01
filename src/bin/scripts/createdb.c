@@ -2,10 +2,10 @@
  *
  * createdb
  *
- * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/bin/scripts/createdb.c,v 1.28 2008/11/10 16:25:41 alvherre Exp $
+ * $PostgreSQL: pgsql/src/bin/scripts/createdb.c,v 1.29 2008/12/11 07:34:08 petere Exp $
  *
  *-------------------------------------------------------------------------
  */

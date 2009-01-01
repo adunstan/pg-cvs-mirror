@@ -36,10 +36,10 @@
  * to look like NO SCROLL cursors.
  *
  *
- * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/utils/portal.h,v 1.79 2008/07/18 20:26:06 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/utils/portal.h,v 1.80 2008/11/30 20:51:25 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -4,11 +4,11 @@
  *	  WAL replay logic for btrees.
  *
  *
- * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/nbtree/nbtxlog.c,v 1.51 2008/05/12 00:00:45 alvherre Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/nbtree/nbtxlog.c,v 1.52 2008/06/12 09:12:30 heikki Exp $
  *
  *-------------------------------------------------------------------------
  */

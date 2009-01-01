@@ -4,10 +4,10 @@
  *	  Physical access information for relations.
  *
  *
- * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/storage/relfilenode.h,v 1.20 2008/11/19 10:34:52 heikki Exp $
+ * $PostgreSQL: pgsql/src/include/storage/relfilenode.h,v 1.21 2008/12/03 13:05:22 heikki Exp $
  *
  *-------------------------------------------------------------------------
  */
