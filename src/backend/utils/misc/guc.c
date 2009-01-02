@@ -10,7 +10,7 @@
  * Written by Peter Eisentraut <peter_e@gmx.net>.
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.483 2008/12/13 19:13:44 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.484 2009/01/01 17:23:53 momjian Exp $
  *
  *--------------------------------------------------------------------
  */
@@ -7283,11 +7283,11 @@ assign_custom_variable_classes(const char *newval, bool doit, GucSource source)
 			continue;
 		}
 
-		if (hasSpaceAfterToken || !isalnum((unsigned char) c))
+		if (hasSpaceAfterToken || !(isalnum((unsigned char) c) || c == '_'))
 		{
 			/*
-			 * Syntax error due to token following space after token or non
-			 * alpha numeric character
+			 * Syntax error due to token following space after token or
+			 * non-identifier character
 			 */
 			pfree(buf.data);
 			return NULL;
