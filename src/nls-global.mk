@@ -1,4 +1,4 @@
-# $PostgreSQL: pgsql/src/nls-global.mk,v 1.14 2008/05/17 21:27:12 momjian Exp $
+# $PostgreSQL: pgsql/src/nls-global.mk,v 1.15 2008/12/11 07:34:07 petere Exp $
 
 # Common rules for Native Language Support (NLS)
 #
@@ -36,7 +36,7 @@ PO_FILES = $(addprefix po/, $(addsuffix .po, $(LANGUAGES)))
 MO_FILES = $(addprefix po/, $(addsuffix .mo, $(LANGUAGES)))
 
 ifdef XGETTEXT
-XGETTEXT += --foreign-user -ctranslator
+XGETTEXT += -ctranslator --copyright-holder='PostgreSQL Global Development Group' --msgid-bugs-address=pgsql-bugs@postgresql.org
 endif
 
 
@@ -56,7 +56,8 @@ po/$(CATALOG_NAME).pot: $(GETTEXT_FILES)
 	$(XGETTEXT) -D $(srcdir) -n $(addprefix -k, $(GETTEXT_TRIGGERS)) $(GETTEXT_FILES)
 endif
 	@$(mkinstalldirs) $(dir $@)
-	mv messages.po $@
+	sed -e '1,18 { s/SOME DESCRIPTIVE TITLE./LANGUAGE message translation file for $(CATALOG_NAME)/;s/PACKAGE/PostgreSQL/g;s/VERSION/$(MAJORVERSION)/g;s/YEAR/'`date +%Y`'/g; }' messages.po >$@
+	rm messages.po
 else # not XGETTEXT
 	@echo "You don't have 'xgettext'."; exit 1
 endif # not XGETTEXT
