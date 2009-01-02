@@ -10,7 +10,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/libpq/hba.c,v 1.176 2008/11/28 14:26:58 mha Exp $
+ *	  $PostgreSQL: pgsql/src/backend/libpq/hba.c,v 1.177 2009/01/01 17:23:42 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -587,7 +587,7 @@ check_db(const char *dbname, const char *role, char *param_str)
 
 #define REQUIRE_AUTH_OPTION(methodval, optname, validmethods) do {\
 	if (parsedline->auth_method != methodval) \
-		INVALID_AUTH_OPTION("ldaptls", "ldap"); \
+		INVALID_AUTH_OPTION(optname, validmethods); \
 } while (0);
 
 #define MANDATORY_AUTH_ARG(argvar, argname, authname) do {\
