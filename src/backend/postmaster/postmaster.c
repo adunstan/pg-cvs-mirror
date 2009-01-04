@@ -37,7 +37,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/postmaster/postmaster.c,v 1.568 2009/01/01 17:23:46 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/postmaster/postmaster.c,v 1.569 2009/01/03 17:08:38 tgl Exp $
  *
  * NOTES
  *
@@ -2731,7 +2731,7 @@ PostmasterStateMachine(void)
 		ereport(LOG,
 				(errmsg("all server processes terminated; reinitializing")));
 
-		shmem_exit(0);
+		shmem_exit(1);
 		reset_shared(PostPortNumber);
 
 		StartupPID = StartupDataBase();
