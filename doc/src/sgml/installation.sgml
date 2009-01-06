@@ -1,4 +1,4 @@
-<!-- $PostgreSQL: pgsql/doc/src/sgml/installation.sgml,v 1.300.2.1 2008/03/06 21:37:40 momjian Exp $ -->
+<!-- $PostgreSQL: pgsql/doc/src/sgml/installation.sgml,v 1.300.2.2 2008/06/05 19:56:14 alvherre Exp $ -->
 
 <chapter id="installation">
  <title><![%standalone-include[<productname>PostgreSQL</>]]>
@@ -1848,7 +1848,7 @@ kill `cat /usr/local/pgsql/data/postmaster.pid`
    to be supported according to recent build farm results, please report
    it to <email>pgsql-bugs@postgresql.org</email>.  If you are interested
    in porting <productname>PostgreSQL</> to a new platform,
-   <email>pgsql-ports@postgresql.org</email> is the appropriate place
+   <email>pgsql-hackers@postgresql.org</email> is the appropriate place
    to discuss that.
   </para>
  </sect1>
