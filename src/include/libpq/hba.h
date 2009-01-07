@@ -4,7 +4,7 @@
  *	  Interface to hba.c
  *
  *
- * $PostgreSQL: pgsql/src/include/libpq/hba.h,v 1.53 2008/11/20 11:48:26 mha Exp $
+ * $PostgreSQL: pgsql/src/include/libpq/hba.h,v 1.54 2009/01/07 12:38:11 mha Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -58,6 +58,7 @@ typedef struct
 	bool		clientcert;
 	char	   *krb_server_hostname;
 	char	   *krb_realm;
+	bool		include_realm;
 } HbaLine;
 
 typedef struct Port hbaPort;
