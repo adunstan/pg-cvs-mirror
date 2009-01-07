@@ -1,15 +1,18 @@
 /*
  * insert_username.c
  * $Modified: Thu Oct 16 08:13:42 1997 by brook $
- * $PostgreSQL: pgsql/contrib/spi/insert_username.c,v 1.15 2007/02/01 19:10:23 momjian Exp $
+ * $PostgreSQL: pgsql/contrib/spi/insert_username.c,v 1.16 2008/03/25 22:42:42 tgl Exp $
  *
  * insert user name in response to a trigger
  * usage:  insert_username (column_name)
  */
+#include "postgres.h"
 
-#include "executor/spi.h"		/* this is what you need to work with SPI */
-#include "commands/trigger.h"	/* -"- and triggers */
-#include "miscadmin.h"			/* for GetUserName() */
+#include "catalog/pg_type.h"
+#include "commands/trigger.h"
+#include "executor/spi.h"
+#include "miscadmin.h"
+#include "utils/builtins.h"
 
 PG_MODULE_MAGIC;
 
