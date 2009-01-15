@@ -7,7 +7,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/tsearch/ts_parse.c,v 1.6 2007/11/28 21:56:30 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/tsearch/ts_parse.c,v 1.7 2008/01/01 19:45:52 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -607,7 +607,7 @@ generateHeadline(HeadlineParsedText *prs)
 				*ptr = ' ';
 				ptr++;
 			}
-			else
+			else if (!wrd->skip)
 			{
 				if (wrd->selected)
 				{
