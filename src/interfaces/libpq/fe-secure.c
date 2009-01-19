@@ -11,7 +11,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-secure.c,v 1.116 2009/01/07 12:02:46 mha Exp $
+ *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-secure.c,v 1.117 2009/01/19 08:59:13 petere Exp $
  *
  * NOTES
  *
@@ -1043,13 +1043,14 @@ initialize_SSL(PGconn *conn)
 		}
 
 		SSL_CTX_set_verify(SSL_context, SSL_VERIFY_PEER, verify_cb);
-	} /* root certificate exists */
+	}
 	else
 	{
+		/* stat() failed; assume cert file doesn't exist */
 		if (strcmp(conn->sslverify, "none") != 0)
 		{
 			printfPQExpBuffer(&conn->errorMessage,
-							  libpq_gettext("root certificate file »%s« does not exist"), fnbuf);
+							  libpq_gettext("root certificate file \"%s\" does not exist"), fnbuf);
 			return -1;
 		}
 	}
