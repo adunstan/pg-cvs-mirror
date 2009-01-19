@@ -4,7 +4,7 @@
  * (currently mule internal code (mic) is used)
  * Tatsuo Ishii
  *
- * $PostgreSQL: pgsql/src/backend/utils/mb/mbutils.c,v 1.75 2008/11/11 03:01:20 tgl Exp $
+ * $PostgreSQL: pgsql/src/backend/utils/mb/mbutils.c,v 1.76 2009/01/04 18:37:35 tgl Exp $
  */
 #include "postgres.h"
 
@@ -873,7 +873,7 @@ SetDatabaseEncoding(int encoding)
 	 */
 #ifdef ENABLE_NLS
 	if (encoding == PG_UTF8)
-		if (bind_textdomain_codeset("postgres", "UTF-8") == NULL)
+		if (bind_textdomain_codeset(textdomain(NULL), "UTF-8") == NULL)
 			elog(LOG, "bind_textdomain_codeset failed");
 #endif
 }

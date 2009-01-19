@@ -42,7 +42,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/error/elog.c,v 1.210 2009/01/01 17:23:51 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/error/elog.c,v 1.211 2009/01/07 04:26:46 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -308,7 +308,7 @@ errstart(int elevel, const char *filename, int lineno,
 	edata->lineno = lineno;
 	edata->funcname = funcname;
 	/* the default text domain is the backend's */
-	edata->domain = domain ? domain : "postgres";
+	edata->domain = domain ? domain : PG_TEXTDOMAIN("postgres");
 	/* Select default errcode based on elevel */
 	if (elevel >= ERROR)
 		edata->sqlerrcode = ERRCODE_INTERNAL_ERROR;
