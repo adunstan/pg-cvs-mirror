@@ -37,7 +37,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/tablespace.c,v 1.58 2008/11/02 01:45:28 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/tablespace.c,v 1.59 2009/01/01 17:23:40 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1275,6 +1275,9 @@ void
 tblspc_redo(XLogRecPtr lsn, XLogRecord *record)
 {
 	uint8		info = record->xl_info & ~XLR_INFO_MASK;
+
+	/* Backup blocks are not used in tblspc records */
+	Assert(!(record->xl_info & XLR_BKP_BLOCK_MASK));
 
 	if (info == XLOG_TBLSPC_CREATE)
 	{

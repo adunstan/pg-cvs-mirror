@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/storage/freespace/freespace.c,v 1.70 2008/12/03 12:22:53 heikki Exp $
+ *	  $PostgreSQL: pgsql/src/backend/storage/freespace/freespace.c,v 1.71 2009/01/01 17:23:47 momjian Exp $
  *
  *
  * NOTES:
@@ -212,6 +212,8 @@ XLogRecordPageWithFreeSpace(RelFileNode rnode, BlockNumber heapBlk,
 
 	/* If the page doesn't exist already, extend */
 	buf = XLogReadBufferExtended(rnode, FSM_FORKNUM, blkno, RBM_ZERO_ON_ERROR);
+	LockBuffer(buf, BUFFER_LOCK_EXCLUSIVE);
+
 	page = BufferGetPage(buf);
 	if (PageIsNew(page))
 		PageInit(page, BLCKSZ, 0);

@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/nbtree/nbtxlog.c,v 1.52 2008/06/12 09:12:30 heikki Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/nbtree/nbtxlog.c,v 1.53 2009/01/01 17:23:36 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -713,6 +713,8 @@ void
 btree_redo(XLogRecPtr lsn, XLogRecord *record)
 {
 	uint8		info = record->xl_info & ~XLR_INFO_MASK;
+
+	RestoreBkpBlocks(lsn, record, false);
 
 	switch (info)
 	{

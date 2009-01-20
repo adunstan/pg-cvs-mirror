@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/sequence.c,v 1.155 2008/11/02 01:45:27 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/sequence.c,v 1.156 2009/01/01 17:23:39 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1338,6 +1338,9 @@ seq_redo(XLogRecPtr lsn, XLogRecord *record)
 	Size		itemsz;
 	xl_seq_rec *xlrec = (xl_seq_rec *) XLogRecGetData(record);
 	sequence_magic *sm;
+
+	/* Backup blocks are not used in seq records */
+	Assert(!(record->xl_info & XLR_BKP_BLOCK_MASK));
 
 	if (info != XLOG_SEQ_LOG)
 		elog(PANIC, "seq_redo: unknown op code %u", info);

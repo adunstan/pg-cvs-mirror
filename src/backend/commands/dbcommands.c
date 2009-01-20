@@ -13,7 +13,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/dbcommands.c,v 1.216 2008/11/07 18:25:06 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/dbcommands.c,v 1.217 2009/01/01 17:23:37 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1940,6 +1940,9 @@ void
 dbase_redo(XLogRecPtr lsn, XLogRecord *record)
 {
 	uint8		info = record->xl_info & ~XLR_INFO_MASK;
+
+	/* Backup blocks are not used in dbase records */
+	Assert(!(record->xl_info & XLR_BKP_BLOCK_MASK));
 
 	if (info == XLOG_DBASE_CREATE)
 	{
