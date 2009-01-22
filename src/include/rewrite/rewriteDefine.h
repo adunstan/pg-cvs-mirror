@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/rewrite/rewriteDefine.h,v 1.30 2008/06/19 00:46:06 alvherre Exp $
+ * $PostgreSQL: pgsql/src/include/rewrite/rewriteDefine.h,v 1.31 2009/01/01 17:24:01 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -29,6 +29,7 @@ extern void DefineQueryRewrite(char *rulename,
 				   Node *event_qual,
 				   CmdType event_type,
 				   bool is_instead,
+				   bool is_auto,
 				   bool replace,
 				   List *action);
 
