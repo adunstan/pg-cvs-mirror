@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/catalog/pg_proc.c,v 1.159 2008/12/31 02:25:03 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/catalog/pg_proc.c,v 1.160 2009/01/01 17:23:37 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -499,7 +499,7 @@ ProcedureCreate(const char *procedureName,
 	if (is_update)
 	{
 		deleteDependencyRecordsFor(ProcedureRelationId, retval);
-		deleteSharedDependencyRecordsFor(ProcedureRelationId, retval);
+		deleteSharedDependencyRecordsFor(ProcedureRelationId, retval, 0);
 	}
 
 	myself.classId = ProcedureRelationId;
