@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/mb/conversion_procs/utf8_and_iso8859/utf8_and_iso8859.c,v 1.23 2006/10/06 17:13:59 petere Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/mb/conversion_procs/utf8_and_iso8859/utf8_and_iso8859.c,v 1.24 2006/11/27 15:50:54 petere Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -120,8 +120,7 @@ iso8859_to_utf8(PG_FUNCTION_ARGS)
 	int			len = PG_GETARG_INT32(4);
 	int			i;
 
-	Assert(PG_GETARG_INT32(1) == PG_UTF8);
-	Assert(len >= 0);
+	CHECK_ENCODING_CONVERSION_ARGS(-1, PG_UTF8);
 
 	for (i = 0; i < sizeof(maps) / sizeof(pg_conv_map); i++)
 	{
@@ -148,8 +147,7 @@ utf8_to_iso8859(PG_FUNCTION_ARGS)
 	int			len = PG_GETARG_INT32(4);
 	int			i;
 
-	Assert(PG_GETARG_INT32(0) == PG_UTF8);
-	Assert(len >= 0);
+	CHECK_ENCODING_CONVERSION_ARGS(PG_UTF8, -1);
 
 	for (i = 0; i < sizeof(maps) / sizeof(pg_conv_map); i++)
 	{
