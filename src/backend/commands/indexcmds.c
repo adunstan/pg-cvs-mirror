@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/indexcmds.c,v 1.180 2008/10/13 16:25:19 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/indexcmds.c,v 1.181 2009/01/01 17:23:38 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -398,7 +398,7 @@ DefineIndex(RangeVar *heapRelation,
 	/*
 	 * Parse AM-specific options, convert to text array form, validate.
 	 */
-	reloptions = transformRelOptions((Datum) 0, options, false, false);
+	reloptions = transformRelOptions((Datum) 0, options, NULL, NULL, false, false);
 
 	(void) index_reloptions(amoptions, reloptions, true);
 

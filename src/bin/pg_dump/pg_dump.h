@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/bin/pg_dump/pg_dump.h,v 1.148 2009/01/22 17:27:54 petere Exp $
+ * $PostgreSQL: pgsql/src/bin/pg_dump/pg_dump.h,v 1.149 2009/01/27 12:40:15 petere Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -221,6 +221,7 @@ typedef struct _tableInfo
 	char		relkind;
 	char	   *reltablespace;	/* relation tablespace */
 	char	   *reloptions;		/* options specified by WITH (...) */
+	char	   *toast_reloptions; /* ditto, for the TOAST table */
 	bool		hasindex;		/* does it have any indexes? */
 	bool		hasrules;		/* does it have any rules? */
 	bool		hastriggers;	/* does it have any triggers? */

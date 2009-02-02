@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/view.c,v 1.112 2009/01/22 17:27:54 petere Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/view.c,v 1.113 2009/01/27 12:40:15 petere Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -229,7 +229,7 @@ DefineVirtualRelation(const RangeVar *relation, List *tlist, bool replace)
 		createStmt->tableElts = attrList;
 		createStmt->inhRelations = NIL;
 		createStmt->constraints = NIL;
-		createStmt->options = list_make1(defWithOids(false));
+		createStmt->options = list_make1(reloptWithOids(false));
 		createStmt->oncommit = ONCOMMIT_NOOP;
 		createStmt->tablespacename = NULL;
 

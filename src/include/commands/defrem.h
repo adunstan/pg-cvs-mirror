@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/commands/defrem.h,v 1.91 2008/12/19 16:25:19 petere Exp $
+ * $PostgreSQL: pgsql/src/include/commands/defrem.h,v 1.92 2009/01/01 17:23:58 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -145,6 +145,8 @@ extern int64 defGetInt64(DefElem *def);
 extern List *defGetQualifiedName(DefElem *def);
 extern TypeName *defGetTypeName(DefElem *def);
 extern int	defGetTypeLength(DefElem *def);
-extern DefElem *defWithOids(bool value);
+extern char *reloptGetString(ReloptElem *relopt);
+extern bool reloptGetBoolean(ReloptElem *relopt);
+extern ReloptElem *reloptWithOids(bool value);
 
 #endif   /* DEFREM_H */
