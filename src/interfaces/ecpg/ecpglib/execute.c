@@ -1,4 +1,4 @@
-/* $PostgreSQL: pgsql/src/interfaces/ecpg/ecpglib/execute.c,v 1.79 2009/01/15 11:52:55 petere Exp $ */
+/* $PostgreSQL: pgsql/src/interfaces/ecpg/ecpglib/execute.c,v 1.80 2009/02/02 16:14:06 meskes Exp $ */
 
 /*
  * The aim is to get a simpler inteface to the database routines.
@@ -391,7 +391,11 @@ ecpg_store_result(const PGresult *results, int act_field,
 			}
 		}
 		else
-			len = PQgetlength(results, act_tuple, act_field);
+		{
+			for (act_tuple = 0; act_tuple < ntuples; act_tuple++)
+				len += strlen(PQgetvalue(results, act_tuple, act_field)) + 1;
+		}
+
 		ecpg_log("ecpg_store_result on line %d: allocating memory for %d tuples\n", stmt->lineno, ntuples);
 		var->value = (char *) ecpg_alloc(len, stmt->lineno);
 		if (!var->value)
