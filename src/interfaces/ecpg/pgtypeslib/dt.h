@@ -1,4 +1,4 @@
-/* $PostgreSQL: pgsql/src/interfaces/ecpg/pgtypeslib/dt.h,v 1.39 2007/11/15 21:14:45 momjian Exp $ */
+/* $PostgreSQL: pgsql/src/interfaces/ecpg/pgtypeslib/dt.h,v 1.40 2008/11/26 16:31:02 meskes Exp $ */
 
 #ifndef DT_H
 #define DT_H
@@ -342,7 +342,7 @@ int			tm2timestamp(struct tm *, fsec_t, int *, timestamp *);
 int			DecodeUnits(int field, char *lowtoken, int *val);
 bool		CheckDateTokenTables(void);
 int			EncodeDateOnly(struct tm *, int, char *, bool);
-void		GetEpochTime(struct tm *);
+int		GetEpochTime(struct tm *);
 int			ParseDateTime(char *, char *, char **, int *, int, int *, char **);
 int			DecodeDateTime(char **, int *, int, int *, struct tm *, fsec_t *, bool);
 void		j2date(int, int *, int *, int *);
