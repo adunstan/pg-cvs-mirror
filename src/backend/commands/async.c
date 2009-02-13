@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/async.c,v 1.138 2008/01/01 19:45:48 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/async.c,v 1.138.2.1 2008/03/12 20:11:54 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -283,6 +283,10 @@ Async_Unlisten(const char *relname)
 		if (Trace_notify)
 			elog(DEBUG1, "Async_Unlisten(%s,%d)", relname, MyProcPid);
 
+		/* If we couldn't possibly be listening, no need to queue anything */
+		if (pendingActions == NIL && !unlistenExitRegistered)
+			return;
+
 		queue_listen(LISTEN_UNLISTEN, relname);
 	}
 }
@@ -297,6 +301,10 @@ Async_UnlistenAll(void)
 {
 	if (Trace_notify)
 		elog(DEBUG1, "Async_UnlistenAll(%d)", MyProcPid);
+
+	/* If we couldn't possibly be listening, no need to queue anything */
+	if (pendingActions == NIL && !unlistenExitRegistered)
+		return;
 
 	queue_listen(LISTEN_UNLISTEN_ALL, "");
 }
