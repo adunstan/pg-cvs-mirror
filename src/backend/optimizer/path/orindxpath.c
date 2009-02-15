@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/optimizer/path/orindxpath.c,v 1.86 2009/01/01 17:23:44 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/optimizer/path/orindxpath.c,v 1.87 2009/02/06 23:43:23 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -181,6 +181,6 @@ create_or_index_quals(PlannerInfo *root, RelOptInfo *rel)
 		/* It isn't an outer join clause, so no need to adjust outer_selec */
 	}
 
-	/* Tell caller to recompute rel's rows estimate */
+	/* Tell caller to recompute partial index status and rowcount estimate */
 	return true;
 }
