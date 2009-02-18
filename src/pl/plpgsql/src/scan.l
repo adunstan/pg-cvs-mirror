@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/pl/plpgsql/src/scan.l,v 1.65 2009/01/01 17:24:04 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/pl/plpgsql/src/scan.l,v 1.66 2009/02/17 13:01:13 petere Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -254,7 +254,7 @@ dump			{ return O_DUMP;			}
 				plpgsql_error_lineno = start_lineno;
 				ereport(ERROR,
 						(errcode(ERRCODE_DATATYPE_MISMATCH),
-						 errmsg("unterminated comment")));
+						 errmsg("unterminated /* comment")));
 			}
 
     /* ----------
@@ -293,7 +293,7 @@ dump			{ return O_DUMP;			}
 				plpgsql_error_lineno = start_lineno;
 				ereport(ERROR,
 						(errcode(ERRCODE_DATATYPE_MISMATCH),
-						 errmsg("unterminated string")));
+						 errmsg("unterminated quoted string")));
 			}
 
 {dolqdelim}		{
