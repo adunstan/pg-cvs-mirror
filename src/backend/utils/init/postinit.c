@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/init/postinit.c,v 1.186 2008/09/23 09:20:36 heikki Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/init/postinit.c,v 1.187 2009/01/01 17:23:51 momjian Exp $
  *
  *
  *-------------------------------------------------------------------------
@@ -324,7 +324,7 @@ InitCommunication(void)
  * If you're wondering why this is separate from InitPostgres at all:
  * the critical distinction is that this stuff has to happen before we can
  * run XLOG-related initialization, which is done before InitPostgres --- in
- * fact, for cases such as checkpoint creation processes, InitPostgres may
+ * fact, for cases such as the background writer process, InitPostgres may
  * never be done at all.
  */
 void
