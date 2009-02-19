@@ -1,5 +1,5 @@
 # -*-makefile-*-
-# $PostgreSQL: pgsql/src/Makefile.global.in,v 1.251 2009/01/05 10:25:59 petere Exp $
+# $PostgreSQL: pgsql/src/Makefile.global.in,v 1.252 2009/01/22 22:27:13 petere Exp $
 
 #------------------------------------------------------------------------------
 # All PostgreSQL makefiles include this file and use the variables it sets,
@@ -467,6 +467,9 @@ TAS         = @TAS@
 ##########################################################################
 #
 # Global targets and rules
+
+%.i: %.c
+	$(CPP) $(CPPFLAGS) -o $@ $<
 
 %.gz: %
 	$(GZIP) -f --best $<
