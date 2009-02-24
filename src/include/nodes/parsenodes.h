@@ -13,7 +13,7 @@
  * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/nodes/parsenodes.h,v 1.390 2009/02/02 19:31:40 alvherre Exp $
+ * $PostgreSQL: pgsql/src/include/nodes/parsenodes.h,v 1.391 2009/02/11 21:11:16 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1468,7 +1468,7 @@ typedef struct CreateFdwStmt
 {
 	NodeTag		type;
 	char	   *fdwname;		/* foreign-data wrapper name */
-	char	   *library;		/* libray name */
+	List	   *validator;		/* optional validator function (qual. name) */
 	List	   *options;		/* generic options to FDW */
 } CreateFdwStmt;
 
@@ -1476,7 +1476,8 @@ typedef struct AlterFdwStmt
 {
 	NodeTag		type;
 	char	   *fdwname;		/* foreign-data wrapper name */
-	char	   *library;		/* libray name */
+	List	   *validator;		/* optional validator function (qual. name) */
+	bool		change_validator;
 	List	   *options;		/* generic options to FDW */
 } AlterFdwStmt;
 
