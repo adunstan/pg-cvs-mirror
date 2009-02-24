@@ -10,7 +10,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/functioncmds.c,v 1.87 2007/11/15 21:14:33 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/functioncmds.c,v 1.88 2008/01/01 19:45:49 momjian Exp $
  *
  * DESCRIPTION
  *	  These routines take the parse tree and pick out the
@@ -136,7 +136,7 @@ compute_return_type(TypeName *returnType, Oid languageOid,
 		if (aclresult != ACLCHECK_OK)
 			aclcheck_error(aclresult, ACL_KIND_NAMESPACE,
 						   get_namespace_name(namespaceId));
-		rettype = TypeShellMake(typname, namespaceId);
+		rettype = TypeShellMake(typname, namespaceId, GetUserId());
 		Assert(OidIsValid(rettype));
 	}
 
