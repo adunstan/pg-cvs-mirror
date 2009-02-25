@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/bin/scripts/common.c,v 1.32 2008/05/12 22:59:58 alvherre Exp $
+ * $PostgreSQL: pgsql/src/bin/scripts/common.c,v 1.33 2009/01/01 17:23:55 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -124,8 +124,7 @@ connectDatabase(const char *dbname, const char *pghost, const char *pgport,
 
 		if (PQstatus(conn) == CONNECTION_BAD &&
 			PQconnectionNeedsPassword(conn) &&
-			password == NULL &&
-			!feof(stdin))
+			password == NULL)
 		{
 			PQfinish(conn);
 			password = simple_prompt("Password: ", 100, false);
