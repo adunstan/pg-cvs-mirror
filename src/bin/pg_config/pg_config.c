@@ -17,7 +17,7 @@
  *
  * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/pg_config/pg_config.c,v 1.29 2008/12/11 07:34:07 petere Exp $
+ * $PostgreSQL: pgsql/src/bin/pg_config/pg_config.c,v 1.30 2009/01/01 17:23:54 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -410,7 +410,7 @@ help(void)
 {
 	printf(_("\n%s provides information about the installed version of PostgreSQL.\n\n"), progname);
 	printf(_("Usage:\n"));
-	printf(_("  %s [ OPTION ... ]\n\n"), progname);
+	printf(_("  %s [OPTION]...\n\n"), progname);
 	printf(_("Options:\n"));
 	printf(_("  --bindir              show location of user executables\n"));
 	printf(_("  --docdir              show location of documentation files\n"));
