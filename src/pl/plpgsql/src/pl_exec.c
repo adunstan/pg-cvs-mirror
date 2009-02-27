@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/pl/plpgsql/src/pl_exec.c,v 1.180.2.7 2009/01/07 20:39:15 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/pl/plpgsql/src/pl_exec.c,v 1.180.2.8 2009/01/14 09:53:57 heikki Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1046,8 +1046,10 @@ exec_stmt_block(PLpgSQL_execstate *estate, PLpgSQL_stmt_block *block)
 
 					free_var(state_var);
 					state_var->value = (Datum) 0;
+					state_var->isnull = true;
 					free_var(errm_var);
 					errm_var->value = (Datum) 0;
+					errm_var->isnull = true;
 					break;
 				}
 			}
