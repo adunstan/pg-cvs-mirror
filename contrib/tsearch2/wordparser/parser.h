@@ -1,4 +1,4 @@
-/* $PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.314 2006/03/07 02:54:23 momjian Exp $ */
+/* $PostgreSQL: pgsql/contrib/tsearch2/wordparser/parser.h,v 1.11 2006/03/11 04:38:30 momjian Exp $ */
 
 #ifndef __PARSER_H__
 #define __PARSER_H__
@@ -138,12 +138,13 @@ typedef struct TParser
 	int			lenstr;			/* length of mbstring */
 #ifdef TS_USE_WIDE
 	wchar_t    *wstr;			/* wide character string */
+	pg_wchar   *pgwstr;			/* wide character string for C-locale */
 	int			lenwstr;		/* length of wsting */
+	bool		usewide;
 #endif
 
 	/* State of parse */
 	int			charmaxlen;
-	bool		usewide;
 	TParserPosition *state;
 	bool		ignore;
 	bool		wanthost;
