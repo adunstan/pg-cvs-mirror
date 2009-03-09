@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/bool.c,v 1.45 2009/01/01 17:23:49 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/bool.c,v 1.46 2009/03/09 14:34:34 petere Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -109,7 +109,8 @@ parse_bool_with_len(const char *value, size_t len, bool *result)
 			break;
 	}
 
-	*result = false;	/* suppress compiler warning */
+	if (result)
+		*result = false;	/* suppress compiler warning */
 	return false;
 }
 
