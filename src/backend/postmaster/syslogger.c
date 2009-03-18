@@ -18,7 +18,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/postmaster/syslogger.c,v 1.43 2008/01/01 19:45:51 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/postmaster/syslogger.c,v 1.44 2008/01/25 20:42:10 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -909,13 +909,14 @@ write_syslogger_file(const char *buffer, int count, int destination)
 	if (destination == LOG_DESTINATION_CSVLOG && csvlogFile == NULL)
 		open_csvlogfile();
 
-	logfile = destination == LOG_DESTINATION_CSVLOG ? csvlogFile : syslogFile;
-
-#ifndef WIN32
-	rc = fwrite(buffer, 1, count, logfile);
-#else
+#ifdef WIN32
 	EnterCriticalSection(&sysfileSection);
+#endif
+
+	logfile = destination == LOG_DESTINATION_CSVLOG ? csvlogFile : syslogFile;
 	rc = fwrite(buffer, 1, count, logfile);
+
+#ifdef WIN32
 	LeaveCriticalSection(&sysfileSection);
 #endif
 
