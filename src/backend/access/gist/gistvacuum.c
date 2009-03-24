@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/gist/gistvacuum.c,v 1.41 2008/11/19 10:34:50 heikki Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/gist/gistvacuum.c,v 1.42 2009/01/01 17:23:35 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -514,6 +514,10 @@ gistvacuumcleanup(PG_FUNCTION_ARGS)
 	BlockNumber lastBlock = GIST_ROOT_BLKNO,
 				lastFilledBlock = GIST_ROOT_BLKNO;
 	bool		needLock;
+
+	/* No-op in ANALYZE ONLY mode */
+	if (info->analyze_only)
+		PG_RETURN_POINTER(stats);
 
 	/* Set up all-zero stats if gistbulkdelete wasn't called */
 	if (stats == NULL)
