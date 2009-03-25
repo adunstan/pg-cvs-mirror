@@ -10,7 +10,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/catalog/catalog.c,v 1.80 2008/12/03 13:05:22 heikki Exp $
+ *	  $PostgreSQL: pgsql/src/backend/catalog/catalog.c,v 1.81 2009/01/01 17:23:36 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -73,7 +73,7 @@ forkname_to_number(char *forkName)
 	ereport(ERROR,
 			(errcode(ERRCODE_INVALID_PARAMETER_VALUE),
 			 errmsg("invalid fork name"),
-			 errhint("Valid fork names are 'main' and 'fsm'")));
+			 errhint("Valid fork names are \"main\", \"fsm\", and \"vm\".")));
 	return InvalidForkNumber; /* keep compiler quiet */
 }
 
