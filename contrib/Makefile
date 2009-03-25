@@ -1,4 +1,4 @@
-# $PostgreSQL: pgsql/contrib/Makefile,v 1.85 2008/11/19 02:59:28 tgl Exp $
+# $PostgreSQL: pgsql/contrib/Makefile,v 1.86 2009/01/04 22:19:59 tgl Exp $
 
 subdir = contrib
 top_builddir = ..
@@ -7,6 +7,7 @@ include $(top_builddir)/src/Makefile.global
 WANTED_DIRS = \
 		adminpack	\
 		auto_explain	\
+		btree_gin	\
 		btree_gist	\
 		chkpass		\
 		citext		\
