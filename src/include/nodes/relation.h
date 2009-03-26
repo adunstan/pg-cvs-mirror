@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/nodes/relation.h,v 1.169 2009/02/25 03:30:37 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/nodes/relation.h,v 1.170 2009/03/05 23:06:45 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -845,6 +845,7 @@ typedef struct HashPath
 {
 	JoinPath	jpath;
 	List	   *path_hashclauses;		/* join clauses used for hashing */
+	int			num_batches;			/* number of batches expected */
 } HashPath;
 
 /*
