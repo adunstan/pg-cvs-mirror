@@ -37,7 +37,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/postmaster/bgwriter.c,v 1.55 2009/01/01 17:23:46 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/postmaster/bgwriter.c,v 1.56 2009/02/18 15:58:41 heikki Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -459,7 +459,9 @@ BackgroundWriterMain(void)
 				(flags & CHECKPOINT_CAUSE_XLOG) &&
 				elapsed_secs < CheckPointWarning)
 				ereport(LOG,
-						(errmsg("checkpoints are occurring too frequently (%d seconds apart)",
+						(errmsg(ngettext("checkpoints are occurring too frequently (%d second apart)",
+										 "checkpoints are occurring too frequently (%d seconds apart)",
+										 elapsed_secs),
 								elapsed_secs),
 						 errhint("Consider increasing the configuration parameter \"checkpoint_segments\".")));
 
