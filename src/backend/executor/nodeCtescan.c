@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/nodeCtescan.c,v 1.2 2008/10/23 15:29:23 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/nodeCtescan.c,v 1.3 2009/01/01 17:23:41 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -71,10 +71,14 @@ CteScanNext(CteScanState *node)
 
 	/*
 	 * If we can fetch another tuple from the tuplestore, return it.
+	 *
+	 * Note: we have to use copy=true in the tuplestore_gettupleslot call,
+	 * because we are sharing the tuplestore with other nodes that might
+	 * write into the tuplestore before we get called again.
 	 */
 	if (!eof_tuplestore)
 	{
-		if (tuplestore_gettupleslot(tuplestorestate, forward, slot))
+		if (tuplestore_gettupleslot(tuplestorestate, forward, true, slot))
 			return slot;
 		if (forward)
 			eof_tuplestore = true;

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/nodeMaterial.c,v 1.64 2008/12/27 17:39:00 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/nodeMaterial.c,v 1.65 2009/01/01 17:23:42 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -104,7 +104,7 @@ ExecMaterial(MaterialState *node)
 	slot = node->ss.ps.ps_ResultTupleSlot;
 	if (!eof_tuplestore)
 	{
-		if (tuplestore_gettupleslot(tuplestorestate, forward, slot))
+		if (tuplestore_gettupleslot(tuplestorestate, forward, false, slot))
 			return slot;
 		if (forward)
 			eof_tuplestore = true;

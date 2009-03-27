@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/nodeFunctionscan.c,v 1.49 2008/10/29 00:00:38 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/nodeFunctionscan.c,v 1.50 2009/01/01 17:23:41 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -74,6 +74,7 @@ FunctionNext(FunctionScanState *node)
 	slot = node->ss.ss_ScanTupleSlot;
 	(void) tuplestore_gettupleslot(tuplestorestate,
 								   ScanDirectionIsForward(direction),
+								   false,
 								   slot);
 	return slot;
 }
