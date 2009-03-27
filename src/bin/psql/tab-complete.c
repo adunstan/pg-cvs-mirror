@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2009, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/psql/tab-complete.c,v 1.179 2009/01/01 17:23:55 momjian Exp $
+ * $PostgreSQL: pgsql/src/bin/psql/tab-complete.c,v 1.180 2009/02/24 10:06:34 petere Exp $
  */
 
 /*----------------------------------------------------------------------
@@ -1624,11 +1624,11 @@ psql_completion(char *text, int start, int end)
 
 		COMPLETE_WITH_LIST(list_EXPLAIN);
 	}
-	else if (pg_strcasecmp(prev_wd, "VERBOSE") == 0 &&
-			 pg_strcasecmp(prev3_wd, "VACUUM") != 0 &&
-			 pg_strcasecmp(prev4_wd, "VACUUM") != 0 &&
-			 (pg_strcasecmp(prev2_wd, "ANALYZE") == 0 ||
-			  pg_strcasecmp(prev2_wd, "EXPLAIN") == 0))
+	else if ((pg_strcasecmp(prev2_wd, "EXPLAIN") == 0 &&
+			  pg_strcasecmp(prev_wd, "VERBOSE") == 0) ||
+			 (pg_strcasecmp(prev3_wd, "EXPLAIN") == 0 &&
+			  pg_strcasecmp(prev2_wd, "ANALYZE") == 0 &&
+			  pg_strcasecmp(prev_wd, "VERBOSE") == 0))
 	{
 		static const char *const list_EXPLAIN[] =
 		{"SELECT", "INSERT", "DELETE", "UPDATE", "DECLARE", NULL};
