@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/interfaces/libpq/libpq-fe.h,v 1.144 2008/09/22 13:55:14 tgl Exp $
+ * $PostgreSQL: pgsql/src/interfaces/libpq/libpq-fe.h,v 1.145 2009/01/01 17:24:03 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -301,6 +301,9 @@ extern void *PQgetssl(PGconn *conn);
 
 /* Tell libpq whether it needs to initialize OpenSSL */
 extern void PQinitSSL(int do_init);
+
+/* More detailed way to tell libpq whether it needs to initialize OpenSSL */
+extern void PQinitOpenSSL(int do_ssl, int do_crypto);
 
 /* Set verbosity for PQerrorMessage and PQresultErrorMessage */
 extern PGVerbosity PQsetErrorVerbosity(PGconn *conn, PGVerbosity verbosity);
