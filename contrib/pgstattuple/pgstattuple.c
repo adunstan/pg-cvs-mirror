@@ -1,5 +1,5 @@
 /*
- * $PostgreSQL: pgsql/contrib/pgstattuple/pgstattuple.c,v 1.35 2008/05/16 17:31:17 tgl Exp $
+ * $PostgreSQL: pgsql/contrib/pgstattuple/pgstattuple.c,v 1.36 2008/06/19 00:46:03 alvherre Exp $
  *
  * Copyright (c) 2001,2002	Tatsuo Ishii
  *
@@ -198,6 +198,16 @@ static Datum
 pgstat_relation(Relation rel, FunctionCallInfo fcinfo)
 {
 	const char *err;
+
+	/*
+	 * Reject attempts to read non-local temporary relations; we would
+	 * be likely to get wrong data since we have no visibility into the
+	 * owning session's local buffers.
+	 */
+	if (RELATION_IS_OTHER_TEMP(rel))
+		ereport(ERROR,
+				(errcode(ERRCODE_FEATURE_NOT_SUPPORTED),
+				 errmsg("cannot access temporary tables of other sessions")));
 
 	switch (rel->rd_rel->relkind)
 	{
