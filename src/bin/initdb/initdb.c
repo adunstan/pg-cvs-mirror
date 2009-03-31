@@ -42,7 +42,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  * Portions taken from FreeBSD.
  *
- * $PostgreSQL: pgsql/src/bin/initdb/initdb.c,v 1.99.2.2 2006/02/24 00:55:27 adunstan Exp $
+ * $PostgreSQL: pgsql/src/bin/initdb/initdb.c,v 1.99.2.3 2006/05/27 18:07:22 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -642,6 +642,13 @@ get_id(void)
 		exit(1);
 	}
 #endif
+	if (!pw)
+	{
+		fprintf(stderr,
+				_("%s: could not obtain information about current user: %s\n"),
+				 progname, strerror(errno));
+		exit(1);
+	}
 #else							/* the windows code */
 
 	struct passwd_win32
@@ -653,7 +660,12 @@ get_id(void)
 	DWORD		pwname_size = sizeof(pass_win32.pw_name) - 1;
 
 	pw->pw_uid = 1;
-	GetUserName(pw->pw_name, &pwname_size);
+	if (!GetUserName(pw->pw_name, &pwname_size))
+	{
+		fprintf(stderr, _("%s: could not get current user name: %s\n"),
+				progname, strerror(errno));
+		exit(1);
+	}
 #endif
 
 	return xstrdup(pw->pw_name);
