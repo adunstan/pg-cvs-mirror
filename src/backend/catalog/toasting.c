@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/catalog/toasting.c,v 1.12 2009/01/01 17:23:37 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/catalog/toasting.c,v 1.13 2009/02/02 19:31:38 alvherre Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -179,7 +179,7 @@ create_toast_table(Relation rel, Oid toastOid, Oid toastIndexOid, Datum reloptio
 	 * Toast tables for regular relations go in pg_toast; those for temp
 	 * relations go into the per-backend temp-toast-table namespace.
 	 */
-	if (rel->rd_istemp)
+	if (rel->rd_islocaltemp)
 		namespaceid = GetTempToastNamespace();
 	else
 		namespaceid = PG_TOAST_NAMESPACE;

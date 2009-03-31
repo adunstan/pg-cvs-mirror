@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/analyze.c,v 1.133 2009/01/22 20:16:01 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/analyze.c,v 1.134 2009/03/24 20:17:13 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -213,7 +213,7 @@ analyze_rel(Oid relid, VacuumStmt *vacstmt,
 	 * probably not up-to-date on disk.  (We don't throw a warning here; it
 	 * would just lead to chatter during a database-wide ANALYZE.)
 	 */
-	if (isOtherTempNamespace(RelationGetNamespace(onerel)))
+	if (RELATION_IS_OTHER_TEMP(onerel))
 	{
 		relation_close(onerel, ShareUpdateExclusiveLock);
 		return;
