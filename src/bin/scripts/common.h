@@ -4,7 +4,7 @@
  *
  *	Copyright (c) 2003-2009, PostgreSQL Global Development Group
  *
- *	$PostgreSQL: pgsql/src/bin/scripts/common.h,v 1.21 2009/01/01 17:23:55 momjian Exp $
+ *	$PostgreSQL: pgsql/src/bin/scripts/common.h,v 1.22 2009/02/26 16:02:39 petere Exp $
  */
 #ifndef COMMON_H
 #define COMMON_H
@@ -12,10 +12,6 @@
 #include "libpq-fe.h"
 #include "getopt_long.h"
 #include "pqexpbuffer.h"
-
-#ifndef HAVE_INT_OPTRESET
-extern int	optreset;
-#endif
 
 enum trivalue
 {

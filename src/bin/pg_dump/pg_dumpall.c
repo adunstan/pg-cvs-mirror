@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
- * $PostgreSQL: pgsql/src/bin/pg_dump/pg_dumpall.c,v 1.119 2009/03/04 11:57:00 petere Exp $
+ * $PostgreSQL: pgsql/src/bin/pg_dump/pg_dumpall.c,v 1.120 2009/03/22 16:44:26 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -21,10 +21,6 @@
 #endif
 
 #include "getopt_long.h"
-
-#ifndef HAVE_INT_OPTRESET
-int			optreset;
-#endif
 
 #include "dumputils.h"
 #include "pg_backup.h"

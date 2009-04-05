@@ -34,7 +34,7 @@
  *
  *
  * IDENTIFICATION
- *		$PostgreSQL: pgsql/src/bin/pg_dump/pg_restore.c,v 1.95 2009/03/11 03:33:29 adunstan Exp $
+ *		$PostgreSQL: pgsql/src/bin/pg_dump/pg_restore.c,v 1.96 2009/03/20 09:21:09 petere Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -54,10 +54,6 @@
 
 extern char *optarg;
 extern int	optind;
-
-#ifndef HAVE_INT_OPTRESET
-int			optreset;
-#endif
 
 #ifdef ENABLE_NLS
 #include <locale.h>

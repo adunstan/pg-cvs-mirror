@@ -37,7 +37,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/postmaster/postmaster.c,v 1.575 2009/03/03 10:42:05 heikki Exp $
+ *	  $PostgreSQL: pgsql/src/backend/postmaster/postmaster.c,v 1.576 2009/03/04 13:56:40 heikki Exp $
  *
  * NOTES
  *
@@ -309,7 +309,7 @@ extern int	optind,
 			opterr;
 
 #ifdef HAVE_INT_OPTRESET
-extern int	optreset;
+extern int	optreset;			/* might not be declared by system headers */
 #endif
 
 /*
