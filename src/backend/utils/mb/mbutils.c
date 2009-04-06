@@ -4,7 +4,7 @@
  *
  * Tatsuo Ishii
  *
- * $PostgreSQL: pgsql/src/backend/utils/mb/mbutils.c,v 1.82 2009/03/09 00:01:32 alvherre Exp $
+ * $PostgreSQL: pgsql/src/backend/utils/mb/mbutils.c,v 1.83 2009/04/02 17:30:53 tgl Exp $
  */
 #include "postgres.h"
 
@@ -911,6 +911,7 @@ static const struct codeset_map {
 	{PG_LATIN9, "LATIN-9"},
 	{PG_LATIN10, "LATIN10"},
 	{PG_KOI8R, "KOI8-R"},
+	{PG_KOI8U, "KOI8-U"},
 	{PG_WIN1250, "CP1250"},
 	{PG_WIN1251, "CP1251"},
 	{PG_WIN1252, "CP1252"},
