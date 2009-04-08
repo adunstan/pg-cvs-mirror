@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/backend/utils/adt/xml.c,v 1.84 2009/03/23 21:00:39 adunstan Exp $
+ * $PostgreSQL: pgsql/src/backend/utils/adt/xml.c,v 1.85 2009/03/27 18:56:57 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -572,7 +572,7 @@ xmlelement(XmlExprState *xmlExpr, ExprContext *econtext)
 		if (isnull)
 			str = NULL;
 		else
-			str = OutputFunctionCall(&xmlExpr->named_outfuncs[i], value);
+			str = map_sql_value_to_xml_value(value, exprType((Node *) e->expr));
 		named_arg_strings = lappend(named_arg_strings, str);
 		i++;
 	}
@@ -609,12 +609,9 @@ xmlelement(XmlExprState *xmlExpr, ExprContext *econtext)
 		char	   *argname = strVal(lfirst(narg));
 
 		if (str)
-		{
 			xmlTextWriterWriteAttribute(writer,
 										(xmlChar *) argname,
 										(xmlChar *) str);
-			pfree(str);
-		}
 	}
 
 	foreach(arg, arg_strings)
