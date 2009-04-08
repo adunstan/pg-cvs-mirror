@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
- * $PostgreSQL: pgsql/src/bin/pg_dump/pg_dumpall.c,v 1.121 2009/04/05 04:19:58 tgl Exp $
+ * $PostgreSQL: pgsql/src/bin/pg_dump/pg_dumpall.c,v 1.122 2009/04/06 08:42:53 heikki Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1088,8 +1088,10 @@ dumpCreateDB(PGconn *conn)
 				appendPQExpBuffer(buf, "\n-- For binary upgrade, set datfrozenxid.\n");
 				appendPQExpBuffer(buf, "UPDATE pg_database\n"
 									 "SET datfrozenxid = '%u'\n"
-									 "WHERE	datname = '%s';\n",
-									 dbfrozenxid, fdbname);
+									 "WHERE	datname = ",
+									 dbfrozenxid);
+				appendStringLiteralConn(buf, dbname, conn);
+				appendPQExpBuffer(buf, ";\n");
 			}
 		}
 
