@@ -1,14 +1,9 @@
 /*
- * ----------------------------------------------------------------------------
- * "THE BEER-WARE LICENSE" (Revision 42):
- * <phk@login.dknet.dk> wrote this file.  As long as you retain this notice you
- * can do whatever you want with this stuff. If we meet some day, and you think
- * this stuff is worth it, you can buy me a beer in return.   Poul-Henning Kamp
- * ----------------------------------------------------------------------------
+ * File imported from FreeBSD, original by Poul-Henning Kamp.
  *
  * $FreeBSD: src/lib/libcrypt/crypt-md5.c,v 1.5 1999/12/17 20:21:45 peter Exp $
  *
- * $PostgreSQL: pgsql/contrib/pgcrypto/crypt-md5.c,v 1.5 2005/09/24 19:14:04 tgl Exp $
+ * $PostgreSQL: pgsql/contrib/pgcrypto/crypt-md5.c,v 1.6 2005/10/15 02:49:06 momjian Exp $
  */
 
 #include "postgres.h"
