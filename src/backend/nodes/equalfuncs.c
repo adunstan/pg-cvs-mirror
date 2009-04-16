@@ -18,7 +18,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/nodes/equalfuncs.c,v 1.317 2008/01/01 19:45:50 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/nodes/equalfuncs.c,v 1.318 2008/02/07 20:19:47 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -692,6 +692,7 @@ _equalRestrictInfo(RestrictInfo *a, RestrictInfo *b)
 	COMPARE_SCALAR_FIELD(is_pushed_down);
 	COMPARE_SCALAR_FIELD(outerjoin_delayed);
 	COMPARE_BITMAPSET_FIELD(required_relids);
+	COMPARE_BITMAPSET_FIELD(nullable_relids);
 
 	/*
 	 * We ignore all the remaining fields, since they may not be set yet, and
