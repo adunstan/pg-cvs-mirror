@@ -11,7 +11,7 @@
  * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/libpq/libpq-be.h,v 1.68 2008/10/28 12:10:44 mha Exp $
+ * $PostgreSQL: pgsql/src/include/libpq/libpq-be.h,v 1.69 2009/01/01 17:23:59 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -47,6 +47,9 @@
 
 #ifdef ENABLE_SSPI
 #define SECURITY_WIN32
+#if defined(WIN32) && !defined(WIN32_ONLY_COMPILER)
+#include <ntsecapi.h>
+#endif
 #include <security.h>
 #undef SECURITY_WIN32
 
