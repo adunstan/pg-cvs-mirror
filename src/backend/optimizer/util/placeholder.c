@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/optimizer/util/placeholder.c,v 1.2 2008/10/22 20:17:52 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/optimizer/util/placeholder.c,v 1.3 2009/01/01 17:23:45 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -162,7 +162,7 @@ fix_placeholder_eval_levels(PlannerInfo *root)
 		if (bms_membership(eval_at) == BMS_MULTIPLE)
 		{
 			List	   *vars = pull_var_clause((Node *) phinfo->ph_var->phexpr,
-											   true);
+											   PVC_INCLUDE_PLACEHOLDERS);
 
 			add_vars_to_targetlist(root, vars, eval_at);
 			list_free(vars);

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/optimizer/util/tlist.c,v 1.84 2008/12/28 18:53:57 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/optimizer/util/tlist.c,v 1.85 2009/01/01 17:23:45 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -91,7 +91,8 @@ tlist_member_ignore_relabel(Node *node, List *targetlist)
 List *
 flatten_tlist(List *tlist)
 {
-	List	   *vlist = pull_var_clause((Node *) tlist, true);
+	List	   *vlist = pull_var_clause((Node *) tlist,
+										PVC_INCLUDE_PLACEHOLDERS);
 	List	   *new_tlist;
 
 	new_tlist = add_to_flat_tlist(NIL, vlist);
