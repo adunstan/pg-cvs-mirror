@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/pl/plpgsql/src/scan.l,v 1.67 2009/02/18 11:33:04 petere Exp $
+ *	  $PostgreSQL: pgsql/src/pl/plpgsql/src/scan.l,v 1.68 2009/04/19 18:52:57 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -43,7 +43,7 @@ static int	cur_line_num;
 static int		xcdepth = 0;	/* depth of nesting in slash-star comments */
 static char    *dolqstart;      /* current $foo$ quote start string */
 
-extern bool		standard_conforming_strings;
+extern PGDLLIMPORT bool standard_conforming_strings;
 
 bool plpgsql_SpaceScanned = false;
 %}
