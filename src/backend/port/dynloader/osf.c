@@ -1,5 +1,7 @@
-/* Dummy file used for nothing at this point
+/*
+ * $PostgreSQL: pgsql/src/backend/port/dynloader/osf.c,v 1.2 2006/03/11 04:38:31 momjian Exp $
  *
- * see alpha.h
- * $PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.314 2006/03/07 02:54:23 momjian Exp $
+ * Dummy file used for nothing at this point
+ *
+ * see osf.h
  */
