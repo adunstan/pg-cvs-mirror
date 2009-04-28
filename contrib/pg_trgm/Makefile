@@ -1,4 +1,4 @@
-# $PostgreSQL: pgsql/contrib/pg_trgm/Makefile,v 1.8 2007/06/26 22:05:02 tgl Exp $
+# $PostgreSQL: pgsql/contrib/pg_trgm/Makefile,v 1.9 2007/11/10 23:59:51 momjian Exp $
 
 MODULE_big = pg_trgm
 OBJS = trgm_op.o trgm_gist.o trgm_gin.o
@@ -6,7 +6,6 @@ OBJS = trgm_op.o trgm_gist.o trgm_gin.o
 DATA_built = pg_trgm.sql
 DATA = uninstall_pg_trgm.sql
 REGRESS = pg_trgm
-
 
 ifdef USE_PGXS
 PG_CONFIG = pg_config

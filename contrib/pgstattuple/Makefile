@@ -2,7 +2,7 @@
 #
 # pgstattuple Makefile
 #
-# $PostgreSQL: pgsql/contrib/pgstattuple/Makefile,v 1.8 2007/06/26 22:05:03 tgl Exp $
+# $PostgreSQL: pgsql/contrib/pgstattuple/Makefile,v 1.9 2007/11/10 23:59:51 momjian Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -21,4 +21,3 @@ top_builddir = ../..
 include $(top_builddir)/src/Makefile.global
 include $(top_srcdir)/contrib/contrib-global.mk
 endif
-
