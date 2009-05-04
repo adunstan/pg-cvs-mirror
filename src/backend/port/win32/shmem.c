@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2006, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/port/win32/shmem.c,v 1.12 2006/03/05 15:58:35 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/port/win32/shmem.c,v 1.13 2006/07/14 05:28:28 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -90,6 +90,7 @@ shmget(int memKey, int size, int flag)
 
 	if (flag & IPC_CREAT)
 	{
+		SetLastError(0);
 		hmap = CreateFileMapping((HANDLE) 0xFFFFFFFF,	/* Use the swap file	*/
 								 NULL,
 								 PAGE_READWRITE,		/* Memory is Read/Write */
@@ -99,6 +100,7 @@ shmget(int memKey, int size, int flag)
 	}
 	else
 	{
+		SetLastError(0);
 		hmap = OpenFileMapping(FILE_MAP_ALL_ACCESS,
 							   FALSE,
 							   szShareMem);
