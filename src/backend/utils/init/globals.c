@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/init/globals.c,v 1.106 2008/11/09 00:28:35 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/init/globals.c,v 1.107 2009/01/01 17:23:51 momjian Exp $
  *
  * NOTES
  *	  Globals used all over the place should be declared here and not
@@ -36,6 +36,7 @@ int			MyProcPid;
 pg_time_t	MyStartTime;
 struct Port *MyProcPort;
 long		MyCancelKey;
+int			MyPMChildSlot;
 
 /*
  * DataDir is the absolute path to the top level of the PGDATA directory tree.

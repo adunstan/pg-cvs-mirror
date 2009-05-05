@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/storage/pmsignal.h,v 1.22 2009/02/18 15:58:41 heikki Exp $
+ * $PostgreSQL: pgsql/src/include/storage/pmsignal.h,v 1.23 2009/02/23 09:28:50 heikki Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -33,12 +33,20 @@ typedef enum
 	NUM_PMSIGNALS				/* Must be last value of enum! */
 } PMSignalReason;
 
+/* PMSignalData is an opaque struct, details known only within pmsignal.c */
+typedef struct PMSignalData PMSignalData;
+
 /*
  * prototypes for functions in pmsignal.c
  */
-extern void PMSignalInit(void);
+extern Size PMSignalShmemSize(void);
+extern void PMSignalShmemInit(void);
 extern void SendPostmasterSignal(PMSignalReason reason);
 extern bool CheckPostmasterSignal(PMSignalReason reason);
+extern int	AssignPostmasterChildSlot(void);
+extern bool ReleasePostmasterChildSlot(int slot);
+extern void MarkPostmasterChildActive(void);
+extern void MarkPostmasterChildInactive(void);
 extern bool PostmasterIsAlive(bool amDirectChild);
 
 #endif   /* PMSIGNAL_H */
