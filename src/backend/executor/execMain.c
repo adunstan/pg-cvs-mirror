@@ -26,7 +26,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/execMain.c,v 1.322 2009/02/02 19:31:39 alvherre Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/execMain.c,v 1.323 2009/02/08 18:02:27 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -2953,7 +2953,7 @@ OpenIntoRel(QueryDesc *queryDesc)
 
 	(void) heap_reloptions(RELKIND_TOASTVALUE, reloptions, true);
 
-	AlterTableCreateToastTable(intoRelationId, reloptions);
+	AlterTableCreateToastTable(intoRelationId, reloptions, false);
 
 	/*
 	 * And open the constructed table for writing.
