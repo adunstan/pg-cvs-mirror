@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/optimizer/restrictinfo.h,v 1.42 2009/01/01 17:24:00 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/optimizer/restrictinfo.h,v 1.43 2009/04/16 20:42:16 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -39,6 +39,6 @@ extern void extract_actual_join_clauses(List *restrictinfo_list,
 							List **otherquals);
 extern List *select_nonredundant_join_clauses(PlannerInfo *root,
 								 List *restrictinfo_list,
-								 List *reference_list);
+								 Path *inner_path);
 
 #endif   /* RESTRICTINFO_H */
