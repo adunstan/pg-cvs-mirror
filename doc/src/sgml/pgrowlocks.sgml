@@ -1,4 +1,4 @@
-<!-- $PostgreSQL$ -->
+<!-- $PostgreSQL: pgsql/doc/src/sgml/pgrowlocks.sgml,v 1.4 2007/12/10 05:32:51 tgl Exp $ -->
 
 <sect1 id="pgrowlocks">
  <title>pgrowlocks</title>
@@ -15,17 +15,17 @@
  <sect2>
   <title>Overview</title>
 
-  <synopsis>
+<synopsis>
 pgrowlocks(text) returns setof record
-  </synopsis>
+</synopsis>
 
   <para>
    The parameter is the name of a table.  The result is a set of records,
    with one row for each locked row within the table.  The output columns
-   are:
+   are shown in <xref linkend="pgrowlocks-columns">.
   </para>
 
-  <table>
+  <table id="pgrowlocks-columns">
    <title><function>pgrowlocks</> output columns</title>
 
    <tgroup cols="3">
