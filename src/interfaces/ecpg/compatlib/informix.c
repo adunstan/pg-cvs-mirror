@@ -1,4 +1,4 @@
-/* $PostgreSQL: pgsql/src/interfaces/ecpg/compatlib/informix.c,v 1.56 2008/11/01 08:55:21 meskes Exp $ */
+/* $PostgreSQL: pgsql/src/interfaces/ecpg/compatlib/informix.c,v 1.57 2009/01/15 11:52:54 petere Exp $ */
 
 #define POSTGRES_ECPG_INTERNAL
 #include "postgres_fe.h"
@@ -151,7 +151,7 @@ static char *
 ecpg_strndup(const char *str, size_t len)
 {
 	int			real_len = strlen(str);
-	int			use_len = (real_len > len) ? len : real_len;
+	int			use_len = (real_len > len) ? (int)len : real_len;
 
 	char	   *new = malloc(use_len + 1);
 

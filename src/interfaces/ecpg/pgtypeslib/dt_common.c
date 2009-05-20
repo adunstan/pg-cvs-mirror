@@ -1,4 +1,4 @@
-/* $PostgreSQL: pgsql/src/interfaces/ecpg/pgtypeslib/dt_common.c,v 1.48 2009/03/22 01:12:32 tgl Exp $ */
+/* $PostgreSQL: pgsql/src/interfaces/ecpg/pgtypeslib/dt_common.c,v 1.49 2009/05/20 16:13:18 meskes Exp $ */
 
 #include "postgres_fe.h"
 
@@ -2583,7 +2583,7 @@ PGTYPEStimestamp_defmt_scan(char **str, char *fmt, timestamp * d,
 			*pfmt,
 			*tmp;
 	int		err = 1;
-	int	j;
+	unsigned int	j;
 	struct tm	tm;
 
 	pfmt = fmt;
