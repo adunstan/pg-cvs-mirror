@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-exec.c,v 1.199 2008/09/19 16:40:40 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-exec.c,v 1.200 2009/01/01 17:24:03 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -2385,7 +2385,7 @@ PQresultStatus(const PGresult *res)
 char *
 PQresStatus(ExecStatusType status)
 {
-	if (status < 0 || status >= sizeof pgresStatus / sizeof pgresStatus[0])
+	if (status >= sizeof pgresStatus / sizeof pgresStatus[0])
 		return libpq_gettext("invalid ExecStatusType code");
 	return pgresStatus[status];
 }

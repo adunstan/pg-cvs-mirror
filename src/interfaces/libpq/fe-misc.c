@@ -23,7 +23,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-misc.c,v 1.137 2008/12/11 07:34:09 petere Exp $
+ *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-misc.c,v 1.138 2009/01/01 17:24:03 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -178,7 +178,7 @@ pqPuts(const char *s, PGconn *conn)
 int
 pqGetnchar(char *s, size_t len, PGconn *conn)
 {
-	if (len < 0 || len > (size_t) (conn->inEnd - conn->inCursor))
+	if (len > (size_t) (conn->inEnd - conn->inCursor))
 		return EOF;
 
 	memcpy(s, conn->inBuffer + conn->inCursor, len);
