@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/libpq/auth.c,v 1.179 2009/03/22 18:06:35 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/libpq/auth.c,v 1.180 2009/04/01 03:23:50 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1073,7 +1073,7 @@ pg_GSS_recvauth(Port *port)
 
 	gss_release_buffer(&lmin_s, &gbuf);
 
-	return STATUS_OK;
+	return ret;
 }
 #endif   /* ENABLE_GSS */
 
