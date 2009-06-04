@@ -15,7 +15,7 @@
  *
  *
  * IDENTIFICATION
- *		$PostgreSQL: pgsql/src/bin/pg_dump/pg_backup_archiver.c,v 1.169 2009/03/26 22:26:07 petere Exp $
+ *		$PostgreSQL: pgsql/src/bin/pg_dump/pg_backup_archiver.c,v 1.170 2009/04/12 21:02:44 adunstan Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1785,13 +1785,6 @@ _discoverArchiveFormat(ArchiveHandle *AH)
 	}
 	else
 		AH->lookaheadLen = 0;	/* Don't bother since we've reset the file */
-
-#if 0
-	write_msg(modulename, ngettext("read %lu byte into lookahead buffer\n",
-								   "read %lu bytes into lookahead buffer\n",
-								   AH->lookaheadLen),
-			  (unsigned long) AH->lookaheadLen);
-#endif
 
 	/* Close the file */
 	if (wantClose)
