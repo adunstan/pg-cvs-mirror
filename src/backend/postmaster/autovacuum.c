@@ -55,7 +55,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/postmaster/autovacuum.c,v 1.95 2009/05/15 15:56:39 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/postmaster/autovacuum.c,v 1.96 2009/06/09 16:41:02 alvherre Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -123,7 +123,7 @@ int			Log_autovacuum_min_duration = -1;
 /* how long to keep pgstat data in the launcher, in milliseconds */
 #define STATS_READ_DELAY 1000
 
-/* the minimum allowed time between two awakening of the launcher */
+/* the minimum allowed time between two awakenings of the launcher */
 #define MIN_AUTOVAC_SLEEPTIME 100.0 /* milliseconds */
 
 /* Flags to tell if we are in an autovacuum process */
