@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/backend/utils/adt/xml.c,v 1.68.2.8 2009/05/12 20:17:46 tgl Exp $
+ * $PostgreSQL: pgsql/src/backend/utils/adt/xml.c,v 1.68.2.9 2009/06/08 21:32:50 petere Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1325,7 +1325,9 @@ xml_repalloc(void *ptr, size_t size)
 static void
 xml_pfree(void *ptr)
 {
-	pfree(ptr);
+	/* At least some parts of libxml assume xmlFree(NULL) is allowed */
+	if (ptr)
+		pfree(ptr);
 }
 
 
