@@ -8,7 +8,7 @@
  *
  * Copyright (c) 2000-2009, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/psql/describe.c,v 1.213 2009/05/27 20:47:55 petere Exp $
+ * $PostgreSQL: pgsql/src/bin/psql/describe.c,v 1.214 2009/06/04 19:17:39 tgl Exp $
  */
 #include "postgres_fe.h"
 
@@ -215,7 +215,7 @@ describeFunctions(const char *functypes, const char *pattern, bool verbose, bool
 
 	if (showWindow && pset.sversion < 80400)
 	{
-		fprintf(stderr, _("\\df does not take a \"w\" option in %d.%d.\n"),
+		fprintf(stderr, _("\\df does not take a \"w\" option with server version %d.%d\n"),
 				pset.sversion / 10000, (pset.sversion / 100) % 100);
 		return true;
 	}
