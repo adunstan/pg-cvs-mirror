@@ -1,5 +1,5 @@
 /*
- * $PostgreSQL:$ 
+ * $PostgreSQL: pgsql/src/pl/plperl/spi_internal.c,v 1.9 2008/05/17 01:28:25 adunstan Exp $
  *
  *
  * This kludge is necessary because of the conflicting

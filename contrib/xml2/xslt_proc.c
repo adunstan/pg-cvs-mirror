@@ -1,5 +1,5 @@
 /*
- * $PostgreSQL: pgsql/contrib/xml2/xslt_proc.c,v 1.13 2008/05/17 01:28:22 adunstan Exp $ 
+ * $PostgreSQL: pgsql/contrib/xml2/xslt_proc.c,v 1.14 2009/01/07 13:44:36 tgl Exp $
  *
  * XSLT processing functions (requiring libxslt)
  *

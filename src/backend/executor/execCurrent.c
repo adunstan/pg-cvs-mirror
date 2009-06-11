@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- *	$PostgreSQL: pgsql/src/backend/executor/execCurrent.c,v 1.8 2008/11/16 17:34:28 tgl Exp $
+ *	$PostgreSQL: pgsql/src/backend/executor/execCurrent.c,v 1.9 2009/01/01 17:23:41 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -138,8 +138,8 @@ execCurrentOf(CurrentOfExpr *cexpr,
 
 		/*
 		 * This table didn't produce the cursor's current row; some other
-		 * inheritance child of the same parent must have.  Signal caller
-		 * to do nothing on this table.
+		 * inheritance child of the same parent must have.	Signal caller to
+		 * do nothing on this table.
 		 */
 		return false;
 	}

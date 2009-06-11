@@ -1,5 +1,5 @@
 /*
- * $PostgreSQL: pgsql/contrib/spi/autoinc.c,v 1.15 2008/05/17 01:28:22 adunstan Exp $ 
+ * $PostgreSQL: pgsql/contrib/spi/autoinc.c,v 1.16 2009/01/07 13:44:36 tgl Exp $
  */
 #include "postgres.h"
 

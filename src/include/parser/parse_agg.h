@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/parser/parse_agg.h,v 1.37 2008/12/28 18:54:01 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/parser/parse_agg.h,v 1.38 2009/01/01 17:24:00 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -17,7 +17,7 @@
 
 extern void transformAggregateCall(ParseState *pstate, Aggref *agg);
 extern void transformWindowFuncCall(ParseState *pstate, WindowFunc *wfunc,
-									WindowDef *windef);
+						WindowDef *windef);
 
 extern void parseCheckAggregates(ParseState *pstate, Query *qry);
 extern void parseCheckWindowFuncs(ParseState *pstate, Query *qry);

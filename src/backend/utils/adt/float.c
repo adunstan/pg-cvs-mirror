@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/float.c,v 1.160 2009/02/18 19:23:26 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/float.c,v 1.161 2009/03/04 22:08:20 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1335,8 +1335,8 @@ dpow(PG_FUNCTION_ARGS)
 
 	/*
 	 * The SQL spec requires that we emit a particular SQLSTATE error code for
-	 * certain error conditions.  Specifically, we don't return a divide-by-zero
-	 * error code for 0 ^ -1.
+	 * certain error conditions.  Specifically, we don't return a
+	 * divide-by-zero error code for 0 ^ -1.
 	 */
 	if (arg1 == 0 && arg2 < 0)
 		ereport(ERROR,

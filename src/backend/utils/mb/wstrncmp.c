@@ -1,5 +1,5 @@
 /*
- * $PostgreSQL:$ 
+ * $PostgreSQL: pgsql/src/backend/utils/mb/wstrncmp.c,v 1.9 2008/05/17 01:28:24 adunstan Exp $
  *
  *
  * Copyright (c) 1989, 1993

@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/catalog/toasting.c,v 1.14 2009/03/31 22:12:46 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/catalog/toasting.c,v 1.15 2009/05/07 22:58:28 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -145,8 +145,8 @@ create_toast_table(Relation rel, Oid toastOid, Oid toastIndexOid,
 	/*
 	 * Check to see whether the table actually needs a TOAST table.
 	 *
-	 * Caller can optionally override this check.  (Note: at present
-	 * no callers in core Postgres do so, but this option is needed by
+	 * Caller can optionally override this check.  (Note: at present no
+	 * callers in core Postgres do so, but this option is needed by
 	 * pg_migrator.)
 	 */
 	if (!force && !needs_toast_table(rel))

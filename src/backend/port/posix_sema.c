@@ -11,7 +11,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/port/posix_sema.c,v 1.20 2008/01/26 19:55:08 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/port/posix_sema.c,v 1.21 2009/01/01 17:23:46 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -241,10 +241,10 @@ PGSemaphoreLock(PGSemaphore sema, bool interruptOK)
 	int			errStatus;
 
 	/*
-	 * See notes in sysv_sema.c's implementation of PGSemaphoreLock.
-	 * Just as that code does for semop(), we handle both the case where
-	 * sem_wait() returns errno == EINTR after a signal, and the case
-	 * where it just keeps waiting.
+	 * See notes in sysv_sema.c's implementation of PGSemaphoreLock. Just as
+	 * that code does for semop(), we handle both the case where sem_wait()
+	 * returns errno == EINTR after a signal, and the case where it just keeps
+	 * waiting.
 	 */
 	do
 	{

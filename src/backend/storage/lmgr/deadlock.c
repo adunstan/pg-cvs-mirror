@@ -12,7 +12,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/storage/lmgr/deadlock.c,v 1.55 2008/11/02 21:24:52 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/storage/lmgr/deadlock.c,v 1.56 2009/01/01 17:23:47 momjian Exp $
  *
  *	Interface:
  *
@@ -933,7 +933,7 @@ DeadLockReport(void)
 		appendStringInfo(&logbuf,
 						 _("Process %d: %s"),
 						 info->pid,
-						 pgstat_get_backend_current_activity(info->pid, false));
+					  pgstat_get_backend_current_activity(info->pid, false));
 	}
 
 	ereport(ERROR,

@@ -6,7 +6,7 @@
  * Copyright (c) 2007-2009, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/contrib/test_parser/test_parser.c,v 1.4 2008/01/01 20:31:21 tgl Exp $
+ *	  $PostgreSQL: pgsql/contrib/test_parser/test_parser.c,v 1.5 2009/01/01 17:23:32 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -27,7 +27,7 @@ typedef struct
 	char	   *buffer;			/* text to parse */
 	int			len;			/* length of the text in buffer */
 	int			pos;			/* position of the parser */
-}	ParserState;
+} ParserState;
 
 /* copy-paste from wparser.h of tsearch2 */
 typedef struct

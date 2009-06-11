@@ -10,7 +10,7 @@
  * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/misc/help_config.c,v 1.21 2008/03/17 17:45:09 mha Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/misc/help_config.c,v 1.22 2009/01/01 17:23:53 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -124,7 +124,7 @@ printMixedStruct(mixedStruct *structToPrint)
 		case PGC_ENUM:
 			printf("ENUM\t%s\t\t\t",
 				   config_enum_lookup_by_value(&structToPrint->_enum,
-											   structToPrint->_enum.boot_val));
+											 structToPrint->_enum.boot_val));
 			break;
 
 		default:

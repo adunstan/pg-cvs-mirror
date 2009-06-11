@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/optimizer/util/relnode.c,v 1.92 2008/10/21 20:42:53 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/optimizer/util/relnode.c,v 1.93 2009/01/01 17:23:45 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -430,8 +430,8 @@ build_joinrel_tlist(PlannerInfo *root, RelOptInfo *joinrel,
 		int			ndx;
 
 		/*
-		 * Ignore PlaceHolderVars in the input tlists; we'll make our
-		 * own decisions about whether to copy them.
+		 * Ignore PlaceHolderVars in the input tlists; we'll make our own
+		 * decisions about whether to copy them.
 		 */
 		if (IsA(origvar, PlaceHolderVar))
 			continue;

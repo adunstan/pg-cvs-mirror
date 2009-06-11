@@ -11,7 +11,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/bin/pg_dump/common.c,v 1.105 2008/12/19 16:25:17 petere Exp $
+ *	  $PostgreSQL: pgsql/src/bin/pg_dump/common.c,v 1.106 2009/01/01 17:23:54 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -91,7 +91,7 @@ getSchemaData(int *numTablesPtr)
 	TSTemplateInfo *tmplinfo;
 	TSDictInfo *dictinfo;
 	TSConfigInfo *cfginfo;
-	FdwInfo	   *fdwinfo;
+	FdwInfo    *fdwinfo;
 	ForeignServerInfo *srvinfo;
 	int			numNamespaces;
 	int			numAggregates;

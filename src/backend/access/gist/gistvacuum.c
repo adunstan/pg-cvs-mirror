@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/gist/gistvacuum.c,v 1.43 2009/03/24 20:17:11 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/gist/gistvacuum.c,v 1.44 2009/06/06 22:13:50 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -510,7 +510,7 @@ gistvacuumcleanup(PG_FUNCTION_ARGS)
 	Relation	rel = info->index;
 	BlockNumber npages,
 				blkno;
-	BlockNumber	totFreePages;
+	BlockNumber totFreePages;
 	BlockNumber lastBlock = GIST_ROOT_BLKNO,
 				lastFilledBlock = GIST_ROOT_BLKNO;
 	bool		needLock;

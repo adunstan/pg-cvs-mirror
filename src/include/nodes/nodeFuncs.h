@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/nodes/nodeFuncs.h,v 1.29 2008/10/04 21:56:55 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/nodes/nodeFuncs.h,v 1.30 2009/01/01 17:24:00 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -53,6 +53,6 @@ extern Node *query_or_expression_tree_mutator(Node *node, Node *(*mutator) (),
 												   void *context, int flags);
 
 extern bool raw_expression_tree_walker(Node *node, bool (*walker) (),
-									   void *context);
+												   void *context);
 
 #endif   /* NODEFUNCS_H */

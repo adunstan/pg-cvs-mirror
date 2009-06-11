@@ -13,7 +13,7 @@
  * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/miscadmin.h,v 1.209 2009/01/05 02:27:45 alvherre Exp $
+ * $PostgreSQL: pgsql/src/include/miscadmin.h,v 1.210 2009/05/05 19:59:00 tgl Exp $
  *
  * NOTES
  *	  some of the information in this file should be moved to other files.
@@ -192,13 +192,13 @@ extern PGDLLIMPORT Oid MyDatabaseTableSpace;
 
 extern int	DateStyle;
 extern int	DateOrder;
- 
+
 /*
  * IntervalStyles
- *   INTSTYLE_POSTGRES             Like Postgres < 8.4 when DateStyle = 'iso'
- *   INTSTYLE_POSTGRES_VERBOSE     Like Postgres < 8.4 when DateStyle != 'iso'
- *   INTSTYLE_SQL_STANDARD         SQL standard interval literals
- *   INTSTYLE_ISO_8601             ISO-8601-basic formatted intervals
+ *	 INTSTYLE_POSTGRES			   Like Postgres < 8.4 when DateStyle = 'iso'
+ *	 INTSTYLE_POSTGRES_VERBOSE	   Like Postgres < 8.4 when DateStyle != 'iso'
+ *	 INTSTYLE_SQL_STANDARD		   SQL standard interval literals
+ *	 INTSTYLE_ISO_8601			   ISO-8601-basic formatted intervals
  */
 #define INTSTYLE_POSTGRES			0
 #define INTSTYLE_POSTGRES_VERBOSE	1

@@ -14,7 +14,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/parser/parser.c,v 1.76 2009/01/01 17:23:46 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/parser/parser.c,v 1.77 2009/04/19 21:50:08 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -77,7 +77,7 @@ raw_parser(const char *str)
 char *
 pg_parse_string_token(const char *token)
 {
-	int		ctoken;
+	int			ctoken;
 
 	scanner_init(token);
 

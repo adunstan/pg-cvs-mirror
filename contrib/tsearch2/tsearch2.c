@@ -7,7 +7,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/contrib/tsearch2/tsearch2.c,v 1.8 2009/01/01 17:23:32 momjian Exp $
+ *	  $PostgreSQL: pgsql/contrib/tsearch2/tsearch2.c,v 1.9 2009/01/28 18:31:32 teodor Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -367,7 +367,7 @@ tsa_tsearch2(PG_FUNCTION_ARGS)
 {
 	TriggerData *trigdata;
 	Trigger    *trigger;
-	char	  **tgargs, 
+	char	  **tgargs,
 			  **tgargs_old;
 	int			i;
 	Datum		res;

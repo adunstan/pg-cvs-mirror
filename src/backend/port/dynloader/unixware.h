@@ -1,5 +1,5 @@
 /*
- * $PostgreSQL: pgsql/src/backend/port/dynloader/unixware.h,v 1.20 2008/05/17 01:28:23 adunstan Exp $ 
+ * $PostgreSQL: pgsql/src/backend/port/dynloader/unixware.h,v 1.21 2009/01/01 17:23:46 momjian Exp $
  *
  *-------------------------------------------------------------------------
  *

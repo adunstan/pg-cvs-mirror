@@ -6,7 +6,7 @@
  * copyright (c) Oliver Elphick <olly@lfix.co.uk>, 2001;
  * licence: BSD
  *
- * $PostgreSQL: pgsql/src/bin/pg_controldata/pg_controldata.c,v 1.41 2008/09/24 08:59:42 mha Exp $
+ * $PostgreSQL: pgsql/src/bin/pg_controldata/pg_controldata.c,v 1.42 2008/12/11 07:34:08 petere Exp $
  */
 #include "postgres_fe.h"
 
@@ -136,8 +136,8 @@ main(int argc, char *argv[])
 
 	/*
 	 * This slightly-chintzy coding will work as long as the control file
-	 * timestamps are within the range of time_t; that should be the case
-	 * in all foreseeable circumstances, so we don't bother importing the
+	 * timestamps are within the range of time_t; that should be the case in
+	 * all foreseeable circumstances, so we don't bother importing the
 	 * backend's timezone library into pg_controldata.
 	 *
 	 * Use variable for format to suppress overly-anal-retentive gcc warning

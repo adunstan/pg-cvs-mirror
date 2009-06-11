@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/port/path.c,v 1.77 2009/04/03 11:52:08 mha Exp $
+ *	  $PostgreSQL: pgsql/src/port/path.c,v 1.78 2009/04/03 23:27:17 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -432,7 +432,7 @@ dir_strcmp(const char *s1, const char *s2)
 #ifndef WIN32
 			*s1 != *s2
 #else
-			/* On windows, paths are case-insensitive */
+		/* On windows, paths are case-insensitive */
 			pg_tolower((unsigned char) *s1) != pg_tolower((unsigned char) *s2)
 #endif
 			&& !(IS_DIR_SEP(*s1) && IS_DIR_SEP(*s2)))

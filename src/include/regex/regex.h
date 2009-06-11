@@ -29,7 +29,7 @@
  * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
- * $PostgreSQL: pgsql/src/include/regex/regex.h,v 1.29 2008/01/03 20:47:55 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/regex/regex.h,v 1.30 2008/04/02 14:42:56 mha Exp $
  */
 
 /*
@@ -151,7 +151,7 @@ typedef struct
 #define REG_INVARG	16			/* invalid argument to regex function */
 #define REG_MIXED	17			/* character widths of regex and string differ */
 #define REG_BADOPT	18			/* invalid embedded option */
-#define REG_ETOOBIG	19			/* nfa has too many states */
+#define REG_ETOOBIG 19			/* nfa has too many states */
 /* two specials for debugging and testing */
 #define REG_ATOI	101			/* convert error-code name to number */
 #define REG_ITOA	102			/* convert error-code number to name */
@@ -169,6 +169,6 @@ extern size_t pg_regerror(int, const regex_t *, char *, size_t);
 /*
  * guc configuration variables
  */
-extern int regex_flavor;
+extern int	regex_flavor;
 
 #endif   /* _REGEX_H_ */

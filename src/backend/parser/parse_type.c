@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/parser/parse_type.c,v 1.101 2008/12/28 18:53:59 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/parser/parse_type.c,v 1.102 2009/01/01 17:23:46 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -498,15 +498,16 @@ stringTypeDatum(Type tp, char *string, int32 atttypmod)
 								  typioparam, atttypmod);
 
 #ifdef RANDOMIZE_ALLOCATED_MEMORY
+
 	/*
 	 * For pass-by-reference data types, repeat the conversion to see if the
 	 * input function leaves any uninitialized bytes in the result.  We can
-	 * only detect that reliably if RANDOMIZE_ALLOCATED_MEMORY is enabled,
-	 * so we don't bother testing otherwise.  The reason we don't want any
+	 * only detect that reliably if RANDOMIZE_ALLOCATED_MEMORY is enabled, so
+	 * we don't bother testing otherwise.  The reason we don't want any
 	 * instability in the input function is that comparison of Const nodes
 	 * relies on bytewise comparison of the datums, so if the input function
 	 * leaves garbage then subexpressions that should be identical may not get
-	 * recognized as such.  See pgsql-hackers discussion of 2008-04-04.
+	 * recognized as such.	See pgsql-hackers discussion of 2008-04-04.
 	 */
 	if (string && !typform->typbyval)
 	{

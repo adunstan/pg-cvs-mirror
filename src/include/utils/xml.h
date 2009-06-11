@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/utils/xml.h,v 1.26 2009/05/13 20:27:17 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/utils/xml.h,v 1.27 2009/06/09 22:00:57 petere Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -81,8 +81,8 @@ typedef enum
 	XMLBINARY_HEX
 } XmlBinaryType;
 
-extern int xmlbinary; /* XmlBinaryType, but int for guc enum */
+extern int	xmlbinary;			/* XmlBinaryType, but int for guc enum */
 
-extern int xmloption; /* XmlOptionType, but int for guc enum */
+extern int	xmloption;			/* XmlOptionType, but int for guc enum */
 
 #endif   /* XML_H */

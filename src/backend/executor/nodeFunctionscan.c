@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/nodeFunctionscan.c,v 1.50 2009/01/01 17:23:41 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/nodeFunctionscan.c,v 1.51 2009/03/27 18:30:21 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -277,7 +277,7 @@ ExecFunctionReScan(FunctionScanState *node, ExprContext *exprCtxt)
 	/*
 	 * Here we have a choice whether to drop the tuplestore (and recompute the
 	 * function outputs) or just rescan it.  We must recompute if the
-	 * expression contains parameters, else we rescan.  XXX maybe we should
+	 * expression contains parameters, else we rescan.	XXX maybe we should
 	 * recompute if the function is volatile?
 	 */
 	if (node->ss.ps.chgParam != NULL)

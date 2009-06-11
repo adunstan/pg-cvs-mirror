@@ -1,5 +1,5 @@
 /*
- * $PostgreSQL: pgsql/contrib/tablefunc/tablefunc.h,v 1.14 2008/05/17 01:28:22 adunstan Exp $ 
+ * $PostgreSQL: pgsql/contrib/tablefunc/tablefunc.h,v 1.15 2009/01/01 17:23:32 momjian Exp $
  *
  *
  * tablefunc
