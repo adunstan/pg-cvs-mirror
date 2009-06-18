@@ -1,5 +1,5 @@
 /*
- * $PostgreSQL: pgsql/contrib/pg_standby/pg_standby.c,v 1.22 2009/05/14 20:31:09 heikki Exp $
+ * $PostgreSQL: pgsql/contrib/pg_standby/pg_standby.c,v 1.23 2009/06/11 14:48:51 momjian Exp $
  *
  *
  * pg_standby.c
@@ -448,7 +448,7 @@ CheckForExternalTrigger(void)
 		/*
 		 * Turn it into a "smart" trigger by truncating the file. Otherwise if
 		 * the server asks us again to restore a segment that was restored
-		 * restored already, we would return "not found" and upset the server.
+		 * already, we would return "not found" and upset the server.
 		 */
 		if (ftruncate(fd, 0) < 0)
 		{
