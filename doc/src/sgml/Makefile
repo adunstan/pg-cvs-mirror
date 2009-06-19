@@ -2,7 +2,7 @@
 #
 # PostgreSQL documentation makefile
 #
-# $PostgreSQL: pgsql/doc/src/sgml/Makefile,v 1.114 2008/12/11 07:34:07 petere Exp $
+# $PostgreSQL: pgsql/doc/src/sgml/Makefile,v 1.115 2009/05/02 20:17:19 tgl Exp $
 #
 #----------------------------------------------------------------------------
 
@@ -74,9 +74,9 @@ DEFAULTSECTION = l
 fix_man_xrefs = $(PERL) -npi -e 's{\[XRef to GUC-([A-Z0-9-]*)\]}{($$l = $$1) =~ tr/A-Z-/a-z_/, $$l}ge || s{\[XRef to [A-Z0-9-]*\]}{in the documentation}g'
 
 man: postgres.sgml $(ALLSGML)
-	$(NSGMLS) $(NSGMLS_FLAGS) $(SGMLINCLUDE) $< | $(SGMLSPL) $(D2MSCRIPT) --lowercase --section $(DEFAULTSECTION) --date "`date '+%Y-%m-%d'`"
+	$(NSGMLS) $(NSGMLS_FLAGS) $(SGMLINCLUDE) $< | $(SGMLSPL) $(D2MSCRIPT) --section $(DEFAULTSECTION) --date "`date '+%Y-%m-%d'`"
 # One more time, to resolve cross-references
-	$(NSGMLS) $(NSGMLS_FLAGS) $(SGMLINCLUDE) $< | $(SGMLSPL) $(D2MSCRIPT) --lowercase --section $(DEFAULTSECTION) --date "`date '+%Y-%m-%d'`"
+	$(NSGMLS) $(NSGMLS_FLAGS) $(SGMLINCLUDE) $< | $(SGMLSPL) $(D2MSCRIPT) --section $(DEFAULTSECTION) --date "`date '+%Y-%m-%d'`"
 	$(fix_man_xrefs) *.1 *.7
 	$(mkinstalldirs) man1 man7
 	$(D2MLINKS) < manpage.links
