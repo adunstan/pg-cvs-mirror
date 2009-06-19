@@ -1,11 +1,12 @@
 <!--
-$PostgreSQL$
+$PostgreSQL: pgsql/doc/src/sgml/ref/drop_foreign_data_wrapper.sgml,v 1.1 2008/12/19 16:25:16 petere Exp $
 PostgreSQL documentation
 -->
 
 <refentry id="SQL-DROPFOREIGNDATAWRAPPER">
  <refmeta>
   <refentrytitle id="sql-dropforeigndatawrapper-title">DROP FOREIGN DATA WRAPPER</refentrytitle>
+  <manvolnum>7</manvolnum>
   <refmiscinfo>SQL - Language Statements</refmiscinfo>
  </refmeta>
 
