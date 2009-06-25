@@ -1,5 +1,5 @@
 /*
- * $PostgreSQL: pgsql/contrib/pg_standby/pg_standby.c,v 1.24 2009/06/18 10:08:08 heikki Exp $
+ * $PostgreSQL: pgsql/contrib/pg_standby/pg_standby.c,v 1.25 2009/06/25 12:03:10 heikki Exp $
  *
  *
  * pg_standby.c
@@ -614,8 +614,10 @@ main(int argc, char **argv)
 				 * Link feature disabled, possibly permanently. Linking
 				 * causes a problem after recovery ends that is not currently
 				 * resolved by PostgreSQL. 25 Jun 2009
-					restoreCommandType = RESTORE_COMMAND_LINK;
-				*/
+				 */
+#ifdef NOT_USED
+				restoreCommandType = RESTORE_COMMAND_LINK;
+#endif
 				break;
 			case 'r':			/* Retries */
 				maxretries = atoi(optarg);
