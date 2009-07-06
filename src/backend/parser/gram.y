@@ -11,7 +11,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/parser/gram.y,v 2.664 2009/05/27 20:42:29 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/parser/gram.y,v 2.665 2009/06/18 01:27:02 tgl Exp $
  *
  * HISTORY
  *	  AUTHOR			DATE			MAJOR EVENT
@@ -6879,7 +6879,7 @@ select_no_parens:
 										NULL);
 					$$ = $1;
 				}
-			| with_clause simple_select
+			| with_clause select_clause
 				{
 					insertSelectOptions((SelectStmt *) $2, NULL, NIL,
 										NULL, NULL,
