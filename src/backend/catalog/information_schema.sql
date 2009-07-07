@@ -4,7 +4,7 @@
  *
  * Copyright (c) 2003-2009, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/backend/catalog/information_schema.sql,v 1.53 2009/02/24 10:06:32 petere Exp $
+ * $PostgreSQL$
  */
 
 /*
@@ -104,7 +104,10 @@ CREATE FUNCTION _pg_char_octet_length(typid oid, typmod int4) RETURNS integer
     AS
 $$SELECT
   CASE WHEN $1 IN (25, 1042, 1043) /* text, char, varchar */
-       THEN CAST(2^30 AS integer)
+       THEN CASE WHEN $2 = -1 /* default typmod */
+                 THEN CAST(2^30 AS integer)
+                 ELSE information_schema._pg_char_max_length($1, $2) * pg_catalog.pg_encoding_max_length((SELECT encoding FROM pg_database WHERE datname = current_database()))
+            END
        ELSE null
   END$$;
 
