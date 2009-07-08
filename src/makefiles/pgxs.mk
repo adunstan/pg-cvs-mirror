@@ -1,6 +1,6 @@
 # PGXS: PostgreSQL extensions makefile
 
-# $PostgreSQL: pgsql/src/makefiles/pgxs.mk,v 1.14 2008/10/02 12:25:25 tgl Exp $ 
+# $PostgreSQL: pgsql/src/makefiles/pgxs.mk,v 1.15 2008/10/03 08:00:16 petere Exp $ 
 
 # This file contains generic rules to build many kinds of simple
 # extension modules.  You only need to set a few variables and include
@@ -266,6 +266,7 @@ installcheck: submake
 check:
 	@echo "'make check' is not supported."
 	@echo "Do 'make install', then 'make installcheck' instead."
+	@exit 1
 endif # REGRESS
 
 
