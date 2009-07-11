@@ -1,4 +1,4 @@
-<!-- $PostgreSQL: pgsql/doc/src/sgml/acronyms.sgml,v 1.5 2008/03/18 16:05:07 mha Exp $ -->
+<!-- $PostgreSQL: pgsql/doc/src/sgml/acronyms.sgml,v 1.6 2008/09/30 10:52:09 heikki Exp $ -->
 
 <appendix id="acronyms">
  <title>Acronyms</title>
@@ -334,8 +334,8 @@
     <term><acronym>ISO</acronym></term>
     <listitem>
      <para>
-      <ulink url="http://www.iso.org/iso/home.htm">International Standards
-      Organization</ulink>
+      <ulink url="http://www.iso.org/iso/home.htm">International Organization for
+      Standardization</ulink>
      </para>
     </listitem>
    </varlistentry>
