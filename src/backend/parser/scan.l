@@ -24,7 +24,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/parser/scan.l,v 1.152 2009/05/05 18:32:17 petere Exp $
+ *	  $PostgreSQL: pgsql/src/backend/parser/scan.l,v 1.153 2009/05/05 21:09:23 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -35,8 +35,6 @@
 
 #include "parser/gramparse.h"
 #include "parser/keywords.h"
-/* Not needed now that this file is compiled as part of gram.y */
-/* #include "parser/gram.h" */
 #include "parser/scansup.h"
 #include "mb/pg_wchar.h"
 
