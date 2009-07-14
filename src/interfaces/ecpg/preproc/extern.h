@@ -1,4 +1,4 @@
-/* $PostgreSQL: pgsql/src/interfaces/ecpg/preproc/extern.h,v 1.72 2009/06/03 20:24:51 tgl Exp $ */
+/* $PostgreSQL: pgsql/src/interfaces/ecpg/preproc/extern.h,v 1.73 2009/06/11 14:49:13 momjian Exp $ */
 
 #ifndef _ECPG_PREPROC_EXTERN_H
 #define _ECPG_PREPROC_EXTERN_H
@@ -101,7 +101,6 @@ extern void remove_variables(int);
 extern struct variable *new_variable(const char *, struct ECPGtype *, int);
 extern const ScanKeyword *ScanCKeywordLookup(const char *);
 extern const ScanKeyword *ScanECPGKeywordLookup(const char *text);
-extern const ScanKeyword *DoLookup(const char *, const ScanKeyword *, const ScanKeyword *);
 extern void scanner_init(const char *);
 extern void parser_init(void);
 extern void scanner_finish(void);

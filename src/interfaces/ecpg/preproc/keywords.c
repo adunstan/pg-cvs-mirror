@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/interfaces/ecpg/preproc/keywords.c,v 1.87 2009/03/07 00:13:58 alvherre Exp $
+ *	  $PostgreSQL: pgsql/src/interfaces/ecpg/preproc/keywords.c,v 1.88 2009/03/08 16:53:30 alvherre Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -26,5 +26,4 @@ const ScanKeyword ScanKeywords[] = {
 #include "parser/kwlist.h"
 };
 
-/* End of ScanKeywords, for use in kwlookup.c */
-const ScanKeyword *LastScanKeyword = endof(ScanKeywords);
+const int	NumScanKeywords = lengthof(ScanKeywords);

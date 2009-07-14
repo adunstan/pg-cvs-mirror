@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/bin/pg_dump/dumputils.c,v 1.45 2009/03/11 03:33:29 adunstan Exp $
+ * $PostgreSQL: pgsql/src/bin/pg_dump/dumputils.c,v 1.46 2009/06/11 14:49:07 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -130,7 +130,9 @@ fmtId(const char *rawid)
 		 * Note: ScanKeywordLookup() does case-insensitive comparison, but
 		 * that's fine, since we already know we have all-lower-case.
 		 */
-		const ScanKeyword *keyword = ScanKeywordLookup(rawid);
+		const ScanKeyword *keyword = ScanKeywordLookup(rawid,
+													   ScanKeywords,
+													   NumScanKeywords);
 
 		if (keyword != NULL && keyword->category != UNRESERVED_KEYWORD)
 			need_quotes = true;
