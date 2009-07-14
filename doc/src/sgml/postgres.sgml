@@ -1,4 +1,4 @@
-<!-- $PostgreSQL: pgsql/doc/src/sgml/postgres.sgml,v 1.87 2009/04/27 16:27:36 momjian Exp $ -->
+<!-- $PostgreSQL: pgsql/doc/src/sgml/postgres.sgml,v 1.88 2009/06/17 21:58:49 tgl Exp $ -->
 
 <!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook V4.2//EN" [
 
@@ -262,6 +262,6 @@
  </part>
 
  &biblio;
- &bookindex;
+ <![%include-index;[&bookindex;]]>
 
 </book>
