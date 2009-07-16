@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/parser/parse_target.c,v 1.170 2009/01/22 20:16:06 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/parser/parse_target.c,v 1.171 2009/06/11 14:49:00 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1373,9 +1373,9 @@ FigureColnameInternal(Node *node, char **name)
 											 name);
 			if (strength <= 1)
 			{
-				if (((TypeCast *) node)->typename != NULL)
+				if (((TypeCast *) node)->typeName != NULL)
 				{
-					*name = strVal(llast(((TypeCast *) node)->typename->names));
+					*name = strVal(llast(((TypeCast *) node)->typeName->names));
 					return 1;
 				}
 			}

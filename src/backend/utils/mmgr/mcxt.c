@@ -14,7 +14,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/mmgr/mcxt.c,v 1.65 2008/06/28 16:45:22 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/mmgr/mcxt.c,v 1.66 2009/01/01 17:23:53 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -193,7 +193,7 @@ MemoryContextDelete(MemoryContext context)
 			}
 		}
 	}
-	(*context->methods->delete) (context);
+	(*context->methods->delete_context) (context);
 	pfree(context);
 }
 

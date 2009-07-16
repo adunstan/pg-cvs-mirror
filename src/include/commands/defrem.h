@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/commands/defrem.h,v 1.93 2009/02/02 19:31:40 alvherre Exp $
+ * $PostgreSQL: pgsql/src/include/commands/defrem.h,v 1.94 2009/04/04 21:12:31 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -41,7 +41,7 @@ extern void ReindexDatabase(const char *databaseName,
 extern char *makeObjectName(const char *name1, const char *name2,
 			   const char *label);
 extern char *ChooseRelationName(const char *name1, const char *name2,
-				   const char *label, Oid namespace);
+				   const char *label, Oid namespaceid);
 extern Oid	GetDefaultOpClass(Oid type_id, Oid am_id);
 
 /* commands/functioncmds.c */
