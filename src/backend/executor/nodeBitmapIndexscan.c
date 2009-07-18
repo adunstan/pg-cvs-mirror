@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/nodeBitmapIndexscan.c,v 1.29 2009/01/01 17:23:41 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/nodeBitmapIndexscan.c,v 1.30 2009/06/11 14:48:57 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -182,7 +182,7 @@ ExecEndBitmapIndexScan(BitmapIndexScanState *node)
 	 */
 #ifdef NOT_USED
 	if (node->biss_RuntimeContext)
-		FreeExprContext(node->biss_RuntimeContext);
+		FreeExprContext(node->biss_RuntimeContext, true);
 #endif
 
 	/*
