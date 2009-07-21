@@ -20,7 +20,7 @@
  *
  *
  * IDENTIFICATION
- *		$PostgreSQL: pgsql/src/bin/pg_dump/pg_backup_files.c,v 1.34 2007/10/28 21:55:52 tgl Exp $
+ *		$PostgreSQL: pgsql/src/bin/pg_dump/pg_backup_files.c,v 1.35 2009/02/02 20:07:37 adunstan Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -382,7 +382,7 @@ _LoadBlobs(ArchiveHandle *AH, RestoreOptions *ropt)
 
 	while (oid != 0)
 	{
-		StartRestoreBlob(AH, oid);
+		StartRestoreBlob(AH, oid, ropt->dropSchema);
 		_PrintFileData(AH, fname, ropt);
 		EndRestoreBlob(AH, oid);
 		_getBlobTocEntry(AH, &oid, fname);
