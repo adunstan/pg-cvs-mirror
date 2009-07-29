@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/catalog/indexing.c,v 1.116 2008/01/01 19:45:48 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/catalog/indexing.c,v 1.117 2009/01/01 17:23:37 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -134,7 +134,8 @@ CatalogIndexInsert(CatalogIndexState indstate, HeapTuple heapTuple)
 					 isnull,	/* is-null flags */
 					 &(heapTuple->t_self),		/* tid of heap tuple */
 					 heapRelation,
-					 relationDescs[i]->rd_index->indisunique);
+					 relationDescs[i]->rd_index->indisunique ?
+					 UNIQUE_CHECK_YES : UNIQUE_CHECK_NO);
 	}
 
 	ExecDropSingleTupleTableSlot(slot);
