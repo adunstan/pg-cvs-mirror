@@ -23,7 +23,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/storage/ipc/procarray.c,v 1.7.2.1 2005/11/22 18:23:18 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/storage/ipc/procarray.c,v 1.7.2.2 2009/03/31 05:18:47 heikki Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -768,7 +768,7 @@ CountActiveBackends(void)
 		 * the free list and are recycled. Its contents are nonsense in that
 		 * case, but that's acceptable for this function.
 		 */
-		if (proc != NULL)
+		if (proc == NULL)
 			continue;
 
 		if (proc == MyProc)
