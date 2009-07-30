@@ -4,7 +4,7 @@
  * A simple benchmark program for PostgreSQL
  * Originally written by Tatsuo Ishii and enhanced by many contributors.
  *
- * $PostgreSQL: pgsql/contrib/pgbench/pgbench.c,v 1.86 2009/05/07 22:01:18 tgl Exp $
+ * $PostgreSQL: pgsql/contrib/pgbench/pgbench.c,v 1.87 2009/06/11 14:48:51 momjian Exp $
  * Copyright (c) 2000-2009, PostgreSQL Global Development Group
  * ALL RIGHTS RESERVED;
  *
@@ -26,6 +26,11 @@
  * PROVIDE MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
  *
  */
+
+#ifdef WIN32
+#define FD_SETSIZE 1024		/* set before winsock2.h is included */
+#endif   /* ! WIN32 */
+
 #include "postgres_fe.h"
 
 #include "libpq-fe.h"
@@ -34,8 +39,6 @@
 #include <ctype.h>
 
 #ifdef WIN32
-#undef FD_SETSIZE
-#define FD_SETSIZE 1024
 #include <win32.h>
 #else
 #include <signal.h>
