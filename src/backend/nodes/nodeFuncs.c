@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/nodes/nodeFuncs.c,v 1.40 2009/06/11 14:48:58 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/nodes/nodeFuncs.c,v 1.41 2009/07/16 06:33:42 petere Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -902,6 +902,9 @@ exprLocation(Node *expr)
 			break;
 		case T_TypeName:
 			loc = ((TypeName *) expr)->location;
+			break;
+		case T_Constraint:
+			loc = ((Constraint *) expr)->location;
 			break;
 		case T_XmlSerialize:
 			/* XMLSERIALIZE keyword should always be the first thing */
