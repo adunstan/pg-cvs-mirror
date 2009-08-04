@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/catalog/pg_proc.h,v 1.547 2009/07/29 20:56:20 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/catalog/pg_proc.h,v 1.548 2009/08/03 21:11:39 joe Exp $
  *
  * NOTES
  *	  The script catalog/genbki.sh reads this file and generates .bki
@@ -59,7 +59,7 @@ CATALOG(pg_proc,1255) BKI_BOOTSTRAP
 	text		proargdefaults; /* list of expression trees for argument
 								 * defaults (NULL if none) */
 	text		prosrc;			/* procedure source text */
-	bytea		probin;			/* secondary procedure info (can be NULL) */
+	text		probin;			/* secondary procedure info (can be NULL) */
 	text		proconfig[1];	/* procedure-local GUC settings */
 	aclitem		proacl[1];		/* access permissions */
 } FormData_pg_proc;
