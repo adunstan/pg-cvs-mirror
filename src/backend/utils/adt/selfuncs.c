@@ -15,7 +15,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/selfuncs.c,v 1.260 2009/04/19 19:46:33 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/selfuncs.c,v 1.261 2009/06/11 14:49:04 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -109,6 +109,7 @@
 #include "parser/parse_coerce.h"
 #include "parser/parsetree.h"
 #include "utils/builtins.h"
+#include "utils/bytea.h"
 #include "utils/date.h"
 #include "utils/datum.h"
 #include "utils/fmgroids.h"
