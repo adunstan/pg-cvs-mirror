@@ -1,5 +1,5 @@
 /*
- * $PostgreSQL: pgsql/contrib/btree_gin/btree_gin.c,v 1.1 2009/03/25 23:20:01 tgl Exp $
+ * $PostgreSQL: pgsql/contrib/btree_gin/btree_gin.c,v 1.2 2009/06/11 14:48:50 momjian Exp $
  */
 #include "postgres.h"
 
@@ -8,6 +8,7 @@
 #include "fmgr.h"
 #include "access/skey.h"
 #include "utils/builtins.h"
+#include "utils/bytea.h"
 #include "utils/cash.h"
 #include "utils/date.h"
 #include "utils/inet.h"
