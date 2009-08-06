@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/nodes/execnodes.h,v 1.204 2009/04/08 21:51:38 petere Exp $
+ * $PostgreSQL: pgsql/src/include/nodes/execnodes.h,v 1.205 2009/06/11 14:49:11 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -750,11 +750,9 @@ typedef struct ConvertRowtypeExprState
 	ExprState  *arg;			/* input tuple value */
 	TupleDesc	indesc;			/* tupdesc for source rowtype */
 	TupleDesc	outdesc;		/* tupdesc for result rowtype */
-	AttrNumber *attrMap;		/* indexes of input fields, or 0 for null */
-	Datum	   *invalues;		/* workspace for deconstructing source */
-	bool	   *inisnull;
-	Datum	   *outvalues;		/* workspace for constructing result */
-	bool	   *outisnull;
+	/* use "struct" so we needn't include tupconvert.h here */
+	struct TupleConversionMap *map;
+	bool		initialized;
 } ConvertRowtypeExprState;
 
 /* ----------------
