@@ -1,4 +1,4 @@
-/* $PostgreSQL: pgsql/src/interfaces/ecpg/ecpglib/typename.c,v 1.13 2007/10/03 11:11:12 meskes Exp $ */
+/* $PostgreSQL: pgsql/src/interfaces/ecpg/ecpglib/typename.c,v 1.14 2007/11/15 21:14:45 momjian Exp $ */
 
 #define POSTGRES_ECPG_INTERNAL
 #include "postgres_fe.h"
@@ -19,6 +19,7 @@ ecpg_type_name(enum ECPGttype typ)
 	switch (typ)
 	{
 		case ECPGt_char:
+		case ECPGt_string:
 			return "char";
 		case ECPGt_unsigned_char:
 			return "unsigned char";

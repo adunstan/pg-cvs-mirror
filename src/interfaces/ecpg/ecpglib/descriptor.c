@@ -1,6 +1,6 @@
 /* dynamic SQL support routines
  *
- * $PostgreSQL: pgsql/src/interfaces/ecpg/ecpglib/descriptor.c,v 1.31 2009/01/15 11:52:55 petere Exp $
+ * $PostgreSQL: pgsql/src/interfaces/ecpg/ecpglib/descriptor.c,v 1.32 2009/06/11 14:49:13 momjian Exp $
  */
 
 #define POSTGRES_ECPG_INTERNAL
@@ -200,6 +200,7 @@ get_char_item(int lineno, void *var, enum ECPGttype vartype, char *value, int va
 	{
 		case ECPGt_char:
 		case ECPGt_unsigned_char:
+		case ECPGt_string:
 			strncpy((char *) var, value, varcharsize);
 			break;
 		case ECPGt_varchar:
