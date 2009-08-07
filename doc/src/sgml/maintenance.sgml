@@ -1,4 +1,4 @@
-<!-- $PostgreSQL: pgsql/doc/src/sgml/maintenance.sgml,v 1.94 2009/05/16 22:51:24 tgl Exp $ -->
+<!-- $PostgreSQL: pgsql/doc/src/sgml/maintenance.sgml,v 1.95 2009-06-17 13:59:28 petere Exp $ -->
 
 <chapter id="maintenance">
  <title>Routine Database Maintenance Tasks</title>
@@ -253,7 +253,7 @@
   </sect2>
 
   <sect2 id="vacuum-for-statistics">
-   <title>Updating Planner Statistics</title>
+   <title id="vacuum-for-statistics-title">Updating Planner Statistics</title>
 
    <indexterm zone="vacuum-for-statistics">
     <primary>statistics</primary>
