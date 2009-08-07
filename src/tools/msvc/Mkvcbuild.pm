@@ -3,7 +3,7 @@ package Mkvcbuild;
 #
 # Package that generates build files for msvc build
 #
-# $PostgreSQL: pgsql/src/tools/msvc/Mkvcbuild.pm,v 1.40 2009/06/05 18:29:56 adunstan Exp $
+# $PostgreSQL: pgsql/src/tools/msvc/Mkvcbuild.pm,v 1.41 2009/07/16 17:43:52 tgl Exp $
 #
 use Carp;
 use Win32;
@@ -321,7 +321,7 @@ sub mkvcbuild
 
     $mf = Project::read_file('src\backend\utils\mb\conversion_procs\Makefile');
     $mf =~ s{\\s*[\r\n]+}{}mg;
-    $mf =~ m{DIRS\s*=\s*(.*)$}m || die 'Could not match in conversion makefile' . "\n";
+    $mf =~ m{SUBDIRS\s*=\s*(.*)$}m || die 'Could not match in conversion makefile' . "\n";
     foreach my $sub (split /\s+/,$1)
     {
         my $mf = Project::read_file('src\backend\utils\mb\conversion_procs\\' . $sub . '\Makefile');
