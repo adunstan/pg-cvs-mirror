@@ -37,7 +37,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/postmaster/postmaster.c,v 1.551 2008/01/11 00:54:09 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/postmaster/postmaster.c,v 1.551.2.1 2008/06/27 01:53:31 momjian Exp $
  *
  * NOTES
  *
@@ -1994,7 +1994,8 @@ pmdie(SIGNAL_ARGS)
 
 			if (StartupPID != 0)
 				signal_child(StartupPID, SIGTERM);
-			if (pmState == PM_RUN)
+			if (pmState == PM_RUN ||
+				pmState == PM_WAIT_BACKENDS)
 			{
 				ereport(LOG,
 						(errmsg("aborting any active transactions")));
