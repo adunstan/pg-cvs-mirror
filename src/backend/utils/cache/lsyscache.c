@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/cache/lsyscache.c,v 1.161 2009/01/01 17:23:50 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/cache/lsyscache.c,v 1.162 2009/06/11 14:49:05 momjian Exp $
  *
  * NOTES
  *	  Eventually, the index information should go through here, too.
@@ -1296,6 +1296,32 @@ get_func_name(Oid funcid)
 	}
 	else
 		return NULL;
+}
+
+/*
+ * get_func_namespace
+ *
+ *		Returns the pg_namespace OID associated with a given function.
+ */
+Oid
+get_func_namespace(Oid funcid)
+{
+	HeapTuple	tp;
+
+	tp = SearchSysCache(PROCOID,
+						ObjectIdGetDatum(funcid),
+						0, 0, 0);
+	if (HeapTupleIsValid(tp))
+	{
+		Form_pg_proc functup = (Form_pg_proc) GETSTRUCT(tp);
+		Oid			result;
+
+		result = functup->pronamespace;
+		ReleaseSysCache(tp);
+		return result;
+	}
+	else
+		return InvalidOid;
 }
 
 /*
