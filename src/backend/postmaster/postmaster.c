@@ -37,7 +37,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/postmaster/postmaster.c,v 1.587 2009/08/07 05:58:55 heikki Exp $
+ *	  $PostgreSQL: pgsql/src/backend/postmaster/postmaster.c,v 1.588 2009/08/24 17:23:02 alvherre Exp $
  *
  * NOTES
  *
@@ -3024,7 +3024,8 @@ BackendStartup(Port *port)
 		/* in parent, fork failed */
 		int			save_errno = errno;
 
-		(void) ReleasePostmasterChildSlot(bn->child_slot);
+		if (!bn->dead_end)
+			(void) ReleasePostmasterChildSlot(bn->child_slot);
 		free(bn);
 		errno = save_errno;
 		ereport(LOG,
