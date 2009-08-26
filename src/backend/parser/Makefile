@@ -2,7 +2,7 @@
 #
 # Makefile for parser
 #
-# $PostgreSQL: pgsql/src/backend/parser/Makefile,v 1.48 2008/10/04 21:56:54 tgl Exp $
+# $PostgreSQL: pgsql/src/backend/parser/Makefile,v 1.49 2009/03/07 00:13:57 alvherre Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -23,6 +23,11 @@ include $(top_srcdir)/src/backend/common.mk
 
 # scan is compiled as part of gram
 gram.o: $(srcdir)/scan.c
+
+# Latest flex causes warnings in this file.
+ifeq ($(GCC),yes)
+gram.o: CFLAGS += -Wno-error
+endif
 
 
 # There is no correct way to write a rule that generates two files.
