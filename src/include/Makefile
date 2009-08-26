@@ -4,7 +4,7 @@
 #
 # 'make install' installs whole contents of src/include.
 #
-# $PostgreSQL: pgsql/src/include/Makefile,v 1.27 2009/06/30 17:38:50 tgl Exp $
+# $PostgreSQL: pgsql/src/include/Makefile,v 1.28 2009/07/20 20:38:55 alvherre Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -50,8 +50,8 @@ install: all installdirs
 	done
 
 installdirs:
-	$(mkinstalldirs) '$(DESTDIR)$(includedir)/libpq' '$(DESTDIR)$(includedir_internal)/libpq'
-	$(mkinstalldirs) $(addprefix '$(DESTDIR)$(includedir_server)'/, $(SUBDIRS))
+	$(MKDIR_P) '$(DESTDIR)$(includedir)/libpq' '$(DESTDIR)$(includedir_internal)/libpq'
+	$(MKDIR_P) $(addprefix '$(DESTDIR)$(includedir_server)'/, $(SUBDIRS))
 
 
 uninstall:

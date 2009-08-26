@@ -2,7 +2,7 @@
 #
 # Makefile for backend/catalog
 #
-# $PostgreSQL: pgsql/src/backend/catalog/Makefile,v 1.69 2009/02/09 20:57:59 alvherre Exp $
+# $PostgreSQL: pgsql/src/backend/catalog/Makefile,v 1.70 2009/05/12 00:56:05 tgl Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -60,7 +60,7 @@ install-data: $(BKIFILES) installdirs
 	$(INSTALL_DATA) $(srcdir)/sql_features.txt '$(DESTDIR)$(datadir)/sql_features.txt'
 
 installdirs:
-	$(mkinstalldirs) '$(DESTDIR)$(datadir)'
+	$(MKDIR_P) '$(DESTDIR)$(datadir)'
 
 .PHONY: uninstall-data
 uninstall-data:
