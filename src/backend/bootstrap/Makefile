@@ -2,7 +2,7 @@
 #
 # Makefile for the bootstrap module
 #
-# $PostgreSQL: pgsql/src/backend/bootstrap/Makefile,v 1.36 2008/02/19 10:30:07 petere Exp $
+# $PostgreSQL: pgsql/src/backend/bootstrap/Makefile,v 1.37 2008/08/29 13:02:32 petere Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -18,16 +18,16 @@ include $(top_srcdir)/src/backend/common.mk
 
 
 # bootscanner is compiled as part of bootparse
-bootparse.o: $(srcdir)/bootscanner.c
+bootparse.o: bootscanner.c
 
-$(srcdir)/bootparse.c: bootparse.y
+bootparse.c: bootparse.y
 ifdef BISON
 	$(BISON) $(BISONFLAGS) -o $@ $<
 else
 	@$(missing) bison $< $@
 endif
 
-$(srcdir)/bootscanner.c: bootscanner.l
+bootscanner.c: bootscanner.l
 ifdef FLEX
 	$(FLEX) $(FLEXFLAGS) -o'$@' $<
 else
