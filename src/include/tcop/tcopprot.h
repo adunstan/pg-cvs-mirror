@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/tcop/tcopprot.h,v 1.97 2009/01/01 17:24:01 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/tcop/tcopprot.h,v 1.98 2009/06/11 14:49:12 momjian Exp $
  *
  * OLD COMMENTS
  *	  This file was created so that other c files could get the two
@@ -58,7 +58,6 @@ extern bool assign_max_stack_depth(int newval, bool doit, GucSource source);
 
 extern void die(SIGNAL_ARGS);
 extern void quickdie(SIGNAL_ARGS);
-extern void authdie(SIGNAL_ARGS);
 extern void StatementCancelHandler(SIGNAL_ARGS);
 extern void FloatExceptionHandler(SIGNAL_ARGS);
 extern void prepare_for_client_read(void);

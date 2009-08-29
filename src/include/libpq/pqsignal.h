@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/libpq/pqsignal.h,v 1.32 2008/01/01 19:45:58 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/libpq/pqsignal.h,v 1.33 2009/01/01 17:23:59 momjian Exp $
  *
  * NOTES
  *	  This shouldn't be in libpq, but the monitor and some other
@@ -23,13 +23,13 @@
 #ifdef HAVE_SIGPROCMASK
 extern sigset_t UnBlockSig,
 			BlockSig,
-			AuthBlockSig;
+			StartupBlockSig;
 
 #define PG_SETMASK(mask)	sigprocmask(SIG_SETMASK, mask, NULL)
 #else
 extern int	UnBlockSig,
 			BlockSig,
-			AuthBlockSig;
+			StartupBlockSig;
 
 #ifndef WIN32
 #define PG_SETMASK(mask)	sigsetmask(*((int*)(mask)))

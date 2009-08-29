@@ -4,7 +4,7 @@
  *	  Interface to hba.c
  *
  *
- * $PostgreSQL: pgsql/src/include/libpq/hba.h,v 1.55 2009/01/07 13:09:21 mha Exp $
+ * $PostgreSQL: pgsql/src/include/libpq/hba.h,v 1.56 2009/06/11 14:49:11 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -61,12 +61,11 @@ typedef struct
 	bool		include_realm;
 } HbaLine;
 
+/* kluge to avoid including libpq/libpq-be.h here */
 typedef struct Port hbaPort;
 
-extern List **get_role_line(const char *role);
 extern bool load_hba(void);
 extern void load_ident(void);
-extern void load_role(void);
 extern int	hba_getauthmethod(hbaPort *port);
 extern bool read_pg_database_line(FILE *fp, char *dbname, Oid *dboid,
 					  Oid *dbtablespace, TransactionId *dbfrozenxid);
