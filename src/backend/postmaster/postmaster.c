@@ -37,7 +37,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/postmaster/postmaster.c,v 1.592 2009/08/28 18:23:53 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/postmaster/postmaster.c,v 1.593 2009/08/29 19:26:51 tgl Exp $
  *
  * NOTES
  *
@@ -1442,7 +1442,7 @@ ServerLoop(void)
 		{
 			avlauncher_needs_signal = false;
 			if (AutoVacPID != 0)
-				kill(AutoVacPID, SIGUSR1);
+				kill(AutoVacPID, SIGUSR2);
 		}
 
 		/*
@@ -3865,7 +3865,7 @@ SubPostmasterMain(int argc, char *argv[])
 		InitShmemAccess(UsedShmemSegAddr);
 
 		/* Need a PGPROC to run CreateSharedMemoryAndSemaphores */
-		InitAuxiliaryProcess();
+		InitProcess();
 
 		/* Attach process to shared data structures */
 		CreateSharedMemoryAndSemaphores(false, 0);
