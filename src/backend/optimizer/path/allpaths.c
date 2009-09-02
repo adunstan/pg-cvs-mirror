@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/optimizer/path/allpaths.c,v 1.183 2009/06/11 14:48:58 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/optimizer/path/allpaths.c,v 1.184 2009/07/06 18:26:30 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1254,7 +1254,8 @@ subquery_push_qual(Query *subquery, RangeTblEntry *rte, Index rti, Node *qual)
 		 */
 		qual = ResolveNew(qual, rti, 0, rte,
 						  subquery->targetList,
-						  CMD_SELECT, 0);
+						  CMD_SELECT, 0,
+						  &subquery->hasSubLinks);
 
 		/*
 		 * Now attach the qual to the proper place: normally WHERE, but if the
