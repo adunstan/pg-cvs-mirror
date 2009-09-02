@@ -4,7 +4,7 @@
  *
  * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/pg_ctl/pg_ctl.c,v 1.61.2.5 2008/06/27 01:53:09 momjian Exp $
+ * $PostgreSQL: pgsql/src/bin/pg_ctl/pg_ctl.c,v 1.61.2.6 2008/09/30 13:14:21 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -268,7 +268,7 @@ static char **
 readfile(const char *path)
 {
 	FILE	   *infile;
-	int			maxlength = 0,
+	int			maxlength = 1,
 				linelen = 0;
 	int			nlines = 0;
 	char	  **result;
