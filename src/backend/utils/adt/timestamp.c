@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/timestamp.c,v 1.201 2009/06/11 14:49:04 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/timestamp.c,v 1.202 2009/07/06 20:29:23 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -253,6 +253,11 @@ timestamp_recv(PG_FUNCTION_ARGS)
 	timestamp = (Timestamp) pq_getmsgint64(buf);
 #else
 	timestamp = (Timestamp) pq_getmsgfloat8(buf);
+
+	if (isnan(timestamp))
+		ereport(ERROR,
+				(errcode(ERRCODE_DATETIME_VALUE_OUT_OF_RANGE),
+				 errmsg("timestamp cannot be NaN")));
 #endif
 
 	/* rangecheck: see if timestamp_out would like it */
