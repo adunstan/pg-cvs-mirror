@@ -1,10 +1,10 @@
-/* $PostgreSQL: pgsql/src/include/port/win32.h,v 1.88 2009/06/11 14:49:12 momjian Exp $ */
+/* $PostgreSQL: pgsql/src/include/port/win32.h,v 1.89 2009/07/24 20:12:42 mha Exp $ */
 
 #if defined(_MSC_VER) || defined(__BORLANDC__)
 #define WIN32_ONLY_COMPILER
 #endif
 
-#define _WIN32_WINNT 0x0500
+#define _WIN32_WINNT 0x0501
 /*
  * Always build with SSPI support. Keep it as a #define in case
  * we want a switch to disable it sometime in the future.
