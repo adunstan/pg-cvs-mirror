@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/utils/builtins.h,v 1.337 2009/08/03 21:11:39 joe Exp $
+ * $PostgreSQL: pgsql/src/include/utils/builtins.h,v 1.338 2009/08/04 16:08:36 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -137,6 +137,7 @@ extern Datum char_text(PG_FUNCTION_ARGS);
 /* domains.c */
 extern Datum domain_in(PG_FUNCTION_ARGS);
 extern Datum domain_recv(PG_FUNCTION_ARGS);
+extern void domain_check(Datum value, bool isnull, Oid domainType, void **extra, MemoryContext mcxt);
 
 /* encode.c */
 extern Datum binary_encode(PG_FUNCTION_ARGS);
