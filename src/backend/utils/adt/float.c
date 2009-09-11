@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/float.c,v 1.161 2009/03/04 22:08:20 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/float.c,v 1.162 2009/06/11 14:49:03 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -334,7 +334,7 @@ float4out(PG_FUNCTION_ARGS)
 				if (ndig < 1)
 					ndig = 1;
 
-				sprintf(ascii, "%.*g", ndig, num);
+				snprintf(ascii, MAXFLOATWIDTH + 1, "%.*g", ndig, num);
 			}
 	}
 
@@ -523,7 +523,7 @@ float8out(PG_FUNCTION_ARGS)
 				if (ndig < 1)
 					ndig = 1;
 
-				sprintf(ascii, "%.*g", ndig, num);
+				snprintf(ascii, MAXDOUBLEWIDTH + 1, "%.*g", ndig, num);
 			}
 	}
 
