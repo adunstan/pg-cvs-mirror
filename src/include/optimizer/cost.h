@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/optimizer/cost.h,v 1.96 2009/01/07 22:40:49 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/optimizer/cost.h,v 1.97 2009/06/11 14:49:11 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -86,7 +86,8 @@ extern void cost_sort(Path *path, PlannerInfo *root,
 		  double limit_tuples);
 extern bool sort_exceeds_work_mem(Sort *sort);
 extern void cost_material(Path *path,
-			  Cost input_cost, double tuples, int width);
+			  Cost input_startup_cost, Cost input_total_cost,
+			  double tuples, int width);
 extern void cost_agg(Path *path, PlannerInfo *root,
 		 AggStrategy aggstrategy, int numAggs,
 		 int numGroupCols, double numGroups,
