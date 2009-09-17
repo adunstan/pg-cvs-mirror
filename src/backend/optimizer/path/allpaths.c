@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/optimizer/path/allpaths.c,v 1.184 2009/07/06 18:26:30 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/optimizer/path/allpaths.c,v 1.185 2009/09/02 17:52:24 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1386,6 +1386,10 @@ print_path(PlannerInfo *root, Path *path, int indent)
 		case T_UniquePath:
 			ptype = "Unique";
 			subpath = ((UniquePath *) path)->subpath;
+			break;
+		case T_NoOpPath:
+			ptype = "NoOp";
+			subpath = ((NoOpPath *) path)->subpath;
 			break;
 		case T_NestPath:
 			ptype = "NestLoop";

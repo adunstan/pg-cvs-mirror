@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/optimizer/pathnode.h,v 1.79 2008/10/04 21:56:55 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/optimizer/pathnode.h,v 1.80 2009/01/01 17:24:00 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -51,6 +51,8 @@ extern ResultPath *create_result_path(List *quals);
 extern MaterialPath *create_material_path(RelOptInfo *rel, Path *subpath);
 extern UniquePath *create_unique_path(PlannerInfo *root, RelOptInfo *rel,
 				   Path *subpath, SpecialJoinInfo *sjinfo);
+extern NoOpPath *create_noop_path(PlannerInfo *root, RelOptInfo *rel,
+								  Path *subpath);
 extern Path *create_subqueryscan_path(RelOptInfo *rel, List *pathkeys);
 extern Path *create_functionscan_path(PlannerInfo *root, RelOptInfo *rel);
 extern Path *create_valuesscan_path(PlannerInfo *root, RelOptInfo *rel);
