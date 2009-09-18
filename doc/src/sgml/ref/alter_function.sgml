@@ -1,5 +1,5 @@
 <!--
-$PostgreSQL: pgsql/doc/src/sgml/ref/alter_function.sgml,v 1.16 2008/07/16 01:30:21 tgl Exp $
+$PostgreSQL: pgsql/doc/src/sgml/ref/alter_function.sgml,v 1.17 2008/11/14 10:22:45 petere Exp $
 PostgreSQL documentation
 -->
 
@@ -30,7 +30,7 @@ ALTER FUNCTION <replaceable>name</replaceable> ( [ [ <replaceable class="paramet
 ALTER FUNCTION <replaceable>name</replaceable> ( [ [ <replaceable class="parameter">argmode</replaceable> ] [ <replaceable class="parameter">argname</replaceable> ] <replaceable class="parameter">argtype</replaceable> [, ...] ] )
     SET SCHEMA <replaceable>new_schema</replaceable>
 
-where <replaceable class="PARAMETER">action</replaceable> is one of:
+<phrase>where <replaceable class="PARAMETER">action</replaceable> is one of:</phrase>
 
     CALLED ON NULL INPUT | RETURNS NULL ON NULL INPUT | STRICT
     IMMUTABLE | STABLE | VOLATILE
