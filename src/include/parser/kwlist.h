@@ -11,7 +11,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/include/parser/kwlist.h,v 1.1 2009/03/07 00:13:58 alvherre Exp $
+ *	  $PostgreSQL: pgsql/src/include/parser/kwlist.h,v 1.2 2009/04/06 08:42:53 heikki Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -187,6 +187,7 @@ PG_KEYWORD("indexes", INDEXES, UNRESERVED_KEYWORD)
 PG_KEYWORD("inherit", INHERIT, UNRESERVED_KEYWORD)
 PG_KEYWORD("inherits", INHERITS, UNRESERVED_KEYWORD)
 PG_KEYWORD("initially", INITIALLY, RESERVED_KEYWORD)
+PG_KEYWORD("inline", INLINE_P, UNRESERVED_KEYWORD)
 PG_KEYWORD("inner", INNER_P, TYPE_FUNC_NAME_KEYWORD)
 PG_KEYWORD("inout", INOUT, COL_NAME_KEYWORD)
 PG_KEYWORD("input", INPUT_P, UNRESERVED_KEYWORD)
@@ -204,7 +205,6 @@ PG_KEYWORD("isnull", ISNULL, TYPE_FUNC_NAME_KEYWORD)
 PG_KEYWORD("isolation", ISOLATION, UNRESERVED_KEYWORD)
 PG_KEYWORD("join", JOIN, TYPE_FUNC_NAME_KEYWORD)
 PG_KEYWORD("key", KEY, UNRESERVED_KEYWORD)
-PG_KEYWORD("lancompiler", LANCOMPILER, UNRESERVED_KEYWORD)
 PG_KEYWORD("language", LANGUAGE, UNRESERVED_KEYWORD)
 PG_KEYWORD("large", LARGE_P, UNRESERVED_KEYWORD)
 PG_KEYWORD("last", LAST_P, UNRESERVED_KEYWORD)
