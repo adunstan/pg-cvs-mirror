@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/catalog/pg_attribute.h,v 1.151 2009/08/04 04:04:11 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/catalog/pg_attribute.h,v 1.152 2009/08/12 20:53:30 tgl Exp $
  *
  * NOTES
  *	  the genbki.sh script reads this file and generates .bki
@@ -35,8 +35,9 @@
  * ----------------
  */
 #define AttributeRelationId  1249
+#define AttributeRelation_Rowtype_Id  75
 
-CATALOG(pg_attribute,1249) BKI_BOOTSTRAP BKI_WITHOUT_OIDS
+CATALOG(pg_attribute,1249) BKI_BOOTSTRAP BKI_WITHOUT_OIDS BKI_ROWTYPE_OID(75)
 {
 	Oid			attrelid;		/* OID of relation containing this attribute */
 	NameData	attname;		/* name of attribute */

@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/catalog/pg_proc.h,v 1.549 2009/08/04 04:04:12 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/catalog/pg_proc.h,v 1.550 2009/09/01 02:54:52 alvherre Exp $
  *
  * NOTES
  *	  The script catalog/genbki.sh reads this file and generates .bki
@@ -31,8 +31,9 @@
  * ----------------
  */
 #define ProcedureRelationId  1255
+#define ProcedureRelation_Rowtype_Id  81
 
-CATALOG(pg_proc,1255) BKI_BOOTSTRAP
+CATALOG(pg_proc,1255) BKI_BOOTSTRAP BKI_ROWTYPE_OID(81)
 {
 	NameData	proname;		/* procedure name */
 	Oid			pronamespace;	/* OID of namespace containing this proc */
