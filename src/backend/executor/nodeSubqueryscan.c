@@ -12,7 +12,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/nodeSubqueryscan.c,v 1.39 2008/01/01 19:45:49 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/nodeSubqueryscan.c,v 1.40 2009/01/01 17:23:42 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -129,8 +129,6 @@ ExecInitSubqueryScan(SubqueryScan *node, EState *estate, int eflags)
 		ExecInitExpr((Expr *) node->scan.plan.qual,
 					 (PlanState *) subquerystate);
 
-#define SUBQUERYSCAN_NSLOTS 2
-
 	/*
 	 * tuple table initialization
 	 */
@@ -157,15 +155,6 @@ ExecInitSubqueryScan(SubqueryScan *node, EState *estate, int eflags)
 	ExecAssignScanProjectionInfo(&subquerystate->ss);
 
 	return subquerystate;
-}
-
-int
-ExecCountSlotsSubqueryScan(SubqueryScan *node)
-{
-	Assert(outerPlan(node) == NULL);
-	Assert(innerPlan(node) == NULL);
-	return ExecCountSlotsNode(node->subplan) +
-		SUBQUERYSCAN_NSLOTS;
 }
 
 /* ----------------------------------------------------------------

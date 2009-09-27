@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/nodeFunctionscan.c,v 1.51 2009/03/27 18:30:21 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/nodeFunctionscan.c,v 1.52 2009/06/11 14:48:57 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -134,8 +134,6 @@ ExecInitFunctionScan(FunctionScan *node, EState *estate, int eflags)
 	 */
 	ExecAssignExprContext(estate, &scanstate->ss.ps);
 
-#define FUNCTIONSCAN_NSLOTS 2
-
 	/*
 	 * tuple table initialization
 	 */
@@ -218,14 +216,6 @@ ExecInitFunctionScan(FunctionScan *node, EState *estate, int eflags)
 	ExecAssignScanProjectionInfo(&scanstate->ss);
 
 	return scanstate;
-}
-
-int
-ExecCountSlotsFunctionScan(FunctionScan *node)
-{
-	return ExecCountSlotsNode(outerPlan(node)) +
-		ExecCountSlotsNode(innerPlan(node)) +
-		FUNCTIONSCAN_NSLOTS;
 }
 
 /* ----------------------------------------------------------------

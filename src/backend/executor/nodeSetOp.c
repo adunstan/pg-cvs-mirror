@@ -37,7 +37,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/nodeSetOp.c,v 1.30 2009/04/02 20:59:10 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/nodeSetOp.c,v 1.31 2009/06/11 14:48:57 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -523,8 +523,6 @@ ExecInitSetOp(SetOp *node, EState *estate, int eflags)
 								  ALLOCSET_DEFAULT_INITSIZE,
 								  ALLOCSET_DEFAULT_MAXSIZE);
 
-#define SETOP_NSLOTS 1
-
 	/*
 	 * Tuple table initialization
 	 */
@@ -574,14 +572,6 @@ ExecInitSetOp(SetOp *node, EState *estate, int eflags)
 	}
 
 	return setopstate;
-}
-
-int
-ExecCountSlotsSetOp(SetOp *node)
-{
-	return ExecCountSlotsNode(outerPlan(node)) +
-		ExecCountSlotsNode(innerPlan(node)) +
-		SETOP_NSLOTS;
 }
 
 /* ----------------------------------------------------------------

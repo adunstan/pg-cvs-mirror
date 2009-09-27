@@ -21,7 +21,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/nodeBitmapHeapscan.c,v 1.34 2009/01/12 16:00:41 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/nodeBitmapHeapscan.c,v 1.35 2009/06/11 14:48:57 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -597,8 +597,6 @@ ExecInitBitmapHeapScan(BitmapHeapScan *node, EState *estate, int eflags)
 		ExecInitExpr((Expr *) node->bitmapqualorig,
 					 (PlanState *) scanstate);
 
-#define BITMAPHEAPSCAN_NSLOTS 2
-
 	/*
 	 * tuple table initialization
 	 */
@@ -645,11 +643,4 @@ ExecInitBitmapHeapScan(BitmapHeapScan *node, EState *estate, int eflags)
 	 * all done.
 	 */
 	return scanstate;
-}
-
-int
-ExecCountSlotsBitmapHeapScan(BitmapHeapScan *node)
-{
-	return ExecCountSlotsNode(outerPlan((Plan *) node)) +
-		ExecCountSlotsNode(innerPlan((Plan *) node)) + BITMAPHEAPSCAN_NSLOTS;
 }

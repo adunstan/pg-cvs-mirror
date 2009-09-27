@@ -63,7 +63,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/nodeAgg.c,v 1.167 2009/06/17 16:05:34 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/nodeAgg.c,v 1.168 2009/07/23 20:45:27 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1239,8 +1239,6 @@ ExecInitAgg(Agg *node, EState *estate, int eflags)
 							  ALLOCSET_DEFAULT_INITSIZE,
 							  ALLOCSET_DEFAULT_MAXSIZE);
 
-#define AGG_NSLOTS 3
-
 	/*
 	 * tuple table initialization
 	 */
@@ -1602,14 +1600,6 @@ GetAggInitVal(Datum textInitVal, Oid transtype)
 								   typioparam, -1);
 	pfree(strInitVal);
 	return initVal;
-}
-
-int
-ExecCountSlotsAgg(Agg *node)
-{
-	return ExecCountSlotsNode(outerPlan(node)) +
-		ExecCountSlotsNode(innerPlan(node)) +
-		AGG_NSLOTS;
 }
 
 void

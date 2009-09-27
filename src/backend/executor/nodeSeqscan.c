@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/nodeSeqscan.c,v 1.65 2008/06/19 00:46:04 alvherre Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/nodeSeqscan.c,v 1.66 2009/01/01 17:23:42 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -203,8 +203,6 @@ ExecInitSeqScan(SeqScan *node, EState *estate, int eflags)
 		ExecInitExpr((Expr *) node->plan.qual,
 					 (PlanState *) scanstate);
 
-#define SEQSCAN_NSLOTS 2
-
 	/*
 	 * tuple table initialization
 	 */
@@ -225,14 +223,6 @@ ExecInitSeqScan(SeqScan *node, EState *estate, int eflags)
 	ExecAssignScanProjectionInfo(scanstate);
 
 	return scanstate;
-}
-
-int
-ExecCountSlotsSeqScan(SeqScan *node)
-{
-	return ExecCountSlotsNode(outerPlan(node)) +
-		ExecCountSlotsNode(innerPlan(node)) +
-		SEQSCAN_NSLOTS;
 }
 
 /* ----------------------------------------------------------------

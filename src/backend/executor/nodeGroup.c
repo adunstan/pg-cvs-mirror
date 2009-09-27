@@ -15,7 +15,7 @@
  *	  locate group boundaries.
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/nodeGroup.c,v 1.73 2009/01/01 17:23:41 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/nodeGroup.c,v 1.75 2009/04/02 20:59:10 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -213,8 +213,6 @@ ExecInitGroup(Group *node, EState *estate, int eflags)
 	 */
 	ExecAssignExprContext(estate, &grpstate->ss.ps);
 
-#define GROUP_NSLOTS 2
-
 	/*
 	 * tuple table initialization
 	 */
@@ -257,12 +255,6 @@ ExecInitGroup(Group *node, EState *estate, int eflags)
 							   node->grpOperators);
 
 	return grpstate;
-}
-
-int
-ExecCountSlotsGroup(Group *node)
-{
-	return ExecCountSlotsNode(outerPlan(node)) + GROUP_NSLOTS;
 }
 
 /* ------------------------
