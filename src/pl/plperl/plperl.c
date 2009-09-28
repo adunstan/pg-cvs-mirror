@@ -33,7 +33,7 @@
  *	  ENHANCEMENTS, OR MODIFICATIONS.
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/pl/plperl/plperl.c,v 1.94.2.11 2009/06/04 16:00:49 adunstan Exp $
+ *	  $PostgreSQL: pgsql/src/pl/plperl/plperl.c,v 1.94.2.12 2009/06/05 20:32:41 adunstan Exp $
  *
  **********************************************************************/
 
@@ -1805,7 +1805,15 @@ plperl_return_next(SV *sv)
 
 		if (SvOK(sv))
 		{
-			char	   *val = SvPV(sv, PL_na);
+			char	   *val;
+
+			if (prodesc->fn_retisarray && SvROK(sv) &&
+				SvTYPE(SvRV(sv)) == SVt_PVAV)
+			{
+				sv = plperl_convert_to_pg_array(sv);
+			}
+
+			val = SvPV(sv, PL_na);
 
 			ret = FunctionCall3(&prodesc->result_in_func,
 								PointerGetDatum(val),
