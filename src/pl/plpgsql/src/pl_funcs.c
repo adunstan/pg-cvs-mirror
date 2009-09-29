@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/pl/plpgsql/src/pl_funcs.c,v 1.79 2009/06/11 14:49:14 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/pl/plpgsql/src/pl_funcs.c,v 1.80 2009/07/22 02:31:38 joe Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -854,7 +854,7 @@ dump_cursor_direction(PLpgSQL_stmt_fetch *stmt)
 		printf("\n");
 	}
 	else
-		printf("%d\n", stmt->how_many);
+		printf("%ld\n", stmt->how_many);
 
 	dump_indent -= 2;
 }
