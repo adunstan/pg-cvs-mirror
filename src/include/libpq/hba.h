@@ -4,7 +4,7 @@
  *	  Interface to hba.c
  *
  *
- * $PostgreSQL: pgsql/src/include/libpq/hba.h,v 1.57 2009/08/29 19:26:51 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/libpq/hba.h,v 1.58 2009/09/01 03:53:08 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -30,6 +30,13 @@ typedef enum UserAuth
 	uaCert
 } UserAuth;
 
+typedef enum IPCompareMethod
+{
+	ipCmpMask,
+	ipCmpSameHost,
+	ipCmpSameNet
+} IPCompareMethod;
+
 typedef enum ConnType
 {
 	ctLocal,
@@ -46,6 +53,7 @@ typedef struct
 	char	   *role;
 	struct sockaddr_storage addr;
 	struct sockaddr_storage mask;
+	IPCompareMethod ip_cmp_method;
 	UserAuth	auth_method;
 
 	char	   *usermap;
