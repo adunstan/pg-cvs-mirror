@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/spi.c,v 1.207 2009/01/21 11:02:40 heikki Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/spi.c,v 1.208 2009-06-11 14:48:57 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1211,10 +1211,7 @@ SPI_cursor_open_internal(const char *name, SPIPlanPtr plan,
 		}
 	}
 
-	/*
-	 * Set up the snapshot to use.	(PortalStart will do PushActiveSnapshot,
-	 * so we skip that here.)
-	 */
+	/* Set up the snapshot to use. */
 	if (read_only)
 		snapshot = GetActiveSnapshot();
 	else
