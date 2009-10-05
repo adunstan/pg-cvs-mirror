@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2009, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/psql/describe.h,v 1.39 2009/01/20 02:13:42 momjian Exp $
+ * $PostgreSQL: pgsql/src/bin/psql/describe.h,v 1.40 2009/04/21 15:49:06 momjian Exp $
  */
 #ifndef DESCRIBE_H
 #define DESCRIBE_H
@@ -29,6 +29,9 @@ extern bool describeRoles(const char *pattern, bool verbose);
 
 /* \z (or \dp) */
 extern bool permissionsList(const char *pattern);
+
+/* \ddp */
+extern bool listDefaultACLs(const char *pattern);
 
 /* \dd */
 extern bool objectDescription(const char *pattern, bool showSystem);

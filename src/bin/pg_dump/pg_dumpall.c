@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
- * $PostgreSQL: pgsql/src/bin/pg_dump/pg_dumpall.c,v 1.125 2009/05/10 02:51:44 tgl Exp $
+ * $PostgreSQL: pgsql/src/bin/pg_dump/pg_dumpall.c,v 1.126 2009/06/11 14:49:07 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -989,7 +989,7 @@ dumpTablespaces(PGconn *conn)
 
 		if (!skip_acls &&
 			!buildACLCommands(fspcname, NULL, "TABLESPACE", spcacl, spcowner,
-							  server_version, buf))
+							  "", server_version, buf))
 		{
 			fprintf(stderr, _("%s: could not parse ACL list (%s) for tablespace \"%s\"\n"),
 					progname, spcacl, fspcname);
@@ -1289,7 +1289,7 @@ dumpCreateDB(PGconn *conn)
 
 		if (!skip_acls &&
 			!buildACLCommands(fdbname, NULL, "DATABASE", dbacl, dbowner,
-							  server_version, buf))
+							  "", server_version, buf))
 		{
 			fprintf(stderr, _("%s: could not parse ACL list (%s) for database \"%s\"\n"),
 					progname, dbacl, fdbname);

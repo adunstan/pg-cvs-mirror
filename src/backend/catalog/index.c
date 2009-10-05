@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/catalog/index.c,v 1.320 2009/07/29 20:56:18 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/catalog/index.c,v 1.321 2009/08/02 22:14:52 tgl Exp $
  *
  *
  * INTERFACE ROUTINES
@@ -664,6 +664,7 @@ index_create(Oid heapRelationId,
 	 */
 	InsertPgClassTuple(pg_class, indexRelation,
 					   RelationGetRelid(indexRelation),
+					   (Datum) 0,
 					   reloptions);
 
 	/* done with pg_class */

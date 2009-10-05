@@ -13,7 +13,7 @@
  * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/nodes/parsenodes.h,v 1.401 2009/08/02 22:14:53 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/nodes/parsenodes.h,v 1.402 2009/09/22 23:43:41 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1258,6 +1258,17 @@ typedef struct GrantRoleStmt
 	char	   *grantor;		/* set grantor to other than current role */
 	DropBehavior behavior;		/* drop behavior (for REVOKE) */
 } GrantRoleStmt;
+
+/* ----------------------
+ *	Alter Default Privileges Statement
+ * ----------------------
+ */
+typedef struct AlterDefaultPrivilegesStmt
+{
+	NodeTag		type;
+	List	   *options;		/* list of DefElem */
+	GrantStmt  *action;			/* GRANT/REVOKE action (with objects=NIL) */
+} AlterDefaultPrivilegesStmt;
 
 /* ----------------------
  *		Copy Statement
