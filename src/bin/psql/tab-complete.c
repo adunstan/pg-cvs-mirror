@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2009, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/psql/tab-complete.c,v 1.184 2009/06/11 14:49:08 momjian Exp $
+ * $PostgreSQL: pgsql/src/bin/psql/tab-complete.c,v 1.185 2009/08/02 22:14:52 tgl Exp $
  */
 
 /*----------------------------------------------------------------------
@@ -629,7 +629,7 @@ psql_completion(char *text, int start, int end)
 		"\\a", "\\connect", "\\C", "\\cd", "\\copy", "\\copyright",
 		"\\d", "\\da", "\\db", "\\dc", "\\dC", "\\dd", "\\dD", "\\des", "\\deu", "\\dew", "\\df",
 		"\\dF", "\\dFd", "\\dFp", "\\dFt", "\\dg", "\\di", "\\dl",
-		"\\dn", "\\do", "\\dp", "\\ds", "\\dS", "\\dt", "\\dT", "\\dv", "\\du",
+		"\\dn", "\\do", "\\dp", "\\drds", "\\ds", "\\dS", "\\dt", "\\dT", "\\dv", "\\du",
 		"\\e", "\\echo", "\\ef", "\\encoding",
 		"\\f", "\\g", "\\h", "\\help", "\\H", "\\i", "\\l",
 		"\\lo_import", "\\lo_export", "\\lo_list", "\\lo_unlink",
