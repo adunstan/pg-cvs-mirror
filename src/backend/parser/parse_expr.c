@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/parser/parse_expr.c,v 1.242 2009/07/16 06:33:43 petere Exp $
+ *	  $PostgreSQL: pgsql/src/backend/parser/parse_expr.c,v 1.243 2009/09/09 03:32:52 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -227,6 +227,15 @@ transformExpr(ParseState *pstate, Node *expr)
 		case T_FuncCall:
 			result = transformFuncCall(pstate, (FuncCall *) expr);
 			break;
+
+		case T_NamedArgExpr:
+			{
+				NamedArgExpr *na = (NamedArgExpr *) expr;
+
+				na->arg = (Expr *) transformExpr(pstate, (Node *) na->arg);
+				result = expr;
+				break;
+			}
 
 		case T_SubLink:
 			result = transformSubLink(pstate, (SubLink *) expr);
