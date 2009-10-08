@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/hash/hashutil.c,v 1.59 2009/01/05 17:14:28 alvherre Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/hash/hashutil.c,v 1.60 2009/06/11 14:48:53 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -38,11 +38,7 @@ _hash_checkqual(IndexScanDesc scan, IndexTuple itup)
 	TupleDesc	tupdesc = RelationGetDescr(scan->indexRelation);
 	ScanKey		key = scan->keyData;
 	int			scanKeySize = scan->numberOfKeys;
-#endif
 
-	IncrIndexProcessed();
-
-#ifdef NOT_USED
 	while (scanKeySize > 0)
 	{
 		Datum		datum;
