@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- *	$PostgreSQL: pgsql/src/backend/executor/execCurrent.c,v 1.9 2009/01/01 17:23:41 momjian Exp $
+ *	$PostgreSQL: pgsql/src/backend/executor/execCurrent.c,v 1.10 2009/06/11 14:48:56 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -155,8 +155,7 @@ execCurrentOf(CurrentOfExpr *cexpr,
 		 * scan node.  Fail if it's not there or buried underneath
 		 * aggregation.
 		 */
-		scanstate = search_plan_tree(ExecGetActivePlanTree(queryDesc),
-									 table_oid);
+		scanstate = search_plan_tree(queryDesc->planstate, table_oid);
 		if (!scanstate)
 			ereport(ERROR,
 					(errcode(ERRCODE_INVALID_CURSOR_STATE),
