@@ -22,7 +22,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/nodes/equalfuncs.c,v 1.368 2009/10/12 20:39:40 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/nodes/equalfuncs.c,v 1.369 2009/10/13 00:53:08 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1671,6 +1671,7 @@ _equalCreateTrigStmt(CreateTrigStmt *a, CreateTrigStmt *b)
 	COMPARE_SCALAR_FIELD(before);
 	COMPARE_SCALAR_FIELD(row);
 	COMPARE_SCALAR_FIELD(events);
+	COMPARE_NODE_FIELD(columns);
 	COMPARE_SCALAR_FIELD(isconstraint);
 	COMPARE_SCALAR_FIELD(deferrable);
 	COMPARE_SCALAR_FIELD(initdeferred);
