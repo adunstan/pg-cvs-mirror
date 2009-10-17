@@ -4,7 +4,7 @@
  *
  * Tatsuo Ishii
  *
- * $PostgreSQL: pgsql/src/backend/utils/mb/mbutils.c,v 1.89 2009/07/07 19:28:56 tgl Exp $
+ * $PostgreSQL: pgsql/src/backend/utils/mb/mbutils.c,v 1.90 2009/10/17 00:24:51 mha Exp $
  */
 #include "postgres.h"
 
@@ -1037,7 +1037,7 @@ pgwin32_toUTF16(const char *str, int len, int *utf16len)
 	}
 
 	if (utf16len)
-		*utf16len = len;
+		*utf16len = dstlen;
 	return utf16;
 }
 
