@@ -6,7 +6,7 @@
 # Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
 # Portions Copyright (c) 1994, Regents of the University of California
 #
-# $PostgreSQL: pgsql/src/test/regress/GNUmakefile,v 1.77 2009/01/01 17:24:04 momjian Exp $
+# $PostgreSQL: pgsql/src/test/regress/GNUmakefile,v 1.78 2009/08/26 22:24:43 petere Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -100,7 +100,7 @@ regress_data_files = \
 install-tests: all install install-lib installdirs-tests
 	$(MAKE) -C $(top_builddir)/contrib/spi install
 	for file in $(regress_data_files); do \
-	  $(INSTALL_DATA) $$file '$(DESTDIR)$(pkglibdir)/regress/'$$file; \
+	  $(INSTALL_DATA) $$file '$(DESTDIR)$(pkglibdir)/regress/'$$file || exit; \
 	done
 
 installdirs-tests: installdirs
