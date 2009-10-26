@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/nodeValuesscan.c,v 1.9 2009/01/01 17:23:42 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/nodeValuesscan.c,v 1.10 2009/09/27 21:10:53 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -154,23 +154,31 @@ ValuesNext(ValuesScanState *node)
 	return slot;
 }
 
+/*
+ * ValuesRecheck -- access method routine to recheck a tuple in EvalPlanQual
+ */
+static bool
+ValuesRecheck(ValuesScanState *node, TupleTableSlot *slot)
+{
+	/* nothing to check */
+	return true;
+}
 
 /* ----------------------------------------------------------------
  *		ExecValuesScan(node)
  *
  *		Scans the values lists sequentially and returns the next qualifying
  *		tuple.
- *		It calls the ExecScan() routine and passes it the access method
- *		which retrieves tuples sequentially.
+ *		We call the ExecScan() routine and pass it the appropriate
+ *		access method functions.
  * ----------------------------------------------------------------
  */
 TupleTableSlot *
 ExecValuesScan(ValuesScanState *node)
 {
-	/*
-	 * use ValuesNext as access method
-	 */
-	return ExecScan(&node->ss, (ExecScanAccessMtd) ValuesNext);
+	return ExecScan(&node->ss,
+					(ExecScanAccessMtd) ValuesNext,
+					(ExecScanRecheckMtd) ValuesRecheck);
 }
 
 /* ----------------------------------------------------------------
@@ -320,7 +328,8 @@ void
 ExecValuesReScan(ValuesScanState *node, ExprContext *exprCtxt)
 {
 	ExecClearTuple(node->ss.ps.ps_ResultTupleSlot);
-	node->ss.ps.ps_TupFromTlist = false;
+
+	ExecScanReScan(&node->ss);
 
 	node->curr_idx = -1;
 }

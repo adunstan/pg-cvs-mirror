@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/parser/parsetree.h,v 1.36 2008/01/01 19:45:58 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/parser/parsetree.h,v 1.37 2009/01/01 17:24:00 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -74,6 +74,6 @@ extern TargetEntry *get_tle_by_resno(List *tlist, AttrNumber resno);
  * ----------------
  */
 
-extern RowMarkClause *get_rowmark(Query *qry, Index rtindex);
+extern RowMarkClause *get_parse_rowmark(Query *qry, Index rtindex);
 
 #endif   /* PARSETREE_H */

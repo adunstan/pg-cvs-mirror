@@ -16,7 +16,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/optimizer/prep/prepjointree.c,v 1.66 2009/06/11 14:48:59 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/optimizer/prep/prepjointree.c,v 1.67 2009/09/02 17:52:24 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -628,6 +628,7 @@ pull_up_simple_subquery(PlannerInfo *root, Node *jtnode, RangeTblEntry *rte,
 	subroot->cte_plan_ids = NIL;
 	subroot->eq_classes = NIL;
 	subroot->append_rel_list = NIL;
+	subroot->rowMarks = NIL;
 	subroot->hasRecursion = false;
 	subroot->wt_param_id = -1;
 	subroot->non_recursive_plan = NULL;
