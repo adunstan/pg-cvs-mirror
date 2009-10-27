@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/parser/parse_cte.c,v 2.6 2009/06/11 14:49:00 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/parser/parse_cte.c,v 2.7 2009/09/09 03:32:52 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -229,7 +229,7 @@ analyzeCTE(ParseState *pstate, CommonTableExpr *cte)
 	/* Analysis not done already */
 	Assert(IsA(cte->ctequery, SelectStmt));
 
-	query = parse_sub_analyze(cte->ctequery, pstate, cte);
+	query = parse_sub_analyze(cte->ctequery, pstate, cte, false);
 	cte->ctequery = (Node *) query;
 
 	/*
