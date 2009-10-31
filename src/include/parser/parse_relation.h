@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/parser/parse_relation.h,v 1.65 2009/10/21 20:22:38 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/parser/parse_relation.h,v 1.66 2009/10/27 17:11:18 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -38,11 +38,6 @@ extern Node *scanRTEForColumn(ParseState *pstate, RangeTblEntry *rte,
 				 char *colname, int location);
 extern Node *colNameToVar(ParseState *pstate, char *colname, bool localonly,
 			 int location);
-extern Node *qualifiedNameToVar(ParseState *pstate,
-				   char *schemaname,
-				   char *refname,
-				   char *colname,
-				   int location);
 extern void markVarForSelectPriv(ParseState *pstate, Var *var,
 					 RangeTblEntry *rte);
 extern Relation parserOpenTable(ParseState *pstate, const RangeVar *relation,
