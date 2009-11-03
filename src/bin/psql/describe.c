@@ -8,7 +8,7 @@
  *
  * Copyright (c) 2000-2009, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/psql/describe.c,v 1.228 2009/10/07 22:14:24 alvherre Exp $
+ * $PostgreSQL: pgsql/src/bin/psql/describe.c,v 1.229 2009/10/28 18:09:44 tgl Exp $
  */
 #include "postgres_fe.h"
 
@@ -1306,7 +1306,7 @@ describeOneTableDetails(const char *schemaname,
 		printTableAddHeader(&cont, headers[i], true, 'l');
 
 	/* Check if table is a view */
-	if (tableinfo.relkind == 'v')
+	if (tableinfo.relkind == 'v' && verbose)
 	{
 		PGresult   *result;
 
