@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/pl/plpgsql/src/scan.l,v 1.71 2009/07/13 00:42:18 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/pl/plpgsql/src/scan.l,v 1.72 2009/09/29 20:05:29 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -183,7 +183,6 @@ open			{ return K_OPEN;			}
 or				{ return K_OR;				}
 perform			{ return K_PERFORM;			}
 raise			{ return K_RAISE;			}
-rename			{ return K_RENAME;			}
 result_oid		{ return K_RESULT_OID;		}
 return			{ return K_RETURN;			}
 reverse			{ return K_REVERSE;			}
