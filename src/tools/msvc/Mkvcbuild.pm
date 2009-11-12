@@ -3,7 +3,7 @@ package Mkvcbuild;
 #
 # Package that generates build files for msvc build
 #
-# $PostgreSQL: pgsql/src/tools/msvc/Mkvcbuild.pm,v 1.42 2009/08/07 20:50:22 petere Exp $
+# $PostgreSQL: pgsql/src/tools/msvc/Mkvcbuild.pm,v 1.43 2009/10/01 01:58:58 tgl Exp $
 #
 use Carp;
 use Win32;
@@ -80,7 +80,7 @@ sub mkvcbuild
     $snowball->AddReference($postgres);
 
     my $plpgsql = $solution->AddProject('plpgsql','dll','PLs','src\pl\plpgsql\src');
-    $plpgsql->AddFiles('src\pl\plpgsql\src','scan.l','gram.y');
+    $plpgsql->AddFiles('src\pl\plpgsql\src', 'gram.y');
     $plpgsql->AddReference($postgres);
 
     if ($solution->{options}->{perl})

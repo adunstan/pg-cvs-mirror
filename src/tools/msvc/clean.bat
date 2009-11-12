@@ -1,5 +1,5 @@
 @echo off
-REM $PostgreSQL: pgsql/src/tools/msvc/clean.bat,v 1.14 2008/08/29 13:02:33 petere Exp $
+REM $PostgreSQL: pgsql/src/tools/msvc/clean.bat,v 1.15 2008/08/30 02:32:24 tgl Exp $
 
 set DIST=0
 if "%1"=="dist" set DIST=1
@@ -49,7 +49,6 @@ if %DIST%==1 if exist src\interfaces\ecpg\preproc\preproc.h del /q src\interface
 if exist src\port\pg_config_paths.h del /q src\port\pg_config_paths.h
 
 if exist src\pl\plperl\spi.c del /q src\pl\plperl\spi.c
-if %DIST%==1 if exist src\pl\plpgsql\src\pl_scan.c del /q src\pl\plpgsql\src\pl_scan.c
 if %DIST%==1 if exist src\pl\plpgsql\src\pl_gram.c del /q src\pl\plpgsql\src\pl_gram.c
 if %DIST%==1 if exist src\pl\plpgsql\src\pl_gram.h del /q src\pl\plpgsql\src\pl_gram.h
 

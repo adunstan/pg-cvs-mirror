@@ -3,7 +3,7 @@ package Project;
 #
 # Package that encapsulates a Visual C++ project file generation
 #
-# $PostgreSQL: pgsql/src/tools/msvc/Project.pm,v 1.19 2008/04/15 16:22:36 adunstan Exp $
+# $PostgreSQL: pgsql/src/tools/msvc/Project.pm,v 1.20 2009/07/27 07:11:15 mha Exp $
 #
 use Carp;
 use strict;
@@ -398,7 +398,6 @@ EOF
         {
             my $of = $f;
             $of =~ s/\.l$/.c/;
-            $of =~ s{^src\\pl\\plpgsql\\src\\scan.c$}{src\\pl\\plpgsql\\src\\pl_scan.c};
             print F '>'
               . GenerateCustomTool('Running flex on ' . $f, 'src\tools\msvc\pgflex.bat ' . $f,$of)
               . '</File>' . "\n";
