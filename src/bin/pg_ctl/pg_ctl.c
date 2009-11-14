@@ -4,7 +4,7 @@
  *
  * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/pg_ctl/pg_ctl.c,v 1.92.2.6 2009/01/28 11:19:40 mha Exp $
+ * $PostgreSQL: pgsql/src/bin/pg_ctl/pg_ctl.c,v 1.92.2.7 2009/09/02 02:41:07 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1396,6 +1396,10 @@ CreateRestrictedProcess(char *cmd, PROCESS_INFORMATION * processInfo, bool as_se
 		return 0;
 	}
 
+#ifndef __CYGWIN__
+    AddUserToTokenDacl(restrictedToken);
+#endif
+
 	r = CreateProcessAsUser(restrictedToken, NULL, cmd, NULL, NULL, TRUE, CREATE_SUSPENDED, NULL, NULL, &si, processInfo);
 
 	Kernel32Handle = LoadLibrary("KERNEL32.DLL");
@@ -1492,10 +1496,6 @@ CreateRestrictedProcess(char *cmd, PROCESS_INFORMATION * processInfo, bool as_se
 		}
 	}
 
-#ifndef __CYGWIN__
-    AddUserToDacl(processInfo->hProcess);
-#endif
-    
 	CloseHandle(restrictedToken);
 
 	ResumeThread(processInfo->hThread);
