@@ -1,4 +1,4 @@
-# $PostgreSQL: pgsql/contrib/Makefile,v 1.88 2009/08/07 20:50:21 petere Exp $
+# $PostgreSQL: pgsql/contrib/Makefile,v 1.89 2009/08/18 10:34:39 teodor Exp $
 
 subdir = contrib
 top_builddir = ..
@@ -25,6 +25,7 @@ SUBDIRS = \
 		ltree		\
 		oid2name	\
 		pageinspect	\
+		passwordcheck	\
 		pg_buffercache	\
 		pg_freespacemap \
 		pg_standby	\
