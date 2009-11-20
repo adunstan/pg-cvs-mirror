@@ -15,7 +15,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/nodes/copyfuncs.c,v 1.450 2009/10/28 14:55:38 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/nodes/copyfuncs.c,v 1.451 2009/11/16 21:32:06 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -3180,6 +3180,7 @@ _copyCreateTrigStmt(CreateTrigStmt *from)
 	COPY_SCALAR_FIELD(row);
 	COPY_SCALAR_FIELD(events);
 	COPY_NODE_FIELD(columns);
+	COPY_NODE_FIELD(whenClause);
 	COPY_SCALAR_FIELD(isconstraint);
 	COPY_SCALAR_FIELD(deferrable);
 	COPY_SCALAR_FIELD(initdeferred);

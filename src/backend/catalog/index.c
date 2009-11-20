@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/catalog/index.c,v 1.322 2009/10/05 19:24:35 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/catalog/index.c,v 1.323 2009/10/14 22:14:21 tgl Exp $
  *
  *
  * INTERFACE ROUTINES
@@ -793,12 +793,13 @@ index_create(Oid heapRelationId,
 				trigger->row = true;
 				trigger->events = TRIGGER_TYPE_INSERT | TRIGGER_TYPE_UPDATE;
 				trigger->columns = NIL;
+				trigger->whenClause = NULL;
 				trigger->isconstraint = true;
 				trigger->deferrable = true;
 				trigger->initdeferred = initdeferred;
 				trigger->constrrel = NULL;
 
-				(void) CreateTrigger(trigger, conOid, indexRelationId,
+				(void) CreateTrigger(trigger, NULL, conOid, indexRelationId,
 									 isprimary ? "PK_ConstraintTrigger" :
 									 "Unique_ConstraintTrigger",
 									 false);

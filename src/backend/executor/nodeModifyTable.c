@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/nodeModifyTable.c,v 1.1 2009/10/10 01:43:47 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/nodeModifyTable.c,v 1.2 2009/10/26 02:26:31 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -215,9 +215,10 @@ ExecInsert(TupleTableSlot *slot,
 			 * slot should not try to clear it.
 			 */
 			TupleTableSlot *newslot = estate->es_trig_tuple_slot;
+			TupleDesc tupdesc = RelationGetDescr(resultRelationDesc);
 
-			if (newslot->tts_tupleDescriptor != slot->tts_tupleDescriptor)
-				ExecSetSlotDescriptor(newslot, slot->tts_tupleDescriptor);
+			if (newslot->tts_tupleDescriptor != tupdesc)
+				ExecSetSlotDescriptor(newslot, tupdesc);
 			ExecStoreTuple(newtuple, newslot, InvalidBuffer, false);
 			slot = newslot;
 			tuple = newtuple;
@@ -467,9 +468,10 @@ ExecUpdate(ItemPointer tupleid,
 			 * slot should not try to clear it.
 			 */
 			TupleTableSlot *newslot = estate->es_trig_tuple_slot;
+			TupleDesc tupdesc = RelationGetDescr(resultRelationDesc);
 
-			if (newslot->tts_tupleDescriptor != slot->tts_tupleDescriptor)
-				ExecSetSlotDescriptor(newslot, slot->tts_tupleDescriptor);
+			if (newslot->tts_tupleDescriptor != tupdesc)
+				ExecSetSlotDescriptor(newslot, tupdesc);
 			ExecStoreTuple(newtuple, newslot, InvalidBuffer, false);
 			slot = newslot;
 			tuple = newtuple;
