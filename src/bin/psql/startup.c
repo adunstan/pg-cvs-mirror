@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2009, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/psql/startup.c,v 1.155 2009/02/26 16:02:38 petere Exp $
+ * $PostgreSQL: pgsql/src/bin/psql/startup.c,v 1.156 2009/04/05 04:19:58 tgl Exp $
  */
 #include "postgres_fe.h"
 
@@ -225,7 +225,7 @@ main(int argc, char *argv[])
 	/*
 	 * process file given by -f
 	 */
-	if (options.action == ACT_FILE && strcmp(options.action_string, "-") != 0)
+	if (options.action == ACT_FILE)
 	{
 		if (!options.no_psqlrc)
 			process_psqlrc(argv[0]);
