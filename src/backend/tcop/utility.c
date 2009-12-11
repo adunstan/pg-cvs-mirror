@@ -10,7 +10,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/tcop/utility.c,v 1.321 2009/12/07 05:22:22 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/tcop/utility.c,v 1.322 2009/12/09 21:57:51 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1637,6 +1637,9 @@ CreateCommandTag(Node *parsetree)
 					break;
 				case OBJECT_LANGUAGE:
 					tag = "ALTER LANGUAGE";
+					break;
+				case OBJECT_LARGEOBJECT:
+					tag = "ALTER LARGEOBJECT";
 					break;
 				case OBJECT_OPERATOR:
 					tag = "ALTER OPERATOR";

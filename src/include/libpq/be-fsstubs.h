@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/libpq/be-fsstubs.h,v 1.31 2008/03/22 01:55:14 ishii Exp $
+ * $PostgreSQL: pgsql/src/include/libpq/be-fsstubs.h,v 1.32 2009/01/01 17:23:59 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -36,6 +36,11 @@ extern Datum lo_lseek(PG_FUNCTION_ARGS);
 extern Datum lo_tell(PG_FUNCTION_ARGS);
 extern Datum lo_unlink(PG_FUNCTION_ARGS);
 extern Datum lo_truncate(PG_FUNCTION_ARGS);
+
+/*
+ * compatibility option for access control
+ */
+extern bool	lo_compat_privileges;
 
 /*
  * These are not fmgr-callable, but are available to C code.

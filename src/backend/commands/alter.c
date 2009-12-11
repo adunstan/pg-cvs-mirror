@@ -8,13 +8,14 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/alter.c,v 1.30 2008/12/19 16:25:17 petere Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/alter.c,v 1.31 2009/01/01 17:23:37 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
 #include "postgres.h"
 
 #include "catalog/namespace.h"
+#include "catalog/pg_largeobject.h"
 #include "commands/alter.h"
 #include "commands/conversioncmds.h"
 #include "commands/dbcommands.h"
@@ -231,6 +232,10 @@ ExecAlterOwnerStmt(AlterOwnerStmt *stmt)
 
 		case OBJECT_LANGUAGE:
 			AlterLanguageOwner(strVal(linitial(stmt->object)), newowner);
+			break;
+
+		case OBJECT_LARGEOBJECT:
+			LargeObjectAlterOwner(intVal(linitial(stmt->object)), newowner);
 			break;
 
 		case OBJECT_OPERATOR:
