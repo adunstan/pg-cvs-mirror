@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994-5, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/commands/explain.h,v 1.40 2009/07/26 23:34:18 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/commands/explain.h,v 1.41 2009/08/10 05:46:50 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -19,7 +19,8 @@ typedef enum ExplainFormat
 {
 	EXPLAIN_FORMAT_TEXT,
 	EXPLAIN_FORMAT_XML,
-	EXPLAIN_FORMAT_JSON
+	EXPLAIN_FORMAT_JSON,
+	EXPLAIN_FORMAT_YAML
 } ExplainFormat;
 
 typedef struct ExplainState
