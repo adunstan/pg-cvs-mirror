@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994-5, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/commands/explain.h,v 1.41 2009/08/10 05:46:50 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/commands/explain.h,v 1.42 2009/12/11 01:33:35 adunstan Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -65,6 +65,8 @@ extern void ExplainOnePlan(PlannedStmt *plannedstmt, ExplainState *es,
 
 extern void ExplainPrintPlan(ExplainState *es, QueryDesc *queryDesc);
 
+extern void ExplainBeginOutput(ExplainState *es);
+extern void ExplainEndOutput(ExplainState *es);
 extern void ExplainSeparatePlans(ExplainState *es);
 
 #endif   /* EXPLAIN_H */
