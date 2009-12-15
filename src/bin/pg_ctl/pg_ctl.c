@@ -4,7 +4,7 @@
  *
  * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/pg_ctl/pg_ctl.c,v 1.115 2009/11/14 15:39:36 mha Exp $
+ * $PostgreSQL: pgsql/src/bin/pg_ctl/pg_ctl.c,v 1.116 2009/12/10 06:32:28 petere Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -655,6 +655,9 @@ do_init(void)
 
 	if (exec_path == NULL)
 		exec_path = find_other_exec_or_die(argv0, "initdb", "initdb (PostgreSQL) " PG_VERSION "\n");
+
+	if (pgdata_opt == NULL)
+		pgdata_opt = "";
 
 	if (post_opts == NULL)
 		post_opts = "";
