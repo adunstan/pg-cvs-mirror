@@ -1,4 +1,4 @@
-<!-- $PostgreSQL: pgsql/doc/src/sgml/pgbench.sgml,v 1.10 2009/08/03 18:30:55 tgl Exp $ -->
+<!-- $PostgreSQL: pgsql/doc/src/sgml/pgbench.sgml,v 1.11 2009/12/15 07:17:57 itagaki Exp $ -->
 
 <sect1 id="pgbench">
  <title>pgbench</title>
@@ -464,7 +464,6 @@ pgbench <optional> <replaceable>options</> </optional> <replaceable>dbname</>
      </para>
     </listitem>
    </varlistentry>
-  </variablelist>
 
    <varlistentry>
     <term>
@@ -494,7 +493,6 @@ pgbench <optional> <replaceable>options</> </optional> <replaceable>dbname</>
      </para>
     </listitem>
    </varlistentry>
-  </variablelist>
 
    <varlistentry>
     <term>
