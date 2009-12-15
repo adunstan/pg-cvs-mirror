@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/optimizer/clauses.h,v 1.97 2009/01/01 17:24:00 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/optimizer/clauses.h,v 1.98 2009/06/11 14:49:11 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -23,7 +23,7 @@
 typedef struct
 {
 	int			numAggs;		/* total number of aggregate calls */
-	int			numDistinctAggs;	/* number that use DISTINCT */
+	int			numOrderedAggs; 	/* number that use DISTINCT or ORDER BY */
 	Size		transitionSpace;	/* for pass-by-ref transition data */
 } AggClauseCounts;
 
