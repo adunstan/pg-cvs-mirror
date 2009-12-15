@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/spi.c,v 1.210 2009/10/10 01:43:47 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/spi.c,v 1.211 2009/11/04 22:26:06 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1908,7 +1908,7 @@ _SPI_execute_plan(SPIPlanPtr plan, ParamListInfo paramLI,
 										plansource->query_string,
 										snap, crosscheck_snapshot,
 										dest,
-										paramLI, false);
+										paramLI, 0);
 				res = _SPI_pquery(qdesc, fire_triggers,
 								  canSetTag ? tcount : 0);
 				FreeQueryDesc(qdesc);

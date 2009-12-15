@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/copy.c,v 1.317 2009/09/21 20:10:21 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/copy.c,v 1.318 2009/11/20 20:38:10 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1094,7 +1094,7 @@ DoCopy(const CopyStmt *stmt, const char *queryString)
 		cstate->queryDesc = CreateQueryDesc(plan, queryString,
 											GetActiveSnapshot(),
 											InvalidSnapshot,
-											dest, NULL, false);
+											dest, NULL, 0);
 
 		/*
 		 * Call ExecutorStart to prepare the plan for execution.
