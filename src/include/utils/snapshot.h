@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/utils/snapshot.h,v 1.4 2009/01/01 17:24:02 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/utils/snapshot.h,v 1.5 2009/06/11 14:49:13 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -49,8 +49,10 @@ typedef struct SnapshotData
 	uint32		xcnt;			/* # of xact ids in xip[] */
 	TransactionId *xip;			/* array of xact IDs in progress */
 	/* note: all ids in xip[] satisfy xmin <= xip[i] < xmax */
-	int32		subxcnt;		/* # of xact ids in subxip[], -1 if overflow */
+	int32		subxcnt;		/* # of xact ids in subxip[] */
 	TransactionId *subxip;		/* array of subxact IDs in progress */
+	bool		suboverflowed;	/* has the subxip array overflowed? */
+	bool		takenDuringRecovery;	/* recovery-shaped snapshot? */
 
 	/*
 	 * note: all ids in subxip[] are >= xmin, but we don't bother filtering

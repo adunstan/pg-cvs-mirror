@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *			 $PostgreSQL: pgsql/src/backend/access/gist/gistxlog.c,v 1.31 2009/01/01 17:23:35 momjian Exp $
+ *			 $PostgreSQL: pgsql/src/backend/access/gist/gistxlog.c,v 1.32 2009/01/20 18:59:36 heikki Exp $
  *-------------------------------------------------------------------------
  */
 #include "postgres.h"
@@ -395,6 +395,12 @@ gist_redo(XLogRecPtr lsn, XLogRecord *record)
 {
 	uint8		info = record->xl_info & ~XLR_INFO_MASK;
 	MemoryContext oldCxt;
+
+	/*
+	 * GIST indexes do not require any conflict processing. NB: If we ever
+	 * implement a similar optimization we have in b-tree, and remove killed
+	 * tuples outside VACUUM, we'll need to handle that here.
+	 */
 
 	RestoreBkpBlocks(lsn, record, false);
 

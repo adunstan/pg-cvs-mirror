@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/sequence.c,v 1.161 2009/07/16 06:33:42 petere Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/sequence.c,v 1.162 2009/10/13 00:53:07 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -457,6 +457,9 @@ nextval_internal(Oid relid)
 				next,
 				rescnt = 0;
 	bool		logit = false;
+
+	/* nextval() writes to database and must be prevented during recovery */
+	PreventCommandDuringRecovery();
 
 	/* open and AccessShareLock sequence */
 	init_sequence(relid, &elm, &seqrel);
