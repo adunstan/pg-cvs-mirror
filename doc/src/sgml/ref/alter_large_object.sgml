@@ -1,3 +1,8 @@
+<!--
+$PostgreSQL: pgsql/doc/src/sgml/ref/alter_large_object.sgml,v 1.1 2009/12/11 03:34:55 itagaki Exp $
+PostgreSQL documentation
+-->
+
 <refentry id="SQL-ALTERLARGEOBJECT">
  <refmeta>
   <refentrytitle id="SQL-ALTERLARGEOBJECT-title">ALTER LARGE OBJECT</refentrytitle>
