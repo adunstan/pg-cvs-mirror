@@ -12,7 +12,7 @@
  *	by PostgreSQL
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/bin/pg_dump/pg_dump.c,v 1.556 2009/12/14 00:39:11 itagaki Exp $
+ *	  $PostgreSQL: pgsql/src/bin/pg_dump/pg_dump.c,v 1.557 2009/12/18 21:28:42 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -4613,7 +4613,7 @@ getProcLangs(int *numProcLangs)
 						  "lanvalidator,  lanacl, "
 						  "(%s lanowner) AS lanowner "
 						  "FROM pg_language "
-						  "WHERE lanispl%s"
+						  "WHERE lanispl%s "
 						  "ORDER BY oid",
 						  username_subquery,
 						  binary_upgrade ? "\nAND lanname != 'plpgsql'" : "");
