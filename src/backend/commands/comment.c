@@ -7,7 +7,7 @@
  * Copyright (c) 1996-2009, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/comment.c,v 1.108 2009/10/12 19:49:24 adunstan Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/comment.c,v 1.109 2009/12/11 03:34:55 itagaki Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1449,7 +1449,7 @@ CommentLargeObject(List *qualname, char *comment)
 	 *
 	 * See the comment in the inv_create() which describes
 	 * the reason why LargeObjectRelationId is used instead
-	 * of the LargeObjectMetadataRelationId.
+	 * of LargeObjectMetadataRelationId.
 	 */
 	CreateComments(loid, LargeObjectRelationId, 0, comment);
 }
