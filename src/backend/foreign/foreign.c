@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *		  $PostgreSQL: pgsql/src/backend/foreign/foreign.c,v 1.4 2009/06/11 14:48:57 momjian Exp $
+ *		  $PostgreSQL: pgsql/src/backend/foreign/foreign.c,v 1.5 2009/06/11 16:14:18 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -372,7 +372,7 @@ is_conninfo_option(const char *option, Oid context)
 	struct ConnectionOption *opt;
 
 	for (opt = libpq_conninfo_options; opt->optname; opt++)
-		if ((context == opt->optcontext || context == InvalidOid) && strcmp(opt->optname, option) == 0)
+		if (context == opt->optcontext && strcmp(opt->optname, option) == 0)
 			return true;
 	return false;
 }
@@ -409,7 +409,7 @@ postgresql_fdw_validator(PG_FUNCTION_ARGS)
 			 */
 			initStringInfo(&buf);
 			for (opt = libpq_conninfo_options; opt->optname; opt++)
-				if (catalog == InvalidOid || catalog == opt->optcontext)
+				if (catalog == opt->optcontext)
 					appendStringInfo(&buf, "%s%s", (buf.len > 0) ? ", " : "",
 									 opt->optname);
 
