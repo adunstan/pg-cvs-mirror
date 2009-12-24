@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/commands/typecmds.h,v 1.24 2008/06/14 18:04:34 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/commands/typecmds.h,v 1.25 2009/01/01 17:23:58 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -25,6 +25,7 @@ extern void RemoveTypeById(Oid typeOid);
 extern void DefineDomain(CreateDomainStmt *stmt);
 extern void DefineEnum(CreateEnumStmt *stmt);
 extern Oid	DefineCompositeType(const RangeVar *typevar, List *coldeflist);
+extern Oid	AssignTypeArrayOid(void);
 
 extern void AlterDomainDefault(List *names, Node *defaultRaw);
 extern void AlterDomainNotNull(List *names, bool notNull);
