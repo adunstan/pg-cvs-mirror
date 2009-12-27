@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/optimizer/util/predtest.c,v 1.26 2009/05/11 17:56:08 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/optimizer/util/predtest.c,v 1.27 2009/06/11 14:48:59 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1531,9 +1531,6 @@ get_btree_test_op(Oid pred_op, Oid clause_op, bool refute_it)
 	{
 		/* First time through: initialize the hash table */
 		HASHCTL		ctl;
-
-		if (!CacheMemoryContext)
-			CreateCacheMemoryContext();
 
 		MemSet(&ctl, 0, sizeof(ctl));
 		ctl.keysize = sizeof(OprProofCacheKey);
