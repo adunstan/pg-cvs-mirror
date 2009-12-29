@@ -8,7 +8,7 @@
  * Darko Prenosil <Darko.Prenosil@finteh.hr>
  * Shridhar Daithankar <shridhar_daithankar@persistent.co.in>
  *
- * $PostgreSQL: pgsql/contrib/dblink/dblink.c,v 1.83 2009/08/05 16:11:07 joe Exp $
+ * $PostgreSQL: pgsql/contrib/dblink/dblink.c,v 1.84 2009/09/12 23:20:52 joe Exp $
  * Copyright (c) 2001-2009, PostgreSQL Global Development Group
  * ALL RIGHTS RESERVED;
  *
@@ -1703,10 +1703,7 @@ dblink_get_notify(PG_FUNCTION_ARGS)
 		else
 			nulls[2] = true;
 
-		/* switch to appropriate context while storing the tuple */
-		MemoryContextSwitchTo(per_query_ctx);
 		tuplestore_putvalues(tupstore, tupdesc, values, nulls);
-		MemoryContextSwitchTo(oldcontext);
 
 		PQfreemem(notify);
 		PQconsumeInput(conn);
