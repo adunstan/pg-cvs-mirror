@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/functions.c,v 1.135 2009/06/11 17:25:38 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/functions.c,v 1.135.2.1 2009/12/14 02:16:03 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1400,15 +1400,12 @@ static void
 sqlfunction_receive(TupleTableSlot *slot, DestReceiver *self)
 {
 	DR_sqlfunction *myState = (DR_sqlfunction *) self;
-	MemoryContext oldcxt;
 
 	/* Filter tuple as needed */
 	slot = ExecFilterJunk(myState->filter, slot);
 
 	/* Store the filtered tuple into the tuplestore */
-	oldcxt = MemoryContextSwitchTo(myState->cxt);
 	tuplestore_puttupleslot(myState->tstore, slot);
-	MemoryContextSwitchTo(oldcxt);
 }
 
 /*

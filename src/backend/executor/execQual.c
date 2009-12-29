@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/execQual.c,v 1.250 2009/06/11 17:25:38 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/execQual.c,v 1.250.2.1 2009/12/14 02:16:03 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -2000,15 +2000,10 @@ ExecMakeTableFunctionResult(ExprState *funcexpr,
 				tmptup.t_len = HeapTupleHeaderGetDatumLength(td);
 				tmptup.t_data = td;
 
-				oldcontext = MemoryContextSwitchTo(econtext->ecxt_per_query_memory);
 				tuplestore_puttuple(tupstore, &tmptup);
 			}
 			else
-			{
-				oldcontext = MemoryContextSwitchTo(econtext->ecxt_per_query_memory);
 				tuplestore_putvalues(tupstore, tupdesc, &result, &fcinfo.isnull);
-			}
-			MemoryContextSwitchTo(oldcontext);
 
 			/*
 			 * Are we done?
