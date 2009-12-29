@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/execQual.c,v 1.226 2008/01/01 19:45:49 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/execQual.c,v 1.226.2.1 2008/11/15 20:53:40 petere Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1656,9 +1656,7 @@ ExecMakeTableFunctionResult(ExprState *funcexpr,
 				tuple = heap_form_tuple(tupdesc, &result, &fcinfo.isnull);
 			}
 
-			oldcontext = MemoryContextSwitchTo(econtext->ecxt_per_query_memory);
 			tuplestore_puttuple(tupstore, tuple);
-			MemoryContextSwitchTo(oldcontext);
 
 			/*
 			 * Are we done?
@@ -1710,6 +1708,7 @@ no_function_result:
 			memset(nullflags, true, natts * sizeof(bool));
 			tuple = heap_form_tuple(expectedDesc, nulldatums, nullflags);
 			MemoryContextSwitchTo(econtext->ecxt_per_query_memory);
+
 			tuplestore_puttuple(tupstore, tuple);
 		}
 	}
