@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/catalog/indexing.h,v 1.111 2009/12/11 03:34:56 itagaki Exp $
+ * $PostgreSQL: pgsql/src/include/catalog/indexing.h,v 1.112 2009/12/29 20:11:45 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -156,6 +156,9 @@ DECLARE_UNIQUE_INDEX(pg_index_indexrelid_index, 2679, on pg_index using btree(in
 
 DECLARE_UNIQUE_INDEX(pg_inherits_relid_seqno_index, 2680, on pg_inherits using btree(inhrelid oid_ops, inhseqno int4_ops));
 #define InheritsRelidSeqnoIndexId  2680
+/* This following index is not used for a cache and is not unique */
+DECLARE_INDEX(pg_inherits_parent_index, 2187, on pg_inherits using btree(inhparent oid_ops));
+#define InheritsParentIndexId  2187
 
 DECLARE_UNIQUE_INDEX(pg_language_name_index, 2681, on pg_language using btree(lanname name_ops));
 #define LanguageNameIndexId  2681
