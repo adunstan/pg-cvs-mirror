@@ -29,7 +29,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/vacuumlazy.c,v 1.124 2009/11/16 21:32:06 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/vacuumlazy.c,v 1.125 2009/12/19 01:32:34 sriggs Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -237,7 +237,6 @@ lazy_vacuum_rel(Relation onerel, VacuumStmt *vacstmt,
 	pgstat_report_vacuum(RelationGetRelid(onerel),
 						 onerel->rd_rel->relisshared,
 						 vacrelstats->scanned_all,
-						 (vacstmt->options & VACOPT_ANALYZE) != 0,
 						 vacrelstats->rel_tuples);
 
 	/* and log the action if appropriate */
