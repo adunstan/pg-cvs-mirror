@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/int.c,v 1.85 2009/09/03 18:48:14 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/int.c,v 1.86 2009/09/04 11:20:22 heikki Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -146,10 +146,11 @@ int2vectorin(PG_FUNCTION_ARGS)
 
 	for (n = 0; *intString && n < FUNC_MAX_ARGS; n++)
 	{
-		if (sscanf(intString, "%hd", &result->values[n]) != 1)
-			break;
 		while (*intString && isspace((unsigned char) *intString))
 			intString++;
+		if (*intString == '\0')
+			break;		
+		result->values[n] = pg_atoi(intString, sizeof(int16), ' ');
 		while (*intString && !isspace((unsigned char) *intString))
 			intString++;
 	}
