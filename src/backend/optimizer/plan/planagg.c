@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/optimizer/plan/planagg.c,v 1.47 2009/12/15 17:57:46 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/optimizer/plan/planagg.c,v 1.48 2010/01/01 21:53:49 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -308,6 +308,9 @@ build_minmax_path(PlannerInfo *root, RelOptInfo *rel, MinMaxAggInfo *info)
 	ntest = makeNode(NullTest);
 	ntest->nulltesttype = IS_NOT_NULL;
 	ntest->arg = copyObject(info->target);
+	ntest->argisrow = type_is_rowtype(exprType((Node *) ntest->arg));
+	if (ntest->argisrow)
+		return false;			/* punt on composites */
 	info->notnulltest = ntest;
 
 	/*
