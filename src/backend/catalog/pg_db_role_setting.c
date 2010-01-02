@@ -2,11 +2,11 @@
  * pg_db_role_setting.c
  *		Routines to support manipulation of the pg_db_role_setting relation
  *    
- * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2010, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *		$PostgreSQL$
+ *		$PostgreSQL: pgsql/src/backend/catalog/pg_db_role_setting.c,v 1.1 2009/10/07 22:14:18 alvherre Exp $
  */
 #include "postgres.h"
 

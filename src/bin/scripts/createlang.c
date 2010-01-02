@@ -2,10 +2,10 @@
  *
  * createlang
  *
- * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2010, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/bin/scripts/createlang.c,v 1.33 2009/02/25 13:03:07 petere Exp $
+ * $PostgreSQL: pgsql/src/bin/scripts/createlang.c,v 1.34 2009/02/26 16:02:39 petere Exp $
  *
  *-------------------------------------------------------------------------
  */

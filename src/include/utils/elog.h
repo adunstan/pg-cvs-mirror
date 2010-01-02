@@ -4,10 +4,10 @@
  *	  POSTGRES error reporting/logging definitions.
  *
  *
- * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2010, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/utils/elog.h,v 1.100 2009/06/04 18:33:07 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/utils/elog.h,v 1.101 2009/06/11 14:49:13 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

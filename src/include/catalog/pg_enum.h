@@ -5,9 +5,9 @@
  *	  along with the relation's initial contents.
  *
  *
- * Copyright (c) 2006-2009, PostgreSQL Global Development Group
+ * Copyright (c) 2006-2010, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/include/catalog/pg_enum.h,v 1.5 2009/01/01 17:23:57 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/catalog/pg_enum.h,v 1.6 2009/12/27 14:50:46 momjian Exp $
  *
  * NOTES
  *	  the genbki.sh script reads this file and generates .bki

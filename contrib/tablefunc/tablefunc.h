@@ -1,5 +1,5 @@
 /*
- * $PostgreSQL: pgsql/contrib/tablefunc/tablefunc.h,v 1.15 2009/01/01 17:23:32 momjian Exp $
+ * $PostgreSQL: pgsql/contrib/tablefunc/tablefunc.h,v 1.16 2009/06/11 14:48:52 momjian Exp $
  *
  *
  * tablefunc
@@ -10,7 +10,7 @@
  * And contributors:
  * Nabil Sayegh <postgresql@e-trolley.de>
  *
- * Copyright (c) 2002-2009, PostgreSQL Global Development Group
+ * Copyright (c) 2002-2010, PostgreSQL Global Development Group
  *
  * Permission to use, copy, modify, and distribute this software and its
  * documentation for any purpose, without fee, and without a written agreement

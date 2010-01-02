@@ -4,9 +4,9 @@
  *	  Public interface to various tsearch modules, such as
  *	  parsers and dictionaries.
  *
- * Copyright (c) 1998-2009, PostgreSQL Global Development Group
+ * Copyright (c) 1998-2010, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/include/tsearch/ts_public.h,v 1.15 2009/07/16 06:33:45 petere Exp $
+ * $PostgreSQL: pgsql/src/include/tsearch/ts_public.h,v 1.16 2009/08/18 10:30:41 teodor Exp $
  *
  *-------------------------------------------------------------------------
  */

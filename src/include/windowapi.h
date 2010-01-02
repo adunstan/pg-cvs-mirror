@@ -19,9 +19,9 @@
  * function in nodeWindowAgg.c for details.
  *
  *
- * Portions Copyright (c) 2000-2009, PostgreSQL Global Development Group
+ * Portions Copyright (c) 2000-2010, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/include/windowapi.h,v 1.2 2009/01/01 17:23:55 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/windowapi.h,v 1.3 2009/06/11 14:49:08 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

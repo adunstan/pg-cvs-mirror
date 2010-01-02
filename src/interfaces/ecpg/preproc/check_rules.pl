@@ -1,9 +1,9 @@
 #!/usr/bin/perl
-# $PostgreSQL: pgsql/src/interfaces/ecpg/preproc/parse.pl,v 1.5 2009/11/21 05:44:05 tgl Exp $
+# $PostgreSQL: pgsql/src/interfaces/ecpg/preproc/check_rules.pl,v 1.1 2009/11/27 10:00:40 meskes Exp $
 # test parser generater for ecpg
 # call with backend parser as stdin
 #
-# Copyright (c) 2009, PostgreSQL Global Development Group
+# Copyright (c) 2009-2010, PostgreSQL Global Development Group
 #
 # Written by Michael Meskes <meskes@postgresql.org>
 #

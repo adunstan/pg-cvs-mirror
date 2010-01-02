@@ -1,8 +1,8 @@
 #! /usr/bin/perl
 #
-# Copyright (c) 2001-2009, PostgreSQL Global Development Group
+# Copyright (c) 2001-2010, PostgreSQL Global Development Group
 #
-# $PostgreSQL: pgsql/src/backend/utils/mb/Unicode/UCS_to_most.pl,v 1.7 2009/02/10 19:29:39 petere Exp $
+# $PostgreSQL: pgsql/src/backend/utils/mb/Unicode/UCS_to_most.pl,v 1.8 2009/03/18 16:17:28 heikki Exp $
 #
 # Generate UTF-8 <--> character code conversion tables from
 # map files provided by Unicode organization.

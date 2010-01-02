@@ -3,12 +3,12 @@
  * libpq-events.c
  *	  functions for supporting the libpq "events" API
  *
- * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2010, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/interfaces/libpq/libpq-events.c,v 1.4 2009/01/01 17:24:03 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/interfaces/libpq/libpq-events.c,v 1.5 2009/06/11 14:49:14 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -4,10 +4,10 @@
  *	  prototypes for the creator functions (for primitive nodes)
  *
  *
- * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2010, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/nodes/makefuncs.h,v 1.68 2009/06/11 14:49:11 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/nodes/makefuncs.h,v 1.69 2009/07/16 06:33:45 petere Exp $
  *
  *-------------------------------------------------------------------------
  */

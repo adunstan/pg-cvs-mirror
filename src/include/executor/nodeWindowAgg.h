@@ -4,10 +4,10 @@
  *	  prototypes for nodeWindowAgg.c
  *
  *
- * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2010, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/executor/nodeWindowAgg.h,v 1.2 2009/01/01 17:23:59 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/executor/nodeWindowAgg.h,v 1.3 2009/09/27 21:10:53 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */

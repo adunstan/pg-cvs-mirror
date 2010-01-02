@@ -13,9 +13,9 @@
  * fact that a particular page needs to be visited.
  *
  *
- * Copyright (c) 2003-2009, PostgreSQL Global Development Group
+ * Copyright (c) 2003-2010, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/include/nodes/tidbitmap.h,v 1.10 2009/03/24 20:17:18 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/nodes/tidbitmap.h,v 1.11 2009/06/11 14:49:11 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */

@@ -2,9 +2,9 @@
 #
 # Makefile for src/tools/ifaddrs
 #
-# Copyright (c) 2003-2009, PostgreSQL Global Development Group
+# Copyright (c) 2003-2010, PostgreSQL Global Development Group
 #
-# $PostgreSQL$
+# $PostgreSQL: pgsql/src/tools/ifaddrs/Makefile,v 1.1 2009/10/01 01:58:58 tgl Exp $
 #
 #-------------------------------------------------------------------------
 

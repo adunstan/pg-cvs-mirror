@@ -4,10 +4,10 @@
  *
  *
  *
- * Portions Copyright (c) 1996-2009, PostgreSQL Global Development Group
+ * Portions Copyright (c) 1996-2010, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/rewrite/rewriteRemove.h,v 1.26 2009/01/22 17:27:55 petere Exp $
+ * $PostgreSQL: pgsql/src/include/rewrite/rewriteRemove.h,v 1.27 2009/01/27 12:40:15 petere Exp $
  *
  *-------------------------------------------------------------------------
  */

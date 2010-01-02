@@ -3,11 +3,11 @@
  * windowfuncs.c
  *	  Standard window functions defined in SQL spec.
  *
- * Portions Copyright (c) 2000-2009, PostgreSQL Global Development Group
+ * Portions Copyright (c) 2000-2010, PostgreSQL Global Development Group
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/windowfuncs.c,v 1.2 2009/01/01 17:23:50 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/windowfuncs.c,v 1.3 2009/06/11 14:49:04 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
