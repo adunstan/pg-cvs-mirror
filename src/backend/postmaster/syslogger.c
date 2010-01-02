@@ -18,7 +18,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/postmaster/syslogger.c,v 1.52 2009/11/05 20:13:06 petere Exp $
+ *	  $PostgreSQL: pgsql/src/backend/postmaster/syslogger.c,v 1.53 2009/11/19 02:45:33 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -573,7 +573,7 @@ SysLogger_Start(void)
 				 * chunking protocol.
 				 */
 				fflush(stderr);
-				fd = _open_osfhandle((long) syslogPipe[1],
+				fd = _open_osfhandle((intptr_t) syslogPipe[1],
 									 _O_APPEND | _O_BINARY);
 				if (dup2(fd, _fileno(stderr)) < 0)
 					ereport(FATAL,

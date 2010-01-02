@@ -37,7 +37,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/postmaster/postmaster.c,v 1.596 2009/09/08 17:08:36 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/postmaster/postmaster.c,v 1.597 2009/12/19 01:32:34 sriggs Exp $
  *
  * NOTES
  *
@@ -403,7 +403,11 @@ typedef struct
 	int			ListenSocket[MAXLISTEN];
 	long		MyCancelKey;
 	int			MyPMChildSlot;
+#ifndef WIN32
 	unsigned long UsedShmemSegID;
+#else
+	 HANDLE		UsedShmemSegID;
+#endif
 	void	   *UsedShmemSegAddr;
 	slock_t    *ShmemLock;
 	VariableCache ShmemVariableCache;
