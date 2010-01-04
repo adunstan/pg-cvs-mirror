@@ -23,7 +23,7 @@
  * Portions Copyright (c) 1996-2010, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/bin/pg_resetxlog/pg_resetxlog.c,v 1.75 2009/08/31 02:23:23 tgl Exp $
+ * $PostgreSQL: pgsql/src/bin/pg_resetxlog/pg_resetxlog.c,v 1.76 2010/01/02 16:57:59 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -625,6 +625,8 @@ RewriteControlFile(void)
 	ControlFile.prevCheckPoint.xrecoff = 0;
 	ControlFile.minRecoveryPoint.xlogid = 0;
 	ControlFile.minRecoveryPoint.xrecoff = 0;
+	ControlFile.backupStartPoint.xlogid = 0;
+	ControlFile.backupStartPoint.xrecoff = 0;
 
 	/* Now we can force the recorded xlog seg size to the right thing. */
 	ControlFile.xlog_seg_size = XLogSegSize;
