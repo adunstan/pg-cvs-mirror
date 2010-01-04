@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/nodeHash.c,v 1.124 2009/12/29 20:11:44 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/nodeHash.c,v 1.125 2010/01/02 16:57:41 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1006,6 +1006,7 @@ ExecHashBuildSkewHash(HashJoinTable hashtable, Hash *node, int mcvsToUse)
 
 	if (get_attstatsslot(statsTuple, node->skewColType, node->skewColTypmod,
 						 STATISTIC_KIND_MCV, InvalidOid,
+						 NULL,
 						 &values, &nvalues,
 						 &numbers, &nnumbers))
 	{
