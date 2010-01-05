@@ -8,10 +8,10 @@
  * Portions Copyright (c) 1996-2010, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/catalog/pg_database.h,v 1.51 2009/10/07 22:14:25 alvherre Exp $
+ * $PostgreSQL: pgsql/src/include/catalog/pg_database.h,v 1.52 2010/01/02 16:58:01 momjian Exp $
  *
  * NOTES
- *	  the genbki.sh script reads this file and generates .bki
+ *	  the genbki.pl script reads this file and generates .bki
  *	  information from the DATA() statements.
  *
  *-------------------------------------------------------------------------
@@ -29,7 +29,7 @@
 #define DatabaseRelationId	1262
 #define DatabaseRelation_Rowtype_Id  1248
 
-CATALOG(pg_database,1262) BKI_SHARED_RELATION BKI_ROWTYPE_OID(1248)
+CATALOG(pg_database,1262) BKI_SHARED_RELATION BKI_ROWTYPE_OID(1248) BKI_SCHEMA_MACRO
 {
 	NameData	datname;		/* database name */
 	Oid			datdba;			/* owner of database */
