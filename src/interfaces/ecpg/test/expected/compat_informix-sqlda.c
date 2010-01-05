@@ -26,10 +26,6 @@
 
 
 #line 1 "sqlda.h"
-/*
- * $PostgreSQL: pgsql/src/interfaces/ecpg/include/sqlda.h,v 1.5 2010/01/05 16:38:23 meskes Exp $
- */
-
 #ifndef ECPG_SQLDA_H
 #define ECPG_SQLDA_H
 
