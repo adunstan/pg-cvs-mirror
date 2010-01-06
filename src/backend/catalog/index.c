@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/catalog/index.c,v 1.327 2009/12/23 02:35:18 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/catalog/index.c,v 1.328 2010/01/02 16:57:36 momjian Exp $
  *
  *
  * INTERFACE ROUTINES
@@ -78,6 +78,9 @@ typedef struct
 				itups,
 				tups_inserted;
 } v_i_state;
+
+/* For simple relation creation, this is the toast index relfilenode */
+Oid binary_upgrade_next_index_relfilenode = InvalidOid;
 
 /* non-export function prototypes */
 static TupleDesc ConstructTupleDescriptor(Relation heapRelation,
@@ -640,15 +643,22 @@ index_create(Oid heapRelationId,
 											accessMethodObjectId,
 											classObjectId);
 
-	/*
-	 * Allocate an OID for the index, unless we were told what to use.
-	 *
-	 * The OID will be the relfilenode as well, so make sure it doesn't
-	 * collide with either pg_class OIDs or existing physical files.
-	 */
-	if (!OidIsValid(indexRelationId))
+	if (OidIsValid(binary_upgrade_next_index_relfilenode))
+	{
+		indexRelationId = binary_upgrade_next_index_relfilenode;
+		binary_upgrade_next_index_relfilenode = InvalidOid;
+	}
+	else if (!OidIsValid(indexRelationId))
+	{
+		/*
+		 * Allocate an OID for the index, unless we were told what to use.
+		 *
+		 * The OID will be the relfilenode as well, so make sure it doesn't
+		 * collide with either pg_class OIDs or existing physical files.
+		 */
 		indexRelationId = GetNewRelFileNode(tableSpaceId, shared_relation,
 											pg_class);
+	}
 
 	/*
 	 * create the index relation's relcache entry and physical disk file. (If
