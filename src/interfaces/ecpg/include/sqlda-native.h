@@ -1,11 +1,19 @@
 /*
- * $PostgreSQL: pgsql/src/interfaces/ecpg/include/sqlda.h,v 1.4 2009/06/11 14:49:13 momjian Exp $
+ * $PostgreSQL: pgsql/src/interfaces/ecpg/include/sqlda-native.h,v 1.1 2010/01/05 16:38:23 meskes Exp $
  */
 
 #ifndef ECPG_SQLDA_NATIVE_H
 #define ECPG_SQLDA_NATIVE_H
 
-#include "postgres_fe.h"
+/*
+ * Maximum length for identifiers (e.g. table names, column names,
+ * function names).  Names actually are limited to one less byte than this,
+ * because the length must include a trailing zero byte.
+ *
+ * This should be at least as much as NAMEDATALEN of the database the
+ * applications run against. 
+ */
+#define NAMEDATALEN 64
 
 struct sqlname
 {
