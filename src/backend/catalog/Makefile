@@ -2,7 +2,7 @@
 #
 # Makefile for backend/catalog
 #
-# $PostgreSQL: pgsql/src/backend/catalog/Makefile,v 1.74 2009/12/11 03:34:55 itagaki Exp $
+# $PostgreSQL: pgsql/src/backend/catalog/Makefile,v 1.75 2010/01/05 01:06:56 tgl Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -55,7 +55,7 @@ postgres.shdescription: postgres.bki ;
 schemapg.h: postgres.bki ;
 
 postgres.bki: genbki.pl Catalog.pm $(POSTGRES_BKI_SRCS)
-	$(PERL) -I $(catalogdir) $< $(pg_includes) --set-version=$(VERSION) $(POSTGRES_BKI_SRCS)
+	$(PERL) -I $(catalogdir) $< $(pg_includes) --set-version=$(MAJORVERSION) $(POSTGRES_BKI_SRCS)
 
 .PHONY: install-data
 install-data: $(BKIFILES) installdirs

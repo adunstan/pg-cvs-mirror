@@ -10,7 +10,7 @@
 # Portions Copyright (c) 1996-2010, PostgreSQL Global Development Group
 # Portions Copyright (c) 1994, Regents of the University of California
 #
-# $PostgreSQL: pgsql/src/backend/catalog/genbki.pl,v 1.3 2010/01/05 06:41:44 tgl Exp $
+# $PostgreSQL: pgsql/src/backend/catalog/genbki.pl,v 1.4 2010/01/05 20:23:32 tgl Exp $
 #
 #----------------------------------------------------------------------
 
@@ -40,7 +40,7 @@ while (@ARGV)
     {
         push @include_path, length($arg) > 2 ? substr($arg, 2) : shift @ARGV;
     }
-    elsif ($arg =~ /^--set-version=(\d+\.\d+).*$/)
+    elsif ($arg =~ /^--set-version=(\d+\.\d+)$/)
     {
         $major_version = $1;
     }
