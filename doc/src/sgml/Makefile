@@ -2,7 +2,7 @@
 #
 # PostgreSQL documentation makefile
 #
-# $PostgreSQL: pgsql/doc/src/sgml/Makefile,v 1.133 2009/10/06 20:00:44 petere Exp $
+# $PostgreSQL: pgsql/doc/src/sgml/Makefile,v 1.134 2009/12/30 13:48:52 petere Exp $
 #
 #----------------------------------------------------------------------------
 
@@ -77,7 +77,6 @@ man: man-stamp
 
 man-stamp: stylesheet-man.xsl postgres.xml
 	$(XSLTPROC) $(XSLTPROCFLAGS) $(XSLTPROC_MAN_FLAGS) $^
-	rm man1/dblink*
 	touch $@
 
 
