@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2010, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/commands/tablespace.h,v 1.21 2010/01/02 16:58:03 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/commands/tablespace.h,v 1.22 2010/01/05 21:53:59 rhaas Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -34,6 +34,7 @@ typedef struct xl_tblspc_drop_rec
 
 typedef struct TableSpaceOpts
 {
+	int32		vl_len_;		/* varlena header (do not touch directly!) */
 	float8		random_page_cost;
 	float8		seq_page_cost;
 } TableSpaceOpts;
