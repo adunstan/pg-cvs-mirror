@@ -16,7 +16,7 @@
  *
  *
  * IDENTIFICATION
- *		$PostgreSQL: pgsql/src/bin/pg_dump/pg_backup_tar.c,v 1.65 2009/06/04 19:16:48 tgl Exp $
+ *		$PostgreSQL: pgsql/src/bin/pg_dump/pg_backup_tar.c,v 1.66 2009/07/21 21:46:10 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -75,13 +75,9 @@ typedef struct
 /*
  * Maximum file size for a tar member: The limit inherent in the
  * format is 2^33-1 bytes (nearly 8 GB).  But we don't want to exceed
- * what we can represent by an pgoff_t.
+ * what we can represent in pgoff_t.
  */
-#ifdef INT64_IS_BUSTED
-#define MAX_TAR_MEMBER_FILELEN INT_MAX
-#else
 #define MAX_TAR_MEMBER_FILELEN (((int64) 1 << Min(33, sizeof(pgoff_t)*8 - 1)) - 1)
-#endif
 
 typedef struct
 {

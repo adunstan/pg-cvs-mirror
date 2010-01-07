@@ -6,7 +6,7 @@
  * for developers.	If you edit any of these, be sure to do a *full*
  * rebuild (and an initdb if noted).
  *
- * $PostgreSQL: pgsql/src/include/pg_config_manual.h,v 1.38 2009/02/26 16:02:39 petere Exp $
+ * $PostgreSQL: pgsql/src/include/pg_config_manual.h,v 1.39 2009/06/11 14:49:08 momjian Exp $
  *------------------------------------------------------------------------
  */
 
@@ -45,12 +45,7 @@
 /*
  * Set the upper and lower bounds of sequence values.
  */
-#ifndef INT64_IS_BUSTED
 #define SEQ_MAXVALUE	INT64CONST(0x7FFFFFFFFFFFFFFF)
-#else							/* INT64_IS_BUSTED */
-#define SEQ_MAXVALUE	((int64) 0x7FFFFFFF)
-#endif   /* INT64_IS_BUSTED */
-
 #define SEQ_MINVALUE	(-SEQ_MAXVALUE)
 
 /*
