@@ -26,7 +26,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/execMain.c,v 1.339 2010/01/02 16:57:40 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/execMain.c,v 1.340 2010/01/06 03:04:01 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1546,6 +1546,8 @@ EvalPlanQualFetch(EState *estate, Relation relation, int lockmode,
 					{
 						/* it was updated, so look at the updated version */
 						tuple.t_self = update_ctid;
+						/* updated row should have xmin matching this xmax */
+						priorXmax = update_xmax;
 						continue;
 					}
 					/* tuple was deleted, so give up */
