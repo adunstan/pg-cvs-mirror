@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/libpq/auth.c,v 1.189 2009/12/31 22:11:10 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/libpq/auth.c,v 1.190 2010/01/02 16:57:45 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1497,7 +1497,7 @@ ident_inet(const SockAddr remote_addr,
 		   const SockAddr local_addr,
 		   char *ident_user)
 {
-	int			sock_fd,		/* File descriptor for socket on which we talk
+	pgsocket	sock_fd,		/* File descriptor for socket on which we talk
 								 * to Ident */
 				rc;				/* Return code from a locally called function */
 	bool		ident_return;

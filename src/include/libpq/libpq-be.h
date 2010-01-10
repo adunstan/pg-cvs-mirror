@@ -11,7 +11,7 @@
  * Portions Copyright (c) 1996-2010, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/libpq/libpq-be.h,v 1.71 2009/06/11 14:49:11 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/libpq/libpq-be.h,v 1.72 2010/01/02 16:58:04 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -103,7 +103,7 @@ typedef struct
 
 typedef struct Port
 {
-	int			sock;			/* File descriptor */
+	pgsocket	sock;			/* File descriptor */
 	ProtocolVersion proto;		/* FE/BE protocol version */
 	SockAddr	laddr;			/* local addr (postmaster) */
 	SockAddr	raddr;			/* remote addr (client) */

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/libpq/ip.c,v 1.48 2009/10/01 01:58:57 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/libpq/ip.c,v 1.49 2010/01/02 16:57:45 momjian Exp $
  *
  * This file and the IPV6 implementation were initially provided by
  * Nigel Kukard <nkukard@lbsd.net>, Linux Based Systems Design
@@ -656,9 +656,9 @@ pg_foreach_ifaddr(PgIfAddrCallback callback, void *cb_data)
 	struct sockaddr *addr, *mask;
 	char *ptr, *buffer = NULL;
 	size_t n_buffer = 1024;
-	int sock, fd;
+	pgsocket sock, fd;
 #ifdef HAVE_IPV6
-	int sock6;
+	pgsocket sock6;
 #endif
 	int i, total;
 
