@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/cache/relcache.c,v 1.296 2010/01/05 01:06:56 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/cache/relcache.c,v 1.297 2010/01/07 20:39:45 rhaas Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -4302,8 +4302,8 @@ RelationCacheInitFileRemove(void)
 		if (strspn(de->d_name, "0123456789") == strlen(de->d_name))
 		{
 			/* Scan the tablespace dir for per-database dirs */
-			snprintf(path, sizeof(path), "%s/%s",
-					 tblspcdir, de->d_name);
+			snprintf(path, sizeof(path), "%s/%s/%s",
+					 tblspcdir, de->d_name, TABLESPACE_VERSION_DIRECTORY);
 			RelationCacheInitFileRemoveInDir(path);
 		}
 	}
