@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1996-2010, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/catalog/pg_opfamily.h,v 1.12 2010/01/02 16:58:02 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/catalog/pg_opfamily.h,v 1.13 2010/01/05 01:06:56 tgl Exp $
  *
  * NOTES
  *	  the genbki.pl script reads this file and generates .bki
@@ -127,6 +127,7 @@ DATA(insert OID = 2235 (	405		aclitem_ops		PGNSP PGUID ));
 DATA(insert OID = 2593 (	783		box_ops			PGNSP PGUID ));
 DATA(insert OID = 2594 (	783		poly_ops		PGNSP PGUID ));
 DATA(insert OID = 2595 (	783		circle_ops		PGNSP PGUID ));
+DATA(insert OID = 1029 (	783		point_ops		PGNSP PGUID ));
 DATA(insert OID = 2745 (	2742	array_ops		PGNSP PGUID ));
 DATA(insert OID = 2968 (	403		uuid_ops		PGNSP PGUID ));
 DATA(insert OID = 2969 (	405		uuid_ops		PGNSP PGUID ));
