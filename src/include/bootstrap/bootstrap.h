@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2010, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/bootstrap/bootstrap.h,v 1.53 2009/09/27 01:32:11 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/bootstrap/bootstrap.h,v 1.54 2010/01/02 16:58:01 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -23,6 +23,7 @@ typedef enum
 	StartupProcess,
 	BgWriterProcess,
 	WalWriterProcess,
+	WalReceiverProcess,
 
 	NUM_AUXPROCTYPES			/* Must be last! */
 } AuxProcType;

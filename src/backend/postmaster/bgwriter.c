@@ -38,7 +38,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/postmaster/bgwriter.c,v 1.64 2009/12/16 22:55:33 petere Exp $
+ *	  $PostgreSQL: pgsql/src/backend/postmaster/bgwriter.c,v 1.65 2010/01/02 16:57:50 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -352,6 +352,12 @@ BackgroundWriterMain(void)
 	 * Unblock signals (they were blocked when the postmaster forked us)
 	 */
 	PG_SETMASK(&UnBlockSig);
+
+	/*
+	 * Use the recovery target timeline ID during recovery
+	 */
+	if (RecoveryInProgress())
+		ThisTimeLineID = GetRecoveryTargetTLI();
 
 	/*
 	 * Loop forever
