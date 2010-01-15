@@ -10,7 +10,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/tcop/utility.c,v 1.327 2010/01/05 21:53:58 rhaas Exp $
+ *	  $PostgreSQL: pgsql/src/backend/tcop/utility.c,v 1.328 2010/01/06 03:04:01 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -2438,6 +2438,7 @@ GetCommandLogLevel(Node *parsetree)
 
 					if (strcmp(opt->defname, "analyze") == 0)
 						analyze = defGetBoolean(opt);
+					/* don't "break", as explain.c will use the last value */
 				}
 				if (analyze)
 					return GetCommandLogLevel(stmt->query);
