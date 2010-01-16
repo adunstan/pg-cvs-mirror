@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2010, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/storage/standby.h,v 1.2 2010/01/02 16:58:08 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/storage/standby.h,v 1.3 2010/01/14 11:08:02 sriggs Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -18,11 +18,6 @@
 #include "storage/lock.h"
 
 extern int	vacuum_defer_cleanup_age;
-
-/* cancel modes for ResolveRecoveryConflictWithVirtualXIDs */
-#define CONFLICT_MODE_NOT_SET		0
-#define CONFLICT_MODE_ERROR			1	/* Conflict can be resolved by canceling query */
-#define CONFLICT_MODE_FATAL			2	/* Conflict can only be resolved by disconnecting session */
 
 extern void ResolveRecoveryConflictWithSnapshot(TransactionId latestRemovedXid);
 extern void ResolveRecoveryConflictWithTablespace(Oid tsid);

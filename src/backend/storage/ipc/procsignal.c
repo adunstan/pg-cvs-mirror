@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/storage/ipc/procsignal.c,v 1.1 2009/07/31 20:26:23 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/storage/ipc/procsignal.c,v 1.2 2010/01/02 16:57:51 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -24,6 +24,8 @@
 #include "storage/procsignal.h"
 #include "storage/shmem.h"
 #include "storage/sinval.h"
+#include "storage/standby.h"
+#include "tcop/tcopprot.h"
 
 
 /*
@@ -257,6 +259,18 @@ procsignal_sigusr1_handler(SIGNAL_ARGS)
 
 	if (CheckProcSignal(PROCSIG_NOTIFY_INTERRUPT))
 		HandleNotifyInterrupt();
+
+	if (CheckProcSignal(PROCSIG_RECOVERY_CONFLICT_DATABASE))
+		RecoveryConflictInterrupt(PROCSIG_RECOVERY_CONFLICT_DATABASE);
+
+	if (CheckProcSignal(PROCSIG_RECOVERY_CONFLICT_TABLESPACE))
+		RecoveryConflictInterrupt(PROCSIG_RECOVERY_CONFLICT_TABLESPACE);
+
+	if (CheckProcSignal(PROCSIG_RECOVERY_CONFLICT_LOCK))
+		RecoveryConflictInterrupt(PROCSIG_RECOVERY_CONFLICT_LOCK);
+
+	if (CheckProcSignal(PROCSIG_RECOVERY_CONFLICT_SNAPSHOT))
+		RecoveryConflictInterrupt(PROCSIG_RECOVERY_CONFLICT_SNAPSHOT);
 
 	errno = save_errno;
 }
