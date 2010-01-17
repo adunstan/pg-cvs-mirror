@@ -1,5 +1,5 @@
 /*
- * $PostgreSQL: pgsql/contrib/xml2/xpath.c,v 1.23 2009/06/11 14:48:53 momjian Exp $
+ * $PostgreSQL: pgsql/contrib/xml2/xpath.c,v 1.24 2009/12/29 17:40:59 heikki Exp $
  *
  * Parser interface for DOM-based parser (libxml) rather than
  * stream-based SAX-type parser
@@ -129,7 +129,7 @@ elog_error(int level, char *explain, int force)
 		if (pgxml_errorMsg == NULL)
 		{
 			ereport(level, (errcode(ERRCODE_EXTERNAL_ROUTINE_EXCEPTION),
-							errmsg(explain)));
+							errmsg("%s", explain)));
 		}
 		else
 		{
