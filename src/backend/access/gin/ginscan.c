@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *			$PostgreSQL: pgsql/src/backend/access/gin/ginscan.c,v 1.23 2009/04/05 11:32:01 teodor Exp $
+ *			$PostgreSQL: pgsql/src/backend/access/gin/ginscan.c,v 1.24 2009/06/11 14:48:53 momjian Exp $
  *-------------------------------------------------------------------------
  */
 
@@ -74,7 +74,9 @@ fillScanKey(GinState *ginstate, GinScanKey key, OffsetNumber attnum, Datum query
 		/* link to the equals entry in current scan key */
 		key->scanEntry[i].master = NULL;
 		for (j = 0; j < i; j++)
-			if (compareEntries(ginstate, attnum, entryValues[i], entryValues[j]) == 0)
+			if (compareEntries(ginstate, attnum, entryValues[i], entryValues[j]) == 0 &&
+				key->scanEntry[i].isPartialMatch == key->scanEntry[j].isPartialMatch &&
+				key->scanEntry[i].strategy == key->scanEntry[j].strategy)
 			{
 				key->scanEntry[i].master = key->scanEntry + j;
 				break;
