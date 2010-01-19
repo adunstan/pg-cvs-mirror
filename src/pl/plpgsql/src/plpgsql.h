@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/pl/plpgsql/src/plpgsql.h,v 1.127 2010/01/02 16:58:13 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/pl/plpgsql/src/plpgsql.h,v 1.128 2010/01/10 17:15:18 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -503,6 +503,7 @@ typedef struct
 	PLpgSQL_expr *argquery;
 	PLpgSQL_expr *query;
 	PLpgSQL_expr *dynquery;
+	List	   *params;			/* USING expressions */
 } PLpgSQL_stmt_open;
 
 
