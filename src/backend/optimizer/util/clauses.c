@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/optimizer/util/clauses.c,v 1.282 2010/01/01 23:03:10 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/optimizer/util/clauses.c,v 1.283 2010/01/02 16:57:48 momjian Exp $
  *
  * HISTORY
  *	  AUTHOR			DATE			MAJOR EVENT
@@ -2826,15 +2826,17 @@ eval_const_expressions_mutator(Node *node,
 											 context);
 		if (arg && IsA(arg, RowExpr))
 		{
-			RowExpr    *rarg = (RowExpr *) arg;
-			List	   *newargs = NIL;
-			ListCell   *l;
-
 			/*
 			 * We break ROW(...) IS [NOT] NULL into separate tests on its
 			 * component fields.  This form is usually more efficient to
 			 * evaluate, as well as being more amenable to optimization.
 			 */
+			RowExpr    *rarg = (RowExpr *) arg;
+			List	   *newargs = NIL;
+			ListCell   *l;
+
+			Assert(ntest->argisrow);
+
 			foreach(l, rarg->args)
 			{
 				Node	   *relem = (Node *) lfirst(l);
@@ -2856,7 +2858,7 @@ eval_const_expressions_mutator(Node *node,
 				newntest = makeNode(NullTest);
 				newntest->arg = (Expr *) relem;
 				newntest->nulltesttype = ntest->nulltesttype;
-				newntest->argisrow = ntest->argisrow;
+				newntest->argisrow = type_is_rowtype(exprType(relem));
 				newargs = lappend(newargs, newntest);
 			}
 			/* If all the inputs were constants, result is TRUE */
