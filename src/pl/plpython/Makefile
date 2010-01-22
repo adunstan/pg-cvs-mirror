@@ -1,4 +1,4 @@
-# $PostgreSQL: pgsql/src/pl/plpython/Makefile,v 1.34 2009/08/14 13:42:16 petere Exp $
+# $PostgreSQL: pgsql/src/pl/plpython/Makefile,v 1.35 2009/12/15 22:59:54 petere Exp $
 
 subdir = src/pl/plpython
 top_builddir = ../../..
@@ -66,6 +66,7 @@ REGRESS = \
 	plpython_schema \
 	plpython_populate \
 	plpython_test \
+	plpython_do \
 	plpython_global \
 	plpython_import \
 	plpython_spi \
