@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/catalog/index.c,v 1.329 2010/01/06 03:03:58 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/catalog/index.c,v 1.330 2010/01/17 22:56:21 tgl Exp $
  *
  *
  * INTERFACE ROUTINES
@@ -203,7 +203,6 @@ ConstructTupleDescriptor(Relation heapRelation,
 			to->attnum = i + 1;
 
 			to->attstattarget = -1;
-			to->attdistinct = 0;
 			to->attcacheoff = -1;
 			to->attnotnull = false;
 			to->atthasdef = false;
