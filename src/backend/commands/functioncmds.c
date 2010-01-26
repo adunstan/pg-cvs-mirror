@@ -10,7 +10,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/functioncmds.c,v 1.113 2009/11/06 21:57:57 adunstan Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/functioncmds.c,v 1.114 2010/01/02 16:57:37 momjian Exp $
  *
  * DESCRIPTION
  *	  These routines take the parse tree and pick out the
@@ -2001,11 +2001,11 @@ ExecuteDoStmt(DoStmt *stmt)
 				(errcode(ERRCODE_SYNTAX_ERROR),
 				 errmsg("no inline code specified")));
 
-	/* if LANGUAGE option wasn't specified, use the default language */
+	/* if LANGUAGE option wasn't specified, use the default */
 	if (language_item)
 		language = strVal(language_item->arg);
 	else
-		language = default_do_language;
+		language = "plpgsql";
 
 	/* Convert language name to canonical case */
 	languageName = case_translate_language_name(language);
