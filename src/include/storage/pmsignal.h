@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2010, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/storage/pmsignal.h,v 1.27 2010/01/02 16:58:08 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/storage/pmsignal.h,v 1.28 2010/01/15 09:19:09 heikki Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -30,7 +30,6 @@ typedef enum
 	PMSIGNAL_START_AUTOVAC_LAUNCHER,	/* start an autovacuum launcher */
 	PMSIGNAL_START_AUTOVAC_WORKER,		/* start an autovacuum worker */
 	PMSIGNAL_START_WALRECEIVER,			/* start a walreceiver */
-	PMSIGNAL_SHUTDOWN_WALRECEIVER,		/* shut down a walreceiver */
 
 	NUM_PMSIGNALS				/* Must be last value of enum! */
 } PMSignalReason;
