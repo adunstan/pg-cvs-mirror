@@ -1,7 +1,7 @@
 /**********************************************************************
  * plperl.c - perl as a procedural language for PostgreSQL
  *
- *	  $PostgreSQL: pgsql/src/pl/plperl/plperl.c,v 1.160 2010/01/20 01:08:21 adunstan Exp $
+ *	  $PostgreSQL: pgsql/src/pl/plperl/plperl.c,v 1.161 2010/01/26 23:11:56 adunstan Exp $
  *
  **********************************************************************/
 
@@ -1113,8 +1113,11 @@ plperl_create_sub(plperl_proc_desc *prodesc, char *s, Oid fn_oid)
 
 	if (count == 1) {
 		GV *sub_glob = (GV*)POPs;
-		if (sub_glob && SvTYPE(sub_glob) == SVt_PVGV)
-			subref = newRV_inc((SV*)GvCVu((GV*)sub_glob));
+		if (sub_glob && SvTYPE(sub_glob) == SVt_PVGV) {
+			SV *sv = (SV*)GvCVu((GV*)sub_glob);
+			if (sv)
+				subref = newRV_inc(sv);
+		}
 	}
 
 	PUTBACK;
