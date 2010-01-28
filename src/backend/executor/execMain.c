@@ -26,7 +26,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/execMain.c,v 1.341 2010/01/08 02:44:00 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/execMain.c,v 1.342 2010/01/15 09:19:02 heikki Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -2160,6 +2160,7 @@ OpenIntoRel(QueryDesc *queryDesc)
 	intoRelationId = heap_create_with_catalog(intoName,
 											  namespaceId,
 											  tablespaceId,
+											  InvalidOid,
 											  InvalidOid,
 											  InvalidOid,
 											  GetUserId(),

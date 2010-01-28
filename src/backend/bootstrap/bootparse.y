@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/bootstrap/bootparse.y,v 1.102 2009/12/23 02:35:18 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/bootstrap/bootparse.y,v 1.103 2010/01/02 16:57:36 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -217,6 +217,7 @@ Boot_CreateStmt:
 													  $5 ? GLOBALTABLESPACE_OID : 0,
 													  $3,
 													  $7,
+													  InvalidOid,
 													  BOOTSTRAP_SUPERUSERID,
 													  tupdesc,
 													  NIL,
