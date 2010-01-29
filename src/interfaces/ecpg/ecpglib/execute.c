@@ -1,4 +1,4 @@
-/* $PostgreSQL: pgsql/src/interfaces/ecpg/ecpglib/execute.c,v 1.88 2010/01/05 16:38:23 meskes Exp $ */
+/* $PostgreSQL: pgsql/src/interfaces/ecpg/ecpglib/execute.c,v 1.89 2010/01/22 14:13:03 meskes Exp $ */
 
 /*
  * The aim is to get a simpler inteface to the database routines.
@@ -303,7 +303,7 @@ ecpg_is_type_an_array(int type, const struct statement * stmt, const struct vari
 		return (ECPG_ARRAY_ERROR);
 
 	ecpg_type_infocache_push(&(stmt->connection->cache_head), type, isarray, stmt->lineno);
-	ecpg_log("ecpg_is_type_an_array on line %d: type (%d); C (%d); array (%s)\n", stmt->lineno, type, var->type, isarray ? "yes" : "no");
+	ecpg_log("ecpg_is_type_an_array on line %d: type (%d); C (%d); array (%s)\n", stmt->lineno, type, var->type, (isarray != ECPG_ARRAY_NONE) ? "yes" : "no");
 	return isarray;
 }
 
