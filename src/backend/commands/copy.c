@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/copy.c,v 1.320 2010/01/02 16:57:37 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/copy.c,v 1.321 2010/01/15 09:19:01 heikki Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -2171,6 +2171,8 @@ CopyFrom(CopyState cstate)
 			/* AFTER ROW INSERT Triggers */
 			ExecARInsertTriggers(estate, resultRelInfo, tuple,
 								 recheckIndexes);
+
+			list_free(recheckIndexes);
 
 			/*
 			 * We count only tuples not suppressed by a BEFORE INSERT trigger;

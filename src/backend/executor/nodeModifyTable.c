@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/nodeModifyTable.c,v 1.3 2009/11/20 20:38:10 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/nodeModifyTable.c,v 1.4 2010/01/02 16:57:44 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -253,6 +253,8 @@ ExecInsert(TupleTableSlot *slot,
 
 	/* AFTER ROW INSERT Triggers */
 	ExecARInsertTriggers(estate, resultRelInfo, tuple, recheckIndexes);
+
+	list_free(recheckIndexes);
 
 	/* Process RETURNING if present */
 	if (resultRelInfo->ri_projectReturning)
@@ -569,6 +571,8 @@ lreplace:;
 	/* AFTER ROW UPDATE Triggers */
 	ExecARUpdateTriggers(estate, resultRelInfo, tupleid, tuple,
 						 recheckIndexes);
+
+	list_free(recheckIndexes);
 
 	/* Process RETURNING if present */
 	if (resultRelInfo->ri_projectReturning)
