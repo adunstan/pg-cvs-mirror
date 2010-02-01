@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/analyze.c,v 1.147 2010/01/02 16:57:36 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/analyze.c,v 1.148 2010/01/22 16:40:18 rhaas Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1390,7 +1390,8 @@ acquire_inherited_sample_rows(Relation onerel, HeapTuple *rows, int targrows,
 	 * Find all members of inheritance set.  We only need AccessShareLock on
 	 * the children.
 	 */
-	tableOIDs = find_all_inheritors(RelationGetRelid(onerel), AccessShareLock);
+	tableOIDs =
+		find_all_inheritors(RelationGetRelid(onerel), AccessShareLock, NULL);
 
 	/*
 	 * Check that there's at least one descendant, else fail.  This could
