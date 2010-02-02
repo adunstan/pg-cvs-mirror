@@ -1,4 +1,4 @@
-/* $PostgreSQL: pgsql/src/interfaces/ecpg/ecpglib/misc.c,v 1.53 2009/11/24 16:30:31 meskes Exp $ */
+/* $PostgreSQL: pgsql/src/interfaces/ecpg/ecpglib/misc.c,v 1.54 2010/01/26 09:07:31 meskes Exp $ */
 
 #define POSTGRES_ECPG_INTERNAL
 #include "postgres_fe.h"
@@ -344,11 +344,11 @@ ECPGset_noind_null(enum ECPGttype type, void *ptr)
 			break;
 		case ECPGt_decimal:
 			memset((char *) ptr, 0, sizeof(decimal));
-			((decimal *) ptr)->sign = NUMERIC_NAN;
+			((decimal *) ptr)->sign = NUMERIC_NULL;
 			break;
 		case ECPGt_numeric:
 			memset((char *) ptr, 0, sizeof(numeric));
-			((numeric *) ptr)->sign = NUMERIC_NAN;
+			((numeric *) ptr)->sign = NUMERIC_NULL;
 			break;
 		case ECPGt_interval:
 			memset((char *) ptr, 0xff, sizeof(interval));
@@ -416,11 +416,11 @@ ECPGis_noind_null(enum ECPGttype type, void *ptr)
 				return true;
 			break;
 		case ECPGt_decimal:
-			if (((decimal *) ptr)->sign == NUMERIC_NAN)
+			if (((decimal *) ptr)->sign == NUMERIC_NULL)
 				return true;
 			break;
 		case ECPGt_numeric:
-			if (((numeric *) ptr)->sign == NUMERIC_NAN)
+			if (((numeric *) ptr)->sign == NUMERIC_NULL)
 				return true;
 			break;
 		case ECPGt_interval:
