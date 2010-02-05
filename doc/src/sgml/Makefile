@@ -2,7 +2,7 @@
 #
 # PostgreSQL documentation makefile
 #
-# $PostgreSQL: pgsql/doc/src/sgml/Makefile,v 1.134 2009/12/30 13:48:52 petere Exp $
+# $PostgreSQL: pgsql/doc/src/sgml/Makefile,v 1.135 2010/01/06 19:07:05 tgl Exp $
 #
 #----------------------------------------------------------------------------
 
@@ -345,6 +345,8 @@ clean-man:
 
 endif # sqlmansectnum != 7
 
+check-tabs:
+	( ! grep '	' $(wildcard $(srcdir)/*.sgml $(srcdir)/ref/*.sgml) ) || (echo "Tabs appear in SGML files";  exit 1)
 
 ##
 ## Clean
