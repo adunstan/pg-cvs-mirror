@@ -1,8 +1,4 @@
-#############################################
-# Makefile for integer aggregator
-# Copyright (C) 2001 Digital Music Network.
-# by Mark L. Woodward
-# $PostgreSQL: pgsql/contrib/intagg/Makefile,v 1.9 2007/11/10 23:59:51 momjian Exp $
+# $PostgreSQL: pgsql/contrib/intarray/Makefile,v 1.16 2007/11/10 23:59:51 momjian Exp $
 
 DATA = int_aggregate.sql uninstall_int_aggregate.sql
 
