@@ -12,7 +12,7 @@
  *	by PostgreSQL
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/bin/pg_dump/pg_dump.c,v 1.568 2010/01/22 16:40:19 rhaas Exp $
+ *	  $PostgreSQL: pgsql/src/bin/pg_dump/pg_dump.c,v 1.569 2010/01/28 23:21:12 petere Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -2300,6 +2300,12 @@ binary_upgrade_set_relfilenodes(PQExpBuffer upgrade_buffer, Oid pg_class_oid,
 	Oid			pg_class_reltoastrelid;
 	Oid			pg_class_reltoastidxid;
 
+	/*
+	 * Note: we don't need to use pg_relation_filenode() here because this
+	 * function is not intended to be used against system catalogs.
+	 * Otherwise we'd have to worry about which versions pg_relation_filenode
+	 * is available in.
+	 */
 	appendPQExpBuffer(upgrade_query,
 					  "SELECT c.relfilenode, c.reltoastrelid, t.reltoastidxid "
 					  "FROM pg_catalog.pg_class c LEFT JOIN "

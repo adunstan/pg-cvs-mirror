@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/parser/parse_clause.c,v 1.194 2009/12/15 17:57:47 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/parser/parse_clause.c,v 1.195 2010/01/02 16:57:49 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -609,7 +609,7 @@ transformRangeFunction(ParseState *pstate, RangeFunction *r)
 		tupdesc = BuildDescFromLists(rte->eref->colnames,
 									 rte->funccoltypes,
 									 rte->funccoltypmods);
-		CheckAttributeNamesTypes(tupdesc, RELKIND_COMPOSITE_TYPE);
+		CheckAttributeNamesTypes(tupdesc, RELKIND_COMPOSITE_TYPE, false);
 	}
 
 	return rte;
