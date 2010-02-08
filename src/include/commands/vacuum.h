@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2010, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/commands/vacuum.h,v 1.86 2009/11/10 18:00:06 alvherre Exp $
+ * $PostgreSQL: pgsql/src/include/commands/vacuum.h,v 1.87 2010/01/02 16:58:03 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -142,7 +142,6 @@ extern void vacuum_set_xid_limits(int freeze_min_age, int freeze_table_age,
 					  TransactionId *freezeLimit,
 					  TransactionId *freezeTableLimit);
 extern void vac_update_datfrozenxid(void);
-extern bool vac_is_partial_index(Relation indrel);
 extern void vacuum_delay_point(void);
 
 /* in commands/vacuumlazy.c */
