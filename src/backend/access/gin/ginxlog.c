@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *			 $PostgreSQL: pgsql/src/backend/access/gin/ginxlog.c,v 1.18 2009/03/24 20:17:11 tgl Exp $
+ *			 $PostgreSQL: pgsql/src/backend/access/gin/ginxlog.c,v 1.19 2009/06/11 14:48:53 momjian Exp $
  *-------------------------------------------------------------------------
  */
 #include "postgres.h"
@@ -773,8 +773,6 @@ ginContinueSplit(ginIncompleteSplit *split)
 									   GinPageGetOpaque(page)->maxoff))->key;
 	}
 
-	FreeFakeRelcacheEntry(reln);
-
 	btree.rightblkno = split->rightBlkno;
 
 	stack.blkno = split->leftBlkno;
@@ -784,6 +782,8 @@ ginContinueSplit(ginIncompleteSplit *split)
 
 	findParents(&btree, &stack, split->rootBlkno);
 	ginInsertValue(&btree, stack.parent);
+
+	FreeFakeRelcacheEntry(reln);
 
 	UnlockReleaseBuffer(buffer);
 }
