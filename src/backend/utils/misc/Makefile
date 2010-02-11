@@ -4,7 +4,7 @@
 #    Makefile for utils/misc
 #
 # IDENTIFICATION
-#    $PostgreSQL: pgsql/src/backend/utils/misc/Makefile,v 1.28 2008/02/19 10:30:09 petere Exp $
+#    $PostgreSQL: pgsql/src/backend/utils/misc/Makefile,v 1.29 2009/08/28 20:26:19 petere Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -14,7 +14,8 @@ include $(top_builddir)/src/Makefile.global
 
 override CPPFLAGS := -I. -I$(srcdir) $(CPPFLAGS)
 
-OBJS = guc.o help_config.o pg_rusage.o ps_status.o superuser.o tzparser.o
+OBJS = guc.o help_config.o pg_rusage.o ps_status.o superuser.o tzparser.o \
+       rbtree.o
 
 # This location might depend on the installation directories. Therefore
 # we can't subsitute it into pg_config.h.

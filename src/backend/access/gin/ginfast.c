@@ -11,7 +11,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *			$PostgreSQL: pgsql/src/backend/access/gin/ginfast.c,v 1.5 2009/10/02 21:14:04 tgl Exp $
+ *			$PostgreSQL: pgsql/src/backend/access/gin/ginfast.c,v 1.6 2010/01/02 16:57:33 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -765,8 +765,7 @@ ginInsertCleanup(Relation index, GinState *ginstate,
 		 */
 		if (GinPageGetOpaque(page)->rightlink == InvalidBlockNumber ||
 			(GinPageHasFullRow(page) &&
-			 (accum.allocatedMemory >= maintenance_work_mem * 1024L ||
-			  accum.maxdepth > GIN_MAX_TREE_DEPTH)))
+			 (accum.allocatedMemory >= maintenance_work_mem * 1024L)))
 		{
 			ItemPointerData *list;
 			uint32		nlist;
