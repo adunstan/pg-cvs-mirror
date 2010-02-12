@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/optimizer/plan/subselect.c,v 1.157 2010/01/02 16:57:47 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/optimizer/plan/subselect.c,v 1.158 2010/01/18 18:17:45 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -2098,9 +2098,15 @@ finalize_plan(PlannerInfo *root, Plan *plan, Bitmapset *valid_params,
 										 locally_added_param);
 			break;
 
+		case T_WindowAgg:
+			finalize_primnode(((WindowAgg *) plan)->startOffset,
+							  &context);
+			finalize_primnode(((WindowAgg *) plan)->endOffset,
+							  &context);
+			break;
+
 		case T_Hash:
 		case T_Agg:
-		case T_WindowAgg:
 		case T_Material:
 		case T_Sort:
 		case T_Unique:
