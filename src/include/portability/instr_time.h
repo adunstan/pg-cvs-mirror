@@ -45,7 +45,7 @@
  *
  * Copyright (c) 2001-2010, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/include/portability/instr_time.h,v 1.4 2009/06/11 14:49:12 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/portability/instr_time.h,v 1.5 2010/01/02 16:58:08 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -141,7 +141,7 @@ typedef LARGE_INTEGER instr_time;
 #define INSTR_TIME_GET_MICROSEC(t) \
 	((uint64) (((double) (t).QuadPart * 1000000.0) / GetTimerFrequency()))
 
-static __inline__ double
+static inline double
 GetTimerFrequency(void)
 {
 	LARGE_INTEGER f;
