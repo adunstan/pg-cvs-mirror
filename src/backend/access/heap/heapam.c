@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/heap/heapam.c,v 1.285 2010/02/03 10:01:29 heikki Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/heap/heapam.c,v 1.286 2010/02/08 04:33:52 tgl Exp $
  *
  *
  * INTERFACE ROUTINES
@@ -935,9 +935,7 @@ try_relation_open(Oid relationId, LOCKMODE lockmode)
 	 * Now that we have the lock, probe to see if the relation really exists
 	 * or not.
 	 */
-	if (!SearchSysCacheExists(RELOID,
-							  ObjectIdGetDatum(relationId),
-							  0, 0, 0))
+	if (!SearchSysCacheExists1(RELOID, ObjectIdGetDatum(relationId)))
 	{
 		/* Release useless lock */
 		if (lockmode != NoLock)

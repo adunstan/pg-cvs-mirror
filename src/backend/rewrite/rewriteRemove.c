@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/rewrite/rewriteRemove.c,v 1.78 2009/06/11 14:49:01 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/rewrite/rewriteRemove.c,v 1.79 2010/01/02 16:57:51 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -47,10 +47,9 @@ RemoveRewriteRule(Oid owningRel, const char *ruleName, DropBehavior behavior,
 	/*
 	 * Find the tuple for the target rule.
 	 */
-	tuple = SearchSysCache(RULERELNAME,
-						   ObjectIdGetDatum(owningRel),
-						   PointerGetDatum(ruleName),
-						   0, 0);
+	tuple = SearchSysCache2(RULERELNAME,
+							ObjectIdGetDatum(owningRel),
+							PointerGetDatum(ruleName));
 
 	/*
 	 * complain if no rule with such name exists

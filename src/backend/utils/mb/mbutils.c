@@ -4,7 +4,7 @@
  *
  * Tatsuo Ishii
  *
- * $PostgreSQL: pgsql/src/backend/utils/mb/mbutils.c,v 1.91 2009/10/17 05:14:52 mha Exp $
+ * $PostgreSQL: pgsql/src/backend/utils/mb/mbutils.c,v 1.92 2009/11/12 02:46:16 tgl Exp $
  */
 #include "postgres.h"
 
@@ -319,9 +319,7 @@ pg_do_encoding_conversion(unsigned char *src, int len,
 	 * are going into infinite loop!  So we have to make sure that the
 	 * function exists before calling OidFunctionCall.
 	 */
-	if (!SearchSysCacheExists(PROCOID,
-							  ObjectIdGetDatum(proc),
-							  0, 0, 0))
+	if (!SearchSysCacheExists1(PROCOID, ObjectIdGetDatum(proc)))
 	{
 		elog(LOG, "cache lookup failed for function %u", proc);
 		return src;

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/cache/syscache.c,v 1.124 2010/01/05 21:53:59 rhaas Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/cache/syscache.c,v 1.125 2010/02/08 05:53:55 tgl Exp $
  *
  * NOTES
  *	  These routines allow the parser/planner/executor to perform
@@ -909,10 +909,9 @@ SearchSysCacheAttName(Oid relid, const char *attname)
 {
 	HeapTuple	tuple;
 
-	tuple = SearchSysCache(ATTNAME,
-						   ObjectIdGetDatum(relid),
-						   CStringGetDatum(attname),
-						   0, 0);
+	tuple = SearchSysCache2(ATTNAME,
+							ObjectIdGetDatum(relid),
+							CStringGetDatum(attname));
 	if (!HeapTupleIsValid(tuple))
 		return NULL;
 	if (((Form_pg_attribute) GETSTRUCT(tuple))->attisdropped)
