@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/bin/pg_dump/pg_dump_sort.c,v 1.26 2009/10/05 19:24:46 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/bin/pg_dump/pg_dump_sort.c,v 1.27 2010/01/02 16:57:59 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -163,7 +163,18 @@ DOTypeNameCompare(const void *p1, const void *p2)
 	if (cmpval != 0)
 		return cmpval;
 
-	/* Probably shouldn't get here, but if we do, sort by OID */
+	/* To have a stable sort order, break ties for some object types */
+    if (obj1->objType == DO_FUNC || obj1->objType == DO_AGG)
+	{
+		FuncInfo *fobj1 = *(FuncInfo **) p1;
+		FuncInfo *fobj2 = *(FuncInfo **) p2;
+
+		cmpval = fobj1->nargs - fobj2->nargs;
+		if (cmpval != 0)
+			return cmpval;
+	}
+
+	/* Usually shouldn't get here, but if we do, sort by OID */
 	return oidcmp(obj1->catId.oid, obj2->catId.oid);
 }
 
