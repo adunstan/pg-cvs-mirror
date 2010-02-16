@@ -42,7 +42,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  * Portions taken from FreeBSD.
  *
- * $PostgreSQL: pgsql/src/bin/initdb/initdb.c,v 1.183 2010/01/26 06:58:39 petere Exp $
+ * $PostgreSQL: pgsql/src/bin/initdb/initdb.c,v 1.184 2010/01/26 16:18:12 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -2458,6 +2458,7 @@ main(int argc, char *argv[])
 		"pg_xlog",
 		"pg_xlog/archive_status",
 		"pg_clog",
+		"pg_notify",
 		"pg_subtrans",
 		"pg_twophase",
 		"pg_multixact/members",

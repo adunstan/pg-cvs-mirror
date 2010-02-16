@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2010, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/access/twophase_rmgr.h,v 1.10 2009/12/19 01:32:42 sriggs Exp $
+ * $PostgreSQL: pgsql/src/include/access/twophase_rmgr.h,v 1.11 2010/01/02 16:58:00 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -23,9 +23,8 @@ typedef uint8 TwoPhaseRmgrId;
  */
 #define TWOPHASE_RM_END_ID			0
 #define TWOPHASE_RM_LOCK_ID			1
-#define TWOPHASE_RM_NOTIFY_ID		2
-#define TWOPHASE_RM_PGSTAT_ID		3
-#define TWOPHASE_RM_MULTIXACT_ID	4
+#define TWOPHASE_RM_PGSTAT_ID		2
+#define TWOPHASE_RM_MULTIXACT_ID	3
 #define TWOPHASE_RM_MAX_ID			TWOPHASE_RM_MULTIXACT_ID
 
 extern const TwoPhaseCallback twophase_recover_callbacks[];

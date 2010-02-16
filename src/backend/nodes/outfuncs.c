@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/nodes/outfuncs.c,v 1.381 2010/01/28 23:21:12 petere Exp $
+ *	  $PostgreSQL: pgsql/src/backend/nodes/outfuncs.c,v 1.382 2010/02/12 17:33:20 tgl Exp $
  *
  * NOTES
  *	  Every node type that can appear in stored rules' parsetrees *must*
@@ -1820,6 +1820,7 @@ _outNotifyStmt(StringInfo str, NotifyStmt *node)
 	WRITE_NODE_TYPE("NOTIFY");
 
 	WRITE_STRING_FIELD(conditionname);
+	WRITE_STRING_FIELD(payload);
 }
 
 static void

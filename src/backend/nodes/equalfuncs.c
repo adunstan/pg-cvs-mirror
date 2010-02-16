@@ -22,7 +22,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/nodes/equalfuncs.c,v 1.381 2010/01/28 23:21:11 petere Exp $
+ *	  $PostgreSQL: pgsql/src/backend/nodes/equalfuncs.c,v 1.382 2010/02/12 17:33:20 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1325,6 +1325,7 @@ static bool
 _equalNotifyStmt(NotifyStmt *a, NotifyStmt *b)
 {
 	COMPARE_STRING_FIELD(conditionname);
+	COMPARE_STRING_FIELD(payload);
 
 	return true;
 }
