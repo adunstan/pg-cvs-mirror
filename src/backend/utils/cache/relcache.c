@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/cache/relcache.c,v 1.305 2010/02/09 21:43:30 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/cache/relcache.c,v 1.306 2010/02/14 18:42:17 rhaas Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -3831,7 +3831,7 @@ RelationGetExclusionInfo(Relation indexRelation,
  *			  relation descriptors using sequential scans and write 'em to
  *			  the initialization file for use by subsequent backends.
  *
- *		As of Postgres 8.5, there is one local initialization file in each
+ *		As of Postgres 9.0, there is one local initialization file in each
  *		database, plus one shared initialization file for shared catalogs.
  *
  *		We could dispense with the initialization files and just build the

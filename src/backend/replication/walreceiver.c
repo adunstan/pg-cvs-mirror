@@ -2,7 +2,7 @@
  *
  * walreceiver.c
  *
- * The WAL receiver process (walreceiver) is new as of Postgres 8.5. It
+ * The WAL receiver process (walreceiver) is new as of Postgres 9.0. It
  * is the process in the standby server that takes charge of receiving
  * XLOG records from a primary server during streaming replication.
  *
@@ -29,7 +29,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/replication/walreceiver.c,v 1.2 2010/01/27 15:27:51 heikki Exp $
+ *	  $PostgreSQL: pgsql/src/backend/replication/walreceiver.c,v 1.3 2010/02/03 09:47:19 heikki Exp $
  *
  *-------------------------------------------------------------------------
  */

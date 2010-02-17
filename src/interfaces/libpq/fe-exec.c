@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-exec.c,v 1.208 2010/01/21 18:43:25 rhaas Exp $
+ *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-exec.c,v 1.209 2010/02/16 20:58:14 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -3345,7 +3345,7 @@ PQescapeByteaConn(PGconn *conn,
 		return NULL;
 	return PQescapeByteaInternal(conn, from, from_length, to_length,
 								 conn->std_strings,
-								 (conn->sversion >= 80500));
+								 (conn->sversion >= 90000));
 }
 
 unsigned char *
