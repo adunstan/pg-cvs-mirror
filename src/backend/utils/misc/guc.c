@@ -10,7 +10,7 @@
  * Written by Peter Eisentraut <peter_e@gmx.net>.
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.538 2010/02/01 13:40:28 sriggs Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/misc/guc.c,v 1.539 2010/02/13 01:32:20 sriggs Exp $
  *
  *--------------------------------------------------------------------
  */
@@ -2679,7 +2679,7 @@ static struct config_enum ConfigureNamesEnum[] =
 	},
 
 	{
-		{"log_error_verbosity", PGC_SUSET, LOGGING_WHEN,
+		{"log_error_verbosity", PGC_SUSET, LOGGING_WHAT,
 			gettext_noop("Sets the verbosity of logged messages."),
 			NULL
 		},
