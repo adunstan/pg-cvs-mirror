@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/pl/plpgsql/src/pl_funcs.c,v 1.78 2009/04/19 21:50:09 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/pl/plpgsql/src/pl_funcs.c,v 1.79 2009/06/11 14:49:14 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -798,10 +798,13 @@ dump_fori(PLpgSQL_stmt_fori *stmt)
 	printf("    upper = ");
 	dump_expr(stmt->upper);
 	printf("\n");
-	dump_ind();
-	printf("    step = ");
-	dump_expr(stmt->step);
-	printf("\n");
+	if (stmt->step)
+	{
+		dump_ind();
+		printf("    step = ");
+		dump_expr(stmt->step);
+		printf("\n");
+	}
 	dump_indent -= 2;
 
 	dump_stmts(stmt->body);
