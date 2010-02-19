@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/backend/access/transam/xlog.c,v 1.180.4.6 2007/09/29 01:36:39 tgl Exp $
+ * $PostgreSQL: pgsql/src/backend/access/transam/xlog.c,v 1.180.4.7 2008/05/13 20:53:56 mha Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -5479,7 +5479,7 @@ pg_stop_backup(PG_FUNCTION_ARGS)
 	INSERT_RECPTR(stoppoint, Insert, Insert->curridx);
 	LWLockRelease(WALInsertLock);
 
-	XLByteToSeg(stoppoint, _logId, _logSeg);
+	XLByteToPrevSeg(stoppoint, _logId, _logSeg);
 	XLogFileName(stopxlogfilename, ThisTimeLineID, _logId, _logSeg);
 
 	/*
