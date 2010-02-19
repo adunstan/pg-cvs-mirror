@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2010, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/backend/access/transam/xlog.c,v 1.374 2010/02/17 03:10:33 tgl Exp $
+ * $PostgreSQL: pgsql/src/backend/access/transam/xlog.c,v 1.375 2010/02/17 04:19:39 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -8052,7 +8052,7 @@ pg_stop_backup(PG_FUNCTION_ARGS)
 	 */
 	RequestXLogSwitch();
 
-	XLByteToSeg(stoppoint, _logId, _logSeg);
+	XLByteToPrevSeg(stoppoint, _logId, _logSeg);
 	XLogFileName(stopxlogfilename, ThisTimeLineID, _logId, _logSeg);
 
 	/* Use the log timezone here, not the session timezone */
