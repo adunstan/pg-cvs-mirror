@@ -1,4 +1,4 @@
-<!-- $PostgreSQL: pgsql/doc/src/sgml/plpgsql.sgml,v 1.141 2009/05/02 17:27:57 tgl Exp $ -->
+<!-- $PostgreSQL: pgsql/doc/src/sgml/plpgsql.sgml,v 1.142 2009/06/18 10:22:08 petere Exp $ -->
 
 <chapter id="plpgsql">
   <title><application>PL/pgSQL</application> - <acronym>SQL</acronym> Procedural Language</title>
@@ -4042,19 +4042,6 @@ a_output := a_output || $$ if v_$$ || referrer_keys.kind || $$ like '$$
    <application>PL/pgSQL</application> are:
 
     <itemizedlist>
-     <listitem>
-      <para>
-       There are no default values for parameters in <productname>PostgreSQL</>.
-      </para>
-     </listitem>
-
-     <listitem>
-      <para>
-       You can overload function names in <productname>PostgreSQL</>. This is
-       often used to work around the lack of default parameters.
-      </para>
-     </listitem>
-
      <listitem>
       <para>
        If a name used in a SQL command could be either a column name of a
