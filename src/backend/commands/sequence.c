@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/sequence.c,v 1.165 2010/02/09 21:43:30 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/sequence.c,v 1.166 2010/02/14 18:42:14 rhaas Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -735,6 +735,9 @@ do_setval(Oid relid, int64 next, bool iscalled)
 	Relation	seqrel;
 	Buffer		buf;
 	Form_pg_sequence seq;
+
+	/* setval() writes to database and must be prevented during recovery */
+	PreventCommandDuringRecovery();
 
 	/* open and AccessShareLock sequence */
 	init_sequence(relid, &elm, &seqrel);
