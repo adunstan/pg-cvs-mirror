@@ -11,7 +11,7 @@
  *	as a service.
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/port/copydir.c,v 1.29 2010/02/22 00:11:05 stark Exp $
+ *	  $PostgreSQL: pgsql/src/port/copydir.c,v 1.30 2010/02/22 02:50:10 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -229,9 +229,12 @@ fsync_fname(char *fname)
 				(errcode_for_file_access(),
 				 errmsg("could not open file \"%s\": %m", fname)));
 
+	errno = 0;
+
 	if (pg_fsync(fd) != 0)
 		ereport(ERROR,
 				(errcode_for_file_access(),
 				 errmsg("could not fsync file \"%s\": %m", fname)));
+
 	close(fd);
 }
