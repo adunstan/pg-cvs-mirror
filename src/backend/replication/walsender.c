@@ -30,7 +30,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/replication/walsender.c,v 1.6 2010/02/17 04:19:39 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/replication/walsender.c,v 1.7 2010/02/18 11:13:46 heikki Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -572,15 +572,6 @@ XLogSend(StringInfo outMsg)
 	char	activitymsg[50];
 	/* use volatile pointer to prevent code rearrangement */
 	volatile WalSnd *walsnd = MyWalSnd;
-
-	/*
-	 * Invalid position means that we have not yet received the initial
-	 * CopyData message from the slave that indicates where to start the
-	 * streaming.
-	 */
-	if (sentPtr.xlogid == 0 &&
-		sentPtr.xrecoff == 0)
-		return true;
 
 	/* Attempt to send all records flushed to the disk already */
 	SendRqstPtr = GetWriteRecPtr();

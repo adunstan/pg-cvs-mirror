@@ -10,7 +10,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/replication/libpqwalreceiver/libpqwalreceiver.c,v 1.2 2010/01/20 11:58:44 heikki Exp $
+ *	  $PostgreSQL: pgsql/src/backend/replication/libpqwalreceiver/libpqwalreceiver.c,v 1.3 2010/02/03 09:47:19 heikki Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -83,8 +83,6 @@ libpqrcv_connect(char *conninfo, XLogRecPtr startpoint)
 	TimeLineID	standby_tli;
 	PGresult   *res;
 	char		cmd[64];
-
-	Assert(startpoint.xlogid != 0 || startpoint.xrecoff != 0);
 
 	/* Connect */
 	snprintf(conninfo_repl, sizeof(conninfo_repl), "%s replication=true", conninfo);
