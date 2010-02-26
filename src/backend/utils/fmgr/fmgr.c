@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/fmgr/fmgr.c,v 1.129 2010/01/07 04:53:34 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/fmgr/fmgr.c,v 1.130 2010/02/14 18:42:17 rhaas Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -930,7 +930,7 @@ fmgr_security_definer(PG_FUNCTION_ARGS)
 
 	if (OidIsValid(fcache->userid))
 		SetUserIdAndSecContext(fcache->userid,
-							   save_sec_context | SECURITY_LOCAL_USERID_CHANGE);
+							save_sec_context | SECURITY_LOCAL_USERID_CHANGE);
 
 	if (fcache->proconfig)
 	{

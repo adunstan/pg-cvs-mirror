@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2010, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994-5, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/commands/explain.h,v 1.45 2010/01/02 16:58:03 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/commands/explain.h,v 1.46 2010/02/16 22:19:59 adunstan Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -36,14 +36,14 @@ typedef struct ExplainState
 	PlannedStmt *pstmt;			/* top of plan */
 	List	   *rtable;			/* range table */
 	int			indent;			/* current indentation level */
-	List	   *grouping_stack;	/* format-specific grouping state */
+	List	   *grouping_stack; /* format-specific grouping state */
 } ExplainState;
 
 /* Hook for plugins to get control in ExplainOneQuery() */
 typedef void (*ExplainOneQuery_hook_type) (Query *query,
-										   ExplainState *es,
-										   const char *queryString,
-										   ParamListInfo params);
+													   ExplainState *es,
+													 const char *queryString,
+													   ParamListInfo params);
 extern PGDLLIMPORT ExplainOneQuery_hook_type ExplainOneQuery_hook;
 
 /* Hook for plugins to get control in explain_get_index_name() */

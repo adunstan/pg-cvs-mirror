@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/optimizer/util/pathnode.c,v 1.155 2009/11/15 02:45:35 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/optimizer/util/pathnode.c,v 1.156 2010/01/02 16:57:48 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1224,7 +1224,7 @@ create_noop_path(PlannerInfo *root, RelOptInfo *rel, Path *subpath)
 {
 	NoOpPath   *pathnode = makeNode(NoOpPath);
 
-	pathnode->path.pathtype = T_Join;			/* by convention */
+	pathnode->path.pathtype = T_Join;	/* by convention */
 	pathnode->path.parent = rel;
 	pathnode->path.startup_cost = subpath->startup_cost;
 	pathnode->path.total_cost = subpath->total_cost;

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/int.c,v 1.87 2009/12/30 01:29:22 rhaas Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/int.c,v 1.88 2010/01/02 16:57:54 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -149,7 +149,7 @@ int2vectorin(PG_FUNCTION_ARGS)
 		while (*intString && isspace((unsigned char) *intString))
 			intString++;
 		if (*intString == '\0')
-			break;		
+			break;
 		result->values[n] = pg_atoi(intString, sizeof(int16), ' ');
 		while (*intString && !isspace((unsigned char) *intString))
 			intString++;

@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2010, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/access/slru.h,v 1.25 2010/01/02 16:58:00 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/access/slru.h,v 1.26 2010/02/16 22:34:50 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -31,7 +31,7 @@
  * segment and page numbers in SimpleLruTruncate (see PagePrecedes()).
  *
  * Note: slru.c currently assumes that segment file names will be four hex
- * digits.  This sets a lower bound on the segment size (64K transactions
+ * digits.	This sets a lower bound on the segment size (64K transactions
  * for 32-bit TransactionIds).
  */
 #define SLRU_PAGES_PER_SEGMENT	32

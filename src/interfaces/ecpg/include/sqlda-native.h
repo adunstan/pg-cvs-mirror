@@ -1,5 +1,5 @@
 /*
- * $PostgreSQL: pgsql/src/interfaces/ecpg/include/sqlda-native.h,v 1.1 2010/01/05 16:38:23 meskes Exp $
+ * $PostgreSQL: pgsql/src/interfaces/ecpg/include/sqlda-native.h,v 1.2 2010/01/06 15:10:21 meskes Exp $
  */
 
 #ifndef ECPG_SQLDA_NATIVE_H
@@ -11,7 +11,7 @@
  * because the length must include a trailing zero byte.
  *
  * This should be at least as much as NAMEDATALEN of the database the
- * applications run against. 
+ * applications run against.
  */
 #define NAMEDATALEN 64
 
@@ -37,7 +37,7 @@ struct sqlda_struct
 	short		sqln;
 	short		sqld;
 	struct sqlda_struct *desc_next;
-	struct sqlvar_struct	sqlvar[1];
+	struct sqlvar_struct sqlvar[1];
 };
 
-#endif /* ECPG_SQLDA_NATIVE_H */
+#endif   /* ECPG_SQLDA_NATIVE_H */

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/transam/twophase_rmgr.c,v 1.12 2010/01/02 16:57:35 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/transam/twophase_rmgr.c,v 1.13 2010/02/16 22:34:43 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -32,8 +32,8 @@ const TwoPhaseCallback twophase_postcommit_callbacks[TWOPHASE_RM_MAX_ID + 1] =
 {
 	NULL,						/* END ID */
 	lock_twophase_postcommit,	/* Lock */
-	pgstat_twophase_postcommit,	/* pgstat */
-	multixact_twophase_postcommit /* MultiXact */
+	pgstat_twophase_postcommit, /* pgstat */
+	multixact_twophase_postcommit		/* MultiXact */
 };
 
 const TwoPhaseCallback twophase_postabort_callbacks[TWOPHASE_RM_MAX_ID + 1] =
@@ -41,7 +41,7 @@ const TwoPhaseCallback twophase_postabort_callbacks[TWOPHASE_RM_MAX_ID + 1] =
 	NULL,						/* END ID */
 	lock_twophase_postabort,	/* Lock */
 	pgstat_twophase_postabort,	/* pgstat */
-	multixact_twophase_postabort /* MultiXact */
+	multixact_twophase_postabort	/* MultiXact */
 };
 
 const TwoPhaseCallback twophase_standby_recover_callbacks[TWOPHASE_RM_MAX_ID + 1] =

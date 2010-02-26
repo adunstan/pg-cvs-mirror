@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/nodeSeqscan.c,v 1.68 2009/10/26 02:26:31 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/nodeSeqscan.c,v 1.69 2010/01/02 16:57:45 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -92,9 +92,8 @@ static bool
 SeqRecheck(SeqScanState *node, TupleTableSlot *slot)
 {
 	/*
-	 * Note that unlike IndexScan, SeqScan never use keys in
-	 * heap_beginscan (and this is very bad) - so, here we do not check
-	 * are keys ok or not.
+	 * Note that unlike IndexScan, SeqScan never use keys in heap_beginscan
+	 * (and this is very bad) - so, here we do not check are keys ok or not.
 	 */
 	return true;
 }

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/fmgr/dfmgr.c,v 1.100 2009/09/03 22:11:07 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/fmgr/dfmgr.c,v 1.101 2010/01/02 16:57:56 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -443,7 +443,7 @@ internal_unload_library(const char *libname)
 		else
 			prv = file_scanner;
 	}
-#endif /* NOT_USED */
+#endif   /* NOT_USED */
 }
 
 static bool

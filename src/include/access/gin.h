@@ -4,7 +4,7 @@
  *
  *	Copyright (c) 2006-2010, PostgreSQL Global Development Group
  *
- *	$PostgreSQL: pgsql/src/include/access/gin.h,v 1.36 2010/01/02 16:58:00 momjian Exp $
+ *	$PostgreSQL: pgsql/src/include/access/gin.h,v 1.37 2010/02/11 14:29:50 teodor Exp $
  *--------------------------------------------------------------------------
  */
 #ifndef GIN_H
@@ -576,8 +576,8 @@ typedef struct
 	GinState   *ginstate;
 	long		allocatedMemory;
 	uint32		length;
-	EntryAccumulator   *entryallocator;
-	ItemPointerData	   *tmpList;
+	EntryAccumulator *entryallocator;
+	ItemPointerData *tmpList;
 	RBTree	   *tree;
 	RBTreeIterator *iterator;
 } BuildAccumulator;

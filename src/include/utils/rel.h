@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2010, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/utils/rel.h,v 1.122 2010/02/07 20:48:13 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/utils/rel.h,v 1.123 2010/02/09 21:43:30 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -369,7 +369,7 @@ typedef struct StdRdOptions
  * RelationGetTargetBlock
  *		Fetch relation's current insertion target block.
  *
- * Returns InvalidBlockNumber if there is no current target block.  Note
+ * Returns InvalidBlockNumber if there is no current target block.	Note
  * that the target block status is discarded on any smgr-level invalidation.
  */
 #define RelationGetTargetBlock(relation) \

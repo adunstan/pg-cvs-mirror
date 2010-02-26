@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/spi.c,v 1.213 2010/01/02 16:57:45 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/spi.c,v 1.214 2010/02/14 18:42:14 rhaas Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1268,10 +1268,9 @@ SPI_cursor_open_internal(const char *name, SPIPlanPtr plan,
 	}
 
 	/*
-	 * If the plan has parameters, copy them into the portal.  Note that
-	 * this must be done after revalidating the plan, because in dynamic
-	 * parameter cases the set of parameters could have changed during
-	 * re-parsing.
+	 * If the plan has parameters, copy them into the portal.  Note that this
+	 * must be done after revalidating the plan, because in dynamic parameter
+	 * cases the set of parameters could have changed during re-parsing.
 	 */
 	if (paramLI)
 	{

@@ -1,4 +1,4 @@
-/* $PostgreSQL: pgsql/src/interfaces/ecpg/include/pgtypes_interval.h,v 1.14 2007/05/28 09:46:47 meskes Exp $ */
+/* $PostgreSQL: pgsql/src/interfaces/ecpg/include/pgtypes_interval.h,v 1.15 2010/01/07 04:53:35 tgl Exp $ */
 
 #ifndef PGTYPES_INTERVAL
 #define PGTYPES_INTERVAL
@@ -23,7 +23,6 @@ typedef long long int int64;
 #ifdef USE_INTEGER_DATETIMES
 #define HAVE_INT64_TIMESTAMP
 #endif
-
 #endif   /* C_H */
 
 typedef struct

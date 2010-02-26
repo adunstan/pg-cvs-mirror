@@ -11,7 +11,7 @@
  * Portions Copyright (c) 1996-2010, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/fmgr.h,v 1.63 2010/01/02 16:58:00 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/fmgr.h,v 1.64 2010/02/08 20:39:52 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -538,11 +538,11 @@ extern void **find_rendezvous_variable(const char *varName);
  */
 
 /* AggCheckCallContext can return one of the following codes, or 0: */
-#define AGG_CONTEXT_AGGREGATE	1			/* regular aggregate */
-#define AGG_CONTEXT_WINDOW		2			/* window function */
+#define AGG_CONTEXT_AGGREGATE	1		/* regular aggregate */
+#define AGG_CONTEXT_WINDOW		2		/* window function */
 
-extern int	AggCheckCallContext(FunctionCallInfo fcinfo,
-								MemoryContext *aggcontext);
+extern int AggCheckCallContext(FunctionCallInfo fcinfo,
+					MemoryContext *aggcontext);
 
 
 /*

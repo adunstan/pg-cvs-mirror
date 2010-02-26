@@ -1,5 +1,5 @@
 /*
- * $PostgreSQL: pgsql/contrib/btree_gist/btree_inet.c,v 1.10 2009/06/11 14:48:50 momjian Exp $
+ * $PostgreSQL: pgsql/contrib/btree_gist/btree_inet.c,v 1.11 2009/12/02 13:13:24 teodor Exp $
  */
 #include "btree_gist.h"
 #include "btree_utils_num.h"
@@ -60,8 +60,8 @@ gbt_inetlt(const void *a, const void *b)
 static int
 gbt_inetkey_cmp(const void *a, const void *b)
 {
-	inetKEY    *ia = (inetKEY*)(((Nsrt *) a)->t);
-	inetKEY    *ib = (inetKEY*)(((Nsrt *) b)->t);
+	inetKEY    *ia = (inetKEY *) (((Nsrt *) a)->t);
+	inetKEY    *ib = (inetKEY *) (((Nsrt *) b)->t);
 
 	if (ia->lower == ib->lower)
 	{

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/parser/parse_coerce.c,v 2.179 2010/01/02 16:57:49 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/parser/parse_coerce.c,v 2.180 2010/02/14 18:42:15 rhaas Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -263,8 +263,8 @@ coerce_type(ParseState *pstate, Node *node,
 		pstate != NULL && pstate->p_coerce_param_hook != NULL)
 	{
 		/*
-		 * Allow the CoerceParamHook to decide what happens.  It can return
-		 * a transformed node (very possibly the same Param node), or return
+		 * Allow the CoerceParamHook to decide what happens.  It can return a
+		 * transformed node (very possibly the same Param node), or return
 		 * NULL to indicate we should proceed with normal coercion.
 		 */
 		result = (*pstate->p_coerce_param_hook) (pstate,

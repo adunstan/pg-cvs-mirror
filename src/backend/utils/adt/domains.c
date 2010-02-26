@@ -25,7 +25,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/domains.c,v 1.9 2009/09/09 19:00:09 petere Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/domains.c,v 1.10 2010/01/02 16:57:53 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -305,7 +305,7 @@ domain_recv(PG_FUNCTION_ARGS)
 
 /*
  * domain_check - check that a datum satisfies the constraints of a
- * domain.  extra and mcxt can be passed if they are available from,
+ * domain.	extra and mcxt can be passed if they are available from,
  * say, a FmgrInfo structure, or they can be NULL, in which case the
  * setup is repeated for each call.
  */

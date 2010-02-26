@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/storage/buffer/bufmgr.c,v 1.254 2010/01/02 16:57:51 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/storage/buffer/bufmgr.c,v 1.255 2010/01/23 16:37:12 sriggs Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -2443,12 +2443,12 @@ LockBufferForCleanup(Buffer buffer)
 bool
 HoldingBufferPinThatDelaysRecovery(void)
 {
-	int		bufid = GetStartupBufferPinWaitBufId();
+	int			bufid = GetStartupBufferPinWaitBufId();
 
 	/*
-	 * If we get woken slowly then it's possible that the Startup process
-	 * was already woken by other backends before we got here. Also possible
-	 * that we get here by multiple interrupts or interrupts at inappropriate
+	 * If we get woken slowly then it's possible that the Startup process was
+	 * already woken by other backends before we got here. Also possible that
+	 * we get here by multiple interrupts or interrupts at inappropriate
 	 * times, so make sure we do nothing if the bufid is not set.
 	 */
 	if (bufid < 0)
