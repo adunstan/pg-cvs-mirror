@@ -3,7 +3,7 @@ package Solution;
 #
 # Package that encapsulates a Visual C++ solution file generation
 #
-# $PostgreSQL: pgsql/src/tools/msvc/Solution.pm,v 1.53 2010/01/05 13:31:58 mha Exp $
+# $PostgreSQL: pgsql/src/tools/msvc/Solution.pm,v 1.54 2010/03/02 12:29:14 adunstan Exp $
 #
 use Carp;
 use strict;
@@ -418,6 +418,11 @@ sub AddProject
         $proj->AddIncludeDir($self->{options}->{xml} . '\include');
         $proj->AddIncludeDir($self->{options}->{iconv} . '\include');
         $proj->AddLibrary($self->{options}->{xml} . '\lib\libxml2.lib');
+    }
+    if ($self->{options}->{xslt})
+    {
+        $proj->AddIncludeDir($self->{options}->{xslt} . '\include');
+        $proj->AddLibrary($self->{options}->{xslt} . '\lib\libxslt.lib');
     }
     return $proj;
 }
