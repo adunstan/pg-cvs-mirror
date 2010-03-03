@@ -10,7 +10,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/libpq/hba.c,v 1.136 2004/12/31 21:59:50 pgsql Exp $
+ *	  $PostgreSQL: pgsql/src/backend/libpq/hba.c,v 1.136.4.1 2005/06/21 01:23:25 neilc Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -400,7 +400,7 @@ tokenize_file(const char *filename, FILE *file,
 
 	*lines = *line_nums = NIL;
 
-	while (!feof(file))
+	while (!feof(file) && !ferror(file))
 	{
 		buf = next_token_expand(filename, file);
 
