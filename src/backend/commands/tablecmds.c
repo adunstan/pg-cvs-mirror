@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/tablecmds.c,v 1.326 2010/02/14 18:42:14 rhaas Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/tablecmds.c,v 1.327 2010/02/26 02:00:39 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1956,10 +1956,7 @@ renameatt(Oid myrelid,
 				 errmsg("cannot rename column of typed table")));
 
 	/*
-	 * permissions checking.  this would normally be done in utility.c, but
-	 * this particular routine is recursive.
-	 *
-	 * normally, only the owner of a class can change its schema.
+	 * permissions checking.  only the owner of a class can change its schema.
 	 */
 	if (!pg_class_ownercheck(myrelid, GetUserId()))
 		aclcheck_error(ACLCHECK_NOT_OWNER, ACL_KIND_CLASS,
