@@ -15,7 +15,7 @@
  * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/timezone/strftime.c,v 1.13 2008/02/19 12:06:35 mha Exp $
+ *	  $PostgreSQL: pgsql/src/timezone/strftime.c,v 1.14 2009/06/11 14:49:15 momjian Exp $
  */
 
 #include "postgres.h"
@@ -169,7 +169,7 @@ _fmt(const char *format, const struct pg_tm * t, char *pt, const char *ptlim,
 					{
 						int			warn2 = IN_SOME;
 
-						pt = _fmt(Locale->c_fmt, t, pt, ptlim, warnp);
+						pt = _fmt(Locale->c_fmt, t, pt, ptlim, &warn2);
 						if (warn2 == IN_ALL)
 							warn2 = IN_THIS;
 						if (warn2 > *warnp)
