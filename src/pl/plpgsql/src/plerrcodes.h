@@ -9,7 +9,7 @@
  *
  * Copyright (c) 2003-2010, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/pl/plpgsql/src/plerrcodes.h,v 1.19 2009/12/07 05:22:23 tgl Exp $
+ * $PostgreSQL: pgsql/src/pl/plpgsql/src/plerrcodes.h,v 1.20 2010/01/02 16:58:13 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -365,6 +365,10 @@
 
 {
 	"invalid_authorization_specification", ERRCODE_INVALID_AUTHORIZATION_SPECIFICATION
+},
+
+{
+	"invalid_password", ERRCODE_INVALID_PASSWORD
 },
 
 {
