@@ -30,7 +30,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/replication/walsender.c,v 1.8 2010/02/25 07:31:40 heikki Exp $
+ *	  $PostgreSQL: pgsql/src/backend/replication/walsender.c,v 1.9 2010/02/26 02:00:58 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -118,6 +118,11 @@ WalSenderMain(void)
 		ereport(FATAL,
 				(errcode(ERRCODE_INSUFFICIENT_PRIVILEGE),
 				 errmsg("must be superuser to start walsender")));
+
+	if (RecoveryInProgress())
+		ereport(FATAL,
+				(errcode(ERRCODE_CANNOT_CONNECT_NOW),
+				 errmsg("recovery is still in progress, can't accept WAL streaming connections")));
 
 	/* Create a per-walsender data structure in shared memory */
 	InitWalSnd();
