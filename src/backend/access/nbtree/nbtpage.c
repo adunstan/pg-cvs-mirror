@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/nbtree/nbtpage.c,v 1.119 2010/02/13 00:59:58 sriggs Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/nbtree/nbtpage.c,v 1.120 2010/02/26 02:00:34 momjian Exp $
  *
  *	NOTES
  *	   Postgres btree pages look like ordinary relation pages.	The opaque
@@ -1301,6 +1301,7 @@ _bt_pagedel(Relation rel, Buffer buf, BTStack stack)
 		xlrec.deadblk = target;
 		xlrec.leftblk = leftsib;
 		xlrec.rightblk = rightsib;
+		xlrec.btpo_xact = opaque->btpo.xact;
 
 		rdata[0].data = (char *) &xlrec;
 		rdata[0].len = SizeOfBtreeDeletePage;

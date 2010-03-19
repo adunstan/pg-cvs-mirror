@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/nbtree/nbtxlog.c,v 1.61 2010/02/13 00:59:58 sriggs Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/nbtree/nbtxlog.c,v 1.62 2010/02/26 02:00:34 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -729,7 +729,7 @@ btree_xlog_delete_page(uint8 info, XLogRecPtr lsn, XLogRecord *record)
 
 	pageop->btpo_prev = leftsib;
 	pageop->btpo_next = rightsib;
-	pageop->btpo.xact = FrozenTransactionId;
+	pageop->btpo.xact = xlrec->btpo_xact;
 	pageop->btpo_flags = BTP_DELETED;
 	pageop->btpo_cycleid = 0;
 
