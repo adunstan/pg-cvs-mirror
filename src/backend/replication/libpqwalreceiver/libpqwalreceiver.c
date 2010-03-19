@@ -10,7 +10,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/replication/libpqwalreceiver/libpqwalreceiver.c,v 1.4 2010/02/25 07:31:40 heikki Exp $
+ *	  $PostgreSQL: pgsql/src/backend/replication/libpqwalreceiver/libpqwalreceiver.c,v 1.5 2010/02/26 02:00:58 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -76,7 +76,7 @@ _PG_init(void)
 static bool
 libpqrcv_connect(char *conninfo, XLogRecPtr startpoint)
 {
-	char		conninfo_repl[MAXCONNINFO + 14];
+	char		conninfo_repl[MAXCONNINFO + 18];
 	char	   *primary_sysid;
 	char		standby_sysid[32];
 	TimeLineID	primary_tli;
@@ -84,7 +84,7 @@ libpqrcv_connect(char *conninfo, XLogRecPtr startpoint)
 	PGresult   *res;
 	char		cmd[64];
 
-	/* Connect */
+	/* Connect using deliberately undocumented parameter: replication */
 	snprintf(conninfo_repl, sizeof(conninfo_repl), "%s replication=true", conninfo);
 
 	streamConn = PQconnectdb(conninfo_repl);
