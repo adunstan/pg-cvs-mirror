@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/init/postinit.c,v 1.203 2010/02/14 18:42:18 rhaas Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/init/postinit.c,v 1.204 2010/02/26 02:01:13 momjian Exp $
  *
  *
  *-------------------------------------------------------------------------
@@ -217,7 +217,14 @@ PerformAuthentication(Port *port)
 	if (!disable_sig_alarm(true))
 		elog(FATAL, "could not disable timer for authorization timeout");
 
-	if (Log_connections)
+	/*
+	 * Log connection for streaming replication even if Log_connections disabled.
+	 */
+	if (am_walsender)
+		ereport(LOG,
+				(errmsg("connection authorized: user=%s database=replication",
+						port->user_name)));
+	else if (Log_connections)
 		ereport(LOG,
 				(errmsg("connection authorized: user=%s database=%s",
 						port->user_name, port->database_name)));
