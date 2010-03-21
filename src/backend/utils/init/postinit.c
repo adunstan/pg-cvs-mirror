@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/init/postinit.c,v 1.204 2010/02/26 02:01:13 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/init/postinit.c,v 1.205 2010/03/19 19:19:38 sriggs Exp $
  *
  *
  *-------------------------------------------------------------------------
@@ -222,8 +222,8 @@ PerformAuthentication(Port *port)
 	 */
 	if (am_walsender)
 		ereport(LOG,
-				(errmsg("connection authorized: user=%s database=replication",
-						port->user_name)));
+				(errmsg("connection authorized: user=%s database=%s",
+						port->user_name, "replication")));
 	else if (Log_connections)
 		ereport(LOG,
 				(errmsg("connection authorized: user=%s database=%s",

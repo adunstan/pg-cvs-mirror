@@ -29,7 +29,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/replication/walreceiver.c,v 1.5 2010/02/19 10:51:04 heikki Exp $
+ *	  $PostgreSQL: pgsql/src/backend/replication/walreceiver.c,v 1.6 2010/02/26 02:00:57 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -283,7 +283,7 @@ WalReceiverMain(void)
 		 */
 		if (!RecoveryInProgress())
 			ereport(FATAL,
-					(errmsg("cannot continue XLOG streaming, recovery has already ended")));
+					(errmsg("cannot continue WAL streaming, recovery has already ended")));
 
 		/* Process any requests or signals received recently */
 		ProcessWalRcvInterrupts();
