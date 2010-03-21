@@ -1,4 +1,4 @@
-<!-- $PostgreSQL: pgsql/doc/src/sgml/runtime.sgml,v 1.431 2010/02/03 17:25:06 momjian Exp $ -->
+<!-- $PostgreSQL: pgsql/doc/src/sgml/runtime.sgml,v 1.432 2010/03/13 11:00:19 petere Exp $ -->
 
 <chapter Id="runtime">
  <title>Server Setup and Operation</title>
@@ -1221,7 +1221,7 @@ default:\
    </para>
   </sect2>
 
-  <sect2>
+  <sect2 id="linux-memory-overcommit">
    <title>Linux Memory Overcommit</title>
 
    <para>
