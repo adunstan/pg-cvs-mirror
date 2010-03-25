@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/init/postinit.c,v 1.206 2010/03/21 00:17:59 petere Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/init/postinit.c,v 1.207 2010/03/24 21:25:50 sriggs Exp $
  *
  *
  *-------------------------------------------------------------------------
@@ -221,12 +221,19 @@ PerformAuthentication(Port *port)
 	 * Log connection for streaming replication even if Log_connections disabled.
 	 */
 	if (am_walsender)
-		ereport(LOG,
-				(errmsg("replication connection authorized: user=%s host=%s%s%s",
-						port->user_name,
-						port->remote_host, port->remote_port[0] ? " port=" : "",
-						port->remote_port)));
-
+	{
+		if (port->remote_port[0])
+			ereport(LOG,
+				(errmsg("replication connection authorized: user=%s host=%s port=%s",
+					port->user_name,
+					port->remote_host,
+					port->remote_port)));
+		else
+			ereport(LOG,
+				(errmsg("replication connection authorized: user=%s host=%s",
+					port->user_name,
+					port->remote_host)));
+	}
 	else if (Log_connections)
 		ereport(LOG,
 				(errmsg("connection authorized: user=%s database=%s",
