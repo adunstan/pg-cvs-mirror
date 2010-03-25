@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2005, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/backend/commands/user.c,v 1.147 2004/12/31 21:59:42 pgsql Exp $
+ * $PostgreSQL: pgsql/src/backend/commands/user.c,v 1.147.4.1 2005/10/26 13:43:28 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1022,8 +1022,30 @@ AlterUserSet(AlterUserSetStmt *stmt)
 	repl_repl[Anum_pg_shadow_useconfig - 1] = 'r';
 	if (strcmp(stmt->variable, "all") == 0 && valuestr == NULL)
 	{
-		/* RESET ALL */
-		repl_null[Anum_pg_shadow_useconfig - 1] = 'n';
+		ArrayType  *new = NULL;
+		Datum		datum;
+		bool		isnull;
+
+		/*
+		 * in RESET ALL, request GUC to reset the settings array; if none
+		 * left, we can set useconfig to null; otherwise use the returned
+		 * array
+		 */
+		datum = SysCacheGetAttr(SHADOWNAME, oldtuple,
+								Anum_pg_shadow_useconfig, &isnull);
+		if (!isnull)
+			new = GUCArrayReset(DatumGetArrayTypeP(datum));
+		if (new)
+		{
+			repl_val[Anum_pg_shadow_useconfig - 1] = PointerGetDatum(new);
+			repl_repl[Anum_pg_shadow_useconfig - 1] = 'r';
+			repl_null[Anum_pg_shadow_useconfig - 1] = ' ';
+		}
+		else
+		{
+			repl_null[Anum_pg_shadow_useconfig - 1] = 'n';
+			repl_val[Anum_pg_shadow_useconfig - 1] = (Datum) 0;
+		}
 	}
 	else
 	{
