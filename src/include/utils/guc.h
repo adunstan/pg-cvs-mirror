@@ -7,7 +7,7 @@
  * Copyright (c) 2000-2010, PostgreSQL Global Development Group
  * Written by Peter Eisentraut <peter_e@gmx.net>.
  *
- * $PostgreSQL: pgsql/src/include/utils/guc.h,v 1.111 2010/01/02 16:58:10 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/utils/guc.h,v 1.112 2010/01/26 16:33:40 tgl Exp $
  *--------------------------------------------------------------------
  */
 #ifndef GUC_H
@@ -284,6 +284,7 @@ extern void ProcessGUCArray(ArrayType *array,
 				GucContext context, GucSource source, GucAction action);
 extern ArrayType *GUCArrayAdd(ArrayType *array, const char *name, const char *value);
 extern ArrayType *GUCArrayDelete(ArrayType *array, const char *name);
+extern ArrayType *GUCArrayReset(ArrayType *array);
 
 extern int	GUC_complaint_elevel(GucSource source);
 
