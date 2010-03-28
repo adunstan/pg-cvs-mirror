@@ -10,7 +10,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/optimizer/plan/createplan.c,v 1.272 2010/02/19 21:49:10 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/optimizer/plan/createplan.c,v 1.273 2010/02/26 02:00:45 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -163,11 +163,6 @@ create_plan(PlannerInfo *root, Path *best_path)
 		case T_CteScan:
 		case T_WorkTableScan:
 			plan = create_scan_plan(root, best_path);
-			break;
-		case T_Join:
-			/* this is only used for no-op joins */
-			Assert(IsA(best_path, NoOpPath));
-			plan = create_plan(root, ((NoOpPath *) best_path)->subpath);
 			break;
 		case T_HashJoin:
 		case T_MergeJoin:
