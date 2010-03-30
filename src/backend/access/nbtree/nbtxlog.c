@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/nbtree/nbtxlog.c,v 1.63 2010/03/19 10:41:22 sriggs Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/nbtree/nbtxlog.c,v 1.64 2010/03/28 09:27:01 sriggs Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -578,7 +578,7 @@ btree_xlog_delete_get_latestRemovedXid(XLogRecord *record)
 	TransactionId	latestRemovedXid = InvalidTransactionId;
 	TransactionId	htupxid = InvalidTransactionId;
 	int i;
-	int num_unused, num_redirect, num_dead;
+	int num_unused = 0, num_redirect, num_dead;
 
 	xl_btree_delete *xlrec = (xl_btree_delete *) XLogRecGetData(record);
 
