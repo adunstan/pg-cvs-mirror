@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/optimizer/util/plancat.c,v 1.161 2010/01/02 16:57:48 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/optimizer/util/plancat.c,v 1.162 2010/01/05 21:53:58 rhaas Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -580,7 +580,10 @@ relation_excluded_by_constraints(PlannerInfo *root,
 	/* Skip the test if constraint exclusion is disabled for the rel */
 	if (constraint_exclusion == CONSTRAINT_EXCLUSION_OFF ||
 		(constraint_exclusion == CONSTRAINT_EXCLUSION_PARTITION &&
-		 rel->reloptkind != RELOPT_OTHER_MEMBER_REL))
+		 !(rel->reloptkind == RELOPT_OTHER_MEMBER_REL ||
+		   (root->hasInheritedTarget &&
+			rel->reloptkind == RELOPT_BASEREL &&
+			rel->relid == root->parse->resultRelation))))
 		return false;
 
 	/*
