@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2010, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/backend/access/transam/xlog.c,v 1.384 2010/03/21 00:17:58 petere Exp $
+ * $PostgreSQL: pgsql/src/backend/access/transam/xlog.c,v 1.385 2010/03/30 16:23:57 heikki Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -7092,7 +7092,7 @@ CreateCheckPoint(int flags)
 	 * disconnected (e.g because of network problems), but at least it avoids
 	 * an open replication connection from failing because of that.
 	 */
-	if ((_logId || _logSeg) && MaxWalSenders > 0)
+	if ((_logId || _logSeg) && max_wal_senders > 0)
 	{
 		XLogRecPtr	oldest;
 		uint32		log;

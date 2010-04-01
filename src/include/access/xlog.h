@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2010, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/access/xlog.h,v 1.103 2010/02/26 02:01:21 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/access/xlog.h,v 1.104 2010/03/19 11:05:15 sriggs Exp $
  */
 #ifndef XLOG_H
 #define XLOG_H
@@ -202,13 +202,13 @@ extern int	MaxStandbyDelay;
  * This is in walsender.c, but declared here so that we don't need to include
  * walsender.h in all files that check XLogIsNeeded()
  */
-extern int	MaxWalSenders;
+extern int	max_wal_senders;
 
 /*
  * Is WAL-logging necessary? We need to log an XLOG record iff either
  * WAL archiving is enabled or XLOG streaming is allowed.
  */
-#define XLogIsNeeded() (XLogArchivingActive() || (MaxWalSenders > 0))
+#define XLogIsNeeded() (XLogArchivingActive() || (max_wal_senders > 0))
 
 /* Do we need to WAL-log information required only for Hot Standby? */
 #define XLogStandbyInfoActive() (XLogRequestRecoveryConnections && XLogIsNeeded())
