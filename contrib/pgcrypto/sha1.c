@@ -28,11 +28,11 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $PostgreSQL: pgsql/contrib/pgcrypto/sha1.c,v 1.16 2005/07/11 15:07:59 tgl Exp $
+ * $PostgreSQL: pgsql/contrib/pgcrypto/sha1.c,v 1.17 2007/04/06 05:36:50 tgl Exp $
  */
 /*
  * FIPS pub 180-1: Secure Hash Algorithm (SHA-1)
- * based on: http://csrc.nist.gov/fips/fip180-1.txt
+ * based on: http://www.itl.nist.gov/fipspubs/fip180-1.htm
  * implemented by Jun-ichiro itojun Itoh <itojun@itojun.org>
  */
 
