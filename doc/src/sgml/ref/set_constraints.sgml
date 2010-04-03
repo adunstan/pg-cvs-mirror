@@ -1,7 +1,7 @@
-<!-- $PostgreSQL: pgsql/doc/src/sgml/ref/set_constraints.sgml,v 1.17 2009/07/29 20:56:17 tgl Exp $ -->
+<!-- $PostgreSQL: pgsql/doc/src/sgml/ref/set_constraints.sgml,v 1.18 2010/01/18 00:32:21 tgl Exp $ -->
 <refentry id="SQL-SET-CONSTRAINTS">
  <refmeta>
-  <refentrytitle id="SQL-SET-CONSTRAINTS-title">SET CONSTRAINTS</refentrytitle>
+  <refentrytitle>SET CONSTRAINTS</refentrytitle>
   <manvolnum>7</manvolnum>
   <refmiscinfo>SQL - Language Statements</refmiscinfo>
  </refmeta>
