@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2010, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/psql/command.c,v 1.216 2010/02/26 02:01:17 momjian Exp $
+ * $PostgreSQL: pgsql/src/bin/psql/command.c,v 1.217 2010/03/08 23:03:00 momjian Exp $
  */
 #include "postgres_fe.h"
 #include "command.h"
@@ -361,7 +361,7 @@ exec_command(const char *cmd,
 				success = listCasts(pattern);
 				break;
 			case 'd':
-				if (strcmp(cmd, "ddp") == 0)
+				if (strncmp(cmd, "ddp", 3) == 0)
 					success = listDefaultACLs(pattern);
 				else
 					success = objectDescription(pattern, show_system);
