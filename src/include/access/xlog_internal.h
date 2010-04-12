@@ -11,7 +11,7 @@
  * Portions Copyright (c) 1996-2010, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/access/xlog_internal.h,v 1.30 2010/03/19 17:42:10 sriggs Exp $
+ * $PostgreSQL: pgsql/src/include/access/xlog_internal.h,v 1.31 2010/03/28 09:27:02 sriggs Exp $
  */
 #ifndef XLOG_INTERNAL_H
 #define XLOG_INTERNAL_H
@@ -215,6 +215,9 @@ typedef XLogLongPageHeaderData *XLogLongPageHeader;
 
 #define XLogFileName(fname, tli, log, seg)	\
 	snprintf(fname, MAXFNAMELEN, "%08X%08X%08X", tli, log, seg)
+
+#define XLogFromFileName(fname, tli, log, seg)	\
+	sscanf(fname, "%08X%08X%08X", tli, log, seg)
 
 #define XLogFilePath(path, tli, log, seg)	\
 	snprintf(path, MAXPGPATH, XLOGDIR "/%08X%08X%08X", tli, log, seg)
