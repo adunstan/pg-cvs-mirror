@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2010, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/backend/access/transam/xlog.c,v 1.396 2010/04/15 03:05:59 momjian Exp $
+ * $PostgreSQL: pgsql/src/backend/access/transam/xlog.c,v 1.397 2010/04/16 08:58:16 heikki Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -6452,6 +6452,12 @@ CheckRecoveryConsistency(void)
 		backendsAllowed = true;
 		SendPostmasterSignal(PMSIGNAL_RECOVERY_CONSISTENT);
 	}
+}
+
+bool
+XLogConsistentState(void)
+{
+	return reachedMinRecoveryPoint;
 }
 
 /*
