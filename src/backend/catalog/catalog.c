@@ -10,7 +10,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/catalog/catalog.c,v 1.88 2010/02/07 20:48:09 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/catalog/catalog.c,v 1.89 2010/02/26 02:00:36 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -327,9 +327,7 @@ IsSharedRelation(Oid relationId)
 		relationId == DbRoleSettingDatidRolidIndexId)
 		return true;
 	/* These are their toast tables and toast indexes (see toasting.h) */
-	if (relationId == PgAuthidToastTable ||
-		relationId == PgAuthidToastIndex ||
-		relationId == PgDatabaseToastTable ||
+	if (relationId == PgDatabaseToastTable ||
 		relationId == PgDatabaseToastIndex ||
 		relationId == PgShdescriptionToastTable ||
 		relationId == PgShdescriptionToastIndex ||
