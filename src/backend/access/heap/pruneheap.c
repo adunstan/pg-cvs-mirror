@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/heap/pruneheap.c,v 1.22 2010/02/26 02:00:33 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/heap/pruneheap.c,v 1.23 2010/04/21 17:20:56 sriggs Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -236,6 +236,7 @@ heap_page_prune(Relation relation, Buffer buffer, TransactionId OldestXmin,
 		{
 			XLogRecPtr	recptr;
 
+			Assert(TransactionIdIsValid(prstate.latestRemovedXid));
 			recptr = log_heap_clean(relation, buffer,
 									prstate.redirected, prstate.nredirected,
 									prstate.nowdead, prstate.ndead,
