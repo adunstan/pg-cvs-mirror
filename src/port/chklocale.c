@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/port/chklocale.c,v 1.14 2010/01/02 16:58:13 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/port/chklocale.c,v 1.15 2010/02/26 02:01:38 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -172,6 +172,7 @@ static const struct encoding_match encoding_match_list[] = {
 	{PG_GBK, "CP936"},
 
 	{PG_UHC, "UHC"},
+	{PG_UHC, "CP949"},
 
 	{PG_JOHAB, "JOHAB"},
 	{PG_JOHAB, "CP1361"},
