@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/parser/parse_relation.c,v 1.149 2010/02/14 18:42:15 rhaas Exp $
+ *	  $PostgreSQL: pgsql/src/backend/parser/parse_relation.c,v 1.150 2010/02/26 02:00:52 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -95,7 +95,7 @@ refnameRangeTblEntry(ParseState *pstate,
 		 * match a schema name the user hasn't got access to.
 		 */
 		namespaceId = LookupNamespaceNoError(schemaname);
-		if (!OidIsValid(relId))
+		if (!OidIsValid(namespaceId))
 			return NULL;
 		relId = get_relname_relid(refname, namespaceId);
 		if (!OidIsValid(relId))
