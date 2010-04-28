@@ -5,7 +5,7 @@
  *
  * Portions Copyright (c) 2010-2010, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/include/replication/walsender.h,v 1.1 2010/01/15 09:19:09 heikki Exp $
+ * $PostgreSQL: pgsql/src/include/replication/walsender.h,v 1.2 2010/02/26 02:01:27 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -39,6 +39,7 @@ extern bool am_walsender;
 
 /* user-settable parameters */
 extern int	WalSndDelay;
+extern int	max_wal_senders;
 
 extern int	WalSenderMain(void);
 extern void WalSndSignals(void);

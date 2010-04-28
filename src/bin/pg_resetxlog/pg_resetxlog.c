@@ -23,7 +23,7 @@
  * Portions Copyright (c) 1996-2010, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/bin/pg_resetxlog/pg_resetxlog.c,v 1.77 2010/01/04 12:50:49 heikki Exp $
+ * $PostgreSQL: pgsql/src/bin/pg_resetxlog/pg_resetxlog.c,v 1.78 2010/02/26 02:01:17 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -627,6 +627,15 @@ RewriteControlFile(void)
 	ControlFile.minRecoveryPoint.xrecoff = 0;
 	ControlFile.backupStartPoint.xlogid = 0;
 	ControlFile.backupStartPoint.xrecoff = 0;
+
+	/*
+	 * Use the defaults for max_* settings. The values don't matter
+	 * as long as wal_level='minimal'.
+	 */
+	ControlFile.MaxConnections = 100;
+	ControlFile.max_prepared_xacts = 0;
+	ControlFile.max_locks_per_xact = 64;
+	ControlFile.wal_level = WAL_LEVEL_MINIMAL;
 
 	/* Now we can force the recorded xlog seg size to the right thing. */
 	ControlFile.xlog_seg_size = XLogSegSize;

@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/copy.c,v 1.325 2010/02/20 21:24:02 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/copy.c,v 1.326 2010/02/26 02:00:38 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -2223,14 +2223,7 @@ CopyFrom(CopyState cstate)
 	 * indexes since those use WAL anyway)
 	 */
 	if (hi_options & HEAP_INSERT_SKIP_WAL)
-	{
-		char		reason[NAMEDATALEN + 30];
-
-		snprintf(reason, sizeof(reason), "COPY FROM on \"%s\"",
-				 RelationGetRelationName(cstate->rel));
-		XLogReportUnloggedStatement(reason);
 		heap_sync(cstate->rel);
-	}
 }
 
 
