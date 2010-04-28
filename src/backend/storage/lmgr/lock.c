@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/storage/lmgr/lock.c,v 1.195 2010/02/26 02:01:00 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/storage/lmgr/lock.c,v 1.196 2010/03/21 00:17:58 petere Exp $
  *
  * NOTES
  *	  A lock table is a shared memory hash table.  When
@@ -306,8 +306,6 @@ InitLocks(void)
 									   max_table_size,
 									   &info,
 									   hash_flags);
-	if (!LockMethodLockHash)
-		elog(FATAL, "could not initialize lock hash table");
 
 	/* Assume an average of 2 holders per lock */
 	max_table_size *= 2;
@@ -328,8 +326,6 @@ InitLocks(void)
 										   max_table_size,
 										   &info,
 										   hash_flags);
-	if (!LockMethodProcLockHash)
-		elog(FATAL, "could not initialize proclock hash table");
 
 	/*
 	 * Allocate non-shared hash table for LOCALLOCK structs.  This stores lock

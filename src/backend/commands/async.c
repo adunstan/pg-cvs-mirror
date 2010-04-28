@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/async.c,v 1.155 2010/02/26 02:00:37 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/async.c,v 1.156 2010/04/05 00:42:24 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -463,9 +463,6 @@ AsyncShmemInit(void)
 
 	asyncQueueControl = (AsyncQueueControl *)
 		ShmemInitStruct("Async Queue Control", size, &found);
-
-	if (!asyncQueueControl)
-		elog(ERROR, "out of shared memory");
 
 	if (!found)
 	{
