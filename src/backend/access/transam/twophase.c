@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *		$PostgreSQL: pgsql/src/backend/access/transam/twophase.c,v 1.59 2010/02/26 02:00:34 momjian Exp $
+ *		$PostgreSQL: pgsql/src/backend/access/transam/twophase.c,v 1.60 2010/04/13 14:17:46 heikki Exp $
  *
  * NOTES
  *		Each global transaction is associated with a global transaction
@@ -1199,6 +1199,9 @@ StandbyTransactionIdIsPrepared(TransactionId xid)
 	bool		result;
 
 	Assert(TransactionIdIsValid(xid));
+
+	if (max_prepared_xacts <= 0)
+		return false;					/* nothing to do */
 
 	/* Read and validate file */
 	buf = ReadTwoPhaseFile(xid, false);
