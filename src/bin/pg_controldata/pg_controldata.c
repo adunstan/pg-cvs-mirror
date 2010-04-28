@@ -6,8 +6,16 @@
  * copyright (c) Oliver Elphick <olly@lfix.co.uk>, 2001;
  * licence: BSD
  *
- * $PostgreSQL: pgsql/src/bin/pg_controldata/pg_controldata.c,v 1.46 2010/01/04 12:50:49 heikki Exp $
+ * $PostgreSQL: pgsql/src/bin/pg_controldata/pg_controldata.c,v 1.47 2010/04/28 16:10:43 heikki Exp $
  */
+
+/*
+ * We have to use postgres.h not postgres_fe.h here, because there's so much
+ * backend-only stuff in the XLOG include files we need.  But we need a
+ * frontend-ish environment otherwise.	Hence this ugly hack.
+ */
+#define FRONTEND 1
+
 #include "postgres.h"
 
 #include <unistd.h>
