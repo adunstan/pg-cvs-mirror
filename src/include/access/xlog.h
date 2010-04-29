@@ -6,7 +6,7 @@
  * Portions Copyright (c) 1996-2010, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/access/xlog.h,v 1.109 2010/04/20 11:15:06 rhaas Exp $
+ * $PostgreSQL: pgsql/src/include/access/xlog.h,v 1.110 2010/04/28 16:10:43 heikki Exp $
  */
 #ifndef XLOG_H
 #define XLOG_H
@@ -189,12 +189,13 @@ extern XLogRecPtr XactLastRecEnd;
 extern int	CheckPointSegments;
 extern int	wal_keep_segments;
 extern int	XLOGbuffers;
+extern int	XLogArchiveTimeout;
 extern bool XLogArchiveMode;
 extern char *XLogArchiveCommand;
-extern int	XLogArchiveTimeout;
-extern bool log_checkpoints;
-extern bool XLogRequestRecoveryConnections;
+extern bool EnableHotStandby;
 extern int	MaxStandbyDelay;
+extern bool log_checkpoints;
+
 /* WAL levels */
 typedef enum WalLevel
 {
