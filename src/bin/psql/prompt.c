@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2010, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/psql/prompt.c,v 1.52 2009/01/01 17:23:55 momjian Exp $
+ * $PostgreSQL: pgsql/src/bin/psql/prompt.c,v 1.53 2010/01/02 16:57:59 momjian Exp $
  */
 #include "postgres_fe.h"
 
@@ -252,7 +252,8 @@ get_prompt(promptStatus_t status)
 						fd = popen(file, "r");
 						if (fd)
 						{
-							fgets(buf, sizeof(buf), fd);
+							if (fgets(buf, sizeof(buf), fd) == NULL)
+								buf[0] = '\0';
 							pclose(fd);
 						}
 						if (strlen(buf) > 0 && buf[strlen(buf) - 1] == '\n')
