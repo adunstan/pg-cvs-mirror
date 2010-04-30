@@ -1,7 +1,7 @@
 /**********************************************************************
  * plpython.c - python as a procedural language for PostgreSQL
  *
- *	$PostgreSQL: pgsql/src/pl/plpython/plpython.c,v 1.106.2.1 2009/11/03 08:44:52 petere Exp $
+ *	$PostgreSQL: pgsql/src/pl/plpython/plpython.c,v 1.106.2.2 2010/02/18 23:50:20 tgl Exp $
  *
  *********************************************************************
  */
@@ -2678,9 +2678,6 @@ PLy_spi_execute_fetch_result(SPITupleTable *tuptable, int rows, int status)
 
 					PyList_SetItem(result->rows, i, row);
 				}
-				PLy_typeinfo_dealloc(&args);
-
-				SPI_freetuptable(tuptable);
 			}
 		}
 		PG_CATCH();
@@ -2691,11 +2688,15 @@ PLy_spi_execute_fetch_result(SPITupleTable *tuptable, int rows, int status)
 			if (!PyErr_Occurred())
 				PyErr_SetString(PLy_exc_error,
 							"Unknown error in PLy_spi_execute_fetch_result");
-			Py_DECREF(result);
 			PLy_typeinfo_dealloc(&args);
+			SPI_freetuptable(tuptable);
+			Py_DECREF(result);
 			return NULL;
 		}
 		PG_END_TRY();
+
+		PLy_typeinfo_dealloc(&args);
+		SPI_freetuptable(tuptable);
 	}
 
 	return (PyObject *) result;
