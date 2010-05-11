@@ -6,7 +6,7 @@
  * Copyright (c) 1996-2009, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *		$PostgreSQL: pgsql/src/include/utils/rbtree.h,v 1.1 2010/02/11 14:29:50 teodor Exp $
+ *		$PostgreSQL: pgsql/src/include/utils/rbtree.h,v 1.2 2010/02/26 02:01:29 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -18,7 +18,7 @@ typedef struct RBTree RBTree;
 typedef struct RBTreeIterator RBTreeIterator;
 
 typedef int (*rb_comparator) (const void *a, const void *b, void *arg);
-typedef void *(*rb_appendator) (void *current, void *new, void *arg);
+typedef void *(*rb_appendator) (void *currentdata, void *newval, void *arg);
 typedef void (*rb_freefunc) (void *a);
 
 extern RBTree *rb_create(rb_comparator comparator,
