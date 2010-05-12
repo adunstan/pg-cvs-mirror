@@ -4,11 +4,13 @@
 #
 # Copyright (c) 1998-2010, PostgreSQL Global Development Group
 #
-# $PostgreSQL: pgsql/src/bin/pg_config/Makefile,v 1.22 2009/08/26 22:24:43 petere Exp $
+# $PostgreSQL: pgsql/src/bin/pg_config/Makefile,v 1.23 2010/01/02 16:57:58 momjian Exp $
 #
 #-------------------------------------------------------------------------
 
 PGFILEDESC = "pg_config - report configuration information"
+PGAPPICON=win32
+
 subdir = src/bin/pg_config
 top_builddir = ../../..
 include $(top_builddir)/src/Makefile.global
