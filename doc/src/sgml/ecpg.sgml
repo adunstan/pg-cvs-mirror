@@ -1,4 +1,4 @@
-<!-- $PostgreSQL: pgsql/doc/src/sgml/ecpg.sgml,v 1.98 2010/02/27 04:29:44 tgl Exp $ -->
+<!-- $PostgreSQL: pgsql/doc/src/sgml/ecpg.sgml,v 1.99 2010/05/09 16:30:31 tgl Exp $ -->
 
 <chapter id="ecpg">
  <title><application>ECPG</application> - Embedded <acronym>SQL</acronym> in C</title>
@@ -2865,7 +2865,7 @@ struct sqlname
 </programlisting>
   </para>
   <para>
-   There are two compatiblity modes: INFORMIX, INFORMIX_SE
+   There are two compatibility modes: INFORMIX, INFORMIX_SE
   </para>
   <para>
    When linking programs that use this compatibility mode, remember to link
