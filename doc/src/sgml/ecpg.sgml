@@ -1,4 +1,4 @@
-<!-- $PostgreSQL: pgsql/doc/src/sgml/ecpg.sgml,v 1.88 2009/04/27 16:27:35 momjian Exp $ -->
+<!-- $PostgreSQL: pgsql/doc/src/sgml/ecpg.sgml,v 1.89 2009/05/18 11:08:24 petere Exp $ -->
 
 <chapter id="ecpg">
  <title><application>ECPG</application> - Embedded <acronym>SQL</acronym> in C</title>
@@ -2393,7 +2393,7 @@ void PGTYPESdecimal_free(decimal *var);
 </programlisting>
   </para>
   <para>
-   There are two compatiblity modes: INFORMIX, INFORMIX_SE
+   There are two compatibility modes: INFORMIX, INFORMIX_SE
   </para>
   <para>
    When linking programs that use this compatibility mode, remember to link
