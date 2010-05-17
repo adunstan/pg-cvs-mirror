@@ -33,7 +33,7 @@
  *	  ENHANCEMENTS, OR MODIFICATIONS.
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/pl/plperl/plperl.c,v 1.67.4.11 2010/03/09 22:35:25 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/pl/plperl/plperl.c,v 1.67.4.12 2010/05/13 16:44:03 adunstan Exp $
  *
  **********************************************************************/
 
@@ -527,7 +527,7 @@ plperl_safe_init(void)
 	if (SvTRUE(ERRSV))
 		ereport(ERROR,
 				(errmsg("%s", strip_trailing_ws(SvPV_nolen(ERRSV))),
-				 errcontext("While executing PLC_TRUSTED.")));
+				 errcontext("while executing PLC_TRUSTED")));
 
 	if (GetDatabaseEncoding() == PG_UTF8)
 	{
@@ -540,7 +540,7 @@ plperl_safe_init(void)
 		if (SvTRUE(ERRSV))
 			ereport(ERROR,
 					(errmsg("%s", strip_trailing_ws(SvPV_nolen(ERRSV))),
-					 errcontext("While executing utf8fix.")));
+					 errcontext("while executing utf8fix")));
 
 	}
 
