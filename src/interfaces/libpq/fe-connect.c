@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-connect.c,v 1.391 2010/03/17 20:58:38 petere Exp $
+ *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-connect.c,v 1.392 2010/04/30 17:09:13 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1623,7 +1623,7 @@ keep_going:						/* We will come back to here until there is
 					if (SSLok == 'S')
 					{
 						/* Set up global SSL state if required */
-						if (pqsecure_initialize(conn) == -1)
+						if (pqsecure_initialize(conn) != 0)
 							goto error_return;
 					}
 					else if (SSLok == 'N')
