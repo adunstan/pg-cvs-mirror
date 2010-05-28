@@ -1,4 +1,4 @@
-/* $PostgreSQL: pgsql/src/include/port/win32.h,v 1.93 2010/02/16 19:26:02 mha Exp $ */
+/* $PostgreSQL: pgsql/src/include/port/win32.h,v 1.94 2010/05/27 07:59:48 itagaki Exp $ */
 
 #if defined(_MSC_VER) || defined(__BORLANDC__)
 #define WIN32_ONLY_COMPILER
@@ -58,7 +58,11 @@
 #define PGDLLIMPORT __declspec (dllimport)
 #endif
 
+#ifdef _MSC_VER
 #define PGDLLEXPORT __declspec (dllexport)
+#else
+#define PGDLLEXPORT __declspec (dllimport)
+#endif
 
 #else							/* not CYGWIN, not MSVC, not MingW */
 #define PGDLLIMPORT
