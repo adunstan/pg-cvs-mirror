@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/ruleutils.c,v 1.324 2010/02/18 22:43:31 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/ruleutils.c,v 1.325 2010/02/26 02:01:09 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -4537,8 +4537,8 @@ get_rule_expr(Node *node, deparse_context *context,
 			{
 				NamedArgExpr *na = (NamedArgExpr *) node;
 
+				appendStringInfo(buf, "%s := ", quote_identifier(na->name));
 				get_rule_expr((Node *) na->arg, context, showimplicit);
-				appendStringInfo(buf, " AS %s", quote_identifier(na->name));
 			}
 			break;
 
