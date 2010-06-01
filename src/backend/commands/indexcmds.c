@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/indexcmds.c,v 1.195 2010/03/22 15:24:11 sriggs Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/indexcmds.c,v 1.196 2010/05/27 15:59:10 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1749,7 +1749,8 @@ ReindexDatabase(const char *databaseName, bool do_system, bool do_user)
 		PushActiveSnapshot(GetTransactionSnapshot());
 		if (reindex_relation(relid, true, false))
 			ereport(NOTICE,
-					(errmsg("table \"%s\" was reindexed",
+					(errmsg("table \"%s.%s\" was reindexed",
+							get_namespace_name(get_rel_namespace(relid)),
 							get_rel_name(relid))));
 		PopActiveSnapshot();
 		CommitTransactionCommand();
