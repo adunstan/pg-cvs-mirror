@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1996-2010, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/catalog/pg_control.h,v 1.53 2010/04/23 20:21:31 sriggs Exp $
+ * $PostgreSQL: pgsql/src/include/catalog/pg_control.h,v 1.54 2010/04/28 16:10:43 heikki Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -65,6 +65,7 @@ typedef enum DBState
 {
 	DB_STARTUP = 0,
 	DB_SHUTDOWNED,
+	DB_SHUTDOWNED_IN_RECOVERY,
 	DB_SHUTDOWNING,
 	DB_IN_CRASH_RECOVERY,
 	DB_IN_ARCHIVE_RECOVERY,
