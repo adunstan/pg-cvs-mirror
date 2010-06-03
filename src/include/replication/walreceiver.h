@@ -5,7 +5,7 @@
  *
  * Portions Copyright (c) 2010-2010, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/include/replication/walreceiver.h,v 1.7 2010/02/19 10:51:04 heikki Exp $
+ * $PostgreSQL: pgsql/src/include/replication/walreceiver.h,v 1.8 2010/02/26 02:01:27 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -14,6 +14,7 @@
 
 #include "access/xlogdefs.h"
 #include "storage/spin.h"
+#include "pgtime.h"
 
 extern bool am_walreceiver;
 
