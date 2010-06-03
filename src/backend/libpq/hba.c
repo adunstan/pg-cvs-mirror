@@ -10,7 +10,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/libpq/hba.c,v 1.206 2010/04/21 03:32:53 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/libpq/hba.c,v 1.207 2010/05/26 16:43:13 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -711,7 +711,7 @@ parse_hba_line(List *line, int line_num, HbaLine *parsedline)
 			ereport(LOG,
 					(errcode(ERRCODE_CONFIG_FILE_ERROR),
 					 errmsg("hostssl not supported on this platform"),
-				 errhint("Compile with --enable-ssl to use SSL connections."),
+				 errhint("Compile with --with-openssl to use SSL connections."),
 					 errcontext("line %d of configuration file \"%s\"",
 								line_num, HbaFileName)));
 			return false;
