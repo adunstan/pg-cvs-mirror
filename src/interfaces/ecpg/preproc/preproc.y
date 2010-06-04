@@ -1,4 +1,4 @@
-/* $PostgreSQL: pgsql/src/interfaces/ecpg/preproc/preproc.y,v 1.359.2.6 2008/10/10 12:20:06 meskes Exp $ */
+/* $PostgreSQL: pgsql/src/interfaces/ecpg/preproc/preproc.y,v 1.359.2.7 2009/09/08 04:25:25 tgl Exp $ */
 
 /* Copyright comment */
 %{
@@ -3401,7 +3401,7 @@ insert_column_item:  ColId opt_indirection
 			{ $$ = cat2_str($1, $2); }
 		;
 
-returning_clause:  RETURNING target_list	{ $$ = cat2_str(make_str("returning"), $2); }
+returning_clause:  RETURNING target_list ecpg_into	{ $$ = cat2_str(make_str("returning"), $2); }
 		| /* EMPTY */			{ $$ = EMPTY; }
 		;
 
