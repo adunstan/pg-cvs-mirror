@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1996-2010, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/backend/access/transam/xlog.c,v 1.416 2010/06/03 03:19:59 rhaas Exp $
+ * $PostgreSQL: pgsql/src/backend/access/transam/xlog.c,v 1.417 2010/06/03 21:02:11 petere Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -2124,9 +2124,21 @@ XLogBackgroundFlush(void)
 		flexible = false;		/* ensure it all gets written */
 	}
 
-	/* Done if already known flushed */
+	/*
+	 * If already known flushed, we're done. Just need to check if we
+	 * are holding an open file handle to a logfile that's no longer
+	 * in use, preventing the file from being deleted.
+	 */
 	if (XLByteLE(WriteRqstPtr, LogwrtResult.Flush))
+	{
+		if (openLogFile >= 0) {
+			if (!XLByteInPrevSeg(LogwrtResult.Write, openLogId, openLogSeg))
+			{
+				XLogFileClose();
+			}
+		}
 		return;
+	}
 
 #ifdef WAL_DEBUG
 	if (XLOG_DEBUG)
