@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/catalog/pg_largeobject.c,v 1.38 2010/02/17 04:19:39 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/catalog/pg_largeobject.c,v 1.39 2010/02/26 02:00:37 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -247,7 +247,7 @@ LargeObjectAlterOwner(Oid loid, Oid newOwnerId)
 /*
  * LargeObjectExists
  *
- * We don't use the system cache to for large object metadata, for fear of
+ * We don't use the system cache for large object metadata, for fear of
  * using too much local memory.
  *
  * This function always scans the system catalog using SnapshotNow, so it
