@@ -2,7 +2,7 @@
 #
 # PostgreSQL documentation makefile
 #
-# $PostgreSQL: pgsql/doc/src/sgml/Makefile,v 1.145 2010/06/12 15:42:44 momjian Exp $
+# $PostgreSQL: pgsql/doc/src/sgml/Makefile,v 1.146 2010/06/12 15:58:38 momjian Exp $
 #
 #----------------------------------------------------------------------------
 
@@ -110,7 +110,7 @@ postgres.html: postgres.sgml $(ALLSGML) stylesheet.dsl
 
 # single-page text
 postgres.txt: postgres.html
-	$(LYNX) -force_html -dump -nolist -stdin $< > $@
+	$(LYNX) -force_html -dump -nolist $< > $@
 
 HTML.index: postgres.sgml $(ALMOSTALLSGML) stylesheet.dsl
 	@$(MKDIR_P) html
