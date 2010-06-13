@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/catalog/aclchk.c,v 1.165 2010/04/05 01:09:52 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/catalog/aclchk.c,v 1.166 2010/04/05 01:58:03 tgl Exp $
  *
  * NOTES
  *	  See acl.h.
@@ -47,6 +47,7 @@
 #include "miscadmin.h"
 #include "parser/parse_func.h"
 #include "utils/acl.h"
+#include "utils/builtins.h"
 #include "utils/fmgroids.h"
 #include "utils/lsyscache.h"
 #include "utils/rel.h"
@@ -647,7 +648,7 @@ objectNamesToOids(GrantObjectType objtype, List *objnames)
 		case ACL_OBJECT_LARGEOBJECT:
 			foreach(cell, objnames)
 			{
-				Oid			lobjOid = intVal(lfirst(cell));
+				Oid			lobjOid = oidparse(lfirst(cell));
 
 				if (!LargeObjectExists(lobjOid))
 					ereport(ERROR,
