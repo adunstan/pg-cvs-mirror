@@ -7,7 +7,7 @@
  *
  * Portions Copyright (c) 1996-2010, PostgreSQL Global Development Group
  *
- *	  $PostgreSQL: pgsql/src/include/utils/guc_tables.h,v 1.47 2010/01/02 16:58:10 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/include/utils/guc_tables.h,v 1.48 2010/01/15 09:19:09 heikki Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -50,10 +50,15 @@ enum config_group
 	RESOURCES,
 	RESOURCES_MEM,
 	RESOURCES_KERNEL,
+	RESOURCES_VACUUM_DELAY,
+	RESOURCES_BGWRITER,
+	RESOURCES_ASYNCHRONOUS,
 	WAL,
 	WAL_SETTINGS,
 	WAL_CHECKPOINTS,
+	WAL_ARCHIVING,
 	WAL_REPLICATION,
+	WAL_STANDBY_SERVERS,
 	QUERY_TUNING,
 	QUERY_TUNING_METHOD,
 	QUERY_TUNING_COST,
