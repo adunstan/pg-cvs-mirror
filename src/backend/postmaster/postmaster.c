@@ -37,7 +37,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/postmaster/postmaster.c,v 1.610 2010/05/27 02:01:37 rhaas Exp $
+ *	  $PostgreSQL: pgsql/src/backend/postmaster/postmaster.c,v 1.611 2010/06/03 21:02:11 petere Exp $
  *
  * NOTES
  *
@@ -3381,9 +3381,10 @@ BackendInitialize(Port *port)
 					(errmsg_internal("pg_getnameinfo_all() failed: %s",
 									 gai_strerror(ret))));
 	}
-	snprintf(remote_ps_data, sizeof(remote_ps_data),
-			 remote_port[0] == '\0' ? "%s" : "%s(%s)",
-			 remote_host, remote_port);
+	if (remote_port[0] == '\0')
+		snprintf(remote_ps_data, sizeof(remote_ps_data), "%s", remote_host);
+	else
+		snprintf(remote_ps_data, sizeof(remote_ps_data), "%s(%s)", remote_host, remote_port);
 
 	if (Log_connections)
 	{
