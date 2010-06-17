@@ -5,7 +5,7 @@
  *
  * Portions Copyright (c) 2010-2010, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/include/replication/walsender.h,v 1.2 2010/02/26 02:01:27 momjian Exp $
+ * $PostgreSQL: pgsql/src/include/replication/walsender.h,v 1.3 2010/04/28 16:10:43 heikki Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -45,6 +45,5 @@ extern int	WalSenderMain(void);
 extern void WalSndSignals(void);
 extern Size WalSndShmemSize(void);
 extern void WalSndShmemInit(void);
-extern XLogRecPtr GetOldestWALSendPointer(void);
 
 #endif   /* _WALSENDER_H */
