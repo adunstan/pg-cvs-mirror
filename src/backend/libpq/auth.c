@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/libpq/auth.c,v 1.200 2010/04/21 03:32:53 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/libpq/auth.c,v 1.201 2010/05/26 20:47:13 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -2506,7 +2506,7 @@ CheckCertAuth(Port *port)
 		strlen(port->peer_cn) <= 0)
 	{
 		ereport(LOG,
-				(errmsg("certificate authentication failed for user \"%s\": client certificate contains no username",
+				(errmsg("certificate authentication failed for user \"%s\": client certificate contains no user name",
 						port->user_name)));
 		return STATUS_ERROR;
 	}
