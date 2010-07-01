@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/tablecmds.c,v 1.288.2.2 2009/10/06 00:55:34 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/tablecmds.c,v 1.288.2.3 2009/12/09 21:58:04 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -6838,6 +6838,9 @@ copy_relation_data(SMgrRelation src, SMgrRelation dst,
 
 	for (blkno = 0; blkno < nblocks; blkno++)
 	{
+        /* If we got a cancel signal during the copy of the data, quit */
+        CHECK_FOR_INTERRUPTS();
+        
 		smgrread(src, forkNum, blkno, buf);
 
 		/* XLOG stuff */
