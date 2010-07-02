@@ -19,7 +19,7 @@
 # OBJS adds additional object files that are always compiled.
 #
 # IDENTIFICATION
-#    $PostgreSQL: pgsql/src/port/Makefile,v 1.36 2008/02/18 14:51:48 petere Exp $
+#    $PostgreSQL: pgsql/src/port/Makefile,v 1.37 2008/11/25 18:19:31 tgl Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -30,7 +30,7 @@ include $(top_builddir)/src/Makefile.global
 override CPPFLAGS := -I$(top_builddir)/src/port -DFRONTEND $(CPPFLAGS)
 LIBS += $(PTHREAD_LIBS)
 
-OBJS = $(LIBOBJS) chklocale.o copydir.o dirmod.o exec.o noblock.o path.o \
+OBJS = $(LIBOBJS) chklocale.o dirmod.o exec.o noblock.o path.o \
 	pgsleep.o pgstrcasecmp.o qsort.o qsort_arg.o sprompt.o thread.o
 ifneq (,$(filter $(PORTNAME),cygwin win32))
 OBJS += pipe.o
