@@ -1,4 +1,4 @@
-/* $PostgreSQL: pgsql/contrib/hstore/uninstall_hstore.sql,v 1.9 2009/09/30 19:50:22 tgl Exp $ */
+/* $PostgreSQL: pgsql/contrib/hstore/uninstall_hstore.sql,v 1.10 2010/06/18 03:52:02 rhaas Exp $ */
 
 -- Adjust this setting to control where the objects get dropped.
 SET search_path = public;
@@ -22,7 +22,6 @@ DROP OPERATOR <@ ( hstore, hstore );
 DROP OPERATOR @  ( hstore, hstore );
 DROP OPERATOR ~  ( hstore, hstore );
 DROP OPERATOR => ( text, text );
-DROP OPERATOR % ( hstore, text[] );
 DROP OPERATOR #= ( anyelement, hstore );
 DROP OPERATOR %% ( NONE, hstore );
 DROP OPERATOR %# ( NONE, hstore );
@@ -44,7 +43,7 @@ DROP FUNCTION hstore_le(hstore,hstore);
 DROP FUNCTION hstore_cmp(hstore,hstore);
 DROP FUNCTION hstore_hash(hstore);
 DROP FUNCTION slice_array(hstore,text[]);
-DROP FUNCTION slice_hstore(hstore,text[]);
+DROP FUNCTION slice(hstore,text[]);
 DROP FUNCTION fetchval(hstore,text);
 DROP FUNCTION isexists(hstore,text);
 DROP FUNCTION exist(hstore,text);
