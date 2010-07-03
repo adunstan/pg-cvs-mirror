@@ -4,7 +4,8 @@
  *	server-side functions to set backend global variables
  *	to control oid and relfilenode assignment
  *
- *	$PostgreSQL: pgsql/contrib/citext/citext.c,v 1.2 2009/06/11 14:48:50 momjian Exp $
+ *	Copyright (c) 2010-2010, PostgreSQL Global Development Group
+ *	$PostgreSQL: pgsql/contrib/pg_upgrade_support/pg_upgrade_support.c,v 1.2 2010/07/03 14:23:14 momjian Exp $
  */
 
 #include "postgres.h"
