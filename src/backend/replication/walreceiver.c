@@ -29,7 +29,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/replication/walreceiver.c,v 1.13 2010/06/09 00:54:39 ishii Exp $
+ *	  $PostgreSQL: pgsql/src/backend/replication/walreceiver.c,v 1.14 2010/06/09 15:04:07 heikki Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -524,6 +524,7 @@ XLogWalRcvFlush(void)
 
 		/* Update shared-memory status */
 		SpinLockAcquire(&walrcv->mutex);
+		walrcv->latestChunkStart = walrcv->receivedUpto;
 		walrcv->receivedUpto = LogstreamResult.Flush;
 		SpinLockRelease(&walrcv->mutex);
 
