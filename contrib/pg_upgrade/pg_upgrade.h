@@ -1,5 +1,7 @@
 /*
  *	pg_upgrade.h
+ *
+ *	$PostgreSQL: pgsql/contrib/citext/citext.c,v 1.2 2009/06/11 14:48:50 momjian Exp $
  */
 
 #include "postgres.h"

@@ -2,6 +2,8 @@
  *	dump.c
  *
  *	dump functions
+ *
+ *	$PostgreSQL: pgsql/contrib/citext/citext.c,v 1.2 2009/06/11 14:48:50 momjian Exp $
  */
 
 #include "pg_upgrade.h"

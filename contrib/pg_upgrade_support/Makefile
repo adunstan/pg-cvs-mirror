@@ -1,6 +1,7 @@
 #
 # Makefile for pg_upgrade_support
 #
+# $PostgreSQL: pgsql/contrib/citext/Makefile,v 1.1 2008/07/29 18:31:20 tgl Exp $
 
 PGFILEDESC = "pg_upgrade_support - server-side functions for pg_upgrade"
 
