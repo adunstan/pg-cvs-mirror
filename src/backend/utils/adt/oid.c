@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/oid.c,v 1.76 2010/01/02 16:57:54 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/oid.c,v 1.77 2010/06/13 17:43:13 rhaas Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -314,15 +314,17 @@ oidparse(Node *node)
 		case T_Integer:
 			return intVal(node);
 		case T_Float:
+
 			/*
-			 * Values too large for int4 will be represented as Float constants
-			 * by the lexer.  Accept these if they are valid OID strings.
+			 * Values too large for int4 will be represented as Float
+			 * constants by the lexer.	Accept these if they are valid OID
+			 * strings.
 			 */
 			return oidin_subr(strVal(node), NULL);
 		default:
 			elog(ERROR, "unrecognized node type: %d", (int) nodeTag(node));
 	}
-	return InvalidOid;		/* keep compiler quiet */
+	return InvalidOid;			/* keep compiler quiet */
 }
 
 

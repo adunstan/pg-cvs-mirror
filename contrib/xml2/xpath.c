@@ -1,5 +1,5 @@
 /*
- * $PostgreSQL: pgsql/contrib/xml2/xpath.c,v 1.28 2010/03/01 05:16:35 tgl Exp $
+ * $PostgreSQL: pgsql/contrib/xml2/xpath.c,v 1.29 2010/03/03 19:10:22 tgl Exp $
  *
  * Parser interface for DOM-based parser (libxml) rather than
  * stream-based SAX-type parser
@@ -631,8 +631,8 @@ xpath_table(PG_FUNCTION_ARGS)
 	}
 
 	/*
-	 * Setup the parser.  This should happen after we are done evaluating
-	 * the query, in case it calls functions that set up libxml differently.
+	 * Setup the parser.  This should happen after we are done evaluating the
+	 * query, in case it calls functions that set up libxml differently.
 	 */
 	pgxml_parser_init();
 

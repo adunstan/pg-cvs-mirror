@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/operatorcmds.c,v 1.45 2010/02/14 18:42:14 rhaas Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/operatorcmds.c,v 1.46 2010/06/22 11:36:16 rhaas Exp $
  *
  * DESCRIPTION
  *	  The "DefineFoo" routines take the parse tree and pick out the
@@ -89,9 +89,9 @@ DefineOperator(List *names, List *parameters)
 	oprNamespace = QualifiedNameGetCreationNamespace(names, &oprName);
 
 	/*
-	 * The SQL standard committee has decided that => should be used for
-	 * named parameters; therefore, a future release of PostgreSQL may
-	 * disallow it as the name of a user-defined operator.
+	 * The SQL standard committee has decided that => should be used for named
+	 * parameters; therefore, a future release of PostgreSQL may disallow it
+	 * as the name of a user-defined operator.
 	 */
 	if (strcmp(oprName, "=>") == 0)
 		ereport(WARNING,

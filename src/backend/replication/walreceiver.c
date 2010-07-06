@@ -29,7 +29,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/replication/walreceiver.c,v 1.14 2010/06/09 15:04:07 heikki Exp $
+ *	  $PostgreSQL: pgsql/src/backend/replication/walreceiver.c,v 1.15 2010/07/03 20:43:57 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -159,6 +159,7 @@ WalReceiverMain(void)
 {
 	char		conninfo[MAXCONNINFO];
 	XLogRecPtr	startpoint;
+
 	/* use volatile pointer to prevent code rearrangement */
 	volatile WalRcvData *walrcv = WalRcv;
 

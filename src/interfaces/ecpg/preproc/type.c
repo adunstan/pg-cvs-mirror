@@ -1,4 +1,4 @@
-/* $PostgreSQL: pgsql/src/interfaces/ecpg/preproc/type.c,v 1.91 2010/04/02 10:27:45 meskes Exp $ */
+/* $PostgreSQL: pgsql/src/interfaces/ecpg/preproc/type.c,v 1.92 2010/04/03 07:53:29 petere Exp $ */
 
 #include "postgres_fe.h"
 
@@ -237,7 +237,7 @@ static void ECPGdump_a_struct(FILE *o, const char *name, const char *ind_name, c
 
 void
 ECPGdump_a_type(FILE *o, const char *name, struct ECPGtype * type, const int brace_level,
-				const char *ind_name, struct ECPGtype * ind_type, const int ind_brace_level,
+ const char *ind_name, struct ECPGtype * ind_type, const int ind_brace_level,
 				const char *prefix, const char *ind_prefix,
 				char *arr_str_siz, const char *struct_sizeof,
 				const char *ind_struct_sizeof)

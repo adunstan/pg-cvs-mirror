@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/heap/pruneheap.c,v 1.23 2010/04/21 17:20:56 sriggs Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/heap/pruneheap.c,v 1.24 2010/04/22 02:15:45 sriggs Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -122,7 +122,8 @@ heap_page_prune_opt(Relation relation, Buffer buffer, TransactionId OldestXmin)
 		 */
 		if (PageIsFull(page) || PageGetHeapFreeSpace(page) < minfree)
 		{
-			TransactionId ignore = InvalidTransactionId;	/* return value not needed */
+			TransactionId ignore = InvalidTransactionId;		/* return value not
+																 * needed */
 
 			/* OK to prune */
 			(void) heap_page_prune(relation, buffer, OldestXmin, true, &ignore);

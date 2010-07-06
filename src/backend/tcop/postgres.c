@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/tcop/postgres.c,v 1.593 2010/04/20 01:38:52 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/tcop/postgres.c,v 1.594 2010/05/12 19:45:02 sriggs Exp $
  *
  * NOTES
  *	  this is the "main" module of the postgres backend and
@@ -2840,8 +2840,8 @@ RecoveryConflictInterrupt(ProcSignalReason reason)
 		/*
 		 * All conflicts apart from database cause dynamic errors where the
 		 * command or transaction can be retried at a later point with some
-		 * potential for success. No need to reset this, since
-		 * non-retryable conflict errors are currently FATAL.
+		 * potential for success. No need to reset this, since non-retryable
+		 * conflict errors are currently FATAL.
 		 */
 		if (reason == PROCSIG_RECOVERY_CONFLICT_DATABASE)
 			RecoveryConflictRetryable = false;

@@ -1,4 +1,4 @@
-/* $PostgreSQL: pgsql/src/interfaces/ecpg/ecpglib/misc.c,v 1.57 2010/05/20 22:10:46 meskes Exp $ */
+/* $PostgreSQL: pgsql/src/interfaces/ecpg/ecpglib/misc.c,v 1.58 2010/05/25 17:28:20 meskes Exp $ */
 
 #define POSTGRES_ECPG_INTERNAL
 #include "postgres_fe.h"
@@ -23,9 +23,9 @@
 #define LONG_LONG_MIN LLONG_MIN
 #else
 #define LONG_LONG_MIN LONGLONG_MIN
-#endif /* LLONG_MIN */
-#endif /* LONG_LONG_MIN */
-#endif /* HAVE_LONG_LONG_INT */
+#endif   /* LLONG_MIN */
+#endif   /* LONG_LONG_MIN */
+#endif   /* HAVE_LONG_LONG_INT */
 
 bool		ecpg_internal_regression_mode = false;
 

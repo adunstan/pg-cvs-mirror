@@ -1,4 +1,4 @@
-/* $PostgreSQL: pgsql/src/interfaces/ecpg/ecpglib/execute.c,v 1.96 2010/05/20 22:10:45 meskes Exp $ */
+/* $PostgreSQL: pgsql/src/interfaces/ecpg/ecpglib/execute.c,v 1.97 2010/05/25 17:28:20 meskes Exp $ */
 
 /*
  * The aim is to get a simpler inteface to the database routines.
@@ -708,7 +708,7 @@ ecpg_store_input(const int lineno, const bool force_indicator, const struct vari
 					strcpy(mallocedval, "array [");
 
 					for (element = 0; element < asize; element++)
-						sprintf(mallocedval + strlen(mallocedval), "%llu,", ((unsigned long long int*) var->value)[element]);
+						sprintf(mallocedval + strlen(mallocedval), "%llu,", ((unsigned long long int *) var->value)[element]);
 
 					strcpy(mallocedval + strlen(mallocedval) - 1, "]");
 				}

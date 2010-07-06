@@ -22,7 +22,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/optimizer/prep/prepunion.c,v 1.181 2010/02/26 02:00:46 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/optimizer/prep/prepunion.c,v 1.182 2010/05/11 15:31:37 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1268,8 +1268,8 @@ expand_inherited_rtentry(PlannerInfo *root, RangeTblEntry *rte, Index rti)
 		 * if this is the parent table, leave copyObject's result alone.
 		 *
 		 * Note: we need to do this even though the executor won't run any
-		 * permissions checks on the child RTE.  The modifiedCols bitmap
-		 * may be examined for trigger-firing purposes.
+		 * permissions checks on the child RTE.  The modifiedCols bitmap may
+		 * be examined for trigger-firing purposes.
 		 */
 		if (childOID != parentOID)
 		{
