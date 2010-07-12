@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/nodeWorktablescan.c,v 1.9 2009/10/26 02:26:31 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/nodeWorktablescan.c,v 1.10 2010/01/02 16:57:45 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -203,13 +203,13 @@ ExecEndWorkTableScan(WorkTableScanState *node)
 }
 
 /* ----------------------------------------------------------------
- *		ExecWorkTableScanReScan
+ *		ExecReScanWorkTableScan
  *
  *		Rescans the relation.
  * ----------------------------------------------------------------
  */
 void
-ExecWorkTableScanReScan(WorkTableScanState *node, ExprContext *exprCtxt)
+ExecReScanWorkTableScan(WorkTableScanState *node)
 {
 	ExecClearTuple(node->ss.ps.ps_ResultTupleSlot);
 

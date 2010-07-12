@@ -12,7 +12,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/execProcnode.c,v 1.69 2009/12/15 04:57:47 rhaas Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/execProcnode.c,v 1.70 2010/01/02 16:57:41 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -341,7 +341,7 @@ ExecProcNode(PlanState *node)
 	CHECK_FOR_INTERRUPTS();
 
 	if (node->chgParam != NULL) /* something changed */
-		ExecReScan(node, NULL); /* let ReScan handle this */
+		ExecReScan(node);		/* let ReScan handle this */
 
 	if (node->instrument)
 		InstrStartNode(node->instrument);
@@ -504,7 +504,7 @@ MultiExecProcNode(PlanState *node)
 	CHECK_FOR_INTERRUPTS();
 
 	if (node->chgParam != NULL) /* something changed */
-		ExecReScan(node, NULL); /* let ReScan handle this */
+		ExecReScan(node);		/* let ReScan handle this */
 
 	switch (nodeTag(node))
 	{

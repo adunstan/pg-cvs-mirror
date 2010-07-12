@@ -9,7 +9,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/nodeValuesscan.c,v 1.11 2009/10/26 02:26:31 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/nodeValuesscan.c,v 1.12 2010/01/02 16:57:45 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -19,7 +19,7 @@
  *		ExecValuesNext			retrieve next tuple in sequential order.
  *		ExecInitValuesScan		creates and initializes a valuesscan node.
  *		ExecEndValuesScan		releases any storage allocated.
- *		ExecValuesReScan		rescans the values list
+ *		ExecReScanValuesScan	rescans the values list
  */
 #include "postgres.h"
 
@@ -319,13 +319,13 @@ ExecValuesRestrPos(ValuesScanState *node)
 }
 
 /* ----------------------------------------------------------------
- *		ExecValuesReScan
+ *		ExecReScanValuesScan
  *
  *		Rescans the relation.
  * ----------------------------------------------------------------
  */
 void
-ExecValuesReScan(ValuesScanState *node, ExprContext *exprCtxt)
+ExecReScanValuesScan(ValuesScanState *node)
 {
 	ExecClearTuple(node->ss.ps.ps_ResultTupleSlot);
 
