@@ -4,7 +4,7 @@
  *	file system operations
  *
  *	Copyright (c) 2010, PostgreSQL Global Development Group
- *	$PostgreSQL: pgsql/contrib/pg_upgrade/file.c,v 1.13 2010/07/06 19:18:55 momjian Exp $
+ *	$PostgreSQL: pgsql/contrib/pg_upgrade/file.c,v 1.14 2010/07/09 16:51:23 momjian Exp $
  */
 
 #include "pg_upgrade.h"
