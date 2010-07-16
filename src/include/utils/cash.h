@@ -1,5 +1,5 @@
 /*
- * $PostgreSQL: pgsql/src/include/utils/cash.h,v 1.26 2008/05/17 01:28:25 adunstan Exp $
+ * $PostgreSQL: pgsql/src/include/utils/cash.h,v 1.27 2009/06/11 14:49:13 momjian Exp $
  *
  *
  * cash.h
@@ -37,6 +37,7 @@ extern Datum cash_cmp(PG_FUNCTION_ARGS);
 
 extern Datum cash_pl(PG_FUNCTION_ARGS);
 extern Datum cash_mi(PG_FUNCTION_ARGS);
+extern Datum cash_div_cash(PG_FUNCTION_ARGS);
 
 extern Datum cash_mul_flt8(PG_FUNCTION_ARGS);
 extern Datum flt8_mul_cash(PG_FUNCTION_ARGS);
@@ -62,5 +63,8 @@ extern Datum cashlarger(PG_FUNCTION_ARGS);
 extern Datum cashsmaller(PG_FUNCTION_ARGS);
 
 extern Datum cash_words(PG_FUNCTION_ARGS);
+
+extern Datum cash_numeric(PG_FUNCTION_ARGS);
+extern Datum numeric_cash(PG_FUNCTION_ARGS);
 
 #endif   /* CASH_H */
