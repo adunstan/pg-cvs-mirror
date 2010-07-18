@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-connect.c,v 1.398 2010/07/08 16:19:50 mha Exp $
+ *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-connect.c,v 1.399 2010/07/18 11:37:26 petere Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1816,8 +1816,12 @@ keep_going:						/* We will come back to here until there is
 					if (pass == NULL)
 					{
 						appendPQExpBuffer(&conn->errorMessage,
+# if defined(SO_PEERCRED)
 										  libpq_gettext("local user with ID %d does not exist\n"),
 														(int) peercred.uid);
+#else
+										  libpq_gettext("matching local user does not exist\n"));
+#endif
 						goto error_return;
 					}
 
