@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-connect.c,v 1.399 2010/07/18 11:37:26 petere Exp $
+ *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-connect.c,v 1.400 2010/07/18 15:51:00 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1763,7 +1763,7 @@ keep_going:						/* We will come back to here until there is
 					gid_t		gid;
 
 					errno = 0;
-					if (getpeereid(sock, &uid, &gid) != 0)
+					if (getpeereid(conn->sock, &uid, &gid) != 0)
 					{
 						appendPQExpBuffer(&conn->errorMessage,
 										  libpq_gettext("could not get peer credentials: %s\n"),
