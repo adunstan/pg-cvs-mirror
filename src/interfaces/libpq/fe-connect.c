@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-connect.c,v 1.401 2010/07/18 16:42:20 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/interfaces/libpq/fe-connect.c,v 1.402 2010/07/18 17:08:11 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -21,6 +21,9 @@
 #include <ctype.h>
 #include <time.h>
 #include <unistd.h>
+#ifdef HAVE_UCRED_H
+#include <ucred.h>
+#endif
 
 #include "libpq-fe.h"
 #include "libpq-int.h"
@@ -1789,7 +1792,7 @@ keep_going:						/* We will come back to here until there is
 					ucred_t    *ucred;
 
 					ucred = NULL;			/* must be initialized to NULL */
-					if (getpeerucred(sock, &ucred) == -1)
+					if (getpeerucred(conn->sock, &ucred) == -1)
 					{
 						appendPQExpBuffer(&conn->errorMessage,
 										  libpq_gettext("could not get peer credentials: %s\n"),
