@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2000-2010, PostgreSQL Global Development Group
  *
- * $PostgreSQL: pgsql/src/bin/psql/common.c,v 1.145 2010/05/28 20:02:32 tgl Exp $
+ * $PostgreSQL: pgsql/src/bin/psql/common.c,v 1.146 2010/07/06 19:18:59 momjian Exp $
  */
 #include "postgres_fe.h"
 #include "common.h"
@@ -936,7 +936,7 @@ SendQuery(const char *query)
 	PQclear(results);
 
 	/* Possible microtiming output */
-	if (OK && pset.timing && !pset.quiet)
+	if (OK && pset.timing)
 		printf(_("Time: %.3f ms\n"), elapsed_msec);
 
 	/* check for events that may occur during query execution */
