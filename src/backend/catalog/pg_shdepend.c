@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/catalog/pg_shdepend.c,v 1.42 2010/07/03 13:53:13 rhaas Exp $
+ *	  $PostgreSQL: pgsql/src/backend/catalog/pg_shdepend.c,v 1.43 2010/07/06 19:18:56 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1346,7 +1346,7 @@ shdepReassignOwned(List *roleids, Oid newrole)
 					 * owned sequences, etc when we happen to visit them
 					 * before their parent table.
 					 */
-					ATExecChangeOwner(sdepForm->objid, newrole, true);
+					ATExecChangeOwner(sdepForm->objid, newrole, true, AccessExclusiveLock);
 					break;
 
 				case ProcedureRelationId:
