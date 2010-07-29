@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/heap/heapam.c,v 1.200.2.2 2005/11/22 18:23:03 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/heap/heapam.c,v 1.200.2.3 2006/11/17 18:00:25 tgl Exp $
  *
  *
  * INTERFACE ROUTINES
@@ -2740,8 +2740,16 @@ heap_xlog_newpage(XLogRecPtr lsn, XLogRecord *record)
 	Assert(record->xl_len == SizeOfHeapNewpage + BLCKSZ);
 	memcpy(page, (char *) xlrec + SizeOfHeapNewpage, BLCKSZ);
 
-	PageSetLSN(page, lsn);
-	PageSetTLI(page, ThisTimeLineID);
+	/*
+	 * The page may be uninitialized. If so, we can't set the LSN
+	 * and TLI because that would corrupt the page.
+	 */
+	if (!PageIsNew(page))
+	{
+		PageSetLSN(page, lsn);
+		PageSetTLI(page, ThisTimeLineID);
+	}
+
 	LockBuffer(buffer, BUFFER_LOCK_UNLOCK);
 	WriteBuffer(buffer);
 }
