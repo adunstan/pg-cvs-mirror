@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/parser/parse_oper.c,v 1.82 2005/10/15 02:49:22 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/parser/parse_oper.c,v 1.82.2.1 2005/11/22 18:23:14 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -930,6 +930,9 @@ make_scalar_array_op(ParseState *pstate, List *opname,
 	result->useOr = useOr;
 	result->args = args;
 
+	/* Hack to protect pg_get_expr() against misuse */
+	check_pg_get_expr_args(pstate, opform->oprcode, args);
+
 	ReleaseSysCache(tup);
 
 	return (Expr *) result;
@@ -1002,6 +1005,9 @@ make_op_expr(ParseState *pstate, Operator op,
 	result->opresulttype = rettype;
 	result->opretset = get_func_retset(opform->oprcode);
 	result->args = args;
+
+	/* Hack to protect pg_get_expr() against misuse */
+	check_pg_get_expr_args(pstate, opform->oprcode, args);
 
 	return (Expr *) result;
 }
