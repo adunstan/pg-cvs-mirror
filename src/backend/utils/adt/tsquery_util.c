@@ -7,7 +7,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/tsquery_util.c,v 1.13 2010/01/02 16:57:55 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/tsquery_util.c,v 1.14 2010/08/03 00:10:39 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -45,7 +45,7 @@ QT2QTN(QueryItem *in, char *operand)
 	else if (operand)
 	{
 		node->word = operand + in->qoperand.distance;
-		node->sign = 1 << (in->qoperand.valcrc % 32);
+		node->sign = ((uint32) 1) << (((unsigned int) in->qoperand.valcrc) % 32);
 	}
 
 	return node;

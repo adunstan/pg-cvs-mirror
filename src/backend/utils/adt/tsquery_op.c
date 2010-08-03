@@ -7,7 +7,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/tsquery_op.c,v 1.8 2010/01/02 16:57:55 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/tsquery_op.c,v 1.9 2010/08/03 00:10:39 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -209,7 +209,7 @@ makeTSQuerySign(TSQuery a)
 	for (i = 0; i < a->size; i++)
 	{
 		if (ptr->type == QI_VAL)
-			sign |= ((TSQuerySign) 1) << (ptr->qoperand.valcrc % TSQS_SIGLEN);
+			sign |= ((TSQuerySign) 1) << (((unsigned int) ptr->qoperand.valcrc) % TSQS_SIGLEN);
 		ptr++;
 	}
 
