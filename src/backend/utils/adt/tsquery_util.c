@@ -7,7 +7,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/tsquery_util.c,v 1.12 2009/07/16 06:33:44 petere Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/tsquery_util.c,v 1.13 2010/01/02 16:57:55 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -113,12 +113,10 @@ QTNodeCompare(QTNode *an, QTNode *bn)
 		}
 		return 0;
 	}
-	else
+	else if (an->valnode->type == QI_VAL)
 	{
 		QueryOperand *ao = &an->valnode->qoperand;
 		QueryOperand *bo = &bn->valnode->qoperand;
-
-		Assert(an->valnode->type == QI_VAL);
 
 		if (ao->valcrc != bo->valcrc)
 		{
@@ -126,6 +124,11 @@ QTNodeCompare(QTNode *an, QTNode *bn)
 		}
 
 		return tsCompareString(an->word, ao->length, bn->word, bo->length, false);
+	}
+	else
+	{
+		elog(ERROR, "unrecognized QueryItem type: %d", an->valnode->type);
+		return 0;				/* keep compiler quiet */
 	}
 }
 
