@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/tablecmds.c,v 1.336 2010/07/29 11:06:34 sriggs Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/tablecmds.c,v 1.337 2010/07/29 19:23:20 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -4889,6 +4889,15 @@ ATAddCheckConstraint(List **wqueue, AlteredTableInfo *tab, Relation rel,
 
 	/* Advance command counter in case same table is visited multiple times */
 	CommandCounterIncrement();
+
+	/*
+	 * If the constraint got merged with an existing constraint, we're done.
+	 * We mustn't recurse to child tables in this case, because they've already
+	 * got the constraint, and visiting them again would lead to an incorrect
+	 * value for coninhcount.
+	 */
+	if (newcons == NIL)
+		return;
 
 	/*
 	 * Propagate to children as appropriate.  Unlike most other ALTER
