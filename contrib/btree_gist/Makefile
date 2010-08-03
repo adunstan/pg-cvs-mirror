@@ -1,4 +1,4 @@
-# $PostgreSQL: pgsql/contrib/btree_gist/Makefile,v 1.11 2007/06/26 22:05:01 tgl Exp $
+# $PostgreSQL: pgsql/contrib/btree_gist/Makefile,v 1.12 2007/11/10 23:59:50 momjian Exp $
 
 MODULE_big  = btree_gist
 
@@ -11,7 +11,7 @@ DATA_built  = btree_gist.sql
 DATA        = uninstall_btree_gist.sql
 
 REGRESS     = init int2 int4 int8 float4 float8 cash oid timestamp timestamptz time timetz \
-              date interval macaddr inet cidr text varchar char bytea bit varbit numeric
+              date interval macaddr inet cidr text varchar char bytea bit varbit numeric not_equal
 
 ifdef USE_PGXS
 PG_CONFIG = pg_config
