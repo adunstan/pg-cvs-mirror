@@ -7,7 +7,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/utils/adt/tsvector_op.c,v 1.25 2009/10/13 14:33:14 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/utils/adt/tsvector_op.c,v 1.26 2010/01/02 16:57:55 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1326,7 +1326,7 @@ tsvector_update_trigger(PG_FUNCTION_ARGS, bool config_column)
 					(errcode(ERRCODE_INVALID_PARAMETER_VALUE),
 					 errmsg("text search configuration name \"%s\" must be schema-qualified",
 							trigger->tgargs[1])));
-		cfgId = TSConfigGetCfgid(names, false);
+		cfgId = get_ts_config_oid(names, false);
 	}
 
 	/* initialize parse state */
