@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/alter.c,v 1.36 2010/06/13 17:43:12 rhaas Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/alter.c,v 1.37 2010/07/28 05:22:24 sriggs Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -211,7 +211,7 @@ ExecAlterObjectSchemaStmt(AlterObjectSchemaStmt *stmt)
 void
 ExecAlterOwnerStmt(AlterOwnerStmt *stmt)
 {
-	Oid			newowner = get_roleid_checked(stmt->newowner);
+	Oid			newowner = get_role_oid(stmt->newowner, false);
 
 	switch (stmt->objectType)
 	{

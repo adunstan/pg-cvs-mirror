@@ -26,7 +26,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/execMain.c,v 1.352 2010/07/22 00:47:52 rhaas Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/execMain.c,v 1.353 2010/07/25 23:21:21 rhaas Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -2134,12 +2134,7 @@ OpenIntoRel(QueryDesc *queryDesc)
 	 */
 	if (into->tableSpaceName)
 	{
-		tablespaceId = get_tablespace_oid(into->tableSpaceName);
-		if (!OidIsValid(tablespaceId))
-			ereport(ERROR,
-					(errcode(ERRCODE_UNDEFINED_OBJECT),
-					 errmsg("tablespace \"%s\" does not exist",
-							into->tableSpaceName)));
+		tablespaceId = get_tablespace_oid(into->tableSpaceName, false);
 	}
 	else
 	{
