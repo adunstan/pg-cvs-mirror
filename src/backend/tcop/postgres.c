@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/tcop/postgres.c,v 1.594 2010/05/12 19:45:02 sriggs Exp $
+ *	  $PostgreSQL: pgsql/src/backend/tcop/postgres.c,v 1.595 2010/07/06 19:18:57 momjian Exp $
  *
  * NOTES
  *	  this is the "main" module of the postgres backend and
@@ -2741,7 +2741,7 @@ SigHupHandler(SIGNAL_ARGS)
 
 /*
  * RecoveryConflictInterrupt: out-of-line portion of recovery conflict
- * handling ollowing receipt of SIGUSR1. Designed to be similar to die()
+ * handling following receipt of SIGUSR1. Designed to be similar to die()
  * and StatementCancelHandler(). Called only by a normal user backend
  * that begins a transaction during recovery.
  */
