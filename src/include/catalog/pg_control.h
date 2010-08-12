@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1996-2010, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/catalog/pg_control.h,v 1.56 2010/06/03 14:50:30 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/catalog/pg_control.h,v 1.57 2010/06/03 20:37:13 alvherre Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -45,7 +45,7 @@ typedef struct CheckPoint
 	/*
 	 * Oldest XID still running. This is only needed to initialize hot standby
 	 * mode from an online checkpoint, so we only bother calculating this for
-	 * online checkpoints and only when archiving is enabled. Otherwise it's
+	 * online checkpoints and only when wal_level is hot_standby. Otherwise it's
 	 * set to InvalidTransactionId.
 	 */
 	TransactionId oldestActiveXid;
