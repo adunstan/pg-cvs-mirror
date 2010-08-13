@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/catalog/index.c,v 1.336 2010/02/14 18:42:13 rhaas Exp $
+ *	  $PostgreSQL: pgsql/src/backend/catalog/index.c,v 1.337 2010/02/26 02:00:36 momjian Exp $
  *
  *
  * INTERFACE ROUTINES
@@ -645,7 +645,12 @@ index_create(Oid heapRelationId,
 			binary_upgrade_next_index_relfilenode = InvalidOid;
 		}
 		else
-			indexRelationId = GetNewRelFileNode(tableSpaceId, pg_class);
+		{
+			indexRelationId =
+				GetNewRelFileNode(tableSpaceId, pg_class,
+								  heapRelation->rd_istemp ?
+									MyBackendId : InvalidBackendId);
+		}
 	}
 
 	/*
