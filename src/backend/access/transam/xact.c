@@ -10,7 +10,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/access/transam/xact.c,v 1.295 2010/07/29 22:27:27 sriggs Exp $
+ *	  $PostgreSQL: pgsql/src/backend/access/transam/xact.c,v 1.296 2010/08/12 23:24:53 rhaas Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -915,15 +915,16 @@ RecordTransactionCommit(void)
 	bool		haveNonTemp;
 	int			nchildren;
 	TransactionId *children;
-	int			nmsgs;
+	int			nmsgs = 0;
 	SharedInvalidationMessage *invalMessages = NULL;
-	bool		RelcacheInitFileInval;
+	bool		RelcacheInitFileInval = false;
 
 	/* Get data needed for commit record */
 	nrels = smgrGetPendingDeletes(true, &rels, &haveNonTemp);
 	nchildren = xactGetCommittedChildren(&children);
-	nmsgs = xactGetCommittedInvalidationMessages(&invalMessages,
-												 &RelcacheInitFileInval);
+	if (XLogStandbyInfoActive())
+		nmsgs = xactGetCommittedInvalidationMessages(&invalMessages,
+													 &RelcacheInitFileInval);
 
 	/*
 	 * If we haven't been assigned an XID yet, we neither can, nor do we want
