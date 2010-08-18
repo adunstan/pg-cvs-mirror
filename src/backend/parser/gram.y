@@ -11,7 +11,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/parser/gram.y,v 2.712 2010/05/30 18:10:40 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/parser/gram.y,v 2.713 2010/06/13 17:43:12 rhaas Exp $
  *
  * HISTORY
  *	  AUTHOR			DATE			MAJOR EVENT
@@ -2793,6 +2793,7 @@ CreateSeqStmt:
 					$4->istemp = $2;
 					n->sequence = $4;
 					n->options = $5;
+					n->ownerId = InvalidOid;
 					$$ = (Node *)n;
 				}
 		;

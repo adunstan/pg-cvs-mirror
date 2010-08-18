@@ -13,7 +13,7 @@
  * Portions Copyright (c) 1996-2010, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/include/nodes/parsenodes.h,v 1.431 2010/02/23 22:51:43 tgl Exp $
+ * $PostgreSQL: pgsql/src/include/nodes/parsenodes.h,v 1.432 2010/02/26 02:01:25 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1696,6 +1696,7 @@ typedef struct CreateSeqStmt
 	NodeTag		type;
 	RangeVar   *sequence;		/* the sequence to create */
 	List	   *options;
+	Oid			ownerId;		/* ID of owner, or InvalidOid for default */
 } CreateSeqStmt;
 
 typedef struct AlterSeqStmt
