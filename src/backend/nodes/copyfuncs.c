@@ -15,7 +15,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/nodes/copyfuncs.c,v 1.463 2010/02/23 22:51:42 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/nodes/copyfuncs.c,v 1.464 2010/02/26 02:00:43 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -79,6 +79,7 @@ _copyPlannedStmt(PlannedStmt *from)
 	COPY_SCALAR_FIELD(commandType);
 	COPY_SCALAR_FIELD(hasReturning);
 	COPY_SCALAR_FIELD(canSetTag);
+	COPY_SCALAR_FIELD(transientPlan);
 	COPY_NODE_FIELD(planTree);
 	COPY_NODE_FIELD(rtable);
 	COPY_NODE_FIELD(resultRelations);
