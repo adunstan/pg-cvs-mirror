@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/pl/plpgsql/src/pl_exec.c,v 1.244.2.7 2010/08/09 18:50:29 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/pl/plpgsql/src/pl_exec.c,v 1.244.2.8 2010/08/19 16:54:51 heikki Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -5431,14 +5431,16 @@ exec_eval_using_params(PLpgSQL_execstate *estate, List *params)
 		if (ppd->types[i] == UNKNOWNOID)
 		{
 			/*
-			 * Treat 'unknown' parameters as text, that's what most people
-			 * would expect. The backend can coerce unknown constants in a
-			 * more intelligent way, but not unknown Params. 
+			 * Treat 'unknown' parameters as text, since that's what most
+			 * people would expect. SPI_execute_with_args can coerce unknown
+			 * constants in a more intelligent way, but not unknown Params.
+			 * This code also takes care of copying into the right context.
+			 * Note we assume 'unknown' has the representation of C-string.
 			 */
 			ppd->types[i] = TEXTOID;
 			if (!isnull)
 			{
-				ppd->values[i] = CStringGetTextDatum((char *) ppd->values[i]);
+				ppd->values[i] = CStringGetTextDatum(DatumGetCString(ppd->values[i]));
 				ppd->freevals[i] = true;
 			}
 		}
