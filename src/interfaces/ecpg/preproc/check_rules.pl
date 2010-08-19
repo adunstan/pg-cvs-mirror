@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $PostgreSQL: pgsql/src/interfaces/ecpg/preproc/check_rules.pl,v 1.1 2009/11/27 10:00:40 meskes Exp $
+# $PostgreSQL: pgsql/src/interfaces/ecpg/preproc/check_rules.pl,v 1.2 2010/01/02 16:58:11 momjian Exp $
 # test parser generater for ecpg
 # call with backend parser as stdin
 #
@@ -133,4 +133,3 @@ sub generate_block {
     $s = "\\|", $block =~ s/$s//g;
     return $block;
 }
-

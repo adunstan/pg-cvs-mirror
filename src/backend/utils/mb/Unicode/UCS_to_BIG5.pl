@@ -2,7 +2,7 @@
 #
 # Copyright (c) 2001-2010, PostgreSQL Global Development Group
 #
-# $PostgreSQL: pgsql/src/backend/utils/mb/Unicode/UCS_to_BIG5.pl,v 1.9 2009/03/18 16:26:18 heikki Exp $
+# $PostgreSQL: pgsql/src/backend/utils/mb/Unicode/UCS_to_BIG5.pl,v 1.10 2010/01/02 16:57:56 momjian Exp $
 #
 # Generate UTF-8 <--> BIG5 conversion tables from
 # map files provided by Unicode organization.
@@ -174,4 +174,3 @@ for $index ( sort {$a <=> $b} keys( %array ) ){
 
 print FILE "};\n";
 close(FILE);
-

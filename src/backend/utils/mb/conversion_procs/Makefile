@@ -4,7 +4,7 @@
 #    Makefile for utils/mb/conversion_procs
 #
 # IDENTIFICATION
-#    $PostgreSQL: pgsql/src/backend/utils/mb/conversion_procs/Makefile,v 1.23 2009/08/26 22:24:43 petere Exp $
+#    $PostgreSQL: pgsql/src/backend/utils/mb/conversion_procs/Makefile,v 1.24 2009/11/04 23:47:04 tgl Exp $
 #
 #-------------------------------------------------------------------------
 
@@ -217,4 +217,3 @@ uninstall:
 clean distclean maintainer-clean:
 	rm -f $(SQLSCRIPT)
 	@for dir in $(SUBDIRS); do $(MAKE) -C $$dir $@ || exit; done
-

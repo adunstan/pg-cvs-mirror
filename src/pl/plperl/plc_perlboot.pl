@@ -1,5 +1,4 @@
-
-#  $PostgreSQL: pgsql/src/pl/plperl/plc_perlboot.pl,v 1.6 2010/05/13 16:39:43 adunstan Exp $
+#  $PostgreSQL: pgsql/src/pl/plperl/plc_perlboot.pl,v 1.7 2010/07/27 04:18:28 alvherre Exp $
 
 use 5.008001;
 use vars qw(%_SHARED);
@@ -76,4 +75,3 @@ sub ::encode_array_constructor {
 	} @$arg;
 	return "ARRAY[$res]";
 }
-

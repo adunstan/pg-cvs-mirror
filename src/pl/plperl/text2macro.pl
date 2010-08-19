@@ -1,5 +1,4 @@
-
-# $PostgreSQL:$
+# $PostgreSQL: pgsql/src/pl/plperl/text2macro.pl,v 1.2 2010/01/20 01:08:21 adunstan Exp $
 
 =head1 NAME
 

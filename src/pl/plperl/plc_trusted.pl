@@ -1,6 +1,4 @@
-
-
-#  $PostgreSQL$
+#  $PostgreSQL: pgsql/src/pl/plperl/plc_trusted.pl,v 1.1 2010/05/13 16:39:43 adunstan Exp $
 
 package PostgreSQL::InServer::safe;
  

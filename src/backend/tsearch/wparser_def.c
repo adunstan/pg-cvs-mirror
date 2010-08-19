@@ -7,7 +7,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/tsearch/wparser_def.c,v 1.31 2010/05/08 16:39:49 tgl Exp $
+ *	  $PostgreSQL: pgsql/src/backend/tsearch/wparser_def.c,v 1.32 2010/05/09 02:15:59 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -2572,4 +2572,3 @@ prsd_headline(PG_FUNCTION_ARGS)
 
 	PG_RETURN_POINTER(prs);
 }
-

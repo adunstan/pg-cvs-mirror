@@ -1,7 +1,6 @@
-
 # -*-perl-*- hey - emacs - this is a perl file
 
-# $PostgreSQL: pgsql/src/tools/msvc/vcregress.pl,v 1.14 2010/03/02 17:06:51 adunstan Exp $
+# $PostgreSQL: pgsql/src/tools/msvc/vcregress.pl,v 1.15 2010/04/09 13:05:58 mha Exp $
 
 use strict;
 

@@ -1,5 +1,5 @@
 # Macros to detect C compiler features
-# $PostgreSQL: pgsql/config/c-compiler.m4,v 1.21 2010/05/25 14:32:55 meskes Exp $
+# $PostgreSQL: pgsql/config/c-compiler.m4,v 1.22 2010/05/25 17:28:20 meskes Exp $
 
 
 # PGAC_C_SIGNED
@@ -155,4 +155,3 @@ AC_RUN_IFELSE([AC_LANG_PROGRAM([extern void $2 (); void (*fptr) () = $2;],[])],
               [LDFLAGS="$pgac_save_LDFLAGS"
                AC_MSG_RESULT(assuming no)])
 ])# PGAC_PROG_CC_LDFLAGS_OPT
-
