@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/pl/plpgsql/src/pl_exec.c,v 1.202.2.8 2010/07/05 09:27:31 heikki Exp $
+ *	  $PostgreSQL: pgsql/src/pl/plpgsql/src/pl_exec.c,v 1.202.2.9 2010/08/09 18:50:37 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -4930,6 +4930,8 @@ exec_simple_check_plan(PLpgSQL_expr *expr)
 	 * 2. It must be a RESULT plan --> no scan's required
 	 */
 	if (!IsA(stmt, PlannedStmt))
+		return;
+	if (stmt->commandType != CMD_SELECT || stmt->intoClause)
 		return;
 	plan = stmt->planTree;
 	if (!IsA(plan, Result))
