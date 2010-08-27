@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/optimizer/plan/subselect.c,v 1.162 2010/04/19 00:55:25 rhaas Exp $
+ *	  $PostgreSQL: pgsql/src/backend/optimizer/plan/subselect.c,v 1.163 2010/07/12 17:01:06 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -737,11 +737,7 @@ generate_subquery_vars(PlannerInfo *root, List *tlist, Index varno)
 		if (tent->resjunk)
 			continue;
 
-		var = makeVar(varno,
-					  tent->resno,
-					  exprType((Node *) tent->expr),
-					  exprTypmod((Node *) tent->expr),
-					  0);
+		var = makeVarFromTargetEntry(varno, tent);
 		result = lappend(result, var);
 	}
 
