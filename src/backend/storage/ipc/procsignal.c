@@ -8,7 +8,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/storage/ipc/procsignal.c,v 1.5 2010/02/13 01:32:19 sriggs Exp $
+ *	  $PostgreSQL: pgsql/src/backend/storage/ipc/procsignal.c,v 1.6 2010/02/26 02:01:00 momjian Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -66,7 +66,7 @@ static bool CheckProcSignal(ProcSignalReason reason);
 static void CleanupProcSignalState(int status, Datum arg);
 
 /*
- * ProcSignalShmemInit
+ * ProcSignalShmemSize
  *		Compute space needed for procsignal's shared memory
  */
 Size
