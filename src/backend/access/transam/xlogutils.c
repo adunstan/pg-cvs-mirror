@@ -11,7 +11,7 @@
  * Portions Copyright (c) 1996-2010, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- * $PostgreSQL: pgsql/src/backend/access/transam/xlogutils.c,v 1.71 2010/07/08 16:08:30 tgl Exp $
+ * $PostgreSQL: pgsql/src/backend/access/transam/xlogutils.c,v 1.72 2010/08/13 20:10:50 rhaas Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -377,6 +377,8 @@ CreateFakeRelcacheEntry(RelFileNode rnode)
 
 	rel->rd_rel = &fakeentry->pgc;
 	rel->rd_node = rnode;
+	/* We will never be working with temp rels during recovery */
+	rel->rd_backend = InvalidBackendId;
 
 	/* We don't know the name of the relation; use relfilenode instead */
 	sprintf(RelationGetRelationName(rel), "%u", rnode.relNode);
