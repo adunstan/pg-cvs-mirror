@@ -8,7 +8,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/tcop/postgres.c,v 1.595 2010/07/06 19:18:57 momjian Exp $
+ *	  $PostgreSQL: pgsql/src/backend/tcop/postgres.c,v 1.596 2010/08/12 23:24:54 rhaas Exp $
  *
  * NOTES
  *	  this is the "main" module of the postgres backend and
@@ -2802,7 +2802,7 @@ RecoveryConflictInterrupt(ProcSignalReason reason)
 				 *
 				 * PROCSIG_RECOVERY_CONFLICT_SNAPSHOT if no snapshots are held
 				 * by parent transactions and the transaction is not
-				 * serializable
+				 * transaction-snapshot mode
 				 *
 				 * PROCSIG_RECOVERY_CONFLICT_TABLESPACE if no temp files or
 				 * cursors open in parent transactions

@@ -26,7 +26,7 @@
  *
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/executor/execMain.c,v 1.353 2010/07/25 23:21:21 rhaas Exp $
+ *	  $PostgreSQL: pgsql/src/backend/executor/execMain.c,v 1.354 2010/08/05 14:45:02 rhaas Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -1554,7 +1554,7 @@ EvalPlanQualFetch(EState *estate, Relation relation, int lockmode,
 
 				case HeapTupleUpdated:
 					ReleaseBuffer(buffer);
-					if (IsXactIsoLevelSerializable)
+					if (IsolationUsesXactSnapshot())
 						ereport(ERROR,
 								(errcode(ERRCODE_T_R_SERIALIZATION_FAILURE),
 								 errmsg("could not serialize access due to concurrent update")));

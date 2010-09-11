@@ -7,7 +7,7 @@
  * Portions Copyright (c) 1994, Regents of the University of California
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/commands/trigger.c,v 1.264 2010/08/05 15:25:35 rhaas Exp $
+ *	  $PostgreSQL: pgsql/src/backend/commands/trigger.c,v 1.265 2010/08/19 15:46:18 tgl Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -2387,7 +2387,7 @@ ltrmark:;
 
 			case HeapTupleUpdated:
 				ReleaseBuffer(buffer);
-				if (IsXactIsoLevelSerializable)
+				if (IsolationUsesXactSnapshot())
 					ereport(ERROR,
 							(errcode(ERRCODE_T_R_SERIALIZATION_FAILURE),
 							 errmsg("could not serialize access due to concurrent update")));
