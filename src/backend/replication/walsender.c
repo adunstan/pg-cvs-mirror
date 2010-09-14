@@ -28,7 +28,7 @@
  * Portions Copyright (c) 2010-2010, PostgreSQL Global Development Group
  *
  * IDENTIFICATION
- *	  $PostgreSQL: pgsql/src/backend/replication/walsender.c,v 1.29 2010/07/22 13:03:11 rhaas Exp $
+ *	  $PostgreSQL: pgsql/src/backend/replication/walsender.c,v 1.30 2010/09/11 15:48:04 heikki Exp $
  *
  *-------------------------------------------------------------------------
  */
@@ -452,7 +452,7 @@ WalSndLoop(void)
 
 				/* Sleep */
 				WaitLatchOrSocket(&MyWalSnd->latch, MyProcPort->sock,
-								  WalSndDelay);
+								  WalSndDelay * 1000L);
 			}
 
 			/* Check if the connection was closed */
