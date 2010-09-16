@@ -1,5 +1,5 @@
 /*
- * $PostgreSQL: pgsql/contrib/hstore/hstore_compat.c,v 1.1 2009/09/30 19:50:22 tgl Exp $
+ * $PostgreSQL: pgsql/contrib/hstore/hstore_compat.c,v 1.2 2010/02/26 02:00:32 momjian Exp $
  *
  * Notes on old/new hstore format disambiguation.
  *
@@ -180,7 +180,8 @@ hstoreValidOldFormat(HStore *hs)
 	if (hs->size_ & HS_FLAG_NEWVERSION)
 		return 0;
 
-	Assert(sizeof(HOldEntry) == sizeof(HEntry));
+	/* New format uses an HEntry for key and another for value */
+	Assert(sizeof(HOldEntry) == (2 * sizeof(HEntry)));
 
 	if (count == 0)
 		return 2;
